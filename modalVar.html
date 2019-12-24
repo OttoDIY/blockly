@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.3.3.6.css"/>
+	<link rel="stylesheet" type="text/css" href="css/blocklino.css"/>
+</head>
+<body>
+	<div id="title-bar">
+        <div id="title"></div>
+        <div id="title-bar-btns">
+			<button id="btn_quit" type="button" class="btn btn-quitBlue" onclick="cancel()"><span class="fa fa-times fa-1_75x"></span></button>
+        </div>
+    </div>
+	<div id="div_var">
+			<div class="form-group">
+				<h4 id="label"></h4>
+				<div class="input-group input-group-md icon-addon addon-md">
+					<input type="text" class="form-control" id="var_name" onfocus="this.value=''">
+					<span class="input-group-btn">
+						<button id="btn_variable" type="button" class="btn btn-info" onclick="response()"></button>
+					</span>
+				</div>
+			</div>
+	</div>
+
+<script>
+	var { ipcRenderer } = require("electron") ;
+	var input = document.getElementById("var_name") ;
+	input.addEventListener("keyup", function(event) {
+		if (event.keyCode === 13) document.getElementById("btn_variable").click()
+	})
+	function cancel() {
+		ipcRenderer.send("closeDialog", "") ;
+		this.close()
+	}
+	function response() {
+		ipcRenderer.send("closeDialog", document.getElementById("var_name").value) ;
+		this.close()
+	}
+	window.onload=function() {
+		document.getElementById("var_name").focus() ;
+		var options = ipcRenderer.sendSync("openDialog", "") ;
+		var params = JSON.parse(options) ;
+		document.getElementById("title").innerHTML = params.label ;
+		document.getElementById("var_name").value = params.value ;
+		document.getElementById("btn_variable").innerText = params.ok 
+	}
+</script>
+</body>
+</html>

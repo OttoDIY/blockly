@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.3.3.6.css"/>
+	<link rel="stylesheet" type="text/css" href="css/blocklino.css"/>
+</head>
+<body>
+	<div id="title-bar-repl">
+        <div id="title">
+			<span class="fa fa-search fa-1_75x fa-fw"></span> Console REPL
+		</div>
+        <div id="title-bar-btns">
+			<button id="btn_quit" type="button" class="btn btn-quitGray"><span class="fa fa-times fa-1_75x"></span></button>
+        </div>
+    </div>
+	<div id="divfenetre">
+		<div id="fenetre_repl"></div>
+		<div class="form-group" style="padding-left:5px;padding-right:5px;">
+			<div class="input-group input-group-md icon-addon addon-md">
+				<input type="text" placeholder="Commande" name="" id="schbox" class="form-control">
+				<span class="input-group-btn">
+					<button id="btn_envoi" type="button" class="btn btn-secondary">Exécuter</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+<script>require('../resources/app/repl.js')</script>
+</html>
