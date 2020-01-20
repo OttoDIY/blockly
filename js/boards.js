@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 goog.provide('Blockly.Arduino');
 goog.require('Blockly.Generator');
@@ -155,7 +155,7 @@ var profile = {
 		inout: "20"
 	},
 	nano: {
-	    description: "Arduino Nano",
+	    description: "Arduino Nano (Old Bootloader)",
 	    BUILTIN_LED: 13,
 		picture : "media/nano.jpg",
 		dropdownPWM: [["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"], ["11", "11"]],
@@ -170,6 +170,27 @@ var profile = {
 		build: "nano",
 		cpu: "atmega328p",
 		speed: "57600",
+		prog: "arduino",
+		usb: "mini USB",
+		voltage: "5V",
+		inout: "20"
+	},
+	nanooptiboot: {
+	    description: "Arduino Nano",
+	    BUILTIN_LED: 13,
+		picture : "media/nano.jpg",
+		dropdownPWM: [["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"], ["11", "11"]],
+		dropdownAnalog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
+		interrupt: [["2", "2"], ["3", "3"]],
+		serial: [['300', '300'], ['600', '600'], ['1200', '1200'],
+                ['2400', '2400'], ['4800', '4800'], ['9600', '9600'],
+                ['14400', '14400'], ['19200', '19200'], ['28800', '28800'],
+                ['31250', '31250'], ['38400', '38400'], ['57600', '57600'],
+                ['115200', '115200']],
+		serialPin: [["Rx/Tx", "0"]],
+		build: "nanooptiboot",
+		cpu: "atmega328p",
+		speed: "115200",
 		prog: "arduino",
 		usb: "mini USB",
 		voltage: "5V",
