@@ -175,6 +175,11 @@ BlocklyDuino.loadConfig = function() {
 		window.localStorage.toolbox = BlocklyDuino.selectedToolbox;
 		$("#boards").val(BlocklyDuino.selectedCard);
 		$('#arduino_card_mini_picture').attr("src", profile[BlocklyDuino.selectedCard]['picture']);
+		if(BlocklyDuino.selectedCard=="nanooptiboot"||BlocklyDuino.selectedCard=="nano"||BlocklyDuino.selectedCard=="nona4809"){
+			$("#warning").show();
+		}else{
+			$("#warning").hide();
+		}
 		$("#toolboxes").val(BlocklyDuino.selectedToolbox);
 		BlocklyDuino.loadToolboxDefinition(BlocklyDuino.selectedToolbox)
 	} else {
@@ -182,6 +187,11 @@ BlocklyDuino.loadConfig = function() {
 		BlocklyDuino.selectedToolbox = toolbox;
 		$("#boards").val(card);
 		$('#arduino_card_mini_picture').attr("src", profile[card]['picture']);
+		if(card=="nanooptiboot"||card=="nano"||card=="nona4809"){
+			$("#warning").show();
+		}else{
+			$("#warning").hide();
+		}
 		$("#toolboxes").val(toolbox);
 		BlocklyDuino.loadToolboxDefinition(toolbox)
 	}
@@ -607,6 +617,11 @@ BlocklyDuino.workspace_capture = function() {
 	}	
 };
 BlocklyDuino.cardPicture_change = function() {
+	if($("#pinout").val()=="nanooptiboot"||$("#pinout").val()=="nano"||$("#pinout").val()=="nona4809"){
+		$("#warning").show();
+	}else{
+		$("#warning").hide();
+	}
 	if ($("#pinout").val()) {
 		$('#arduino_card_mini_picture').attr("src", profile[$("#pinout").val()]['picture'])
 	} else {

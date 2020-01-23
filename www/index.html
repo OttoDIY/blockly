@@ -23,10 +23,10 @@
 	<script type="text/javascript" src="blocs&generateurs/arduino_generateurs_python.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_cpp.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_python.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_actionneur.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_capteur.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_html.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_microbit.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/actionneur.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/capteur.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/html.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/microbit.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/otto.js"></script>
 	<script type="text/javascript" src="js/typing.js"></script>
 	<script type="text/javascript" src="lang/code.js"></script>
@@ -266,7 +266,7 @@
 		  </div>
 		  <div class="modal-body">
 			<div class="arduino_card_mini_picture_div" style="height: 516px">
-				<img id="arduino_card_mini_picture"/>
+				<img id="arduino_card_mini_picture" style="max-width: 100%" />
 			</div>
 			<select size="16" multiple id="pinout" onchange="BlocklyDuino.cardPicture_change();">
 				<optgroup label="C / C++">
@@ -292,6 +292,8 @@
 				</optgroup>
 			</select>
 			<br><br>
+			<div class="alert alert-warning" role="alert" id="warning">
+			</div>
 			<br>
 			<br>
 			<br>

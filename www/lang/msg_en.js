@@ -49,5 +49,6 @@ var MSG = {
   badXml: "XML parsing error: \n %1 \n\nSelect 'OK' to abort your changes or 'Cancel' to continue editing the XML.",
   arduino_card: "Load the settings for the board ",
   aboutModalLabel: "About",
-  aboutBody: "This is a free and open source visual programming language based on blockly from Google, Arduino codes are created by just combining blocks, then they are compiled (check) and finally upload to the Otto robot."
+  aboutBody: "This is a free and open source visual programming language based on blockly from Google, Arduino codes are created by just combining blocks, then they are compiled (check) and finally upload to the Otto robot.",
+  nanoWarning: "Having trouble uploading to your Arduino Nano board (upload operation times out)? Try to select a different variant of the board (Regular / Old bootloader / Every), according to what you have. Some are visually identical (old and new bootloader)!"
 };
