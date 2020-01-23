@@ -266,7 +266,7 @@
 		  </div>
 		  <div class="modal-body">
 			<div class="arduino_card_mini_picture_div" style="height: 516px">
-				<img id="arduino_card_mini_picture"/>
+				<img id="arduino_card_mini_picture"/ style="max-width: 80%">
 			</div>
 			<select size="16" multiple id="pinout" onchange="BlocklyDuino.cardPicture_change();">
 				<optgroup label="C / C++">
