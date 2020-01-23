@@ -1,22 +1,22 @@
 # Otto Blockly
 
-This is a free and open source visual programming language based on blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check) and finally [upload to any Otto robot] (https://wikifactory.com/+OttoDIY/projects)  or similar Arduino(C++) or Micro:bit or Python robots.
+This is a free and open source visual programming language based on blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check or verified) and quickly [upload to any Otto robot](https://wikifactory.com/+OttoDIY/projects) or similar Arduino(C++) or Micro:bit or Python robots.
 
-This software already works offline on Windows operating systems. You can [download the latest release from our website directly](https://www.ottodiy.com/#blockly-and-app)it is ready to go, no need to intall libraries or additional setup or even Arduino IDE, it is all integrated, ready to use.Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also here in the pilotes folder.
+## Installer
+This software already works offline on Windows operating systems. You can [download the latest release from our website directly](https://www.ottodiy.com/#blockly-and-app), it is ready to use, no need to intall libraries or additional setup or even Arduino IDE, it is all integrated, ready to use. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also here in the pilotes folder.
 
 MAC and Linux version are under development, as some requested and as much as we want them to be ready too, unfortunatelly, there are not many testers, neither commited volunteers even for very simpple BETA Tests, so WE NEED YOU!, if you really need this software for your OS.
 
 Help us, please don't ask when would be avaliable, since it only will be ready, if you collaborate with us.
 
 ## Online APP
-
-Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., althouught you can just simple copy and paste the generated code into your [local Arduino IDE] (https://www.arduino.cc/en/Main/Software), therefore you can use this tool from any operative system.
+Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., althouught you can just simple copy and paste the generated code into your [local Arduino IDE](https://www.arduino.cc/en/Main/Software), therefore you can use this tool from any operative system.
 
 Watch the [video to see the features](https://youtu.be/chcWxh4Co_c)
 
 ## How to Use
-<img src="https://github.com/OttoDIY/Blockly/www/media/Ottoblockly.png" width="500" align="center">
-```
+<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">
+
 1. Open any example.
 2. Connect your Otto robot.
 3. Select Arduino nano and USB port where Otto is connected.
@@ -27,7 +27,7 @@ Watch the [video to see the features](https://youtu.be/chcWxh4Co_c)
 8. [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
 
 ## How to Contribute
- Contributing to this software is warmly welcomed. There are 3 ways you can contribute to this project:
+Contributing to this software is warmly welcomed. There are 3 ways you can contribute to this project:
 1. Test and if find a problem then post an issue.
 2. Helps us solve the issues or other bugs.
 3. Bring missing features from similar blockly programs here.
@@ -41,11 +41,11 @@ Welcome to the Otto DIY code development team!
 
 ## Links
 
-Tools without which nothing would not have been possible :
+Tools created by great people that without them, would have not been possible to make this project:
 
 - [Node.js](https://nodejs.org/fr/)
 - [Blockly@rduino](https://github.com/technologiescollege/Blockly-at-rduino)
-- [Blocklino] (https://github.com/fontainejp/blocklino/)
+- [Blocklino](https://github.com/fontainejp/blocklino/)
 - [BlocklyDuino](https://github.com/BlocklyDuino/BlocklyDuino)
 - [Ardublockly](https://github.com/carlosperate/ardublockly)
 - [Blockly](https://developers.google.com/blockly)
@@ -64,3 +64,4 @@ Tools without which nothing would not have been possible :
 - [ampy](https://github.com/pycampers/ampy)
 - [pyflakes](https://github.com/PyCQA/pyflakes)
 - [NSIS](https://sourceforge.net/projects/nsis)
+THANKS!
