@@ -1,0 +1,35 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_loop" id=".P[D^+|YcYwY$~C}sgCC" x="418" y="118">
+    <statement name="LOOP">
+      <block type="inout_buildin_led" id="6|}aC=#Tq2m6Q6SvicL{">
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="base_delay" id="CVw45@1ld*czC8$~kZ7.">
+            <field name="unite">s</field>
+            <value name="DELAY_TIME">
+              <block type="math_number" id="]~3P92L{-Ow||L3RTE,A">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_buildin_led" id="r0;j?FF0~B2x/E8^Y1W~">
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="base_delay" id="GBDoVH;Kqw9{f8s6#ay@">
+                    <field name="unite">s</field>
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="au3m-#ehU-1F_.SnR?k6">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,107 @@
+{
+ "name": "Blocklino",
+ "version": "1.5.0",
+ "description": "environnement de développement pour langage graphique",
+ "author": "Fontaine Jean Philippe",
+ "license": "CC0-1.0",
+ "main": "electronApp.js",
+ "keywords": [
+  "blockly",
+  "BLOCKLY",
+  "arduino",
+  "ARDUINO",
+  "esp32",
+  "ESP32",
+  "esp8266",
+  "ESP8266",
+  "electron",
+  "ELECTRON",
+  "serialport",
+  "SERIALPORT",
+  "electron-builder",
+  "electron-updater",
+  "PYTHON",
+  "python",
+  "PYFLAKES",
+  "pyflakes",
+  "ampy",
+  "AMPY",
+  "microbit",
+  "MICROBIT"
+ ],
+ "scripts": {
+  "postinstall": "electron-builder install-app-deps",
+  "start": "electron .",
+  "compiler": "build --win --ia32",
+  "publier": "build --win --ia32 -p always"
+ },
+ "build": {
+  "appId": "com.electron.blocklino",
+  "asar": false,
+  "directories": {
+   "buildResources": "./build",
+   "output": "../dist"
+  },
+  "nsis": {
+   "installerIcon": "build/install.ico",
+   "uninstallerIcon": "build/app.ico",
+   "oneClick": false,
+   "perMachine": true,
+   "deleteAppDataOnUninstall": true,
+   "allowToChangeInstallationDirectory": true,
+   "runAfterFinish": true,
+   "include": "build/blocklino.nsh"
+  },
+  "win": {
+   "target": [
+    "portable",
+    "nsis",
+    "zip"
+   ],
+   "icon": "build/app.ico"
+  },
+  "fileAssociations": {
+   "ext": "bloc",
+   "name": "BLOC File",
+   "role": "Editor",
+   "icon": "build/file.ico"
+  },
+  "extraFiles": [
+   "www",
+   "compilation",
+   "pilotes",
+   "README.md",
+   "LICENSE.md",
+   "config.json"
+  ],
+  "extraResources": [
+   "dev-app-update.yml",
+   "app-update.yml"
+  ],
+  "publish": [
+   {
+    "provider": "github",
+    "repo": "blocklino",
+    "owner": "fontainejp",
+    "releaseType": "release"
+   }
+  ]
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/fontainejp/blocklino"
+ },
+ "bugs": {
+  "url": "https://github.com/fontainejp/blocklino/issues"
+ },
+ "devDependencies": {
+  "electron": "4.1.1",
+  "electron-builder": "20.39.0"
+ },
+ "dependencies": {
+  "ajv": "6.10.0",
+  "child_process": "1.0.2",
+  "electron-updater": "4.0.6",
+  "serialport": "7.1.4"
+ }
+}
