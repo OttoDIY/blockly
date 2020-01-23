@@ -42,6 +42,7 @@ Code.initLanguage = function() {
     languageMenu.append(option);
   }
   $('#aboutBody').text(MSG['aboutBody']);
+  $('#warning').text(MSG['nanoWarning']);
   $('#aboutModalLabel').text(MSG['aboutModalLabel']);
   $('#cardLabel').text(MSG['cardLabel']);
   $('#aboutcardLabel').text(MSG['aboutcardLabel']);

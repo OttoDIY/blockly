@@ -49,5 +49,6 @@ var MSG = {
   badXml: "Erreur d’analyse du fichier :\n%1\n\nSélectionner 'OK' pour abandonner vos modifications ou 'Annuler' pour continuer à modifier le fichier.",
   arduino_card:"Charger les paramètres pour la carte ",
   aboutModalLabel:" à propos",
-  aboutBody: "C'est un mini environnement de développement pour langage graphique libre et open source. Les programmes sont créés par assemblage de blocs, ils sont ensuite compilés, puis envoyés dans la carte."
+  aboutBody: "C'est un mini environnement de développement pour langage graphique libre et open source. Les programmes sont créés par assemblage de blocs, ils sont ensuite compilés, puis envoyés dans la carte.",
+  nanoWarning: "Vous rencontrez des problèmes de téléchargement sur votre carte Arduino Nano (le délai de téléchargement expire)? Essayez de sélectionner une variante différente de la carte (Regular / Old bootloader / Every), selon ce que vous avez. Certains sont visuellement identiques (ancien et nouveau bootloader)!"
 };
