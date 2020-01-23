@@ -23,10 +23,10 @@
 	<script type="text/javascript" src="blocs&generateurs/arduino_generateurs_python.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_cpp.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_python.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_actionneur.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_capteur.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_html.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/_microbit.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/actionneur.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/capteur.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/html.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/microbit.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/otto.js"></script>
 	<script type="text/javascript" src="js/typing.js"></script>
 	<script type="text/javascript" src="lang/code.js"></script>
@@ -98,7 +98,9 @@
 						<option value="mega" >Arduino Méga 2560</option>
 						<option value="micro" >Arduino Micro</option>
 						<option value="mini" >Arduino Mini</option>
-						<option value="nano" >Arduino Nano</option>
+						<option value="nanooptiboot">Arduino Nano</option>
+						<option value="nano">Arduino Nano (old bootloader)</option>
+						<option value="nona4809">Arduino Nano Every</option>
 						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
 						<option value="uno" >Arduino Uno</option>
 						<option value="yun" >Arduino Yun</option>
@@ -272,8 +274,10 @@
 					<option value="mega" >Arduino Méga 2560</option>
 					<option value="micro" >Arduino Micro</option>
 					<option value="mini" >Arduino Mini</option>
-					<option value="nano" >Arduino Nano</option>
+					<option value="nanooptiboot" >Arduino Nano</option>
+					<option value="nano" >Arduino Nano (old bootloader)</option>
 					<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
+					<option value="nona4809">Arduino Nano Every</option>
 					<option value="uno" >Arduino Uno</option>
 					<option value="yun" >Arduino Yun</option>
 					<option value="atmegang" >DAGU RS027</option>
