@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.3.3.6.css"/>
 	<link rel="stylesheet" type="text/css" href="css/blocklino.css"/>
 </head>
-<body>
+<body style="overflow: hidden;">
 	<div id="title-bar">
         <div id="title">
 			<span class="fa fa-search fa-1_75x fa-fw"></span> Serial Monitor
@@ -23,19 +23,12 @@
 			</div>
 		</div>
 		<div id="fenetre_term"> </div>
-		<div style="padding-right:5px;text-align:right;">
-			<button id="btn_efface" type="button" class="btn btn-info btn-lg">
-				<span class='fa fa-eraser'> Erase </span>
-			</button>
-			<button id="btn_csv" type="button" class="btn btn-info btn-lg">
-				<span class='fa fa-eject'> Export</span>
-			</button>
-			<button id="btn_connect" type="button" class="btn btn-info btn-lg"> 
-				<span class='fa fa-play'> Start</span>
-			</button>
-			<div style="padding-right:5px;text-align:right;">
-				<button id="btn_efface" type="button" class="btn btn-info">Clear output</button>
-				<select id="vitesse" >
+		<div class="row">
+			<div class="col-xs-3">
+				
+			</div>
+			<div class="col-xs-3">
+				<select id="vitesse" class="form-control" onchange="localStorage.setItem('baudrate',document.getElementById('vitesse').value);">
 					<option value="300">300 baud</option>
 					<option value="600">600 baud</option>
 					<option value="1200">1200 baud</option>
@@ -50,7 +43,17 @@
 					<option value="57600">57600 baud</option>
 					<option value="115200">115200 baud</option>
 				</select>
-				<button id="btn_connect" type="button" class="btn btn-info">Connect</button>
+			</div>
+			<div class="col-xs-6">
+				<button id="btn_efface" type="button" class="btn btn-info btn-lg">
+					<span class='fa fa-eraser'> Erase </span>
+				</button>
+				<button id="btn_csv" type="button" class="btn btn-info btn-lg">
+					<span class='fa fa-eject'> Export</span>
+				</button>
+				<button id="btn_connect" type="button" class="btn btn-info btn-lg"> 
+					<span class='fa fa-play'> Start</span>
+				</button>
 			</div>
 		</div>
 	</div>
