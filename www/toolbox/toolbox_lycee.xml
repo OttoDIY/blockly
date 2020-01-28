@@ -194,6 +194,7 @@
 		</category>	
 	<category name="CAT_com" colour="#0060aa">
 		<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
+			<block type="serial_init"></block>	
 			<block type="serial_write"></block>	
 			<block type="serial_input"></block>	
 			<block type="serial_read"></block>
