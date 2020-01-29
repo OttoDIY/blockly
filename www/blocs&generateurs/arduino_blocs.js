@@ -359,7 +359,7 @@ Blockly.Blocks["millis_start"]={init:function(){
 /* bluetooth  */
 Blockly.Blocks["bluetooth_init"]={init:function(){
 		var card=window.localStorage.card;
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/bt.png', 48, 48, "*"))
 			.appendField("Bluetooth");
@@ -373,7 +373,7 @@ Blockly.Blocks["bluetooth_a"]={init:function(){
         this.appendValueInput("data_s").setCheck("Number").appendField(Blockly.Msg.bluetooth2);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.setTooltip(Blockly.Msg.bluetooth2_tooltip);
         this.setHelpUrl(Blockly.Msg.bluetooth_helpurl)}
 };
@@ -381,7 +381,7 @@ Blockly.Blocks["bluetooth_b"]={init:function(){
         this.appendValueInput("CASE0").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.bluetooth1+" "+Blockly.Msg.CONTROLS_SWITCH_MSG_CASEBREAK);
         this.appendStatementInput("DO0").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
         this.setHelpUrl(Blockly.Msg.bluetooth_helpurl);
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setMutator(new Blockly.Mutator(["bluetooth_create_item", "bluetooth_default"]));
@@ -476,7 +476,7 @@ Blockly.Blocks["bluetooth_b"]={init:function(){
     }
 };
 Blockly.Blocks["bluetooth_create_item"]={init:function(){
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONTROLS_SWITCH_MSG_CASEBREAK);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -485,7 +485,7 @@ Blockly.Blocks["bluetooth_create_item"]={init:function(){
     }
 };
 Blockly.Blocks["bluetooth_default"]={init:function(){
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.appendDummyInput().appendField(Blockly.Msg.CONTROLS_SWITCH_MSG_DEFAULT);
         this.setPreviousStatement(true);
         this.setTooltip(Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP);
@@ -493,7 +493,7 @@ Blockly.Blocks["bluetooth_default"]={init:function(){
     }
 };
 Blockly.Blocks["bluetooth_create_container"]={init:function(){
-        this.setColour("#006000");
+        this.setColour("#0060aa");
         this.appendDummyInput().appendField(Blockly.Msg.bluetooth1+" "+Blockly.Msg.CONTROLS_SWITCH_MSG_CASEBREAK);
         this.appendStatementInput("STACK");
         this.setTooltip(Blockly.Msg.CONTROLS_IF_IF_TOOLTIP);
