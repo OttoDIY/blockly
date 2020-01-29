@@ -60,6 +60,7 @@ Blockly.Msg.CAT_html="✉ HTML";
 Blockly.Msg.CAT_DFPLAYER="♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto"; //added 06/09/2019
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoïde"; 
+Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 //wifi
 Blockly.Msg.esp8266_init_tooltip="initialisation du module wifi et connection avec les paramètres indiqués";
 Blockly.Msg.esp8266_1="Esp 8266";
@@ -233,6 +234,31 @@ Blockly.Msg.ARDUINO_PULSEIN="durée de l'état";
 Blockly.Msg.tempo_helpurl="http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ExempleBlinkWithoutDelay";
 Blockly.Msg.tempo_tooltip="Ce bloc vérifie si le temps indiqué est arrivé, si c'est le cas alors il éxécute les blocs placés à l'intérieur. Contrairement au bloc 'attendre' celui-ci n'est pas bloquant.";
 Blockly.Msg.tempo1="toutes les";
+//OLED
+Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
+Blockly.Msg.lp2i_u8g_draw_string_X = "raw x (127 max) =";
+Blockly.Msg.lp2i_u8g_draw_string_Y = "line y (63 max) =";
+Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "texts to display :";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "line 1 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "line 2 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "line 3 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "line 4 =";
+Blockly.Msg.lp2i_u8g_print = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_print_N = "Number to display ="
+Blockly.Msg.lp2i_u8g_print_X = "raw x (127 max) =";
+Blockly.Msg.lp2i_u8g_print_Y = "line y (63 max) =";
+Blockly.Msg.lp2i_u8g_4draw_print = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_4draw_print_to_display = "to display :";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "line 1 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Number 1 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line2 = "line 2 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N2 = "Number 2 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "line 3 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) ="
 //DEL
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT="la DEL de la carte";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP="éteint ou allume la DEL sur la carte Arduino";

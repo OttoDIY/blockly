@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_ARDUINO_matrice8x8,CAT_DFPLAYER</parametre>
+	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_begin"></block>
 		<block type="base_end"></block>
@@ -118,6 +118,106 @@
 			<block type="otto9_matrixp"></block>
 			<block type="otto9_clear"></block>
 		</category>
+		<category name="CAT_OLED_U8G" colour="#1B2944">
+		<block type="lp2i_u8g_draw_string" colour="#1B2944">
+			<value name="Text">
+				<shadow type="text">
+					<field name="TEXT">Hello Otto</field>
+				</shadow>
+			</value>
+			<value name="X">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="Y">
+				<shadow type="math_number">
+					<field name="NUM">12</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="lp2i_u8g_draw_4strings" colour="#1B2944">
+			<value name="Text_line1">
+				<shadow type="text">
+					<field name="TEXT">Line 1 </field>
+				</shadow>
+			</value>
+			<value name="Text_line2">
+				<shadow type="text">
+					<field name="TEXT">Line 2</field>
+				</shadow>
+			</value>
+			<value name="Text_line3">
+				<shadow type="text">
+					<field name="TEXT">Line 3</field>
+				</shadow>
+			</value>
+			<value name="Text_line4">
+				<shadow type="text">
+					<field name="TEXT">Line 4</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="lp2i_u8g_print" colour="#1B2944">
+			<value name="N">
+				<shadow type="math_number">
+					<field name="Num">0</field>
+				</shadow>
+			</value>
+			<value name="X">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="Y">
+				<shadow type="math_number">
+					<field name="NUM">12</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="lp2i_u8g_4draw_print" colour="#1B2944">
+			<value name="Text_line1">
+				<shadow type="text">
+					<field name="TEXT">Line 1</field>
+				</shadow>
+			</value>
+			<value name="N1">
+				<shadow type="math_number">
+					<field name="Num">0</field>
+				</shadow>
+			</value>
+			<value name="Text_line2">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+			<value name="N2">
+				<shadow type="math_number">
+					<field name="Num"></field>
+				</shadow>
+			</value>
+			<value name="Text_line3">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+			<value name="N3">
+				<shadow type="math_number">
+					<field name="Num"></field>
+				</shadow>
+			</value>
+			<value name="Text_line4">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+			<value name="N4">
+				<shadow type="math_number">
+					<field name="Num"></field>
+				</shadow>
+			</value>
+		</block>
+	</category>
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="play"></block>
 			<block type="tone"></block>

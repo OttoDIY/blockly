@@ -60,6 +60,7 @@ Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
+Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -233,6 +234,31 @@ Blockly.Msg.ARDUINO_PULSEIN = "duración del estado";
 Blockly.Msg.tempo_helpurl = "http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ExempleBlinkWithoutDelay";
 Blockly.Msg.tempo_tooltip = "Este bloque verifica si el tiempo indicado ha llegado, si es el caso, entonces ejecuta los bloques colocados dentro ... A diferencia del bloque 'esperar' este no está bloqueando." ;
 Blockly.Msg.tempo1 = "todos";
+//OLED
+Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
+Blockly.Msg.lp2i_u8g_draw_string_X = "raw x (127 max) =";
+Blockly.Msg.lp2i_u8g_draw_string_Y = "line y (63 max) =";
+Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "texts to display :";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "line 1 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "line 2 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "line 3 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "line 4 =";
+Blockly.Msg.lp2i_u8g_print = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_print_N = "Number to display ="
+Blockly.Msg.lp2i_u8g_print_X = "raw x (127 max) =";
+Blockly.Msg.lp2i_u8g_print_Y = "line y (63 max) =";
+Blockly.Msg.lp2i_u8g_4draw_print = "OLED I2C display";
+Blockly.Msg.lp2i_u8g_4draw_print_to_display = "to display :";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "line 1 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Number 1 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line2 = "line 2 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N2 = "Number 2 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "line 3 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) ="
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) ="
 // LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "el LED en el tablero";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Apague o encienda el LED en la placa Arduino";
