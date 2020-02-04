@@ -18,7 +18,12 @@
 		<block type="otto9_smooth"></block>
 	</category>
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">
-			<block type="base_delay"></block>
+			<block type="base_delay">
+					<value name="DELAY_TIME">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value></block>
 	</category>
 	<category name="CAT_LOGIC" colour="#ffb400">
 		<block type="controls_if">
@@ -35,7 +40,18 @@
 		<block type="otto9_getdistance"></block>
 	</category>
 	<category name="CAT_servo" colour="#2d2dd1">	
-			<block type="servo_move"></block>
+			<block type="servo_move">
+				<value name="DEGREE">
+				<shadow type="inout_angle_maths">
+					<field name="NUM">90</field>
+				</shadow>
+			</value>
+			<value name="PIN">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+		</block>
 	</category>
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="play"></block>

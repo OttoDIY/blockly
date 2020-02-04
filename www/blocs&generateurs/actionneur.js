@@ -1026,6 +1026,22 @@ Blockly.Python["servo_move"]=function(block){
 	Blockly.Python.definitions_["pin_"+value_pin]="servo_"+value_pin+" = PWM(Pin("+value_pin+"), freq=50, duty 75)";
     return "servo_" + value_pin + ".duty(30+(" + value_degree + "/2))\n"
 };
+
+Blockly.Blocks["servo_read_degrees"]= {
+    init: function() {
+      this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE) .appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*"));
+      this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+      this.setOutput(true, 'Number');
+      this.setColour("#2d2dd1");
+      this.setHelpUrl(Blockly.Msg.HELPURL);
+      this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP);
+    }
+};
+Blockly.Arduino.servo_read_degrees = function() {
+    var value_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+    var code = "servo_" + value_pin +  '.read()';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+  };
 //////////////
 Blockly.Blocks["servo_rot_continue_param"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 48, 48, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT);

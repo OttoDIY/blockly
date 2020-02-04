@@ -42,7 +42,12 @@
 		<block type="toggle"></block>
 	</category>	
 			<category name="CAT_ARDUINO_TIME" colour="#00929f">		
-		<block type="base_delay"></block>	
+		<block type="base_delay">
+		<value name="DELAY_TIME">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value></block>	
 		<block type="tempo_sans_delay"></block>
 		<block type="millis_start"></block>	
 		<block type="millis"></block>		
@@ -90,9 +95,39 @@
 			<block type="otto9_getg"></block>
 	</category>
 		<category name="CAT_servo" colour="#2d2dd1">
-			<block type="servo_move"></block>
-			<block type="servo_rot_continue_param"></block>
+			<block type="servo_move">
+				<value name="DEGREE">
+				<shadow type="inout_angle_maths">
+					<field name="NUM">90</field>
+				</shadow>
+			</value>
+			<value name="PIN">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="servo_read_degrees">
+		<value name="PIN">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+		</block>
+			<block type="servo_rot_continue_param">
+			<value name="SPEED">
+				<shadow type="inout_angle_maths">
+					<field name="NUM">45</field>
+				</shadow>
+			</value>
+			<value name="PIN">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+			</block>
 		</category>
+		
 	<category name="CAT_del" colour="#4b009f">			
 			<block type="inout_buildin_led"></block>
 			<block type="digital_write"></block>
