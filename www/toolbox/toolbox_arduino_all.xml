@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
+	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_begin"></block>
 		<block type="base_end"></block>
@@ -48,14 +48,27 @@
 					<field name="NUM">1</field>
 				</shadow>
 			</value></block>	
-		<block type="tempo_sans_delay"></block>
+		<block type="tempo_sans_delay">
+		<value name="DELAY_TIME">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value></block>
 		<block type="millis_start"></block>	
 		<block type="millis"></block>		
         <block type="inout_pulsein"></block>
 	</category>
 	<category name="CAT_LOGIC" colour="#ffb400">
-		<block type="controls_if"></block>
-        <block type="controls_repeat_ext"></block>
+				<block type="controls_if">
+			<mutation else="1"></mutation>
+		</block>
+        <block type="controls_repeat_ext">
+		<value name="TIMES">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
+			</block>
         <block type="controls_whileUntil"></block>
         <block type="controls_flow_statements"></block>
 		<block type="inout_onoff"></block>
@@ -68,7 +81,13 @@
 	<category name="CAT_MATH" colour="#008000">
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
-        <block type="logic_compare"></block>
+        <block type="logic_compare">
+		<value name="B">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+			</block>
         <block type="math_arithmetic"></block>
 		<block type="intervalle"></block>
         <block type="math_single"></block>
@@ -86,6 +105,7 @@
         <block type="eeprom_write"></block>
 	</category>
 	<category name="CAT_ultrason" colour="#2a93e8">
+			<block type="otto9_obstacle"></block>
 			<block type="otto9_getdistance"></block>
 			<block type="ultrason"></block>
 			<block type="ultrason_distance"></block>
@@ -139,18 +159,57 @@
 			<block type="pixel_show"></block>
 			<block type="pixel_setbrightness"></block>
 		</category>
-	<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
+	<category name="CAT_ARDUINO_matrice16x8" colour="#32D900">
 			<block type="otto9_eyes"></block>
+			<block type="otto9_eyes_text"></block>
+			<block type="otto9_eyes#">
+				<value name="eyes">
+				<shadow type="math_number">
+					<field name="NUM">3</field>
+				</shadow>
+			</value>
+		</block>
+			<block type="otto9_eyesm"></block>
+			<block type="otto9_eyesp">
+					<value name="X">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="Y">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			</block>
 			<block type="otto9_eyesl"></block>
 			<block type="otto9_eyesr"></block>
 			<block type="otto9_eyesc"></block>
-			<block type="otto9_eyes_text"></block>
-			<block type="otto9_eyesm"></block>
+			<block type="otto9_eyes_clear"></block>
+		</category>
+		<category name="CAT_ARDUINO_matrice8x8" colour="#747F8A">
 			<block type="otto9_mouth"></block>
-			<block type="otto9_mouth#"></block>
 			<block type="otto9_matrix_text"></block>
+			<block type="otto9_mouth#">
+					<value name="mouth">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
 			<block type="otto9_matrix"></block>
-			<block type="otto9_matrixp"></block>
+			<block type="otto9_matrixp">
+					<value name="X">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="Y">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			</block>
 			<block type="otto9_clear"></block>
 		</category>
 		<category name="CAT_OLED_U8G" colour="#1B2944">

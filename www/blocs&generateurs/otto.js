@@ -162,6 +162,20 @@ Blockly.Blocks['otto9_getdistance'] = {
   }
 };
 
+Blockly.Blocks['otto9_obstacle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*"))
+        .appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle");
+    this.setInputsInline(true);
+    this.setOutput(true);
+    this.setColour("#2a93e8");
+    this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+  }
+};
+
 Blockly.Blocks['otto9_getnoise'] = {
   init: function() {
     this.appendDummyInput()
@@ -335,35 +349,6 @@ Blockly.Blocks['otto9_soundh'] = {
   }
 };
 
-Blockly.Blocks['otto9_mouth'] = {
-  init: function() {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/matrix.png', 48, 48, "*"))
-        .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#59646f");
-    this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-  }
-};
-
-Blockly.Blocks['otto9_mouth#']={ init:function(){
-  this.appendDummyInput()
-  this.appendValueInput("mouth")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#59646f");
-  this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-}
-};
-
 Blockly.Blocks['otto9_eyes'] = {
   init: function() {
     this.appendDummyInput()
@@ -394,7 +379,7 @@ Blockly.Blocks['otto9_eyesl']={
   this.setPreviousStatement(true);
   this.setNextStatement(true);
   this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+  this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 
@@ -423,7 +408,7 @@ Blockly.Blocks['otto9_eyesr']={
   this.setPreviousStatement(true);
   this.setNextStatement(true);
   this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+  this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 
@@ -441,7 +426,7 @@ Blockly.Blocks['otto9_eyesc']={
   this.setPreviousStatement(true);
   this.setNextStatement(true);
   this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+  this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 
@@ -454,7 +439,50 @@ Blockly.Blocks['otto9_eyes_text'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
+    this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+  }
+};
+Blockly.Blocks['otto9_eyes#'] = {
+  init: function() {
+    this.appendDummyInput()
+    this.appendValueInput("eyes")
+        .appendField(Blockly.Msg.OTTO9_EYES_TEXT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+  }
+};
+
+Blockly.Blocks['otto9_eyesp']={
+  init:function(){
+  this.appendDummyInput()
+  .appendField("pixel X")
+  this.appendValueInput("X")
+      .setCheck("Number")
+      this.appendValueInput("Y")
+      .setCheck("Number")
+      .appendField("Y")
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);}
+};
+
+Blockly.Blocks['otto9_eyes_clear'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.OTTO9_EYES_CLEAR_TEXT);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.matrice8x8_efface_tooltip);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
 };
@@ -613,7 +641,7 @@ Blockly.Blocks['otto9_eyesm'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
+    this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
 };
@@ -678,14 +706,44 @@ Blockly.Blocks['otto9_matrix'] = {
   }
 };
 
+Blockly.Blocks['otto9_mouth'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage('media/matrix.png', 48, 48, "*"))
+        .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#59646f");
+    this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+  }
+};
+
+Blockly.Blocks['otto9_mouth#']={ init:function(){
+  this.appendDummyInput()
+  this.appendValueInput("mouth")
+      .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#59646f");
+  this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+}
+};
 Blockly.Blocks['otto9_matrixp']={
   init:function(){
   this.appendDummyInput()
-      .appendField("pixel X")
-      .appendField(new Blockly.FieldNumber("0"), "X")
+  .appendField("pixel X")
+  this.appendValueInput("X")
+      .setCheck("Number")
+
+      this.appendValueInput("Y")
+      .setCheck("Number")
       .appendField("Y")
-      .appendField(new Blockly.FieldNumber("0"), "Y");
-  this.setInputsInline(false);
+  this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
   this.setColour("#59646f");
@@ -715,7 +773,6 @@ Blockly.Blocks['otto9_clear'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#59646f");
-    // this.setColour(Blockly.Blocks.otto_1.HUE);
     this.setTooltip(Blockly.Msg.OTTO9_CLEAR_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -948,6 +1005,17 @@ Blockly.Arduino['otto9_getdistance'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['otto9_obstacle'] = function(block) {
+  var dropdown_obstacle = block.getFieldValue('obstacle');
+  Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
+  Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
+	+ 'bool obstacleDetected = false;';
+  Blockly.Arduino.definitions_['otto9_distance'] = '#define PIN_Trigger 8 // ultrasound \n'
+	+ '#define PIN_Echo 9 // ultrasound';
+  var code = '(Otto.getDistance() <' + dropdown_obstacle+')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['otto9_getnoise'] = function(block) {
   Blockly.Arduino.variables_['otto9_noise'] = 'bool estado = false;';
   Blockly.Arduino.definitions_['otto9_noise'] = '#define PIN_NoiseSensor A6';
@@ -1167,33 +1235,6 @@ Blockly.Arduino['otto9_soundh'] = function(block) {
   var code = 'Otto.sing(' + dropdown_otto_sound + ');\n';
   return code;
 };
-Blockly.Arduino['otto9_mouth'] = function(block) {
-  var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
-	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
-  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
-	+ '#define CS_PIN A2\n'
-	+ '#define CLK_PIN A1\n'
-	+ '#define LED_DIRECTION 1';
-  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);';
-  var code = 'Otto.putMouth(' + dropdown_otto9_mouth_choice + ');\n';
-  return code;
-};
-
-Blockly.Arduino['otto9_mouth#'] = function(block) {
-  var valuemouth = Blockly.Arduino.valueToCode(block, 'mouth', Blockly.Arduino.ORDER_ATOMIC);
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
-	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
-  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
-	+ '#define CS_PIN A2\n'
-	+ '#define CLK_PIN A1\n'
-	+ '#define LED_DIRECTION 1';
-  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);';
-  var code = 'Otto.putMouth(' + valuemouth + ');';
-  return code;
-};
 
 Blockly.Arduino['otto9_eyes'] = function(block) {
   var dropdown_otto9_eyes_choice = block.getFieldValue('otto9_eyes_choice');
@@ -1220,7 +1261,8 @@ Blockly.Arduino['otto9_eyes'] = function(block) {
   Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
   var code = ' matrix.clear();\n'
   +'matrix.drawBitmap(0, 0, + '+ dropdown_otto9_eyes_choice + ' , 8, 16, LED_ON);\n'
-  +'matrix.writeDisplay();\n';
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
   return code;
 };
 
@@ -1234,9 +1276,9 @@ Blockly.Arduino['otto9_eyesl'] = function(block) {
   +'#include "Adafruit_LEDBackpack.h"\n'
   +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
   Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = ' matrix.clear();\n'
-  +'matrix.drawLine('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
-  +'matrix.writeDisplay();\n';
+  var code = 'matrix.drawLine('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
   return code;
 };
 
@@ -1253,10 +1295,10 @@ Blockly.Arduino['otto9_eyesr'] = function(block) {
   +'#include "Adafruit_LEDBackpack.h"\n'
   +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
   Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = ' matrix.clear();\n'
-  +'matrix.drawRect('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
+  var code = 'matrix.drawRect('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
   +'matrix.fillRect('+ valuefx1 +','+valuefy1+','+ valuefx2 +','+ valuefy2 +', LED_ON);\n'
-  +'matrix.writeDisplay();\n';
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
   return code;
 };
 
@@ -1268,9 +1310,9 @@ Blockly.Arduino['otto9_eyesc'] = function(block) {
   +'#include "Adafruit_LEDBackpack.h"\n'
   +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
   Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = ' matrix.clear();\n'
-  +'matrix.drawCircle('+ valuex +','+valuey+','+ valuer +', LED_ON);\n'
-  +'matrix.writeDisplay();\n';
+  var code = 'matrix.drawCircle('+ valuex +','+valuey+','+ valuer +', LED_ON);\n'
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
   return code;
 };
 
@@ -1291,6 +1333,47 @@ Blockly.Arduino['otto9_eyes_text'] = function(block) {
   +'matrix.writeDisplay();\n'
   +'delay(100);}\n'
   +'matrix.setRotation(0);\n'
+  return code;
+};
+
+Blockly.Arduino['otto9_eyes#'] = function(block) {
+  var valueeyes = Blockly.Arduino.valueToCode(block, 'eyes', Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
+  +'#include "Adafruit_LEDBackpack.h"\n'
+  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
+  var code = 'matrix.setTextSize(1);\n'
+  +'matrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely\n'
+  +'matrix.setTextColor(LED_ON);\n'
+  +'matrix.setRotation(1);\n'
+  +'matrix.clear();\n'
+  +'matrix.setCursor(0,0);\n'
+  +'matrix.print(' + valueeyes +');\n'
+  +'matrix.writeDisplay();\n'
+  +'delay(100);\n'
+  +'matrix.setRotation(0);\n'
+  return code;
+};
+
+Blockly.Arduino['otto9_eyesp'] = function(block) {
+  var valuex = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var valuey = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
+  +'#include "Adafruit_LEDBackpack.h"\n'
+  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
+  var code = 'matrix.drawPixel('+ valuex +','+valuey+', LED_ON);\n'
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
+  return code;
+};
+
+Blockly.Arduino['otto9_eyes_clear'] = function(block) {
+  Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
+  +'#include "Adafruit_LEDBackpack.h"\n'
+  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
+  var code = ' matrix.clear();\n';
   return code;
 };
 
@@ -1335,7 +1418,8 @@ Blockly.Arduino['otto9_eyesm'] = function(block) {
   code += '};\n'
   +'matrix.clear();\n'
   +'matrix.drawBitmap(0, 0,eyesm_bmp, 8, 16, LED_ON);\n'
-  +'matrix.writeDisplay();\n';
+  +'matrix.writeDisplay();\n'
+  +'delay(300);\n';
   return code;
 };
 
@@ -1359,10 +1443,8 @@ Blockly.Arduino['otto9_matrix'] = function(block) {
   return code;
   
 };
-
-Blockly.Arduino['otto9_matrixp'] = function(block) {
-  var valuex = block.getFieldValue('X');
-  var valuey = block.getFieldValue('Y');
+Blockly.Arduino['otto9_mouth'] = function(block) {
+  var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
   Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
@@ -1370,9 +1452,22 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
 	+ '#define LED_DIRECTION 1';
-  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);'
-  var code = 'Otto.setLed('+valuex+','+valuey+',1);\n';
-    return code;
+  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);';
+  var code = 'Otto.putMouth(' + dropdown_otto9_mouth_choice + ');\n';
+  return code;
+};
+
+Blockly.Arduino['otto9_mouth#'] = function(block) {
+  var valuemouth = Blockly.Arduino.valueToCode(block, 'mouth', Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
+	+ 'Otto9Humanoid Otto;';
+  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
+	+ '#define CS_PIN A2\n'
+	+ '#define CLK_PIN A1\n'
+	+ '#define LED_DIRECTION 1';
+  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);';
+  var code = 'Otto.writeText ( '+ '"' + valuemouth +'"' +',100); //  MAX.9 characters \n';
+  return code;
 };
 
 Blockly.Arduino['otto9_matrix_text'] = function(block) {
@@ -1388,6 +1483,20 @@ Blockly.Arduino['otto9_matrix_text'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['otto9_matrixp'] = function(block) {
+  var valuex = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var valuey = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
+	+ 'Otto9Humanoid Otto;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
+  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
+	+ '#define CS_PIN A2\n'
+	+ '#define CLK_PIN A1\n'
+	+ '#define LED_DIRECTION 1';
+  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);'
+  var code = 'Otto.setLed('+valuex+','+valuey+',1);\n';
+    return code;
+};
 
 Blockly.Arduino['otto9_clear'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'

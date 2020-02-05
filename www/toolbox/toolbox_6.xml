@@ -26,18 +26,29 @@
 			</value></block>
 	</category>
 	<category name="CAT_LOGIC" colour="#ffb400">
-		<block type="controls_if">
-			<mutation else="1"></mutation>
+		<block type="controls_if"></block>
+		<block type="controls_repeat_ext">
+		<value name="TIMES">
+				<shadow type="math_number">
+					<field name="NUM">2</field>
+				</shadow>
+			</value>
 		</block>
-		 <block type="controls_repeat_ext"></block>
 	</category>
     <category name="CAT_MATH" colour="#008000">
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
-        <block type="logic_compare"></block>
+        <block type="logic_compare">
+				<value name="B">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+			</block>
     </category>
 	<category name="CAT_ultrason" colour="#2a93e8">
-		<block type="otto9_getdistance"></block>
+			<block type="otto9_obstacle"></block>
+			<block type="otto9_getdistance"></block>
 	</category>
 	<category name="CAT_servo" colour="#2d2dd1">	
 			<block type="servo_move">
