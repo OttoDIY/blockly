@@ -4,7 +4,8 @@ var Code = {};
 Code.LANGUAGE_NAME = {
 	'fr': 'Français',
 	'en': 'English',
-	'es': 'Español'
+  'es': 'Español',
+  'cz': 'Czech'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {
