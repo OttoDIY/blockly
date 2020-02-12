@@ -1,8 +1,8 @@
 {
- "name": "Blocklino",
- "version": "1.5.0",
- "description": "environnement de développement pour langage graphique",
- "author": "Fontaine Jean Philippe",
+ "name": "OttoBlockly",
+ "version": "1.0.0",
+ "description": "Blockly and Arduino for Otto DIY robot",
+ "author": "Otto DIY and community",
  "license": "CC0-1.0",
  "main": "electronApp.js",
  "keywords": [
@@ -16,6 +16,7 @@
   "ESP8266",
   "electron",
   "ELECTRON",
+  "OttoDIY",
   "serialport",
   "SERIALPORT",
   "electron-builder",
@@ -81,18 +82,18 @@
   "publish": [
    {
     "provider": "github",
-    "repo": "blocklino",
-    "owner": "fontainejp",
+    "repo": "blockly",
+    "owner": "OttoDIY",
     "releaseType": "release"
    }
   ]
  },
  "repository": {
   "type": "git",
-  "url": "https://github.com/fontainejp/blocklino"
+  "url": "https://github.com/OttoDIY/blockly"
  },
  "bugs": {
-  "url": "https://github.com/fontainejp/blocklino/issues"
+  "url": "https://github.com/OttoDIY/blockly/issues"
  },
  "devDependencies": {
   "electron": "4.1.1",
