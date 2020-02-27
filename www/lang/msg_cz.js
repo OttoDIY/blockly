@@ -20,7 +20,7 @@ var MSG = {
   btn_redo: "Předělat (ctrl + y)",
   btn_search: "Vyhledávání",
   span_update: "Zkontrolujte aktualizace při spuštění",
-  span_blocklino: "OttoBlockly",
+  span_blocklino: " Otto Blockly",
   span_verify_update: "Zkontroluj to teď",
   span_site: " Website",
   span_forum: "Fórum",
