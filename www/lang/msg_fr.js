@@ -20,7 +20,7 @@ var MSG = {
   btn_redo: " Rétablir ",
   btn_search: " Rechercher ",
   span_update:" Rechercher les mises à jour au démarrage ",
-  span_blocklino:" BLOCKLINO ",
+  span_blocklino:" Otto Blockly",
   span_verify_update:" Vérifier maintenant ",
   span_site:" Le site ",
   span_forum:" Le Forum ",

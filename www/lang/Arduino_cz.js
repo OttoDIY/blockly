@@ -260,7 +260,6 @@ Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "line 3 =";
 Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) ="
 Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
 Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) ="
-
 // LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "the LED on the board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";

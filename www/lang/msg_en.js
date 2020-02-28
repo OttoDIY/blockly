@@ -20,7 +20,7 @@ var MSG = {
   btn_redo: "Redo (ctrl + y)",
   btn_search: "Search",
   span_update: "Check for startup updates",
-  span_blocklino: "OttoBlockly",
+  span_blocklino: " Otto Blockly",
   span_verify_update: "Check now",
   span_site: " Website",
   span_forum: " Forum",

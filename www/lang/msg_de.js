@@ -52,3 +52,4 @@ var MSG = {
   aboutBody: "Dies ist eine freie open source visuelle Programmiersprache die auf Googles blockly basiert. Arduino codes werden durch die Kombination von Blöcken erstellt und kompiliert (Check). Danach wird alles auf das Arduino Bord geladen und steuert deinen Otto Roboter. Die Übersetzung ins deutsche entstand im Rahmen des Jugend Hackt Projektes für das Fablab Cottbus.",
   nanoWarning: "Wenn du Probleme hast deinen Code auf dein Board zu übertragen, dann versuche eine andere Version (Regular / Old bootloader / Every), je nachdem was du verwendest."
 };
+

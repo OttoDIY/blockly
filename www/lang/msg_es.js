@@ -20,7 +20,7 @@ var MSG = {
   btn_redo: "Rehacer (ctrl + y)",
   btn_search: "Buscar",
   span_update: "Buscar actualizaciones de inicio",
-  span_blocklino: "OttoBlockly",
+  span_blocklino: " Otto Blockly",
   span_verify_update: "Verificar ahora",
   span_site: " Sitio web",
   span_forum: " Foro",
