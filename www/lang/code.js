@@ -3,7 +3,8 @@
 var Code = {};
 Code.LANGUAGE_NAME = {
 	'fr': 'Français',
-	'en': 'English',
+  'en': 'English',
+  'de': 'Deutsch',
   'es': 'Español',
   'cz': 'Czech'
 };
