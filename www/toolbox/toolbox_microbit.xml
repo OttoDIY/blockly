@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolbox>
+	<parametre id="defaultCategories">CAT_OTTO,CAT_OTTOH, CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_list,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_IN,CAT_ARDUINO_TIME,CAT_del,CAT_ultrason,CAT_com</parametre>
+	<category name="CAT_ARDUINO" colour="#2d2d64">
+		<block type="base_begin"></block>
+		<block type="base_end"></block>
+		<block type="base_loop"></block>
+		<block type="base_setup_loop"></block>
+		<block type="base_define"></block>
+		<block type="base_code"></block>
+		<block type="base_code_entree"></block>
+	</category>
+	<category name="CAT_OTTO" colour="#32D900">
+		<block type="otto9_home"></block>
+		<block type="otto9_calibration"></block>
+		<block type="otto9_eeprom"></block>
+		<block type="otto9_move"></block>
+		<block type="otto9_dance"></block>
+		<block type="otto9_do"></block>
+		<block type="otto9_sound"></block>
+		<block type="otto9_gesture"></block>
+	</category>
+	<category name="CAT_OTTOH" colour="#747F8A">
+			<block type="otto9_homeh"></block>
+			<block type="otto9_calibrationh"></block>	
+			<block type="otto9_eeprom"></block>
+			<block type="otto9_moveh"></block>
+			<block type="otto9_danceh"></block>
+			<block type="otto9_doh"></block>
+			<block type="otto9_soundh"></block>
+			<block type="otto9_gestureh"></block>
+			<block type="otto9_arms"></block>
+	</category>
+	<category name="CAT_ARDUINO_IN" colour="#00929f">
+		<block type="io_readDigitalPin"></block>
+		<block type="io_writeDigitalPin"></block>
+		<block type="io_readAnalogPin"></block>
+		<block type="io_writeAnalogPin"></block>
+	</category>	
+	<category name="CAT_ARDUINO_TIME" colour="#00929f">	
+		<block type="base_delay"></block>
+		<block type="millis_start"></block>	
+		<block type="millis"></block>
+	</category>
+	<category name="CAT_LOGIC" colour="#ffb400">
+		<block type="controls_if"></block>
+        <block type="controls_repeat_ext"></block>
+        <block type="controls_whileUntil"></block>
+        <block type="controls_flow_statements"></block>
+		<block type="inout_onoff"></block>
+        <block type="logic_operation"></block>
+		<block type="controls_for"></block>
+		<block type="controls_forEach"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_null"></block>
+	</category>
+    <category name="CAT_MATH" colour="#008000">
+        <block type="math_number"></block>
+		<block type="inout_angle_maths"></block>
+        <block type="logic_compare"></block>
+        <block type="math_arithmetic"></block>
+		<block type="intervalle"></block>
+        <block type="math_single"></block>
+        <block type="math_round"></block>
+        <block type="math_trig"></block>
+        <block type="math_constant"></block>
+        <block type="math_number_property"></block>
+        <block type="math_modulo"></block>
+		<block type="math_random_int"></block>
+    </category>
+	<category name="CAT_list" colour="#804000">
+		<block type="list_create"></block>
+		<block type="array_create_with"></block>
+		<block type="list_set"></block>
+		<block type="list_get"></block>
+		<block type="list_append"></block>
+		<block type="list_size"></block>
+    </category>
+	 <category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
+    <category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
+		<category name="CAT_ultrason" colour="#2a93e8">
+		<block type="io_isButtonPressed"></block>
+		<block type="sensors_getAcceleration"></block>
+		<block type="sensors_calibrate"></block>
+		<block type="sensors_getMagneticForce"></block>
+		<block type="sensors_getLight"></block>
+		<block type="sensors_getTemperature"></block>
+	</category>
+	<category name="CAT_del" colour="#4b009f">
+		<block type="init_leds"></block>
+		<block type="show_leds"></block>
+		<block type="show_string"></block>
+		<block type="show_icon"></block>
+		<block type="set_pixel"></block>
+		<block type="clear"></block>
+	</category>
+	<category name="CAT_com"  colour="#006000">
+		<block type="radioSendString"></block>
+		<block type="onRadioDataReceive"></block>
+	</category>
+ 	<category name="CAT_TEXT" colour="#FD6C9E">
+		<block type="text"></block>
+		<block type="text_char"></block>
+		<block type="text_join"></block>
+        <block type="text_length"></block>
+        <block type="text_isEmpty"></block>
+    </category>
+</toolbox>

@@ -1,0 +1,19 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_6</toolbox>
+  <block type="base_setup_loop" id="Q)pa6%kQX/l;F0=Y5$B6" x="142" y="119">
+    <statement name="DO">
+      <block type="otto9_calibration" id="(P7vSB0R-13-6.zgJOSA">
+        <field name="LL">0</field>
+        <field name="RL">0</field>
+        <field name="LF">0</field>
+        <field name="RF">0</field>
+        <next>
+          <block type="otto9_eeprom" id="7eN!9AV#x9}*R5oTi$mA" disabled="true"></block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto9_home" id="{O.$.e?Kh)3}*b|N*B+n"></block>
+    </statement>
+  </block>
+</xml>
