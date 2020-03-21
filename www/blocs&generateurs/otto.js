@@ -883,11 +883,11 @@ Blockly.Arduino['otto9_move'] = function(block) {
 	case 'BACKWARD':
 		code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',-1); // BACKWARD\n';
 		break;
-	case 'RIGHT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1); // RIGHT\n';
-		break;
 	case 'LEFT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1); // LEFT\n';
+		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1); // LEFT\n';
+		break;
+	case 'RIGHT':
+		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1); // RIGHT\n';
 		break;
 	case 'BENDLEFT':
 		code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',1);\n';
@@ -1108,11 +1108,11 @@ Blockly.Arduino['otto9_moveh'] = function(block) {
 	case 'BACKWARD':
 		code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',-1); // BACKWARD\n';
 		break;
-	case 'RIGHT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1); // RIGHT\n';
-		break;
 	case 'LEFT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1); // LEFT\n';
+		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1); // LEFT\n';
+		break;
+	case 'RIGHT':
+		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1); // RIGHT\n';
 		break;
 	case 'BENDLEFT':
 		code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',1);\n';
