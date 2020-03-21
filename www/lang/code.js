@@ -7,6 +7,7 @@ Code.LANGUAGE_NAME = {
   'de': 'Deutsch',
   'es': 'Español',
   'cz': 'Czech',
+  'cn': '中文',
   'hu': 'Hungarian'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
