@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-- Otto DIY Humanoid APP Firmware version 9 (V9) with standard baudrate of 9600 for Bluetooth modules.
+//-- Otto DIY PLUS APP Firmware version 9 (V9) with standard baudrate of 9600 for Bluetooth modules.
 //-- This code will have all modes and functions therefore memory is almost full but ignore the alert it works perfectly.
 //-- Designed to work with the basic Otto or PLUS or Humanoid or other biped robots. some of these functions will need a good power source such as a LIPO battery.
 //-- Otto DIY invests time and resources providing open source code and hardware,  please support by purchasing kits from (https://www.ottodiy.com)
@@ -9,7 +9,11 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -- ADDED Progmem for MOUTHS and GESTURES: Paul Van De Veen October 2018
 // -- ADDED PIN definitions for ease of use: Jason Snow November 2018
-// -- ADDED Battery meassurementin in mode 3 Jason Snow August 2019
+// -- ADDED NEOPIXEL: Paul Van De Veen November 2018
+// -- ADDED Eye Matrix Progmem and control: Jason Snow November 2018
+// -- DELETED noise sense in mode 3 Jason Snow August 2019
+// -- REMOVED Eye Matrix Progmem and control: Jason Snow AUG 2019
+// -- ADDED Battery meassurement in mode 3 Jason Snow August 2019
 // -- ADDED TEXT display on matrix Jason Snow September 2019
 //-------------------------------------------------------------------------
 #include <EEPROM.h>
@@ -17,30 +21,23 @@
 #include <Adafruit_NeoPixel.h> // Library to manage the Neopixel RGB led
 #include <OttoSerialCommand.h> //-- Library to manage serial commands
 OttoSerialCommand SCmd;  // The SerialCommand object
-#include <Otto9Humanoid.h> //-- Otto Library version 9
-Otto9Humanoid Otto;  //This is Otto!
+#include <Otto9.h> //-- Otto Library version 9
+Otto9 Otto;  //This is Otto!
 //---------------------------------------------------------
-//-- First step: Configure the pins where the servos are attached
-/*
-         --------------- 
-        |     O   O     |
-        |---------------|
-RA 7==> |               | <== LA 6
-        |               |
-LR 3==> |               | <== LL 2
-         --------------- 
-            ||     ||
-            ||     ||
-FR 5==>   -----   ------  <== FL 4
-         |-----   ------|
+//-- Make sure the servos are in the right pin
+/*             -------- 
+              |  O  O  |
+              |--------|
+  RIGHT LEG 3 |        | LEFT LEG 2
+               -------- 
+               ||     ||
+RIGHT FOOT 5 |---     ---| LEFT FOOT 4     
 */
 // SERVO PINs //////////////////////////////////////////////////////////////////////////////
 #define PIN_YL 2 //servo[0]  left leg
 #define PIN_YR 3 //servo[1]  right leg
 #define PIN_RL 4 //servo[2]  left foot
 #define PIN_RR 5 //servo[3]  right foot
-#define PIN_LA 6 //servo[4]  Left arm if enabled
-#define PIN_RA 7 //servo[5]  Right arm if enabled
 // ULTRASONIC PINs /////////////////////////////////////////////////////////////////////////
 #define PIN_Trigger  8  //TRIGGER pin (8)
 #define PIN_Echo     9  //ECHO pin (9)
@@ -64,13 +61,13 @@ boolean enableRGB = false;    // SET TO FALSE IF NOT USING THIS OPTION
 #define NUMPIXELS       1   // There is only one Neopixel use in MY Otto, chnage for more than 1
 Adafruit_NeoPixel NeopixelLed = Adafruit_NeoPixel(NUMPIXELS, NeopixelRGB_PIN, NEO_RGB + NEO_KHZ800);
 // SERVO ASSEMBLY PIN   /////////////////////////////////////////////////////////////////////
-// to help assemble Otto's feet and legs - wire link between pin 10 and GND
+// to help assemble Otto's feet and legs - wire link between pin 7 and GND
 #define PIN_ASSEMBLY    10   //ASSEMBLY pin (10) LOW = assembly    HIGH  = normal operation
 ///////////////////////////////////////////////////////////////////
 //-- Global Variables -------------------------------------------//
 ///////////////////////////////////////////////////////////////////
 
-const char programID[] = "OttoHumanoid_V9"; //Each program will have a ID
+const char programID[] = "OttoPLUS_V9"; //Each program will have a ID
 const char message1[] = "I AM OTTO"; //9 characters MAXIMUM
 //-- Movement parameters
 int T = 1000;            //Initial duration of movement
@@ -83,11 +80,10 @@ volatile bool buttonPushed=false;  //Variable to remember when a button has been
 //--    * MODE = 0: Otto is awaiting
 //--    * MODE = 1: Dancing mode!
 //--    * MODE = 2: Obstacle detector mode
-//--    * MODE = 3: Battery chek mode for Otto with LED matrix mouth
+//--    * MODE = 3: Battery chek mode for Otto with LED matrix mouth OR use it for your own MODE
 //--    * MODE = 4: OttoPAD or any Teleoperation mode (listening SerialPort).
 //---------------------------------------------------------
 volatile int MODE = 0; //State of Otto in the principal state machine.
-
 unsigned long previousMillis = 0;
 int randomDance = 0;
 int randomSteps = 0;
@@ -104,7 +100,7 @@ unsigned long timerMillis = 0;
 void setup() {
   //Serial communication initialization
   Serial.begin(9600);
-  Otto.initHUMANOID(PIN_YL, PIN_YR, PIN_RL, PIN_RR, PIN_LA, PIN_RA, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo); //Set the servo pins and ultrasonic pins
+  Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo); //Set the servo pins and ultrasonic pins
   Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);   // set up Matrix display pins = DIN pin,CS pin, CLK pin, MATRIX orientation 
   Otto.matrixIntensity(1);// set up Matrix display intensity
   Otto.initBatLevel(PIN_Battery);// set up Battery percent read pin - MUST BE AN ANALOG PIN
@@ -130,7 +126,7 @@ void setup() {
   SCmd.addCommand("B", requestBattery);   // 3v7 lipo battery
   SCmd.addCommand("I", requestProgramId);
   SCmd.addCommand("J", requestMode);
-   SCmd.addCommand("P", requestRGB);
+  SCmd.addCommand("P", requestRGB);
   SCmd.addDefaultHandler(receiveStop);
   //Otto wake up!
   Otto.sing(S_connection);
@@ -146,7 +142,8 @@ void setup() {
   //Smile for a happy Otto :)
   Otto.putMouth(smile);
   Otto.sing(S_happy);
-  delay(200);
+  delay(1000);
+  Otto.putMouth(happyOpen);
   previousMillis = millis();
 // if Pin 10 is LOW then place OTTO's servos in home mode to enable easy assembly, 
 // when you have finished assembling Otto, remove the link between pin 10 and GND
@@ -155,22 +152,11 @@ void setup() {
     Otto.sing(S_happy_short);   // sing every 5 seconds so we know OTTO is still working
     delay(5000);
   }
-delay (4000);
-Otto.clearMouth();
-// test for matrix
- matrix = 0b000000000000000000000000000001;// set the variable to the first LED bottom RHS again
-  for (int i = 0; i < 30; i++) { // this FOR NEXT LOOP repeats the code following it 30 times
-      Otto.putMouth(matrix, false); // display the single LED
-      matrix = matrix << 1 ;// shift the single LED one to the left (to the next LED)
-      delay(250);// wait for 1/4 second, this is so that you can see the image on the Matrix 
-      Otto.clearMouth();// clear the Matrix display so that it is ready for the next image
-    }
-  delay(1000);// wait for 1 second, this is so that you can see the image on the Matrix for 1 second before repeating
-  Otto.clearMouth();  
+Otto.clearMouth();  
 // write a text string of no more than nine limited characters and scroll at a speed between 50 and 150 (FAST and SLOW)
- // limited characters are : CAPITALS A to Z   NUMBERS 0 to 9    'SPACE'  : ; < >  = @ 
+// limited characters are : CAPITALS A to Z   NUMBERS 0 to 9    'SPACE'  : ; < >  = @ 
 Otto.writeText (message1, 70);
-delay (2000);
+delay (4000);
 Otto.clearMouth();
 Otto.putMouth(smile);
 }
@@ -180,9 +166,8 @@ Otto.putMouth(smile);
 void loop() {
  if (Serial.available() > 0 && MODE != 4) {
     MODE=4;
-    Otto.putMouth(happyOpen);
   }
-   //Every 60 seconds check battery level
+  //Every 60 seconds check battery level
    if (BATTcheck == true) {
       if (millis() - timerMillis >= 60000) {
         OttoLowBatteryAlarm();
@@ -219,7 +204,7 @@ void loop() {
     //-- MODE 1 - Dance Mode!
     //---------------------------------------------------------
     case 1:
-      randomDance = random(5, 23); //5,20
+      randomDance = random(5, 21); //5,20
       if ((randomDance > 14) && (randomDance < 19)) {
         randomSteps = 1;
         T = 1600;
@@ -323,7 +308,6 @@ void loop() {
           break;
     }
     
-
 }  
 
 ///////////////////////////////////////////////////////////////////
@@ -371,13 +355,12 @@ void receiveLED() {
   sendFinalAck();
 }
 
-
 //-- Function to receive TRims commands
 void receiveTrims() {
   //sendAck & stop if necessary
   sendAck();
   Otto.home();
-  int trim_YL, trim_YR, trim_RL, trim_RR, trim_LA, trim_RA;
+  int trim_YL, trim_YR, trim_RL, trim_RR;
 
   //Definition of Servo Bluetooth command
   //C trim_YL trim_YR trim_RL trim_RR
@@ -396,18 +379,9 @@ void receiveTrims() {
   arg = SCmd.next();
   if (arg != NULL) trim_RL = atoi(arg);  // Converts a char string to an integer
   else error = true;
-  
-   arg = SCmd.next();
-  if (arg != NULL) trim_RR = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-  
- arg = SCmd.next();
-  if (arg != NULL) trim_LA = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-
 
   arg = SCmd.next();
-  if (arg != NULL) trim_RA = atoi(arg);  // Converts a char string to an integer
+  if (arg != NULL) trim_RR = atoi(arg);  // Converts a char string to an integer
   else error = true;
   if (error == true) {
     Otto.putMouth(xMouth);
@@ -415,7 +389,7 @@ void receiveTrims() {
     Otto.clearMouth();
 
   } else { //Save it on EEPROM
-    Otto.setTrims(trim_YL, trim_YR, trim_RL, trim_RR, trim_LA, trim_RA);
+    Otto.setTrims(trim_YL, trim_YR, trim_RL, trim_RR);
     Otto.saveTrimsOnEEPROM(); //Uncomment this only for one upload when you finaly set the trims.
   }
   sendFinalAck();
@@ -512,15 +486,6 @@ void move(int moveId) {
       break;
     case 20: //M 20 500 15
       Otto.ascendingTurn(1, T, moveSize);
-      break;
-    case 21: //M 21
-      Otto.handsup();
-      break;
-    case 22: //M 22 right arm
-      Otto.handwave(1);
-      break;
-    case 23: //M 23 left arm
-      Otto.handwave(-1);
       break;
     default:
       manualMode = true;
@@ -667,7 +632,6 @@ void receiveSing() {
   sendFinalAck();
 }
 
-//-- Function to receive Name command
 void receiveName() {
   //sendAck & stop if necessary
   sendAck();
@@ -698,7 +662,6 @@ void receiveName() {
   sendFinalAck();
 }
 
-
 //-- Function to send ultrasonic sensor measure (distance in "cm")
 void requestDistance() {
   Otto.home();  //stop if necessary
@@ -709,7 +672,6 @@ void requestDistance() {
   Serial.println(F("%%"));
   Serial.flush();
 }
-
 
 //-- Function to send battery voltage percent
 void requestBattery() {
@@ -805,7 +767,9 @@ void requestMode() {
   }
   sendFinalAck();
 }
- //-- Function to receive RGB colours.
+
+
+  //-- Function to receive RGB colours.
   void requestRGB(){
 
     sendAck();
