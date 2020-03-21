@@ -1461,12 +1461,16 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
   var valuemouth = Blockly.Arduino.valueToCode(block, 'mouth', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#"; ';
   Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
 	+ '#define LED_DIRECTION 1';
   Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);';
-  var code = 'Otto.writeText ( '+ '"' + valuemouth +'"' +',100); //  MAX.9 characters \n';
+  var code = 'itoa('+valuemouth+', data, 10);// convert integer into a string so we can display this on the matrix\n'
+  + 'Otto.clearMouth();\n'
+  + 'Otto.writeText (data,50); // show the data with a fast scroll \n'
+  + 'delay(500);';
   return code;
 };
 
