@@ -1426,7 +1426,8 @@ Blockly.Arduino['otto9_eyesm'] = function(block) {
 Blockly.Arduino['otto9_matrix'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
   Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
@@ -1447,7 +1448,8 @@ Blockly.Arduino['otto9_mouth'] = function(block) {
   var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
   Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
@@ -1461,7 +1463,8 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
   var valuemouth = Blockly.Arduino.valueToCode(block, 'mouth', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#"; ';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
   Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
@@ -1478,7 +1481,7 @@ Blockly.Arduino['otto9_matrix_text'] = function(block) {
   var text_input = block.getFieldValue('input');
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.definitions_['otto9_matrix__textdef'] = '#define DIN_PIN A3\n'
+  Blockly.Arduino.definitions_['otto9_matrix__def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
 	+ '#define LED_DIRECTION 1';
@@ -1492,7 +1495,8 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
   var valuey = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'unsigned long int matrix;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
   Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
@@ -1505,7 +1509,7 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
 Blockly.Arduino['otto9_clear'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
-  Blockly.Arduino.definitions_['otto9_matrix__textdef'] = '#define DIN_PIN A3\n'
+  Blockly.Arduino.definitions_['otto9_matrix__def'] = '#define DIN_PIN A3\n'
 	+ '#define CS_PIN A2\n'
 	+ '#define CLK_PIN A1\n'
 	+ '#define LED_DIRECTION 1';
