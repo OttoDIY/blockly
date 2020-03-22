@@ -119,7 +119,7 @@ window.addEventListener('load', function load(event) {
 	$('#btn_term').on('click', function(){
 		if (portserie.value=="com"){
 			$("#message").modal("show")
-			messageDiv.style.color = '#000000'
+			messageDiv.style.color = '#ff0000'
 			messageDiv.innerHTML = Blockly.Msg.com2 + quitDiv
 			return
 		}
@@ -181,6 +181,7 @@ window.addEventListener('load', function load(event) {
 		localStorage.setItem("verif",true)
 	})
 	$('#btn_flash').on('click', function(){
+		
 		var data = $('#pre_previewArduino').text()
 		var carte = localStorage.getItem('card')
 		var prog = profile[carte].prog
@@ -188,13 +189,43 @@ window.addEventListener('load', function load(event) {
 		var cpu = profile[carte].cpu
 		var com = portserie.value 
 		if ( com == "com" ){
-			messageDiv.style.color = '#000000'
+			messageDiv.style.color = '#ff0000'
 			messageDiv.innerHTML = Blockly.Msg.com2 + quitDiv
 			return
 		}
 		if ( localStorage.getItem('verif') == "false" ){
 			messageDiv.style.color = '#000000'
-			messageDiv.innerHTML = Blockly.Msg.verif + quitDiv
+			messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
+			fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
+				if (err) return console.log(err)
+			})
+			exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+				if (stderr) {
+					rech=RegExp('token')
+					if (rech.test(stderr)){
+						messageDiv.style.color = '#ff0000'
+						messageDiv.innerHTML = Blockly.Msg.error + quitDiv
+					} else {
+						messageDiv.style.color = '#ff0000'
+						messageDiv.innerHTML = err.toString() + quitDiv
+					}
+					return
+				}
+				messageDiv.style.color = '#009000'
+				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+			
+			messageDiv.style.color = '#000000'
+			messageDiv.innerHTML = Blockly.Msg.upload + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
+		
+			exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
+				if (err) {
+					messageDiv.style.color = '#ff0000'
+					messageDiv.innerHTML = err.toString() + quitDiv
+					return
+				}
+				uploadOK()
+			}) })
+			localStorage.setItem("verif",false)
 			return
 		}
 		messageDiv.style.color = '#000000'
