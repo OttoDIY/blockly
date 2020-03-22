@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_6</toolbox>
+  <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="Q)pa6%kQX/l;F0=Y5$B6" x="193" y="73">
     <statement name="DO">
       <block type="otto9_calibrationh" id="+mcL)h$rnA7c^Sf9t()6">
@@ -10,7 +10,9 @@
         <field name="LA">0</field>
         <field name="RA">0</field>
         <next>
-          <block type="otto9_eeprom" id="7eN!9AV#x9}*R5oTi$mA" disabled="true"></block>
+          <block type="otto9_eeprom" id="7eN!9AV#x9}*R5oTi$mA" disabled="true">
+            <comment pinned="true" h="97" w="527">ONLY after the robot looks straight you can activate this block, then disable or delete again for further programming, otherwise can leave permanent damage in the memory. BE CAREFUL</comment>
+          </block>
         </next>
       </block>
     </statement>
