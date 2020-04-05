@@ -2,13 +2,14 @@
 
 var Code = {};
 Code.LANGUAGE_NAME = {
-	'fr': 'Français',
+  'fr': 'Français',
   'en': 'English',
   'de': 'Deutsch',
   'es': 'Español',
   'cz': 'Czech',
   'cn': '中文',
-  'hu': 'Hungarian'
+  'hu': 'Hungarian',
+  'pt': 'Português'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {
