@@ -6,7 +6,9 @@ Code.LANGUAGE_NAME = {
   'en': 'English',
   'de': 'Deutsch',
   'es': 'Español',
+  'pt': 'Portuguese',
   'cz': 'Czech',
+  'tr': 'Turkish',
   'cn': '中文',
   'hu': 'Hungarian'
 };
