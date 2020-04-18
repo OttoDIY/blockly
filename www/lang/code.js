@@ -2,7 +2,7 @@
 
 var Code = {};
 Code.LANGUAGE_NAME = {
-	'fr': 'Français',
+  'fr': 'Français',
   'en': 'English',
   'de': 'Deutsch',
   'es': 'Español',
@@ -10,7 +10,8 @@ Code.LANGUAGE_NAME = {
   'cz': 'Czech',
   'tr': 'Turkish',
   'cn': '中文',
-  'hu': 'Hungarian'
+  'hu': 'Hungarian',
+  'pt': 'Português'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {
