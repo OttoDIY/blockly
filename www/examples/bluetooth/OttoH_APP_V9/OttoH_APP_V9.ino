@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-- Otto DIY APP Firmware version 9 (V09) with standard baudrate of 9600 for Bluetooth modules.
+//-- Otto DIY Humanoid APP Firmware version 9 (V9) with standard baudrate of 9600 for Bluetooth modules.
 //-- This code will have all modes and functions therefore memory is almost full but ignore the alert it works perfectly.
 //-- Designed to work with the basic Otto or PLUS or Humanoid or other biped robots. some of these functions will need a good power source such as a LIPO battery.
 //-- Otto DIY invests time and resources providing open source code and hardware,  please support by purchasing kits from (https://www.ottodiy.com)
@@ -9,34 +9,31 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -- ADDED Progmem for MOUTHS and GESTURES: Paul Van De Veen October 2018
 // -- ADDED PIN definitions for ease of use: Jason Snow November 2018
-// -- ADDED NEOPIXEL: Paul Van De Veen November 2018
-// -- ADDED Eye Matrix Progmem and control: Jason Snow November 2018
-// -- DELETED noise sense in mode 3 Jason Snow August 2019
-// -- REMOVED Eye Matrix Progmem and control: Jason Snow AUG 2019
 // -- ADDED Battery meassurementin in mode 3 Jason Snow August 2019
+// -- ADDED TEXT display on matrix Jason Snow September 2019
+// -- fixed typos  Camilo Parra May 2020
+// -- ADDED changed to original Software serial library Camilo Parra May 2020
+// -- DELETED interrupts and modes to use BTserial Camilo Parra May 2020
 //-------------------------------------------------------------------------
 #include <EEPROM.h>
-#include <EnableInterrupt.h>
-// Library to manage the Neopixel RGB led
-#include <Adafruit_NeoPixel.h>
-//-- Library to manage serial commands
-#include <OttoSerialCommand.h>
-OttoSerialCommand SCmd;  // The SerialCommand object
-//-- Otto Library version 9
-#include <Otto9.h>
-Otto9 Otto;  //This is Otto!
-
+#include <SerialCommand.h>//-- Library to manage serial commands
+SoftwareSerial BTserial = SoftwareSerial(11,12); //  TX  RX of the Bluetooth
+SerialCommand SCmd(BTserial);  //The SerialCommand object
+#include <Otto9Humanoid.h> //-- Otto Library version 9
+Otto9Humanoid Otto;  //This is Otto!
 //---------------------------------------------------------
 //-- First step: Configure the pins where the servos are attached
 /*
-         ---------------
+         --------------- 
         |     O   O     |
         |---------------|
-YR 3==> |               | <== YL 2
-         ---------------
+RA 7==> |               | <== LA 6
+        |               |
+LR 3==> |               | <== LL 2
+         --------------- 
             ||     ||
             ||     ||
-RR 5==>   -----   ------  <== RL 4
+FR 5==>   -----   ------  <== FL 4
          |-----   ------|
 */
 // SERVO PINs //////////////////////////////////////////////////////////////////////////////
@@ -44,6 +41,8 @@ RR 5==>   -----   ------  <== RL 4
 #define PIN_YR 3 //servo[1]  right leg
 #define PIN_RL 4 //servo[2]  left foot
 #define PIN_RR 5 //servo[3]  right foot
+#define PIN_LA 6 //servo[4]  Left arm if enabled
+#define PIN_RA 7 //servo[5]  Right arm if enabled
 // ULTRASONIC PINs /////////////////////////////////////////////////////////////////////////
 #define PIN_Trigger  8  //TRIGGER pin (8)
 #define PIN_Echo     9  //ECHO pin (9)
@@ -57,25 +56,19 @@ RR 5==>   -----   ------  <== RL 4
 #define CLK_PIN    A1   //CLK pin (A1)
 #define LED_DIRECTION  1// LED MATRIX CONNECTOR position (orientation) 1 = top 2 = bottom 3 = left 4 = right  DEFAULT = 1
 // BATTERY SENSE PIN //////////////////////////////////////////////////////////////////////////
-boolean BATTcheck = false;    // SET TO FALSE IF NOT USING THIS OPTION
+boolean BATTcheck = true;    // SET TO FALSE IF NOT USING THIS OPTION
 #define PIN_Battery   A7  //3v7 BATTERY MONITOR   ANALOG pin (A7)
 // TOUCH SENSOR or PUSH BUTTON /////////////////////////////////////////////////////////////////
 #define PIN_Button   A0 // TOUCH SENSOR Pin (A0) PULL DOWN RESISTOR MAYBE REQUIRED to stop false interrupts (interrupt PIN)
-// RGB NEOPIXEL LED PIN   /////////////////////////////////////////////////////////////////////
-boolean enableRGB = false;    // SET TO FALSE IF NOT USING THIS OPTION
-#define NeopixelRGB_PIN  12 // NEOPIXEL pin   DIGITAL PIN (12)
-#define NUMPIXELS       1   // There is only one Neopixel use in MY Otto, chnage for more than 1
-Adafruit_NeoPixel NeopixelLed = Adafruit_NeoPixel(NUMPIXELS, NeopixelRGB_PIN, NEO_RGB + NEO_KHZ800);
 // SERVO ASSEMBLY PIN   /////////////////////////////////////////////////////////////////////
-// to help assemble Otto's feet and legs - wire link between pin 7 and GND
-#define PIN_ASSEMBLY    7   //ASSEMBLY pin (7) LOW = assembly    HIGH  = normal operation
+// to help assemble Otto's feet and legs - wire link between pin 10 and GND
+#define PIN_ASSEMBLY    10   //ASSEMBLY pin (10) LOW = assembly    HIGH  = normal operation
 ///////////////////////////////////////////////////////////////////
 //-- Global Variables -------------------------------------------//
 ///////////////////////////////////////////////////////////////////
 
-const char programID[] = "Otto_BIPED9"; //Each program will have a ID
-const char name_fac = '$'; //Factory name
-const char name_fir = '#'; //First name
+const char programID[] = "OttoHumanoid_V9"; //Each program will have a ID
+const char message1[] = "I AM OTTO"; //9 characters MAXIMUM
 //-- Movement parameters
 int T = 1000;            //Initial duration of movement
 int moveId = 0;          //Number of movement
@@ -83,21 +76,11 @@ int modeId = 0;          //Number of mode
 int moveSize = 15;       //Asociated with the height of some movements
 volatile bool buttonPushed=false;  //Variable to remember when a button has been pushed
 //---------------------------------------------------------
-//-- Otto has 5 modes:
-//--    * MODE = 0: Otto is awaiting
-//--    * MODE = 1: Dancing mode!
-//--    * MODE = 2: Obstacle detector mode
-//--    * MODE = 3: Battery chek mode for Otto with LED matrix mouth
-//--    * MODE = 4: OttoPAD or any Teleoperation mode (listening SerialPort).
-//---------------------------------------------------------
-volatile int MODE = 0; //State of Otto in the principal state machine.
 unsigned long previousMillis = 0;
 int randomDance = 0;
 int randomSteps = 0;
 bool obstacleDetected = false;
-int REDled = 0;
-int GREENled = 0;
-int BLUEled = 0;
+
 double batteryCHECK = 0;
 unsigned long int matrix;
 unsigned long timerMillis = 0;
@@ -107,37 +90,26 @@ unsigned long timerMillis = 0;
 void setup() {
   //Serial communication initialization
   Serial.begin(9600);
-  Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo); //Set the servo pins and ultrasonic pins
+  BTserial.begin(9600);  
+  Otto.initHUMANOID(PIN_YL, PIN_YR, PIN_RL, PIN_RR, PIN_LA, PIN_RA, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo); //Set the servo pins and ultrasonic pins
   Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);   // set up Matrix display pins = DIN pin,CS pin, CLK pin, MATRIX orientation 
   Otto.matrixIntensity(1);// set up Matrix display intensity
   Otto.initBatLevel(PIN_Battery);// set up Battery percent read pin - MUST BE AN ANALOG PIN
   randomSeed(analogRead(PIN_NoiseSensor));   //Set a random seed
   pinMode(PIN_ASSEMBLY,INPUT_PULLUP); // - Easy assembly pin - LOW is assembly Mode
   pinMode(PIN_Button,INPUT); // - ensure pull-down resistors are used
-  //Interrupts
-  enableInterrupt(PIN_Button, ButtonPushed, RISING);
-  if (enableRGB == true) {  // ONLY IF RGB NEOPIXEL OPTION IS SELECTED
-  NeopixelLed.begin();
-  NeopixelLed.show(); // Initialize all pixels to 'off'
-  NeopixelLed.setBrightness(64); // Op Brightness 
-  }
   //Setup callbacks for SerialCommand commands
   SCmd.addCommand("S", receiveStop);      //  sendAck & sendFinalAck
   SCmd.addCommand("L", receiveLED);       //  sendAck & sendFinalAck
-  SCmd.addCommand("T", recieveBuzzer);    //  sendAck & sendFinalAck
   SCmd.addCommand("M", receiveMovement);  //  sendAck & sendFinalAck
   SCmd.addCommand("H", receiveGesture);   //  sendAck & sendFinalAck
   SCmd.addCommand("K", receiveSing);      //  sendAck & sendFinalAck
   SCmd.addCommand("C", receiveTrims);     //  sendAck & sendFinalAck
-  SCmd.addCommand("G", receiveServo);     //  sendAck & sendFinalAck
   SCmd.addCommand("R", receiveName);      //  sendAck & sendFinalAck
-  SCmd.addCommand("E", requestName);
   SCmd.addCommand("D", requestDistance);
-  SCmd.addCommand("N", requestNoise);
   SCmd.addCommand("B", requestBattery);   // 3v7 lipo battery
   SCmd.addCommand("I", requestProgramId);
   SCmd.addCommand("J", requestMode);
-  SCmd.addCommand("P", requestRGB);
   SCmd.addDefaultHandler(receiveStop);
   //Otto wake up!
   Otto.sing(S_connection);
@@ -154,165 +126,42 @@ void setup() {
   Otto.putMouth(smile);
   Otto.sing(S_happy);
   delay(200);
-
-  //If Otto's name is '#' means that Otto hasn't been baptized
-  //In this case, Otto does a longer greeting
-  //5 = EEPROM address that contains first name character
-  if (EEPROM.read(5) == name_fir) {
-    Otto.jump(1, 700);
-    delay(200);
-    Otto.shakeLeg(1, T, 1);
-    Otto.putMouth(smallSurprise);
-    Otto.swing(2, 800, 20);
-    Otto.home();
-  }
-
-  Otto.putMouth(happyOpen);
   previousMillis = millis();
-// if Pin 7 is LOW then place OTTO's servos in home mode to enable easy assembly, 
-// when you have finished assembling Otto, remove the link between pin 7 and GND
+// if Pin 10 is LOW then place OTTO's servos in home mode to enable easy assembly, 
+// when you have finished assembling Otto, remove the link between pin 10 and GND
   while (digitalRead(PIN_ASSEMBLY) == LOW) {
     Otto.home();
     Otto.sing(S_happy_short);   // sing every 5 seconds so we know OTTO is still working
-    delay(5000);
+    delay(500);
   }
-
+delay (500);
+Otto.clearMouth();
+// test for matrix
+ matrix = 0b000000000000000000000000000001;// set the variable to the first LED bottom RHS again
+  for (int i = 0; i < 30; i++) { // this FOR NEXT LOOP repeats the code following it 30 times
+      Otto.putMouth(matrix, false); // display the single LED
+      matrix = matrix << 1 ;// shift the single LED one to the left (to the next LED)
+      delay(100);// wait for 1/4 second, this is so that you can see the image on the Matrix 
+      Otto.clearMouth();// clear the Matrix display so that it is ready for the next image
+    }
+  delay(300);// wait for 1 second, this is so that you can see the image on the Matrix for 1 second before repeating
+  Otto.clearMouth();  
+// write a text string of no more than nine limited characters and scroll at a speed between 50 and 150 (FAST and SLOW)
+ // limited characters are : CAPITALS A to Z   NUMBERS 0 to 9    'SPACE'  : ; < >  = @ 
+Otto.writeText (message1, 20);
+delay (300);
+Otto.clearMouth();
+Otto.putMouth(smile);
 }
 ///////////////////////////////////////////////////////////////////
 //-- Principal Loop ---------------------------------------------//
 ///////////////////////////////////////////////////////////////////
 void loop() {
-  if (Serial.available() > 0 && MODE != 4) {
-    // test
-    //Disable Pin Interruptions
-    disableInterrupt(PIN_Button);
-    SCmd.readSerial();
-    MODE=4;
-    Otto.putMouth(happyOpen);
-  }
-  //Every 60 seconds check battery level
-   if (BATTcheck == true) {
-      if (millis() - timerMillis >= 60000) {
-        OttoLowBatteryAlarm();
-        timerMillis = millis();
-      }
-   }
-  // interrupt code, here we do something if TOUCH sensor or BUTTON pressed
-  if (buttonPushed){ 
-    MODE = MODE +1; 
-    if (MODE == 4) MODE = 0;
-    Otto.sing(S_mode1);
-    if (MODE == 0) Otto.putMouth(zero);
-    if (MODE == 1) Otto.putMouth(one);
-    if (MODE == 2) Otto.putMouth(two);
-    if (MODE == 3) Otto.putMouth(three);
-    delay(500);
-    Otto.putMouth(happyOpen);
-    buttonPushed = false;
-  }
-  switch (MODE) {
-
-    //-- MODE 0 - Otto is awaiting
-    //---------------------------------------------------------
-    case 0:
-      //Every 80 seconds in this mode, Otto falls asleep
-      if (millis() - previousMillis >= 80000) {
-        OttoSleeping_withInterrupts(); //ZZzzzzz...
-        previousMillis = millis();
-      }
-
-      break;
-
-    //-- MODE 1 - Dance Mode!
-    //---------------------------------------------------------
-    case 1:
-      randomDance = random(5, 21); //5,20
-      if ((randomDance > 14) && (randomDance < 19)) {
-        randomSteps = 1;
-        T = 1600;
-      }
-      else {
-        randomSteps = random(3, 6); //3,5
-        T = 1000;
-      }
-
-      Otto.putMouth(random(10, 21));
-      for (int i = 0; i < randomSteps; i++) move(randomDance);
-      break;
-
-    //-- MODE 2 - Obstacle detector mode
-    //---------------------------------------------------------
-    case 2:
-      if (obstacleDetected) {
-        Otto.putMouth(bigSurprise);
-        Otto.sing(S_surprise);
-        Otto.jump(5, 500);
-        Otto.putMouth(confused);
-        Otto.sing(S_cuddly);
-        //Otto takes two steps back
-        for (int i = 0; i < 3; i++) Otto.walk(1, 1300, -1);
-        delay(100);
-        obstacleDetector();
-        delay(100);
-        //If there are no obstacles and no button is pressed, Otto shows a smile
-        if (obstacleDetected == true) break;
-        else {
-          Otto.putMouth(smile);
-          delay(50);
-          obstacleDetector();
-        }
-
-        //If there are no obstacles and no button is pressed, Otto shows turns left
-        for (int i = 0; i < 3; i++) {
-          if (obstacleDetected == true) break;
-          else {
-            Otto.turn(1, 1000, 1);
-            obstacleDetector();
-          }
-        }
-
-        //If there are no obstacles and no button is pressed, Otto is happy
-        if (obstacleDetected == true) break;
-        else {
-          Otto.home();
-          Otto.putMouth(happyOpen);
-          Otto.sing(S_happy_short);
-          delay(200);
-        }
-      }
-      else {
-        Otto.walk(1, 1000, 1); //Otto walk straight
-        obstacleDetector();
-      }
-      break;
-
-    //-- MODE 3 - Noise detector mode
-    //---------------------------------------------------------
-    case 3:
-    
-      if (Otto.getNoise() >= 500) {
-       delay(50);  //Wait for the possible 'lag' of the button interruptions. 
-                      //Sometimes, the noise sensor detect the button before the interruption takes efect 
-            Otto.walk(1);
-            randomDance=random(5,21);
-            move(randomDance);
-            delay(500); //Wait for possible noise of the servos while get home
-            }
-      break;
-
-    //-- MODE 4 - OttoPAD or any Teleoperation mode (listening SerialPort)
-    //---------------------------------------------------------
-    case 4:
-      SCmd.readSerial();
-      //If Otto is moving yet
-      if (Otto.getRestState() == false) move(moveId);
-      break;
-    default:
-          MODE=0;
-          break;
+        SCmd.readSerial();    //If Otto is moving yet
+        if (Otto.getRestState()==false){  
+          move(moveId);
+        }  
     }
-    
-}  
 
 ///////////////////////////////////////////////////////////////////
 //-- Functions --------------------------------------------------//
@@ -359,39 +208,13 @@ void receiveLED() {
   sendFinalAck();
 }
 
-//-- Function to receive buzzer commands
-void recieveBuzzer() {
-  //sendAck & stop if necessary
-  sendAck();
-  Otto.home();
-
-  bool error = false;
-  int frec;
-  int duration;
-  char *arg;
-
-  arg = SCmd.next();
-  if (arg != NULL) frec = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-
-  arg = SCmd.next();
-  if (arg != NULL) duration = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-  if (error == true) {
-    Otto.putMouth(xMouth);
-    delay(2000);
-    Otto.clearMouth();
-  }
-  else Otto._tone(frec, duration, 1);
-  sendFinalAck();
-}
 
 //-- Function to receive TRims commands
 void receiveTrims() {
   //sendAck & stop if necessary
   sendAck();
   Otto.home();
-  int trim_YL, trim_YR, trim_RL, trim_RR;
+  int trim_YL, trim_YR, trim_RL, trim_RR, trim_LA, trim_RA;
 
   //Definition of Servo Bluetooth command
   //C trim_YL trim_YR trim_RL trim_RR
@@ -410,9 +233,18 @@ void receiveTrims() {
   arg = SCmd.next();
   if (arg != NULL) trim_RL = atoi(arg);  // Converts a char string to an integer
   else error = true;
+  
+   arg = SCmd.next();
+  if (arg != NULL) trim_RR = atoi(arg);  // Converts a char string to an integer
+  else error = true;
+  
+ arg = SCmd.next();
+  if (arg != NULL) trim_LA = atoi(arg);  // Converts a char string to an integer
+  else error = true;
+
 
   arg = SCmd.next();
-  if (arg != NULL) trim_RR = atoi(arg);  // Converts a char string to an integer
+  if (arg != NULL) trim_RA = atoi(arg);  // Converts a char string to an integer
   else error = true;
   if (error == true) {
     Otto.putMouth(xMouth);
@@ -420,50 +252,8 @@ void receiveTrims() {
     Otto.clearMouth();
 
   } else { //Save it on EEPROM
-    Otto.setTrims(trim_YL, trim_YR, trim_RL, trim_RR);
+    Otto.setTrims(trim_YL, trim_YR, trim_RL, trim_RR, trim_LA, trim_RA);
     Otto.saveTrimsOnEEPROM(); //Uncomment this only for one upload when you finaly set the trims.
-  }
-  sendFinalAck();
-}
-
-//-- Function to receive Servo commands
-void receiveServo() {
-  sendAck();
-  moveId = 30;
-
-  //Definition of Servo Bluetooth command
-  //G  servo_YL servo_YR servo_RL servo_RR
-  //Example of receiveServo Bluetooth commands
-  //G 90 85 96 78
-  bool error = false;
-  char *arg;
-  int servo_YL, servo_YR, servo_RL, servo_RR;
-
-  arg = SCmd.next();
-  if (arg != NULL) servo_YL = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-
-  arg = SCmd.next();
-  if (arg != NULL) servo_YR = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-
-  arg = SCmd.next();
-  if (arg != NULL) servo_RL = atoi(arg);  // Converts a char string to an integer
-  else error = true;
-
-  arg = SCmd.next();
-  if (arg != NULL) {
-    servo_RR = atoi(arg);  // Converts a char string to an integer
-  }
-  else error = true;
-  if (error == true) {
-    Otto.putMouth(xMouth);
-    delay(2000);
-    Otto.clearMouth();
-  }
-  else { //Update Servo:
-    int servoPos[4] = {servo_YL, servo_YR, servo_RL, servo_RR};
-    Otto._moveServos(200, servoPos);   //Move 200ms
   }
   sendFinalAck();
 }
@@ -559,6 +349,15 @@ void move(int moveId) {
       break;
     case 20: //M 20 500 15
       Otto.ascendingTurn(1, T, moveSize);
+      break;
+    case 21: //M 21
+      Otto.handsup();
+      break;
+    case 22: //M 22 right arm
+      Otto.handwave(1);
+      break;
+    case 23: //M 23 left arm
+      Otto.handwave(-1);
       break;
     default:
       manualMode = true;
@@ -710,42 +509,32 @@ void receiveName() {
   //sendAck & stop if necessary
   sendAck();
   Otto.home();
-  char newOttoName[11] = "";  //Variable to store data read from Serial.
-  int eeAddress = 5;          //Location we want the data to be in EEPROM.
+  char newOttoName[9] = "";  //Variable to store data read from Serial.
   char *arg;
   arg = SCmd.next();
   if (arg != NULL) {
     //Complete newOttoName char string
     int k = 0;
-    while ((*arg) && (k < 11)) {
+    while ((*arg) && (k < 9)) {
       newOttoName[k] = *arg++;
       k++;
     }
-    EEPROM.put(eeAddress, newOttoName);
+    // write a text string of no more than nine limited characters and scroll at a speed between 50 and 150 (FAST and SLOW)
+    // limited characters are : CAPITALS A to Z   NUMBERS 0 to 9    'SPACE'  : ; < >  = @ 
+    Otto.clearMouth();
+    Otto.writeText (newOttoName, 75);
+    delay (1000);
+    Otto.clearMouth();
   }
   else
   {
-    //Otto.putMouth(xMouth);
+    Otto.putMouth(xMouth);
     delay(2000);
-    //Otto.clearMouth();
+    Otto.clearMouth();
   }
   sendFinalAck();
 }
 
-//-- Function to send Otto's name
-void requestName() {
-  Otto.home(); //stop if necessary
-  char actualOttoName[11] = ""; //Variable to store data read from EEPROM.
-  int eeAddress = 5;            //EEPROM address to start reading from
-  //Get the float data from the EEPROM at position 'eeAddress'
-  EEPROM.get(eeAddress, actualOttoName);
-
-  Serial.print(F("&&"));
-  Serial.print(F("E "));
-  Serial.print(actualOttoName);
-  Serial.println(F("%%"));
-  Serial.flush();
-}
 
 //-- Function to send ultrasonic sensor measure (distance in "cm")
 void requestDistance() {
@@ -758,16 +547,6 @@ void requestDistance() {
   Serial.flush();
 }
 
-//-- Function to send noise sensor measure
-void requestNoise() {
-  Otto.home();  //stop if necessary
-  int microphone = Otto.getNoise(); //analogRead(PIN_NoiseSensor);
-  Serial.print(F("&&"));
-  Serial.print(F("N "));
-  Serial.print(microphone);
-  Serial.println(F("%%"));
-  Serial.flush();
-}
 
 //-- Function to send battery voltage percent
 void requestBattery() {
@@ -815,97 +594,94 @@ void requestMode() {
   Otto.home();
   //Definition of Mode Bluetooth commands
   //J ModeID
+  int modeId = 0; 
   char *arg;
   arg = SCmd.next();
-  if (arg != NULL)
-  {
-    modeId = atoi(arg);
-    Otto.putMouth(heart);
-  }
-  else {
-    Otto.putMouth(xMouth);
+  if (arg != NULL) modeId = atoi(arg);
+  else     delay(2000);
+  
+  switch (modeId) {
+    case 0: // J 0
+    Otto.putMouth(0);
+    Otto.sing(S_cuddly);
+    Otto.home();
+      break;
+    case 1: // J 1 
+    Otto.putMouth(one);
+     randomDance = random(5, 21); //5,20
+      if ((randomDance > 14) && (randomDance < 19)) {
+        randomSteps = 1;
+        T = 1600;
+      }
+      else {
+        randomSteps = random(3, 6); //3,5
+        T = 1000;
+      }
+      Otto.putMouth(random(10, 21));
+      for (int i = 0; i < randomSteps; i++) move(randomDance);
+      break;
+    case 2: // J 2
+      Otto.putMouth(two);
+      break;
+    case 3: //J 3
+      Otto.putMouth(three);
+       // battery display as an icon on the mouth, battery icon will has three levels of power
+      if (BATTcheck == true) {
+      batteryCHECK = Otto.getBatteryLevel();
+        Otto.clearMouth();
+        if (batteryCHECK < 40)
+        {
+          matrix = 0b00001100010010010010010010011110; // show empty battery symbol
+          Otto.putMouth(matrix, false);
+        }
+        if (batteryCHECK > 45)
+        {
+          matrix = 0b00001100010010010010011110011110; // show empty battery symbol
+          Otto.putMouth(matrix, false);
+        }
+       
+        if (batteryCHECK > 65)
+        {
+          matrix = 0b00001100010010011110011110011110; // show empty battery symbol
+          Otto.putMouth(matrix, false);
+        }
+        if (batteryCHECK > 80)
+        {
+          matrix = 0b00001100011110011110011110011110; // show empty battery symbol
+          Otto.putMouth(matrix, false);
+        }
+        delay(1500);
+      }
+      break;
+    case 4: //J 4
+      Otto.putMouth(four);
+  if (Otto.getBatteryLevel() < 35) {
+    Otto.putMouth(thunder);
+    Otto.bendTones (880, 2000, 1.04, 8, 3);  //A5 = 880
+    delay(30);
+    Otto.bendTones (2000, 880, 1.02, 8, 3);  //A5 = 880
+    delay(30);
+    Otto.bendTones (880, 2000, 1.04, 8, 3);  //A5 = 880
+    delay(30);
+    Otto.bendTones (2000, 880, 1.02, 8, 3);  //A5 = 880
+    Otto.clearMouth();
+    matrix = 0b00001100010010010010010010011110; // show empty battery symbol
+     Otto.putMouth(matrix, false);
     delay(2000);
     Otto.clearMouth();
-    modeId = 0; //stop
-  }
-  switch (modeId) {
-    case 0: //
-      MODE = 0;
-      break;
-    case 1: //
-      MODE = 1;
-      Otto.sing(S_mode1);
-      Otto.putMouth(one);
-      delay(1000);
-      delay(200);
-      break;
-    case 2: //
-      MODE = 2;
-      Otto.sing(S_mode2);
-      Otto.putMouth(two);
-      delay(1000);
-      break;
-    case 3: //
-      MODE = 3;
-      Otto.sing(S_mode3);
-      Otto.putMouth(three);
-      delay(1000);
-      break;
-    case 4: //
-      Otto.sing(S_mode1);
-      Otto.putMouth(four);
-      delay(1000);
-      MODE = 4;
+     delay(1000);
+    matrix = 0b00001100010010010010010010011110; // show empty battery symbol
+    Otto.putMouth(matrix, false);
+    delay(2000);
+    Otto.clearMouth();
+    Otto.putMouth(happyOpen);
+  }    
       break;
     default:
-      MODE = 0;
       break;
   }
   sendFinalAck();
 }
-
-
-  //-- Function to receive RGB colours.
-  void requestRGB(){
-
-    sendAck();
-    Otto.home();
-    //P red breen blue
-    char *arg;
-    arg = SCmd.next();
-    if (arg != NULL)
-    {
-      REDled=atoi(arg);
-      }
-      else{
-      Otto.putMouth(xMouth);
-      delay(2000);
-      Otto.clearMouth();
-      REDled=0; //stop
-    }
-
-    arg = SCmd.next();
-    if (arg != NULL) {GREENled=atoi(arg);}
-    else{
-      GREENled=0;
-    }
-
-    arg = SCmd.next();
-    if (arg != NULL) {BLUEled=atoi(arg);}
-    else{
-      BLUEled =0;
-    }
-    Otto.putMouth(okMouth);
-      delay(2000);
-      if (enableRGB == true) { // ONLY IF RGB NEOPIXEL OPTION IS CHOSEN
-         //Conversion(ColorValue);
-      NeopixelLed.setPixelColor(0, NeopixelLed.Color(REDled, GREENled, BLUEled));
-      NeopixelLed.show();
-      delay(50);
-      }
-      Otto.clearMouth();
-      Otto.putMouth(happyOpen);
-  }
 
 //-- Functions with animatics
 //--------------------------------------------------------

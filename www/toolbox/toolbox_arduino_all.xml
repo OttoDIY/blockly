@@ -18,6 +18,7 @@
 		<block type="otto9_dance"></block>
 		<block type="otto9_do"></block>
 		<block type="otto9_sound"></block>
+		<block type="otto9_tone"></block>
 		<block type="otto9_gesture"></block>
 		<block type="otto9_smooth"></block>
 	</category>
@@ -146,6 +147,7 @@
 				</shadow>
 			</value>
 			</block>
+			<block type="otto9_wheels"></block>
 		</category>
 		
 	<category name="CAT_del" colour="#4b009f">			
@@ -324,29 +326,36 @@
 			<block type="lp2i_mp3_prev"></block>
 			<block type="lp2i_mp3_volume"></block>
 		</category>	
-			<category name="CAT_com" colour="#0060aa">
 	<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
 			<block type="serial_init"></block>	
-			<block type="serial_write"></block>	
+			<block type="serial_write">
+			<value name="CONTENT">
+				<shadow type="text">
+					<field name="TEXT">Hi Otto</field>
+				</shadow>
+			</value>
+			</block>	
 			<block type="serial_input"></block>	
 			<block type="serial_read"></block>
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block>
 		</category>
-		<category name="CAT_ARDUINO_COMM_SOFTSERIAL" colour="#0060aa">
-			<block type="soft_init"></block>
-			<block type="soft_write"></block>
-			<block type="soft_available"></block>
-			<block type="soft_read"></block>
-			<block type="serial_line"></block>
-			<block type="serial_tab"></block>
-		</category>
 		<category name="CAT_bluetooth" colour="#0060aa">
-			<block type="bluetooth_init"></block>
+			<block type="bluetooth_init">
+			<value name="PIN1">
+				<shadow type="math_number">
+					<field name="Num">11</field>
+				</shadow>
+			</value>
+			<value name="PIN2">
+				<shadow type="math_number">
+					<field name="Num">12</field>
+				</shadow>
+			</value>
+			</block>
 			<block type="bluetooth_a"></block>
 			<block type="bluetooth_b"></block>
 		</category>
-	</category>
 	<category name="CAT_TEXT" colour="#FD6C9E">
 		<block type="text"></block>
 		<block type="text_char"></block>

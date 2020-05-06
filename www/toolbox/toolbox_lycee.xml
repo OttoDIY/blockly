@@ -125,18 +125,19 @@
 		</category>
 	</category>
 	<category name="CAT_actionneur" colour="#2d2dd1">
-	<category name="CAT_servo" colour="#2d2dd1">
-		<block type="servo_move"></block>
-		<block type="servo_rot_continue_param"></block>
-	</category>
-	<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
-		<block type="m_pap"></block>
-		<block type="m_pap_step"></block>
-		<block type="moteur_action"></block>
+			<block type="moteur_action"></block>
 		<block type="moteur_stop"></block>
 		<block type="moteur_dc"></block>
 		<block type="moteur_dc_stop"></block>
 		<block type="dagu_rs027"></block>
+	<category name="CAT_servo" colour="#2d2dd1">
+		<block type="servo_move"></block>
+		<block type="servo_rot_continue_param"></block>
+		<block type="otto9_wheels"></block>
+	</category>
+	<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
+		<block type="m_pap"></block>
+		<block type="m_pap_step"></block>
 	</category>	
 	</category>
 	<category name="CAT_del" colour="#4b009f">			

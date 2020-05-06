@@ -23,15 +23,15 @@ Blockly.Blocks['otto9_home'] = {
 Blockly.Blocks['otto9_calibration']={
   init:function(){
   this.appendDummyInput()
-      .appendField("calibrate  Leg Left")
+      .appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left)
       .appendField(new Blockly.FieldNumber("0"), "LL")
-      .appendField("Right")
+      .appendField(Blockly.Msg.right)
       .appendField(new Blockly.FieldNumber("0"), "RL")
       this.appendDummyInput()
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Foot Left")
+      .appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+  Blockly.Msg.left)
       .appendField(new Blockly.FieldNumber("0"), "LF")
-      .appendField("Right")
+      .appendField(Blockly.Msg.right)
       .appendField(new Blockly.FieldNumber("0"), "RF");
   this.setInputsInline(false);
   this.setPreviousStatement(true);
@@ -149,6 +149,24 @@ Blockly.Blocks['otto9_sound'] = {
   }
 };
 
+Blockly.Blocks['otto9_tone'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("🎼")
+        .appendField(new Blockly.FieldDropdown([["C4", "262"], ["D4", "294"], ["E4", "330"], ["F4", "349"], ["G4", "392"], ["A4", "440"], ["B4", "494"], ["C5", "523"], ["D5", "587"] ,["E5", "659"], ["F5", "698"], ["G5", "784"], ["A5", "880"], ["B5", "988"], ["C6", "1047"], ["D6", "1175"], ["E6", "1319"], ["F6", "1397"], ["G6", "1568"], ["A6", "1760"], ["B6", "1976"]]), "otto_note");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(" ")
+        .appendField(new Blockly.FieldDropdown([["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]), "otto_note_duration");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+  }
+};
+
 Blockly.Blocks['otto9_getdistance'] = {
   init: function() {
     this.appendDummyInput()
@@ -235,21 +253,21 @@ Blockly.Blocks['otto9_calibrationh']={
   init:function(){
   this.appendDummyInput()
   .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Leg Left")
+      .appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left)
       .appendField(new Blockly.FieldNumber("0"), "LL")
-      .appendField("Right")
+      .appendField(Blockly.Msg.right)
       .appendField(new Blockly.FieldNumber("0"), "RL")
       this.appendDummyInput()
     .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Foot Left")
+      .appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT + Blockly.Msg.left)
       .appendField(new Blockly.FieldNumber("0"), "LF")
-      .appendField("Right")
+      .appendField(Blockly.Msg.right)
       .appendField(new Blockly.FieldNumber("0"), "RF")
       this.appendDummyInput()
     .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Arm Left")
+      .appendField(Blockly.Msg.OTTO9_CALIBRATION_ARM + Blockly.Msg.left)
       .appendField(new Blockly.FieldNumber("0"), "LA")
-      .appendField("Right")
+      .appendField(Blockly.Msg.right)
       .appendField(new Blockly.FieldNumber("0"), "RA");
   this.setInputsInline(false);
   this.setPreviousStatement(true);
@@ -561,7 +579,7 @@ Blockly.Blocks['otto9_eyesm'] = {
         .appendField(new Blockly.FieldCheckbox("TRUE"), 'eyes_pixel76')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel84')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel92')
-        .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel00')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel100')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel108')
         .appendField(new Blockly.FieldCheckbox("TRUE"), 'eyes_pixel116')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel124');
@@ -598,7 +616,7 @@ Blockly.Blocks['otto9_eyesm'] = {
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel82')
         .appendField(new Blockly.FieldCheckbox("TRUE"), 'eyes_pixel90')
         .appendField(new Blockly.FieldCheckbox("TRUE"), 'eyes_pixel98')
-        .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel9106')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel106')
         .appendField(new Blockly.FieldCheckbox("TRUE"), 'eyes_pixel114')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel122');
         this.appendDummyInput()
@@ -791,6 +809,27 @@ Blockly.Blocks['otto9_arms'] = {
     // this.setColour(Blockly.Blocks.otto_3.HUE);
     this.setTooltip(Blockly.Msg.OTTO9_ARMS_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+  }
+};
+Blockly.Blocks['otto9_wheels'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage('media/otto_wheels.png', 48, 48, "*"))
+        .appendField(Blockly.Msg.OTTO9_MOVE_TEXT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens")
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.m_pap_step)
+        .appendField(new Blockly.FieldNumber("1"), "time");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
 /**
@@ -993,6 +1032,22 @@ Blockly.Arduino['otto9_sound'] = function(block) {
   Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
   var code = 'Otto.sing(' + dropdown_otto_sound + ');\n';
   return code;
+};
+
+Blockly.Arduino['otto9_tone'] = function(block) {
+  var dropdown_otto_note = block.getFieldValue('otto_note');
+  var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
+	+ 'Otto9 Otto;';
+  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
+	+ '#define PIN_YR 3 // right leg, servo[1]\n'
+	+ '#define PIN_RL 4 // left foot, servo[2]\n'
+	+ '#define PIN_RR 5 // right foot, servo[3]\n'
+  + '#define PIN_Trigger 8 // ultrasound \n'
+  + '#define PIN_Echo 9 // ultrasound \n'
+  + '#define PIN_Buzzer  13 //buzzer';
+  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+  return   "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
 };
 
 Blockly.Arduino['otto9_getdistance'] = function(block) {
@@ -1240,7 +1295,7 @@ Blockly.Arduino['otto9_eyes'] = function(block) {
   var dropdown_otto9_eyes_choice = block.getFieldValue('otto9_eyes_choice');
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
   Blockly.Arduino.definitions_['otto9_eyes'] = 'static const uint8_t PROGMEM\n'
   +'logo_bmp[] = {  B01111110,B10000001,B10111001,B10101001,B10111001,B10010001,B10111001,B10010001,B10010001,B10111001,B10010001,B10111001,B10101001,B10111001,B10000001,B01111110},\n'
   +'happy_bmp[] = {  B00000000,B00111100,B00000010,B00000010,B00000010,B00000010,B00111100,B00000000,B00000000,B00111100,B00000010,B00000010,B00000010,B00000010,B00111100,B00000000},\n'
@@ -1253,15 +1308,15 @@ Blockly.Arduino['otto9_eyes'] = function(block) {
   +'sleep_bmp[] = {  B00000000,B00100010,B00110010,B00101010,B00100110,B00100010,B00000000,B00000000,B00000000,B00000000,B00100010,B00110010,B00101010,B00100110,B00100010,B00000000},\n'
   +'freetful_bmp[] = {  B00000000,B00100000,B00010000,B00001000,B00000100,B00000010,B00000000,B00000000,B00000000,B00000000,B00000010,B00000100,B00001000,B00010000,B00100000,B00000000},\n'
   +'love_bmp[] = {  B00000000,B00001100,B00011110,B00111100,B00111100,B00011110,B00001100,B00000000,B00000000,B00001100,B00011110,B00111100,B00111100,B00011110,B00001100,B00000000},\n'
-  +'confused_bmp[] = {  B00000000,B01111100,B10000010,B10111010,B10101010,B10001010,B01111000,B00000000,B00000000,B11111111,B10000001,B10111101,B10100101,B10000101,B00000101,B11111101},\n'
+  +'confused_bmp[] = {  B00000000,B01111100,B10000010,B10111010,B10101010,B10001010,B01111000,B00000000,B00000000,B01111100,B10000010,B10111010,B10101010,B10001010,B01111000,B00000000},\n'
   +'wave_bmp[] = {  B00000000,B00100000,B00010000,B00001000,B00010000,B00100000,B00010000,B00000000,B00000000,B00100000,B00010000,B00001000,B00010000,B00100000,B00010000,B00000000},\n'
   +'magic_bmp[] = {  B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000},\n'
   +'fail_bmp[] = {  B00000000,B00110000,B01111000,B01111000,B01111100,B00111100,B00001000,B00000000,B00000000,B00001000,B00111100,B01111100,B01111000,B01111000,B00110000,B00000000},\n'
   +'full_bmp[] =  {   B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111 };';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = ' matrix.clear();\n'
-  +'matrix.drawBitmap(0, 0, + '+ dropdown_otto9_eyes_choice + ' , 8, 16, LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = ' ematrix.clear();\n'
+  +'ematrix.drawBitmap(0, 0, + '+ dropdown_otto9_eyes_choice + ' , 8, 16, LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1274,10 +1329,10 @@ Blockly.Arduino['otto9_eyesl'] = function(block) {
   var valuey2 = block.getFieldValue('Y2');
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = 'matrix.drawLine('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = 'ematrix.drawLine('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1293,11 +1348,11 @@ Blockly.Arduino['otto9_eyesr'] = function(block) {
   var valuefy2 = block.getFieldValue('FY2');
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
   var code = 'matrix.drawRect('+ valuex1 +','+valuey1+','+ valuex2 +','+ valuey2 +', LED_ON);\n'
-  +'matrix.fillRect('+ valuefx1 +','+valuefy1+','+ valuefx2 +','+ valuefy2 +', LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  +'ematrix.fillRect('+ valuefx1 +','+valuefy1+','+ valuefx2 +','+ valuefy2 +', LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1308,10 +1363,10 @@ Blockly.Arduino['otto9_eyesc'] = function(block) {
   var valuer = block.getFieldValue('R');
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = 'matrix.drawCircle('+ valuex +','+valuey+','+ valuer +', LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = 'ematrix.drawCircle('+ valuex +','+valuey+','+ valuer +', LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1320,19 +1375,19 @@ Blockly.Arduino['otto9_eyes_text'] = function(block) {
   var text_input = block.getFieldValue('input');
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = 'matrix.setTextSize(1);\n'
-  +'matrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely\n'
-  +'matrix.setTextColor(LED_ON);\n'
-  +'matrix.setRotation(1);\n'
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = 'ematrix.setTextSize(1);\n'
+  +'ematrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely\n'
+  +'ematrix.setTextColor(LED_ON);\n'
+  +'ematrix.setRotation(1);\n'
   +'for (int8_t x=2; x>=-88; x--) {\n'
-  +'matrix.clear();\n'
-  +'matrix.setCursor(x,0);\n'
-  +'matrix.print("' + text_input +'");\n'
-  +'matrix.writeDisplay();\n'
+  +'ematrix.clear();\n'
+  +'ematrix.setCursor(x,0);\n'
+  +'ematrix.print("' + text_input +'");\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(100);}\n'
-  +'matrix.setRotation(0);\n'
+  +'ematrix.setRotation(0);\n'
   return code;
 };
 
@@ -1340,18 +1395,18 @@ Blockly.Arduino['otto9_eyes#'] = function(block) {
   var valueeyes = Blockly.Arduino.valueToCode(block, 'eyes', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = 'matrix.setTextSize(1);\n'
-  +'matrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely\n'
-  +'matrix.setTextColor(LED_ON);\n'
-  +'matrix.setRotation(1);\n'
-  +'matrix.clear();\n'
-  +'matrix.setCursor(0,0);\n'
-  +'matrix.print(' + valueeyes +');\n'
-  +'matrix.writeDisplay();\n'
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = 'ematrix.setTextSize(1);\n'
+  +'ematrix.setTextWrap(false);  // we dont want text to wrap so it scrolls nicely\n'
+  +'ematrix.setTextColor(LED_ON);\n'
+  +'ematrix.setRotation(1);\n'
+  +'ematrix.clear();\n'
+  +'ematrix.setCursor(0,0);\n'
+  +'ematrix.print(' + valueeyes +');\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(100);\n'
-  +'matrix.setRotation(0);\n'
+  +'ematrix.setRotation(0);\n'
   return code;
 };
 
@@ -1360,10 +1415,10 @@ Blockly.Arduino['otto9_eyesp'] = function(block) {
   var valuey = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = 'matrix.drawPixel('+ valuex +','+valuey+', LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = 'ematrix.drawPixel('+ valuex +','+valuey+', LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1371,17 +1426,17 @@ Blockly.Arduino['otto9_eyesp'] = function(block) {
 Blockly.Arduino['otto9_eyes_clear'] = function(block) {
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-  Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
-  var code = ' matrix.clear();\n';
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+  Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
+  var code = ' ematrix.clear();\n';
   return code;
 };
 
 Blockly.Arduino['otto9_eyesm'] = function(block) {
   Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
   +'#include "Adafruit_LEDBackpack.h"\n'
-  +'Adafruit_8x16matrix matrix = Adafruit_8x16matrix();';
-   Blockly.Arduino.setups_['otto9_eyes']='matrix.begin(0x70);  // pass in the address';
+  +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
+   Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address';
   var code = 'static const uint8_t PROGMEM\n'
   +'eyesm_bmp[]  = {B';
   for (var i=0; i<8; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
@@ -1416,9 +1471,9 @@ Blockly.Arduino['otto9_eyesm'] = function(block) {
   code += ',B'
   for (var i=120; i<128; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
   code += '};\n'
-  +'matrix.clear();\n'
-  +'matrix.drawBitmap(0, 0,eyesm_bmp, 8, 16, LED_ON);\n'
-  +'matrix.writeDisplay();\n'
+  +'ematrix.clear();\n'
+  +'ematrix.drawBitmap(0, 0,eyesm_bmp, 8, 16, LED_ON);\n'
+  +'ematrix.writeDisplay();\n'
   +'delay(300);\n';
   return code;
 };
@@ -1535,7 +1590,6 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   + '#define PIN_Buzzer  13 ';
   Blockly.Arduino.setups_['otto9_init']='Otto.initHUMANOID(PIN_YL, PIN_YR, PIN_RL, PIN_RR, PIN_LA, PIN_RA, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
   var code = 'Otto.';
-  
   switch(dropdown_otto9_arms_choice) {
 	case 'HANDSUP':
 		code += 'handsup();\n';
@@ -1549,6 +1603,49 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   }
   return code;
 };
+
+Blockly.Arduino['otto9_wheels'] = function(block) {
+  var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
+  var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
+  var otto_move_time = block.getFieldValue('time');
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
+  + '#include <Servo.h> \n' 
+  + '#include <math.h>   \n'
+	+ 'Otto9 Otto;';
+  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
+	+ '#define PIN_YR 3 // right leg, servo[1]\n'
+	+ '#define PIN_RL 4 // left foot, servo[2]\n'
+	+ '#define PIN_RR 5 // right foot, servo[3]\n'
+  + '#define PIN_Trigger 8 // ultrasound \n'
+  + '#define PIN_Echo 9 // ultrasound \n'
+  + 'Servo rightServo;\n'
+  + 'Servo leftServo;\n'
+  + '#define PIN_Buzzer  13 //buzzer\n'
+  + 'int rightSpeed = 0;\n'
+  + 'int leftSpeed = 0;\n'
+  + 'void motorControl2(int rightSpeed, int leftSpeed, int stepDelay) {\n'
+  + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
+  + 'delay(stepDelay*1000);}';
+  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+  var code = '';
+  switch(dropdown_otto_move_sens) {
+	case 'FORWARD':
+		code = 'motorControl2 ('+-1*dropdown_otto_move_speed+', '+dropdown_otto_move_speed*-1+', '+otto_move_time+' );\n';
+		break;
+	case 'BACKWARD':
+		code = 'motorControl2 ('+dropdown_otto_move_speed+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+		break;
+	case 'LEFT':
+		code = 'motorControl2 ('+dropdown_otto_move_speed*-1+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+		break;
+	case 'RIGHT':
+		code = 'motorControl2 ('+dropdown_otto_move_speed+', '+-1*dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+		break;
+  }
+  return code;
+};
+
+
 Blockly.Blocks['otto9_smooth'] = {init: function() {
     this.appendDummyInput("")
     .appendField(new Blockly.FieldImage('media/smooth.png', 48, 48, "*"))
@@ -1559,6 +1656,7 @@ Blockly.Blocks['otto9_smooth'] = {init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
+
 
 Blockly.Arduino['otto9_smooth'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Servo.h>\n'
