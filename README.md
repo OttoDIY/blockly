@@ -5,12 +5,26 @@ This is a free and open source visual programming language based on Blockly from
 ## [Watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
 
 ## Installer
-This software already works offline on Windows operating systems. You can [download the latest release from our website directly](https://www.ottodiy.com/#blockly), it is ready to use, no need to install libraries or additional setup or even Arduino IDE, it is all integrated, ready to use. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also [here in the "pilotes" folder.](https://github.com/OttoDIY/blockly/tree/master/pilotes/_CH341)
+This software already works offline on Windows operating systems. You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases), after install it is ready to use, no need to copy libraries or additional setup or even Arduino IDE, it is all integrated, ready to upload codes. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also [here in the "pilotes" folder.](https://github.com/OttoDIY/blockly/tree/master/pilotes/_CH341)
 
 MAC and Linux version are under development, as some requested and as much as we want them to be ready too, unfortunately, there are not many collaborators, neither committed volunteers even for very simple BETA Tests, so WE NEED YOU!, if you really need this software for your OS, help us please and don't ask when it would be available, since it only will be ready with your support..
 
-## Online APP
+## Online App
 Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., although you can just simple copy and paste the generated code into your [local Arduino IDE](https://www.arduino.cc/en/Main/Software), therefore you can already use this tool from any operative system.
+
+## How to Contribute
+Contributing to this software is warmly welcomed. There are 5 ways you can contribute to this project:
+1. Test and report.
+2. Helps us [solve current issues](https://github.com/OttoDIY/blockly/issues) or other bugs.
+3. Bring missing features from similar Blockly or Scratch alike programs, request new useful blocks.
+5. Translating to new languages or fixing current ones.
+
+You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
+
+Just make sure to keep consistency in the naming and make a record of the change or improvement made.
+Welcome to the Otto DIY code development team!
+
+Thanks for your contribution.
 
 ## More Languages
 
@@ -29,21 +43,6 @@ The more people helping to translate the better, it is important to translate wh
 6. Drag , drop, mix, play and create your own codes.
 7. [Join the Otto Builder community and share them!](https://www.ottodiy.com/#join-us) 
 8. [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
-
-## How to Contribute
-Contributing to this software is warmly welcomed. There are 5 ways you can contribute to this project:
-1. Test in multiple OS.
-2. Find and report bugs.
-3. Helps us solve the issues or other bugs.
-4. Bring missing features from similar Blockly or Scratch alike programs here, request new useful blocks.
-5. Translating to new languages.
-
-You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
-
-Just make sure to keep consistency in the naming and make a record of the change or improvement made.
-Welcome to the Otto DIY code development team!
-
-Thanks for your contribution.
 
 ## Attribution
 
