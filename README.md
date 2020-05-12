@@ -7,7 +7,7 @@ This is a free and open source visual programming language based on Blockly from
 ## Installer
 This software already works offline on Windows operating systems. You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases), after install it is ready to use, no need to copy libraries or additional setup or even Arduino IDE, it is all integrated, ready to upload codes. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also [here in the "pilotes" folder.](https://github.com/OttoDIY/blockly/tree/master/pilotes/_CH341)
 
-MAC and Linux version are under development, as some requested and as much as we want them to be ready too, unfortunately, there are not many collaborators, neither committed volunteers even for very simple BETA Tests, so WE NEED YOU!, if you really need this software for your OS, help us please and don't ask when it would be available, since it only will be ready with your support..
+MAC and Linux version are under development, as some requested and as much as we want them to be ready too, unfortunately, there are not many collaborators, neither committed volunteers even for very simple BETA Tests, so WE NEED YOU!, if you really need this software for your OS, help us please and don't ask when it would be available, since it only will be ready with your support..So for now you will need a Virtual Machine or use the online App with copy and paste.
 
 ## Online App
 Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., although you can just simple copy and paste the generated code into your [local Arduino IDE](https://www.arduino.cc/en/Main/Software), therefore you can already use this tool from any operative system.
@@ -28,9 +28,14 @@ Thanks for your contribution.
 
 ## More Languages
 
-We are translating Blockly for Otto for the international community, you are welcome to contribute with the languages you know, it will benefit you and everyone in your Otto Builder club, you just need to duplicate and change [the files in the lang folder](https://github.com/OttoDIY/blockly/tree/master/www/lang), In code.js you define new languages or new spots in the app for translatable string, while for the translations themselves you need to add more of or edit the existing COMPONENT_LANG.js file, like Arduino_en.js.
+We are translating Blockly for Otto for the international community, you are welcome to contribute with the languages you know, it will benefit you and everyone in your community.
 
 The more people helping to translate the better, it is important to translate while understanding the context, or what is the robot actually doing, to be accurate.
+
+1. Go to [lang folder and duplicate the Arduino_en.js Blockly_en.js and msg_en.js  files from english](https://github.com/OttoDIY/blockly/tree/master/www/lang), 
+2. Rename them according to your ISO language code, for example fr is for French,so the files are renamed like this: Arduino_fr.js Blockly_fr.js and msg_fr.js  
+3. Edit the files with any code editor software like [Visual Studio Code](https://code.visualstudio.com/) translating only the english part after = in between the quotes "" in visual studio is the text in red.
+4. Then pull a request here in github or just send us the files.
 
 ## How to Use
 [<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">](https://youtu.be/chcWxh4Co_c)
