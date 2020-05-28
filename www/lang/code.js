@@ -10,6 +10,7 @@ Code.LANGUAGE_NAME = {
   'tr': 'Turkish',
   'cn': '中文',
   'hu': 'Hungarian',
+  'ru': 'Pусский',
   'pt': 'Português'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
