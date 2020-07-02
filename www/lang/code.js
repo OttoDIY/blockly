@@ -12,7 +12,7 @@ Code.LANGUAGE_NAME = {
   'hu': 'Magyar',
   'tr': 'Türk',
   'ru': 'Pусский',
-  'he': 'עִברִית',
+  'heb': 'עִברִית',
   'cn': '中文'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];

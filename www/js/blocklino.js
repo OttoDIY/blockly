@@ -339,7 +339,7 @@ BlocklyDuino.bindFunctions = function() {
 		document.getElementById("survol").textContent = "";
 	});
 	$('#btn_flash').mouseover(function() {
-		document.getElementById("survol").textContent = "Upload to board";
+		document.getElementById("survol").textContent = "Upload to robot board";
 	}).mouseout(function() {
 		document.getElementById("survol").textContent = "";
 	});
@@ -414,6 +414,7 @@ BlocklyDuino.changeToolbox = function() {
 	Blockly.getMainWorkspace().updateToolbox(BlocklyDuino.buildToolbox());
 	BlocklyDuino.workspace.render();
 	$('#configModal').modal('hide')
+	window.location.reload();
 };
 BlocklyDuino.buildToolbox = function() {
 	var loadIds = window.localStorage.toolboxids;
