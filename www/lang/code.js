@@ -2,16 +2,18 @@
 
 var Code = {};
 Code.LANGUAGE_NAME = {
-  'fr': 'Français',
   'en': 'English',
-  'de': 'Deutsch',
   'es': 'Español',
+  'pt': 'Português',
+  'fr': 'Français',
+  'de': 'Deutsch',
   'cz': 'Čeština',
-  'tr': 'Turkish',
-  'cn': '中文',
-  'hu': 'Hungarian',
+  'pl': 'Polski',
+  'hu': 'Magyar',
+  'tr': 'Türk',
   'ru': 'Pусский',
-  'pt': 'Português'
+  'he': 'עִברִית',
+  'cn': '中文'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {

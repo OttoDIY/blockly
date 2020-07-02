@@ -2,36 +2,36 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "Выберите порт USB";
-Blockly.Msg.com2 = "🔔 Укажите USB порт" ;
-Blockly.Msg.check = "Поверка...";
-Blockly.Msg.upload = "Загрузка...";
-Blockly.Msg.error = "🔔 ОШИБКА: Блоки не связаны";
-Blockly.Msg.verif = "🔔 Проверьте код "
-Blockly.Msg.save = "Сохранить как";
-Blockly.Msg.update = "Обновление";
-Blockly.Msg.new_update = "Более новая версия доступна для скачивания, обновить сейчас?" ;
-Blockly.Msg.yes = "да";
-Blockly.Msg.no = "нет";
-Blockly.Msg.uptodate = "💯 Обновление успешно!" ;
-Blockly.Msg.download = "Загрузка завершена, приложение будет обновлено и перезапущено ..."
+Blockly.Msg.com1 = "Select USB port";
+Blockly.Msg.com2 = "🔔 Select USB please" ;
+Blockly.Msg.check = "Check...";
+Blockly.Msg.upload = "Upload...";
+Blockly.Msg.error = "🔔 ERROR: Blocks not connected";
+Blockly.Msg.verif = "🔔 Check the code first "
+Blockly.Msg.save = "Save as format";
+Blockly.Msg.update = "Update";
+Blockly.Msg.new_update = "A new version is available, do you want to download and install it now?" ;
+Blockly.Msg.yes = "yes";
+Blockly.Msg.no = "no";
+Blockly.Msg.uptodate = "💯 Version is up to date!" ;
+Blockly.Msg.download = "Download completed, the application will install and restart ..."
 // common to all blocks
 Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
 Blockly.Msg.pin = "on pin";
 Blockly.Msg._AT = "at";
-Blockly.Msg.AV = "вперёд";
-Blockly.Msg.AR = "назад";
+Blockly.Msg.AV = "forward";
+Blockly.Msg.AR = "backward";
 Blockly.Msg.high = "HIGH"; // do not translate
 Blockly.Msg.low = "LOW"; // do not translate
-Blockly.Msg.right = "право";
-Blockly.Msg.left = "лево";
-Blockly.Msg.LetR = "право и лево";
-Blockly.Msg.direction = "направление";
-Blockly.Msg.vitesse = "скорость";
+Blockly.Msg.right = "right";
+Blockly.Msg.left = "left";
+Blockly.Msg.LetR = "right & left";
+Blockly.Msg.direction = "direction";
+Blockly.Msg.vitesse = "speed ";
 // categories (menu)
-Blockly.Msg.CAT_STOCKAGE = "⊞ Хранилище";
-Blockly.Msg.CAT_numerique = "- Цифровой";
-Blockly.Msg.CAT_analogique = "~ Аналоговый";
+Blockly.Msg.CAT_STOCKAGE = "⊞ Storage";
+Blockly.Msg.CAT_numerique = "- Digital";
+Blockly.Msg.CAT_analogique = "~ Analog";
 Blockly.Msg.CAT_wifi = "＠ Wifi";
 Blockly.Msg.CAT_TAB = "▦ Table";
 Blockly.Msg.CAT_list = "▤ List";
