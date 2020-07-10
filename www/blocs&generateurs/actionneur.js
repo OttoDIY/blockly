@@ -683,8 +683,8 @@ Blockly.Blocks["pixel_init"]={init:function(){
 Blockly.Arduino["pixel_init"]=function(block){
     var pin=Blockly.Arduino.valueToCode(block, "broche", Blockly.Arduino.ORDER_ASSIGNMENT);
 	var number=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ASSIGNMENT);
-    Blockly.Arduino.includes_["pixel"]="#include <NeoPixel.h>";
-    Blockly.Arduino.definitions_["pixel"]="NeoPixel pixel = NeoPixel(" + number + ", " + pin + ", NEO_GRB + NEO_KHZ800);";
+    Blockly.Arduino.includes_["pixel"]="#include <Adafruit_NeoPixel.h>";
+    Blockly.Arduino.definitions_["pixel"]="Adafruit_NeoPixel pixels = Adafruit_NeoPixel(" + number + ", " + pin + ", NEO_GRBW + NEO_KHZ800);";
     Blockly.Arduino.setups_["pixel"]="pixel.begin();";
     return ""
 };
