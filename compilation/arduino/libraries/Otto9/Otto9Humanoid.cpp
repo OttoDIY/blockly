@@ -401,7 +401,7 @@ void Otto9Humanoid::handsup(){
 
   
   int homes[6]={90, 90, 90, 90, 20, 160}; //
-    _moveServos(500,homes);   //Move the servos in half a second
+    _moveServos(1000,homes);   //Move the servos in half a second
 
 }
 
@@ -416,7 +416,7 @@ void Otto9Humanoid::handwave(int dir){
   int O[6] = {0, 0, 0, 0, -30, -40};
   double phase_diff[6] = {0, 0, 0, 0, DEG2RAD(0),0};
     //-- Let's oscillate the servos!
-  _execute(A, O, 500, phase_diff, 5); 
+  _execute(A, O, 1000, phase_diff, 5); 
   }
   if(dir==1)      
   {
@@ -425,7 +425,7 @@ void Otto9Humanoid::handwave(int dir){
   int O[6] = {0, 0, 0, 0, 40, 60};
   double phase_diff[6] = {0, 0, 0, 0, 0, DEG2RAD(0)};
     //-- Let's oscillate the servos!
-  _execute(A, O, 500, phase_diff, 1); 
+  _execute(A, O, 1000, phase_diff, 1); 
   }  
 }
 

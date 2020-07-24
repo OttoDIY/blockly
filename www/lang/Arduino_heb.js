@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER = "♫ שמע";
 Blockly.Msg.CAT_OTTO = "⊟ אוטטו";
 Blockly.Msg.CAT_OTTOH = "⊟ הומנואיד";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 is quiet, 500 noise and more than 1000
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "מגע";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
 Blockly.Msg.OTTO9_GETG_TEXT = "תזוזה";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "פה";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "mouth emotion for the 8x8 LED matrix #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 שמח פתוח", "happyOpen"],["🙂 שמח סגור", "happyClosed"], ["😊 חיוך", "smile"], ["😦 עצוב1", "23"], ["🙁 עצוב2", "24"], ["😮 מופתע1", "smallSurprise"], ["😲 מופתע2", "bigSurprise"], ["😕 מבולבל", "confused"],["😛 לשון", "tongueOut"],["🙃 מגוחך", "culito"],  ["😑 רציני", "lineMouth"], ["🙄 כועס", "21"], ["💖 לב", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ לא", "xMouth"], ["✅ אוקיי", "okMouth"],["❓?", "27"], ["⚡ ברק", "thunder"]];

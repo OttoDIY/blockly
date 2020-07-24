@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER = "♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 es silencioso, 500 ruido y más de 100
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "usar si es condicional";
 Blockly.Msg.OTTO9_GETG_TEXT = "movimiento";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX ()"], ["aY", "gyro.getAngleY ​​()"], ["aZ", "gyro.getAngleZ ()"], [ "gX", "gyro.getGyroX ()"], ["gY", "gyro.getGyroY ()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "boca";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "emoción de boca para la matriz de LED 8x8 # 0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃", "happyOpen"], ["🙂", "happyClosed"], ["😊", "smile"], ["😦", "23"], ["🙁 "," 24 "], [" 😮 "," smallSurprise "], [" 😲 "," bigSurprise "], [" 😕 "," confundido "], [" 😛 "," tongueOut "], [" 🙃 "," culito "], [" 😑 "," lineMouth "], [" 🙄 "," 21 "], [" 💖 "," heart "], [" 🦇1 "," vamp1 "], [" 🦇2 "," vamp2 "], [" ❌ "," xMouth "], [" ✅ "," okMouth "], [" ❓ "," 27 "], [" ⚡ "," trueno "]];

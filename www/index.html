@@ -29,6 +29,10 @@
 	<script type="text/javascript" src="blocs&generateurs/microbit.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/otto.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/oled.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/sensors.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/motors.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/neopixel.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/matrix.js"></script>
 	<script type="text/javascript" src="js/typing.js"></script>
 	<script type="text/javascript" src="lang/code.js"></script>
 	<script type="text/javascript" src="js/hexlify.js"></script>
@@ -95,18 +99,18 @@
 				</button>	
 				<select style="margin-left: -3px; height: 30px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;" id="boards" onchange="BlocklyDuino.change_card();">
 					<optgroup label="C / C++">
+						<option value="uno" >Arduino Uno</option>
 						<option value="leonardo" >Arduino Léonardo</option>
-						<option value="mega" >Arduino Méga 2560</option>
-						<option value="micro" >Arduino Micro</option>
-						<option value="mini" >Arduino Mini</option>
 						<option value="nanooptiboot">Arduino Nano</option>
 						<option value="nano" >Arduino Nano (old bootloader)</option>
 						<option value="nona4809">Arduino Nano Every</option>
-						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
-						<option value="uno" >Arduino Uno</option>
+						<option value="micro" >Arduino Micro</option>
+						<option value="mini" >Arduino Mini</option>
+						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
+						<option value="mega" >Arduino Méga 2560</option>					
 						<option value="yun" >Arduino Yun</option>
-						<option value="atmegang" >DAGU RS027</option>
-						<option value="pro16" >DAGU RS040</option>
+						<!--<option value="atmegang" >DAGU RS027</option>  -->
+						<!--<option value="pro16" >DAGU RS040</option>  -->
 					</optgroup>
 					<optgroup label="Python">
 						<option value="esp8266" >ESP 8266</option>
@@ -130,23 +134,12 @@
 				<span id="survol" style="color:#fff"></span>
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
-						<button id="btn_search" class='btn btn-default'>
-				<span class="fa fa-binoculars"> </span>
-			</button>
-				<!--<button id="btn_bin" class='btn btn-default'>
-						<span class="fa fa-code-fork fa-lg fa-fw"> </span>
-				</button>-->
-			<!-- button id="btn_factory" class="btn btn-default">
-				<span class="fa fa-industry fa-fw"> </span> 
-			</button> -->
-			<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal">
-				<span class="fa fa-question fa-lg fa-fw"></span>
-			<button id="btn_term" class="btn btn-default">
-					<span class="fa fa-search fa-lg fa-fw"></span>
-			</button>
-			<button id="btn_preview" class="btn btn-default">
-				<span class="fa fa-code fa-lg fa-fw"> </span>
-			</button>
+			<button id="btn_search" class='btn btn-default'><span class="fa fa-binoculars"> </span></button>
+			<!--<button id="btn_bin" class='btn btn-default'>	<span class="fa fa-code-fork fa-lg fa-fw"> </span> </button> -->
+			<button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button> 
+			<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question fa-lg fa-fw"></span> </button>
+			<button id="btn_term" class="btn btn-default"><span class="fa fa-search fa-lg fa-fw"></span></button>
+			<button id="btn_preview" class="btn btn-default"><span class="fa fa-code fa-lg fa-fw"> </span>	</button>
 		</div>
 	</div>
 	<div id="divBody" class="tab-content">
@@ -224,9 +217,9 @@
 				<div id="divToolbox">
 					<label id="labelToolboxDefinition"></label>
 					<select id="toolboxes">
-						<option value="toolbox_6">Beginner 👶</option>
-						<option value="toolbox_arduino_all" selected="selected">Maker 👨‍🏭</option>
-						<option value="toolbox_lycee">Advanced 👨‍💻</option>
+						<option value="toolbox_6"selected="selected">Beginner 👶</option>
+						<option value="toolbox_lycee">Maker 👨‍🏭</option>
+						<option value="toolbox_arduino_all" >Advanced 👨‍💻</option>
 						/// option value="toolbox_microbit">Master 👨‍🚀 
 					</select>
 				</div>
@@ -271,18 +264,18 @@
 			</div>
 			<select size="16" multiple id="pinout" onchange="BlocklyDuino.cardPicture_change();">
 				<optgroup label="C / C++">
+					<option value="uno" >Arduino Uno</option>
 					<option value="leonardo" >Arduino Léonardo</option>
-					<option value="mega" >Arduino Méga 2560</option>
-					<option value="micro" >Arduino Micro</option>
-					<option value="mini" >Arduino Mini</option>
-					<option value="nanooptiboot" >Arduino Nano</option>
+					<option value="nanooptiboot">Arduino Nano</option>
 					<option value="nano" >Arduino Nano (old bootloader)</option>
 					<option value="nona4809">Arduino Nano Every</option>
-					<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
-					<option value="uno" >Arduino Uno</option>
+					<option value="micro" >Arduino Micro</option>
+					<option value="mini" >Arduino Mini</option>
+					<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
+					<option value="mega" >Arduino Méga 2560</option>					
 					<option value="yun" >Arduino Yun</option>
-					<option value="atmegang" >DAGU RS027</option>
-					<option value="pro16" >DAGU RS040</option>
+					<!--<option value="atmegang" >DAGU RS027</option>  -->
+					<!--<option value="pro16" >DAGU RS040</option>  -->
 				</optgroup>
 				
 				<optgroup label="Python">

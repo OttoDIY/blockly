@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER="♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto"; //added 06/09/2019
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoïde"; 
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //wifi
 Blockly.Msg.esp8266_init_tooltip="initialisation du module wifi et connection avec les paramètres indiqués";
 Blockly.Msg.esp8266_1="Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 is quiet, 500 noise and more than 1000
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touché";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
 Blockly.Msg.OTTO9_GETG_TEXT = "motion";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "bouche";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "mouth emotion for the 8x8 LED matrix #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["happyOpen", "happyOpen"],["happyClosed", "happyClosed"],["sadOpen", "23"], ["sadClosed", "24"],["vampire1", "vamp1"], ["vampire2", "vamp2"],   ["smile", "smile"], ["heart", "heart"], ["small surprise", "smallSurprise"], ["big surprise", "bigSurprise"], ["confused", "confused"], ["0", "zero"], ["1", "one"], ["2", "two"], ["3", "three"], ["4", "four"],["5", "five"],["6", "six"],["7", "seven"],["8", "eight"],["9", "nine"], ["x", "xMouth"], ["ok", "okMouth"],["interrogation", "27"],["tongue", "tongueOut"],["culito", "culito"],  ["thunder", "thunder"], ["line", "lineMouth"], ["diagonal", "21"], ["little Uuh", "littleUuh, i"], ["dreamMouth0", "dreamMouth, 0"], ["dreamMouth1", "dreamMouth, 1"], ["dreamMouth2", "dreamMouth, 2"]];

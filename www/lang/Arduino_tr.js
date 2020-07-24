@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER = "♫ Ses";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ İnsansı";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "wifi modülünün başlatılması ve belirtilen parametrelerle bağlantı";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 sessiz, 500 gürültülü ve 1000'den 
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "Dokunma";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "şartlıysa kullan";
 Blockly.Msg.OTTO9_GETG_TEXT = "Hareket";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "Ağız";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "8x8 LED matrisi #0-30 için Ağız hissi";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 mutlu1", "happyOpen"],["🙂 mutlu2", "happyClosed"], ["😊 gülümseme", "smile"], ["😦 üzgün1", "23"], ["🙁 üzgün2", "24"], ["😮 süpriz", "smallSurprise"], ["😲 Süpriz 2", "bigSurprise"], ["😕 Karışık", "confused"],["😛 Dil", "tongueOut"],["🙃 Aptal", "culito"],  ["😑 Ciddi", "lineMouth"], ["🙄 Sinirleri bozuk", "21"], ["💖 Kalp", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ Hayır", "xMouth"], ["✅ Tamam", "okMouth"],["❓?", "27"], ["⚡ Şimşek", "thunder"]];

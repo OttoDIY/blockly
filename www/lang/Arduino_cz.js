@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER = "♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 je tichý, 500 hluk a více než 1000 
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "použijte, pokud je to podmíněné";
 Blockly.Msg.OTTO9_GETG_TEXT = "pohyb";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "pusa";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "emoce v ústech pro matici 8x8 LED # 0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 šťastný1", "happyOpen"],["🙂 šťastný2", "happyClosed"], ["😊 úsměv", "smile"], ["😦 smutný1", "23"], ["🙁 smutný2", "24"], ["😮 překvapení", "smallSurprise"], ["😲 překvapení2", "bigSurprise"], ["😕 zmatený", "confused"],["😛 jazyk", "tongueOut"],["🙃 hloupý", "culito"],  ["😑 vážně", "lineMouth"], ["🙄 naštvaný", "21"], ["💖 srdce", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ no", "xMouth"], ["✅ OK", "okMouth"],["❓?", "27"], ["⚡ hrom", "thunder"]];

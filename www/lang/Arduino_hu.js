@@ -60,6 +60,8 @@ Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "♫ Hang";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
+Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -400,7 +402,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 halk, 500 zajos és több, mint 1000 h
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "érintés";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
 Blockly.Msg.OTTO9_GETG_TEXT = "gyorsulás";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "mátrix száj";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "érzelmek megjelenítése a 8x8 LED mátrixon #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃", "happyOpen"],["🙂", "happyClosed"], ["😊", "smile"], ["😦", "23"], ["🙁", "24"], ["😮", "smallSurprise"], ["😲", "bigSurprise"], ["😕", "confused"],["😛", "tongueOut"],["🙃", "culito"],  ["😑", "lineMouth"], ["🙄", "21"], ["💖", "heart"], ["🦇1", "vamp1"], ["🦇2", "vamp2"], ["❌", "xMouth"], ["✅", "okMouth"],["❓", "27"], ["⚡", "thunder"]];

@@ -62,6 +62,7 @@ Blockly.Msg.CAT_DFPLAYER = "♫ Audio";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoide";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
+Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "Inicialização do módulo wifi e conexão com o indicador de parâmetros";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -429,7 +430,6 @@ Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 é quieto, 500 de barulho e mais do qu
 Blockly.Msg.OTTO9_GETTOUCH_TEXT = "toque";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use se condicional";
 Blockly.Msg.OTTO9_GETG_TEXT = "movimento";
-Blockly.Msg.OTTO9_GETG_CHOICE = [["aX", "gyro.getAngleX()"], ["aY", "gyro.getAngleY()"], ["aZ", "gyro.getAngleZ()"], ["gX", "gyro.getGyroX()"], ["gY", "gyro.getGyroY()"]];
 Blockly.Msg.OTTO9_MOUTH_TEXT = "boca";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "emoção na boca para matiz de 8x8 LED #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 feliz1", "happyOpen"],["🙂 feliz2", "happyClosed"], ["😊 sorriso", "smile"], ["😦 triste1", "23"], ["🙁 triste2", "24"], ["😮 surpreso", "smallSurprise"], ["😲 Surpreso2", "bigSurprise"], ["😕 confuso", "confused"],["😛 língua", "tongueOut"],["🙃 boba", "culito"],  ["😑 sério", "lineMouth"], ["🙄 chateado", "21"], ["💖 coração", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ no", "xMouth"], ["✅ OK", "okMouth"],["❓?", "27"], ["⚡ trovão", "thunder"]];
