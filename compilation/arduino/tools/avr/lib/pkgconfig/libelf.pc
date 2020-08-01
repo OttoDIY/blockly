@@ -1,0 +1,12 @@
+prefix=/home/jenkins-mingw32/workspace/avrdude/label/Ubuntu14.04x64-mingw32/objdir
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libelf
+Description: ELF object file access library
+Version: 0.8.13
+Requires:
+Conflicts:
+Libs: -L${libdir} -lelf
+Cflags: -I${includedir}/libelf -I${includedir}
