@@ -363,6 +363,19 @@ BlocklyDuino.bindFunctions = function() {
 	$('#select_all').on("click", BlocklyDuino.checkAll);
 	$('#btn_valid_config').on("click", BlocklyDuino.changeToolbox);
 	$('#btn_example').on("click", BlocklyDuino.buildExamples);
+	if(typeof process === 'undefined') {
+		$('#btn_factory').on("click", function() {
+			window.open("factory.html","_blank", null);
+		});
+		$('#btn_saveXML').on("click", BlocklyDuino.saveXmlFile);
+		$('#btn_saveino').on("click", function () {
+			if (window.localStorage.prog == "arduino") {
+				BlocklyDuino.saveino()
+			} else {
+				BlocklyDuino.savepy()
+			}
+		});
+	}
 };
 BlocklyDuino.checkAll = function() {
     if(this.checked) {
@@ -627,5 +640,81 @@ BlocklyDuino.cardPicture_change = function() {
 		$('#arduino_card_mini_picture').attr("src", profile[$("#pinout").val()]['picture'])
 	} else {
 		$('#arduino_card_mini_picture').attr("src", "")
+	}
+};
+BlocklyDuino.saveino = function() {
+    var code = $('#pre_previewArduino').text();
+	var datenow = Date.now();
+	var filename = "arduino"+datenow+".ino";
+ 	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
+	element.setAttribute('download', filename);
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
+};
+BlocklyDuino.savepy = function() {
+    var code = $('#pre_previewArduino').text();
+	var datenow = Date.now();
+	var filename = "python"+datenow+".py";
+ 	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
+	element.setAttribute('download', filename);
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
+};
+BlocklyDuino.saveXmlFile = function () {
+	if (window.localStorage.content=="on") {
+		var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+		var toolbox = window.localStorage.toolbox;
+		if (!toolbox) {
+			toolbox = $("#toolboxes").val();
+		}
+		if (toolbox) {
+			var newel = document.createElement("toolbox");
+			newel.appendChild(document.createTextNode(toolbox));
+			xml.insertBefore(newel, xml.childNodes[0]);
+		}
+		var toolboxids = window.localStorage.toolboxids;
+		if (toolboxids === undefined || toolboxids === "") {
+			if ($('#defaultCategories').length) {
+				toolboxids = $('#defaultCategories').html();
+			}
+		}
+		var data = Blockly.Xml.domToPrettyText(xml);
+		var datenow = Date.now();
+		var filename = "blocklino"+datenow+".bloc";
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/bloc;charset=utf-8,' + encodeURIComponent(data));
+		element.setAttribute('download', filename);
+		element.style.display = 'none';
+		document.body.appendChild(element);
+		element.click();
+		document.body.removeChild(element)
+	} else if (window.localStorage.prog=="arduino"){
+		var code = editor.getValue();
+		var datenow = Date.now();
+		var filename = "arduino"+datenow+".ino";
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
+		element.setAttribute('download', filename);
+		element.style.display = 'none';
+		document.body.appendChild(element);
+		element.click();
+		document.body.removeChild(element);
+	} else {
+		var code = editor.getValue();
+		var datenow = Date.now();
+		var filename = "python"+datenow+".py";
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:py/ino;charset=utf-8,' + encodeURIComponent(code));
+		element.setAttribute('download', filename);
+		element.style.display = 'none';
+		document.body.appendChild(element);
+		element.click();
+		document.body.removeChild(element);
 	}
 };
