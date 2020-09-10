@@ -163,8 +163,10 @@
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-body" >
-					<div id = "messageDIV"></div>
-				</div>  
+					<div><span id = "messageDIV"></span><button id="btn_close_message" type="button" class="close" aria-label="Close" style="display: none;">&#215;</button></div>
+					<button id="btn_detail" type="button" class="btn btn-xs btn-default" style="display: none;">détails</button>
+					<div id = "detailDIV"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -359,14 +361,12 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript">	
+<script>
 	$(window).load(function(){$(".loading").fadeOut("slow")});
 	ace.require("ace/ext/language_tools");
 	var editor = ace.edit("content_code");
-    editor.setTheme("ace/theme/sqlserver");
 	editor.session.setTabSize(2);
 	editor.setShowPrintMargin(false);
-	require('../resources/app/index.js');
-	require('../resources/app/factory.js');
+	require('../index')
 </script>
 </html>

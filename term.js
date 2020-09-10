@@ -1,48 +1,49 @@
 var { ipcRenderer } = require("electron")
-var remote = require('electron').remote 
-var fs = require('fs'), connexion, SerialPort;
-
+var remote = require('electron')
+var fs = require('fs')
+const {BrowserWindow} = require('electron').remote
 window.addEventListener('load', function load(event) {
-	if(localStorage.getItem("baudrate")) {
-		document.getElementById('vitesse').value = localStorage.getItem("baudrate");
-	}else{
-		localStorage.setItem("baudrate",9600);
+	var win = remote;
+	var connexion = false;
+	if (localStorage.getItem('baudrate')==null){
+		alert('There was not a defined baudrate. Set it at default 9600 bauds');
+		localStorage.setItem("baudrate","9600");
 	}
-	connexion = false;
-	SerialPort = require("serialport")
 	document.getElementById('btn_envoi').disabled=true
-	document.getElementById('btn_efface').onclick = function(event) {
+	document.getElementById('btn_efface').onclick = function() {
 		document.getElementById('fenetre_term').textContent = ''
 	}
-	document.getElementById('btn_envoi').onclick = function(event) {
+	document.getElementById('btn_envoi').onclick = function() {
 		var entree = document.getElementById('schbox').value
 		if (s_p.isOpen) {
 			document.getElementById('fenetre_term').innerHTML += entree+"<br>"
 			s_p.write(entree)
 		}
 	}
-	moniteur = document.getElementById('fenetre_term');
-	document.getElementById('btn_quit').onclick = function(event) {
-		var window = remote.getCurrentWindow() 
+	document.getElementById('btn_quit').onclick = function() {
 		window.close()
 	}
 	document.getElementById('btn_connect').onclick = function(event) {
-		baud = parseInt(localStorage.getItem("baudrate"))
-		com = localStorage.getItem("com")
+		var SerialPort = require("serialport")
+		var line = SerialPort.parsers.Readline;
+		var moniteur = document.getElementById('fenetre_term')
+		var baud = parseInt(localStorage.getItem("baudrate"))
+		var com = localStorage.getItem("com")
+		s_p = new SerialPort(com,{baudRate:baud, autoOpen:false})
+		var parser = s_p.pipe(new line({ delimiter: '\n' }))
 		if (connexion){
-			document.getElementById('btn_connect').innerHTML="<span class='fa fa-play'> Open</span>"
+			document.getElementById('btn_connect').innerHTML="<span class='fa fa-play'> START</span>"
 			document.getElementById('btn_envoi').disabled=true
-			s_p.close(function (err) { moniteur.innerHTML += '--- CLOSED SERIAL PORT ---<br>' })
+			s_p.close(function (err) { moniteur.innerHTML += 'STOP<br>' })
 			connexion = false
 		} else {
-			s_p = new SerialPort(com,{baudRate:baud, autoOpen:false})
-			document.getElementById('btn_connect').innerHTML="<span class='fa fa-pause'> Close</span>"
+			document.getElementById('btn_connect').innerHTML="<span class='fa fa-pause'> Parar</span>"
 			document.getElementById('btn_envoi').disabled=false
-			s_p.open(function (err) { if(!err) moniteur.innerHTML += '--- OPENED SERIAL PORT ---<br>'; else moniteur.innerHTML += '--- ERROR OPENING SERIAL PORT: '+err.message+' ---<br>' })
+			s_p.open(function (err) { moniteur.innerHTML += 'Communication started!<br>' })
 			connexion = true
-			s_p.on('data', function(data){
+			parser.on('data', function(data){
 				if (connexion){
-					moniteur.innerHTML += data.toString().replace(/\r?\n/g, "<br />")
+					moniteur.innerHTML += data + "<br>"
 					moniteur.scrollTop = moniteur.scrollHeight;
 					moniteur.animate({scrollTop: moniteur.scrollHeight})
 				}

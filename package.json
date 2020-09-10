@@ -1,7 +1,7 @@
 {
  "name": "OttoBlockly",
  "version": "1.0.0",
- "description": "Blockly and Arduino for Otto DIY robot",
+ "description": "Blockly and Arduino for Otto DIY robot adapted to Linux by Antonio Gómez García",
  "author": "Otto DIY and community",
  "license": "CC0-1.0",
  "main": "electronApp.js",
@@ -33,16 +33,26 @@
  "scripts": {
   "postinstall": "electron-builder install-app-deps",
   "start": "electron .",
-  "compiler": "build --win --ia32",
-  "publier": "build --win --ia32 -p always"
+  "compiler": "build --linux --x64",
+  "deb64": "electron-installer-debian --src dist/linux-unpacked --dest dist/installers/ --arch amd64",
+  "publier": "build --linux --x64 -p always"
  },
  "build": {
-  "appId": "com.electron.blocklino",
+  "appId": "com.electron.masaylo",
   "asar": false,
   "directories": {
    "buildResources": "./build",
-   "output": "../dist"
+   "output": "./dist"
   },
+  "files": [
+   "./compilation/**/*",
+   "./www/**/*",
+   "*.js",
+   "*.json",
+   "*.md",
+   "version",
+   "LICENSE"
+  ],
   "nsis": {
    "installerIcon": "build/install.ico",
    "uninstallerIcon": "build/app.ico",
@@ -61,6 +71,13 @@
    ],
    "icon": "build/app.ico"
   },
+  "linux": {
+   "target": [
+    "dir",
+    "AppImage"
+   ],
+   "icon": "build/app.png"
+  },
   "fileAssociations": {
    "ext": "bloc",
    "name": "BLOC File",
@@ -68,12 +85,22 @@
    "icon": "build/file.ico"
   },
   "extraFiles": [
-   "www",
-   "compilation",
-   "pilotes",
+   {
+    "from": "./config.json",
+    "to": "resources/"
+   },
+   {
+    "from": "compilation",
+    "to": "resources/app/compilation",
+    "filter": [
+     "**/*"
+    ]
+   },
    "README.md",
    "LICENSE.md",
-   "config.json"
+   "config.json",
+   "version",
+   "LICENSE"
   ],
   "extraResources": [
    "dev-app-update.yml",
@@ -96,13 +123,19 @@
   "url": "https://github.com/OttoDIY/blockly/issues"
  },
  "devDependencies": {
-  "electron": "9.1.0",
-  "electron-builder": "20.39.0"
+  "electron": "^7.2.4",
+  "electron-builder": "20.39.0",
+  "electron-installer-debian": "^3.1.0"
  },
  "dependencies": {
-  "ajv": "6.10.0",
+  "ajv": "^6.10.0",
   "child_process": "1.0.2",
-  "electron-updater": "4.0.6",
-  "serialport": "7.1.4"
+  "decompress-zip": "^0.2.2",
+  "electron-updater": "^4.0.6",
+  "ftp": "0.3.10",
+  "node-gyp": "^7.1.0",
+  "serialport": "^9.0.1",
+  "tableify": "^1.1.0",
+  "extract-zip": "^2.0.1"
  }
 }

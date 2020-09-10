@@ -1,12 +1,139 @@
 var { ipcRenderer, shell, clipboard } = require("electron")
+var remote = require('electron').remote
 var { exec } = require('child_process')
 var sp = require('serialport')
 var fs = require('fs')
+var fs2 = require("fs-extra");
+
 var path = require('path')
 var appVersion = window.require('electron').remote.app.getVersion()
+var tableify = require('tableify')
+var chemin = process.resourcesPath
+var checkBox = document.getElementById('verifyUpdate')
+var portserie = document.getElementById('portserie')
+var messageDiv = document.getElementById('messageDIV')
+var detailDiv = document.getElementById('detailDIV')
+var btn_detail = document.getElementById('btn_detail')
+var btn_close_message = document.getElementById('btn_close_message')
+const homedir = require('os').homedir();
+const extract = require('extract-zip');
+ 
+function instalarArduino(callback1, callback2, callback3,callback4,callback5){
+    //código de la función principal
+    callback1();
+    //más código de la función principal
+    callback2();
+    //más código de la función principal
+    callback3();
+	//más código si fuera necesario
+	callback4();
+	callback5();
+}
+ 
+function callback1(){
+        creaOttoBlockly();
+    }
+ 
+function callback2(){
+       copiaArchivosCompilacion();
+    }
+ 
+function callback3(){
+       actualizaTarjetasArduino();
+	}   
+	function callback4(){
+extraeLibrerias();	 }
 
+	 function callback5(){
+		terminado();
+	 }   
+ 
+function creaOttoBlockly(){
+	//Creamos un directorio auxiliar en home
+alert('Es la primera vez que ejecutas este programa. Hay que utilizar algunas librerías. Espera '+
+'unos segundos y vuelve a compilar (si te da mensaje de error, espera un poco más y vuelve a intentarlo)...');
+	var dir=homedir+'/.OttoBlockly';
+	fs.mkdirSync(dir,function(err,stdout){
+		if (err) {return console.error(err);}
+		else{console.log('1. directorio creado correctamente: '+stdout);
+	};
+	});
+	
+
+}
+function copiaArchivosCompilacion(){
+	var fuente=__dirname+('/compilation/'); 
+	var dir=homedir+'/.OttoBlockly';
+
+	fs2.copy(fuente, dir, function (err,stdout) {
+		if (err) return console.error(err)
+		console.log('2. OttoBlockly creado y carpeta de compilación creada!'+stdout);
+	  })
+	
+
+}
+function actualizaTarjetasArduino(){
+	console.log('directorio: '+__dirname+'/compilation/arduino/');
+	exec('./arduino-cli core update-index && ./arduino-cli core install arduino:avr', {cwd: __dirname+'/compilation/arduino/'}, function(err, stdout, stderr){
+		if (err) console.log('error installando arduino: ' +err);
+		
+	console.log(stdout);
+	});
+
+}
+function extraeLibrerias(){
+	var dir=homedir+'/.OttoBlockly';
+	var source=__dirname+'/compilation/arduino/libraries.zip';
+	var exct=null;
+	try {
+		console.log('4. iniciando extracción');
+		 extract(source, { dir: homedir+'/Arduino/' },function(err,stdout){
+			 if (err){
+				 console.log(err);
+			 }else{
+				console.log(stdout);
+				alert('4. librerías extraídas. Los robots deberían funcionar con normalidad')
+
+
+			 }
+		 })
+		
+	
+	  } catch (err) {
+		// handle any errors
+		console.log(err);
+	  }
+	 
+	}
+
+function terminado(){
+	console.log('5. vamos terminando');
+
+/* 	fs.writeFile(homedir+'/.masaylo/arduino/sketch/sketch.ino', data, function(err,stdout){
+		if (err) return console.log('error: '+err)
+		console.log('copiando sketch: '+stdout);
+		alert('ahora sí se ha copiado el sketch. Puedes cargarlo en tarjeta');
+	}) */
+
+
+}
 window.addEventListener('load', function load(event) {
 	var quitDiv = '<button type="button" class="close" data-dismiss="modal" aria-label="Close">&#215;</button>'
+	var window = remote.getCurrentWindow()
+	if(!window.isMaximized())window.maximize()
+	function itsOK(value){
+		messageDiv.style.color = '#009000'
+		if (value) {
+			messageDiv.innerHTML = Blockly.Msg.upload + ': OK'
+			btn_close_message.style.display = "inline"
+			if (localStorage.getItem('prog') != "python") btn_detail.style.display = "block"
+		} else {
+			messageDiv.innerHTML = Blockly.Msg.check + ': OK'
+			btn_close_message.style.display = "inline"
+			if (localStorage.getItem('prog') != "python") btn_detail.style.display = "block"
+		}
+	}
+	
 	var checkBox = document.getElementById('verifyUpdate')
 	var portserie = document.getElementById('portserie')
 	var messageDiv = document.getElementById('messageDIV')
@@ -26,16 +153,16 @@ window.addEventListener('load', function load(event) {
 		shell.openExternal('https://www.ottodiy.com/#contact-us')
 	})
 	$('#portserie').mouseover(function(){
-		sp.list(function(err,ports) {
+		sp.list().then(ports =>  {
 			var nb_com = localStorage.getItem("nb_com"), menu_opt = portserie.getElementsByTagName('option')
 			if(ports.length > nb_com){
 				ports.forEach(function(port){
 					if (port.vendorId){
 						var opt = document.createElement('option')
-						opt.value = port.comName
-						opt.text = port.comName
+						opt.value = port.path
+						opt.text = port.path
 						portserie.appendChild(opt)
-						localStorage.setItem("com",port.comName)
+						localStorage.setItem("com",port.path)
 					}
 				})
 				localStorage.setItem("nb_com",ports.length)
@@ -48,7 +175,22 @@ window.addEventListener('load', function load(event) {
 				localStorage.setItem("com","com")
 				localStorage.setItem("nb_com",ports.length)
 			}
-		})
+		});
+	})
+	$('#btn_quit').on('click', function(){
+		window.close()
+	})
+	$('#btn_max').on('click', function(){
+		if(window.isMaximized()){
+			window.unmaximize()
+			document.getElementById('btn_max').innerHTML="<span class='fa fa-window-maximize fa-lg'></span>"
+		} else {
+			window.maximize()
+			document.getElementById('btn_max').innerHTML="<span class='fa fa-window-restore fa-lg'></span>"
+		}
+	})
+	$('#btn_min').on('click', function(){
+		window.minimize()
 	})
 	$('#btn_copy').on('click', function(){
 		clipboard.writeText($('#pre_previewArduino').text())
@@ -91,7 +233,7 @@ window.addEventListener('load', function load(event) {
 			})
 		}
 	})
-	sp.list(function(err,ports){
+	sp.list().then(ports => {
 		var opt = document.createElement('option')
 		opt.value = "com"
 		opt.text = Blockly.Msg.com1
@@ -99,11 +241,11 @@ window.addEventListener('load', function load(event) {
 		ports.forEach(function(port) {
 			if (port.vendorId){
 				var opt = document.createElement('option')
-				opt.value = port.comName
-				opt.text = port.comName
+				opt.value = port.path
+				opt.text = port.path
 				portserie.appendChild(opt)
 			}
-		})
+		});
 		localStorage.setItem("nb_com",ports.length)
 		if (portserie.options.length > 1) {
 			portserie.selectedIndex = 1
@@ -112,6 +254,15 @@ window.addEventListener('load', function load(event) {
 			localStorage.setItem("com","com")
 		}
 	})
+	sp.list().then(ports => {
+		var messageUSB = document.getElementById('usb')
+		if (ports.length === 0) {
+			messageUSB.innerHTML = "Aucun port n'est disponible"
+		} else {
+			tableHTML = tableify(ports)
+			messageUSB.innerHTML = tableHTML
+		}
+	});
 	$('#btn_version').on('click', function(){
 		$('#aboutModal').modal('hide')
 		ipcRenderer.send("version", "")
@@ -159,23 +310,46 @@ window.addEventListener('load', function load(event) {
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
 			})
 		} else {
-			fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
-				if (err) return console.log(err)
+			if(process!="win32"){
+	
+				var dir=homedir+'/.OttoBlockly';
+				if (!fs.existsSync(dir)){
+			
+			messageDiv.innerHTML='Espere unos segundos y vuelva a intentar compilar';
+			btn_close_message.style.display = "inline";
+			
+			//creaMasaylo().then(copiaArchivosCompilacion().then(actualizaTarjetasArduino().then(extraeLibrerias().then(terminado(data)))));
+			instalarArduino(callback1, callback2, callback3,callback4,callback5);
+			
+			return;	
+			}
+			
+			}
+			
+			fs.writeFile(homedir+'/.OttoBlockly/arduino/sketch/sketch.ino', data, function(err){
+				if (err) return console.log('error nuevo'+homedir+'/.OttoBlocklylo/arduino/sketch/sketch.ino')
 			})
-			exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+			exec('./verify.sh ' + carte, {cwd: homedir+'/.OttoBlockly/arduino/'}, function(err, stdout, stderr){
+				if (err) console.log('err0r: ' +carte);
 				if (stderr) {
-					rech=RegExp('token')
-					if (rech.test(stderr)){
+					fs.realpath(homedir+'.OttoBlockly/arduino/sketch/sketch.ino' , function(err, path){
+
+						var erreur = stderr.toString().replace("exit status 1","")
+						var error = erreur.replace(/error:/g,"").replace(/token/g,"")
+						var errors = error.split(path)
 						messageDiv.style.color = '#ff0000'
-						messageDiv.innerHTML = Blockly.Msg.error + quitDiv
-					} else {
-						messageDiv.style.color = '#ff0000'
-						messageDiv.innerHTML = err.toString() + quitDiv
-					}
+						messageDiv.innerHTML = "ERROR DE COMPILACIÓN"
+						errors.forEach(function(e){
+							messageDiv.innerHTML += e + "<br>"+carte+"<br>"
+						})
+						btn_close_message.style.display = "inline"
+					})
 					return
 				}
-				messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+				localStorage.setItem('detail', stdout.toString())
+				messageDiv.innerHTML = Blockly.Msg.check + ': OK'
+			btn_close_message.style.display = "inline"
+			if (localStorage.getItem('prog') != "python") btn_detail.style.display = "block"
 			})
 		}
 		localStorage.setItem("verif",true)
@@ -196,10 +370,27 @@ window.addEventListener('load', function load(event) {
 		if ( localStorage.getItem('verif') == "false" ){
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-			fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
-				if (err) return console.log(err)
+			fs.writeFile(homedir+'/.OttoBlockly/arduino/sketch/sketch.ino', data, function(err){
+				if (err) return console.log('error nuevo'+homedir+'/.OttoBlocklylo/arduino/sketch/sketch.ino')
 			})
-			exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+	
+			console.log('No se había compilado. Verificando...')
+			if(process!="win32"){
+	
+				var dir=homedir+'/.OttoBlockly';
+				if (!fs.existsSync(dir)){
+			
+			messageDiv.innerHTML='Espere unos segundos y vuelva a intentar compilar';
+			btn_close_message.style.display = "inline";
+			
+			//creaMasaylo().then(copiaArchivosCompilacion().then(actualizaTarjetasArduino().then(extraeLibrerias().then(terminado(data)))));
+			instalarArduino(callback1, callback2, callback3,callback4,callback5);
+			
+			return;	
+			}
+			
+			}
+			exec('./verify.sh ' + carte, {cwd: homedir+'/.OttoBlockly/arduino/'}, function(err, stdout, stderr){
 				if (stderr) {
 					rech=RegExp('token')
 					if (rech.test(stderr)){
@@ -216,15 +407,24 @@ window.addEventListener('load', function load(event) {
 			
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.upload + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-		
-			exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
+			console.log('grabando hex');
+			var dir2=homedir+('/.OttoBlockly/arduino/flash.sh ');
+			console.log('en '+dir2);
+			exec(dir2 + com+ ' ' + carte , {cwd: homedir+'/.OttoBlockly/arduino'} , function(err, stdout, stderr){
+				console.log("Puerto: "+com)
+				var erreur = stderr.toString().replace(/##################################################/g,"").replace(/|/g,"")
+				var errors = erreur.split("avrdude:")
+				localStorage.setItem('detail', errors)
 				if (err) {
+					console.log('error flasheando');
 					messageDiv.style.color = '#ff0000'
-					messageDiv.innerHTML = err.toString() + quitDiv
+					messageDiv.innerHTML = err.toString() + "<br> "
+					btn_close_message.style.display = "inline"
 					return
 				}
-				uploadOK()
-			}) })
+				itsOK(1)
+			})
+		 })
 			localStorage.setItem("verif",false)
 			return
 		}
@@ -278,22 +478,41 @@ window.addEventListener('load', function load(event) {
 				})
 			}
 		} else {
-			exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
+			var dir2=homedir+('/.OttoBlockly/arduino/flash.sh ');
+			console.log('cargando desde: '+dir2);
+			exec(dir2 + com+ ' ' + carte , {cwd: homedir+'/.OttoBlockly/arduino'} , function(err, stdout, stderr){
+				console.log("Puerto: "+com)
+				var erreur = stderr.toString().replace(/##################################################/g,"").replace(/|/g,"")
+				var errors = erreur.split("avrdude:")
+				localStorage.setItem('detail', errors)
 				if (err) {
+					console.log('error flasheando');
 					messageDiv.style.color = '#ff0000'
-					messageDiv.innerHTML = err.toString() + quitDiv
+					messageDiv.innerHTML = err.toString() + "<br> "
+					btn_close_message.style.display = "inline"
 					return
 				}
-				uploadOK()
+				itsOK(1)
 			})
 		}
 		localStorage.setItem("verif",false)
+	})
+	$('#btn_detail').on('click', function(){
+		detailDiv.innerHTML = localStorage.getItem('detail')
+	})
+	$('#btn_close_message').on('click', function(){
+		detailDiv.innerHTML = ""
+		localStorage.setItem('detail', "")
+		btn_detail.style.display = "none"
+		btn_close_message.style.display = "none"
+		$('#message').modal('hide')
 	})
 	$('#btn_saveino').on('click', function(){
 		if (localStorage.getItem("prog") == "python") { ipcRenderer.send('save-py') } else { ipcRenderer.send('save-ino') }
 	})
 	$('#btn_saveXML').on('click', function(){
 		if (localStorage.getItem("content") == "on") {
+	
 			ipcRenderer.send('save-bloc') 
 		} else {
 			if (localStorage.getItem("prog") == "python") { ipcRenderer.send('save-py') } else { ipcRenderer.send('save-ino') }
