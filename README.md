@@ -1,41 +1,11 @@
-# Otto Blockly
-
-This is a free and open source visual programming language based on Blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check or verified) and quickly [upload to any Otto robot](https://wikifactory.com/+OttoDIY/projects) or similar Arduino(C++) or Micro:bit or Python robots.
-
-## [Watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
-
-## Installer
-This software already works offline on Windows operating systems. You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases), after install it is ready to use, no need to copy libraries or additional setup or even Arduino IDE, it is all integrated, ready to upload codes. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also [here in the "pilotes" folder.](https://github.com/OttoDIY/blockly/tree/master/pilotes/_CH341)
-
-MAC and Linux version are under development, as some requested and as much as we want them to be ready too, unfortunately, there are not many collaborators, neither committed volunteers even for very simple BETA Tests, so WE NEED YOU!, if you really need this software for your OS, help us please and don't ask when it would be available, since it only will be ready with your support..So for now you will need a Virtual Machine or use the online App with copy and paste.
-
-## Online App
-Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., although you can just simple copy and paste the generated code into your [local Arduino IDE](https://www.arduino.cc/en/Main/Software), therefore you can already use this tool from any operative system.
-
-## How to Contribute
-Contributing to this software is warmly welcomed. There are 5 ways you can contribute to this project:
-1. Test and report.
-2. Helps us [solve current issues](https://github.com/OttoDIY/blockly/issues) or other bugs.
-3. Bring missing features from similar Blockly or Scratch alike programs, request new useful blocks.
-5. Translating to new languages or fixing current ones.
-
-You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
-
-Just make sure to keep consistency in the naming and make a record of the change or improvement made.
-Welcome to the Otto DIY code development team!
-
-Thanks for your contribution.
-
-## More Languages
-
-We are translating Blockly for Otto for the international community, you are welcome to contribute with the languages you know, it will benefit you and everyone in your community.
-
-The more people helping to translate the better, it is important to translate while understanding the context, or what is the robot actually doing, to be accurate.
-
-1. Go to [lang folder and duplicate the Arduino_en.js Blockly_en.js and msg_en.js  files from english](https://github.com/OttoDIY/blockly/tree/master/www/lang), 
-2. Rename them according to your ISO language code, for example fr is for French,so the files are renamed like this: Arduino_fr.js Blockly_fr.js and msg_fr.js  
-3. Edit the files with any code editor software like [Visual Studio Code](https://code.visualstudio.com/) translating only the english part after = in between the quotes "" in visual studio is the text in red.
-4. Then pull a request here in github or just send us the files.
+# Otto Blockly for Linux
+This is a Linux version for Otto Blockly developed by Antonio Gómez and Mª Dolores Nogueras.It's a project still developing. As far as we know, it works in Ubuntu 20
+# Do you want to compile it?
+1. Install node.js
+2. Clone the repository
+3. Run __npm install__
+4. If you want to test the software, run __npm start__
+5. To compile, run __npm run compiler__
 
 ## How to Use
 [<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">](https://youtu.be/chcWxh4Co_c)
