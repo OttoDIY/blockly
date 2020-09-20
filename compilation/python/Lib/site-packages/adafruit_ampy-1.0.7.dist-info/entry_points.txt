@@ -1,0 +1,3 @@
+[console_scripts]
+ampy = ampy.cli:cli
+

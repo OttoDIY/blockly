@@ -1,0 +1,141 @@
+{
+ "name": "OttoBlockly",
+ "version": "1.0.0",
+ "description": "Blockly and Arduino for Otto DIY robot adapted to Linux by Antonio Gómez García",
+ "author": "Otto DIY and community",
+ "license": "CC0-1.0",
+ "main": "electronApp.js",
+ "keywords": [
+  "blockly",
+  "BLOCKLY",
+  "arduino",
+  "ARDUINO",
+  "esp32",
+  "ESP32",
+  "esp8266",
+  "ESP8266",
+  "electron",
+  "ELECTRON",
+  "OttoDIY",
+  "serialport",
+  "SERIALPORT",
+  "electron-builder",
+  "electron-updater",
+  "PYTHON",
+  "python",
+  "PYFLAKES",
+  "pyflakes",
+  "ampy",
+  "AMPY",
+  "microbit",
+  "MICROBIT"
+ ],
+ "scripts": {
+  "postinstall": "electron-builder install-app-deps",
+  "start": "electron .",
+  "compiler": "build --linux --x64",
+  "deb64": "electron-installer-debian --src dist/linux-unpacked --dest dist/installers/ --arch amd64",
+  "publier": "build --linux --x64 -p always"
+ },
+ "build": {
+  "appId": "com.electron.masaylo",
+  "asar": false,
+  "directories": {
+   "buildResources": "./build",
+   "output": "./dist"
+  },
+  "files": [
+   "./compilation/**/*",
+   "./www/**/*",
+   "*.js",
+   "*.json",
+   "*.md",
+   "version",
+   "LICENSE"
+  ],
+  "nsis": {
+   "installerIcon": "build/install.ico",
+   "uninstallerIcon": "build/app.ico",
+   "oneClick": false,
+   "perMachine": true,
+   "deleteAppDataOnUninstall": true,
+   "allowToChangeInstallationDirectory": true,
+   "runAfterFinish": true,
+   "include": "build/blocklino.nsh"
+  },
+  "win": {
+   "target": [
+    "portable",
+    "nsis",
+    "zip"
+   ],
+   "icon": "build/app.ico"
+  },
+  "linux": {
+   "target": [
+    "dir",
+    "AppImage"
+   ],
+   "icon": "build/app.png"
+  },
+  "fileAssociations": {
+   "ext": "bloc",
+   "name": "BLOC File",
+   "role": "Editor",
+   "icon": "build/file.ico"
+  },
+  "extraFiles": [
+   {
+    "from": "./config.json",
+    "to": "resources/"
+   },
+   {
+    "from": "compilation",
+    "to": "resources/app/compilation",
+    "filter": [
+     "**/*"
+    ]
+   },
+   "README.md",
+   "LICENSE.md",
+   "config.json",
+   "version",
+   "LICENSE"
+  ],
+  "extraResources": [
+   "dev-app-update.yml",
+   "app-update.yml"
+  ],
+  "publish": [
+   {
+    "provider": "github",
+    "repo": "blockly",
+    "owner": "OttoDIY",
+    "releaseType": "release"
+   }
+  ]
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/OttoDIY/blockly"
+ },
+ "bugs": {
+  "url": "https://github.com/OttoDIY/blockly/issues"
+ },
+ "devDependencies": {
+  "electron": "^7.2.4",
+  "electron-builder": "20.39.0",
+  "electron-installer-debian": "^3.1.0"
+ },
+ "dependencies": {
+  "ajv": "^6.10.0",
+  "child_process": "1.0.2",
+  "decompress-zip": "^0.2.2",
+  "electron-updater": "^4.0.6",
+  "ftp": "0.3.10",
+  "node-gyp": "^7.1.0",
+  "serialport": "^9.0.1",
+  "tableify": "^1.1.0",
+  "extract-zip": "^2.0.1"
+ }
+}

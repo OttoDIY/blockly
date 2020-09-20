@@ -1,0 +1,130 @@
+[
+    {
+        "source_url": "walk/walk.xml",
+        "source_text": " 📗 Walk .................................. Level: ⭐️☆☆☆☆ ................ Robot: Otto DIY .................................... OPEN📂 ",
+        "image": "./media/walk.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "calibration/calibration.xml",
+        "source_text": " 📗 Legs calibration ............... Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY ................................... OPEN📂 ",
+        "image": "./media/calibration.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "blink/blink.xml",
+        "source_text": "  📗 Blink LED on board ............. Level: ⭐️☆☆☆☆ ................ Robot: Otto DIY ................................... OPEN📂 ",
+        "image": "./media/LEDboard.png",
+        "link_url": "#modal_blink",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "buzzer/buzzer.xml",
+        "source_text": " 📑 Buzzer beeps ..................... Level: ⭐️☆☆☆☆ ................ Robot: Otto DIY ................................... OPEN📂 ",
+        "image": "./media/beep.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "dance/dance.xml",
+        "source_text": " 📗 Dance ................................ Level: ⭐️⭐️☆☆☆ ................ Robot: Otto DIY ................................... OPEN📂 ",
+        "image": "./media/dance.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "avoid/avoid.xml",
+        "source_text": " 📗 Avoid obstacles .................. Level: ⭐️⭐️☆☆☆ ................ Robot: Otto DIY .................................. OPEN📂 ",
+        "image": "./media/avoid.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "servo/servo.xml",
+        "source_text": " 📔 Servo control ..................... Level: ⭐️⭐️☆☆☆ ................. Robot: Otto DIY ................................... OPEN📂 ",
+        "image": "./media/calibration.png",
+        "link_url": "#modal_diy",
+        "link_text": "",
+        "visible": true
+    },
+	{
+        "source_url": "touch/touch.xml",
+        "source_text": " 📙 Touch interaction ................ Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY + ............................ OPEN📂 ",
+        "image": "./media/touch.png",
+        "link_url": "#modal_plus",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "noise/serial.xml",
+        "source_text": " 📙 Serial readings ................... Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY + ............................ OPEN📂 ",
+        "image": "./media/serial.png",
+        "link_url": "#modal_plus",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "noise/noise.xml",
+        "source_text": " 📙 Sound interaction ................ Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY + ............................ OPEN📂 ",
+        "image": "./media/noise.png",
+        "link_url": "#modal_plus",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "eyes/eyes.xml",
+        "source_text": " 📕 Emotions ............................ Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY Eyes ......................... OPEN📂 ",
+        "image": "./media/eyes.png",
+        "link_url": "#modal_eyes",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "avoid/avoidH.xml",
+        "source_text": " 📓 Avoid, touch & noise .......... Level: ⭐️⭐️⭐️☆☆ ................ Robot: Otto DIY Humanoid .................. OPEN📂 ",
+        "image": "./media/avoidH.png",
+        "link_url": "#modal_humanoid",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "calibration/calibrationH.xml",
+        "source_text": " 📓 Legs & Arms calibration ....... Level: ⭐️⭐️⭐️⭐️☆ ............... Robot: Otto DIY Humanoid ................... OPEN📂 ",
+        "image": "./media/calibrationH.png",
+        "link_url": "#modal_humanoid",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "matrix/matrix.xml",
+        "source_text": " 📓 Arms & LED Matrix .......... Level: ⭐️⭐️⭐️⭐️☆ ................ Robot: Otto DIY Humanoid ...................... OPEN📂 ",
+        "image": "./media/LEDmatrix.png",
+        "link_url": "#modal_humanoid",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "matrix/counter.xml",
+        "source_text": " 📓 Variable counter ............ Level: ⭐️⭐️⭐️⭐️⭐️ ................ Robot: Otto DIY Humanoid ...................... OPEN📂 ",
+        "image": "./media/LEDmatrix.png",
+        "link_url": "#modal_humanoid",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "neopixel/neopixelH.xml",
+        "source_text": " 📘 Neopixels ........................ Level: ⭐️⭐️⭐️⭐️⭐️ ................ Robot: Otto DIY Humanoid .................... OPEN📂 ",
+        "image": "./media/neopixel.jpg",
+        "link_url": "#modal_humanoid",
+        "link_text": "",
+        "visible": true
+    }
+]
