@@ -48,3 +48,6 @@ Thanks to all these tools created by great people. that without them, would have
 - [ampy](https://github.com/pycampers/ampy)
 - [pyflakes](https://github.com/PyCQA/pyflakes)
 - [NSIS](https://sourceforge.net/projects/nsis)
+
+## Did you like it?
+This linux version developers are working in [masayloBlockly](https://github.com/agomezgar/masayloBlockly), a new electron based application that uses what they have learned studying the ottoDIY application to create a high school students focused app which allows them to program many arduino based robots, like ottoDIY itself, or the spanish [Escornabot](escornabot.com) and [Masaylo](https://github.com/agomezgar/masaylo)
