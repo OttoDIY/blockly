@@ -1574,25 +1574,20 @@ Blockly.Arduino['otto9_wheels'] = function(block) {
   var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
   var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
   var otto_move_time = block.getFieldValue('time');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-  + '#include <Servo.h> \n' 
+  Blockly.Arduino.includes_['otto9_lib'] =  '#include <Servo.h> \n' 
   + '#include <math.h>   \n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
   + 'Servo rightServo;\n'
-  + 'Servo leftServo;\n'
-  + '#define PIN_Buzzer  13 //buzzer\n'
-  + 'int rightSpeed = 0;\n'
+  + 'Servo leftServo;';
+  Blockly.Arduino.definitions_['otto9_wheels'] = 'int rightSpeed = 0;\n'
   + 'int leftSpeed = 0;\n'
   + 'void motorControl2(int rightSpeed, int leftSpeed, int stepDelay) {\n'
   + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
   + 'delay(stepDelay*1000);}';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+  Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
+  +'leftServo.write(90);\n'
+  +'delay(1000);\n'
+  +'rightServo.attach(3);\n'
+  +'leftServo.attach(2);';
   var code = '';
   switch(dropdown_otto_move_sens) {
 	case 'FORWARD':
