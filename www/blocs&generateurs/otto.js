@@ -1333,10 +1333,19 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
  this.setNextStatement(true, null);
  this.setColour("#59646f");
  this.setTooltip('');
- this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
+ this.setHelpUrl("https://playground.arduino.cc/Main/LEDMatrix/");
 },
 };
 Blockly.Arduino.otto9_matrix8x8 = function() {
+  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
+	+ 'Otto9Humanoid Otto;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
+  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define DIN_PIN A3\n'
+	+ '#define CS_PIN A2\n'
+	+ '#define CLK_PIN A1\n'
+	+ '#define LED_DIRECTION 1';
+  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);'
 var code = '';
 for (var i=0; i<64; i++) {
 
