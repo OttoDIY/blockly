@@ -34,9 +34,9 @@ Blockly.Arduino['otto9_home'] = function(block) {
 };
 
 Blockly.Python['otto9_home'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = "Otto.home()\n";
     return code;
 };
@@ -79,9 +79,9 @@ Blockly.Python['otto9_calibration'] = function(block) {
     var valuerl = block.getFieldValue('RL');
     var valuelf = block.getFieldValue('LF');
     var valuerf = block.getFieldValue('RF');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = 'Otto.setTrims('+ valuell +','+ valuerl +',' +valuelf +','+ valuerf+')\n';
     return code;
 };
@@ -103,7 +103,8 @@ Blockly.Arduino['otto9_eeprom'] = function(block) {
 };
 
 Blockly.Python['otto9_eeprom'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     var code = 'Otto.saveTrimsOnEEPROM()\n';
     return code;
 };
@@ -170,9 +171,9 @@ Blockly.Arduino['otto9_move'] = function(block) {
 Blockly.Python['otto9_move'] = function(block) {
     var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = '';
     switch(dropdown_otto_move_sens) {
         case 'FORWARD':
@@ -265,9 +266,9 @@ Blockly.Python['otto9_dance'] = function(block) {
     var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = '';
     switch(dropdown_otto_dance_movement) {
         case 'moonwalkerLEFT':
@@ -330,9 +331,9 @@ Blockly.Python['otto9_do'] = function(block) {
     var dropdown_otto_do_movement = block.getFieldValue('otto_do_movement');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ')\n';
     return code;
 };
@@ -365,10 +366,10 @@ Blockly.Arduino['otto9_gesture'] = function(block) {
 
 Blockly.Python['otto9_gesture'] = function(block) {
     var dropdown_otto_gesture = block.getFieldValue('otto_gesture');
-    Blockly.Python.definitions_['import_otto'] = 'import otto9';
+    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
     Blockly.Python.definitions_['import_gestures'] = 'import gestures';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
     return code;
 };
@@ -401,10 +402,10 @@ Blockly.Arduino['otto9_sound'] = function(block) {
 
 Blockly.Python['otto9_sound'] = function(block) {
     var dropdown_otto_sound = block.getFieldValue('otto_sound');
-    Blockly.Python.definitions_['import_otto'] = 'import otto9';
+    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
     Blockly.Python.definitions_['import_songs'] = 'import songs';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = 'Otto.sing(songs.' + dropdown_otto_sound.toUpperCase().substring(2) + ')\n';
     return code;
 };
@@ -443,9 +444,9 @@ Blockly.Arduino['otto9_tone'] = function(block) {
 Blockly.Python['otto9_tone'] = function(block) {
     var dropdown_otto_note = block.getFieldValue('otto_note');
     var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     var code = "Otto._tone(" + dropdown_otto_note + ", " + dropdown_otto_note_duration + ", 1)\n";
     return code;
 };
@@ -470,9 +471,8 @@ Blockly.Arduino['otto9_getdistance'] = function(block) {
 };
 
 Blockly.Python['otto9_getdistance'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-    + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     var code = 'Otto.getDistance()\n';
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -501,9 +501,8 @@ Blockly.Arduino['otto9_obstacle'] = function(block) {
 
 Blockly.Python['otto9_obstacle'] = function(block) {
     var dropdown_obstacle = block.getFieldValue('obstacle');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     var code = '(Otto.getDistance() < ' + dropdown_obstacle +')';
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -526,9 +525,8 @@ Blockly.Arduino['otto9_getnoise'] = function(block) {
 };
 
 Blockly.Python['otto9_getnoise'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     var code = 'Otto.getNoise()';
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -551,9 +549,6 @@ Blockly.Arduino['otto9_touchbutton'] = function(block) {
 };
 
 Blockly.Python['otto9_touchbutton'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
     Blockly.Python.definitions_['touch_pin'] = 'touch1 = TouchPad(Pin(14))'
     var code = 'touch1.read()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -586,14 +581,6 @@ Blockly.Arduino['otto9_gyro'] = function(block) {
   return code;
 };
 
-Blockly.Python['otto9_gyro'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = "print('we don\'t yet support gyro') # We don't yet support gyro in Python\n";
-    return code;
-};
-
 Blockly.Blocks['otto9_getg'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
     this.setInputsInline(true);
@@ -619,14 +606,6 @@ Blockly.Arduino['otto9_getg'] = function(block) {
   +'Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");\n';
   var code = dropdown_otto_getg;
   return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Python['otto9_getg'] = function(block) {
-Blockly.Python.definitions_['import_otto']='import otto9';
-Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-    + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-var code = "print('we don\'t yet support gyro') # We don't yet support gyro in Python\n";
-return code;
 };
 
 Blockly.Blocks['otto9_homeh'] = { init: function() {
@@ -657,9 +636,9 @@ Blockly.Arduino['otto9_homeh'] = function(block) {
 };
 
 Blockly.Python['otto9_homeh'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = "Otto.home()\n";
     return code;
 };
@@ -708,9 +687,9 @@ Blockly.Python['otto9_calibrationh']=function(block){
     var valuerf = block.getFieldValue('RF');
     var valuela = block.getFieldValue('LA');
     var valuera = block.getFieldValue('RA');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = 'Otto.setTrims('+ valuell +', '+ valuerl +', ' +valuelf +', '+ valuerf+', '+ valuela+', '+ valuera+'); \n';
     return code;
 };
@@ -778,9 +757,9 @@ Blockly.Arduino['otto9_moveh'] = function(block) {
 Blockly.Python['otto9_moveh'] = function(block) {
     var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = '';
     switch(dropdown_otto_move_sens) {
         case 'FORWARD':
@@ -870,9 +849,9 @@ Blockly.Python['otto9_danceh'] = function(block) {
     var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = '';
     switch(dropdown_otto_dance_movement) {
         case 'moonwalkerLEFT':
@@ -933,9 +912,9 @@ Blockly.Python['otto9_doh'] = function(block) {
     var dropdown_otto_do_movement = block.getFieldValue('otto_do_movement');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ')\n';
     return code;
 };
@@ -976,10 +955,10 @@ Blockly.Arduino['otto9_gestureh'] = function(block) {
 
 Blockly.Python['otto9_gestureh'] = function(block) {
     var dropdown_otto_gesture = block.getFieldValue('otto_gesture');
-    Blockly.Python.definitions_['import_otto'] = 'import otto9';
+    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
     Blockly.Python.definitions_['import_gestures'] = 'import gestures';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
     return code;
 };
@@ -1019,10 +998,10 @@ Blockly.Arduino['otto9_soundh'] = function(block) {
 
 Blockly.Python['otto9_soundh'] = function(block) {
     var dropdown_otto_sound = block.getFieldValue('otto_sound');
-    Blockly.Python.definitions_['import_otto'] = 'import otto9';
+    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
     Blockly.Python.definitions_['import_songs'] = 'import songs';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = 'Otto.sing(songs.' + dropdown_otto_sound.toUpperCase().substring(2) + ')\n';
     return code;
 };
@@ -1571,10 +1550,9 @@ Blockly.Arduino['otto9_matrix'] = function(block) {
 };
 
 Blockly.Python['otto9_matrix'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var matrix = '0b';
     for (var i=0; i<30; i++) {
         if (this.getFieldValue('otto9_matrix_pixel' + i) == 'TRUE')
@@ -1697,10 +1675,9 @@ return code;
 };
 
 Blockly.Python['otto9_matrix8x8'] = function() {
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = '';
     for (var i = 0; i < 64; i++) {
 
@@ -1742,11 +1719,10 @@ Blockly.Arduino['otto9_mouth'] = function(block) {
 
 Blockly.Python['otto9_mouth'] = function(block) {
     var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = 'Otto.putMouth(mouths.' + dropdown_otto9_mouth_choice.toUpperCase() + ')\n';
     return code;
 };
@@ -1783,11 +1759,10 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
 
 Blockly.Python['otto9_mouth#'] = function(block) {
     var valuemouth = Blockly.Python.valueToCode(block, 'mouth', Blockly.Python.ORDER_ATOMIC);
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = 'Otto.clearMouth()\n'
         + 'Otto.writeText(str('+valuemouth+'), 50) # show the data with a fast scroll \n'
         + 'delay(50)\n';
@@ -1825,11 +1800,10 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
 Blockly.Python['otto9_matrixp'] = function(block) {
     var valuex = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_ATOMIC);
     var valuey = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = 'Otto.setLed('+valuex+','+valuey+',1)\n';
     return code;
 };
@@ -1859,11 +1833,10 @@ Blockly.Arduino['otto9_matrix_text'] = function(block) {
 
 Blockly.Python['otto9_matrix_text'] = function(block) {
     var text_input = block.getFieldValue('input');
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = 'Otto.clearMouth()\n'
     + 'Otto.writeText('+ '"' + text_input +'"' +',100) # limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.9 characters \n';
     return code;
@@ -1885,11 +1858,10 @@ Blockly.Arduino["otto9_matrix_brightness"]=function(block){
 
 Blockly.Python["otto9_matrix_brightness"]=function(block){
     var brightness=Blockly.Python.valueToCode(block, "brightness");
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     return "Otto.matrixIntensity(" + brightness + ") #the brightness of the display. (0 to 15)\n"
 };
 
@@ -1916,11 +1888,10 @@ Blockly.Arduino['otto9_clear'] = function(block) {
 };
 
 Blockly.Python['otto9_clear'] = function(block) {
-    Blockly.Python.definitions_['import_otto']='import otto9';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     var code = 'Otto.clearMouth()\n';
     return code;
 };
@@ -1969,9 +1940,9 @@ Blockly.Arduino['otto9_arms'] = function(block) {
 
 Blockly.Python['otto9_arms'] = function(block) {
     var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
-    Blockly.Python.definitions_['import_otto']='import otto9';
-    Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-        + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
+    Blockly.Python.definitions_['import_otto9']='import otto9';
+    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
     var code = 'Otto.';
     switch(dropdown_otto9_arms_choice) {
         case 'HANDSUP':
