@@ -96,7 +96,7 @@
   "url": "https://github.com/OttoDIY/blockly/issues"
  },
  "devDependencies": {
-  "electron": "9.1.0",
+  "electron": "10.1.3",
   "electron-builder": "20.39.0"
  },
  "dependencies": {
