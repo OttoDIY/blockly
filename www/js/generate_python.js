@@ -40,12 +40,20 @@ Blockly.Python.finish=function(a) {
 		var e=Blockly.Python.imports_[name];
         e.match(/^(from\s+\S+\s+)?import\s+\S+/) ? imports.push(e) : froms.push(e)
     }
+
+	if ( window.profile[card].cpu == "cortexM0" ) imports.push("from microbit import *");
+
+	// newer code just uses definitions for imports as well.
+	for (var name in Blockly.Python.definitions_) {
+		var def = Blockly.Python.definitions_[name];
+		if (def.match(/^(from\s+\S+\s+)?import\s+\S+/)) {
+			imports.push(def);
+		} else {
+			definitions.push(def);
+		}
+	}
 	if (imports.length) {
 		imports.push('\n');
-	}
-	if ( window.profile[card].cpu == "cortexM0" ) imports.push("from microbit import *");
-	for (var name in Blockly.Python.definitions_) {
-		definitions.push(Blockly.Python.definitions_[name]);
 	}
 	if (definitions.length) {
 		definitions.push('\n');
