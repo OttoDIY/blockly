@@ -18,7 +18,7 @@ Blockly.Msg.download = "Letöltés befejezve, a program települni fog és újra
 // common to all blocks
 Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
 Blockly.Msg.pin = "pin";
-Blockly.Msg._AT = "at";
+Blockly.Msg._AT = "legyen";
 Blockly.Msg.AV = "előre";
 Blockly.Msg.AR = "hátra";
 Blockly.Msg.high = "HIGH"; // do not translate
@@ -184,15 +184,15 @@ Blockly.Msg.lcd_aff_symbole_tooltip = "show the symbol that has been defined bef
 Blockly.Msg.lcd_symbole = "define the symbol";
 Blockly.Msg.lcd_symbole_tooltip = "definition of a character for the LCD: \n 0 turns off a pixel \n 1 lights a pixel";
 // structure
-Blockly.Msg.loop = "Ismétlődés";
-Blockly.Msg.init = "Setup";
+Blockly.Msg.loop = "∞ Ismétlődés";
+Blockly.Msg.init = "⚙️ Beállít";
 Blockly.Msg.base_setup_loop = "The initialization function: \nIt is used to initialize the variables, the direction of the pins ... \nIt is executed only once \nThe loop function: \nThis is the main part of the program, all the blocks placed here will run in loop and indefinitely (several thousand times per second) ";
 Blockly.Msg.loop_tooltip = "minden ide helyezett blokk a végtelenségig ismétlődve fog futni (több ezerszer másodpercenként)";
-Blockly.Msg.begin = "KEZDÉS";
+Blockly.Msg.begin = "🏁 KEZDÉS";
 Blockly.Msg.begin_tooltip = "Ez a blokk határozza meg a sorrendet, amiben a programnak végre kell hajtódnia";
-Blockly.Msg.def = "Declaration";
+Blockly.Msg.def = "⚙️ Deklarálás";
 Blockly.Msg.def_tooltip = "all the blocks placed here will only be executed once, this is where the different sensors or actuators are configured";
-Blockly.Msg.END = "VÉGE";
+Blockly.Msg.END = "🏁 VÉGE";
 Blockly.Msg.END_tooltip = "Leállítja a programot, az ez után elhelyezett blokkok nem lesznek figyelembe véve";
 Blockly.Msg.code_tooltip = "Type an instruction here that is not in blocks";
 //matrix
