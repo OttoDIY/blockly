@@ -63,6 +63,8 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ NeoPixel";
+Blockly.Msg.CAT_CCS811 = "👃 CO2 sensor";
+
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
@@ -446,3 +448,12 @@ Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
 Blockly.Msg.OTTO9_ARMS_TEXT = "arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
+
+//CCS811
+
+Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
+Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
+Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
+Blockly.Msg.CCS811_available="Is the sensor available?";
+Blockly.Msg.CCS811_readed = "Is the measure readed?";
+Blockly.Msg.CCS811_values="value";

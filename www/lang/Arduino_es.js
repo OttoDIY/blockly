@@ -63,6 +63,8 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
+Blockly.Msg.CAT_CCS811 = "👃 Sensor CO2";
+
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -235,7 +237,7 @@ Blockly.Msg.ARDUINO_SINCE_PROGRAM_STARTED_TOOLTIP = "devuelve la duración en mi
 Blockly.Msg.ARDUINO_PULSEIN = "duración del estado";
 Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink";
 Blockly.Msg.tempo_tooltip = "Este bloque verifica si el tiempo indicado ha llegado, si es el caso, entonces ejecuta los bloques colocados dentro ... A diferencia del bloque 'esperar' este no está bloqueando." ;
-Blockly.Msg.tempo1 = "todos";
+Blockly.Msg.tempo1 = "cada";
 //OLED
 Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
@@ -445,3 +447,10 @@ Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Apaga todos los LED de la matriz de la boca 8
 Blockly.Msg.OTTO9_ARMS_TEXT = "brazos";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "¡mueve los brazos!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["manos arriba", "HANDSUP"], ["saludo izquierdo", "HANDWAVE1"], ["saludo derecho", "HANDWAVE2"]];
+
+Blockly.Msg.CCS811="Inicialización sensor CO2(CCS811)";
+Blockly.Msg.CCS811_name="Sensor CO2(CCS811)";
+Blockly.Msg.CCS811_2="SDA-SCL y conectar WAK a GND";
+Blockly.Msg.CCS811_available="El sensor esta disponible";
+Blockly.Msg.CCS811_readed = "Hay lectura del sensor";
+Blockly.Msg.CCS811_values="valor de";

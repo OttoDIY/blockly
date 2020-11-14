@@ -548,3 +548,114 @@ Blockly.Arduino["VL53L0X_distance"]=function(block){
 Blockly.Python["VL53L0X_distance"]=function(block){
     return ["tof.read()", Blockly.Python.ORDER_ATOMIC]
 };
+
+////////// CCS811 Sensor ////////////
+
+Blockly.Blocks['Init_CCS811'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#2a93e8");
+	this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("media/CCS811.png",50,38))
+		.appendField(Blockly.Msg.CCS811)
+		.appendField(Blockly.Msg.CCS811_2);
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init the libraries to read the values in the CCS811 sensors');
+  }
+};
+
+Blockly.Arduino['Init_CCS811'] = function(block) {
+   
+  Blockly.Arduino.includes_['include_Adafruit_CCS811'] = '#include <Adafruit_CCS811.h>';
+  Blockly.Arduino.variables_['init_CCS811'] = 'Adafruit_CCS811 ccs;\n';
+      
+  Blockly.Arduino.setups_['setup_CCS811'] = 'ccs.begin();\n';
+  	 	 
+  var code='';
+  return code;
+};
+
+Blockly.Blocks['CCS811_available'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/CCS811.png",50,38))
+		.appendField(Blockly.Msg.CCS811_name)
+	    .appendField(Blockly.Msg.CCS811_available)
+	this.setOutput(true, 'Boolean');
+	this.appendDummyInput()
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['CCS811_available'] = function(block) {
+  
+  var code = 'ccs.available()';
+  
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Blocks['CCS811_readed'] = {
+  helpUrl: '',
+  init: function() {
+   this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/CCS811.png",50,38))
+		.appendField(Blockly.Msg.CCS811_name)
+	    .appendField(Blockly.Msg.CCS811_readed)
+	this.setOutput(true, 'Boolean');
+	this.appendDummyInput()
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['CCS811_readed'] = function(block) {
+  
+  var code = '!ccs.readData()';
+  
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Blocks['CCS811_values'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/CCS811.png",50,38))
+		.appendField(Blockly.Msg.CCS811_name)
+		.appendField(new Blockly.FieldDropdown([['eCO2 ppm','0'],['TVOC ppb','1']]), "TypeMeasure")
+	    .appendField(Blockly.Msg.ADXL345_values);
+    this.setOutput(true, "Number");
+	this.setInputsInline(true);
+    this.setTooltip('Refund the parameter selected. eCO2 (equivalent calculated carbon-dioxide) or TVOC (Total Volatile Organic Compound)');
+  }
+};
+
+
+Blockly.Arduino['CCS811_values'] = function(block) {
+  
+  var typeMeasure = this.getFieldValue('TypeMeasure');
+  var code;
+ 
+  switch (typeMeasure) {
+    case '0':
+      code = 'ccs.geteCO2()';
+      break;
+    case '1':
+      code = 'ccs.getTVOC()';
+      break;
+    default:
+			code = 'ccs.geteCO2()';
+			break;
+  }
+return [code, Blockly.Arduino.ORDER_ATOMIC];
+ 
+};
+
+
+
