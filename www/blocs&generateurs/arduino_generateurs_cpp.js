@@ -19,6 +19,32 @@ Blockly.Arduino["serial_init"]=function(block){
 	}
   return ""
 };
+
+Blockly.Arduino["serial_init2"]=function(block){
+    var dropdown_speed=block.getFieldValue("SPEED");
+	var dropdown_pin=block.getFieldValue("pin");
+	window.localStorage.baudrate=dropdown_speed;
+	switch (dropdown_pin) {
+        case "0":
+            Blockly.Arduino.setups_["serial_begin"]="Serial.begin(" + dropdown_speed + ");";
+            break;
+        case "19":
+            Blockly.Arduino.setups_["serial_begin"]="Serial1.begin(" + dropdown_speed + ");";
+            break;
+        case "17":
+            Blockly.Arduino.setups_["serial_begin"]="Serial2.begin(" + dropdown_speed + ");";
+            break
+        case "15":
+            Blockly.Arduino.setups_["serial_begin"]="Serial3.begin(" + dropdown_speed + ");";
+            break
+	}
+  return ""
+};
+
+
+
+
+
 Blockly.Arduino["serial_read"]=function(block){
     var code="Serial.read()";
     return [code, Blockly.Arduino.ORDER_ATOMIC]
@@ -51,6 +77,20 @@ Blockly.Arduino["soft_init"]=function(block){
     Blockly.Arduino.setups_["setup_sserial"]="mySerial.begin(" + dropdown_speed + ");";
     return ""
 };
+
+Blockly.Arduino["soft_init2"]=function(block){
+    var dropdown_pin1=block.getFieldValue("PIN1");
+    var dropdown_pin2=block.getFieldValue("PIN2");
+    var dropdown_speed=block.getFieldValue("SPEED");
+    Blockly.Arduino.includes_["define_ss"]="#include <SoftwareSerial.h>";
+	Blockly.Arduino.definitions_["define_ss"]="SoftwareSerial mySerial(" + dropdown_pin1 + "," + dropdown_pin2 + ");";
+    Blockly.Arduino.setups_["setup_sserial"]="mySerial.begin(" + dropdown_speed + ");";
+    return ""
+};
+
+
+
+
 Blockly.Arduino["soft_read"]=function(block){
     var code="mySerial.read()";
     return [code, Blockly.Arduino.ORDER_ATOMIC]

@@ -384,32 +384,84 @@
 			<block type="lp2i_mp3_prev"></block>
 			<block type="lp2i_mp3_volume"></block>
 		</category>	
-	<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
-			<block type="serial_init"></block>	
+		
+    <category name="CAT_com"  colour="#0060aa">
+		
+		<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
+			<block type="serial_init2"></block>	
 			<block type="serial_write">
-			<value name="CONTENT">	<shadow type="text">	<field name="TEXT">Hi Otto</field>	</shadow></value>
+			<value name="CONTENT">	<shadow type="text"><field name="TEXT">Hi Otto</field>	</shadow></value>
 			</block>	
-			<block type="serial_input"></block>	
+			<block type="serial_available"></block>
+		<!--		<block type="serial_input"></block>	-->
 			<block type="serial_read"></block>
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block>
 		</category>
+		
 		<category name="CAT_ARDUINO_COMM_SOFTSERIAL" colour="#0060aa">
-			<block type="soft_init"></block>
-			<block type="soft_write"></block>
+			<block type="soft_init2"></block>
+			<block type="soft_write">
+				<value name="CONTENT">	<shadow type="text"><field name="TEXT">Hi Otto</field>	</shadow></value>
+			</block>
 			<block type="soft_available"></block>
 			<block type="soft_read"></block>
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block>
 		</category>
-		<category name="CAT_bluetooth" colour="#0060aa">
+		
+	    <category name="CAT_bluetooth" colour="#0060aa">
+			<block type="soft_bt_init">
+				<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
+				<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+			</block>
+			
+			<block type="soft_bt_available"></block>  
+            <block type="soft_bt_read"></block>
+			
+			<block type="soft_bt_printfor" x="13" y="38">
+                <field name="TYPE">DEC</field>
+                <value name="CONTENT">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+			
+			 <block type="soft_bt_print">
+			    <value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">text</field>
+                    </shadow>
+                </value>
+			</block>
+            <block type="soft_bt_println">
+			 <value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">text</field>
+                    </shadow>
+                </value>
+			</block>
+            
+			<block type="soft_bt_write" x="38" y="38">
+                <value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">A</field>
+                    </shadow>
+                </value>
+            </block>
+	<!--		
 			<block type="bluetooth_init">
 			<value name="PIN1"><shadow type="math_number">	<field name="Num">11</field></shadow></value>
 			<value name="PIN2"><shadow type="math_number"><field name="Num">12</field></shadow>	</value>
 			</block>
 			<block type="bluetooth_a"></block>
 			<block type="bluetooth_b"></block>
+	-->		
 		</category>
+				
+	</category> 
+		
 	<category name="CAT_iot" colour="#154360">
 		<category name="CAT_wifi" colour="#154360">
 			<block type="esp8266_init"></block>
@@ -439,6 +491,7 @@
 			<block type="color"></block>
 			<block type="bgcolor"></block>
 			<block type="border"></block>
-		</category>
-	</category>
+		</category> 
+	  
+	</category>	
 </toolbox>
