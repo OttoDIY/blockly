@@ -48,11 +48,12 @@ Blockly.Msg.CAT_ARDUINO_OUT = "☺ Exit";
 Blockly.Msg.CAT_ARDUINO_TIME = "◌ Time";
 Blockly.Msg.CAT_actionneur = "↻ Motor";
 Blockly.Msg.CAT_com = "☎ Communication";
-Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "- Serial";
-Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "- Soft Serial";
+Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serial USB";
+Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "SoftwareSerial";
 Blockly.Msg.CAT_ARDUINO_moteur="↻ Motor Stepper";
 Blockly.Msg.CAT_ultrason = "⇣ Sensor";
-Blockly.Msg.CAT_bluetooth = "☏ Bluetooth";
+Blockly.Msg.CAT_bluetooth = "Bluetooth";
+Blockly.Msg.CAT_RemoteIR = "IR R.Control";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Mouth";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Eyes";
 Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ LCD Screen";
@@ -168,6 +169,21 @@ Blockly.Msg.bluetooth2 = "send by bluetooth";
 Blockly.Msg.bluetooth2_tooltip = "sends data via bluetooth \nconnecting module HC-06 to pins 0 and 1 \net cross pins Rx and Tx";
 Blockly.Msg.bluetooth_init_tooltip = "";
 Blockly.Msg.bluetooth_helpurl = "https://wikifactory.com/+OttoDIY/otto-diy-plus"; // do not translate
+
+
+// SOFTWARE SERIAL FOR BT
+Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read value";
+Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
+Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
+Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
+Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
+Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+
+
 //LCD screen
 Blockly.Msg.lcd_fond = "bottom";
 Blockly.Msg.LCD = "LCD screen";
@@ -457,3 +473,11 @@ Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+
+//REMOTE CONTROL IR
+Blockly.Msg.KEY="Key";
+Blockly.Msg.GENERAL_IR="Remote Control IR";
+Blockly.Msg.GENERAL_PRESSED="Read key";
+Blockly.Msg.PIN="PIN";
+

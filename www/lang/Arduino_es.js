@@ -48,11 +48,12 @@ Blockly.Msg.CAT_ARDUINO_OUT = "☺ Salir";
 Blockly.Msg.CAT_ARDUINO_TIME = "◌ Tiempo";
 Blockly.Msg.CAT_actionneur = "↻ Motor";
 Blockly.Msg.CAT_com = "☎ Comunicación";
-Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "- Serie";
-Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "- Software";
+Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serie USB";
+Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "SoftwareSerial";
 Blockly.Msg.CAT_ARDUINO_moteur = "↻ Motor DC";
 Blockly.Msg.CAT_ultrason = "⇣ Sensor";
-Blockly.Msg.CAT_bluetooth = "☏ Bluetooth";
+Blockly.Msg.CAT_bluetooth = "Bluetooth";
+Blockly.Msg.CAT_RemoteIR = "C.Remoto IR";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Boca";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Ojos";
 Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ Pantalla LCD";
@@ -167,6 +168,20 @@ Blockly.Msg.bluetooth2 = "enviar por bluetooth";
 Blockly.Msg.bluetooth2_tooltip = "envía datos a través del bluetooth \nconectando el módulo HC-06 a los pines 0 y 1 \ pines cruzados de red Rx y Tx";
 Blockly.Msg.bluetooth_init_tooltip = "";
 Blockly.Msg.bluetooth_helpurl = "https://wikifactory.com/+OttoDIY/otto-diy-plus"; // do not translate
+
+// SOFTWARE SERIAL FOR BT
+Blockly.Msg.SSERIAL_BT_Init="Inicializa Bluetooth SoftwareSerial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Valor leido";
+Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Imprimir en una nueva linea";
+Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Imprimir en la misma linea";
+Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT escribir"
+Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT disponible?";
+Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Imprimir en formato";
+
+
 //Pantalla LCD
 Blockly.Msg.lcd_fond = "bottom";
 Blockly.Msg.LCD = "Pantalla LCD";
@@ -454,3 +469,8 @@ Blockly.Msg.CCS811_2="SDA-SCL y conectar WAK a GND";
 Blockly.Msg.CCS811_available="El sensor esta disponible";
 Blockly.Msg.CCS811_readed = "Hay lectura del sensor";
 Blockly.Msg.CCS811_values="valor de";
+
+Blockly.Msg.KEY="Botón";
+Blockly.Msg.GENERAL_IR="Control Remoto por IR";
+Blockly.Msg.GENERAL_PRESSED="Tecla leida";
+Blockly.Msg.PIN="PIN";
