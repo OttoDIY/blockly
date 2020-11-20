@@ -18,11 +18,11 @@ var VS_VISION_TYPE = [["Color Detect", "VISION_COLOR_DETECT"],
 
 var lVsMu = [["MU00", "0"],["MU01", "1"],["MU10", "2"],["MU11", "3"]];
 
-Blockly.Blocks.VisionSensor.HUE = 140;
-Blockly.Blocks.VisionSensor.HUE_SetupMode = 140;
-Blockly.Blocks.VisionSensor.HUE_RunMode = 140;
-Blockly.Blocks.VisionSensor.HUE_LightSensor = 160;
-Blockly.Blocks.VisionSensor.HUE_AT = 170;
+Blockly.Blocks.VisionSensor.HUE = "#0060aa";
+Blockly.Blocks.VisionSensor.HUE_SetupMode = "#0060aa";
+Blockly.Blocks.VisionSensor.HUE_RunMode = "#0060aa";
+Blockly.Blocks.VisionSensor.HUE_LightSensor = "#0060aa";
+Blockly.Blocks.VisionSensor.HUE_AT = "#0060aa";
 
 //Variables del código Arduino
 
@@ -81,10 +81,10 @@ var Mu3AtPort = '';
 
 Blockly.Blocks['Vs2MuInit'] = {
   init: function() {
-  var dropdown_list = [["I2C","Wire"],["Serial","Serial1"]];
+  var dropdown_list = [["I2C","Wire"]/*,["Serial","Serial1"]*/];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/muvision.png",43,38))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_MU)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
@@ -124,7 +124,7 @@ Blockly.Blocks['Vs2Setup'] = {
   init: function() {
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_SetupVS)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ");
@@ -148,7 +148,7 @@ Blockly.Blocks['Vs2Reset'] = {
   init: function() {
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_RESET);
     this.setPreviousStatement(true, null);
@@ -180,7 +180,7 @@ Blockly.Blocks['Vs2SetLEDColor'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField('LED')
         .appendField(new Blockly.FieldDropdown([["1", "kLed1"], ["2", "kLed2"], [Blockly.LKL_VS2_ALL, "kLedAll"]]), "LED_ID")
@@ -232,7 +232,7 @@ Blockly.Blocks['Vs2VisionBegin'] = {
     var lVs2VisionStatus = [[Blockly.LKL_VS2_ENABLE, "Begin"],[Blockly.LKL_VS2_DISABLE, "End"]];
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVs2VisionStatus), "VisionStatus")
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
@@ -263,7 +263,7 @@ Blockly.Blocks['Vs2SetVisionLevel'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
         .appendField(new Blockly.FieldDropdown(VS_VISION_TYPE), "VisionType")
@@ -300,9 +300,9 @@ Blockly.Arduino.Vs2SetVisionLevel = function() {
 
 Blockly.Blocks['Vs2SetVisionZoom'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#0060aa");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_SET_VISION_ZOOM)
         .appendField(new Blockly.FieldDropdown([[Blockly.LKL_VS2_AUTO,"kZoomDefault"],[Blockly.LKL_VS2_LEVEL+"1", "kZoom1"],
@@ -334,7 +334,7 @@ Blockly.Blocks['Vs2SetColorRecognitionRegion'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_VISION_COLOR_RECOGNITION)
         .appendField(Blockly.LKL_VS2_SET_RECOGNITION_REGION);
@@ -376,7 +376,7 @@ Blockly.Blocks['Vs2SetColorBlockMinBlob'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_VISION_COLOR_DETECT)
         .appendField(Blockly.LKL_VS2_SET_MIN_RECOGNITION_SIZE);
@@ -418,7 +418,7 @@ Blockly.Blocks['Vs2SetUARTBaud'] = {
     ["115200","kBaud115200"],["230400","kBaud230400"],["460800","kBaud460800"],["921600","kBaud921600"]];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
 				.appendField(Blockly.LKL_VS2_SET_UART_BAUD)
         .appendField(new Blockly.FieldDropdown(BAUD), "BAUD");
@@ -447,7 +447,7 @@ Blockly.Blocks['Vs2SetCameraRotate'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
         .appendField(Blockly.LKL_VS2_SET_FRAME_ROTATE)
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'FRAME_ROTATE');
@@ -481,7 +481,7 @@ Blockly.Blocks['Vs2SetCameraHFR'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
         .appendField(Blockly.LKL_VS2_SET_CAMERA_HFR)
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'CameraHFR');
@@ -516,7 +516,7 @@ Blockly.Blocks['Vs2SetCameraWhiteBalance'] = {
                       [Blockly.LKL_VS2_WHITE_LIGHT, "kWhiteLight"],[Blockly.LKL_VS2_YELLOW_LIGHT, "kYellowLight"]];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
         .appendField(Blockly.LKL_VS2_SET_CAMERA_AWB)
         .appendField(new Blockly.FieldDropdown(lCameraAWB), 'CameraAWB');
@@ -544,7 +544,7 @@ Blockly.Blocks['Vs2Detected'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
 				.appendField(Blockly.LKL_VS2_DETECTED)
@@ -565,7 +565,7 @@ Blockly.Blocks['Vs2DetectedRegionColor'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_RECOGNIZED)
@@ -605,7 +605,7 @@ Blockly.Blocks['Vs2DetectedColorDetect'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_DETECTED)
@@ -637,7 +637,7 @@ Blockly.Blocks['Vs2GetColorLabel'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
@@ -679,7 +679,7 @@ Blockly.Blocks['Vs2GetMessage'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
 				.appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
@@ -780,7 +780,7 @@ Blockly.Blocks['Vs2GetCardType'] = {
                             };
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/camera2.png",35,25))
+		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
         .appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MuObj")
@@ -1002,15 +1002,15 @@ Blockly.Blocks['Mu3AtWiFiInit'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_MU)
         .appendField(Blockly.LKL_VS2_SERIAL)
-        .appendField(new Blockly.FieldDropdown([["I2C","Wire"],["Serial","Serial1"]]), "SERIAL");
-    this.appendValueInput("BAUD")
-        .setCheck("Number")
-        .appendField(Blockly.LKL_VS2_SET_UART_BAUD);
+        .appendField(new Blockly.FieldDropdown([["I2C","Wire"] /*,["Serial","Serial1"]*/]), "SERIAL");
+ //   this.appendValueInput("BAUD")
+ //       .setCheck("Number")
+ //       .appendField(Blockly.LKL_VS2_SET_UART_BAUD);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setInputsInline(true);
@@ -1029,10 +1029,11 @@ Blockly.Arduino.Mu3AtWiFiInit = function() {
   var baud = Blockly.Arduino.valueToCode(this, "BAUD",
              Blockly.Arduino.ORDER_NONE) || '9600';
   Mu3AtPort = dropdown_serial;
-  Blockly.Arduino.definitions_['include_mu3_at'] = '#include <MuVisionSensor3_AT.h>';
+  Blockly.Arduino.includes_['include_mu3_at'] = '#include <MuVisionSensor3_AT.h>';
   Blockly.Arduino.definitions_['funMu3AtRead8'] = funMu3AtRead8.replace(/SERIAL_PORT/g, dropdown_serial);
   Blockly.Arduino.definitions_['funMu3AtWrite8'] = funMu3AtWrite8.replace("SERIAL_PORT", dropdown_serial);
   Blockly.Arduino.definitions_['define_mu3_at'] = 'MuVisionSensor3_AT MU3_AT(Mu3AtRead8, Mu3AtWrite8);';
+  
   var code = dropdown_serial+'.begin(9600);\n';
   if (baud != '9600') {
     code += 'MU3_AT.UartBaud("'+baud+'");\n';
@@ -1046,7 +1047,7 @@ Blockly.Blocks['Mu3AtWiFiSet'] = {
     var dropdown_mode = [[Blockly.LKL_VS2_CLIENT,'"STA"'],[Blockly.LKL_VS2_HOT_SPOT,'"AP"']];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_SET);
@@ -1080,7 +1081,7 @@ Blockly.Blocks['Mu3AtWiFiCon'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_WAIT_CONNECT+"?");
@@ -1098,7 +1099,7 @@ Blockly.Blocks['Mu3AtWiFiDiscon'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_DISCONNECT);
@@ -1117,7 +1118,7 @@ Blockly.Blocks['Mu3AtWiFiUDP'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_SET);
@@ -1147,7 +1148,7 @@ Blockly.Blocks['Mu3AtWiFiCip'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_READ)
@@ -1166,7 +1167,7 @@ Blockly.Blocks['Mu3AtWiFiSip'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_READ)
@@ -1185,7 +1186,7 @@ Blockly.Blocks['Mu3AtWiFiRead'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendDummyInput()
         .appendField("MU WiFi")
         .appendField(Blockly.LKL_VS2_READ);
@@ -1204,7 +1205,7 @@ Blockly.Blocks['Mu3AtWiFiWrite'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_AT);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("images/logowifi.png", 24,18 ))
+		.appendField(new Blockly.FieldImage("media/wifi.png", 24,18 ))
     this.appendValueInput("NUMBER")
         .setCheck("Number")
         .appendField("MU WiFi")

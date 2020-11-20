@@ -536,8 +536,8 @@
 		</category> 
 	</category>	
 	
-	<category name="CAT_CAMERAS" colour="#154360">
-		<category name="CAT_MUVISION" colour="#154360">
+	<category name="CAT_CAMERAS" colour="#0060aa">
+		<category name="CAT_MUVISION" colour="#0060aa">
 			<block type="Vs2MuInit"></block>
 			<block type="Vs2Setup"></block>
 			<block type="Vs2Reset"></block>
@@ -571,7 +571,7 @@
 				</value>
 			</block>
 		    <block type="Vs2SetVisionZoom"></block>
-			<block type="Vs2SetUARTBaud"></block>
+		<!--	<block type="Vs2SetUARTBaud"></block> -->
 			<block type="Vs2SetCameraWhiteBalance"></block>
 			<block type="Vs2SetCameraHFR"></block>
 			<block type="Vs2Detected"></block>
