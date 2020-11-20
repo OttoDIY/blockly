@@ -63,6 +63,11 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ İnsansı";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
+Blockly.Msg.CAT_CCS811 = "👃 Sensor CO2";
+Blockly.Msg.CAT_Displays = "🖥 Displays";
+Blockly.Msg.CAT_AUDIO = "♫ Audio";
+Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
+Blockly.Msg.CAT_MUVISION = "MuVision";
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "wifi modülünün başlatılması ve belirtilen parametrelerle bağlantı";
 Blockly.Msg.esp8266_1 = "Esp 8266";

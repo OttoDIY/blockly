@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
+	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTOH,CAT_del,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_begin"></block>
 		<block type="base_end"></block>
@@ -178,6 +178,9 @@
 		<block type="m_pap"></block>
 		<block type="m_pap_step"></block>
 	</category>	
+	
+<category name="CAT_Displays"  colour="#4b009f">
+	
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
 			<block type="pixel_init">
 			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
@@ -363,6 +366,7 @@
 		<block type="OLED_bitmap"></block>
 		<block type="OLED_clear"></block>
 	</category>
+	
 		<category name="CAT_DFRobot_SHIELD_LCDKEYPAD" colour="#4b009f">
 			<block type="lcd_i2c"></block>
 			<block type="lcd_symbole"></block>
@@ -372,6 +376,9 @@
 			<block type="LCD_Keypad_Shield_DFR_09_RAZ"></block>
 			<block type="lcd"></block>
 		</category> 
+	</category>	
+	
+<category name="CAT_AUDIO" colour="#a600d3">
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="play"></block>
 			<block type="tone"></block>
@@ -384,6 +391,32 @@
 			<block type="lp2i_mp3_prev"></block>
 			<block type="lp2i_mp3_volume"></block>
 		</category>	
+		
+		<category name="CAT_OPENSMART" colour="#a600d3">
+			<block type="OpenSmartMp3_init_ss">
+				<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
+				<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+			</block>
+			<block type="OpenSmartMp3_set_volumen">
+			 <value name="Volumen"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+			</block>
+			<block type="OpenSmartMp3_operation"></block>
+			<block type="OpenSmartMp3_playsong">
+			 <value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="OpenSmartMp3_playsongdirectiry">
+			 <value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			 <value name="Directory"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="OpenSmartMp3_injectindex">
+			 <value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+		</category>	
+	</category>
+	
+	
+
 		
     <category name="CAT_com"  colour="#0060aa">
 		
@@ -501,6 +534,117 @@
 			<block type="bgcolor"></block>
 			<block type="border"></block>
 		</category> 
-	  
 	</category>	
+	
+	<category name="CAT_CAMERAS" colour="#154360">
+		<category name="CAT_MUVISION" colour="#154360">
+			<block type="Vs2MuInit"></block>
+			<block type="Vs2Setup"></block>
+			<block type="Vs2Reset"></block>
+			<block type="Vs2SetLEDColor">
+			  <value name="LEDLevel"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			</block>
+		    <block type="Vs2VisionBegin"></block>
+			<block type="Vs2SetVisionLevel"></block>
+			<block type="Vs2SetColorRecognitionRegion">
+				<value name="Width">
+					<shadow type="math_number">
+						<field name="NUM">5</field>
+					</shadow>
+				</value>
+				<value name="Height">
+					<shadow type="math_number">
+						<field name="NUM">5</field>
+					</shadow>
+				</value>
+			</block>
+			<block type="Vs2SetColorBlockMinBlob">
+				<value name="Width">
+					<shadow type="math_number">
+						<field name="NUM">5</field>
+					</shadow>
+				</value>
+				<value name="Height">
+					<shadow type="math_number">
+						<field name="NUM">5</field>
+					</shadow>
+				</value>
+			</block>
+		    <block type="Vs2SetVisionZoom"></block>
+			<block type="Vs2SetUARTBaud"></block>
+			<block type="Vs2SetCameraWhiteBalance"></block>
+			<block type="Vs2SetCameraHFR"></block>
+			<block type="Vs2Detected"></block>
+			<block type="Vs2DetectedRegionColor">
+				<value name="XValue">
+					<shadow type="math_number">
+						<field name="NUM">50</field>
+					</shadow>
+				</value>
+				<value name="YValue">
+					<shadow type="math_number">
+						<field name="NUM">50</field>
+					</shadow>
+				</value>
+			</block>
+			<block type="Vs2DetectedColorDetect"></block>
+			<block type="Vs2GetMessage"></block>
+			<block type="Vs2GetCardType"></block>
+			<block type="Vs2GetColorLabel"></block>
+			
+			<block type="Mu3LsBegin"></block>
+			<block type="Mu3LsSetSensitivity"></block>
+			<!-- <block type="Mu3LsWhiteBalanceEnable"></block> -->
+			<block type="Mu3LsReadProximity"></block>
+			<block type="Mu3LsReadAmbientLight"></block>
+			<block type="Mu3LsDetectedGesture"></block>
+			<block type="Mu3LsDetectedGestureType"></block>
+		
+			<block type="Mu3AtWiFiInit">
+				<value name="BAUD">
+	            <shadow type="math_number">
+	                <field name="NUM">9600</field>
+	            </shadow>
+	        </value>
+			</block>
+			<block type="Mu3AtWiFiSet">
+				 <value name="SSID">
+	            <shadow type="text"></shadow>
+	        </value>
+	        <value name="PASSWORD">
+	            <shadow type="text"></shadow>
+	        </value>
+			</block>
+			
+			<block type="Mu3AtWiFiCon"></block>
+			<block type="Mu3AtWiFiDiscon"></block>	
+
+			<block type="Mu3AtWiFiCip"></block>
+			<block type="Mu3AtWiFiSip"></block>
+			<block type="Mu3AtWiFiRead"></block>
+			<block type="Mu3AtWiFiUDP">
+				<value name="IP">
+	            <shadow type="text">
+	                <field name="TEXT">192.168.4.2</field>
+				</shadow>
+	        </value>
+	        <value name="PORT">
+	            <shadow type="text">
+	                <field name="TEXT">3333</field>
+				</shadow>
+	        </value>
+			</block>
+			<block type="Mu3AtWiFiWrite">
+				<value name="NUMBER">
+	            <shadow type="math_number">
+	                <field name="NUM">0</field>
+	            </shadow>
+	        </value>
+			</block>
+			
+			
+		</category>	
+	
+	</category>	
+	
 </toolbox>

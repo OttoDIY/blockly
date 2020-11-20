@@ -71,7 +71,7 @@ Blockly.Arduino['soft_bt_init'] = function(block) {
   var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
   
-  Blockly.Arduino.definitions_['define_ssBT'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerialBT('+pin_rx+','+pin_tx+');\n';
+  Blockly.Arduino.includes_['define_ssBT'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerialBT('+pin_rx+','+pin_tx+');\n';
   Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+dropdown_pinbaudios+');\n';
   var code = '';
   return code;
