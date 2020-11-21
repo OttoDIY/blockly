@@ -63,6 +63,11 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto"; //added 06/09/2019
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoïde"; 
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
+Blockly.Msg.CAT_CCS811 = "👃 Sensor CO2";
+Blockly.Msg.CAT_Displays = "🖥 Displays";
+Blockly.Msg.CAT_AUDIO = "♫ Audio";
+Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
+Blockly.Msg.CAT_MUVISION = "MuVision";
 //wifi
 Blockly.Msg.esp8266_init_tooltip="initialisation du module wifi et connection avec les paramètres indiqués";
 Blockly.Msg.esp8266_1="Esp 8266";
