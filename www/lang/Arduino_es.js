@@ -28,6 +28,7 @@ Blockly.Msg.left = "izquierda";
 Blockly.Msg.LetR = "derecha e izquierda";
 Blockly.Msg.direction = "direccion";
 Blockly.Msg.vitesse = "velocidad";
+Blockly.Msg.values = "[0-90]";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ Almacenamiento";
 Blockly.Msg.CAT_numerique = "- Digital";
