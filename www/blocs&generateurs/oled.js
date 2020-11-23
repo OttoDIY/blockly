@@ -36,6 +36,39 @@ Blockly.Blocks['OLED_init'] = {
   return code
 };
 
+Blockly.Blocks['OLED_init_2'] = {
+  init: function() {
+  this.appendDummyInput()
+     .appendField(new Blockly.FieldImage('media/oled.png', 48, 39, "*"))
+     .appendField("OLED I2C")
+     this.appendDummyInput()
+     .setAlign(Blockly.ALIGN_RIGHT)
+     .appendField("size")
+     .appendField(new Blockly.FieldDropdown([["64", "64"], ["32", "32"]]), "height")
+     .appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
+     this.setInputsInline(true);
+	 this.setPreviousStatement(true);
+	 this.setNextStatement(true);
+     this.setColour("#1B2944");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+ Blockly.Arduino['OLED_init_2'] = function(block) {
+  var value_height = block.getFieldValue('height');
+  var value_address = block.getFieldValue('address');
+  Blockly.Arduino.includes_['OLED'] = '#include <Adafruit_GFX.h>\n'
+  +'#include <Adafruit_SSD1306.h>';
+  Blockly.Arduino.definitions_['OLED'] = '#define SCREEN_WIDTH 128 // OLED display width, in pixels\n'
+  +'#define SCREEN_HEIGHT '+value_height+'  // OLED display height, in pixels\n'
+  +'#define OLED_RESET     -1 // sharing Arduino reset pin\n'
+  +'Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);';
+  Blockly.Arduino.setups_['OLED']='display.begin(SSD1306_SWITCHCAPVCC, '+value_address+');\n'
+  +'display.clearDisplay();';
+  var code 
+  return code
+};
+
 Blockly.Blocks['OLED_rotate'] = {
   init: function() {
      this.appendDummyInput()

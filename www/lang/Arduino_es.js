@@ -52,12 +52,12 @@ Blockly.Msg.CAT_com = "📡 Comunicación";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serie USB";
 Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "SoftwareSerial";
 Blockly.Msg.CAT_ARDUINO_moteur = "↻ Motor DC";
-Blockly.Msg.CAT_ultrason = "⇣ Sensor";
+Blockly.Msg.CAT_ultrason = "⇣ Sensores";
 Blockly.Msg.CAT_bluetooth = "Bluetooth";
 Blockly.Msg.CAT_RemoteIR = "C.Remoto IR";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Boca";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Ojos";
-Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ Pantalla LCD";
+Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ Grove LCD";
 Blockly.Msg.CAT_iot = "☁ IoT";
 Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "MP3 DFMini";
@@ -71,6 +71,8 @@ Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_OPENSMART = "MP3 OpenSmart";
 Blockly.Msg.CAT_CAMERAS = "📷 Camaras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
+Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
+Blockly.Msg.CAT_SENSORS = "⇣ Sensores";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";
@@ -180,12 +182,15 @@ Blockly.Msg.SSERIAL_BT_Init="Inicializa Bluetooth SoftwareSerial";
 Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Valor leido";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Leer byte";
 Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Imprimir en una nueva linea";
 Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Imprimir en la misma linea";
 Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT escribir"
 Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT disponible?";
 Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Imprimir en formato";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Leer como número";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Leer como String";
+Blockly.Msg.SSERIAL_BT_Readlf="hasta el salto de línea";
 
 
 //Pantalla LCD

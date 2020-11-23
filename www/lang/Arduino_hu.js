@@ -68,6 +68,9 @@ Blockly.Msg.CAT_Displays = "🖥 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
+Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
+Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -596,9 +599,12 @@ Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
 Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read value";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
 Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
 Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
 Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
 Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
 Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
+Blockly.Msg.SSERIAL_BT_Readlf="until line feed";

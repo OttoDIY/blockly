@@ -52,12 +52,12 @@ Blockly.Msg.CAT_com = "📡 Communication";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serial USB";
 Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "SoftwareSerial";
 Blockly.Msg.CAT_ARDUINO_moteur="↻ Motor Stepper";
-Blockly.Msg.CAT_ultrason = "⇣ Sensor";
+Blockly.Msg.CAT_ultrason = "⇣ Sensors";
 Blockly.Msg.CAT_bluetooth = "Bluetooth";
 Blockly.Msg.CAT_RemoteIR = "IR R.Control";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Mouth";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Eyes";
-Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ LCD Screen";
+Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ Grove LCD";
 Blockly.Msg.CAT_iot = "☁ IoT";
 Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "MP3 DFMini";
@@ -71,6 +71,8 @@ Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_OPENSMART = "MP3 OpenSmart";
 Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
+Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
+Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
 
 
 //Wireless
@@ -182,12 +184,15 @@ Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
 Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read value";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
 Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
 Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
 Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
 Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
 Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
+Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
 
 
 //LCD screen

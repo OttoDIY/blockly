@@ -268,6 +268,7 @@ Blockly.Blocks["lcd_i2c"]={init:function(){
         this.setHelpUrl("http://wiki.seeed.cc/Grove-LCD_RGB_Backlight/");
     }
 };
+
 Blockly.Arduino["lcd_i2c"]=function(block){
     var fond_couleur=block.getFieldValue("fond");
     Blockly.Arduino.includes_["rgb_lcd"]='#include <Wire.h>\n#include <rgb_lcd.h>';
@@ -308,6 +309,53 @@ Blockly.Python["lcd_i2c"]=function(block){
     }
     return ""
 };
+
+
+Blockly.Blocks["lcd_i2c_2"]={init:function(){
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 48, 48, "*"))
+			.appendField(Blockly.Msg.LCD+" I2C");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lcd_fond).appendField(new Blockly.FieldDropdown(Blockly.Msg.couleur), "fond");
+        this.setColour("#4b009f");
+        this.setTooltip(Blockly.Msg.LCDi2c_tooltip);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+        this.setHelpUrl("http://wiki.seeed.cc/Grove-LCD_RGB_Backlight/");
+    }
+};
+
+Blockly.Arduino["lcd_i2c_2"]=function(block){
+    var fond_couleur=block.getFieldValue("fond");
+	
+    Blockly.Arduino.includes_["rgb_lcd"]='#include <Wire.h>\n#include <rgb_lcd.h>';
+    Blockly.Arduino.definitions_["rgb_lcd"]="rgb_lcd lcd;";
+	
+    switch (fond_couleur) {
+        case "bleu":
+		case "blue":
+		case "azul":
+            var code="  lcd.setRGB(0,0,255);";
+            break;
+        case "jaune":
+		case "yellow":
+		case "amarillo":
+            var code="  lcd.setRGB(255,255,0);";
+            break;
+        case "rouge":
+		case "red":
+		case "rojo":
+            code="  lcd.setRGB(255,0,0);";
+            break;
+        case "vert":
+		case "verde":
+		case "green":
+            var code="  lcd.setRGB(0,255,0);";
+            break
+    };
+	Blockly.Arduino.setups_["rgb_lcd"]="lcd.begin(16,2);\n  lcd.clear();\n"+code;
+    return "";
+};
+
+
 //////////////
 Blockly.Blocks["lcd_symbole"]={init:function(){
     this.appendDummyInput().appendField(Blockly.Msg.lcd_symbole).appendField(new Blockly.FieldDropdown(Blockly.Msg.char_lcd),"c_char");
@@ -557,6 +605,33 @@ Blockly.Python['rvb_init'] = function(block) {
 	Blockly.Python.userFunctions_['rvb_'+value_rouge] = 'def setColor(redValue, greenValue, blueValue):\n  redPin.duty(redValue)\n  greenPin.duty(greenValue)\n  bluePin.duty(blueValue)\n';
     return '';
 };
+
+Blockly.Blocks['rvb_init_2']={init:function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/rgb.png', 48, 48, "*")) .appendField(Blockly.Msg.rvb_init);
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("R").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "rouge");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT)  .appendField("G").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "vert");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("B").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "bleu");
+    this.setInputsInline(true);
+	this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip(Blockly.Msg.rvb_init_tooltip);
+    this.setHelpUrl('http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ReferenceMaxi')}
+};
+Blockly.Arduino['rvb_init_2'] = function(block) {
+  var value_rouge = block.getFieldValue('rouge');
+  var value_vert = block.getFieldValue('vert');
+  var value_bleu = block.getFieldValue('bleu');
+  Blockly.Arduino.variables_['rvb_'+value_rouge] = '#define redPin '+value_rouge+'\n#define greenPin '+value_vert+'\n#define bluePin '+value_bleu;
+  Blockly.Arduino.userFunctions_['rvb_'+value_rouge] = 'void setColor(int redValue, int greenValue, int blueValue) {\n  analogWrite(redPin, redValue);\n  analogWrite(greenPin, greenValue);\n  analogWrite(bluePin, blueValue);\n}';
+  Blockly.Arduino.setups_['rvb_'+value_rouge]='pinMode(greenPin, OUTPUT);\n  pinMode(redPin, OUTPUT);\n  pinMode(bluePin, OUTPUT);';
+  return '';
+};
+
+
+
+
 //////////////
 Blockly.Blocks['rvb_set']={init:function() {
     this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set);
@@ -633,6 +708,29 @@ Blockly.Python["bargraphe"]=function(block){
     Blockly.Python.definitions_["pin_"+_clock+"_"+_data]="ledbar = MY9221(di=Pin("+_data+"), dcki=Pin("+_clock+"))";
     return ""
 };
+
+Blockly.Blocks["bargraphe_2"]={init:function(){
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LEDbar.png', 48, 48, "*"))
+			.appendField(Blockly.Msg.bargraphe);
+        this.appendValueInput("clk", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("DCKI");
+        this.appendValueInput("data", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("DI");
+        this.setColour("#4b009f");
+		this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.bargraphe_tooltip);
+        this.setHelpUrl("http://wiki.seeed.cc/Grove-LED_Bar/")}
+};
+Blockly.Arduino["bargraphe_2"]=function(block){
+    var _clock=Blockly.Arduino.valueToCode(block, 'clk', Blockly.Arduino.ORDER_ATOMIC);
+    var _data=Blockly.Arduino.valueToCode(block, 'data', Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.definitions_["ledbar"]="unsigned char _state[]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};";
+    Blockly.Arduino.codeFunctions_["ledbar"]="void sendData(unsigned int data) {\n  for (unsigned char i=0; i < 16; i++){\n    unsigned int state=(data&0x8000) ? HIGH : LOW;\n    digitalWrite(" + _data + ", state);\n    state=digitalRead(" + _clock + ") ? LOW : HIGH;\n    digitalWrite(" + _clock + ", state);\n    data <<= 1;\n  }\n}\nvoid setData(unsigned char _state[]) {\n  sendData(0x00);\n  for (unsigned char i=0; i<10; i++) sendData(_state[10-i-1]);\n  sendData(0x00);\n  sendData(0x00);\n  digitalWrite(" + _data + ", LOW);\n  delayMicroseconds(10);\n  for (unsigned char i=0; i<4; i++){\n    digitalWrite(" + _data + ", HIGH);\n    digitalWrite(" + _data + ", LOW);\n  }\n}\nvoid SetLevel(float level) {\n  level=max(0, min(10, level));\n  level *= 8;\n  for (byte i=0; i<10; i++) {\n    _state[i]=(level>8) ? ~0 : (level>0) ? ~(~0 << byte(level)) : 0;\n    level -= 8;\n  };\n  setData(_state);\n}";
+    Blockly.Arduino.setups_["ledbar"]="pinMode(" + _clock + ", OUTPUT);\n  pinMode(" + _data + ", OUTPUT);";
+    return ""
+};
+
+
+
 //////////////
 Blockly.Blocks["bargraphe_allume"]={init:function(){
         this.appendValueInput("del", "Number").appendField(Blockly.Msg.bargraphe_allume);
