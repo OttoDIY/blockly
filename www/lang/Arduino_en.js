@@ -57,15 +57,15 @@ Blockly.Msg.CAT_bluetooth = "Bluetooth";
 Blockly.Msg.CAT_RemoteIR = "IR R.Control";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Mouth";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Eyes";
-Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ Grove LCD";
+Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "Grove LCD";
 Blockly.Msg.CAT_iot = "☁ IoT";
 Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "MP3 DFMini";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
-Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
-Blockly.Msg.CAT_NEOPIXEL = "☄ NeoPixel";
-Blockly.Msg.CAT_CCS811 = "👃 CO2 sensor";
+Blockly.Msg.CAT_OLED_U8G = "OLED";
+Blockly.Msg.CAT_NEOPIXEL = "NeoPixel";
+Blockly.Msg.CAT_CCS811 = "CO2 sensor";
 Blockly.Msg.CAT_Displays = "📺 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_OPENSMART = "MP3 OpenSmart";
@@ -73,6 +73,10 @@ Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
 Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
 Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+Blockly.Msg.CAT_LED = "Led";
+Blockly.Msg.CAT_LEDRGB = "RGB Led";
+Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
+Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 
 
 //Wireless
@@ -420,7 +424,8 @@ Blockly.Msg.SSERIAL_Available = "amount of data on the software port";
 Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes in the software port queue, or 0 if nothing is available";
 ////////////OTTO DIY Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
 Blockly.Msg.OTTO9_HOME_TEXT = "home";
-Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
+Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 8-Trigger US 9-Echo US and 13-Passive buzzer";
+Blockly.Msg.OTTO9H_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 6-leftArm 7-rightArm 8-Trigger US 9-Echo US A6-Microphone and 13-Passive buzzer";
 Blockly.Msg.OTTO9_DIY_URL = "https://wikifactory.com/+OttoDIY/otto-diy";// do not translate
 Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";// do not translate
 Blockly.Msg.OTTO9_CALIBRATION='calibrate ';

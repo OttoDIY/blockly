@@ -64,13 +64,17 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
-Blockly.Msg.CAT_CCS811 = "👃 Sensor CO2";
+Blockly.Msg.CAT_CCS811 = "Sensor CO2";
 Blockly.Msg.CAT_Displays = "🖥 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
 Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
 Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+Blockly.Msg.CAT_LED = "Led";
+Blockly.Msg.CAT_LEDRGB = "RGB Led";
+Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
+Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
@@ -400,6 +404,7 @@ Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes i
 ////////////////////////////OTTO DIY Robot/////////////////////
 Blockly.Msg.OTTO9_HOME_TEXT = "dům";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto jde rovně domů";
+Blockly.Msg.OTTO9H_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 6-leftArm 7-rightArm 8-Trigger US 9-Echo US and 13-Passive buzzer";
 Blockly.Msg.OTTO9_DIY_URL = "https://wikifactory.com/+OttoDIY/otto-diy";
 Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.OTTO9_CALIBRATION='kalibrace ';

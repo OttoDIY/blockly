@@ -16,7 +16,7 @@ Blockly.Blocks['OLED_init'] = {
      .appendField(new Blockly.FieldDropdown([["64", "64"], ["32", "32"]]), "height")
      .appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
   this.setInputsInline(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -49,7 +49,7 @@ Blockly.Blocks['OLED_init_2'] = {
      this.setInputsInline(true);
 	 this.setPreviousStatement(true);
 	 this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -77,7 +77,7 @@ Blockly.Blocks['OLED_rotate'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -110,7 +110,7 @@ Blockly.Blocks['OLED_data'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -151,7 +151,7 @@ Blockly.Blocks['OLED_symbol'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -177,7 +177,7 @@ Blockly.Blocks['OLED_scroll'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
   }
@@ -207,7 +207,7 @@ Blockly.Blocks['OLED_pixel'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -231,7 +231,7 @@ Blockly.Blocks['OLED_line'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -257,7 +257,7 @@ Blockly.Blocks['OLED_rectangle'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -287,7 +287,7 @@ Blockly.Blocks['OLED_round'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -316,7 +316,7 @@ Blockly.Blocks['OLED_circle'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -346,7 +346,7 @@ Blockly.Blocks['OLED_triangle'] = {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-     this.setColour("#1B2944");
+     this.setColour("#4b009f");
      this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
    }
@@ -373,7 +373,7 @@ Blockly.Blocks['OLED_bitmap'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
      this.setHelpUrl('http://javl.github.io/image2cpp/');
   }
@@ -393,7 +393,7 @@ Blockly.Blocks['OLED_clear'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
      this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
   }
@@ -424,7 +424,7 @@ Blockly.Blocks['lp2i_u8g_draw_string'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
     this.setHelpUrl('http://blogpeda.ac-poitiers.fr/techno-jean-mace/2016/02/07/utilisation-dun-afficheur-oled-128x64-i2c-avec-blockly-arduino/');
   }
@@ -456,7 +456,7 @@ Blockly.Blocks['lp2i_u8g_draw_4strings'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
     this.setHelpUrl('http://blogpeda.ac-poitiers.fr/techno-jean-mace/2016/02/07/utilisation-dun-afficheur-oled-128x64-i2c-avec-blockly-arduino/');
   }
@@ -481,7 +481,7 @@ Blockly.Blocks['lp2i_u8g_print'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
     this.setHelpUrl('http://blogpeda.ac-poitiers.fr/techno-jean-mace/2016/02/07/utilisation-dun-afficheur-oled-128x64-i2c-avec-blockly-arduino/');
   }
@@ -529,7 +529,7 @@ Blockly.Blocks['lp2i_u8g_4draw_print'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#1B2944");
+    this.setColour("#4b009f");
     this.setTooltip('');
     this.setHelpUrl('http://blogpeda.ac-poitiers.fr/techno-jean-mace/2016/02/07/utilisation-dun-afficheur-oled-128x64-i2c-avec-blockly-arduino/');
   }

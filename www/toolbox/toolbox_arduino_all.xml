@@ -142,6 +142,7 @@
 	<category name="CAT_MATH" colour="#008000">
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
+		<block type="analog_pin"></block>
         <block type="logic_compare">
 		<value name="B"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 		</block>
@@ -251,6 +252,23 @@
 	
 <category name="CAT_Displays"  colour="#4b009f">
 	
+	<category name="CAT_LED" colour="#4b009f">		
+		<block type="inout_buildin_led"></block>
+		<block type="blink"></block>
+		<block type="digital_write">
+		<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		</block>
+	</category>		
+		
+	<category name="CAT_LEDRGB" colour="#4b009f">
+		<block type="rvb_init_2"></block>
+		<block type="rvb_set">
+		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		</block>
+	</category>	
+	
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
 			<block type="pixel_init_2">
 			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
@@ -285,7 +303,8 @@
 		</block>
 		<block type="MatrixLED_WS2812B_CLEAN"></block>
 	</category>	
-	<category name="CAT_del" colour="#4b009f">	
+	
+	<category name="CAT_MAX7219" colour="#4b009f">	
 		<block type="matrice8x8_init_2">
 		<value name="CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
 		<value name="CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
@@ -308,25 +327,16 @@
 		<block type="matrice8x8_aff"></block>
 		<block type="matrice8x8_animation"></block>
 		<block type="matrice8x8_efface"></block>
-		<block type="inout_buildin_led"></block>
-		<block type="blink"></block>
-		<block type="digital_write">
-		<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-		</block>
-		<block type="rvb_init_2"></block>
-		<block type="rvb_set">
-		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		</block>
+	</category>	
+		
+	<category name="CAT_BARGRAPH" colour="#4b009f">
 		<block type="bargraphe_2"></block>
 		<block type="bargraphe_allume"></block>
 		<!--<block type="matrice_init"></block>
 		<block type="matrice_symbole"></block>-->
 	</category>	
-	
-	
-	<category name="CAT_OLED_U8G" colour="#1B2944">
+		
+	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_init_2"></block>
 		<block type="OLED_rotate"></block>
 		<block type="OLED_data">
@@ -382,7 +392,7 @@
 		<block type="OLED_clear"></block>
 	</category>
 	
-		<category name="CAT_DFRobot_SHIELD_LCDKEYPAD" colour="#4b009f">
+	<category name="CAT_DFRobot_SHIELD_LCDKEYPAD" colour="#4b009f">
 			<block type="lcd_i2c_2"></block>
 			<block type="lcd_symbole"></block>
 			<block type="lcd_aff_symbole"></block>
@@ -512,7 +522,8 @@
 		
 		<category name="CAT_RemoteIR" colour="#0060aa">
 		 <block type="Init_generalremotecontrol">
-		   <value name="PIN_IR"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		 <value name="PIN_IR"><shadow type="math_number"><field name="NUM">10</field></shadow></value>  
+		   
 		 </block>
 		 <block type="IR_Remote_Key"></block>
 	 </category>
