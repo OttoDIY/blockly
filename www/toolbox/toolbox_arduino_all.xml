@@ -400,7 +400,61 @@
 			<block type="LCD_Keypad_Shield_DFR_09_lc"></block>
 			<block type="LCD_Keypad_Shield_DFR_09_RAZ"></block>
 			<block type="lcd"></block>
-		</category> 
+	</category> 
+	<category name="CAT_LCDI2C" colour="#4b009f">
+				<block type="lcdi2c_setup" x="38" y="138">
+                    <field name="NAME">0x3F</field>
+                    <value name="COLUMNS">
+                        <shadow type="math_number">
+                            <field name="NUM">16</field>
+                        </shadow>
+                    </value>
+                    <value name="ROWS">
+                        <shadow type="math_number">
+                            <field name="NUM">2</field>
+                        </shadow>
+                    </value>
+                </block>
+				<block type="lcdi2c_setBacklight"></block>
+				<block type="lcdi2c_clear"></block>
+				<block type="lcdi2c_home"></block>
+				<block type="lcdi2c_display"></block> 
+                <block type="lcdi2c_setcursor" x="38" y="113">
+                    <value name="column">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="row">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+					<value name="texttoprint">
+                        <shadow type="text">
+                            <field name="TEXT">I am a Robot</field>
+                        </shadow>
+                    </value>
+                </block>
+				 <block type="lcdi2c_setcursoralone" x="38" y="113">
+                    <value name="column">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="row">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="lcdi2c_scrollDisplay"></block>
+				<block type="lcdi2c_showCursor"></block>
+				<block type="lcdi2c_blinkCursor"></block>
+	</category> 
+		
+		
+		
 	</category>	
 	
 <category name="CAT_AUDIO" colour="#a600d3">
