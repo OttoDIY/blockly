@@ -117,13 +117,54 @@
 		<block type="toggle"></block>
 	</category>	
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
-		<block type="base_delay">
-		<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value></block>	
-		<block type="tempo_sans_delay">
-		<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field></shadow></value></block>
-		<block type="millis_start"></block>	
-		<block type="millis"></block>		
-        <block type="inout_pulsein"></block>
+		<category name="CAT_TIME_GENERAL" colour="#00929f">	
+			<block type="base_delay">
+			<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value></block>	
+			<block type="tempo_sans_delay">
+			<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field></shadow></value></block>
+			<block type="millis_start"></block>	
+			<block type="millis"></block>		
+			<block type="inout_pulsein"></block>
+		</category>
+		<category name="CAT_RTC_DS3231" colour="#00929f">	
+		 <block type="Init_RTC_ds3231"></block>
+		     <block type="DateTime_RTC_ds3231">
+				<value name="DS3231_DAY">
+                    <shadow type="math_number">
+                        <field name="NUM">12</field>
+                    </shadow>
+                </value>
+				
+				<value name="DS3231_MONTH">
+                    <shadow type="math_number">
+                        <field name="NUM">9</field>
+                    </shadow>
+                </value>
+				<value name="DS3231_YEAR">
+                    <shadow type="math_number">
+                        <field name="NUM">2021</field>
+                    </shadow>
+                </value>
+				<value name="DS3231_HOUR">
+                    <shadow type="math_number">
+                        <field name="NUM">23</field>
+                    </shadow>
+                </value>
+				<value name="DS3231_MINUTE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>	
+				<value name="DS3231_SECOND">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>				
+			 </block>
+		  	  <block type="order_read_rtc_ds3231"></block>
+			  <block type="values_ds3231"></block>
+			  <block type="values_text_ds3231"></block>	
+		</category>
 	</category>
 	<category name="CAT_LOGIC" colour="#ffb400">
 		<block type="controls_if"></block>

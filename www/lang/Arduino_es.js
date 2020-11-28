@@ -46,7 +46,7 @@ Blockly.Msg.CAT_FUNCTIONS = "∬ Función";
 Blockly.Msg.CAT_ARDUINO = "∞ Estructura";
 Blockly.Msg.CAT_ARDUINO_IN = "⇅ Entrada / Salida";
 Blockly.Msg.CAT_ARDUINO_OUT = "☺ Salir";
-Blockly.Msg.CAT_ARDUINO_TIME = "◌ Tiempo";
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱ Tiempo";
 Blockly.Msg.CAT_actionneur = "↻ Motor";
 Blockly.Msg.CAT_com = "📡 Comunicación";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serie USB";
@@ -78,6 +78,24 @@ Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "Matriz MAX7219";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
+Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
+Blockly.Msg.CAT_TIME_GENERAL = "General";
+
+//RTC DS3231
+Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
+Blockly.Msg.RTCDS3231_RTC="Fijar fecha y hora DS3231";
+Blockly.Msg.RTCDS3231_DAY="Día";
+Blockly.Msg.RTCDS3231_MONTH="Mes";
+Blockly.Msg.RTCDS3231_YEAR="Año";
+Blockly.Msg.RTCDS3231_HOUR="Hora";
+Blockly.Msg.RTCDS3231_MINUTE="Minutos";
+Blockly.Msg.RTCDS3231_SECOND="Segundos";
+Blockly.Msg.RTCDS3231_DOFWEEK="Día de la semana";
+Blockly.Msg.RTCDS3231_READ_RTC="RTC DS3231.Leer fecha y hora";
+Blockly.Msg.RTCDS3231_VALUES="Valor";
+Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Día de la semana como string";
+Blockly.Msg.RTCDS3231_TEXT_MONTH="Mes como string ";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";

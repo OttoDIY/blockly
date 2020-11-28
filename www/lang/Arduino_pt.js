@@ -46,7 +46,7 @@ Blockly.Msg.CAT_FUNCTIONS = "∬ Função";
 Blockly.Msg.CAT_ARDUINO = "∞ Estrutura";
 Blockly.Msg.CAT_ARDUINO_IN = "⇅ Entrada/Saída";
 Blockly.Msg.CAT_ARDUINO_OUT = "☺ Fechar";
-Blockly.Msg.CAT_ARDUINO_TIME = "◌ Time";
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱ Time";
 Blockly.Msg.CAT_actionneur = "↻ Motor";
 Blockly.Msg.CAT_com = "☎ Comunicação";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "- Serial";
@@ -76,6 +76,24 @@ Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
+Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
+Blockly.Msg.CAT_TIME_GENERAL = "General";
+
+//RTC DS3231
+Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
+Blockly.Msg.RTCDS3231_RTC="Set DateTime DS3231";
+Blockly.Msg.RTCDS3231_DAY="Day";
+Blockly.Msg.RTCDS3231_MONTH="Month";
+Blockly.Msg.RTCDS3231_YEAR="Year";
+Blockly.Msg.RTCDS3231_HOUR="Hour";
+Blockly.Msg.RTCDS3231_MINUTE="Minute";
+Blockly.Msg.RTCDS3231_SECOND="Second";
+Blockly.Msg.RTCDS3231_DOFWEEK="Day of week";
+Blockly.Msg.RTCDS3231_READ_RTC="RTC DS3231.Read the date and time";
+Blockly.Msg.RTCDS3231_VALUES="value";
+Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
+Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
 
 
 //Wireless
