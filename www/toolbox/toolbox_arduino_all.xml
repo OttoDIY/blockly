@@ -38,7 +38,7 @@
 			<block type="otto9_calibrationh"></block>	
 			<block type="otto9_eeprom"></block>
 	</category>
-	<category name="CAT_ultrason" colour="#2a93e8">
+	<category name="CAT_ultrason" colour="#32D900">
 		<block type="otto9_obstacle"></block>
 		<block type="otto9_getdistance"></block>
 		<block type="otto9_touchbutton"></block>

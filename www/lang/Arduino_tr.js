@@ -75,6 +75,7 @@ Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "wifi modülünün başlatılması ve belirtilen parametrelerle bağlantı";
@@ -435,19 +436,24 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [["😃 Mutlu1", "OttoSuperHappy"],["🙂 Mut
 Blockly.Msg.OTTO9_SOUND_TEXT = "Ses";
 Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Duygusal sesler";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [ ["😃 Mutlu1", "S_superHappy"], ["🙂 Mutlu2", "S_happy"], ["😊 Mutlu3", "S_happy_short"], ["🙁 Üzgün", "S_sad"], ["😕 Karışık", "S_confused"], ["🤗 Sevimli", "S_cuddly"], ["😮 Şaşkın", "S_OhOoh"], ["😯 Çok şaşırmış", "S_OhOoh2"], ["😲 Süpriz", "S_surprise"],["🤖 Bağlan", "S_connection"], [" 🤖 Bağlantıyı kes", "S_disconnection"], ["👇 İtme", "S_buttonPushed"], ["❗ 1", "S_mode1"], ["❗❗ 2", "S_mode2"], ["❗❗❗ 3", "S_mode3"], ["💤 Uykulu", "S_sleeping"], ["💩 Pırt1", "S_fart1"], ["💩 Pırt2", "S_fart2"], ["💩 Pırt3", "S_fart3"],];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "Mesafe [cm]";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "Mesafe [cm].Pin Trigger 8 Pin Echo 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
 Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "2 cm ila 400 cm arasında değişen mesafe";
 Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "Engel";
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [["kapat", "10"],["çok yakın", "3"],["uzak", "30"]];
-Blockly.Msg.OTTO9_GETNOISE_TEXT = "Gürültü ölçümü";
+Blockly.Msg.OTTO9_GETNOISE_TEXT = "Gürültü ölçümü. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 sessiz, 500 gürültülü ve 1000'den fazla ise yüksek gürültü, ayrıca sensör trimpot duyarlılığını ayarlayın";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "Dokunma";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "Dokunma. Pin A0";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "şartlıysa kullan";
-Blockly.Msg.OTTO9_GETG_TEXT = "Hareket";
+Blockly.Msg.OTTO9_GETG_TEXT = "Hareket.Read the accelerations and angular velocities.";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "Ağız";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "8x8 LED matrisi #0-30 için Ağız hissi";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 mutlu1", "happyOpen"],["🙂 mutlu2", "happyClosed"], ["😊 gülümseme", "smile"], ["😦 üzgün1", "23"], ["🙁 üzgün2", "24"], ["😮 süpriz", "smallSurprise"], ["😲 Süpriz 2", "bigSurprise"], ["😕 Karışık", "confused"],["😛 Dil", "tongueOut"],["🙃 Aptal", "culito"],  ["😑 Ciddi", "lineMouth"], ["🙄 Sinirleri bozuk", "21"], ["💖 Kalp", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ Hayır", "xMouth"], ["✅ Tamam", "okMouth"],["❓?", "27"], ["⚡ Şimşek", "thunder"]];
 Blockly.Msg.OTTO9_EYES_TEXT = "Gözler";
+Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
+Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "16x8 i2C LED matrisi için gözlerin duygusu";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 Mutlu1", "happy_bmp"],["🙂 Mutlu2", "eyes_bmp"], ["😦 Üzgün", "sad_bmp"], ["😡 Kızgın1", "angry_bmp"], ["😡 Kızgın2", "angry2_bmp"], ["😰 Sağ duyulu", "freetful_bmp"], ["😕 Karışık", "confused_bmp"],["😴 Uykulu", "sleep_bmp"],["😍 Aşk", "love_bmp"],  ["😑 Dalga", "wave_bmp"], ["🤩 Büyülü", "magic_bmp"], ["😞 Başarısız", "fail_bmp"], ["🤖 logo", "logo_bmp"], ["❌❌ Hayır", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "Gözlerin metni";
@@ -468,6 +474,22 @@ Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 
 //REMOTE CONTROL IR

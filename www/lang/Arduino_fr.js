@@ -75,6 +75,7 @@ Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 
 
 //wifi
@@ -436,19 +437,23 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [["joyeux", "OttoHappy"], ["très joyeux", "O
 Blockly.Msg.OTTO9_SOUND_TEXT = "son";
 Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Emotional sounds";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [["câlin", "S_cuddly"], ["OhOoh", "S_OhOoh"], ["OhOoh2", "S_OhOoh2"], ["surprise", "S_surprise"], ["bouton pressé", "S_buttonPushed"], ["mode 1", "S_mode1"], ["mode 2", "S_mode2"], ["mode 3", "S_mode3"], ["dort", "S_sleeping"], ["élan 1", "S_fart1"], ["élan 2", "S_fart2"], ["élan 3", "S_fart3"], ["joyeux", "S_happy"], ["joyeux simple", "S_happy_short"], ["très joyeux", "S_superHappy"], ["triste", "S_sad"], ["confus", "S_confused"], ["connection", "S_connection"], ["déconnection", "S_disconnection"]];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "distance";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "distance.Pin Trigger 8 Pin Echo 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
 Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "Ranging distance between 2cm to 400cm";
 Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "obstáculo";
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [["cerca", "10"],["muy cerca", "3"],["lejos", "30"]];
-Blockly.Msg.OTTO9_GETNOISE_TEXT = "son";
+Blockly.Msg.OTTO9_GETNOISE_TEXT = "son. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 is quiet, 500 noise and more than 1000 is loud, also adjust the sensor trimpot sensibility";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touché";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touché. Pin A0";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
-Blockly.Msg.OTTO9_GETG_TEXT = "motion";
+Blockly.Msg.OTTO9_GETG_TEXT = "Read the accelerations and angular velocities.I2C pins";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "bouche";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "mouth emotion for the 8x8 LED matrix #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["happyOpen", "happyOpen"],["happyClosed", "happyClosed"],["sadOpen", "23"], ["sadClosed", "24"],["vampire1", "vamp1"], ["vampire2", "vamp2"],   ["smile", "smile"], ["heart", "heart"], ["small surprise", "smallSurprise"], ["big surprise", "bigSurprise"], ["confused", "confused"], ["0", "zero"], ["1", "one"], ["2", "two"], ["3", "three"], ["4", "four"],["5", "five"],["6", "six"],["7", "seven"],["8", "eight"],["9", "nine"], ["x", "xMouth"], ["ok", "okMouth"],["interrogation", "27"],["tongue", "tongueOut"],["culito", "culito"],  ["thunder", "thunder"], ["line", "lineMouth"], ["diagonal", "21"], ["little Uuh", "littleUuh, i"], ["dreamMouth0", "dreamMouth, 0"], ["dreamMouth1", "dreamMouth, 1"], ["dreamMouth2", "dreamMouth, 2"]];
 Blockly.Msg.OTTO9_EYES_TEXT = "eyes";
+Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
+Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "eyes emotion for the 16x8 i2C LED matrix ";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 happy1", "happy_bmp"],["🙂 happy2", "eyes_bmp"], ["😦 sad", "sad_bmp"], ["😡 angry1", "angry_bmp"], ["😡 angry2", "angry2_bmp"], ["😰 freetful", "freetful_bmp"], ["😕 confused", "confused_bmp"],["😴 sleep", "sleep_bmp"],["😍 love", "love_bmp"],  ["😑 wave", "wave_bmp"], ["🤩 magic", "magic_bmp"], ["😞 fail", "fail_bmp"], ["🤖 logo", "logo_bmp"], ["❌❌ no", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "eyes text";
@@ -469,6 +474,22 @@ Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 
 //REMOTE CONTROL IR

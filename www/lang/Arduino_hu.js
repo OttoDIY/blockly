@@ -74,6 +74,7 @@ Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
@@ -409,17 +410,21 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [["😃", "OttoSuperHappy"],["🙂", "OttoHap
 Blockly.Msg.OTTO9_SOUND_TEXT = "hang";
 Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Hangok";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [ ["😃", "S_superHappy"], ["🙂", "S_happy"], ["😊", "S_happy_short"], ["🙁", "S_sad"], ["😕", "S_confused"], ["🤗", "S_cuddly"], ["😮", "S_OhOoh"], ["😯", "S_OhOoh2"], ["😲", "S_surprise"],["🤖1", "S_connection"], ["🤖2", "S_disconnection"], ["👇", "S_buttonPushed"], ["❗", "S_mode1"], ["❗❗", "S_mode2"], ["❗❗❗", "S_mode3"], ["💤", "S_sleeping"], ["💩1", "S_fart1"], ["💩2", "S_fart2"], ["💩3", "S_fart3"],];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "távolság [cm]";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "távolság [cm].Pin Trigger 8 Pin Echo 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
 Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "Távolság mérése 2cm-től 400cm-ig";
-Blockly.Msg.OTTO9_GETNOISE_TEXT = "mért zaj";
+Blockly.Msg.OTTO9_GETNOISE_TEXT = "mért zaj. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 halk, 500 zajos és több, mint 1000 hangos, ne felejtsd el a szenzor érzékenységét beállítani";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "érintés";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "érintés. Pin A0";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
-Blockly.Msg.OTTO9_GETG_TEXT = "gyorsulás";
+Blockly.Msg.OTTO9_GETG_TEXT = "gyorsulás.Read the accelerations and angular velocities.I2C pins";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "mátrix száj";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "érzelmek megjelenítése a 8x8 LED mátrixon #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃", "happyOpen"],["🙂", "happyClosed"], ["😊", "smile"], ["😦", "23"], ["🙁", "24"], ["😮", "smallSurprise"], ["😲", "bigSurprise"], ["😕", "confused"],["😛", "tongueOut"],["🙃", "culito"],  ["😑", "lineMouth"], ["🙄", "21"], ["💖", "heart"], ["🦇1", "vamp1"], ["🦇2", "vamp2"], ["❌", "xMouth"], ["✅", "okMouth"],["❓", "27"], ["⚡", "thunder"]];
 Blockly.Msg.OTTO9_EYES_TEXT = "mátrix szemek";
+Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
+Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "érzelmek megjelenítése a 16x8 i2C LED mátrixon";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃", "happy_bmp"],["🙂", "eyes_bmp"], ["😦", "sad_bmp"], ["😡1", "angry_bmp"], ["😡2", "angry2_bmp"], ["😰", "freetful_bmp"], ["😕", "confused_bmp"],["😴", "sleep_bmp"],["😍", "love_bmp"],  ["😑", "wave_bmp"], ["🤩", "magic_bmp"], ["😞", "fail_bmp"], ["🤖", "logo_bmp"], ["❌❌", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_MATRIX_TEXT = "mátrix";
@@ -439,6 +444,22 @@ Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 
 //REMOTE CONTROL IR

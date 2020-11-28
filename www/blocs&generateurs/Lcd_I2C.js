@@ -7,7 +7,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['lcdi2c_setup'] = {
    init: function() {
-    this.setColour(140);
+   this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCD_I2C_setup);
@@ -44,7 +44,7 @@ var text_name = block.getFieldValue('NAME');  // TODO: Assemble Arduino into cod
 
 Blockly.Blocks['lcdi2c_clear'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_Clear);
@@ -63,7 +63,7 @@ Blockly.Arduino['lcdi2c_clear'] = function(block) {
 
 Blockly.Blocks['lcdi2c_home'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_Home);
@@ -83,7 +83,7 @@ Blockly.Arduino['lcdi2c_home'] = function(block) {
 
 Blockly.Blocks['lcdi2c_setcursor'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_SetCursor);
@@ -129,7 +129,7 @@ Blockly.Arduino['lcdi2c_setcursor'] = function(block) {
 
 Blockly.Blocks['lcdi2c_setcursoralone'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_SetCursor);
@@ -170,7 +170,7 @@ Blockly.Arduino['lcdi2c_setcursoralone'] = function(block) {
 
 Blockly.Blocks['lcdi2c_display'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_Display)
@@ -196,7 +196,7 @@ Blockly.Arduino['lcdi2c_display'] = function(block) {
 
 Blockly.Blocks['lcdi2c_scrollDisplay'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_scrollDisplay)
@@ -221,7 +221,7 @@ Blockly.Arduino['lcdi2c_scrollDisplay'] = function(block) {
 
 Blockly.Blocks['lcdi2c_setBacklight'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_setBcklight)
@@ -246,7 +246,7 @@ Blockly.Arduino['lcdi2c_setBacklight'] = function(block) {
 
 Blockly.Blocks['lcdi2c_showCursor'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_showCursor)
@@ -272,7 +272,7 @@ Blockly.Arduino['lcdi2c_showCursor'] = function(block) {
 
 Blockly.Blocks['lcdi2c_blinkCursor'] = {
   init: function() {
-    this.setColour(140);
+    this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
         .appendField(Blockly.Msg.LCDP_blinkCursor)

@@ -74,6 +74,7 @@ Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 
 
 
@@ -437,19 +438,23 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [["😃 快乐1", "OttoSuperHappy"],["🙂 �
 Blockly.Msg.OTTO9_SOUND_TEXT = "声音";
 Blockly.Msg.OTTO9_SOUND_TOOLTIP = "感情声音";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [ ["😃 快乐", "S_superHappy"], ["🙂 快乐2", "S_happy"], ["😊 快乐3", "S_happy_short"], ["🙁 悲伤", "S_sad"], ["😕 困惑", "S_confused"], ["🤗 拥抱", "S_cuddly"], ["😮 哦", "S_OhOoh"], ["😯 哦哦", "S_OhOoh2"], ["😲 惊喜", "S_surprise"],["🤖 连接", "S_connection"], [" 🤖 失去连接", "S_disconnection"], ["👇 按", "S_buttonPushed"], ["❗ 1", "S_mode1"], ["❗❗ 2", "S_mode2"], ["❗❗❗ 3", "S_mode3"], ["💤 睡觉", "S_sleeping"], ["💩 放屁1", "S_fart1"], ["💩 放屁2", "S_fart2"], ["💩 放屁3", "S_fart3"],];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "测距 [cm]";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "测距 [cm].Pin Trigger 8 Pin Echo 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
 Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "测距范围 2cm 到 400cm";
 Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "障碍物";
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [["近", "10"],["很近", "3"],["远", "30"]];
-Blockly.Msg.OTTO9_GETNOISE_TEXT = "noise measured";
+Blockly.Msg.OTTO9_GETNOISE_TEXT = "noise measured. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 is quiet, 500 noise and more than 1000 is loud, also adjust the sensor trimpot sensibility";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch. Pin A0";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
-Blockly.Msg.OTTO9_GETG_TEXT = "motion";
+Blockly.Msg.OTTO9_GETG_TEXT = "Read the accelerations and angular velocities";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "mouth";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "mouth emotion for the 8x8 LED matrix #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 快乐1", "happyOpen"],["🙂 快乐2", "happyClosed"], ["😊 微笑", "smile"], ["😦 悲伤1", "23"], ["🙁 悲伤2", "24"], ["😮 惊喜1", "smallSurprise"], ["😲 惊喜2", "bigSurprise"], ["😕 困惑", "confused"],["😛 吐舌头", "tongueOut"],["🙃 傻瓜", "culito"],  ["😑 严肃", "lineMouth"], ["🙄 心烦", "21"], ["💖 心脏", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ no", "xMouth"], ["✅ OK", "okMouth"],["❓?", "27"], ["⚡ thunder", "thunder"]];
-Blockly.Msg.OTTO9_EYES_TEXT = "eyes";
+Blockly.Msg.OTTO9_EYES_TEXT = "Eyes";
+Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
+Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "eyes emotion for the 16x8 i2C LED matrix ";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 快乐1", "happy_bmp"],["🙂 快乐2", "eyes_bmp"], ["😦 悲伤", "sad_bmp"], ["😡 生气1", "angry_bmp"], ["😡 生气2", "angry2_bmp"], ["😰 焦躁", "freetful_bmp"], ["😕 困惑", "confused_bmp"],["😴 睡觉", "sleep_bmp"],["😍 爱", "love_bmp"],  ["😑 波纹", "wave_bmp"], ["🤩 魔法", "magic_bmp"], ["😞 失败", "fail_bmp"], ["🤖 logo", "logo_bmp"], ["❌❌ no", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "eyes text";
@@ -470,6 +475,22 @@ Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 
 //REMOTE CONTROL IR
