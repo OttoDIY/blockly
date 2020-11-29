@@ -73,6 +73,7 @@ Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
 Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
 Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+Blockly.Msg.CAT_SSENSORS = "Simple Sensors";
 Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
@@ -80,6 +81,9 @@ Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
 Blockly.Msg.CAT_TIME_GENERAL = "General";
+Blockly.Msg.CAT_BME280 = "BME280 Laser";
+Blockly.Msg.CAT_VL53L0X = "VL53L0X Preassre";
+
 
 
 //RTC DS3231
@@ -150,11 +154,11 @@ Blockly.Msg.menudht = [["humidity", "h"], ["temperature", "t"]];
 Blockly.Msg.couleur = [["blue", "blue"], ["yellow", "yellow"], ["red", "red"], ["green", "green"]];
 Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"]];
 //sensor
-Blockly.Msg.VL53L0X="Laser distance sensor";
+Blockly.Msg.VL53L0X="VL53L0X Init laser distance sensor.Pins I2C";
 Blockly.Msg.VL53L0X_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.VL53L0X_distance="distance measured by laser";
 Blockly.Msg.VL53L0X_distance_tooltip="VL530X :\nreturn Distance measured by laser in mm";
-Blockly.Msg.bme280="Atmospheric pressure sensor";
+Blockly.Msg.bme280="BME280 Init atmospheric pressure sensor.Pins I2C";
 Blockly.Msg.bme280_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.bme280_pressure="atmospheric pressure";
 Blockly.Msg.bme280_pressure_tooltip="BME280 :\nreturn atmospheric pressure in hPa";
@@ -505,8 +509,64 @@ Blockly.Msg.OTTO9_ARMS_TEXT = "arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 
-//CCS811
+//SIMPLE SENSORS
+Blockly.Msg.BUTTON_NAME="Button";
+Blockly.Msg.INTERNAL_BUTTON_NAME="Start button MRTduino board";
+Blockly.Msg.BUTTON_LOGIC="Logic inverse";
+Blockly.Msg.BUTTON_PRESSED="pressed?";
+Blockly.Msg.BUTTON_TOUCH_NAME="Capacity Touch";
+Blockly.Msg.KNOCK_NAME="Knock";
+Blockly.Msg.KNOCK_DETECTED="detected?";
+Blockly.Msg.TILT_NAME="Digital Tilt";
+Blockly.Msg.TILT_DETECTED="detected?";
+Blockly.Msg.POTE_NAME="Potentiometer";
+Blockly.Msg.PERCENT="percent(0-100)%";
+Blockly.Msg.VALUE="Value(0-1023)";
+Blockly.Msg.PHOTO_NAME="Photo Interrupter";
+Blockly.Msg.PHOTO_DETECTED="detected?";
+Blockly.Msg.VAR_LM35="LM35 Temperature (ºC)";
+Blockly.Msg.LDR_NAME="Photocell (LDR or CDS) ";
+Blockly.Msg.LDR_DETECTED="detected?";
+Blockly.Msg.IR_NAME="Infrared";
+Blockly.Msg.IR_DETECTED="sensed?";
+Blockly.Msg.FLAME_NAME="Flame";
+Blockly.Msg.FLAME_DETECTED="detected?";
+Blockly.Msg.SOUND_NAME="Sound (MIC)";
+Blockly.Msg.SOUND_DETECTED="detected?";
+Blockly.Msg.DHT_NAME="DHT";
+Blockly.Msg.DHT_Type="Type";
+Blockly.Msg.DHT_Type11="DHT11";
+Blockly.Msg.DHT_Type21="DHT21";
+Blockly.Msg.DHT_Type22="DHT22";
+Blockly.Msg.DHT_Temp="Temperature ºC";
+Blockly.Msg.DHT_Humi="Humidity";
+Blockly.Msg.DHT_Head="Heat Index ºC";
+Blockly.Msg.GAS_NAME="Gas CO (MQ-7)";
+Blockly.Msg.GAS_DETECTED="detected?";
+Blockly.Msg.ALCOHOL_NAME="Alcohol (MQ-3)";
+Blockly.Msg.ALCOHOL_DETECTED="detected?";
+Blockly.Msg.VIBRATION_NAME="Vibration";
+Blockly.Msg.VIBRATION_DETECTED="detected?";
+Blockly.Msg.HALL_NAME="Hall Magnetic";
+Blockly.Msg.HALL_DETECTED="detected?";
+Blockly.Msg.PIR_NAME="PIR Motion";
+Blockly.Msg.PIR_DETECTED="detected?";
+Blockly.Msg.VAPOR_NAME="Vapor (Steam)";
+Blockly.Msg.ALIGHT_NAME="Ambient Light (TEMT6000)";
+Blockly.Msg.WATER_NAME="Water level";
+Blockly.Msg.MOISTURE_NAME="Soil Moisture";
+Blockly.Msg.JOYSTICK_NAME="Joystick axis";
+Blockly.Msg.JOYSTICK_BUTTON="Joystick button";
+Blockly.Msg.JOYSTICK_PRESSED="pressed?";
+Blockly.Msg.ultrasonic_ranger="HC-SR04 Ultrasonic (cm)";
+Blockly.Msg.unit="Unit";
+Blockly.Msg.cm="cm";
+Blockly.Msg.inch="inch";
+Blockly.Msg.TRIG="TRIG Trigger";
+Blockly.Msg.Echo="Echo";
+Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
 
+//CCS811
 Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
 Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
 Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
