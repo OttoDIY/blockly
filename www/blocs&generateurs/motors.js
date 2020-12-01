@@ -293,6 +293,8 @@ Blockly.Blocks["servo_read_degrees"]= {
 };
 Blockly.Arduino.servo_read_degrees = function() {
     var value_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+	Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+	Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
     var code = "servo_" + value_pin +  '.read()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
   };
@@ -301,7 +303,7 @@ Blockly.Blocks["servo_rot_continue_param"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 48, 48, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT) .appendField(Blockly.Msg.direction);
         this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.AV_AR), "ETAT");
         this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.pin);
-        this.appendValueInput("SPEED", "Null").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse);
+        this.appendValueInput("SPEED", "Null").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(Blockly.Msg.values);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -332,7 +334,7 @@ Blockly.Python["servo_rot_continue_param"]=function(block){
     return "servo_" + value_pin + ".write(" + value_degree + ");\n"
 };
 Blockly.Blocks["servo_PWM"]={init:function(){
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*")).appendField("PCA9685 "+ Blockly.Msg.pin);;
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/pc9685.png', 48, 48, "*")).appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*")).appendField("PCA9685 "+ Blockly.Msg.pin);;
     this.appendDummyInput().appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"],["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"],["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"],["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"]]), "PIN");
     this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE);
     this.setInputsInline(true);

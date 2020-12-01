@@ -28,6 +28,7 @@ Blockly.Msg.left = "left";
 Blockly.Msg.LetR = "right & left";
 Blockly.Msg.direction = "direction";
 Blockly.Msg.vitesse = "speed ";
+Blockly.Msg.values = "[0-90]";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ Storage";
 Blockly.Msg.CAT_numerique = "- Digital";
@@ -45,31 +46,61 @@ Blockly.Msg.CAT_FUNCTIONS = "∬ Function";
 Blockly.Msg.CAT_ARDUINO = "∞ Structure";
 Blockly.Msg.CAT_ARDUINO_IN = "⇅ Input/Output";
 Blockly.Msg.CAT_ARDUINO_OUT = "☺ Exit";
-Blockly.Msg.CAT_ARDUINO_TIME = "◌ Time";
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱ Time"; 
 Blockly.Msg.CAT_actionneur = "↻ Motor";
 Blockly.Msg.CAT_com = "📡 Communication";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "Serial USB";
 Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "SoftwareSerial";
 Blockly.Msg.CAT_ARDUINO_moteur="↻ Motor Stepper";
-Blockly.Msg.CAT_ultrason = "⇣ Sensor";
+Blockly.Msg.CAT_ultrason = "⇣ Sensors";
 Blockly.Msg.CAT_bluetooth = "Bluetooth";
 Blockly.Msg.CAT_RemoteIR = "IR R.Control";
 Blockly.Msg.CAT_ARDUINO_matrice8x8 = "░ LED Mouth";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "░ LED Eyes";
-Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "▀ LCD Screen";
+Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "Grove LCD";
 Blockly.Msg.CAT_iot = "☁ IoT";
 Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "MP3 DFMini";
 Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
-Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
-Blockly.Msg.CAT_NEOPIXEL = "☄ NeoPixel";
-Blockly.Msg.CAT_CCS811 = "👃 CO2 sensor";
+Blockly.Msg.CAT_OLED_U8G = "OLED";
+Blockly.Msg.CAT_NEOPIXEL = "NeoPixel";
+Blockly.Msg.CAT_CCS811 = "CO2 sensor";
 Blockly.Msg.CAT_Displays = "📺 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_OPENSMART = "MP3 OpenSmart";
 Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
 Blockly.Msg.CAT_MUVISION = "MuVision";
+Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
+Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+Blockly.Msg.CAT_SSENSORS = "Simple Sensors";
+Blockly.Msg.CAT_LED = "Led";
+Blockly.Msg.CAT_LEDRGB = "RGB Led";
+Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
+Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
+Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
+Blockly.Msg.CAT_TIME_GENERAL = "General";
+Blockly.Msg.CAT_BME280 = "BME280 Laser";
+Blockly.Msg.CAT_VL53L0X = "VL53L0X Preassre";
+
+
+
+//RTC DS3231
+Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
+Blockly.Msg.RTCDS3231_RTC="Set DateTime DS3231";
+Blockly.Msg.RTCDS3231_DAY="Day";
+Blockly.Msg.RTCDS3231_MONTH="Month";
+Blockly.Msg.RTCDS3231_YEAR="Year";
+Blockly.Msg.RTCDS3231_HOUR="Hour";
+Blockly.Msg.RTCDS3231_MINUTE="Minute";
+Blockly.Msg.RTCDS3231_SECOND="Second";
+Blockly.Msg.RTCDS3231_DOFWEEK="Day of week";
+Blockly.Msg.RTCDS3231_READ_RTC="RTC DS3231.Read the date and time";
+Blockly.Msg.RTCDS3231_VALUES="value";
+Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
+Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
 
 
 //Wireless
@@ -123,11 +154,11 @@ Blockly.Msg.menudht = [["humidity", "h"], ["temperature", "t"]];
 Blockly.Msg.couleur = [["blue", "blue"], ["yellow", "yellow"], ["red", "red"], ["green", "green"]];
 Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"]];
 //sensor
-Blockly.Msg.VL53L0X="Laser distance sensor";
+Blockly.Msg.VL53L0X="VL53L0X Init laser distance sensor.Pins I2C";
 Blockly.Msg.VL53L0X_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.VL53L0X_distance="distance measured by laser";
 Blockly.Msg.VL53L0X_distance_tooltip="VL530X :\nreturn Distance measured by laser in mm";
-Blockly.Msg.bme280="Atmospheric pressure sensor";
+Blockly.Msg.bme280="BME280 Init atmospheric pressure sensor.Pins I2C";
 Blockly.Msg.bme280_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.bme280_pressure="atmospheric pressure";
 Blockly.Msg.bme280_pressure_tooltip="BME280 :\nreturn atmospheric pressure in hPa";
@@ -181,12 +212,15 @@ Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
 Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read value";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
 Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
 Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
 Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
 Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
 Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
+Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
 
 
 //LCD screen
@@ -414,7 +448,8 @@ Blockly.Msg.SSERIAL_Available = "amount of data on the software port";
 Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes in the software port queue, or 0 if nothing is available";
 ////////////OTTO DIY Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
 Blockly.Msg.OTTO9_HOME_TEXT = "home";
-Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
+Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 8-Trigger US 9-Echo US and 13-Passive buzzer";
+Blockly.Msg.OTTO9H_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 6-leftArm 7-rightArm 8-Trigger US 9-Echo US A6-Microphone and 13-Passive buzzer";
 Blockly.Msg.OTTO9_DIY_URL = "https://wikifactory.com/+OttoDIY/otto-diy";// do not translate
 Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";// do not translate
 Blockly.Msg.OTTO9_CALIBRATION='calibrate ';
@@ -445,19 +480,23 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [["😃 happy1", "OttoSuperHappy"],["🙂 hap
 Blockly.Msg.OTTO9_SOUND_TEXT = "sound";
 Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Emotional sounds";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [ ["😃 happy1", "S_superHappy"], ["🙂 happy2", "S_happy"], ["😊 happy3", "S_happy_short"], ["🙁 sad", "S_sad"], ["😕 confused", "S_confused"], ["🤗 cuddly", "S_cuddly"], ["😮 Oh", "S_OhOoh"], ["😯 OhOoh", "S_OhOoh2"], ["😲 surprise", "S_surprise"],["🤖 connect", "S_connection"], [" 🤖 disconnect", "S_disconnection"], ["👇 push", "S_buttonPushed"], ["❗ 1", "S_mode1"], ["❗❗ 2", "S_mode2"], ["❗❗❗ 3", "S_mode3"], ["💤 sleep", "S_sleeping"], ["💩 fart1", "S_fart1"], ["💩 fart2", "S_fart2"], ["💩 fart3", "S_fart3"],];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "distance [cm]";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "distance [cm].Pin Trigger 8 Pin Echo 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
 Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "Ranging distance between 2cm to 400cm";
 Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "obstacle";
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [["close", "10"],["very close", "3"],["far", "30"]];
-Blockly.Msg.OTTO9_GETNOISE_TEXT = "noise measured";
+Blockly.Msg.OTTO9_GETNOISE_TEXT = "noise measured. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 is quiet, 500 noise and more than 1000 is loud, also adjust the sensor trimpot sensibility";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch. Pin A0";
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
-Blockly.Msg.OTTO9_GETG_TEXT = "motion";
+Blockly.Msg.OTTO9_GETG_TEXT = "Read the accelerations and angular velocities";
+Blockly.Msg.OTTO9_GETG_TEXT2 = "Value";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "mouth";
 Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "mouth emotion for the 8x8 LED matrix #0-30";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 happy1", "happyOpen"],["🙂 happy2", "happyClosed"], ["😊 smile", "smile"], ["😦 sad1", "23"], ["🙁 sad2", "24"], ["😮 surprise", "smallSurprise"], ["😲 Surprise2", "bigSurprise"], ["😕 confused", "confused"],["😛 tongue", "tongueOut"],["🙃 silly", "culito"],  ["😑 serious", "lineMouth"], ["🙄 upset", "21"], ["💖 heart", "heart"], ["🦇 v1", "vamp1"], ["🦇 v2", "vamp2"], ["❌ no", "xMouth"], ["✅ OK", "okMouth"],["❓?", "27"], ["⚡ thunder", "thunder"]];
 Blockly.Msg.OTTO9_EYES_TEXT = "eyes";
+Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
+Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "eyes emotion for the 16x8 i2C LED matrix ";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 happy1", "happy_bmp"],["🙂 happy2", "eyes_bmp"], ["😦 sad", "sad_bmp"], ["😡 angry1", "angry_bmp"], ["😡 angry2", "angry2_bmp"], ["😰 freetful", "freetful_bmp"], ["😕 confused", "confused_bmp"],["😴 sleep", "sleep_bmp"],["😍 love", "love_bmp"],  ["😑 wave", "wave_bmp"], ["🤩 magic", "magic_bmp"], ["😞 fail", "fail_bmp"], ["🤖 logo", "logo_bmp"], ["❌❌ no", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "eyes text";
@@ -470,14 +509,86 @@ Blockly.Msg.OTTO9_ARMS_TEXT = "arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 
-//CCS811
+//SIMPLE SENSORS
+Blockly.Msg.BUTTON_NAME="Button";
+Blockly.Msg.INTERNAL_BUTTON_NAME="Start button MRTduino board";
+Blockly.Msg.BUTTON_LOGIC="Logic inverse";
+Blockly.Msg.BUTTON_PRESSED="pressed?";
+Blockly.Msg.BUTTON_TOUCH_NAME="Capacity Touch";
+Blockly.Msg.KNOCK_NAME="Knock";
+Blockly.Msg.KNOCK_DETECTED="detected?";
+Blockly.Msg.TILT_NAME="Digital Tilt";
+Blockly.Msg.TILT_DETECTED="detected?";
+Blockly.Msg.POTE_NAME="Potentiometer";
+Blockly.Msg.PERCENT="percent(0-100)%";
+Blockly.Msg.VALUE="Value(0-1023)";
+Blockly.Msg.PHOTO_NAME="Photo Interrupter";
+Blockly.Msg.PHOTO_DETECTED="detected?";
+Blockly.Msg.VAR_LM35="LM35 Temperature (ºC)";
+Blockly.Msg.LDR_NAME="Photocell (LDR or CDS) ";
+Blockly.Msg.LDR_DETECTED="detected?";
+Blockly.Msg.IR_NAME="Infrared";
+Blockly.Msg.IR_DETECTED="sensed?";
+Blockly.Msg.FLAME_NAME="Flame";
+Blockly.Msg.FLAME_DETECTED="detected?";
+Blockly.Msg.SOUND_NAME="Sound (MIC)";
+Blockly.Msg.SOUND_DETECTED="detected?";
+Blockly.Msg.DHT_NAME="DHT";
+Blockly.Msg.DHT_Type="Type";
+Blockly.Msg.DHT_Type11="DHT11";
+Blockly.Msg.DHT_Type21="DHT21";
+Blockly.Msg.DHT_Type22="DHT22";
+Blockly.Msg.DHT_Temp="Temperature ºC";
+Blockly.Msg.DHT_Humi="Humidity";
+Blockly.Msg.DHT_Head="Heat Index ºC";
+Blockly.Msg.GAS_NAME="Gas CO (MQ-7)";
+Blockly.Msg.GAS_DETECTED="detected?";
+Blockly.Msg.ALCOHOL_NAME="Alcohol (MQ-3)";
+Blockly.Msg.ALCOHOL_DETECTED="detected?";
+Blockly.Msg.VIBRATION_NAME="Vibration";
+Blockly.Msg.VIBRATION_DETECTED="detected?";
+Blockly.Msg.HALL_NAME="Hall Magnetic";
+Blockly.Msg.HALL_DETECTED="detected?";
+Blockly.Msg.PIR_NAME="PIR Motion";
+Blockly.Msg.PIR_DETECTED="detected?";
+Blockly.Msg.VAPOR_NAME="Vapor (Steam)";
+Blockly.Msg.ALIGHT_NAME="Ambient Light (TEMT6000)";
+Blockly.Msg.WATER_NAME="Water level";
+Blockly.Msg.MOISTURE_NAME="Soil Moisture";
+Blockly.Msg.JOYSTICK_NAME="Joystick axis";
+Blockly.Msg.JOYSTICK_BUTTON="Joystick button";
+Blockly.Msg.JOYSTICK_PRESSED="pressed?";
+Blockly.Msg.ultrasonic_ranger="HC-SR04 Ultrasonic (cm)";
+Blockly.Msg.unit="Unit";
+Blockly.Msg.cm="cm";
+Blockly.Msg.inch="inch";
+Blockly.Msg.TRIG="TRIG Trigger";
+Blockly.Msg.Echo="Echo";
+Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
 
+//CCS811
 Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
 Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
 Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 
 //REMOTE CONTROL IR

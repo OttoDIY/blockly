@@ -81,6 +81,31 @@ Blockly.Python["matrice8x8_init"]=function(block){
     Blockly.Python.definitions_["spi"]="spi = SPI(1, baudrate=10000000, polarity=1, phase=0, sck=Pin(" + clk + "), mosi=Pin(" + din + "))\ndisplay = max7219.Matrix8x8(spi, Pin(" + cs + "), 1)";
     return ""
 };
+
+Blockly.Blocks["matrice8x8_init_2"]={init:function(){
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/matrix8x8.png', 48, 48, "*"))	.appendField(Blockly.Msg.matrice);
+        this.appendValueInput("CLK").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("CLK");
+        this.appendValueInput("CS").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("CS");
+        this.appendValueInput("DIN").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("DIN");
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+        this.setInputsInline(true);
+        this.setColour("#4b009f");
+        this.setTooltip(Blockly.Msg.matrice8x8_tooltip);
+        this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
+};
+Blockly.Arduino["matrice8x8_init_2"]=function(block){
+    var cs=Blockly.Python.valueToCode(block, "CS", Blockly.Python.ORDER_ASSIGNMENT);
+    var clk=Blockly.Python.valueToCode(block, "CLK", Blockly.Python.ORDER_ASSIGNMENT);
+    var din=Blockly.Python.valueToCode(block, "DIN", Blockly.Python.ORDER_ASSIGNMENT);
+    Blockly.Arduino.includes_["matrice8x8init"]='#include <LedControl.h>';
+    Blockly.Arduino.definitions_["matrice8x8init"]="LedControl lc=LedControl(" + din + "," + clk + "," + cs + ",1);";
+    Blockly.Arduino.codeFunctions_["matrice8x8init"]="void afficher(byte s[]) {\n  for (int i=0; i<8; i++) {\n    lc.setRow(0,i,s[i]);\n  };\n}";
+    Blockly.Arduino.setups_["matrice8x8"]="lc.shutdown(0,false);\n  lc.setIntensity(0,1);\n  lc.clearDisplay(0);";
+    return ""
+};
+
+
 /////////////
 Blockly.Blocks["matrice8x8_efface"]={init:function(){
     this.appendDummyInput().appendField(Blockly.Msg.matrice8x8_efface);

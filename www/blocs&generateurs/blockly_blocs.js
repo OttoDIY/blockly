@@ -831,6 +831,25 @@ Blockly.Blocks["math_number"] = {
         this.setTooltip(Blockly.Msg.MATH_NUMBER_TOOLTIP)
     }
 };
+
+Blockly.Blocks['analog_pin'] = {
+  /**
+   * Block for analog pin
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl('');
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput('A1'), 'NUM');
+    this.setOutput(true, 'Number');
+    this.setTooltip('Analog input');
+  }
+};
+
+
+
+
 Blockly.Blocks["math_arithmetic"] = {
     init: function() {
         var OPERATORS = [

@@ -150,6 +150,73 @@ Blockly.Arduino['soft_bt_read'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+
+Blockly.Blocks['soft_bt_read_string'] = {
+	helpUrl: '',
+  init: function() {
+    this.setColour("#0060aa");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
+	this.appendDummyInput("")
+	    .appendTitle(Blockly.Msg.SSERIAL_BT_ReadString);
+	this.appendDummyInput()
+        .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC')
+		.appendField(Blockly.Msg.SSERIAL_BT_Readlf)
+    this.setInputsInline(true);
+    this.setOutput(true, "String");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['soft_bt_read_string'] = function(block) {
+  // TODO: Assemble Python into code variable.
+   var logic = this.getFieldValue('LOGIC');
+   
+   if(logic=='TRUE')
+    var code = 'mySerialBT.readStringUntil(\'\\n\')';
+  else
+    var code = 'mySerialBT.readString()';
+   
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+Blockly.Blocks['soft_bt_read_number'] = {
+	helpUrl: '',
+  init: function() {
+    this.setColour("#0060aa");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
+	this.appendDummyInput("")
+	    .appendTitle(Blockly.Msg.SSERIAL_BT_ReadNum);
+	this.appendDummyInput()
+        .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC')
+		.appendField(Blockly.Msg.SSERIAL_BT_Readlf)
+    this.setInputsInline(true);
+    this.setOutput(true, "String");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['soft_bt_read_number'] = function(block) {
+  // TODO: Assemble Python into code variable.
+   var logic = this.getFieldValue('LOGIC');
+   
+   if(logic=='TRUE')
+    var code = 'atof((mySerialBT.readStringUntil(\'\\n\')).c_str())';
+  else
+    var code = 'mySerialBT.parseFloat()';
+   
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+
+
+
 Blockly.Blocks['soft_bt_println'] = {
   helpUrl: 'http://www.arduino.cc/en/Serial/Print',
   init: function() {

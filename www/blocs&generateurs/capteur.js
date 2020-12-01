@@ -480,6 +480,9 @@ Blockly.Blocks["BME280"]={init:function(){
 		.appendField(new Blockly.FieldImage('media/pressure.png', 48, 48, "*"))
 		.appendField(Blockly.Msg.bme280);
     this.setHelpUrl("");
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+	this.setNextStatement(true, null);
     this.setColour("#2a93e8");
     this.setTooltip(Blockly.Msg.bme280_tooltip)}
 };
@@ -499,7 +502,7 @@ Blockly.Python["BME280"]=function(block){
 };
 //////////////
 Blockly.Blocks["BME280_pressure"]={init:function(){
-    this.appendDummyInput().appendField(Blockly.Msg.bme280_pressure);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/pressure.png', 48, 48, "*")).appendField(Blockly.Msg.bme280_pressure);
     this.setColour("#2a93e8");
     this.setHelpUrl("");
     this.setOutput(true, "Number");
@@ -518,6 +521,9 @@ Blockly.Blocks["VL53L0X"]={init:function(){
 		.appendField(new Blockly.FieldImage('media/laser.png', 48, 48, "*"))
 		.appendField(Blockly.Msg.VL53L0X);
     this.setColour("#2a93e8");
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+	this.setNextStatement(true, null);
     this.setHelpUrl("");
     this.setTooltip(Blockly.Msg.VL53L0X_tooltip)}
 };
@@ -535,7 +541,7 @@ Blockly.Python["VL53L0X"]=function(block){
 };
 //////////////
 Blockly.Blocks["VL53L0X_distance"]={init:function(){
-    this.appendDummyInput().appendField(Blockly.Msg.VL53L0X_distance);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/laser.png', 48, 48, "*")).appendField(Blockly.Msg.VL53L0X_distance);
     this.setColour("#2a93e8");
     this.setHelpUrl("");
     this.setOutput(true, "Number");
