@@ -146,9 +146,6 @@
 		</category>
 		<category name="CAT_ARDUINO_matrice8x8" colour="#747F8A">
 			<block type="otto9_mouth"></block>
-			<block type="otto9_matrix_brightness">
-				<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>
 			<block type="otto9_matrix_text"></block>
 			<block type="otto9_mouth#">
 				<value name="mouth"><shadow type="math_number">	<field name="NUM">10</field></shadow></value>
@@ -159,7 +156,6 @@
 			<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow>	</value>
 			</block>
 			<block type="otto9_clear"></block>
-			<block type="otto9_matrix8x8"></block>
 		</category>
 		<category name="CAT_ARDUINO_matrice16x8" colour="#32D900">
 			<block type="otto9_eyes"></block>
