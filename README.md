@@ -2,7 +2,7 @@
 This is a free and open source visual programming language based on Blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check or verified) and quickly [upload to any Otto robot](https://wikifactory.com/+OttoDIY/projects) or similar Arduino(C++) or Micro:bit or Python robots.
 
 ## Installer 
-### Distribution and kernel
+### Distribution(s) and kernel(s)
 * Ubuntu 20
 * Ubuntu 18.04
 ```
@@ -13,7 +13,7 @@ Description:	Ubuntu 18.04.3 LTS
 Release:	18.04
 Codename:	bionic
 $ uname -a
-Linux blue 5.3.0-53-generic #47~18.04.1-Ubuntu SMP Thu May 7 13:10:50 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Linux blue 5.4.0-53-generic #59~18.04.1-Ubuntu SMP Wed Oct 21 12:14:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
 ### Dependencies (nodejs, npm)
@@ -51,13 +51,13 @@ crw-rw---- 1 root dialout 188, 0 Sep 13 08:21 /dev/ttyUSB0
 ```
 
 ## Usage
-0. Open Otto blockly
-1. Open any example.
-2. Connect your Otto robot.
-3. Select Arduino nano and USB port where Otto is connected (e.g., /dev/ttyUSB0)
-4. Check the code.
-5. Upload and yes is that easy!
-6. Drag , drop, mix, play and create your own codes.  
+1. Open Otto blockly
+2. Open any example.
+3. Connect your Otto robot.
+4. Select Arduino nano and USB port where Otto is connected (e.g., /dev/ttyUSB0)
+5. Check the code.
+6. Upload and yes is that easy!
+7. Drag , drop, mix, play and create your own codes.  
 [<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">](https://youtu.be/chcWxh4Co_c)
 
 ## Attribution
@@ -89,11 +89,7 @@ Thanks to all these tools created by great people. that without them, would have
 - [Escornabot](escornabot.com) 
 - [Masaylo](https://github.com/agomezgar/masaylo)
 
-## Forums and more of Otto 
-- [Join the Otto Builder community and share them!](https://www.ottodiy.com/#join-us) 
-- [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
-
-## Contributors of GNU/Linux Version
+## Contributors of Otto/blockly for GNU/Linux OS version 
 - Antonio Gómez [@agomezgar](https://github.com/agomezgar) (Developer) 
 - Mª Dolores Nogueras (Developer)
 - Oresztesz Margaritisz [@gitaroktato](https://github.com/gitaroktato) (tester)
@@ -106,7 +102,12 @@ Contributing to this software is warmly welcomed. There are 5 ways you can contr
 3. Bring missing features from similar Blockly or Scratch alike programs, request new useful blocks.
 5. Translating to new languages or fixing current ones.
 
-You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
+You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pulling requests](https://help.github.com/en/articles/about-pull-requests). Please provide as much details as you can for any changes and make sure they have been tested
+when you do a pull request. Similarly, make sure to keep consistency in the naming.
 
-Just make sure to keep consistency in the naming and make a record of the change or improvement made.
+## Forums and more of Otto 
+- [Join the Otto Builder community and share them!](https://www.ottodiy.com/#join-us) 
+- [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
+
+
 
