@@ -1,29 +1,66 @@
-# Otto Blockly for Linux
-This is a Linux version for Otto Blockly developed by Antonio Gómez and Mª Dolores Nogueras.It's a project still developing. As far as we know, it works in Ubuntu 20
-# Do you want to compile it?
-1. Install node.js
-2. Clone this repository branch. If in shell, type __git clone --single-branch --branch versionlinux https://github.com/ottodiy/blockly__ like the example below:
+# Otto Blockly for GNU/Linux OS
+This is a free and open source visual programming language based on Blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check or verified) and quickly [upload to any Otto robot](https://wikifactory.com/+OttoDIY/projects) or similar Arduino(C++) or Micro:bit or Python robots.
 
- ``` foo@bar:~$ git clone --single-branch --branch versionlinux https://github.com/ottodiy/blockly*```
+## Installer 
+### Distribution and kernel
+* Ubuntu 20
+* Ubuntu 18.04
+```
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.3 LTS
+Release:	18.04
+Codename:	bionic
+$ uname -a
+Linux blue 5.3.0-53-generic #47~18.04.1-Ubuntu SMP Thu May 7 13:10:50 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+```
 
-3. Run __npm install__
-4. If you want to test the software, run __npm start__
-5. To compile, run __npm run compiler__
+### Dependencies (nodejs, npm)
+```
+cd
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
+nodejs -v
+#https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+```
 
-## How to Use
-[<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">](https://youtu.be/chcWxh4Co_c)
+### Builing project
+```
+git clone --single-branch --branch versionlinux https://github.com/ottodiy/blockly
+cd ~/blockly
+npm install
+sudo chown -R $USER:$(id -gn $USER) /home/$USER/.config
+npm start #to test app
+npm run compiler #To compile
+```
 
+### Cleaning project
+```
+rm -rf dist/
+rm -rf node_modules/
+rm -rf package-lock.json
+```
+
+### USB connection
+Testing the port of arudino with `Board: Arduino Nano; Processor: ATMega328P; Port:/dev/ttyUSB0`
+```
+ls -l /dev/ttyUSB*
+crw-rw---- 1 root dialout 188, 0 Sep 13 08:21 /dev/ttyUSB0
+```
+
+## Usage
+0. Open Otto blockly
 1. Open any example.
 2. Connect your Otto robot.
-3. Select Arduino nano and USB port where Otto is connected.
+3. Select Arduino nano and USB port where Otto is connected (e.g., /dev/ttyUSB0)
 4. Check the code.
 5. Upload and yes is that easy!
-6. Drag , drop, mix, play and create your own codes.
-7. [Join the Otto Builder community and share them!](https://www.ottodiy.com/#join-us) 
-8. [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
+6. Drag , drop, mix, play and create your own codes.  
+[<img src="https://github.com/OttoDIY/blockly/blob/master/www/media/Ottoblockly.png" width="500" align="center">](https://youtu.be/chcWxh4Co_c)
 
 ## Attribution
-
 Thanks to all these tools created by great people. that without them, would have not been possible to make this project:
 
 - [Blockly](https://developers.google.com/blockly)
@@ -48,6 +85,28 @@ Thanks to all these tools created by great people. that without them, would have
 - [ampy](https://github.com/pycampers/ampy)
 - [pyflakes](https://github.com/PyCQA/pyflakes)
 - [NSIS](https://sourceforge.net/projects/nsis)
+- [masayloBlockly](https://github.com/agomezgar/masayloBlockly)
+- [Escornabot](escornabot.com) 
+- [Masaylo](https://github.com/agomezgar/masaylo)
 
-## Did you like it?
-This linux version developers are working in [masayloBlockly](https://github.com/agomezgar/masayloBlockly), a new electron based application that uses what they have learned studying the ottoDIY application to create a high school students focused app which allows them to program many arduino based robots, like ottoDIY itself, or the spanish [Escornabot](escornabot.com) and [Masaylo](https://github.com/agomezgar/masaylo)
+## Forums and more of Otto 
+- [Join the Otto Builder community and share them!](https://www.ottodiy.com/#join-us) 
+- [Subscribe to our YouTube channel for tutorials](https://www.youtube.com/c/ottodiy?sub_confirmation=1)
+
+## Contributors of GNU/Linux Version
+- Antonio Gómez [@agomezgar](https://github.com/agomezgar) (Developer) 
+- Mª Dolores Nogueras (Developer)
+- Oresztesz Margaritisz [@gitaroktato](https://github.com/gitaroktato) (tester)
+- Miguel Xochicale [@mxochicale](https://github.com/mxochicale) (tester)
+
+## How to Contribute
+Contributing to this software is warmly welcomed. There are 5 ways you can contribute to this project:
+1. Test and report.
+2. Helps us [solve current issues](https://github.com/OttoDIY/blockly/issues) or other bugs.
+3. Bring missing features from similar Blockly or Scratch alike programs, request new useful blocks.
+5. Translating to new languages or fixing current ones.
+
+You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
+
+Just make sure to keep consistency in the naming and make a record of the change or improvement made.
+
