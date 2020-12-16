@@ -38,7 +38,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['Init_RTC_ds3231'] = {
   helpUrl: '',
   init: function() {
-    this.setColour(190);
+    this.setColour("#2a93e8");
 	this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/rtcds3231.png",51,38))
 		.appendField(Blockly.Msg.RTCDS3231_NAME)
@@ -68,7 +68,7 @@ Blockly.Arduino['Init_RTC_ds3231'] = function(block) {
 Blockly.Blocks['DateTime_RTC_ds3231'] = {
   helpUrl: '',
   init: function() {
-    this.setColour(190);
+    this.setColour("#2a93e8");
 	this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/rtcds3231.png",51,38))
 		.appendField(Blockly.Msg.RTCDS3231_RTC)
@@ -115,7 +115,7 @@ Blockly.Arduino['DateTime_RTC_ds3231'] = function(block) {
 Blockly.Blocks['order_read_rtc_ds3231'] = {
   helpUrl: '',
   init: function() {
-    this.setColour(190);
+    this.setColour("#2a93e8");
     this.appendDummyInput()
 	   .appendField(new Blockly.FieldImage("media/rtcds3231.png",51,38))
         .appendField(Blockly.Msg.RTCDS3231_READ_RTC);
@@ -137,7 +137,7 @@ Blockly.Arduino['order_read_rtc_ds3231'] = function(block) {
 Blockly.Blocks['values_ds3231'] = {
   helpUrl: '',
   init: function() {
-    this.setColour(190);
+    this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/rtcds3231.png",51,38))
 		.appendField(Blockly.Msg.RTCDS3231_Name2)
@@ -174,7 +174,7 @@ Blockly.Arduino['values_ds3231'] = function(block) {
 Blockly.Blocks['values_text_ds3231'] = {
   helpUrl: '',
   init: function() {
-    this.setColour(190);
+    this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/rtcds3231.png",51,38))
 		.appendField(Blockly.Msg.RTCDS3231_Name2)
