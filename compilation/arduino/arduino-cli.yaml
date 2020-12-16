@@ -1,0 +1,20 @@
+board_manager:
+  additional_urls:
+  - http://arduino.esp8266.com/stable/package_esp8266com_index.json
+  - http://digistump.com/package_digistump_index.json
+  - https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
+  - https://dl.espressif.com/dl/package_esp32_index.json
+  - https://raw.githubusercontent.com/uStepper/uStepperHardware/master/package_ustepper_index.json
+daemon:
+  port: "50051"
+directories:
+  data: ./
+  downloads: ./suppr
+  user: ./userlibs
+logging:
+  file: ""
+  format: text
+  level: info
+telemetry:
+  addr: :9090
+  enabled: true

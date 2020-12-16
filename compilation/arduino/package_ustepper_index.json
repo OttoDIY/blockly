@@ -1,0 +1,185 @@
+{
+   "packages":[
+      {
+         "name": "uStepper",
+         "maintainer": "ON Development IVS",		  
+         "websiteURL": "https://www.on-development.com",
+         "email": "administration@ustepper.com",
+		 "help": {
+        	"online": "https://www.ustepper.com"
+	   },
+     	"platforms":
+		[
+			{
+	          "name": "uStepper",
+	          "architecture": "avr",
+	          "version": "1.0.0",
+	          "category": "Arduino",
+	          "url": "https://raw.githubusercontent.com/uStepper/uStepper/master/Hardware/uStepper_hardware.zip",
+	          "archiveFileName": "uStepper_hardware.zip",
+	          "checksum": "SHA-256:e5c877df7bc6d492379ebfef7601527bfe65d710b0c2e44aead0621b1d369b4a",
+	          "size": "4277",
+	          "boards": [
+	            {"name": "uStepper"}
+	          ],
+	          "toolsDependencies": [
+	            {
+	              "packager": "arduino",
+	              "name": "avr-gcc",
+	              "version": "4.8.1-arduino5"
+	            },
+	            {
+	              "packager": "arduino",
+	              "name": "avrdude",
+	              "version": "6.0.1-arduino5"
+	            }
+	          ]
+	        },
+	        {
+	          "name": "uStepper",
+	          "architecture": "avr",
+	          "version": "1.1.0",
+	          "category": "Arduino",
+	          "url": "https://raw.githubusercontent.com/uStepper/uStepper/master/Hardware/uStepper_hardware.zip",
+	          "archiveFileName": "uStepper_hardware.zip",
+	          "checksum": "SHA-256:e5c877df7bc6d492379ebfef7601527bfe65d710b0c2e44aead0621b1d369b4a",
+	          "size": "4277",
+	          "boards": [
+	            {"name": "uStepper"}
+	          ],
+	          "toolsDependencies": [
+	          ]
+	        },
+	        {
+	          "name": "uStepper",
+	          "architecture": "avr",
+	          "version": "1.2.0",
+	          "category": "Arduino",
+	          "url": "https://raw.githubusercontent.com/uStepper/uStepper/master/Hardware/uStepper_hardware.zip",
+	          "archiveFileName": "uStepper_hardware.zip",
+	          "checksum": "SHA-256:e5c877df7bc6d492379ebfef7601527bfe65d710b0c2e44aead0621b1d369b4a",
+	          "size": "4277",
+	          "boards": [
+	            {"name": "uStepper"}
+	          ],
+	          "toolsDependencies": [
+	            {
+	              "packager": "arduino",
+	              "name": "avr-gcc",
+	              "version": "4.9.2-atmel3.5.3-arduino2"
+	            },
+	            {
+	              "packager": "arduino",
+	              "name": "avrdude",
+	              "version": "6.0.1-arduino5"
+	            }
+	          ]
+	        },
+	        {
+	          "name": "uStepper",
+	          "architecture": "avr",
+	          "version": "1.3.0",
+	          "category": "Arduino",
+	          "url": "https://raw.githubusercontent.com/uStepper/uStepper/master/Hardware/uStepper_hardware.zip",
+	          "archiveFileName": "uStepper_hardware.zip",
+	          "checksum": "SHA-256:e5c877df7bc6d492379ebfef7601527bfe65d710b0c2e44aead0621b1d369b4a",
+	          "size": "4277",
+	          "boards": [
+	            {"name": "uStepper"}
+	          ],
+	          "toolsDependencies": [
+	            {
+	              "packager": "arduino",
+	              "name": "avr-gcc",
+	              "version": "4.9.2-atmel3.5.3-arduino2"
+	            },
+	            {
+	              "packager": "arduino",
+	              "name": "avrdude",
+	              "version": "6.3.0-arduino6"
+	            }
+	          ]
+	        },
+			{
+			   "name": "uStepper",
+			   "architecture": "avr",
+			   "version": "2.0.0",
+			   "category": "uStepper",
+			   "url": "https://github.com/uStepper/uStepperHardware/blob/master/uStepperHardware.zip?raw=true",
+			   "checksum": "SHA-256:e98d2f3a7075d0f2c44f6d35415e0dbe1518edca878268b8f430db7e8a602e14",
+			   "archiveFileName": "uStepperHardware.zip",
+			   "size": "258127", 
+			   "boards":
+				[
+			      { "name": "uStepper" },
+			      { "name": "uStepper S-lite" },
+			      { "name": "uStepperS" }
+			   	],
+			   "toolsDependencies":
+				[				
+				]
+			},
+			{
+			   "name": "uStepper",
+			   "architecture": "avr",
+			   "version": "2.0.1",
+			   "category": "uStepper",
+			   "url": "https://github.com/uStepper/uStepperHardware/blob/master/uStepperHardware.zip?raw=true",
+			   "checksum": "SHA-256:afea91f1fcf36551fe49060f309dd8873d70c3dc3cb3c6608d4f00d209cc4c51",
+			   "archiveFileName": "uStepperHardware.zip",
+			   "size": "258019", 
+			   "boards":
+				[
+			      { "name": "uStepper" },
+			      { "name": "uStepper S-lite" },
+			      { "name": "uStepperS" }
+			   	],
+			   "toolsDependencies":
+				[				
+				]
+			},
+			{
+			   "name": "uStepper",
+			   "architecture": "avr",
+			   "version": "2.1.0",
+			   "category": "uStepper",
+			   "url": "https://github.com/uStepper/uStepperHardware/blob/master/uStepperHardware.zip?raw=true",
+			   "checksum": "SHA-256:6ad54088f2294787be009c470f9f871a233615e985be699b27ef01e2c00e35aa",
+			   "archiveFileName": "uStepperHardware.zip",
+			   "size": "284594", 
+			   "boards":
+				[
+			      { "name": "uStepper" },
+			      { "name": "uStepper S-lite" },
+			      { "name": "uStepperS" }
+			   	],
+			   "toolsDependencies":
+				[				
+				]
+			},
+			{
+			   "name": "uStepper",
+			   "architecture": "avr",
+			   "version": "2.2.0",
+			   "category": "uStepper",
+			   "url": "https://github.com/uStepper/uStepperHardware/blob/master/releases/uStepperHardware_2.2.0.zip?raw=true",
+			   "checksum": "SHA-256:eeabe97e5a2dbfc00d8212ae409357c745ee6947293679822e88c50b95a9a0a5",
+			   "archiveFileName": "uStepperHardware_2.2.0.zip",
+			   "size": "284639", 
+			   "boards":
+				[
+			      { "name": "uStepper" },
+			      { "name": "uStepper S-lite" },
+			      { "name": "uStepperS" }
+			   	],
+			   "toolsDependencies":
+				[				
+				]
+			}
+	     ],      	
+		 "tools":
+		  [		
+		  ]
+		}
+	]  
+}

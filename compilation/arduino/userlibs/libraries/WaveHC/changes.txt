@@ -1,0 +1,103 @@
+9 Aug 2018
+
+update documentation
+
+19 Sep 2011
+
+Changes for Arduino 1.0
+
+Moved examples folder to WaveHC/examples
+
+8 May 2011
+
+Changed default SPI speed for initialization to F_CPU/64.
+Added #define SPI_INIT_SLOW in SdReader.h to select F_CPU/128.
+
+9 Oct 2010
+
+Added ATmega2560 Mega
+
+14 Mar 2010
+
+Fix Linux include problem. Warn for stereo files.
+
+19 Dec 2009
+
+Major rewrite of WaveHC to allow 16-bit 44.1 K files.
+
+Use two 512 byte buffers unless 168 Arduino.
+
+Improved SD card initialization and error handling.
+
+Several new examples.
+
+Better support of Mega Arduino and remapping DAC pins on all Arduinos.
+
+Added DAC pinMode() calls to WaveHC::play().  These call can be
+removed from sketches.
+
+Reduce file open latency by file indexing and an open by index function.
+
+Add RATE_ERROR_LEVEL variable for rate error handling control.
+
+Make DAC LATCH pin optional.  The LDAC line may be grounded and 
+USE_MCP_DAC_LDAC set to zero to free pin 5.  See WavePinDefs.h
+
+Added several new utility functions such as ls() to list files
+and printEntryName() to print file names
+
+More documentation for developers.
+
+
+19 May 2009
+
+Changed SdCard class and renamed it SdReader to avoid conflicts with other
+Arduino libraries.
+
+You must change the name in your sketches.  For example
+
+#include <SdCard.h>
+SdCard card;
+
+becomes
+
+#include <SdReader.h>
+SdReader card;
+
+Improved error checking in the library and example sketches.
+
+SD_CARD_INFO_SUPPORT is defined as 1 by default for SdReadTest.pde.
+You can set it to zero to save flash if you don't need info functions.
+
+Added a status function WaveHC::isPaused() which returns true if the player is paused.
+
+Changed FatReader::open(FatReader &dir, char *name) to use a case independent 
+compare so it will find files like "TUNE.WAV" when called with name = "Tune.wav".
+
+6 May 2009
+
+Added SdReadTest.pde 
+
+This sketch performs a number of tests on a SD card.
+
+SD_CARD_INFO_SUPPORT must be set to 1 in SdReader.h.
+
+Delete all .o files in the WaveHC folder to force a rebuild of the library.
+
+20 Apr 2009
+
+Added WaveHC::pause() and WaveHC::resume().
+
+18 Apr 2009
+
+Added support for AtMega328.
+
+Ladyada's OSX bug fix can be activated by setting OSX_BUG_FIX to 1 in WaveHC.cpp
+
+Added WaveHC::seek(pos) based on Ladyada's seek function.
+
+New dap_hc.pde prints free SRAM size in setup.
+
+27 Jan 2009
+
+This is a "preview release".  I am looking for testers and feedback.
