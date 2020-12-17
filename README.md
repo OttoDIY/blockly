@@ -45,10 +45,9 @@ rm -rf package-lock.json
 
 ### USB connection
 First, make sure that your user is part of the `dialout` group if it is necessary in your Linux distribution. You can do this with the following command:
-```bash
-sudo usermod -a -G dialout youruser
 ```
-where **youruser** is the user name you are running the program with.
+sudo usermod -a -G dialout `whoami`
+```
 
 Testing the port of arudino with `Board: Arduino Nano; Processor: ATMega328P; Port:/dev/ttyUSB0`
 ```
