@@ -44,7 +44,7 @@ rm -rf package-lock.json
 ```
 
 ### USB connection
-First, [make sure that your user is part of the `dialout` group](https://askubuntu.com/questions/58119/changing-permissions-on-serial-port) if it is necessary in your Linux distribution. You can do this with the following command:
+First, [make sure that your user is part of the `dialout` group](https://askubuntu.com/a/58122) if it is necessary in your Linux distribution. You can do this with the following command:
 ```
 sudo usermod -a -G dialout `whoami`
 ```
