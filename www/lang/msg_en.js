@@ -50,5 +50,5 @@ var MSG = {
   arduino_card: "Load the settings for the board ",
   aboutModalLabel: "About",
   aboutBody: "This is a free and open source visual programming language based on blockly from Google, Arduino codes are created by just combining blocks, then they are compiled (check) and finally upload to the Otto robot.",
-  nanoWarning: "Having trouble uploading to your Arduino Nano board (upload operation times out)? Try to select a different variant of the board (Regular / Old bootloader / Every), according to what you have. Some are visually identical (old and new bootloader)!"
+  nano:"<p><strong>Microcontroller:&nbsp;</strong> ATmega328<br /><strong>Operating voltage:</strong> 5 V<br /><strong>Input voltage (VIN):</strong> 6-20 V<br /><strong>Power consumption:</strong> 19 mA<br /><strong>Flash memory:</strong> 32 KB of which 2 KB is used by bootloader<br /><strong>SRAM:</strong> 2 KB<br /><strong>Clock speed:</strong> 16 Mhz<br /><strong>EEPROM:</strong> 1 KB<br /><strong>DC current per I/O pin:</strong> 40 mA (20 mA recommended)<br /><strong>Digital I/O:</strong> pins 22<br /><strong>PWM outputs:</strong> 6 (D3, D5, D6, D9, D10, D11)<br /><strong>Analog input:</strong> pins 8 (ADC 10 bit)<br /><strong>I2C:</strong> A4 (SDA), A5 (SCL)<br /><strong>SPI:</strong> D10 (SS), D11 (MOSI), D12 (MISO), D13 (SCK)<br /><strong>LED_BUILTIN:</strong> D13</p>"
 };

@@ -228,7 +228,7 @@ var profile = {
 	mini: {
 	    description: "Arduino Mini",
 	    BUILTIN_LED: 13,
-		picture : "media/mini.jpg",
+		picture : "media/mini.png",
 		dropdownPWM: [["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"], ["11", "11"]],
 		dropdownAnalog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
 		interrupt: [["2", "2"], ["3", "3"]],
@@ -359,7 +359,7 @@ var profile = {
 	wemosD1miniPro: {
 	    description: "LOLIN(WEMOS) D1 mini Pro",
 	    BUILTIN_LED: 2,
-		picture : "media/esp8266.jpg",
+		picture : "media/wemos-d1-minipro.jpg",
 		dropdownPWM: [["0", "0"], ["2", "2"], ["4", "4"], ["5", "5"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"]],
 		dropdownAnalog: [["A0", "A0"]],
 		interrupt: [["0", "0"], ["2", "2"], ["4", "4"], ["5", "5"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"]],
@@ -381,7 +381,7 @@ var profile = {
 	mkrwifi1010: {
 	    description: "Arduino MKR Wifi 1010",
 	    BUILTIN_LED: 6,
-		picture : "media/nano_every.jpg",
+		picture : "media/arduino-mkr-wifi-1010.jpg",
 		dropdownPWM: [["3", "3"], ["5", "5"], ["6", "6"], ["9", "9"], ["10", "10"]],
 		dropdownAnalog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"],["A6", "A6"],["A7", "A7"]],
 		interrupt: [["2", "2"], ["3", "3"]],

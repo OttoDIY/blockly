@@ -100,8 +100,8 @@ body {
 }
 .arduino_card_mini_picture_div {
 	position:absolute;
-	top:5px;
-	right:5px;
+	top:20px;
+	right:45px;
 	width:250px;
 	height:600px
 }
