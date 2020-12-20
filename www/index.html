@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="blocs&generateurs/softBT.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/OpenSmartMP3.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/Lcd_I2C.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/APDS9960.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/mu_vision_sensor.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/remoteControl.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/RTC_DS3231.js"></script>
@@ -116,6 +117,8 @@
 						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
 						<option value="mega" >Arduino Méga 2560</option>					
 						<option value="yun" >Arduino Yun</option>
+						<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
+						<option value="wemosD1miniPro" >ESP8266:Wemos D1 mini pro</option>
 						<!--<option value="atmegang" >DAGU RS027</option>  -->
 						<!--<option value="pro16" >DAGU RS040</option>  -->
 					</optgroup>
@@ -269,7 +272,7 @@
 			<div class="arduino_card_mini_picture_div" style="height: 516px">
 				<img id="arduino_card_mini_picture" style="max-width: 100%" />
 			</div>
-			<select size="16" multiple id="pinout" onchange="BlocklyDuino.cardPicture_change();">
+			<select size="14" multiple id="pinout" onchange="BlocklyDuino.cardPicture_change();">
 				<optgroup label="C / C++">
 					<option value="uno" >Arduino Uno</option>
 					<option value="leonardo" >Arduino Léonardo</option>
@@ -281,6 +284,8 @@
 					<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
 					<option value="mega" >Arduino Méga 2560</option>					
 					<option value="yun" >Arduino Yun</option>
+					<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
+					<option value="wemosD1miniPro" >ESP8266:Wemos D1 mini pro</option>
 					<!--<option value="atmegang" >DAGU RS027</option>  -->
 					<!--<option value="pro16" >DAGU RS040</option>  -->
 				</optgroup>
@@ -293,18 +298,9 @@
 				</optgroup>
 			</select>
 			<br><br>
+			<div id="infoboard"></div>
 			<div class="alert alert-warning" role="alert" id="warning">
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 		  </div>
 		</div>
 	  </div>

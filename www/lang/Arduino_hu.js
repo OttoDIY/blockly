@@ -537,6 +537,19 @@ Blockly.Msg.LCDP_Home = "LCD I2C home";
 Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
 Blockly.Msg.LCDP_Display = "LCD I2C ";
 
+//GESTURE SENSOR APDS9960
+Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
+Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
+Blockly.Msg.APDS9960_detection = "detection";
+Blockly.Msg.APDS9960_init = "Init APDS9960 gesture and color sensor.";
+Blockly.Msg.APDS9960_init2 = "SDA-Port13 SCL-Port14";
+Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
+Blockly.Msg.APDS9960_color_gain = "Config color gain";
+Blockly.Msg.APDS9960_gesture_detected = "detected?";
+Blockly.Msg.APDS9960_readgesture = ".Read gesture";
+Blockly.Msg.APDS9960_readcolors = "Read color frecuencies";
+Blockly.Msg.APDS9960_colors = "Frequency";
+
 
 //REMOTE CONTROL IR
 Blockly.Msg.KEY="Key";

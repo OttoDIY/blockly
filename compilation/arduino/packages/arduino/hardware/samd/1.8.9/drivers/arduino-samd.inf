@@ -1,0 +1,184 @@
+;
+; Copyright 2017 Arduino AG (http://www.arduino.cc/)
+;
+; Arduino is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation; either version 2 of the License, or
+; (at your option) any later version.
+;
+; This program is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with this program; if not, write to the Free Software
+; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+;
+; As a special exception, you may use this file as part of a free software
+; library without restriction.  Specifically, if other files instantiate
+; templates or use macros or inline functions from this file, or you compile
+; this file and link it with other files to produce an executable, this
+; file does not by itself cause the resulting executable to be covered by
+; the GNU General Public License.  This exception does not however
+; invalidate any other reasons why the executable file might be covered by
+; the GNU General Public License.
+;
+
+[Strings]
+DriverPackageDisplayName="Arduino USB Driver (for SAMD boards)"
+ManufacturerName="Arduino AG (www.arduino.cc)"
+ServiceName="USB RS-232 Emulation Driver"
+bossa.name="Bossa Program Port"
+mkr1000.sketch.name="Arduino MKR1000"
+mkr1000.bootloader.name="Arduino MKR1000 bootloader"
+mkrfox.sketch.name="Arduino MKR FOX 1200"
+mkrfox.bootloader.name="Arduino MKR FOX 1200 bootloader"
+mkrgsm.sketch.name="Arduino MKR GSM 1400"
+mkrgsm.bootloader.name="Arduino MKR GSM 1400 bootloader"
+mkrzero.sketch.name="Arduino MKRZERO"
+mkrzero.bootloader.name="Arduino MKRZERO bootloader"
+mkrwan.sketch.name="Arduino MKR WAN 1300"
+mkrwan.bootloader.name="Arduino MKR WAN 1300 bootloader"
+mkrwan1310.sketch.name="Arduino MKR WAN 1310"
+mkrwan1310.bootloader.name="Arduino MKR WAN 1310 bootloader"
+mkrwifi1010.sketch.name="Arduino MKR WiFi 1010"
+mkrwifi1010.bootloader.name="Arduino MKR WiFi 1010 bootloader"
+mkrvidor4000.sketch.name="Arduino MKR Vidor 4000"
+mkrvidor4000.bootloader.name="Arduino MKR Vidor 4000 bootloader"
+mkrnb1500.sketch.name="Arduino MKR NB 1500"
+mkrnb1500.bootloader.name="Arduino MKR NB 1500 bootloader"
+nano33iot.sketch.name="Arduino NANO 33 IoT"
+nano33iot.bootloader.name="Arduino NANO 33 IoT bootloader"
+zero.edbg.name="Atmel Corp. EDBG CMSIS-DAP"
+zero.sketch.name="Arduino Zero"
+zero.bootloader.name="Arduino Zero bootloader"
+sme_fox.sketch.name="SmartEverything Fox"
+sme_fox.bootloader.name="SmartEverything Fox bootloader"
+
+[DefaultInstall]
+CopyINF=arduino-samd.inf
+
+[Version]
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
+Signature="$Windows NT$"
+Provider=%ManufacturerName%
+DriverPackageDisplayName=%DriverPackageDisplayName%
+CatalogFile=arduino-samd.cat
+; DriverVer date is MM/DD/YYYY
+DriverVer=07/08/2019,1.4.3.0
+
+[Manufacturer]
+%ManufacturerName%=DeviceList, NTamd64, NTia64
+
+[DestinationDirs]
+FakeModemCopyFileSection=12
+DefaultDestDir=12
+
+[DeviceList]
+%bossa.name%=DriverInstall, USB\VID_03EB&PID_6124
+%mkr1000.sketch.name%=DriverInstall, USB\VID_2341&PID_804E&MI_00
+%mkr1000.bootloader.name%=DriverInstall, USB\VID_2341&PID_004E
+%mkrfox.sketch.name%=DriverInstall, USB\VID_2341&PID_8050&MI_00
+%mkrfox.bootloader.name%=DriverInstall, USB\VID_2341&PID_0050
+%mkrgsm.sketch.name%=DriverInstall, USB\VID_2341&PID_8052&MI_00
+%mkrgsm.bootloader.name%=DriverInstall, USB\VID_2341&PID_0052
+%mkrwan.sketch.name%=DriverInstall, USB\VID_2341&PID_8053&MI_00
+%mkrwan.bootloader.name%=DriverInstall, USB\VID_2341&PID_0053
+%mkrwan1310.sketch.name%=DriverInstall, USB\VID_2341&PID_8059&MI_00
+%mkrwan1310.bootloader.name%=DriverInstall, USB\VID_2341&PID_0059
+%mkrzero.sketch.name%=DriverInstall, USB\VID_2341&PID_804F&MI_00
+%mkrzero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004F
+%mkrwifi1010.sketch.name%=DriverInstall, USB\VID_2341&PID_8054&MI_00
+%mkrwifi1010.bootloader.name%=DriverInstall, USB\VID_2341&PID_0054
+%mkrvidor4000.sketch.name%=DriverInstall, USB\VID_2341&PID_8056&MI_00
+%mkrvidor4000.bootloader.name%=DriverInstall, USB\VID_2341&PID_0056
+%mkrnb1500.sketch.name%=DriverInstall, USB\VID_2341&PID_8055&MI_00
+%mkrnb1500.bootloader.name%=DriverInstall, USB\VID_2341&PID_0055
+%nano33iot.sketch.name%=DriverInstall, USB\VID_2341&PID_8057&MI_00
+%nano33iot.bootloader.name%=DriverInstall, USB\VID_2341&PID_0057
+%zero.edbg.name%=DriverInstall, USB\VID_03EB&PID_2157&MI_01
+%zero.sketch.name%=DriverInstall, USB\VID_2341&PID_804D&MI_00
+%zero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004D
+%sme_fox.sketch.name%=DriverInstall, USB\VID_2341&PID_E002&MI_00
+%sme_fox.bootloader.name%=DriverInstall, USB\VID_2341&PID_E001
+
+[DeviceList.NTamd64]
+%bossa.name%=DriverInstall, USB\VID_03EB&PID_6124
+%mkr1000.sketch.name%=DriverInstall, USB\VID_2341&PID_804E&MI_00
+%mkr1000.bootloader.name%=DriverInstall, USB\VID_2341&PID_004E
+%mkrfox.sketch.name%=DriverInstall, USB\VID_2341&PID_8050&MI_00
+%mkrfox.bootloader.name%=DriverInstall, USB\VID_2341&PID_0050
+%mkrgsm.sketch.name%=DriverInstall, USB\VID_2341&PID_8052&MI_00
+%mkrgsm.bootloader.name%=DriverInstall, USB\VID_2341&PID_0052
+%mkrwan.sketch.name%=DriverInstall, USB\VID_2341&PID_8053&MI_00
+%mkrwan.bootloader.name%=DriverInstall, USB\VID_2341&PID_0053
+%mkrwan1310.sketch.name%=DriverInstall, USB\VID_2341&PID_8059&MI_00
+%mkrwan1310.bootloader.name%=DriverInstall, USB\VID_2341&PID_0059
+%mkrwifi1010.sketch.name%=DriverInstall, USB\VID_2341&PID_8054&MI_00
+%mkrwifi1010.bootloader.name%=DriverInstall, USB\VID_2341&PID_0054
+%mkrvidor4000.sketch.name%=DriverInstall, USB\VID_2341&PID_8056&MI_00
+%mkrvidor4000.bootloader.name%=DriverInstall, USB\VID_2341&PID_0056
+%mkrnb1500.sketch.name%=DriverInstall, USB\VID_2341&PID_8055&MI_00
+%mkrnb1500.bootloader.name%=DriverInstall, USB\VID_2341&PID_0055
+%nano33iot.sketch.name%=DriverInstall, USB\VID_2341&PID_8057&MI_00
+%nano33iot.bootloader.name%=DriverInstall, USB\VID_2341&PID_0057
+%mkrzero.sketch.name%=DriverInstall, USB\VID_2341&PID_804F&MI_00
+%mkrzero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004F
+%zero.edbg.name%=DriverInstall, USB\VID_03EB&PID_2157&MI_01
+%zero.sketch.name%=DriverInstall, USB\VID_2341&PID_804D&MI_00
+%zero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004D
+%sme_fox.sketch.name%=DriverInstall, USB\VID_2341&PID_E002&MI_00
+%sme_fox.bootloader.name%=DriverInstall, USB\VID_2341&PID_E001
+
+[DeviceList.NTia64]
+%bossa.name%=DriverInstall, USB\VID_03EB&PID_6124
+%mkr1000.sketch.name%=DriverInstall, USB\VID_2341&PID_804E&MI_00
+%mkr1000.bootloader.name%=DriverInstall, USB\VID_2341&PID_004E
+%mkrfox.sketch.name%=DriverInstall, USB\VID_2341&PID_8050&MI_00
+%mkrfox.bootloader.name%=DriverInstall, USB\VID_2341&PID_0050
+%mkrgsm.sketch.name%=DriverInstall, USB\VID_2341&PID_8052&MI_00
+%mkrgsm.bootloader.name%=DriverInstall, USB\VID_2341&PID_0052
+%mkrwan.sketch.name%=DriverInstall, USB\VID_2341&PID_8053&MI_00
+%mkrwan.bootloader.name%=DriverInstall, USB\VID_2341&PID_0053
+%mkrwan1310.sketch.name%=DriverInstall, USB\VID_2341&PID_8059&MI_00
+%mkrwan1310.bootloader.name%=DriverInstall, USB\VID_2341&PID_0059
+%mkrwifi1010.sketch.name%=DriverInstall, USB\VID_2341&PID_8054&MI_00
+%mkrwifi1010.bootloader.name%=DriverInstall, USB\VID_2341&PID_0054
+%mkrvidor4000.sketch.name%=DriverInstall, USB\VID_2341&PID_8056&MI_00
+%mkrvidor4000.bootloader.name%=DriverInstall, USB\VID_2341&PID_0056
+%mkrnb1500.sketch.name%=DriverInstall, USB\VID_2341&PID_8055&MI_00
+%mkrnb1500.bootloader.name%=DriverInstall, USB\VID_2341&PID_0055
+%nano33iot.sketch.name%=DriverInstall, USB\VID_2341&PID_8057&MI_00
+%nano33iot.bootloader.name%=DriverInstall, USB\VID_2341&PID_0057
+%mkrzero.sketch.name%=DriverInstall, USB\VID_2341&PID_804F&MI_00
+%mkrzero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004F
+%zero.edbg.name%=DriverInstall, USB\VID_03EB&PID_2157&MI_01
+%zero.sketch.name%=DriverInstall, USB\VID_2341&PID_804D&MI_00
+%zero.bootloader.name%=DriverInstall, USB\VID_2341&PID_004D
+%sme_fox.sketch.name%=DriverInstall, USB\VID_2341&PID_E002&MI_00
+%sme_fox.bootloader.name%=DriverInstall, USB\VID_2341&PID_E001
+
+[DriverInstall]
+include=mdmcpq.inf,usb.inf
+CopyFiles = FakeModemCopyFileSection
+AddReg=DriverAddReg
+
+[DriverAddReg]
+HKR,,DevLoader,,*ntkern 
+HKR,,NTMPDriver,,usbser.sys 
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider"
+
+[DriverInstall.Services]
+include=mdmcpq.inf
+AddService=usbser, 0x00000002, DriverService
+
+[DriverService]
+DisplayName=%ServiceName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\usbser.sys
+LoadOrderGroup=Base
+

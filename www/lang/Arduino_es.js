@@ -65,7 +65,7 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "OLED";
 Blockly.Msg.CAT_NEOPIXEL = "Neopixel";
-Blockly.Msg.CAT_CCS811 = "Sensor CO2";
+Blockly.Msg.CAT_CCS811 = "CO2 CCS811";
 Blockly.Msg.CAT_Displays = "📺 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";
 Blockly.Msg.CAT_OPENSMART = "MP3 OpenSmart";
@@ -81,8 +81,9 @@ Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
 Blockly.Msg.CAT_TIME_GENERAL = "General";
-Blockly.Msg.CAT_BME280 = "BME280 Laser";
-Blockly.Msg.CAT_VL53L0X = "VL53L0X Presión";
+Blockly.Msg.CAT_BME280 = "Presión BME280";
+Blockly.Msg.CAT_VL53L0X = "Láser VL53L0X";
+Blockly.Msg.CAT_APDS9960 = "Gestos APDS9960";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -584,6 +585,21 @@ Blockly.Msg.LCDP_blinkCursor = "LCD I2C parpadear cursor ";
 Blockly.Msg.LCDP_Home = "LCD I2C inicio";
 Blockly.Msg.LCDP_SetCursor = "LCD I2C poner cursor";
 Blockly.Msg.LCDP_Display = "LCD I2C ";
+
+//GESTURE SENSOR APDS9960
+Blockly.Msg.APDS9960_name_gesture = "APDS9960 Sensor de Gestos";
+Blockly.Msg.APDS9960_name_color = "APDS9960 Sensor de Color";
+Blockly.Msg.APDS9960_detection = "detección";
+Blockly.Msg.APDS9960_init = "Inicialización APDS9960 sensor.";
+Blockly.Msg.APDS9960_init2 = "SDA-SCL";
+Blockly.Msg.APDS9960_gesture_gain = "Configuración ganacia para gestos";
+Blockly.Msg.APDS9960_color_gain = "Configuración ganacia para color";
+Blockly.Msg.APDS9960_gesture_detected = "¿detectado?";
+Blockly.Msg.APDS9960_readgesture = ".Leer Gesto";
+Blockly.Msg.APDS9960_readcolors = "Leer frecuencia de color";
+Blockly.Msg.APDS9960_colors = "Frecuencia";
+
+
 
 Blockly.Msg.KEY="Botón";
 Blockly.Msg.GENERAL_IR="Control Remoto por IR";
