@@ -44,6 +44,12 @@ rm -rf package-lock.json
 ```
 
 ### USB connection
+First, [make sure that your user is part of the `dialout` group](https://askubuntu.com/a/58122) if it is necessary in your Linux distribution. You can do this with the following command:
+```
+sudo usermod -a -G dialout `whoami`
+```
+You need to logout/login again for the group changes to take effect.
+
 Testing the port of arudino with `Board: Arduino Nano; Processor: ATMega328P; Port:/dev/ttyUSB0`
 ```
 ls -l /dev/ttyUSB*
