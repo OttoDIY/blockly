@@ -561,10 +561,199 @@
 				<block type="lcdi2c_showCursor"></block>
 				<block type="lcdi2c_blinkCursor"></block>
 	</category> 
-		
-		
-		
-	</category>	
+	
+	<category name="CAT_TFT_ST7735" colour="#4b009f">
+			 <block type="st7735_init">
+			    <value name="PIN_CS"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
+				<value name="PIN_DC"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
+				<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
+			 </block>
+			 <block type="st7735_icon"></block>
+			   <block type="st7735_backgroundcolor"></block>
+			   <block type="st7735_rotatedisplay"></block>
+			   <block type="st7735_invertdisplay"></block>
+			  <block type="st7735_setcursor">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+			  </block>
+			  <block type="st7735_settextcolor"></block>
+			  <block type="st7735_settextsize"></block>
+			  <block type="st7735_wraptext"></block>
+			  <block type="st7735_printTextln">
+			  <value name="text_to_print">
+                        <shadow type="text">
+                            <field name="TEXT">I am a Robot</field>
+                        </shadow>
+                    </value>
+			  </block>
+				<block type="st7735_drawpixel">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+			  </block>
+				<block type="st7735_drawline">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="x1">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+					<value name="y1">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+			  </block>
+			  <block type="st7735_drawrectangle">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="width">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+					<value name="height">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+			  </block>
+			  
+			   <block type="st7735_drawroundrectangle">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="width">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+					<value name="height">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+					<value name="round">
+                        <shadow type="math_number">
+                            <field name="NUM">3</field>
+                        </shadow>
+                    </value>
+			  </block>
+			  <block type="st7735_drawcircle">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="radius">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+			  </block>
+			 <block type="st7735_drawtriangle">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="x1">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+					<value name="y1">
+                        <shadow type="math_number">
+                            <field name="NUM">10</field>
+                        </shadow>
+                    </value>
+					<value name="x2">
+                        <shadow type="math_number">
+                            <field name="NUM">10</field>
+                        </shadow>
+                    </value>
+					<value name="y2">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+			  </block>
+			    <block type="st7735_drawicon">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="width">
+                        <shadow type="math_number">
+                            <field name="NUM">160</field>
+                        </shadow>
+                    </value>
+					<value name="height">
+                        <shadow type="math_number">
+                            <field name="NUM">128</field>
+                        </shadow>
+                    </value>
+			  </block>
+			   <block type="st7735_properties"></block>
+	</category> 
+	
+	
+</category>	
 	
 <category name="CAT_AUDIO" colour="#a600d3">
 	<category name="CAT_DFPLAYER" colour="#a600d3">
@@ -603,8 +792,6 @@
 		</category>	
 	</category>
 	
-	
-
 		
     <category name="CAT_com"  colour="#0060aa">
 		

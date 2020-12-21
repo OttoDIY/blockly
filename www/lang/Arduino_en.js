@@ -84,6 +84,7 @@ Blockly.Msg.CAT_TIME_GENERAL = "General";
 Blockly.Msg.CAT_BME280 = "Preassure BME280";
 Blockly.Msg.CAT_VL53L0X = "Laser VL53L0X";
 Blockly.Msg.CAT_APDS9960 = "Gesture APDS9960";
+Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
 
 
 
@@ -761,4 +762,45 @@ Blockly.LKL_VS2_HOT_SPOT = "hot-spot";                              //"热点";
 Blockly.LKL_VS2_TARGET_IP = "target IP";                            //"目标IP";
 Blockly.LKL_VS2_LOCAL_IP = "local IP";                              //"本地IP";
 Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
+
+//DISPLAY TFT ST7735
+Blockly.Msg.ST7735_name = "TFT";
+Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\".";
+Blockly.Msg.ST7735_init2 = "Pins:SCK - SDA.";
+Blockly.Msg.ST7735_PIN_CS = "CS Pin";
+Blockly.Msg.ST7735_PIN_RST = "RST Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 Pin";
+Blockly.Msg.ST7735_WRAP = "Tab color";
+Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
+Blockly.Msg.ST7735_Rotate = "Rotate display";
+Blockly.Msg.ST7735_Invert = "Invert display";
+Blockly.Msg.ST7735_SetCursor = "Set cursor";
+Blockly.Msg.ST7735_X0 = "x0";
+Blockly.Msg.ST7735_Y0 = "y0";
+Blockly.Msg.ST7735_X1 = "x1";
+Blockly.Msg.ST7735_Y1 = "y1";
+Blockly.Msg.ST7735_X2 = "x2";
+Blockly.Msg.ST7735_Y2 = "y2";
+Blockly.Msg.ST7735_TEXTCOLOR = "Set text color";
+Blockly.Msg.ST7735_TEXTCOLOR2 = "Set color";
+Blockly.Msg.ST7735_TEXTsize = "Set text size";
+Blockly.Msg.ST7735_TEXTwrap = "Set text wrap";
+Blockly.Msg.ST7735_PrintTextLN = "Print the text/value";
+Blockly.Msg.ST7735_PrintTextLN2 = "line feed";
+Blockly.Msg.ST7735_DrawPixel = "Draw pixel";
+Blockly.Msg.ST7735_Drawlinefrom = "Draw line from";
+Blockly.Msg.ST7735_Drawlineto = "to";
+Blockly.Msg.ST7735_Drawrectangle = "Draw rectangle";
+Blockly.Msg.ST7735_Drawtriangle = "Draw triangle.Corner points";
+Blockly.Msg.ST7735_Drawroundrectangle = "Draw round rectangle";
+Blockly.Msg.ST7735_Drawroundrectangleradius = "rounding radius";
+Blockly.Msg.ST7735_Drawrectanglewidth = "width";
+Blockly.Msg.ST7735_Drawrectangleheight = "height";
+Blockly.Msg.ST7735_Drawcircle = "Draw circle.Center in";
+Blockly.Msg.ST7735_Drawcircleradius = "radius";
+Blockly.Msg.ST7735_Drawfill = "Fill";
+Blockly.Msg.ST7735_properties = "Return property:";
+Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
+Blockly.Msg.ST7735_ValueList = "Values(hex array)";
+Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
 
