@@ -420,6 +420,7 @@ Blockly.Blocks['otto9_tone'] = {init: function() {
     this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
 };
 
 Blockly.Arduino['otto9_tone'] = function(block) {
@@ -437,20 +438,6 @@ Blockly.Arduino['otto9_tone'] = function(block) {
   Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
   var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
 return code;				
-    var dropdown_otto_note = block.getFieldValue('otto_note');
-    var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-    Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-        + 'Otto9 Otto;';
-    Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-        + '#define PIN_YR 3 // right leg, servo[1]\n'
-        + '#define PIN_RL 4 // left foot, servo[2]\n'
-        + '#define PIN_RR 5 // right foot, servo[3]\n'
-        + '#define PIN_Trigger 8 // ultrasound \n'
-        + '#define PIN_Echo 9 // ultrasound \n'
-        + '#define PIN_Buzzer  13 //buzzer';
-    Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-    var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
-    return code;
 };
 
 Blockly.Python['otto9_tone'] = function(block) {
@@ -466,11 +453,10 @@ Blockly.Blocks['otto9_getdistance'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
-
 Blockly.Arduino['otto9_getdistance'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
   Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
@@ -487,18 +473,16 @@ Blockly.Python['otto9_getdistance'] = function(block) {
     var code = 'Otto.getDistance()\n';
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
-
 Blockly.Blocks['otto9_obstacle'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle");
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle").appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT2);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-
 Blockly.Arduino['otto9_obstacle'] = function(block) {
   var dropdown_obstacle = block.getFieldValue('obstacle');
   Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
@@ -506,7 +490,7 @@ Blockly.Arduino['otto9_obstacle'] = function(block) {
 	+ 'bool obstacleDetected = false;';
   Blockly.Arduino.definitions_['otto9_distance'] = '#define PIN_Trigger 8 // ultrasound \n'
 	+ '#define PIN_Echo 9 // ultrasound';
-  var code = '(Otto.getDistance() <' + dropdown_obstacle +')';
+  var code = '(Otto.getDistance() <' + dropdown_obstacle+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -521,17 +505,16 @@ Blockly.Blocks['otto9_getnoise'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_GETNOISE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
 };
-
 Blockly.Arduino['otto9_getnoise'] = function(block) {
-    Blockly.Arduino.variables_['otto9_noise'] = 'bool estado = false;';
-    Blockly.Arduino.definitions_['otto9_noise'] = '#define PIN_NoiseSensor A6';
-    var code = 'Otto.getNoise()';
-    return [code, Blockly.Arduino.ORDER_ATOMIC];
+  Blockly.Arduino.variables_['otto9_noise'] = 'bool estado = false;';
+  Blockly.Arduino.definitions_['otto9_noise'] = '#define PIN_NoiseSensor A6';
+  var code = 'Otto.getNoise()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Python['otto9_getnoise'] = function(block) {
@@ -544,7 +527,7 @@ Blockly.Blocks['otto9_touchbutton'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_touch.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -562,12 +545,12 @@ Blockly.Arduino['otto9_touchbutton'] = function(block) {
     var code = 'touch1.read()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-
+												   
 Blockly.Blocks['otto9_gyro'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 28, 28, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip("gyro read");
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
@@ -586,15 +569,15 @@ Blockly.Arduino['otto9_gyro'] = function(block) {
   +'Serial.println("Testing device connections...");\n'
   +'Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");\n';
   var code = 'accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);\n'
-  +' //Serial.print("ax "); Serial.print(ax);Serial.print(" ay ");Serial.print(ay);Serial.print(" az ");Serial.print(az);Serial.print(" gx ");Serial.print(gx);Serial.print(" gy ");Serial.print(gy); Serial.print(" gz "); Serial.println(gz);';
+  +' //Serial.print("ax "); Serial.print(ax);Serial.print(" ay ");Serial.print(ay);Serial.print(" az ");Serial.print(az);Serial.print(" gx ");Serial.print(gx);Serial.print(" gy ");Serial.print(gy); Serial.print(" gz "); Serial.println(gz);\n';
   return code;
 };
 
 Blockly.Blocks['otto9_getg'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
+    this.setColour("#32D900");
     this.setTooltip("gyro read");
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
@@ -616,14 +599,13 @@ Blockly.Arduino['otto9_getg'] = function(block) {
   var code = dropdown_otto_getg;
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-
 Blockly.Blocks['otto9_homeh'] = { init: function() {
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/humanoid.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_HOME_TEXT);
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#59646f");
-    this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+    this.setTooltip(Blockly.Msg.OTTO9H_HOME_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL); }
 };
 Blockly.Arduino['otto9_homeh'] = function(block) {
@@ -761,8 +743,7 @@ Blockly.Arduino['otto9_moveh'] = function(block) {
   return code;
 };
 
-
-Blockly.Python['otto9_moveh'] = function(block) {
+	Blockly.Python['otto9_moveh'] = function(block) {
     var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     Blockly.Python.definitions_['import_otto9']='import otto9';
@@ -853,8 +834,7 @@ Blockly.Arduino['otto9_danceh'] = function(block) {
   return code;
 };
 
-Blockly.Python['otto9_danceh'] = function(block) {
-
+	Blockly.Python['otto9_danceh'] = function(block) {
     var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
@@ -884,7 +864,7 @@ Blockly.Python['otto9_danceh'] = function(block) {
     }
     return code;
 };
-
+											  
 Blockly.Blocks['otto9_doh'] = { init: function() {
     this.appendDummyInput()   .appendField(new Blockly.FieldImage('media/humanoid_do.png', 48, 48, "*"))   .appendField(Blockly.Msg.OTTO9_DO_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DO_CHOICE), "otto_do_movement");
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
@@ -971,7 +951,7 @@ Blockly.Arduino['otto9_gestureh'] = function(block) {
     var code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
     return code;
 };
-
+												
 Blockly.Blocks['otto9_soundh'] = {
   init: function() {
     this.appendDummyInput()
@@ -1014,10 +994,10 @@ Blockly.Arduino['otto9_soundh'] = function(block) {
     var code = 'Otto.sing(songs.' + dropdown_otto_sound.toUpperCase().substring(2) + ')\n';
     return code;
 };
-
+											  
 Blockly.Blocks['otto9_eyes'] = { init: function() {
     this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 25, "*"))
-     .appendField(Blockly.Msg.OTTO9_EYES_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_EYES_CHOICE), "otto9_eyes_choice");
+     .appendField(Blockly.Msg.OTTO9_EYES_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_EYES_CHOICE), "otto9_eyes_choice").appendField(Blockly.Msg.OTTO9_EYES_TEXT2);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -1571,7 +1551,7 @@ Blockly.Python['otto9_matrix'] = function(block) {
     var code = 'Otto.putMouth(' + matrix +', false)\n';
     return code;
 };
-
+											  
 Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
   this.appendDummyInput().appendField('  ').appendField(' 0').appendField(' 1').appendField(' 2').appendField('  3').appendField('  4').appendField(' 5').appendField(' 6').appendField(' 7');
   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
@@ -1652,12 +1632,11 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
  this.setNextStatement(true, null);
  this.setColour("#59646f");
  this.setTooltip('');
- this.setHelpUrl("https://playground.arduino.cc/Main/LEDMatrix/");
+ this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
 },
 };
 Blockly.Arduino.otto9_matrix8x8 = function() {
-
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
+Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9Humanoid.h>\n'
 	+ 'Otto9Humanoid Otto;';
   Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
   + 'unsigned long int matrix;';
@@ -1671,10 +1650,10 @@ for (var i=0; i<64; i++) {
 
  if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
      var on = this.getFieldValue('Pixel' + i)== "TRUE"? "1" : "0";
-     var row= i +1
+     var row= i +1 
      {if  (i >= 0 && i <= 7)row=0}{if  (i >= 8 && i < 16)row=1}{if  (i >= 16 && i < 24)row=2}{if  (i >= 24 && i < 32)row=3}
      {if  (i >= 32 && i < 40)row=4}{if  (i >= 40 && i < 48)row=5}{if  (i >= 48 && i < 56)row=6}{if  (i >= 56 && i < 64)row=7}
-     var col= i
+     var col= i  
      {if  (i > 1 && i <= 7)col=i}{if  (i >= 8 && i < 16)col=i-8}{if  (i >= 16 && i < 24)col=i-16}{if  (i >= 24 && i < 32)col=i-24}
      {if  (i >= 32 && i < 40)col=i-32}{if  (i >= 40 && i < 48)col=i-40}{if  (i >= 48 && i < 56)col=i-48}{if  (i >= 56 && i < 64)col=i-56}
      code += ' Otto.setLed('+row+','+col+',' + on + ');\n'
@@ -1703,7 +1682,7 @@ return code;
  
 Blockly.Blocks['otto9_mouth'] = {  init: function() {
     this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png', 48, 48, "*"))
-        .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
+        .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice").appendField(Blockly.Msg.OTTO9_MOUTH_TEXT2);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -1738,15 +1717,15 @@ Blockly.Arduino['otto9_mouth'] = function(block) {
 };
 							 
 Blockly.Blocks['otto9_mouth#']={ init:function(){
-      this.appendDummyInput()
-      this.appendValueInput("mouth") .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true);
-      this.setNextStatement(true);
-      this.setColour("#59646f");
-      this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
-      this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-    }
+  this.appendDummyInput()
+  this.appendValueInput("mouth") .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#59646f");
+  this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+}
 };
 
 Blockly.Arduino['otto9_mouth#'] = function(block) {
@@ -1816,7 +1795,7 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
     var code = 'Otto.setLed('+valuex+','+valuey+',1)\n';
     return code;
 };
-
+						   
 
 Blockly.Blocks['otto9_matrix_text'] = { init: function() {
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MATRIXTEXT_TEXT).appendField(new Blockly.FieldTextInput('I AM OTTO'), 'input');
@@ -1991,21 +1970,16 @@ Blockly.Arduino['otto9_wheels'] = function(block) {
   var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
   var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
   var otto_move_time = block.getFieldValue('time');
-
-  Blockly.Arduino.includes_['otto9_lib'] =  '#include <Servo.h> \n' 
+  Blockly.Arduino.includes_['otto9_lib'] =  '#include <Servo.h> \n'
   + '#include <math.h>   \n'
   + 'Servo rightServo;\n'
-  + 'Servo leftServo;';
-
+  + 'Servo leftServo;\n'
   Blockly.Arduino.definitions_['otto9_wheels'] = 'int rightSpeed = 0;\n'
   + 'int leftSpeed = 0;\n'
   + 'void motorControl2(int rightSpeed, int leftSpeed, int stepDelay) {\n'
   + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
   + 'delay(stepDelay*1000);}';
-
-
-  Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
-
+   Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
   +'leftServo.write(90);\n'
   +'delay(1000);\n'
   +'rightServo.attach(3);\n'

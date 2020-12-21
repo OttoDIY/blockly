@@ -631,16 +631,22 @@ BlocklyDuino.workspace_capture = function() {
 	}	
 };
 BlocklyDuino.cardPicture_change = function() {
-	if($("#pinout").val()=="nanooptiboot"||$("#pinout").val()=="nano"||$("#pinout").val()=="nona4809"){
-		$("#warning").show();
-	}else{
-		$("#warning").hide();
-	}
+//	if($("#pinout").val()=="nanooptiboot"||$("#pinout").val()=="nano"||$("#pinout").val()=="nona4809"){
+//		$("#warning").show();
+//	}else{
+//		$("#warning").hide();
+//	}
 	if ($("#pinout").val()) {
 		$('#arduino_card_mini_picture').attr("src", profile[$("#pinout").val()]['picture'])
 	} else {
 		$('#arduino_card_mini_picture').attr("src", "")
 	}
+	
+	if($("#pinout").val()=="nano")
+		document.getElementById('infoboard').innerHTML=MSG[$("#pinout").val()];
+	else
+		document.getElementById('infoboard').innerHTML="";
+		
 };
 BlocklyDuino.saveino = function() {
     var code = $('#pre_previewArduino').text();
