@@ -31,7 +31,8 @@ Blockly.Blocks['OLED_init'] = {
   +'#define OLED_RESET     -1 // sharing Arduino reset pin\n'
   +'Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);';
   Blockly.Arduino.setups_['OLED']='display.begin(SSD1306_SWITCHCAPVCC, '+value_address+');\n'
-  +'display.clearDisplay();';
+  +'display.clearDisplay();\n'
+  +'display.display();\n';
   var code 
   return code
 };
@@ -64,7 +65,8 @@ Blockly.Blocks['OLED_init_2'] = {
   +'#define OLED_RESET     -1 // sharing Arduino reset pin\n'
   +'Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);';
   Blockly.Arduino.setups_['OLED']='display.begin(SSD1306_SWITCHCAPVCC, '+value_address+');\n'
-  +'display.clearDisplay();';
+  +'display.clearDisplay();\n'
+  +'display.display();\n';
   var code 
   return code
 };
@@ -399,7 +401,8 @@ Blockly.Blocks['OLED_clear'] = {
   }
 };
 Blockly.Arduino['OLED_clear'] = function(block) {
-  var code = 'display.clearDisplay();\n';
+  var code = 'display.clearDisplay();\n' 
+  + 'display.display();\n';
   return code;
 };
 
