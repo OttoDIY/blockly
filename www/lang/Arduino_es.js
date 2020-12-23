@@ -85,6 +85,9 @@ Blockly.Msg.CAT_BME280 = "Presión BME280";
 Blockly.Msg.CAT_VL53L0X = "Láser VL53L0X";
 Blockly.Msg.CAT_APDS9960 = "Gestos APDS9960";
 Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
+Blockly.Msg.CAT_TCS34725 = "Color TCS34725";
+Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
+Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -762,41 +765,67 @@ Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
 
 //DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
-Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\".";
+Blockly.Msg.ST7735_init = "Ini TFT ST7735 1.8\".";
 Blockly.Msg.ST7735_init2 = "Pins:SCK - SDA.";
 Blockly.Msg.ST7735_PIN_CS = "CS Pin";
 Blockly.Msg.ST7735_PIN_RST = "RST Pin";
 Blockly.Msg.ST7735_PIN_DC = "A0 Pin";
 Blockly.Msg.ST7735_WRAP = "Tab color";
-Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
-Blockly.Msg.ST7735_Rotate = "Rotate display";
-Blockly.Msg.ST7735_Invert = "Invert display";
-Blockly.Msg.ST7735_SetCursor = "Set cursor";
+Blockly.Msg.ST7735_FILLBACKGROUND = "Rellenar backgroundColor";
+Blockly.Msg.ST7735_Rotate = "Rotar display";
+Blockly.Msg.ST7735_Invert = "Invertir display";
+Blockly.Msg.ST7735_SetCursor = "Fijar cursor";
 Blockly.Msg.ST7735_X0 = "x0";
 Blockly.Msg.ST7735_Y0 = "y0";
 Blockly.Msg.ST7735_X1 = "x1";
 Blockly.Msg.ST7735_Y1 = "y1";
 Blockly.Msg.ST7735_X2 = "x2";
 Blockly.Msg.ST7735_Y2 = "y2";
-Blockly.Msg.ST7735_TEXTCOLOR = "Set text color";
-Blockly.Msg.ST7735_TEXTCOLOR2 = "Set color";
-Blockly.Msg.ST7735_TEXTsize = "Set text size";
+Blockly.Msg.ST7735_TEXTCOLOR = "Color de texto";
+Blockly.Msg.ST7735_TEXTCOLOR2 = "Fijar color";
+Blockly.Msg.ST7735_TEXTsize = "Tamaño de texto";
 Blockly.Msg.ST7735_TEXTwrap = "Set text wrap";
 Blockly.Msg.ST7735_PrintTextLN = "Print the text/value";
 Blockly.Msg.ST7735_PrintTextLN2 = "line feed";
-Blockly.Msg.ST7735_DrawPixel = "Draw pixel";
-Blockly.Msg.ST7735_Drawlinefrom = "Draw line from";
+Blockly.Msg.ST7735_DrawPixel = "Dibujar pixel";
+Blockly.Msg.ST7735_Drawlinefrom = "Dibujar line from";
 Blockly.Msg.ST7735_Drawlineto = "to";
-Blockly.Msg.ST7735_Drawrectangle = "Draw rectangle";
-Blockly.Msg.ST7735_Drawtriangle = "Draw triangle.Corner points";
-Blockly.Msg.ST7735_Drawroundrectangle = "Draw round rectangle";
+Blockly.Msg.ST7735_Drawrectangle = "Dibujar rectangle";
+Blockly.Msg.ST7735_Drawtriangle = "Dibujar triangle.Corner points";
+Blockly.Msg.ST7735_Drawroundrectangle = "Dibujar round rectangle";
 Blockly.Msg.ST7735_Drawroundrectangleradius = "rounding radius";
 Blockly.Msg.ST7735_Drawrectanglewidth = "width";
 Blockly.Msg.ST7735_Drawrectangleheight = "height";
-Blockly.Msg.ST7735_Drawcircle = "Draw circle.Center in";
-Blockly.Msg.ST7735_Drawcircleradius = "radius";
-Blockly.Msg.ST7735_Drawfill = "Fill";
-Blockly.Msg.ST7735_properties = "Return property:";
-Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
-Blockly.Msg.ST7735_ValueList = "Values(hex array)";
-Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
+Blockly.Msg.ST7735_Drawcircle = "Dibujar circulo.Center in";
+Blockly.Msg.ST7735_Drawcircleradius = "radio";
+Blockly.Msg.ST7735_Drawfill = "Rellenar";
+Blockly.Msg.ST7735_properties = "Propiedad:";
+Blockly.Msg.ST7735_IconName = "Nombre de icono(bmp):";
+Blockly.Msg.ST7735_ValueList = "Valores(hex array)";
+Blockly.Msg.ST7735_DrawiconName = "Dibujar el nombre de icono(bmp)";
+
+//TCS34725 color sensor
+Blockly.Msg.TCS34725_name_init="Ini TCS34725 sensor de color";
+Blockly.Msg.TCS34725_name_init2="SDA - SCL Ganancia";
+Blockly.Msg.TCS34725_name="TCS34725 sensor de color.";
+Blockly.Msg.TCS34725_read="Leer todos los valores";
+Blockly.Msg.TCS34725_values="Valor";
+Blockly.Msg.TCS34725_color="Es";
+Blockly.Msg.TCS34725_color2="color(No ganancia configurada)?";
+
+//HMC5883 compass sensor
+Blockly.Msg.HMC5883="Ini HMC5883 sensor brújula";
+Blockly.Msg.HMC5883_2="- SDA - SCL";
+Blockly.Msg.HMC5883_read="HMC5883 sensor brújula.Leer valores";
+Blockly.Msg.HMC5883_values="valor";
+
+//RADIO TEA5767
+Blockly.Msg.TEA5767_name = "Radio TEA5767.";
+Blockly.Msg.TEA5767_init = "Ini Radio TEA5767.SDA - SCL";
+Blockly.Msg.TEA5767_turnOFF_ON = "Encender";
+Blockly.Msg.TEA5767_muteOFF_ON = "Mute";
+Blockly.Msg.TEA5767_Level = "Nivel de la señal";
+Blockly.Msg.TEA5767_Stereo = "¿Es estero la señal?";
+Blockly.Msg.TEA5767_RadioStation = "Estación de radio.";
+Blockly.Msg.TEA5767_SetFrequency = "Frecuencia(Mhz)";
+Blockly.Msg.TEA5767_MadridFrequency = "Estaciones de Radio de Madrid:";

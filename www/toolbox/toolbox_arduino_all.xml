@@ -270,7 +270,15 @@
 		<block type="APDS9960_read_colors"></block>
 		<block type="APDS9960_color"></block>
 	</category>
-		
+	
+	
+	<category name="CAT_TCS34725" colour="#2a93e8">	
+		<block type="init_tcs34725"></block>
+		<block type="read_tcs34725"></block>
+		<block type="tcs34725_values"></block>
+		<block type="tcs34725_color"></block>
+	</category>
+			
 	<category name="CAT_RTC_DS3231" colour="#2a93e8">	
 		 <block type="Init_RTC_ds3231"></block>
 		     <block type="DateTime_RTC_ds3231">
@@ -320,6 +328,12 @@
 		<block type="VL53L0X"></block>
 		<block type="VL53L0X_distance"></block>
 	</category>
+	
+	<category name="CAT_HMC5883" colour="#2a93e8"> 
+	<block type="Init_Compass_HMC5883"></block>
+		<block type="order_to_read_HMC5883_values"></block>
+		<block type="HMC5883_values"></block>
+	</category>
 		
 				
 	<category name="CAT_CCS811" colour="#2a93e8">
@@ -328,6 +342,7 @@
 		<block type="CCS811_readed"></block>
 		<block type="CCS811_values"></block>
 	</category>
+	
 	</category>
 		
 	<category name="CAT_servo" colour="#2d2dd1">
@@ -790,6 +805,21 @@
 			 <value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>
 		</category>	
+		
+		<category name="CAT_RADIO_TEA5767" colour="#a600d3"> 
+			<block type="RadioTEA5767_init"></block>
+		 	<block type="RadioTEA5767_activate"></block>
+			<block type="RadioTEA5767_mute"></block>
+			<block type="RadioTEA5767_LevelSignal"></block>
+			<block type="RadioTEA5767_Stereo"></block>
+			<block type="RadioTEA5767_setFrequency">
+			    <value name="Value"><shadow type="math_number"><field name="NUM">88.20</field></shadow></value>
+			</block>
+			<block type="frequenciesMadrid"></block>
+		 </category> 
+		
+		
+		
 	</category>
 	
 		

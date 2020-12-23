@@ -85,6 +85,9 @@ Blockly.Msg.CAT_BME280 = "Preassure BME280";
 Blockly.Msg.CAT_VL53L0X = "Laser VL53L0X";
 Blockly.Msg.CAT_APDS9960 = "Gesture APDS9960";
 Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
+Blockly.Msg.CAT_TCS34725 = "Color TCS34725";
+Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
+Blockly.Msg.CAT_HMC5883="Compass HMC5883";
 
 
 
@@ -804,3 +807,28 @@ Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
 Blockly.Msg.ST7735_ValueList = "Values(hex array)";
 Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
 
+//TCS34725 color sensor
+Blockly.Msg.TCS34725_name_init="Init TCS34725 color sensor";
+Blockly.Msg.TCS34725_name_init2="SDA - SCL Gain";
+Blockly.Msg.TCS34725_name="TCS34725 color sensor.";
+Blockly.Msg.TCS34725_read="Read all values";
+Blockly.Msg.TCS34725_values="Value";
+Blockly.Msg.TCS34725_color="Is";
+Blockly.Msg.TCS34725_color2="color(No gain configured)?";
+
+//HMC5883 compass sensor
+Blockly.Msg.HMC5883="Init HMC5883 compass sensor";
+Blockly.Msg.HMC5883_2="- SDA - SCL";
+Blockly.Msg.HMC5883_read="HMC5883 compass sensor.Read values";
+Blockly.Msg.HMC5883_values="value";
+
+//RADIO TEA5767
+Blockly.Msg.TEA5767_name = "Radio TEA5767.";
+Blockly.Msg.TEA5767_init = "Init Radio TEA5767.SDA - SCL";
+Blockly.Msg.TEA5767_turnOFF_ON = "Turn";
+Blockly.Msg.TEA5767_muteOFF_ON = "Mute";
+Blockly.Msg.TEA5767_Level = "Level of the signal";
+Blockly.Msg.TEA5767_Stereo = "Is the signal stereo?";
+Blockly.Msg.TEA5767_RadioStation = "Radio Station.";
+Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
+Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
