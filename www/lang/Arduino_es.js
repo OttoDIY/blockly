@@ -88,6 +88,7 @@ Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
 Blockly.Msg.CAT_TCS34725 = "Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
+Blockly.Msg.CAT_RFID="RFID MFRC522";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -829,3 +830,21 @@ Blockly.Msg.TEA5767_Stereo = "¿Es estero la señal?";
 Blockly.Msg.TEA5767_RadioStation = "Estación de radio.";
 Blockly.Msg.TEA5767_SetFrequency = "Frecuencia(Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Estaciones de Radio de Madrid:";
+
+//RFID MFRC522
+Blockly.Msg.RFID_name = "RFID MFRC522.";
+Blockly.Msg.RFID_init = "Ini RFID MFRC522.";
+Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI y MISO.";
+Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
+Blockly.Msg.RFID_PIN_RST = "RST Pin";
+Blockly.Msg.RFID_VALID_VAR = "Define la tarjeta de validación:";
+Blockly.Msg.RFID_STOP = "Parar la actual lectura";
+Blockly.Msg.RFID_C1 = "Valor1";
+Blockly.Msg.RFID_C2 = "Valor2";
+Blockly.Msg.RFID_C3 = "Valor3";
+Blockly.Msg.RFID_C4 = "Valor4";
+Blockly.Msg.RFID_DETECTED = "¿Tarjeta RFID detectada?";
+Blockly.Msg.RFID_READED = "¿Tarjeta RFIS leida?";
+Blockly.Msg.RFID_CARD_READED = "Valor de la tarjeta leida";
+Blockly.Msg.RFID_CHECK_CARD = "¿Es la tarjeta leida igual a la de validación";
+Blockly.Msg.RFID_CHECK_CARD2 = "?";
