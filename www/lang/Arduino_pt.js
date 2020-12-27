@@ -86,6 +86,7 @@ Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
 Blockly.Msg.CAT_TCS34725="Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Compass HMC5883";
+Blockly.Msg.CAT_RFID="RFID MFRC522";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
