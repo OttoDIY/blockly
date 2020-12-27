@@ -13,7 +13,7 @@ Release:	20.04
 Codename:	focal
 Linux $MACHINENAME 5.4.0-42-generic #46-Ubuntu SMP Fri Jul 10 00:24:02 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
-where $MACHINENAME is a self-explanatory variable.
+where `$MACHINENAME` is a self-explanatory variable.
 
 * Ubuntu 18.04x64
 ```
@@ -26,7 +26,7 @@ Codename:	bionic
 $ uname -a
 Linux $MACHINENAME 5.4.0-53-generic #59~18.04.1-Ubuntu SMP Wed Oct 21 12:14:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
-where $MACHINENAME is a self-explanatory variable.
+where `$MACHINENAME` is a self-explanatory variable.
 
 ### Dependencies (nodejs, npm)
 Uncomment lines that correspond to your Ubuntu version
@@ -39,11 +39,9 @@ sudo apt install -y nodejs
 #nodejs -v #ubuntu-18-04
 #node -v #ubuntu-20-04
 ```
-* [how-to-install-node-js-on-ubuntu-18-0](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
-* [how-to-install-node-js-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
+See the following links to install node-js on [ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) or [ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04).
 
-
-### Builing project
+### Building project
 ```
 git clone --single-branch --branch versionlinux https://github.com/ottodiy/blockly
 #or: `git clone https://github.com/ottodiy/blockly && git checkout linuxversion`
