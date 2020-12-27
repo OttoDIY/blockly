@@ -453,7 +453,7 @@ Blockly.Blocks['otto9_getdistance'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -478,7 +478,7 @@ Blockly.Blocks['otto9_obstacle'] = {init: function() {
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle").appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT2);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -505,7 +505,7 @@ Blockly.Blocks['otto9_getnoise'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip(Blockly.Msg.OTTO9_GETNOISE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -527,7 +527,7 @@ Blockly.Blocks['otto9_touchbutton'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_touch.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -550,7 +550,7 @@ Blockly.Blocks['otto9_gyro'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 28, 28, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip("gyro read");
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
@@ -577,7 +577,7 @@ Blockly.Blocks['otto9_getg'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
-    this.setColour("#32D900");
+    this.setColour("#2a93e8");
     this.setTooltip("gyro read");
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
@@ -1001,7 +1001,7 @@ Blockly.Blocks['otto9_eyes'] = { init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1041,7 +1041,7 @@ Blockly.Blocks['otto9_eyes_text'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL); }
 };
@@ -1070,7 +1070,7 @@ Blockly.Blocks['otto9_eyes#'] = { init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1102,7 +1102,7 @@ Blockly.Blocks['otto9_eyesp']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);}
 };
@@ -1128,7 +1128,7 @@ Blockly.Blocks['otto9_eyesl']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -1157,7 +1157,7 @@ Blockly.Blocks['otto9_eyesr']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -1185,7 +1185,7 @@ Blockly.Blocks['otto9_eyesf']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -1213,7 +1213,7 @@ Blockly.Blocks['otto9_eyesc']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -1239,7 +1239,7 @@ Blockly.Blocks['otto9_eyescf']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -1262,7 +1262,7 @@ Blockly.Blocks['otto9_eyes_clear'] = { init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.matrice8x8_efface_tooltip);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL); }
 };
@@ -1420,7 +1420,7 @@ Blockly.Blocks['otto9_eyesm'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1512,7 +1512,7 @@ Blockly.Blocks['otto9_matrix'] = { init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#59646f");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1630,7 +1630,7 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
  this.setInputsInline(false);
  this.setPreviousStatement(true, null);
  this.setNextStatement(true, null);
- this.setColour("#59646f");
+ this.setColour("#4b009f");
  this.setTooltip('');
  this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
 },
@@ -1686,7 +1686,7 @@ Blockly.Blocks['otto9_mouth'] = {  init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#59646f");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1722,7 +1722,7 @@ Blockly.Blocks['otto9_mouth#']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#59646f");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
 }
@@ -1764,7 +1764,7 @@ Blockly.Blocks['otto9_matrixp']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#59646f");
+  this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);}
 };
@@ -1802,7 +1802,7 @@ Blockly.Blocks['otto9_matrix_text'] = { init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#59646f");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
@@ -1836,7 +1836,7 @@ Blockly.Blocks["otto9_matrix_brightness"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#59646f");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
     this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -1858,7 +1858,7 @@ Blockly.Blocks['otto9_clear'] = { init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#59646f");
+    this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.OTTO9_CLEAR_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
   }
