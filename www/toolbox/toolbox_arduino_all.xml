@@ -343,6 +343,27 @@
 		<block type="CCS811_values"></block>
 	</category>
 	
+	<category name="CAT_RFID" colour="#2a93e8">
+		 <block type="rfid_init">
+				 <value name="PIN_SDA">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+				<value name="PIN_RST">
+                    <shadow type="math_number">
+                        <field name="NUM">11</field>
+                    </shadow>
+                </value>
+		</block>
+		<block type="rfid_validationcard"></block>
+		<block type="RFID_detected"></block>
+		<block type="RFID_readed"></block>
+		<block type="RFID_card_readed"></block>
+		<block type="RFID_check_card"></block>
+		<block type="rfid_stopread"></block>
+	</category>
+	
 	</category>
 		
 	<category name="CAT_servo" colour="#2d2dd1">
