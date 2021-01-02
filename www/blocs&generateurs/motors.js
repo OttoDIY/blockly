@@ -204,6 +204,9 @@ Blockly.Blocks["m_pap"]={init:function(){
     this.appendValueInput("ph3", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("phase 3");
     this.appendValueInput("ph4", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("phase 4");
     this.setColour("#2d2dd1");
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.m_pap_tooltip);
     this.setHelpUrl(Blockly.Msg.HELPURL);}
 };
