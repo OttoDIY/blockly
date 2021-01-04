@@ -17,13 +17,13 @@ window.addEventListener('load', function load(event) {
 		messageDiv.innerHTML = Blockly.Msg.upload + ': OK' + quitDiv
 	}
 	$('#btn_forum').on('click', function(){
-		shell.openExternal('https://wikifactory.com/+OttoDIY/forum')
+		shell.openExternal('http://builders.ottodiy.com/')
 	})
 	$('#btn_site').on('click', function(){
 		shell.openExternal('https://www.ottodiy.com/')
 	})
 	$('#btn_contact').on('click', function(){
-		shell.openExternal('https://www.ottodiy.com/#contact-us')
+		shell.openExternal('https://github.com/OttoDIY/blockly/issues')
 	})
 	$('#portserie').mouseover(function(){
 		sp.list(function(err,ports) {
@@ -139,6 +139,7 @@ window.addEventListener('load', function load(event) {
 		var com = portserie.value
 		messageDiv.style.color = '#000000'
 		messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
+		
 		if (prog == "python") {
 			fs.writeFile('./compilation/python/py/sketch.py', data, function(err){
 				if (err) return console.log(err)
@@ -159,10 +160,18 @@ window.addEventListener('load', function load(event) {
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
 			})
 		} else {
-			fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
+			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
+			fs.writeFile('./compilation/arduino/sketch/sketch.ino', data, function(err){	
+				
 				if (err) return console.log(err)
 			})
-			exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+		
+		    var upload_arg = window.profile[carte].upload_arg
+			var cmd = 'arduino-cli.exe compile --fqbn ' + upload_arg +' sketch/sketch.ino'
+		
+		/*
+		   exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+			//exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
 				if (stderr) {
 					rech=RegExp('token')
 					if (rech.test(stderr)){
@@ -174,9 +183,24 @@ window.addEventListener('load', function load(event) {
 					}
 					return
 				}
+								
 				messageDiv.style.color = '#009000'
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
-			})
+			}) */
+			
+			exec(cmd , {cwd: './compilation/arduino'} , (error, stdout, stderr) => {
+			if (error) {
+					
+						messageDiv.style.color = '#ff0000'
+						messageDiv.innerHTML = error.toString() + quitDiv
+						return
+						}
+						
+			    messageDiv.style.color = '#009000'
+				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+		    })
+		
+			
 		}
 		localStorage.setItem("verif",true)
 	})
@@ -188,6 +212,8 @@ window.addEventListener('load', function load(event) {
 		var speed = profile[carte].speed
 		var cpu = profile[carte].cpu
 		var com = portserie.value 
+		var upload_arg = window.profile[carte].upload_arg
+			
 		if ( com == "com" ){
 			messageDiv.style.color = '#ff0000'
 			messageDiv.innerHTML = Blockly.Msg.com2 + quitDiv
@@ -196,10 +222,30 @@ window.addEventListener('load', function load(event) {
 		if ( localStorage.getItem('verif') == "false" ){
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-			fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
+			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
+			fs.writeFile('./compilation/arduino/sketch/sketch.ino', data, function(err){
+				
 				if (err) return console.log(err)
 			})
-			exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+		
+		  
+			var cmd = 'arduino-cli.exe compile --fqbn ' + upload_arg +' sketch/sketch.ino'
+			
+			
+			exec(cmd , {cwd: './compilation/arduino'} , (error, stdout, stderr) => {
+			if (error) {
+					
+						messageDiv.style.color = '#ff0000'
+						messageDiv.innerHTML = error.toString() + quitDiv
+						return
+						}
+						
+			    messageDiv.style.color = '#009000'
+				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+		    			
+			/*
+		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
+			//exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
 				if (stderr) {
 					rech=RegExp('token')
 					if (rech.test(stderr)){
@@ -212,12 +258,14 @@ window.addEventListener('load', function load(event) {
 					return
 				}
 				messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
-			
+				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv */
+				
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.upload + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-		
-			exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
+			
+			cmd = 'arduino-cli.exe upload --port '+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
+		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){	
+			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
 					messageDiv.innerHTML = err.toString() + quitDiv
@@ -268,6 +316,8 @@ window.addEventListener('load', function load(event) {
 					messageDiv.innerHTML = 'Connecter la carte microBit !' + quitDiv
 				}
 			} else {
+				
+				
 				exec( 'python -m ampy -p ' + com + ' -b 115200 -d 1 run --no-output ./py/sketch.py', {cwd: "./compilation/python"} , function(err, stdout, stderr){
 					if (err) {
 						messageDiv.style.color = '#ff0000'
@@ -278,7 +328,11 @@ window.addEventListener('load', function load(event) {
 				})
 			}
 		} else {
-			exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
+			
+		
+			cmd = 'arduino-cli.exe upload --port '+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
+		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){	
+			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
 					messageDiv.innerHTML = err.toString() + quitDiv

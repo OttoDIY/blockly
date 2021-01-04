@@ -1,43 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTO_DIY,CAT_OTTOH,CAT_del,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
+	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTO_DIY,CAT_del,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
-		<block type="base_begin"></block>
-		<block type="base_end"></block>
+	<!--	<block type="base_begin"></block>
+		<block type="base_end"></block> 
 		<block type="base_loop"></block>
+		<block type="base_define"></block>-->
 		<block type="base_setup_loop"></block>
-		<block type="base_define"></block>
 		<block type="base_code"></block>
 		<block type="base_code_entree"></block>
 	</category>
 	
-	<category name="CAT_OTTO_DIY" colour="#32D900">
-	
 	<category name="CAT_OTTO" colour="#32D900">
-		<block type="otto9_home"></block>
+	<block type="otto9_home"></block>
 		<block type="otto9_move"></block>
 		<block type="otto9_dance"></block>
 		<block type="otto9_do"></block>
 		<block type="otto9_sound"></block>
 		<block type="otto9_tone"></block>
 		<block type="otto9_gesture"></block>
+		<block type="otto9_arms"></block>
+		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
-		<block type="otto9_wheels"></block>
 		<block type="otto9_calibration"></block>
 		<block type="otto9_eeprom"></block>
-	</category>
-	
-	<category name="CAT_OTTOH" colour="#747F8A">
-			<block type="otto9_homeh"></block>
-			<block type="otto9_moveh"></block>
-			<block type="otto9_danceh"></block>
-			<block type="otto9_doh"></block>
-			<block type="otto9_soundh"></block>
-			<block type="otto9_gestureh"></block>
-			<block type="otto9_arms"></block>
-			<block type="otto9_calibrationh"></block>	
-			<block type="otto9_eeprom"></block>
-	</category>
+		<block type="otto9_wheels"></block>
+		
 	<category name="CAT_ultrason" colour="#2a93e8">
 		<block type="otto9_obstacle"></block>
 		<block type="otto9_getdistance"></block>
@@ -107,15 +95,6 @@
 		
 </category>
 	
-	<category name="CAT_ARDUINO_IN" colour="#00929f">
-		<block type="digital_read"></block>
-		<block type="inout_analog_read"></block>
-		<block type="inout_attachInterrupt"></block>
-		<block type="inout_detachInterrupt"></block>
-		<block type="inout_digital_write"></block>
-		<block type="inout_analog_write"></block>
-		<block type="toggle"></block>
-	</category>	
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 		
 			<block type="base_delay">
@@ -168,29 +147,17 @@
     </category>
 	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
 	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
-	<category name="CAT_list" colour="#804000">
-		<block type="list_create"></block>
-		<block type="array_create_with"></block>
-		<block type="list_set"></block>
-		<block type="list_get"></block>
-		<block type="list_append"></block>
-		<block type="list_size"></block>
-    </category>
-	<category name="CAT_TAB" colour="#804000">
-		<block type="creer_tableau"></block>
-		<block type="array_create_with"></block>
-		<block type="fixer_tableau"></block>
-		<block type="array_getIndex"></block>
-		<block type="array_getsize"></block>
-    </category>
-		<category name="CAT_STOCKAGE" colour="#154360">	
-		<block type="eeprom_read"></block>		
-        <block type="eeprom_write"></block>
-	</category>
-	
+
+		<category name="CAT_ARDUINO_IN" colour="#00929f">
+		<block type="digital_read"></block>
+		<block type="inout_analog_read"></block>
+		<block type="inout_attachInterrupt"></block>
+		<block type="inout_detachInterrupt"></block>
+		<block type="inout_digital_write"></block>
+		<block type="inout_analog_write"></block>
+		<block type="toggle"></block>
+	</category>	
 	<category name="CAT_SENSORS" colour="#2a93e8">
-	
-	<category name="CAT_SSENSORS" colour="#2a93e8">
 		 <block type="button_sensor"><value name="PIN_BUTTON"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
 		 <block type="button_touch_sensor"><value name="PIN_BUTTON"><shadow type="math_number"><field name="NUM">14</field></shadow></value></block>
 		 <block type="ultrasonic_ranger_sensor">
@@ -226,9 +193,6 @@
 		 <block type="Water_sensor"><value name="PIN_WATER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
 		 <block type="Moisture_sensor"><value name="PIN_MOISTURE"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
 		 <block type="Vapor_sensor"><value name="PIN_VAPOR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 
-		
-	</category>
 <!--	<category name="CAT_numerique" colour="#2a93e8">
 		<block type="inout_bp"></block> 
 		<block type="mc005"></block>
@@ -1075,5 +1039,24 @@
 		</category>	
 	
 	</category>	
+	<category name="CAT_list" colour="#154360">
+		<block type="list_create"></block>
+		<block type="array_create_with"></block>
+		<block type="list_set"></block>
+		<block type="list_get"></block>
+		<block type="list_append"></block>
+		<block type="list_size"></block>
+    </category>
+	<category name="CAT_TAB" colour="#154360">
+		<block type="creer_tableau"></block>
+		<block type="array_create_with"></block>
+		<block type="fixer_tableau"></block>
+		<block type="array_getIndex"></block>
+		<block type="array_getsize"></block>
+    </category>
+		<category name="CAT_STOCKAGE" colour="#154360">	
+		<block type="eeprom_read"></block>		
+        <block type="eeprom_write"></block>
+	</category>
 	
 </toolbox>
