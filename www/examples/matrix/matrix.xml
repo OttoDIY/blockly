@@ -2,22 +2,22 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_loop" id="fOi=JjS{526Se^jIS($V" x="303" y="-50">
     <statement name="LOOP">
-      <block type="otto9_gestureh" id=":!%3I4(G_zUr1;]on0t_">
+      <block type="otto9_gesture" id="UP{OSmcSqfoO]IU}51:.">
         <field name="otto_gesture">OttoHappy</field>
         <next>
           <block type="otto9_matrix_text" id="Bf|Vfrlc}KvcdvcM:X{A">
             <field name="input">HI</field>
             <next>
-              <block type="otto9_homeh" id="v4]0}BUkFIK|({;]q6!+">
+              <block type="otto9_home" id="yu.!zSmg(ylE0V-4s^O`">
                 <next>
-                  <block type="otto9_moveh" id="KKrxXC)x3Nd9,rakB;ag">
+                  <block type="otto9_move" id="70`n$^~BCtx9(-tbEEn_">
                     <field name="otto_move_sens">FORWARD</field>
                     <field name="otto_move_speed">1000</field>
                     <next>
                       <block type="otto9_matrix_text" id="5DaJC5^Q3S5).9ncm!GI">
                         <field name="input">I AM OTTO</field>
                         <next>
-                          <block type="otto9_gestureh" id="|5kHn;:=BFhftoy7B8]5">
+                          <block type="otto9_gesture" id="^t_b.U8}v.{`f0PQAZY`">
                             <field name="otto_gesture">OttoLove</field>
                             <next>
                               <block type="otto9_matrix" id="0A9A:Ap=2UkqsYO0}Bd=">
@@ -52,13 +52,13 @@
                                 <field name="otto9_matrix_pixel28">FALSE</field>
                                 <field name="otto9_matrix_pixel29">FALSE</field>
                                 <next>
-                                  <block type="otto9_soundh" id="fk*HW;T}4_r|7i?~a@m$">
+                                  <block type="otto9_sound" id="M0we*b_)W5A?x(H^#az3">
                                     <field name="otto_sound">S_cuddly</field>
                                     <next>
-                                      <block type="otto9_doh" id="G|6LI+;9kHL)M.z${Tp%">
+                                      <block type="otto9_do" id="A2k7!sHT57#YgN-0(83$">
                                         <field name="otto_do_movement">swing</field>
                                         <field name="otto_move_speed">750</field>
-                                        <field name="otto_dance_size">40</field>
+                                        <field name="otto_dance_size">25</field>
                                         <next>
                                           <block type="otto9_arms" id="W:tR=WA:8#kre;U+~1oW">
                                             <field name="otto9_arms_choice">HANDWAVE1</field>

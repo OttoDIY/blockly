@@ -1,0 +1,77 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_loop" id="LHq[UW.X$:%%7/2(p[JQ" x="321" y="94">
+    <statement name="LOOP">
+      <block type="controls_if" id="O{9$e%(3VCYc]H+ROUb8">
+        <value name="IF0">
+          <block type="otto9_touchbutton" id=".2jce(-|ZyAW_rL~M5ER"></block>
+        </value>
+        <statement name="DO0">
+          <block type="otto9_do" id="Dt~5`3gzM)w+FGs]V_X,">
+            <field name="otto_do_movement">updown</field>
+            <field name="otto_move_speed">1000</field>
+            <field name="otto_dance_size">25</field>
+            <next>
+              <block type="otto9_sound" id="|A{vQHo?!k0;d|_(Sh61">
+                <field name="otto_sound"> S_cuddly </field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="0K%XlG+i*fHLIV@nmv1Y">
+            <value name="IF0">
+              <block type="logic_compare" id="gT:@OwUWba`6../`EI6|">
+                <field name="OP">GTE</field>
+                <value name="A">
+                  <block type="otto9_getnoise" id="b/}sA~~`(@:BOpjc{#zY"></block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="aft78dBt?/oZO)]KbGP(">
+                    <field name="NUM">700</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="otto9_dance" id="6,OgcnwA5BGOm[.4W^8b">
+                <field name="otto_dance_movement">moonwalkerLEFT</field>
+                <field name="otto_move_speed"> 1000 </field>
+                <field name="otto_dance_size"> 25 </field>
+                <next>
+                  <block type="otto9_tone" id="}tEiYurZi*uTbEe=p7{n">
+                    <field name="otto_note">262</field>
+                    <field name="otto_note_duration">125</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="(7Yy=LP+R0@(qi+Y3iYr">
+                <value name="IF0">
+                  <block type="otto9_obstacle" id="pcT:=AO)*66B5LG.}_S3">
+                    <field name="obstacle">10</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="otto9_sound" id="4@G-9.X;-UQw?I~.@lpN">
+                    <field name="otto_sound">S_superHappy</field>
+                    <next>
+                      <block type="otto9_move" id="@z[nMLh4uRB%_1^1KENQ">
+                        <field name="otto_move_sens">FORWARD</field>
+                        <field name="otto_move_speed"> 1000 </field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="otto9_home" id="*_m$y5_{Cy$7d8m//:99"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

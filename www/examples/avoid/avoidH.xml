@@ -1,13 +1,13 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <toolbox>toolbox_arduino_all</toolbox>
-  <block type="base_setup_loop" id="j{i{r0e7_Z-lYp,YSFe:" x="-666" y="-122">
+  <block type="base_setup_loop" id="j{i{r0e7_Z-lYp,YSFe:" x="-541" y="-63">
     <statement name="DO">
-      <block type="otto9_homeh" id="|VnQW30!~`4{2Hhxen}r">
+      <block type="otto9_home" id="Sy@_Rh{Qh)-.t[4J)cU*">
         <next>
-          <block type="otto9_soundh" id="u=,Sz~[RmL{J.IeM_RLr">
+          <block type="otto9_sound" id=")k/f!dT$bgSq2xN`}GZ|">
             <field name="otto_sound">S_connection</field>
             <next>
-              <block type="otto9_gestureh" id="8$W0AfZDx/`iqnH{~jjx">
+              <block type="otto9_gesture" id="jrfQA6Q3dS$SjZ+^^Qiu">
                 <field name="otto_gesture">OttoSuperHappy</field>
               </block>
             </next>
@@ -26,7 +26,7 @@
           <block type="otto9_mouth" id="sGR9F_-?*gk@pWOn!JwE">
             <field name="otto9_mouth_choice">confused</field>
             <next>
-              <block type="otto9_moveh" id="tdv0b}9KjW7vKFVqb#$?">
+              <block type="otto9_move" id="1)?uthOvab}e3p~_Qh]G">
                 <field name="otto_move_sens">BACKWARD</field>
                 <field name="otto_move_speed">750</field>
               </block>
@@ -72,12 +72,12 @@
                   <block type="otto9_mouth" id="P)o,0KFi-G.P*5qTBBZg">
                     <field name="otto9_mouth_choice">bigSurprise</field>
                     <next>
-                      <block type="otto9_doh" id="HnZ{]l@XQFu;Q]=sOHrk">
+                      <block type="otto9_do" id="E|8=U1P*E#4~L6jLAVJu">
                         <field name="otto_do_movement">swing</field>
                         <field name="otto_move_speed">1000</field>
                         <field name="otto_dance_size">25</field>
                         <next>
-                          <block type="otto9_danceh" id="3V!/~5=YUM,h@4JiUtMd">
+                          <block type="otto9_dance" id="4:C=(uBncya2w=:d:uCf">
                             <field name="otto_dance_movement">flappingFRONT</field>
                             <field name="otto_move_speed">1000</field>
                             <field name="otto_dance_size">25</field>

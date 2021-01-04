@@ -1,0 +1,136 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="W(+ad}^L3|nmBRjcI9BC" x="306" y="2">
+    <statement name="DO">
+      <block type="pixel_init_2" id="U9$OIy,BB0DF_GTO/SMQ">
+        <value name="pin">
+          <shadow type="math_number" id="yF}f*]}I_^5;~M,!%{m#">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="num">
+          <shadow type="math_number" id="o{qr$}#pYNOerZZSQhl2">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="pixel_setcolor" id="!/(*-UzhbEXI[@Ft%J#}">
+        <field name="color">#ffff00</field>
+        <value name="pin">
+          <block type="math_number" id="xt:|FJPAetx{kOl(sN_-">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="pixel_setcolor" id="x4ojLz;30pP`mac{nluf">
+            <field name="color">#ffff00</field>
+            <value name="pin">
+              <block type="math_number" id="oX1UZvT$q5xN$34@o?9w">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="pixel_setcolor" id="=R9;NKMo#Bq_:tZ]rq_=">
+                <field name="color">#ffff00</field>
+                <value name="pin">
+                  <block type="math_number" id=",Rli~NN_HEQ#AB[3b3~Y">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="pixel_setcolor" id="hc9i3m{K!p%Oky^nu3FR">
+                    <field name="color">#ffff00</field>
+                    <value name="pin">
+                      <block type="math_number" id="ge*a@wq=3rex:84H8/89">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="base_delay" id="#2D#b?uscX9*ZzIKV[P-">
+                        <field name="unite">s</field>
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="p6X$@Sg=1xSV];D5%Yb;">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="pixel_setcolor" id="@ubD~zysXn1(vGV76wtO">
+                            <field name="color">#3333ff</field>
+                            <value name="pin">
+                              <block type="math_number" id="|@p!ZI0elig}s*-4yL*D">
+                                <field name="NUM">4</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="pixel_setcolor" id="oT3`v.:k?`+5{Py:@^ro">
+                                <field name="color">#3333ff</field>
+                                <value name="pin">
+                                  <block type="math_number" id=",Lm[EaeD]?M)lYeppsrg">
+                                    <field name="NUM">5</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="base_delay" id="4.2P7odV=s~pH}C!31t%">
+                                    <field name="unite">s</field>
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="ue+WB[U;iMy|7Qxz]6Gb">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="pixel_clear" id="1;fDPAk~SBCgY5y;gmRN">
+                                        <next>
+                                          <block type="pixel_setcolor" id="i1)V3{Z9h*9J=u(IQ=]?">
+                                            <field name="color">#ff0000</field>
+                                            <value name="pin">
+                                              <block type="math_number" id="JC=W7W{aDAkHiasM+a9Y">
+                                                <field name="NUM">6</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="pixel_setcolor" id=":1iU|`6F/=VZ^])|JnN!">
+                                                <field name="color">#ff0000</field>
+                                                <value name="pin">
+                                                  <block type="math_number" id=")h%]wVBO?D{(?L6ajLL]">
+                                                    <field name="NUM">7</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="base_delay" id="o)XAw#?6~h+[MLn9@yD7">
+                                                    <field name="unite">s</field>
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id=".:rXThMve3BX;AYlv$Wa">
+                                                        <field name="NUM">1</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="pixel_clear" id="ifDWblx3qrB[9])(JZVi"></block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
