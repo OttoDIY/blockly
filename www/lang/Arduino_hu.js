@@ -85,7 +85,7 @@ Blockly.Msg.CAT_TCS34725="Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Compass HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
-Blockly.Msg.CAT_KEYBOARD="Keyboard";
+Blockly.Msg.CAT_KEYBOARD="Keyboard & Mouse";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -547,7 +547,7 @@ Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
 Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
 Blockly.Msg.APDS9960_detection = "detection";
 Blockly.Msg.APDS9960_init = "Init APDS9960 gesture and color sensor.";
-Blockly.Msg.APDS9960_init2 = "SDA-Port13 SCL-Port14";
+Blockly.Msg.APDS9960_init2 = "SDA-SCL";
 Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
 Blockly.Msg.APDS9960_color_gain = "Config color gain";
 Blockly.Msg.APDS9960_gesture_detected = "detected?";
@@ -819,3 +819,7 @@ Blockly.Msg.KeyboardFunction = "Keyboard";
 Blockly.Msg.KeyPressed = "Key";
 Blockly.Msg.WriteText= "Write text";
 Blockly.Msg.LineFeed= "Line Feed";
+Blockly.Msg.MouseFunction = "Mouse";
+Blockly.Msg.MouseMoveX="X Pos";
+Blockly.Msg.MouseMoveY="Y pos";
+Blockly.Msg.MouseMoveW="Wheel";

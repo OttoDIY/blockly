@@ -89,7 +89,7 @@ Blockly.Msg.CAT_TCS34725 = "Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
-Blockly.Msg.CAT_KEYBOARD="Keyboard";
+Blockly.Msg.CAT_KEYBOARD="Teclado y Ratón";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -855,3 +855,7 @@ Blockly.Msg.KeyboardFunction = "Teclado";
 Blockly.Msg.KeyPressed = "Tecla";
 Blockly.Msg.WriteText= "escribir texto";
 Blockly.Msg.LineFeed= "Line Feed";
+Blockly.Msg.MouseFunction = "Ratón";
+Blockly.Msg.MouseMoveX="Pos X";
+Blockly.Msg.MouseMoveY="Pos Y";
+Blockly.Msg.MouseMoveW="Rueda";
