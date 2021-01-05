@@ -33,7 +33,7 @@ Blockly.Msg.CAT_STOCKAGE = "⊞ Tárolás";
 Blockly.Msg.CAT_numerique = "- Digital";
 Blockly.Msg.CAT_analogique = "~ Analog";
 Blockly.Msg.CAT_wifi = "＠ Wifi";
-Blockly.Msg.CAT_TAB = "▦ Táblázat";
+Blockly.Msg.CAT_TAB = "▦ Arrays";
 Blockly.Msg.CAT_list = "▤ Lista";
 Blockly.Msg.CAT_servo = "↷ Szervó";
 Blockly.Msg.CAT_del = "☄ LED";
@@ -62,6 +62,47 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
+Blockly.Msg.CAT_CCS811 = "Sensor CO2";
+Blockly.Msg.CAT_Displays = "🖥 Displays";
+Blockly.Msg.CAT_AUDIO = "♫ Audio";
+Blockly.Msg.CAT_CAMERAS = "📷 Cameras";
+Blockly.Msg.CAT_MUVISION = "MuVision";
+Blockly.Msg.CAT_OTTO_DIY = "⊟ Otto DIY";
+Blockly.Msg.CAT_SENSORS = "⇣ Sensors";
+Blockly.Msg.CAT_SSENSORS = "Simple Sensors";
+Blockly.Msg.CAT_LED = "Led";
+Blockly.Msg.CAT_LEDRGB = "RGB Led";
+Blockly.Msg.CAT_MAX7219 = "MAX7219 Matrix";
+Blockly.Msg.CAT_BARGRAPH = "BarGraph";
+Blockly.Msg.CAT_LCDI2C = "LCD I2C";
+Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
+Blockly.Msg.CAT_TIME_GENERAL = "General";
+Blockly.Msg.CAT_BME280 = "BME280 Preassure";
+Blockly.Msg.CAT_VL53L0X = "VL53L0X Laser";
+Blockly.Msg.CAT_APDS9960 = "APDS9960 Gesture";
+Blockly.Msg.CAT_TFT_ST7735 = "TFT ST7735";
+Blockly.Msg.CAT_TCS34725="Color TCS34725";
+Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
+Blockly.Msg.CAT_HMC5883="Compass HMC5883";
+Blockly.Msg.CAT_RFID="RFID MFRC522";
+Blockly.Msg.CAT_KEYBOARD="Keyboard";
+
+//RTC DS3231
+Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
+Blockly.Msg.RTCDS3231_RTC="Set DateTime DS3231";
+Blockly.Msg.RTCDS3231_DAY="Day";
+Blockly.Msg.RTCDS3231_MONTH="Month";
+Blockly.Msg.RTCDS3231_YEAR="Year";
+Blockly.Msg.RTCDS3231_HOUR="Hour";
+Blockly.Msg.RTCDS3231_MINUTE="Minute";
+Blockly.Msg.RTCDS3231_SECOND="Second";
+Blockly.Msg.RTCDS3231_DOFWEEK="Day of week";
+Blockly.Msg.RTCDS3231_READ_RTC="RTC DS3231.Read the date and time";
+Blockly.Msg.RTCDS3231_VALUES="value";
+Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
+Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
+
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "initialization of the wifi module and connection with the indicated parameters";
 Blockly.Msg.esp8266_1 = "Esp 8266";
@@ -418,3 +459,363 @@ Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Minden LED kikapcsolása a szájon";
 Blockly.Msg.OTTO9_ARMS_TEXT = "kezek";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Mozgasd a kezeidet!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["kezek fel", "HANDSUP"], ["legyintés balkézzel", "HANDWAVE1"], ["legyintés jobbkézzel", "HANDWAVE2"]];
+
+//SIMPLE SENSORS
+Blockly.Msg.BUTTON_NAME="Button";
+Blockly.Msg.INTERNAL_BUTTON_NAME="Start button MRTduino board";
+Blockly.Msg.BUTTON_LOGIC="Logic inverse";
+Blockly.Msg.BUTTON_PRESSED="pressed?";
+Blockly.Msg.BUTTON_TOUCH_NAME="Capacity Touch";
+Blockly.Msg.KNOCK_NAME="Knock";
+Blockly.Msg.KNOCK_DETECTED="detected?";
+Blockly.Msg.TILT_NAME="Digital Tilt";
+Blockly.Msg.TILT_DETECTED="detected?";
+Blockly.Msg.POTE_NAME="Potentiometer";
+Blockly.Msg.PERCENT="percent(0-100)%";
+Blockly.Msg.VALUE="Value(0-1023)";
+Blockly.Msg.PHOTO_NAME="Photo Interrupter";
+Blockly.Msg.PHOTO_DETECTED="detected?";
+Blockly.Msg.VAR_LM35="LM35 Temperature (ºC)";
+Blockly.Msg.LDR_NAME="Photocell (LDR or CDS) ";
+Blockly.Msg.LDR_DETECTED="detected?";
+Blockly.Msg.IR_NAME="Infrared";
+Blockly.Msg.IR_DETECTED="sensed?";
+Blockly.Msg.FLAME_NAME="Flame";
+Blockly.Msg.FLAME_DETECTED="detected?";
+Blockly.Msg.SOUND_NAME="Sound (MIC)";
+Blockly.Msg.SOUND_DETECTED="detected?";
+Blockly.Msg.DHT_NAME="DHT";
+Blockly.Msg.DHT_Type="Type";
+Blockly.Msg.DHT_Type11="DHT11";
+Blockly.Msg.DHT_Type21="DHT21";
+Blockly.Msg.DHT_Type22="DHT22";
+Blockly.Msg.DHT_Temp="Temperature ºC";
+Blockly.Msg.DHT_Humi="Humidity";
+Blockly.Msg.DHT_Head="Heat Index ºC";
+Blockly.Msg.GAS_NAME="Gas CO (MQ-7)";
+Blockly.Msg.GAS_DETECTED="detected?";
+Blockly.Msg.ALCOHOL_NAME="Alcohol (MQ-3)";
+Blockly.Msg.ALCOHOL_DETECTED="detected?";
+Blockly.Msg.VIBRATION_NAME="Vibration";
+Blockly.Msg.VIBRATION_DETECTED="detected?";
+Blockly.Msg.HALL_NAME="Hall Magnetic";
+Blockly.Msg.HALL_DETECTED="detected?";
+Blockly.Msg.PIR_NAME="PIR Motion";
+Blockly.Msg.PIR_DETECTED="detected?";
+Blockly.Msg.VAPOR_NAME="Vapor (Steam)";
+Blockly.Msg.ALIGHT_NAME="Ambient Light (TEMT6000)";
+Blockly.Msg.WATER_NAME="Water level";
+Blockly.Msg.MOISTURE_NAME="Soil Moisture";
+Blockly.Msg.JOYSTICK_NAME="Joystick axis";
+Blockly.Msg.JOYSTICK_BUTTON="Joystick button";
+Blockly.Msg.JOYSTICK_PRESSED="pressed?";
+Blockly.Msg.ultrasonic_ranger="HC-SR04 Ultrasonic (cm)";
+Blockly.Msg.unit="Unit";
+Blockly.Msg.cm="cm";
+Blockly.Msg.inch="inch";
+Blockly.Msg.TRIG="TRIG Trigger";
+Blockly.Msg.Echo="Echo";
+Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+
+//CCS811
+
+Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
+Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
+Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
+Blockly.Msg.CCS811_available="Is the sensor available?";
+Blockly.Msg.CCS811_readed = "Is the measure readed?";
+Blockly.Msg.CCS811_values="value";
+
+//LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
+Blockly.Msg.LCDP_Column = "Columns";
+Blockly.Msg.LCDP_Row = "Rows";
+Blockly.Msg.LCDP_Column2 = "column";
+Blockly.Msg.LCDP_Row2 = "row";
+Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
+
+//GESTURE SENSOR APDS9960
+Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
+Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
+Blockly.Msg.APDS9960_detection = "detection";
+Blockly.Msg.APDS9960_init = "Init APDS9960 gesture and color sensor.";
+Blockly.Msg.APDS9960_init2 = "SDA-Port13 SCL-Port14";
+Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
+Blockly.Msg.APDS9960_color_gain = "Config color gain";
+Blockly.Msg.APDS9960_gesture_detected = "detected?";
+Blockly.Msg.APDS9960_readgesture = ".Read gesture";
+Blockly.Msg.APDS9960_readcolors = "Read color frecuencies";
+Blockly.Msg.APDS9960_colors = "Frequency";
+
+
+//REMOTE CONTROL IR
+Blockly.Msg.KEY="Key";
+Blockly.Msg.GENERAL_IR="Remote Control IR";
+Blockly.Msg.GENERAL_PRESSED="Read key";
+Blockly.Msg.PIN="PIN";
+
+//OPEN SMART MP3
+Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
+Blockly.Msg.MP3OS_init = "Init Mp3 Opensmart using software serial";
+Blockly.Msg.MP3OS_TX="Port TX#";
+Blockly.Msg.MP3OS_RX="Port RX#";
+Blockly.Msg.MP3OS_equalizer = "Set equalizer";
+Blockly.Msg.MP3OS_volumen = "Set volumen(0-30)";
+Blockly.Msg.MP3OS_operation = "Operation:";
+Blockly.Msg.MP3OS_check = "Check mp3.Need to be executed in main loop";
+Blockly.Msg.MP3OS_playsong = "Play track number";
+Blockly.Msg.MP3OS_playsongdirectory = "in folder number";
+Blockly.Msg.MP3OS_inject="Inject track number";
+
+//Mu Vision
+
+/*Help*/
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
+Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
+Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
+
+/*Warning**/
+Blockly.LKL_VS2_WARNING_SETUP_ONLY = 'This block can only be placed in the setup block!';
+Blockly.LKL_VS2_WARNING_MU_INIT = 'Please DON\'T forget initialize the uart1, Serial1. Configure the bauds too';             //'请勿同时使用Serial连接MU与电脑打印字符，此操作会导致电脑端打印字符错乱或通信异常';
+
+
+//LED color type
+Blockly.LKL_VS2_LED_CLOSE = 'Close';					//'关闭';
+Blockly.LKL_VS2_LED_RED = 'Red';						//'红色';
+Blockly.LKL_VS2_LED_GREEN = 'Green';					//'绿色';
+Blockly.LKL_VS2_LED_YELLOW = 'Yellow';					//'黄色';
+Blockly.LKL_VS2_LED_BLUE = 'Blue';						//'蓝色';
+Blockly.LKL_VS2_LED_PURPLE = 'Purple';					//'紫色';
+Blockly.LKL_VS2_LED_CYAN = 'Cyan';						//'青色';
+Blockly.LKL_VS2_LED_WHITE = 'White';					//'白色';
+//Vision Zoom
+Blockly.LKL_VS2_AUTO = 'auto';							//'自动';
+Blockly.LKL_VS2_VISION_ZOOM = 'Zoom';					//'缩放';
+//Vision Level
+Blockly.LKL_VS2_LEVEL = 'level';						//'等级';
+Blockly.LKL_VS2_HIGH_SPEED = 'highSpeed';				//'速度优先';
+Blockly.LKL_VS2_NORMAL = 'normal';						//'性能均衡';
+Blockly.LKL_VS2_HIGH_ACCURACY = 'highAccuracy';			//'准确度优先';
+//UART status
+Blockly.LKL_VS2_UART_OPEN = 'Open';						//'打开';
+Blockly.LKL_VS2_UART_CLOSE = 'Close';					//'关闭';
+//Vision type
+Blockly.LKL_VS2_COLOR_BLOCK = 'ColorBlock';             //'色块';
+Blockly.LKL_VS2_VISION_COLOR_DETECT = 'ColorBlock';	    //'色块检测';
+Blockly.LKL_VS2_VISION_COLOR_RECOGNITION = 'ColorRecognition';	//'颜色识别';
+Blockly.LKL_VS2_VISION_BALL = 'Ball';					//'球';
+Blockly.LKL_VS2_VISION_LINE = 'Line';					//'线条';
+Blockly.LKL_VS2_VISION_BODY = 'Body';					//'人体';
+Blockly.LKL_VS2_VISION_FACE = 'Face';					//'人脸';
+Blockly.LKL_VS2_VISION_TRAFFIC_CARD = 'TrafficCard';	//'交通卡片';
+Blockly.LKL_VS2_VISION_SHAPE_CARD = 'ShapeCard';		//'形状卡片';
+Blockly.LKL_VS2_VISION_NUM_CARD = 'NumberCard';			//'数字卡片';
+//Card type
+Blockly.LKL_VS2_CARD_CIRCLE = 'Circle';					//'圆形';
+Blockly.LKL_VS2_CARD_TRIANGLE = 'Triangle';				//'三角形';
+Blockly.LKL_VS2_CARD_SQUARE = 'Square';					//'方形';
+Blockly.LKL_VS2_CARD_TICK = 'Tick';						//'钩';
+Blockly.LKL_VS2_CARD_CROSS = 'Cross';					//'叉';
+Blockly.LKL_VS2_CARD_STRAIGHT = 'Straight';				//'向前';
+Blockly.LKL_VS2_CARD_TURN_LEFT = 'TurnLeft';			//'向左';
+Blockly.LKL_VS2_CARD_TURN_RIGHT = 'TurnRight';			//'向右';
+Blockly.LKL_VS2_CARD_TURN_AROUND = 'TurnAround';		//'掉头';
+Blockly.LKL_VS2_CARD_WHISTLE = 'Whistle';				//'鸣笛';
+Blockly.LKL_VS2_CARD_STOP = 'Stop';						//'停止';
+//Vision state
+Blockly.LKL_VS2_STATE_VALUE_X = 'Horizontal';			//'横向坐标';
+Blockly.LKL_VS2_STATE_VALUE_Y = 'Vertical';				//'纵向坐标';
+Blockly.LKL_VS2_STATE_VALUE_WIDTH = 'Width';			//'宽度';
+Blockly.LKL_VS2_STATE_VALUE_HEIGHT = 'Height';			//'高度';
+Blockly.LKL_VS2_STATE_VALUE_R_CHANNEL = 'ChannelR';		//'红色通道';
+Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = 'ChannelG';		//'绿色通道';
+Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = 'ChannelB';		//'蓝色通道';
+Blockly.LKL_VS2_STATE_VALUE_LABEL = 'Label';			//'标签';
+//True False
+Blockly.LKL_VS2_TRUE = 'True';							//'是';
+Blockly.LKL_VS2_FALSE = 'False';						//'否';
+//Enable Disable
+Blockly.LKL_VS2_ENABLE = 'enable';						//'开启';
+Blockly.LKL_VS2_DISABLE = 'disable';					//'关闭';
+//Camera AWB
+Blockly.LKL_VS2_LOCK_AWB = 'LockAWB';					//'锁定白平衡';
+Blockly.LKL_VS2_WHITE_LIGHT = 'WhiteLight';				//'白光模式';
+Blockly.LKL_VS2_YELLOW_LIGHT = 'YellowLight';			//'黄光模式';
+Blockly.LKL_VS2_ALL = 'All';                            //'所有';
+
+//Other
+Blockly.LKL_VS2_COLOR = 'color';						//'颜色';
+Blockly.LKL_VS2_DEFAULT = 'default';                    //'默认';
+Blockly.LKL_VS2_LOW = 'low';                            //'低';
+Blockly.LKL_VS2_MID = 'middle';                         //'中';
+Blockly.LKL_VS2_HIGH = 'high';                          //'高';
+
+/*模块文本*/
+Blockly.LKL_VS2_MU = 'initialize';									//'初始化';
+Blockly.LKL_VS2_MODE = 'mode';										//'模式';
+Blockly.LKL_VS2_SetupVS = 'setup';          						//'设置';
+Blockly.LKL_VS2_SET_RECOGNITION_REGION = 'set recognition region';  //'设置识别区域';
+Blockly.LKL_VS2_SET_MIN_RECOGNITION_SIZE = 'set min recognition size';//'设置最小识别尺寸';
+Blockly.LKL_VS2_SERIAL = 'port';									//'端口';
+Blockly.LKL_VS2_ADDRESS = 'address';								//'地址';
+Blockly.LKL_VS2_RESET = 'reset to default';						    //'恢复默认设置';
+Blockly.LKL_VS2_LED_DETECT_COLOR = 'when detected then';			//'识别到物体亮';
+Blockly.LKL_VS2_LED_UNDETECT_COLOR = 'else';				        //'没识别到物体亮';
+Blockly.LKL_VS2_BRIGHTNESS = 'brightness';							//'亮度';
+Blockly.LKL_VS2_VISION_TYPE = 'algorithm';						    //'算法';
+Blockly.LKL_VS2_SET_VISION_LEVEL = 'level';				            //'设置识别等级';
+Blockly.LKL_VS2_SET_FRAME_ROTATE = 'rotate Frame';					//'图像翻转';
+Blockly.LKL_VS2_SET_CAMERA_HFR = 'high FPS mode';   				//'高帧率模式';
+Blockly.LKL_VS2_SET_CAMERA_AWB = 'camera white balance';			//'摄像头白平衡';
+Blockly.LKL_VS2_SET_VISION_ZOOM = 'zoom';   					    //'图像缩放等级';
+Blockly.LKL_VS2_SET_UART_BAUD = 'UART baudrate';					//'串口波特率';
+Blockly.LKL_VS2_DETECTED = 'detected';								//'检测到';
+Blockly.LKL_VS2_RECOGNIZED = 'recognized';                          //'识别到';
+Blockly.LKL_VS2_GET_DETECTED_MESSAGE = 'get';						//'获取';
+Blockly.LKL_VS2_VALUE = 'value';									//'值';
+Blockly.LKL_VS2_GET_PIX_COLOR = 'get Position';						//'捕获坐标';
+Blockly.LKL_VS2_CARD_TYPE = 'type';								    //'卡片类型';
+Blockly.LKL_VS2_SET_DETECT_COLOR = 'setDetectColor';				//'设置识别颜色';
+Blockly.LKL_VS2_COORDINATE = 'coordinate';                          //'坐标';
+
+// Light sensor
+Blockly.LKL_VS2_LIGHT_SENSOR = 'light sensor';                      //'光线传感器';
+Blockly.LKL_VS2_SET = 'set';                                        //'设置';
+Blockly.LKL_VS2_SENSITIVITY = 'sensitivity';                        //'灵敏度';
+Blockly.LKL_VS2_WB_CORRECTION = 'white balance correction';         //'白平衡校准';
+Blockly.LKL_VS2_READ = 'read';                                      //'读取';
+Blockly.LKL_VS2_PROXIMITY = 'proximity detection';                  //'接近检测';
+Blockly.LKL_VS2_ALS = 'ambient light detection';                    //'环境光检测';
+Blockly.LKL_VS2_GESTURE_SENSOR = 'gesture detection';               //'手势检测';
+Blockly.LKL_VS2_GESTURE = 'gesture';                                //'手势';
+Blockly.LKL_VS2_GESTURE_UP = 'upward';                              //'上划';
+Blockly.LKL_VS2_GESTURE_DOWN = 'downward';                          //'下划';
+Blockly.LKL_VS2_GESTURE_LEFT = 'leftward';                          //'左划';
+Blockly.LKL_VS2_GESTURE_RIGHT = 'rightward';                        //'右划';
+Blockly.LKL_VS2_GESTURE_LIFT_UP = 'pull';                           //'上抬';
+Blockly.LKL_VS2_GESTURE_PUSH_DOWN = 'push';                         //'下压';
+
+// AT WiFi
+Blockly.LKL_VS2_SSID = "ssid";                                      //"名称";
+Blockly.LKL_VS2_PASSWORD = "password";                              //"密码";
+Blockly.LKL_VS2_WAIT_CONNECT = "connection succeeded";              //"连接成功";
+Blockly.LKL_VS2_DISCONNECT = "disconnect";                          //"断开连接";
+Blockly.LKL_VS2_CLIENT = "client";                                  //"客户端";
+Blockly.LKL_VS2_HOT_SPOT = "hot-spot";                              //"热点";
+Blockly.LKL_VS2_TARGET_IP = "target IP";                            //"目标IP";
+Blockly.LKL_VS2_LOCAL_IP = "local IP";                              //"本地IP";
+Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
+
+// SOFTWARE SERIAL FOR BT
+Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
+Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
+Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
+Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
+Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
+Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
+Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
+
+//DISPLAY TFT ST7735
+Blockly.Msg.ST7735_name = "TFT";
+Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\".";
+Blockly.Msg.ST7735_init2 = "Pins:SCK - SDA ";
+Blockly.Msg.ST7735_PIN_CS = "CS Pin";
+Blockly.Msg.ST7735_PIN_RST = "RST Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 Pin";
+Blockly.Msg.ST7735_WRAP = "Tab color";
+Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
+Blockly.Msg.ST7735_Rotate = "Rotate display";
+Blockly.Msg.ST7735_Invert = "Invert display";
+Blockly.Msg.ST7735_SetCursor = "Set cursor";
+Blockly.Msg.ST7735_X0 = "x0";
+Blockly.Msg.ST7735_Y0 = "y0";
+Blockly.Msg.ST7735_X1 = "x1";
+Blockly.Msg.ST7735_Y1 = "y1";
+Blockly.Msg.ST7735_X2 = "x2";
+Blockly.Msg.ST7735_Y2 = "y2";
+Blockly.Msg.ST7735_TEXTCOLOR = "Set text color";
+Blockly.Msg.ST7735_TEXTCOLOR2 = "Set color";
+Blockly.Msg.ST7735_TEXTsize = "Set text size";
+Blockly.Msg.ST7735_TEXTwrap = "Set text wrap";
+Blockly.Msg.ST7735_PrintTextLN = "Print the text/value";
+Blockly.Msg.ST7735_PrintTextLN2 = "line feed";
+Blockly.Msg.ST7735_DrawPixel = "Draw pixel";
+Blockly.Msg.ST7735_Drawlinefrom = "Draw line from";
+Blockly.Msg.ST7735_Drawlineto = "to";
+Blockly.Msg.ST7735_Drawrectangle = "Draw rectangle";
+Blockly.Msg.ST7735_Drawtriangle = "Draw triangle.Corner points";
+Blockly.Msg.ST7735_Drawroundrectangle = "Draw round rectangle";
+Blockly.Msg.ST7735_Drawroundrectangleradius = "rounding radius";
+Blockly.Msg.ST7735_Drawrectanglewidth = "width";
+Blockly.Msg.ST7735_Drawrectangleheight = "height";
+Blockly.Msg.ST7735_Drawcircle = "Draw circle.Center in";
+Blockly.Msg.ST7735_Drawcircleradius = "radius";
+Blockly.Msg.ST7735_Drawfill = "Fill";
+Blockly.Msg.ST7735_properties = "Return property:";
+Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
+Blockly.Msg.ST7735_ValueList = "Values(hex array)";
+Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
+
+//TCS34725 color sensor
+Blockly.Msg.TCS34725_name_init="Init TCS34725 color sensor";
+Blockly.Msg.TCS34725_name_init2="SDA - SCL Gain";
+Blockly.Msg.TCS34725_name="TCS34725 color sensor.";
+Blockly.Msg.TCS34725_read="Read all values";
+Blockly.Msg.TCS34725_values="Value";
+Blockly.Msg.TCS34725_color="Is";
+Blockly.Msg.TCS34725_color2="color(No gain configured)?";
+
+//HMC5883 compass sensor
+Blockly.Msg.HMC5883="Init HMC5883 compass sensor";
+Blockly.Msg.HMC5883_2="- SDA - SCL";
+Blockly.Msg.HMC5883_read="HMC5883 compass sensor.Read values";
+Blockly.Msg.HMC5883_values="value";
+
+//RADIO TEA5767
+Blockly.Msg.TEA5767_name = "Radio TEA5767.";
+Blockly.Msg.TEA5767_init = "Init Radio TEA5767.SDA - SCL";
+Blockly.Msg.TEA5767_turnOFF_ON = "Turn";
+Blockly.Msg.TEA5767_muteOFF_ON = "Mute";
+Blockly.Msg.TEA5767_Level = "Level of the signal";
+Blockly.Msg.TEA5767_Stereo = "Is the signal stereo?";
+Blockly.Msg.TEA5767_RadioStation = "Radio Station.";
+Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
+Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
+
+//RFID MFRC522
+Blockly.Msg.RFID_name = "RFID MFRC522.";
+Blockly.Msg.RFID_init = "Init RFID MFRC522.";
+Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI and MISO.";
+Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
+Blockly.Msg.RFID_PIN_RST = "RST Pin";
+Blockly.Msg.RFID_VALID_VAR = "Define Validation card name:";
+Blockly.Msg.RFID_STOP = "Stop the current reading";
+Blockly.Msg.RFID_C1 = "Value1";
+Blockly.Msg.RFID_C2 = "Value2";
+Blockly.Msg.RFID_C3 = "Value3";
+Blockly.Msg.RFID_C4 = "Value4";
+Blockly.Msg.RFID_DETECTED = "Is RFID card detected?";
+Blockly.Msg.RFID_READED = "Is RFID card readed?";
+Blockly.Msg.RFID_CARD_READED = "Value of the read card";
+Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
+Blockly.Msg.RFID_CHECK_CARD2 = "?";
+
+//KEYBOARD AND MOUSE
+Blockly.Msg.KeyboardFunction = "Keyboard";
+Blockly.Msg.KeyPressed = "Key";
+Blockly.Msg.WriteText= "Write text";
+Blockly.Msg.LineFeed= "Line Feed";

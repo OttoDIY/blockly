@@ -34,14 +34,14 @@ Blockly.Msg.CAT_STOCKAGE = "⊞ Almacenamiento";
 Blockly.Msg.CAT_numerique = "- Digital";
 Blockly.Msg.CAT_analogique = "~ Analog";
 Blockly.Msg.CAT_wifi = "＠ Wifi";
-Blockly.Msg.CAT_TAB = "▦ Tabla";
+Blockly.Msg.CAT_TAB = "▦ Arrays";
 Blockly.Msg.CAT_list = "▤ Lista";
 Blockly.Msg.CAT_servo = "↷ Servo";
 Blockly.Msg.CAT_del = "☄ LED";
 Blockly.Msg.CAT_LOGIC = "⇋ Lógica";
 Blockly.Msg.CAT_MATH = "∑ Math";
 Blockly.Msg.CAT_TEXT = "❝ Texto";
-Blockly.Msg.CAT_VARIABLES = "↝ Variable";
+Blockly.Msg.CAT_VARIABLES = "↝ Variables simples";
 Blockly.Msg.CAT_FUNCTIONS = "∬ Función";
 Blockly.Msg.CAT_ARDUINO = "∞ Estructura";
 Blockly.Msg.CAT_ARDUINO_IN = "⇅ Entrada / Salida";
@@ -89,6 +89,7 @@ Blockly.Msg.CAT_TCS34725 = "Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
+Blockly.Msg.CAT_KEYBOARD="Keyboard";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -848,3 +849,9 @@ Blockly.Msg.RFID_READED = "¿Tarjeta RFIS leida?";
 Blockly.Msg.RFID_CARD_READED = "Valor de la tarjeta leida";
 Blockly.Msg.RFID_CHECK_CARD = "¿Es la tarjeta leida igual a la de validación";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+
+//KEYBOARD AND MOUSE
+Blockly.Msg.KeyboardFunction = "Teclado";
+Blockly.Msg.KeyPressed = "Tecla";
+Blockly.Msg.WriteText= "escribir texto";
+Blockly.Msg.LineFeed= "Line Feed";

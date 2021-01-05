@@ -229,6 +229,13 @@ BlocklyDuino.change_card = function() {
 				window.localStorage.prog = new_prog;
 				window.localStorage.toolbox = new_toolbox;
 				BlocklyDuino.workspace.clear();
+				//var mystartfile;
+				//	mystartfile= '<xml xmlns="http://www.w3.org/1999/xhtml">';
+				//	mystartfile +=  '<block type="base_setup_loop" x="0" y="0"></block>';
+				//	mystartfile += '</xml>';
+				//BlocklyDuino.loadBlocks(mystartfile)
+				BlocklyDuino.loadBlocks()
+				
 				BlocklyDuino.loadToolboxDefinition(new_toolbox);
 				Blockly.getMainWorkspace().updateToolbox(BlocklyDuino.buildToolbox());
 				BlocklyDuino.workspace.render()

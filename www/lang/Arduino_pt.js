@@ -34,7 +34,7 @@ Blockly.Msg.CAT_STOCKAGE = "⊞ Armazenamento";
 Blockly.Msg.CAT_numerique = "- Digital";
 Blockly.Msg.CAT_analogique = "~ Analog";
 Blockly.Msg.CAT_wifi = "＠ Wifi";
-Blockly.Msg.CAT_TAB = "▦ Table";
+Blockly.Msg.CAT_TAB = "▦ Arrays";
 Blockly.Msg.CAT_list = "▤ Lista";
 Blockly.Msg.CAT_servo = "↷ Servo";
 Blockly.Msg.CAT_del = "☄ LED";
@@ -87,6 +87,7 @@ Blockly.Msg.CAT_TCS34725="Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Compass HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
+Blockly.Msg.CAT_KEYBOARD="Keyboard";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";

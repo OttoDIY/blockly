@@ -34,7 +34,7 @@ Blockly.Msg.CAT_STOCKAGE = "⊞ Хранилище";
 Blockly.Msg.CAT_numerique = "- Цифровой";
 Blockly.Msg.CAT_analogique = "~ Аналоговый";
 Blockly.Msg.CAT_wifi = "＠ Wifi";
-Blockly.Msg.CAT_TAB = "▦ Table";
+Blockly.Msg.CAT_TAB = "▦ Arrays";
 Blockly.Msg.CAT_list = "▤ List";
 Blockly.Msg.CAT_servo = "↷ Servo";
 Blockly.Msg.CAT_del = "☄ LED";
@@ -87,6 +87,7 @@ Blockly.Msg.CAT_TCS34725="Color TCS34725";
 Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Compass HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
+Blockly.Msg.CAT_KEYBOARD="Keyboard";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -845,3 +846,9 @@ Blockly.Msg.RFID_READED = "Is RFID card readed?";
 Blockly.Msg.RFID_CARD_READED = "Value of the read card";
 Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+
+//KEYBOARD AND MOUSE
+Blockly.Msg.KeyboardFunction = "Keyboard";
+Blockly.Msg.KeyPressed = "Key";
+Blockly.Msg.WriteText= "Write text";
+Blockly.Msg.LineFeed= "Line Feed";

@@ -13,7 +13,7 @@ Blockly.Blocks.math.HUE = "#008000";
 Blockly.Blocks.procedures.HUE = "#FF0000";
 Blockly.Blocks.texts.HUE = "#FD6C9E";
 Blockly.Blocks.variables.HUE = "#ff5700";
-Blockly.Blocks.tab.HUE = "#804000";
+Blockly.Blocks.tab.HUE = "#ff5700";
 
 // controle
 Blockly.Blocks["controls_if"] = {
@@ -1316,7 +1316,7 @@ Blockly.Blocks["creer_tableau"] = {
         this.appendValueInput("D0")
             .setAlign(Blockly.ALIGN_RIGHT)
             .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARRAY_taille, "c1"],[Blockly.Msg.ARRAY_contenu, "c2"]]), "choix");
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(Blockly.Blocks.tab.HUE);
@@ -1375,7 +1375,7 @@ Blockly.Blocks["fixer_tableau"] = {
 			.appendField(new Blockly.FieldDropdown([["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]],function(option){this.sourceBlock_.updateShape_(option)}),"dim");
         this.appendValueInput("value").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT);
         this.appendValueInput("D0").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARRAY_index);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(Blockly.Blocks.tab.HUE);
@@ -1434,7 +1434,7 @@ Blockly.Blocks["array_getIndex"] = {
 			.appendField(new Blockly.FieldDropdown([["1", "1"],["2", "2"],["3", "3"],["4", "4"],["5", "5"]],function(option){this.sourceBlock_.updateShape_(option)}),"dim");
         this.appendValueInput("D0").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARRAY_index);
         this.setOutput(true);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setColour(Blockly.Blocks.tab.HUE);
         this.setTooltip(Blockly.Msg.ARRAY_GETINDEX_TOOLTIP1);
         this.setHelpUrl(Blockly.Msg.HELPURL)
