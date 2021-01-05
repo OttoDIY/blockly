@@ -9,7 +9,7 @@ goog.provide('Blockly.Arduino.otto');
 goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto9_home'] = {init: function() {
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 48, 48, "*")) .appendField(Blockly.Msg.OTTO9_HOME_TEXT);
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO9_HOME_TEXT);
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -110,7 +110,7 @@ Blockly.Python['otto9_eeprom'] = function(block) {
 };
 
 Blockly.Blocks['otto9_move'] = {init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_bend.png', 48, 48, "*"))
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))
         .appendField(Blockly.Msg.OTTO9_MOVE_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_CHOICE), "otto_move_sens");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
     this.setInputsInline(true);
@@ -209,7 +209,7 @@ Blockly.Python['otto9_move'] = function(block) {
 
 Blockly.Blocks['otto9_dance'] = {
   init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_DANCE_TEXT)
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_DANCE_TEXT)
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DANCE_CHOICE), "otto_dance_movement");
     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
@@ -296,7 +296,7 @@ Blockly.Arduino['otto9_dance'] = function(block) {
 
 Blockly.Blocks['otto9_do'] = {init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage('media/otto_do.png', 48, 48, "*"))
+        .appendField(new Blockly.FieldImage('media/otto_do.png', 33, 33, "*"))
         .appendField(Blockly.Msg.OTTO9_DO_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DO_CHOICE), "otto_do_movement");
     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
@@ -375,7 +375,7 @@ Blockly.Python['otto9_gesture'] = function(block) {
     return code;
 };
 Blockly.Blocks['otto9_sound'] = {init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_music.png', 48, 48, "*")) .appendField(Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "otto_sound");
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_music.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "otto_sound");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -449,8 +449,77 @@ Blockly.Python['otto9_tone'] = function(block) {
     var code = "Otto._tone(" + dropdown_otto_note + ", " + dropdown_otto_note_duration + ", 1)\n";
     return code;
 };
+
+Blockly.Blocks['otto9_tonehz'] = {init: function() {
+  this.appendDummyInput() .appendField("🎼 Hz")
+  this.appendValueInput("Hz1")
+  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
+  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+
+Blockly.Arduino['otto9_tonehz'] = function(block) {
+  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
+  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
+  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
++ 'Otto9 Otto;';
+Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
++ '#define PIN_YR 3 // right leg, servo[1]\n'
++ '#define PIN_RL 4 // left foot, servo[2]\n'
++ '#define PIN_RR 5 // right foot, servo[3]\n'
++ '#define PIN_Trigger 8 // ultrasound \n'
++ '#define PIN_Echo 9 // ultrasound \n'
++ '#define PIN_Buzzer  13 //buzzer';
+Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+var code = "Otto._tone( " + Hz1 + "," + duration + "," + silent + "); //(float noteFrequency, long noteDuration, int silentDuration)\n";
+return code;				
+};
+
+Blockly.Blocks['otto9_bendtone'] = {init: function() {
+  this.appendDummyInput() .appendField("🎼 Hz1")
+  this.appendValueInput("Hz1")
+  this.appendValueInput("Hz2") .appendField("Hz2");
+  this.appendValueInput("prop") .setCheck("Number").appendField("P");
+  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
+  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+
+Blockly.Arduino['otto9_bendtone'] = function(block) {
+  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
+  var Hz2 = Blockly.Arduino.valueToCode(block, 'Hz2', Blockly.Arduino.ORDER_ATOMIC);
+  var prop = Blockly.Arduino.valueToCode(block, 'prop', Blockly.Arduino.ORDER_ATOMIC);
+  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
+  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
++ 'Otto9 Otto;';
+Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
++ '#define PIN_YR 3 // right leg, servo[1]\n'
++ '#define PIN_RL 4 // left foot, servo[2]\n'
++ '#define PIN_RR 5 // right foot, servo[3]\n'
++ '#define PIN_Trigger 8 // ultrasound \n'
++ '#define PIN_Echo 9 // ultrasound \n'
++ '#define PIN_Buzzer  13 //buzzer';
+Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+var code = "Otto.bendTones( " + Hz1 + "," + Hz2 + "," + prop + "," + duration + "," + silent + "); // (float initFrequency, float finalFrequency, float prop, long noteDuration, int silentDuration) \n";
+return code;				
+};
+
 Blockly.Blocks['otto9_getdistance'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setColour("#2a93e8");
@@ -474,7 +543,7 @@ Blockly.Python['otto9_getdistance'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Blocks['otto9_obstacle'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
         .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle")
     this.setInputsInline(true);
     this.setOutput(true);
@@ -502,7 +571,7 @@ Blockly.Python['otto9_obstacle'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
 };													
 Blockly.Blocks['otto9_getnoise'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setColour("#2a93e8");
@@ -524,7 +593,7 @@ Blockly.Python['otto9_getnoise'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Blocks['otto9_touchbutton'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_touch.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_touch.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
     this.setInputsInline(true);
     this.setOutput(true);
     this.setColour("#2a93e8");
@@ -574,7 +643,7 @@ Blockly.Arduino['otto9_gyro'] = function(block) {
 };
 
 Blockly.Blocks['otto9_getg'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 48, 48, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2).appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "otto_getg");
     this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setColour("#2a93e8");
@@ -602,7 +671,7 @@ Blockly.Arduino['otto9_getg'] = function(block) {
 
 											  
 Blockly.Blocks['otto9_eyes'] = { init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 25, "*"))
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*"))
      .appendField(Blockly.Msg.OTTO9_EYES_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_EYES_CHOICE), "otto9_eyes_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -1287,7 +1356,7 @@ return code;
 };
  
 Blockly.Blocks['otto9_mouth'] = {  init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png', 48, 48, "*"))
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png', 33, 33, "*"))
         .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -1491,7 +1560,7 @@ Blockly.Arduino['otto9_clear'] = function(block) {
 };
 								
 Blockly.Blocks['otto9_arms'] = { init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 48, 48, "*"))  
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*"))  
     .appendField(Blockly.Msg.OTTO9_ARMS_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto9_arms_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -1571,7 +1640,7 @@ Blockly.Python['otto9_arms'] = function(block) {
 'use strict';
 
 Blockly.Blocks['otto9_wheels'] = {  init: function() {
-  this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 48, 48, "*"))
+  this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"))
       .appendField(Blockly.Msg.OTTO9_MOVE_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens")
   this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
   this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");
@@ -1622,7 +1691,7 @@ Blockly.Arduino['otto9_wheels'] = function(block) {
 
 
 Blockly.Blocks['otto9_app'] = {init: function() {
-  this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 48, 48, "*"))   .appendField('App code');
+  this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 33, 33, "*"))   .appendField('App code');
   this.setInputsInline(false);
   this.setColour("#32D900");
   this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
@@ -1751,7 +1820,7 @@ Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
 };
 
 Blockly.Blocks['otto9_smooth'] = {init: function() {
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/smooth.png', 48, 48, "*"))   .appendField('Dance smooth criminal');
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/smooth.png', 33, 33, "*"))   .appendField('Dance smooth criminal');
     this.setInputsInline(false);
     this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);

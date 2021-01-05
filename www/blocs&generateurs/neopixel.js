@@ -4,36 +4,9 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 
 //////////////
-Blockly.Blocks["pixel_init"]={init:function(){
-	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 48, 48, "*")).appendField(Blockly.Msg.pixel1);
-	this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
-    this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
-    this.setInputsInline(true); 
-    this.setColour("#4b009f");
-    this.setTooltip(Blockly.Msg.pixel1_tooltip);
-    this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
-};
-Blockly.Arduino["pixel_init"]=function(block){
-    var pin=Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ASSIGNMENT);
-	var number=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ASSIGNMENT);
-    Blockly.Arduino.includes_["pixel"]="#include <Adafruit_NeoPixel.h>";
-    Blockly.Arduino.definitions_["pixel"]="Adafruit_NeoPixel pixel = Adafruit_NeoPixel(" + number + ", " + pin + ", NEO_GRBW + NEO_KHZ800);";
-    Blockly.Arduino.setups_["pixel"]='pixel.begin();\n'
-    +'pixel.clear();\n'
-    +'pixel.show();\n';
-    return ""
-};
-Blockly.Python["pixel_init"]=function(block){
-    var pin=Blockly.Python.valueToCode(block, "pin", Blockly.Python.ORDER_ASSIGNMENT);
-	var number=Blockly.Python.valueToCode(block, "num", Blockly.Python.ORDER_ASSIGNMENT);
-    Blockly.Python.imports_["neopixel"]="from neopixel import NeoPixel";
-	Blockly.Python.imports_["pin"]="from machine import Pin";
-    Blockly.Python.definitions_["pin_"+pin]="BROCHE_" + pin + " = Pin(" + pin + ", Pin.OUT)\nnp = NeoPixel(BROCHE_" + pin + ", " + number + ")";
-    return ""
-};
 
 Blockly.Blocks["pixel_init_2"]={init:function(){
-	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 48, 48, "*")).appendField(Blockly.Msg.pixel1);
+	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1);
 	this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
     this.setInputsInline(true); 
@@ -47,15 +20,20 @@ Blockly.Arduino["pixel_init_2"]=function(block){
     var pin=Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ASSIGNMENT);
 	var number=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ASSIGNMENT);
     Blockly.Arduino.includes_["pixel"]="#include <Adafruit_NeoPixel.h>";
-    Blockly.Arduino.definitions_["pixel"]="Adafruit_NeoPixel pixel = Adafruit_NeoPixel(" + number + ", " + pin + ", NEO_GRBW + NEO_KHZ800);";
+    Blockly.Arduino.definitions_["pixel"]="Adafruit_NeoPixel pixel = Adafruit_NeoPixel(" + number + ", " + pin + ", NEO_GRB + NEO_KHZ800);";
     Blockly.Arduino.setups_["pixel"]='pixel.begin();\n'
     +'pixel.clear();\n'
     +'pixel.show();\n';
     return ""
 };
-
-
-
+Blockly.Python["pixel_init_2"]=function(block){
+    var pin=Blockly.Python.valueToCode(block, "pin", Blockly.Python.ORDER_ASSIGNMENT);
+	var number=Blockly.Python.valueToCode(block, "num", Blockly.Python.ORDER_ASSIGNMENT);
+    Blockly.Python.imports_["neopixel"]="from neopixel import NeoPixel";
+	Blockly.Python.imports_["pin"]="from machine import Pin";
+    Blockly.Python.definitions_["pin_"+pin]="BROCHE_" + pin + " = Pin(" + pin + ", Pin.OUT)\nnp = NeoPixel(BROCHE_" + pin + ", " + number + ")";
+    return ""
+};
 
 
 //////////////
@@ -156,7 +134,7 @@ Blockly.Arduino["pixel_clear"]=function(block){
 
 Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
       this.appendDummyInput()  
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 48, 48, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
       this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
       this.setInputsInline(true);
       this.setColour("#4b009f");
@@ -177,7 +155,7 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
   
   Blockly.Blocks["MatrixLED_WS2812B_init_2"] = {  init: function() {
       this.appendDummyInput()  
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 48, 48, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
       this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
       this.setInputsInline(true);
 	  this.setPreviousStatement(true, null);
