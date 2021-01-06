@@ -1,13 +1,13 @@
 # Otto Blockly
 
-This is a free and open source visual programming language based on Blockly from Google & MIT, Arduino codes are created by just combining the blocks, then they are compiled (check or verified) and quickly [upload to any Otto robot](https://wikifactory.com/+OttoDIY/projects) or any Arduino project (C++) or Micro:bit or Python robots.
+This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, compile and upload to any Arduino. Compatible [with any Otto DIY robot or Arduino related boards](https://www.ottodiy.com/academy
 
 ## [Watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
 
 ## Installer
-This software already works offline by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly) and [Linux](https://github.com/OttoDIY/blockly/tree/versionlinux) operating systems. You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases), after is installed, it is ready to use, no need to import Arduino libraries or any additional boards setup or even the neeed of Arduino IDE software, it is all integrated!, ready to upload codes direclty to your robot via USB. Only if your computer do not recognize the USB device or Otto, you have to install the CH341 driver that is also [here in the "pilotes" folder.](https://github.com/OttoDIY/blockly/tree/master/pilotes/_CH341)
+This software is ready to setup offline by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly) or  [Linux](https://github.com/OttoDIY/blockly/tree/versionlinux) operating systems. You can [download the latest release version from here](https://github.com/OttoDIY/blockly/releases), after is installed, it is ready to use, no need to import Arduino libraries or any additional boards it comes with Arduino CLI, it is all integrated!, ready to upload codes direclty to your robot or project via USB. If your computer do not recognize the USB device or Otto, you have to install the CH340 or CH341 driver that is in the "pilotes" folder [or download from this link](https://sparks.gogo.co.nz/ch340.html)
 
-MAC and Chrome  versions are under development, as some requested and as much as we want them to be ready too, unfortunately, it is very hard!, so WE NEED YOU!, if you really need this software for your OS, help us please and don't ask when it would be available, since it only will be ready with your support..So for now you will need a Virtual Machine or use the online App and download the code to open and upload manually from a previosly installed Arduino IDE with [Otto libraries](https://github.com/OttoDIY/OttoDIYLib)
+MAC and Chrome  versions are under development,you will need a Virtual Machine or use the online version of App (please note this version can't upload the code) and download the code to open and upload manually from a previosly installed Arduino IDE with [Otto libraries](https://github.com/OttoDIY/OttoDIYLib)
 
 ## Online App
 Otto Blockly is also a web tool. You can [give it a try here.](https://ottodiy.github.io/blockly/) BUT the USB device cannot be recognized by the browser, therefore you won't be able to compile or upload the code.., although you can just simple copy and paste or save the blocks or download the generated code into your [local Arduino IDE](https://www.arduino.cc/en/Main/Software), therefore you can already use this tool from any operative system even from your phone if you have an OTG USB cable
@@ -17,12 +17,13 @@ Contributing to this software is warmly welcomed. There are 5 ways you can contr
 1. Test and report. Lets us know if there is something missing in the issue section.
 2. Helps us [solve current issues](https://github.com/OttoDIY/blockly/issues) or other bugs.
 3. Bring missing features from similar Blockly or Scratch alike programs, request new useful blocks.
-5. Translating to new languages or fixing current ones.
+5. Translating to new languages or spell check current ones.
 
 You can do this [basically by forking](https://help.github.com/en/articles/fork-a-repo), committing modifications and then a [pull requests](https://help.github.com/en/articles/about-pull-requests). Please explain detailed the changes and make sure they have been tested.
 
 Just make sure to keep consistency in the naming and make a record of the change or improvement made.
-Welcome to the Otto DIY code development team!
+
+Welcome to the Otto DIY development team!
 
 Thanks for your contribution.
 

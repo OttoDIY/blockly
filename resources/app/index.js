@@ -17,13 +17,13 @@ window.addEventListener('load', function load(event) {
 		messageDiv.innerHTML = Blockly.Msg.upload + ': OK' + quitDiv
 	}
 	$('#btn_forum').on('click', function(){
-		shell.openExternal('https://wikifactory.com/+OttoDIY/forum')
+		shell.openExternal('http://builders.ottodiy.com/')
 	})
 	$('#btn_site').on('click', function(){
 		shell.openExternal('https://www.ottodiy.com/')
 	})
 	$('#btn_contact').on('click', function(){
-		shell.openExternal('https://www.ottodiy.com/#contact-us')
+		shell.openExternal('https://github.com/OttoDIY/blockly/issues')
 	})
 	$('#portserie').mouseover(function(){
 		sp.list(function(err,ports) {
