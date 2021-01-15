@@ -1,116 +1,57 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <toolbox>toolbox_arduino_all</toolbox>
-  <block type="base_begin" id="S((#Wd,NMY6cd$.Ovv,+" x="-180" y="191">
-    <next>
-      <block type="controls_repeat_ext" id=")IKW4M7soulxa3SrG]O]">
-        <value name="TIMES">
-          <block type="math_number" id="M+[R]aSYD[OyZfu!J#d)">
-            <field name="NUM">2</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="play" id="k3oA,uQE{0d;cIq@DkAu">
-            <field name="tempo">500</field>
-            <field name="note">392</field>
-            <value name="PIN">
-              <block type="math_number" id="v:BcYj)%x%,s!uro(UKJ" inline="false">
-                <field name="NUM">13</field>
-              </block>
-            </value>
-          </block>
-        </statement>
+  <block type="base_setup_loop" id="sYpp.M_hPV=wn]G[Y!?e" x="-172" y="110">
+    <statement name="DO">
+      <block type="otto9_tone" id=",C_k/J.nw|84=w,]^F?I">
+        <field name="otto_note">349</field>
+        <field name="otto_note_duration">250</field>
         <next>
-          <block type="play" id="xSc^6*I*EQ,u$+3q)h@m">
-            <field name="tempo">500</field>
-            <field name="note">440</field>
-            <value name="PIN">
-              <block type="math_number" id="Zn;*4|zDkX/g}5YqZq:0" inline="false">
-                <field name="NUM">13</field>
-              </block>
-            </value>
+          <block type="otto9_tone" id="labXcV5DW74L5{xtRCks">
+            <field name="otto_note">349</field>
+            <field name="otto_note_duration">250</field>
             <next>
-              <block type="play" id="Vi1:M.3+^*}I)iSbxYOL">
-                <field name="tempo">500</field>
-                <field name="note">392</field>
-                <value name="PIN">
-                  <block type="math_number" id="US$,.+m6}/3wu5ab+eG(" inline="false">
-                    <field name="NUM">13</field>
-                  </block>
-                </value>
+              <block type="otto9_tone" id="BZgLvqNIo4,PViA-X`y+">
+                <field name="otto_note">349</field>
+                <field name="otto_note_duration">250</field>
                 <next>
-                  <block type="play" id="2~WB%kP2XXy;UaoAQ#@l">
-                    <field name="tempo">500</field>
-                    <field name="note">523</field>
-                    <value name="PIN">
-                      <block type="math_number" id="(8iHY!9uylqa^V4s}pu9" inline="false">
-                        <field name="NUM">13</field>
-                      </block>
-                    </value>
+                  <block type="otto9_tone" id="oBBdrPycEr,+]=Zfr@Fq">
+                    <field name="otto_note">262</field>
+                    <field name="otto_note_duration">250</field>
                     <next>
-                      <block type="play" id="TS@Hk^wf*W.7b)jfoG.Y">
-                        <field name="tempo">1000</field>
-                        <field name="note">493</field>
-                        <value name="PIN">
-                          <block type="math_number" id="D1V-Y15}1,|F{5oG.m%i" inline="false">
-                            <field name="NUM">13</field>
-                          </block>
-                        </value>
+                      <block type="otto9_tone" id="SGoUuJj.8,1ag;A:N$NY">
+                        <field name="otto_note">294</field>
+                        <field name="otto_note_duration">250</field>
                         <next>
-                          <block type="controls_repeat_ext" id="u3xYYVFn4a@vZgAy*j~Q">
-                            <value name="TIMES">
-                              <block type="math_number" id="ghW6YR.1)oah_=YiBvX?">
-                                <field name="NUM">13</field>
-                              </block>
-                            </value>
-                            <statement name="DO">
-                              <block type="play" id="YbspT/}0V6Sl{y/nAo9m">
-                                <field name="tempo">500</field>
-                                <field name="note">392</field>
-                                <value name="PIN">
-                                  <block type="math_number" id="CILL}e_%jIVaMlGTnivU" inline="false">
-                                    <field name="NUM">13</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </statement>
+                          <block type="otto9_tone" id="Elq*pmtw/T}YI^k30[Bj">
+                            <field name="otto_note">294</field>
+                            <field name="otto_note_duration">250</field>
                             <next>
-                              <block type="play" id="*4cP6=JCPR29Q]9M5u(q">
-                                <field name="tempo">500</field>
-                                <field name="note">440</field>
-                                <value name="PIN">
-                                  <block type="math_number" id="{G6BNO|(a!LHvMJCZuCa" inline="false">
-                                    <field name="NUM">13</field>
-                                  </block>
-                                </value>
+                              <block type="otto9_tone" id="[l3jn%K#$`_=vp~pbEaI">
+                                <field name="otto_note">262</field>
+                                <field name="otto_note_duration">500</field>
                                 <next>
-                                  <block type="play" id="NxnjwMlg9N@AW*m{xg!:">
-                                    <field name="tempo">500</field>
-                                    <field name="note">392</field>
-                                    <value name="PIN">
-                                      <block type="math_number" id=";-jSrF#*tQt.dA^9eAA(" inline="false">
-                                        <field name="NUM">13</field>
-                                      </block>
-                                    </value>
+                                  <block type="otto9_tone" id="K!rAY#;L]NFc71`$ot0W">
+                                    <field name="otto_note">440</field>
+                                    <field name="otto_note_duration">250</field>
                                     <next>
-                                      <block type="play" id="?.tm29;[xgXwz*}zQ/+}">
-                                        <field name="tempo">500</field>
-                                        <field name="note">587</field>
-                                        <value name="PIN">
-                                          <block type="math_number" id="hXqME`c}RWqqYug4V-)m" inline="false">
-                                            <field name="NUM">13</field>
-                                          </block>
-                                        </value>
+                                      <block type="otto9_tone" id="$vi)uKLZWjx?6`XYv5%d">
+                                        <field name="otto_note">440</field>
+                                        <field name="otto_note_duration">250</field>
                                         <next>
-                                          <block type="play" id=",:8cqpw_fzX6N[8p]kg5">
-                                            <field name="tempo">500</field>
-                                            <field name="note">523</field>
-                                            <value name="PIN">
-                                              <block type="math_number" id="y;GpNBB?rXdo:-XfvBtP" inline="false">
-                                                <field name="NUM">13</field>
-                                              </block>
-                                            </value>
+                                          <block type="otto9_tone" id="o;i(R}.byJ$7=~VfU)oE">
+                                            <field name="otto_note">392</field>
+                                            <field name="otto_note_duration">250</field>
                                             <next>
-                                              <block type="base_end" id="wHm0EVGE3J`h(jw-^GSA"></block>
+                                              <block type="otto9_tone" id="KAD_q8k6$B-Ke%*xD.Ts">
+                                                <field name="otto_note">392</field>
+                                                <field name="otto_note_duration">250</field>
+                                                <next>
+                                                  <block type="otto9_tone" id="Nm!_yW`u/Z~RzE)0`rpQ">
+                                                    <field name="otto_note">349</field>
+                                                    <field name="otto_note_duration">1000</field>
+                                                  </block>
+                                                </next>
+                                              </block>
                                             </next>
                                           </block>
                                         </next>
@@ -131,6 +72,6 @@
           </block>
         </next>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>

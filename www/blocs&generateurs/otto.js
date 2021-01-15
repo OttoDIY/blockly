@@ -411,7 +411,7 @@ Blockly.Python['otto9_sound'] = function(block) {
 };
 Blockly.Blocks['otto9_tone'] = {init: function() {
     this.appendDummyInput().appendField("🎼")
-        .appendField(new Blockly.FieldDropdown([["C4", "262"], ["D4", "294"], ["E4", "330"], ["F4", "349"], ["G4", "392"], ["A4", "440"], ["B4", "494"], ["C5", "523"], ["D5", "587"] ,["E5", "659"], ["F5", "698"], ["G5", "784"], ["A5", "880"], ["B5", "988"], ["C6", "1047"], ["D6", "1175"], ["E6", "1319"], ["F6", "1397"], ["G6", "1568"], ["A6", "1760"], ["B6", "1976"]]), "otto_note");
+        .appendField(new Blockly.FieldDropdown([["C₄ | Do₄", "262"], ["D₄ | Re₄", "294"], ["E₄ | Mi₄", "330"], ["F₄ | Fa₄", "349"], ["G₄ | Sol₄", "392"], ["A₄ | La₄", "440"], ["B₄ | Si₄", "494"], ["C₅ | Do₅", "523"], ["D₅ | Re₅", "587"] ,["E₅ | Mi₅", "659"], ["F₅ | Fa₅", "698"], ["G₅ | Sol₅", "784"], ["A₅ | La₅", "880"], ["B₅ | Si₅", "988"], ["C₆ | Do₆", "1047"], ["D₆ | Re₆", "1175"], ["E₆ | Mi₆", "1319"], ["F₆ | Fa₆", "1397"], ["G₆ | Sol₆", "1568"], ["A₆ | La₆", "1760"], ["B₆ | Si₆", "1976"]]), "otto_note");
     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(" ")
         .appendField(new Blockly.FieldDropdown([["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]), "otto_note_duration");
     this.setInputsInline(true);
@@ -1580,7 +1580,7 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   +'int shift_inc = 10;  \n'
   +'int shift_delay = 50;  \n'
 ;
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_AL 6 // left arm\n'
+  Blockly.Arduino.definitions_['otto9_arms'] = '#define PIN_AL 6 // left arm\n'
   +'#define PIN_AR 7 // right arm \n'
   +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
   Blockly.Arduino.setups_['otto9_arms']='AL.attach(PIN_AR);\n'
