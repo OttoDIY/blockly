@@ -88,6 +88,7 @@ Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Compass HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
 Blockly.Msg.CAT_KEYBOARD="Keyboard & Mouse";
+Blockly.Msg.CAT_GPS="GPS NEO6";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -829,3 +830,40 @@ Blockly.Msg.TEA5767_Stereo = "Is the signal stereo?";
 Blockly.Msg.TEA5767_RadioStation = "Radio Station.";
 Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
+
+//RFID MFRC522
+Blockly.Msg.RFID_name = "RFID MFRC522.";
+Blockly.Msg.RFID_init = "Init RFID MFRC522.";
+Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI and MISO.";
+Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
+Blockly.Msg.RFID_PIN_RST = "RST Pin";
+Blockly.Msg.RFID_VALID_VAR = "Define Validation card name:";
+Blockly.Msg.RFID_STOP = "Stop the current reading";
+Blockly.Msg.RFID_C1 = "Value1";
+Blockly.Msg.RFID_C2 = "Value2";
+Blockly.Msg.RFID_C3 = "Value3";
+Blockly.Msg.RFID_C4 = "Value4";
+Blockly.Msg.RFID_DETECTED = "Is RFID card detected?";
+Blockly.Msg.RFID_READED = "Is RFID card readed?";
+Blockly.Msg.RFID_CARD_READED = "Value of the read card";
+Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
+Blockly.Msg.RFID_CHECK_CARD2 = "?";
+
+//KEYBOARD AND MOUSE
+Blockly.Msg.KeyboardFunction = "Keyboard";
+Blockly.Msg.KeyPressed = "Key";
+Blockly.Msg.WriteText= "Write text";
+Blockly.Msg.LineFeed= "Line Feed";
+Blockly.Msg.MouseFunction = "Mouse";
+Blockly.Msg.MouseMoveX="X Pos";
+Blockly.Msg.MouseMoveY="Y pos";
+Blockly.Msg.MouseMoveW="Wheel";
+
+//GPS
+Blockly.Msg.GPS_name = "GPS NEO-6";
+Blockly.Msg.GPS_init = "Init GPS using software serial";
+Blockly.Msg.GPS_TX="TX#";
+Blockly.Msg.GPS_RX="RX#";
+Blockly.Msg.GPS_readvalues = "Read and save values using software serial";
+Blockly.Msg.GPS_paramter = "Location Parameters:";
+Blockly.Msg.GPS_paramter3 = "DateTime:";

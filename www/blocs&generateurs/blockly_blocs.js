@@ -2040,3 +2040,18 @@ Blockly.Blocks["procedures_ifreturn"] = {
     },
     FUNCTION_TYPES: ["procedures_defnoreturn", "procedures_defreturn"]
 };
+
+Blockly.Blocks['mrtduino_pin'] = {
+  /**
+   * Block for MRTduino board
+ 
+   */
+  init: function() {
+    this.setHelpUrl('https://www.logix5.com/roboticaeducativa/mrtduino-board/');
+    this.setColour("#00929f");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["Port1", "13"], ["Port2", "15"],["Port3", "16"],["Port4", "14"],["Port5", "18"],["Port6", "19"],["Port7", "20"],["Port8", "21"],["Port9", "5"],["Port10", "9"],["Port11", "11"],["Port12", "12"],["Port13", "2"],["Port14", "3"],["Port15", "0"],["Port16", "1"],["RC -", "10"],["RC +", "22"],["RC S", "23"]]), "MRTPIN")
+    this.setOutput(true, 'Number');
+    this.setTooltip('MRTduino pins conversion. You select port and this block convert into arduino pin');
+  }
+};

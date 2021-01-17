@@ -90,6 +90,7 @@ Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
 Blockly.Msg.CAT_KEYBOARD="Teclado y Ratón";
+Blockly.Msg.CAT_GPS="GPS NEO6";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -859,3 +860,12 @@ Blockly.Msg.MouseFunction = "Ratón";
 Blockly.Msg.MouseMoveX="Pos X";
 Blockly.Msg.MouseMoveY="Pos Y";
 Blockly.Msg.MouseMoveW="Rueda";
+
+//GPS
+Blockly.Msg.GPS_name = "GPS NEO-6";
+Blockly.Msg.GPS_init = "Ini GPS usando SoftwareSerial";
+Blockly.Msg.GPS_TX="TX#";
+Blockly.Msg.GPS_RX="RX#";
+Blockly.Msg.GPS_readvalues = "Leer los valores";
+Blockly.Msg.GPS_paramter = "Parámteros de Localización:";
+Blockly.Msg.GPS_paramter3 = "Fecha y hora:";

@@ -492,3 +492,11 @@ Blockly.Arduino["array_create_with"]=function(block){
     code = '{' + code.join(',') + '}';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['mrtduino_pin'] = function(block) {
+
+  var code = block.getFieldValue('MRTPIN');  
+   
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+

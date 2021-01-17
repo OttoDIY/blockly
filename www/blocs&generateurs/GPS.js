@@ -12,16 +12,16 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['GPS_init_ss'] = {
   helpUrl: '',
   init: function() {
-	this.setColour(220);
+	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPS.png",54,38))
         .appendField(Blockly.Msg.GPS_init)
-	 this.appendDummyInput()
+	this.appendValueInput("PIN_TX", "Number")
+		.setCheck("Number")
 		.appendField(Blockly.Msg.GPS_TX)
-		.appendField(new Blockly.FieldDropdown([['Port2', '15'],['Port3', '16'],['Port4', '14'],['Port10', '9'],['Port11', '11']]), "PIN1");
-    this.appendDummyInput()
+    this.appendValueInput("PIN_RX", "Number")
+		.setCheck("Number")
 		.appendField(Blockly.Msg.GPS_RX)
-		.appendField(new Blockly.FieldDropdown([['Port2', '15'],['Port3', '16'],['Port4', '14'],['Port10', '9'],['Port11', '11']]), "PIN2");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -31,13 +31,13 @@ Blockly.Blocks['GPS_init_ss'] = {
 
 Blockly.Arduino['GPS_init_ss'] = function(block) {
 	
- var dropdown_pin1 = this.getFieldValue('PIN1');
- var dropdown_pin2 = this.getFieldValue('PIN2');
+ var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
+ var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
   
  Blockly.Arduino.includes_['define_softwareserial_library'] = '#include <SoftwareSerial.h>';
  Blockly.Arduino.includes_['define_gps_library'] = '#include <TinyGPS.h>';
  Blockly.Arduino.definitions_['define_GPS_variable'] = 'TinyGPS gps;\n';
- Blockly.Arduino.definitions_['define_softwareserial_gps'] = 'SoftwareSerial mySoftwareSerialgps('+dropdown_pin1+','+dropdown_pin2+');\n';
+ Blockly.Arduino.definitions_['define_softwareserial_gps'] = 'SoftwareSerial mySoftwareSerialgps('+pin_rx+','+pin_tx+');\n';
  Blockly.Arduino.definitions_['gps_variables'] ='float flat,flon,falt,fc,fk,fmph,fmps,fkmph;\n'+
 'int year;\n'+ 
 'byte month, day, hour, minutes, second, hundredths,nsat;\n'+ 
@@ -55,7 +55,7 @@ Blockly.Arduino['GPS_init_ss'] = function(block) {
 Blockly.Blocks['GPS_read_save_values'] = {
   helpUrl: '',
   init: function() {
-	this.setColour(220);
+	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
@@ -89,47 +89,10 @@ Blockly.Arduino['GPS_read_save_values'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['GPS_read_save_values2'] = {
-  helpUrl: '',
-  init: function() {
-	this.setColour(220);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
-        .appendField(Blockly.Msg.GPS_name)
-		.appendField(Blockly.Msg.GPS_readvalues2)
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip('Read the GPS values and save in the variables');
-  }
-};
-
-Blockly.Arduino['GPS_read_save_values2'] = function(block) {
- 		
- var code = 'while (Serial1.available())\n'+
-' {\n'+ 
-'  int c = Serial1.read();\n'+ 
-'  if (gps.encode(c)) \n'+
-'   {\n'+
-'     gps.f_get_position(&flat, &flon, &fix_age);\n'+
-'     falt = gps.f_altitude(); // +/- altitude in meters \n'+
-'     fc = gps.f_course(); // course in degrees \n'+
-'     fk = gps.f_speed_knots(); // speed in knots \n'+
-'     fmph = gps.f_speed_mph(); // speed in miles/hr \n'+
-'     fmps = gps.f_speed_mps(); // speed in m/sec \n'+
-'     fkmph = gps.f_speed_kmph(); // speed in km/hr \n'+
-'     gps.crack_datetime(&year, &month, &day,&hour, &minutes, &second, &hundredths, &fix_age);\n'+
-'     nsat=gps.satellites();\n'+
-'   }\n'+
-'  }\n';
-
-  return code;
-};
-
 Blockly.Blocks['GPS_location'] = {
   helpUrl: '',
   init: function() {
-	this.setColour(220);
+	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
@@ -161,12 +124,10 @@ Blockly.Arduino['GPS_location'] = function(block) {
 
 };
 
-
-
 Blockly.Blocks['GPS_speed'] = {
   helpUrl: '',
   init: function() {
-	this.setColour(220);
+	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
@@ -199,7 +160,7 @@ Blockly.Arduino['GPS_speed'] = function(block) {
 Blockly.Blocks['GPS_datetime'] = {
   helpUrl: '',
   init: function() {
-	this.setColour(220);
+	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
@@ -232,9 +193,3 @@ Blockly.Arduino['GPS_datetime'] = function(block) {
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 
 };
-
-
-
-
-
-
