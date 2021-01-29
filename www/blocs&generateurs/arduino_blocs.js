@@ -4,6 +4,10 @@ goog.provide("Blockly.Blocks.arduino");
 goog.require("Blockly.Blocks");
 
 /* communication */
+
+
+/*
+
 Blockly.Blocks["soft_init"]={init:function(){
 		var card=window.localStorage.card;
         this.setColour("#0060aa");
@@ -125,6 +129,9 @@ Blockly.Blocks["serial_input"]={init:function(){
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.Serial_write_tooltip)}
 };
+
+/*
+
 /*	entrée-sortie */
 Blockly.Blocks["toggle"]={init:function(){
         this.setColour("#00929f");

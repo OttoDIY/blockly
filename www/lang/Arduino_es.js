@@ -226,6 +226,36 @@ Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Leer como número";
 Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Leer como String";
 Blockly.Msg.SSERIAL_BT_Readlf="hasta el salto de línea";
 
+// SOFTWARE SERIAL 
+Blockly.Msg.SSERIAL_Init="Ini SoftwareSerial";
+Blockly.Msg.SSERIAL_TX="Pin TX#";
+Blockly.Msg.SSERIAL_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BAUD="Baudios";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Leer byte";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Imprimir en una nueva linea";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Imprimir en la misma linea";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial escribir"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial disponible?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Imprimir en formato";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Leer como número";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Leer como String";
+Blockly.Msg.SSERIAL_Readlf="hasta el salto de línea";
+
+// SERIAL 
+Blockly.Msg.SERIAL_Init="Ini Serial ";
+Blockly.Msg.SERIAL_TX="Pin TX#";
+Blockly.Msg.SERIAL_RX="Pin RX#";
+Blockly.Msg.SERIAL_BAUD="Baudios";
+Blockly.Msg.SERIAL_Read="Serial  Read byte";
+Blockly.Msg.SERIAL_Println="Serial Imprimir en una nueva linea";
+Blockly.Msg.SERIAL_Print="Serial Imprimir en la misma linea";
+Blockly.Msg.SERIAL_Write="Serial escribir"
+Blockly.Msg.SERIAL_Avai="Serial disponible?";
+Blockly.Msg.Serial_Print_Format="Serial Imprimir en formato";
+Blockly.Msg.SERIAL_ReadNum="Serial Leer como número";
+Blockly.Msg.SERIAL_ReadString="Serial Leer como String";
+Blockly.Msg.SERIAL_Readlf="hasta el salto de línea";
+
 
 //Pantalla LCD
 Blockly.Msg.lcd_fond = "bottom";
