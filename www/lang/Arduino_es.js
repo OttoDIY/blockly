@@ -77,6 +77,7 @@ Blockly.Msg.CAT_SSENSORS = "Sensores simples";
 Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "Matriz MAX7219";
+Blockly.Msg.CAT_MAX1640 = "Matriz TM1640";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
@@ -899,3 +900,9 @@ Blockly.Msg.GPS_RX="RX#";
 Blockly.Msg.GPS_readvalues = "Leer los valores";
 Blockly.Msg.GPS_paramter = "Parámteros de Localización:";
 Blockly.Msg.GPS_paramter3 = "Fecha y hora:";
+
+//TM1640
+Blockly.Msg.TM1640_init = "Ini TM1640 Matriz de leds";
+Blockly.Msg.TM1640_SCL="SCL Pin";
+Blockly.Msg.TM1640_SDA="SDA Pin";
+
