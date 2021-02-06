@@ -1067,10 +1067,17 @@
 		
 		<category name="CAT_RemoteIR" colour="#0060aa">
 		 <block type="Init_generalremotecontrol">
-		 <value name="PIN_IR"><shadow type="math_number"><field name="NUM">10</field></shadow></value>  
-		   
+		   <value name="PIN_IR"><shadow type="math_number"><field name="NUM">10</field></shadow></value>  
 		 </block>
 		 <block type="IR_Remote_Key"></block>
+		 
+		 <block type="Init_remotecontrolMRT">
+		   <value name="PIN_IR"><shadow type="mrtduino_pin"></shadow></value>
+		 </block>
+	     <block type="IR_RemoteMRT_Key"></block>
+		 
+		 
+		 
 	 </category>
 		
 		

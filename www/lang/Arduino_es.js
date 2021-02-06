@@ -644,6 +644,13 @@ Blockly.Msg.GENERAL_IR="Control Remoto por IR";
 Blockly.Msg.GENERAL_PRESSED="Tecla leida";
 Blockly.Msg.PIN="PIN";
 
+//REMOTE CONTROL MRT
+Blockly.Msg.MRT_IR="Ini Control Remoto MRT";
+Blockly.Msg.MRT_CHANNEL="Canal";
+Blockly.Msg.MRT_KEY="Tecla MRT";
+Blockly.Msg.MRT_PRESSED="¿pulsado?";
+Blockly.Msg.PIN2="PIN con interrupción";
+
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
 Blockly.Msg.MP3OS_init = "Init Mp3 Opensmart using software serial";

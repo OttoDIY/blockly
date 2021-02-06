@@ -598,6 +598,13 @@ Blockly.Msg.GENERAL_IR="Remote Control IR";
 Blockly.Msg.GENERAL_PRESSED="Read key";
 Blockly.Msg.PIN="PIN";
 
+//REMOTE CONTROL MRT
+Blockly.Msg.MRT_IR="Init Remote Control MRT";
+Blockly.Msg.MRT_CHANNEL="Channel";
+Blockly.Msg.MRT_KEY="Key MRT";
+Blockly.Msg.MRT_PRESSED="Pressed?";
+Blockly.Msg.PIN2="Interrupt PIN";
+
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
 Blockly.Msg.MP3OS_init = "Init Mp3 Opensmart using software serial";
