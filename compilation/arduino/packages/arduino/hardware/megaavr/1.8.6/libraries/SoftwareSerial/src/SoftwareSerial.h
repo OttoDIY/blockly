@@ -103,21 +103,12 @@ public:
   virtual int read();
   virtual int available();
   virtual void flush();
-  explicit operator bool() { return true; }
+  operator bool() { return true; }
   
   using Print::write;
 
   // public only for easy access by interrupt handlers
   static inline void handle_interrupt() __attribute__((__always_inline__));
 };
-
-// Arduino 0012 workaround
-#undef int
-#undef char
-#undef long
-#undef byte
-#undef float
-#undef abs
-#undef round
 
 #endif
