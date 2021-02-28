@@ -808,11 +808,11 @@ Blockly.Msg.SERIAL_Readlf="until line feed";
 
 //DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
-Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\".";
-Blockly.Msg.ST7735_init2 = "Pins:SCK - SDA.";
+Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\" or 0.96\".";
+Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
 Blockly.Msg.ST7735_PIN_CS = "CS Pin";
-Blockly.Msg.ST7735_PIN_RST = "RST Pin";
-Blockly.Msg.ST7735_PIN_DC = "A0 Pin";
+Blockly.Msg.ST7735_PIN_RST = "RST or RES Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 or DC Pin";
 Blockly.Msg.ST7735_WRAP = "Tab color";
 Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
 Blockly.Msg.ST7735_Rotate = "Rotate display";
