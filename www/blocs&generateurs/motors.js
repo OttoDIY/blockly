@@ -361,3 +361,267 @@ Blockly.Arduino["servo_PWM"]=function(block){
     var code = ' setServo('+pin+','+degree+');';
     return code
 };
+
+/*****************************************************************
+ *
+ *  These blocks are for MRT motors 
+ *
+ ******************************************************************/
+
+Blockly.Blocks['motor_run'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/MotorMRT.png",45,29))
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.MOTOR_Connector)
+	.appendField(new Blockly.FieldDropdown([["ML1","ML1"],["MR1","MR1"],["ML2","ML2"],["MR2","MR2"]]), "MOTOR_CON");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.MOTOR_Direction)
+	.appendField(new Blockly.FieldDropdown([['Forward', 'HIGH'],['Backward', 'LOW']]), "MOTOR_DIR");
+	 this.appendValueInput("CONTENT", 'Number')
+        .setCheck('Number')
+    .appendField(Blockly.Msg.MOTOR_speed)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Run the MRT motor forward or backward in the MRTDUINO Board. Only for MRTduino board');
+  }
+};
+
+Blockly.Arduino['motor_run'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+  var motor_direction = this.getFieldValue('MOTOR_DIR');
+  var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.includes_['define_pwmsoft'] = '#include <SoftPWM.h>\n';
+  Blockly.Arduino.setups_['setup_pwminit'] = 'SoftPWMBegin();';
+  
+  if(motor_pin == 'ML1')
+  {
+	   //Blockly.Arduino.setups_['setup_output'] = 'pinMode(3,OUTPUT);';
+	   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
+	   
+	//   if (motor_direction == 'STOP') 
+	//	   var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,LOW);\n'+'SoftPWMSet(7,0);\n';
+	//   else
+	       var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,'+motor_direction+');\n'+'SoftPWMSet(7,'+motor_speed+');\n';
+  }
+  else
+   if(motor_pin == 'ML2')
+    {
+	   //Blockly.Arduino.setups_['setup_output2'] = 'pinMode(1,OUTPUT);';
+	   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(8,OUTPUT);';
+	   
+	  // if (motor_direction == 'STOP') 
+	//	   var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,LOW);\n'+'SoftPWMSet(8,0);\n';
+	//   else
+	       var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,'+motor_direction+');\n'+'SoftPWMSet(8,'+motor_speed+');\n';
+    }
+	else
+	  if(motor_pin == 'MR1')
+		{
+			//Blockly.Arduino.setups_['setup_output4'] = 'pinMode(2,OUTPUT);';
+			Blockly.Arduino.setups_['setup_output5'] = 'pinMode(4,OUTPUT);';
+	   
+		//	if (motor_direction == 'STOP') 
+		//	   var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,LOW);\n'+'SoftPWMSet(4,0);\n';
+		//	else
+			   var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,'+motor_direction+');\n'+'SoftPWMSet(4,'+motor_speed+');\n';
+		}
+		else
+			if(motor_pin == 'MR2')
+				{
+					//Blockly.Arduino.setups_['setup_outpu6'] = 'pinMode(0,OUTPUT);';
+					Blockly.Arduino.setups_['setup_output7'] = 'pinMode(6,OUTPUT);';
+	   
+				//	if (motor_direction == 'STOP') 
+				//		var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,LOW);\n'+'SoftPWMSet(6,0);\n';
+				//	else
+						var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,'+motor_direction+');\n'+'SoftPWMSet(6,'+motor_speed+');\n';
+				}
+			else
+				var code = '';
+ 
+  
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+Blockly.Blocks['motor_stop'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/MotorMRT.png",45,29))
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.MOTOR_Connector)
+		.appendField(new Blockly.FieldDropdown([["ML1","ML1"],["MR1","MR1"],["ML2","ML2"],["MR2","MR2"]]), "MOTOR_CON");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.MOTOR_Stop)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Stop the MRT motor. Only for MRTduino board');
+  }
+};
+
+Blockly.Arduino['motor_stop'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+ 
+  Blockly.Arduino.includes_['define_pwmsoft'] = '#include <SoftPWM.h>\n';
+  Blockly.Arduino.setups_['setup_pwminit'] = 'SoftPWMBegin();';
+  
+  if(motor_pin == 'ML1')
+  {
+	   //Blockly.Arduino.setups_['setup_output'] = 'pinMode(3,OUTPUT);';
+	   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
+	   
+	   var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,LOW);\n'+'SoftPWMSet(7,0);\n';
+	  
+  }
+  else
+   if(motor_pin == 'ML2')
+    {
+	   //Blockly.Arduino.setups_['setup_output2'] = 'pinMode(1,OUTPUT);';
+	   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(8,OUTPUT);'; 
+	   var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,LOW);\n'+'SoftPWMSet(8,0);\n';
+	  
+    }
+	else
+	  if(motor_pin == 'MR1')
+		{
+			//Blockly.Arduino.setups_['setup_output4'] = 'pinMode(2,OUTPUT);';
+			Blockly.Arduino.setups_['setup_output5'] = 'pinMode(4,OUTPUT);';
+	   
+			var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,LOW);\n'+'SoftPWMSet(4,0);\n';
+			
+		}
+		else
+			if(motor_pin == 'MR2')
+				{
+					//Blockly.Arduino.setups_['setup_outpu6'] = 'pinMode(0,OUTPUT);';
+					Blockly.Arduino.setups_['setup_output7'] = 'pinMode(6,OUTPUT);';
+	   
+					var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,LOW);\n'+'SoftPWMSet(6,0);\n';
+					
+				}
+			else
+				var code = '';
+   
+  
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+/*****************************************************************
+ *
+ *  These blocks are for multiple Steeper
+ *
+ ******************************************************************/
+
+
+Blockly.Blocks['stepper_configuration'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/motorstep.png",38,38))
+		.appendField(Blockly.Msg.STEEPER_name)
+		.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+	this.appendValueInput("STEP_RPM", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_steprev)
+	this.appendValueInput("PIN_STEEPER1", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_pin1)
+	this.appendValueInput("PIN_STEEPER2", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_pin2)
+	this.appendValueInput("PIN_STEEPER3", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_pin3)
+	this.appendValueInput("PIN_STEEPER4", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_pin4)		
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('A call to Stepper library with the configuration');
+  }
+};
+
+Blockly.Arduino['stepper_configuration'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var steeper_number = this.getFieldValue('STEEPER_NUMBER');
+  var steeper_pin1 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER1', Blockly.Arduino.ORDER_ATOMIC);
+  var steeper_pin2 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER2', Blockly.Arduino.ORDER_ATOMIC);
+  var steeper_pin3 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER3', Blockly.Arduino.ORDER_ATOMIC);
+  var steeper_pin4 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER4', Blockly.Arduino.ORDER_ATOMIC);
+  var stepper_steprev = Blockly.Arduino.valueToCode(this, 'STEP_RPM', Blockly.Arduino.ORDER_ATOMIC);
+  
+  Blockly.Arduino.includes_['define_stepper'] = '#include <Stepper.h>\n';
+  Blockly.Arduino.definitions_['define_stepper_'+steeper_number] = 'Stepper stepper_'+steeper_number+'('+stepper_steprev+','+steeper_pin1+','+steeper_pin2+','+steeper_pin3+','+steeper_pin4+');\n';
+
+  var code = '';
+  
+  return code;
+};
+
+Blockly.Blocks['stepper_speed'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/motorstep.png",38,38))
+	.appendField(Blockly.Msg.STEEPER2_name)
+	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+	this.appendValueInput("STEPPER_SPEED", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_speed)
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Speed configuration');
+  }
+};
+
+Blockly.Arduino['stepper_speed'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var steeper_number = this.getFieldValue('STEEPER_NUMBER');
+  var stepper_speed = Blockly.Arduino.valueToCode(this, 'STEPPER_SPEED', Blockly.Arduino.ORDER_ATOMIC);
+   
+  var code = 'stepper_'+steeper_number+'.setSpeed('+stepper_speed+');\n'
+   
+  return code;
+};
+
+Blockly.Blocks['stepper_steps'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/motorstep.png",38,38))
+	.appendField(Blockly.Msg.STEEPER2_name)
+	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+	this.appendValueInput("STEPPER_STEP", 'Number')
+        .setCheck('Number')
+		.appendField(Blockly.Msg.STEEPER_step)
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Speed configuration');
+  }
+};
+
+Blockly.Arduino['stepper_steps'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var steeper_number = this.getFieldValue('STEEPER_NUMBER');
+  var stepper_steps = Blockly.Arduino.valueToCode(this, 'STEPPER_STEP', Blockly.Arduino.ORDER_ATOMIC);
+   
+  var code = 'stepper_'+steeper_number+'.step('+stepper_steps+');\n'
+   
+  return code;
+};

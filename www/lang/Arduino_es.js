@@ -913,3 +913,27 @@ Blockly.Msg.TM1640_init = "Ini TM1640 Matriz de leds";
 Blockly.Msg.TM1640_SCL="SCL Pin";
 Blockly.Msg.TM1640_SDA="SDA Pin";
 
+//MOTOR MRT
+Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_Direction="Dirección";
+Blockly.Msg.MOTOR_speed="Velocidad(0-255)";
+Blockly.Msg.MOTOR_Stop="Stop";
+
+//STEPPERS
+Blockly.Msg.STEEPER_name="Ini Stepper ID";
+Blockly.Msg.STEEPER_name2="Ini Stepper28BYJ ID";
+Blockly.Msg.STEEPER2_name="Stepper ID";
+Blockly.Msg.STEEPER2_name2="Stepper28BYJ ID";
+Blockly.Msg.STEEPER_steprev="Pasos/vuelta.";
+Blockly.Msg.STEEPER_step="Pasos";
+Blockly.Msg.STEEPER_speed="Velocidad (rpm)";
+Blockly.Msg.STEEPER_pin1="PIN-A";
+Blockly.Msg.STEEPER_pin2="PIN-B";
+Blockly.Msg.STEEPER_pin3="PIN-C";
+Blockly.Msg.STEEPER_pin4="PIN-D";
+Blockly.Msg.STEEPER_Move="Mover";
+Blockly.Msg.STEEPER_MoveTo="Ir al paso(0-4096)";
+Blockly.Msg.STEEPER_Degree="grados";
+Blockly.Msg.STEEPER_Steps="Pasos";
+Blockly.Msg.STEEPER_DegreeTo="Grados a mover";
+
