@@ -843,6 +843,16 @@ Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
 Blockly.Msg.ST7735_ValueList = "Values(hex array)";
 Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
 
+Blockly.Msg.OLED_IconName = "Icon name(bmp):";
+Blockly.Msg.OLED_ValueList = "Values(hex array)";
+Blockly.Msg.OLED_DrawiconName = "Draw Icon(bmp) name";
+Blockly.Msg.OLED_name = "OLED";
+Blockly.Msg.OLED_X0 = "x0";
+Blockly.Msg.OLED_Y0 = "y0";
+Blockly.Msg.OLED_width = "width";
+Blockly.Msg.OLED_height = "height";
+Blockly.Msg.OLED_COLOR = "Set color";
+
 //TCS34725 color sensor
 Blockly.Msg.TCS34725_name_init="Init TCS34725 color sensor";
 Blockly.Msg.TCS34725_name_init2="SDA - SCL Gain";

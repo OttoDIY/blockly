@@ -844,6 +844,16 @@ Blockly.Msg.ST7735_properties = "Propiedad:";
 Blockly.Msg.ST7735_IconName = "Nombre de icono(bmp):";
 Blockly.Msg.ST7735_ValueList = "Valores(hex array)";
 Blockly.Msg.ST7735_DrawiconName = "Dibujar el nombre de icono(bmp)";
+Blockly.Msg.OLED_name = "OLED";
+Blockly.Msg.OLED_X0 = "x0";
+Blockly.Msg.OLED_Y0 = "y0";
+Blockly.Msg.OLED_width = "Ancho";
+Blockly.Msg.OLED_height = "Alto";
+Blockly.Msg.OLED_COLOR = "Color";
+
+Blockly.Msg.OLED_IconName = "Nombre de icono(bmp):";
+Blockly.Msg.OLED_ValueList = "Valores(hex array)";
+Blockly.Msg.OLED_DrawiconName = "Dibujar el nombre de icono(bmp)";
 
 //TCS34725 color sensor
 Blockly.Msg.TCS34725_name_init="Ini TCS34725 sensor de color";
