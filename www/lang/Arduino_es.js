@@ -869,8 +869,6 @@ Blockly.Msg.MouseFunction = "Ratón";
 Blockly.Msg.MouseMoveX="Pos X";
 Blockly.Msg.MouseMoveY="Pos Y";
 Blockly.Msg.MouseMoveW="Rueda";
-<<<<<<< HEAD
-=======
 
 //GPS
 Blockly.Msg.GPS_name = "GPS NEO-6";
@@ -910,4 +908,3 @@ Blockly.Msg.STEEPER_Degree="grados";
 Blockly.Msg.STEEPER_Steps="Pasos";
 Blockly.Msg.STEEPER_DegreeTo="Grados a mover";
 
->>>>>>> da3ed5928045c1af6a6568fd857495277c36f093
