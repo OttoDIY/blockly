@@ -30,11 +30,11 @@ Blockly.Blocks['st7735_init'] = {
         .appendField(Blockly.Msg.ST7735_PIN_RST)		
 	this.appendDummyInput()
         .appendField(Blockly.Msg.ST7735_WRAP)
-		.appendField(new Blockly.FieldDropdown([["Black", "INITR_BLACKTAB"], ["Green", "INITR_GREENTAB"],["Red", "INITR_REDTAB"]]), "WRAP")
+		.appendField(new Blockly.FieldDropdown([["1.8\" Black Tab", "INITR_BLACKTAB"], ["1.8\" Green Tab ", "INITR_GREENTAB"],["1.8\"  Red Tab", "INITR_REDTAB"],["0.96\" Mini TFT","INITR_MINI160x80"]]), "WRAP")
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Init the TFT ST7735.Important the Led pin must be connected to 3.3V!!');
+    this.setTooltip('Init the TFT ST7735.Important note:  the Led pin must be connected to 3.3V!!');
     this.setHelpUrl('');
   }
 };
@@ -112,7 +112,7 @@ Blockly.Arduino['st7735_icon'] = function(block) {
    var IconName = block.getFieldValue('NAME');  
    var Var_Codes = block.getFieldValue('CODES');
 
-   Blockly.Arduino.definitions_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';   
+   Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';   
    Blockly.Arduino.definitions_['define_iconvalus_'+IconName+''] = 'const unsigned char '+IconName+'[] PROGMEM= {'+Var_Codes+'};\n';
  
   var code = '';

@@ -400,13 +400,66 @@
 		
 	</category>	
 	<category name="CAT_actionneur" colour="#2d2dd1">
+		
+	<!--	<block type="m_pap"></block>
+		<block type="m_pap_step"></block> -->
+		
+		<block type="stepper_configuration">
+		       
+				<value name="STEP_RPM">
+                    <shadow type="math_number">
+                        <field name="NUM">4096</field>
+                    </shadow>
+                </value>
+				<value name="PIN_STEEPER1">
+                    <shadow type="math_number">
+                        <field name="NUM">2</field>
+                    </shadow>
+                </value>
+				<value name="PIN_STEEPER2">
+                    <shadow type="math_number">
+                        <field name="NUM">3</field>
+                    </shadow>
+                </value>
+				<value name="PIN_STEEPER3">
+                    <shadow type="math_number">
+                        <field name="NUM">4</field>
+                    </shadow>
+                </value>
+				<value name="PIN_STEEPER4">
+                    <shadow type="math_number">
+                        <field name="NUM">5</field>
+                    </shadow>
+                </value>
+		  </block>
+		 
+		   <block type="stepper_speed">
+				<value name="STEPPER_SPEED">
+                    <shadow type="math_number">
+                        <field name="NUM">20</field>
+                    </shadow>
+                </value>
+		   </block>
+		   <block type="stepper_steps">
+				<value name="STEPPER_STEP">
+                    <shadow type="math_number">
+                        <field name="NUM">4096</field>
+                    </shadow>
+                </value>
+		   
+		   </block>
+				
+		<block type="motor_run">
+		 <value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="motor_stop"></block>
 		<block type="moteur_action"></block>
 		<block type="moteur_stop"></block>
 		<block type="moteur_dc"></block>
 		<block type="moteur_dc_stop"></block>
 		<block type="dagu_rs027"></block>
-		<block type="m_pap"></block>
-		<block type="m_pap_step"></block>
+		
+		
 	</category>
 <!--	<category name="CAT_ARDUINO_moteur" colour="#2d2dd1"></category> -->
 	
@@ -544,12 +597,14 @@
 		
 	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_init"></block>
+		<block type="oled_icon"></block>
 		<block type="OLED_data">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="size"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			<value name="print"><shadow type="text"><field name="TEXT">Hello Otto</field></shadow></value>
-			</block>
+		</block>
+		
 		<block type="OLED_symbol">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
@@ -592,7 +647,29 @@
 			<value name="round"><shadow type="math_number"><field name="NUM">60</field></shadow></value>
 			<value name="angle"><shadow type="math_number"><field name="NUM">60</field></shadow></value>		
 		</block>
-		<block type="OLED_bitmap"></block>
+	<!--	<block type="OLED_bitmap"></block> -->
+		 <block type="OLED_bitmap2">
+					<value name="x0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="y0">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+					<value name="width">
+                        <shadow type="math_number">
+                            <field name="NUM">32</field>
+                        </shadow>
+                    </value>
+					<value name="height">
+                        <shadow type="math_number">
+                            <field name="NUM">32</field>
+                        </shadow>
+                    </value>
+			  </block>
 		<block type="OLED_rotate"></block>
 		<block type="OLED_scroll"></block>
 		<block type="OLED_clear"></block>

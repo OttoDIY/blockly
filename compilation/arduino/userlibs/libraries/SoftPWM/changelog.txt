@@ -1,0 +1,13 @@
+SoftPWM Library
+
+Version Modified By  Date       Comments
+------- ------------ ---------- --------
+0001    B Hagman     2010-03-14 Initial coding (Pi Day!)
+0002    B Hagman     2010-03-21 License updates, minor fixes
+0003    B Hagman     2010-04-21 Added hardset control for syncing to matrix scan lines
+0004    B Hagman     2010-06-27 Fixed: pin 0 could not be used.
+0005    B Hagman     2011-05-27 Added polarity, and full Wiring support.
+        B Hagman     2012-02-13 Fixed Arduino 1.0+ mess.
+1.0.0   B Hagman     2017-01-13 Initial release conforming to library standard.
+1.0.1   P Stoffregen 2017-08-30 Use IntervalTimer on Teensy 3.x and use LED_BUILTIN for WLED
+

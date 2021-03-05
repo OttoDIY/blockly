@@ -368,6 +368,59 @@ Blockly.Blocks['OLED_bitmap'] = {
   +'display.display();\n';
   return code
 };
+
+Blockly.Blocks['OLED_bitmap2'] = {
+   init: function() {
+    this.setColour("#4b009f");
+    this.appendDummyInput()
+		.appendField(Blockly.Msg.OLED_name)
+		.appendField(Blockly.Msg.OLED_DrawiconName)
+	this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
+	this.appendValueInput("x0")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.OLED_X0);
+	this.appendValueInput("y0")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.OLED_Y0);
+    this.appendValueInput("width")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.OLED_width);
+	this.appendValueInput("height")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.OLED_height);
+	this.appendDummyInput() 
+		.appendField("✏️")
+		.appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+	//this.appendDummyInput()	
+    //    .appendField(Blockly.Msg.OLED_COLOR)
+	//	.appendField(new Blockly.FieldDropdown([["Black","BLACK"],["White", "WHITE"]]), "COLOR")	
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Draw a bmp icon');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Arduino['OLED_bitmap2'] = function(block) {
+
+  var x0 = Blockly.Arduino.valueToCode(this, 'x0', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var y0 = Blockly.Arduino.valueToCode(this, 'y0', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var width = Blockly.Arduino.valueToCode(this, 'width', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var height = Blockly.Arduino.valueToCode(this, 'height', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var IconName = block.getFieldValue('NAME');
+ // var Color = block.getFieldValue('COLOR');
+  var draw = ''
+	if(this.getFieldValue('draw') == 'TRUE') draw= "WHITE";
+		else draw = "BLACK";
+  
+  var code = 'display.drawBitmap('+x0+','+y0+','+IconName+','+width+','+height+','+draw+');\n'
+   +'display.display();\n';
+ 
+  return code;
+};
+
 Blockly.Blocks['OLED_clear'] = {
   init: function() {
     this.appendDummyInput()  .appendField("clear OLED");
@@ -619,5 +672,37 @@ Blockly.Arduino.lp2i_u8g_4draw_print = function() {
 	code    += 'u8g.setPrintPos(100, 60 );\n'
 	code    += 'u8g.print('+value_n4+');\n'		
 	code    += '}\n while( u8g.nextPage() );\n';
+  return code;
+};
+
+Blockly.Blocks['oled_icon'] = {
+   init: function() {
+    this.setColour("#4b009f");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/oled.png",33,33))
+         .appendField(Blockly.Msg.OLED_name)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.OLED_IconName)
+        .appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.OLED_ValueList)
+        .appendField(new Blockly.FieldTextInput("0x00,0xff,0xaf,0x00"), "CODES");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Write icon bmp image in memory');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Arduino['oled_icon'] = function(block) {
+
+   var IconName = block.getFieldValue('NAME');  
+   var Var_Codes = block.getFieldValue('CODES');
+
+   Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';   
+   Blockly.Arduino.definitions_['define_iconvalus_'+IconName+''] = 'const unsigned char '+IconName+'[] PROGMEM= {'+Var_Codes+'};\n';
+ 
+  var code = '';
   return code;
 };

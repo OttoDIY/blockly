@@ -808,11 +808,11 @@ Blockly.Msg.SERIAL_Readlf="until line feed";
 
 //DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
-Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\".";
-Blockly.Msg.ST7735_init2 = "Pins:SCK - SDA.";
+Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\" or 0.96\".";
+Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
 Blockly.Msg.ST7735_PIN_CS = "CS Pin";
-Blockly.Msg.ST7735_PIN_RST = "RST Pin";
-Blockly.Msg.ST7735_PIN_DC = "A0 Pin";
+Blockly.Msg.ST7735_PIN_RST = "RST or RES Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 or DC Pin";
 Blockly.Msg.ST7735_WRAP = "Tab color";
 Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
 Blockly.Msg.ST7735_Rotate = "Rotate display";
@@ -846,6 +846,16 @@ Blockly.Msg.ST7735_properties = "Return property:";
 Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
 Blockly.Msg.ST7735_ValueList = "Values(hex array)";
 Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
+
+Blockly.Msg.OLED_IconName = "Icon name(bmp):";
+Blockly.Msg.OLED_ValueList = "Values(hex array)";
+Blockly.Msg.OLED_DrawiconName = "Draw Icon(bmp) name";
+Blockly.Msg.OLED_name = "OLED";
+Blockly.Msg.OLED_X0 = "x0";
+Blockly.Msg.OLED_Y0 = "y0";
+Blockly.Msg.OLED_width = "width";
+Blockly.Msg.OLED_height = "height";
+Blockly.Msg.OLED_COLOR = "Set color";
 
 //TCS34725 color sensor
 Blockly.Msg.TCS34725_name_init="Init TCS34725 color sensor";
@@ -914,3 +924,27 @@ Blockly.Msg.GPS_paramter3 = "DateTime:";
 Blockly.Msg.TM1640_init = "Init TM1640 Led matrix";
 Blockly.Msg.TM1640_SCL="SCL Pin";
 Blockly.Msg.TM1640_SDA="SDA Pin";
+
+//MOTOR MRT
+Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_Direction="Direction";
+Blockly.Msg.MOTOR_speed="Speed(0-255)";
+Blockly.Msg.MOTOR_Stop="Stop";
+
+//STEPPERS
+Blockly.Msg.STEEPER_name="Init Stepper ID";
+Blockly.Msg.STEEPER_name2="Init Stepper28BYJ ID";
+Blockly.Msg.STEEPER2_name="Stepper ID";
+Blockly.Msg.STEEPER2_name2="Stepper28BYJ ID";
+Blockly.Msg.STEEPER_steprev="Steps/Rev.";
+Blockly.Msg.STEEPER_step="Steps";
+Blockly.Msg.STEEPER_speed="Speed (rpm)";
+Blockly.Msg.STEEPER_pin1="PIN-A";
+Blockly.Msg.STEEPER_pin2="PIN-B";
+Blockly.Msg.STEEPER_pin3="PIN-C";
+Blockly.Msg.STEEPER_pin4="PIN-D";
+Blockly.Msg.STEEPER_Move="Move";
+Blockly.Msg.STEEPER_MoveTo="Move to step(0-4096)";
+Blockly.Msg.STEEPER_Degree="degrees";
+Blockly.Msg.STEEPER_Steps="steps";
+Blockly.Msg.STEEPER_DegreeTo="Move to degree";
