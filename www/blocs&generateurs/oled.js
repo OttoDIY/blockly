@@ -433,8 +433,7 @@ Blockly.Blocks['OLED_clear'] = {
   }
 };
 Blockly.Arduino['OLED_clear'] = function(block) {
-  var code = 'display.clearDisplay();\n' 
-  + 'display.display();\n';
+  var code = 'display.clearDisplay();\n' ;
   return code;
 };
 
