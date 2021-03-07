@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT="texte";
 Blockly.Msg.ARD_TYPE_BOOL="binaire";
 Blockly.Msg.ARD_TYPE_SHORT="octet";
 Blockly.Msg.ARD_TYPE_NUMBER="nombre entier";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG="nombre entier long";
 Blockly.Msg.ARD_TYPE_DECIMAL="nombre à virgule";
 Blockly.Msg.ARD_TYPE_ARRAY="tableau";

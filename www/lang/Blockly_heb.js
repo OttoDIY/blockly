@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "טקסט";
 Blockly.Msg.ARD_TYPE_BOOL = "בינארי";
 Blockly.Msg.ARD_TYPE_SHORT = "byte";
 Blockly.Msg.ARD_TYPE_NUMBER = "משתנה";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "משתנה ארוך";
 Blockly.Msg.ARD_TYPE_DECIMAL = "floating point number";
 Blockly.Msg.ARD_TYPE_ARRAY = "מערך";

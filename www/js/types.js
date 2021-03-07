@@ -28,6 +28,13 @@ Blockly.Types.NUMBER = new Blockly.Type({
   typeMsgName: 'ARD_TYPE_NUMBER',
   compatibleTypes: []
 });
+
+Blockly.Types.UNUMBER = new Blockly.Type({
+  typeId: 'Unsigned Number',
+  typeMsgName: 'ARD_TYPE_UNUMBER',
+  compatibleTypes: []
+});
+
 Blockly.Types.LARGE_NUMBER = new Blockly.Type({
   typeId: 'Large Number',
   typeMsgName: 'ARD_TYPE_LONG',

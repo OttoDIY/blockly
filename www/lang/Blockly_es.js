@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "texto";
 Blockly.Msg.ARD_TYPE_BOOL = "binario";
 Blockly.Msg.ARD_TYPE_SHORT = "byte";
 Blockly.Msg.ARD_TYPE_NUMBER = "entero";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "entero largo";
 Blockly.Msg.ARD_TYPE_DECIMAL = "número de coma flotante";
 Blockly.Msg.ARD_TYPE_ARRAY = "cadena";

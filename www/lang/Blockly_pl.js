@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "tekst";
 Blockly.Msg.ARD_TYPE_BOOL = "liczba dwójkowa";
 Blockly.Msg.ARD_TYPE_SHORT = "bajt";
 Blockly.Msg.ARD_TYPE_NUMBER = "liczba całkowita";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "liczba całkowita długa";
 Blockly.Msg.ARD_TYPE_DECIMAL = "liczba zmiennoprzecinkowa";
 Blockly.Msg.ARD_TYPE_ARRAY = "tablica";

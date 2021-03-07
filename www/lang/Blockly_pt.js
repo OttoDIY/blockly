@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "texto";
 Blockly.Msg.ARD_TYPE_BOOL = "binário";
 Blockly.Msg.ARD_TYPE_SHORT = "byte";
 Blockly.Msg.ARD_TYPE_NUMBER = "inteiro";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "inteiro longo";
 Blockly.Msg.ARD_TYPE_DECIMAL = "número de ponto flutuante";
 Blockly.Msg.ARD_TYPE_ARRAY = "matriz";

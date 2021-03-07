@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "szöveg";
 Blockly.Msg.ARD_TYPE_BOOL = "bináris";
 Blockly.Msg.ARD_TYPE_SHORT = "bájt";
 Blockly.Msg.ARD_TYPE_NUMBER = "egész";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "hosszú egész";
 Blockly.Msg.ARD_TYPE_DECIMAL = "lebegőpontos szám";
 Blockly.Msg.ARD_TYPE_ARRAY = "tömb";

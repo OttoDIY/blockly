@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "text";
 Blockly.Msg.ARD_TYPE_BOOL = "binary";
 Blockly.Msg.ARD_TYPE_SHORT = "byte";
 Blockly.Msg.ARD_TYPE_NUMBER = "integer";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "long integer";
 Blockly.Msg.ARD_TYPE_DECIMAL = "floating point number";
 Blockly.Msg.ARD_TYPE_ARRAY = "array";

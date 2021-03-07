@@ -9,6 +9,7 @@ Blockly.Msg.ARD_TYPE_TEXT = "metin";
 Blockly.Msg.ARD_TYPE_BOOL = "ikili";
 Blockly.Msg.ARD_TYPE_SHORT = "ikili";
 Blockly.Msg.ARD_TYPE_NUMBER = "tamsayı";
+Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
 Blockly.Msg.ARD_TYPE_LONG = "uzun tamsayı";
 Blockly.Msg.ARD_TYPE_DECIMAL = "kayan nokta sayısı";
 Blockly.Msg.ARD_TYPE_ARRAY = "dizi";
