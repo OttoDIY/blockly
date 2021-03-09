@@ -301,8 +301,8 @@ void Otto9::turn(float steps, int T, int dir){
 void Otto9::bend (int steps, int T, int dir){
 
   //Parameters of all the movements. Default: Left bend
-  int bend1[4]={90, 90, 40, 35}; 
-  int bend2[4]={90, 90, 40, 105};
+  int bend1[4]={90, 90, 62, 35}; 
+  int bend2[4]={90, 90, 62, 105};
   int homes[4]={90, 90, 90, 90};
 
   //Time of one bend, constrained in order to avoid movements too fast.
@@ -311,8 +311,8 @@ void Otto9::bend (int steps, int T, int dir){
   //Changes in the parameters if right direction is chosen 
   if(dir==-1)
   {
-    bend1[2]=180-50;
-    bend1[3]=180-80;  //Not 65. Otto is unbalanced
+    bend1[2]=180-35;
+    bend1[3]=180-60;  //Not 65. Otto is unbalanced
     bend2[2]=180-105;
     bend2[3]=180-60;
   }
@@ -345,16 +345,16 @@ void Otto9::shakeLeg (int steps,int T,int dir){
   int numberLegMoves=2;
 
   //Parameters of all the movements. Default: Right leg
-  int shake_leg1[4]={90, 90, 40, 35};   
-  int shake_leg2[4]={90, 90, 40, 120};
-  int shake_leg3[4]={90, 90, 70, 60};
+  int shake_leg1[4]={90, 90, 58, 35};   
+  int shake_leg2[4]={90, 90, 58, 120};
+  int shake_leg3[4]={90, 90, 58, 60};
   int homes[4]={90, 90, 90, 90};
 
   //Changes in the parameters if left leg is chosen
   if(dir==-1)      
   {
-    shake_leg1[2]=180-15;
-    shake_leg1[3]=180-40;
+    shake_leg1[2]=180-35;
+    shake_leg1[3]=180-58;
     shake_leg2[2]=180-120;
     shake_leg2[3]=180-58;
     shake_leg3[2]=180-60;
