@@ -5,6 +5,7 @@ Code.LANGUAGE_NAME = {
   'en': 'English',
   'es': 'Español',
   'pt': 'Português',
+  'it': 'Italiano',
   'fr': 'Français',
   'de': 'Deutsch',
   'cz': 'Čeština',
