@@ -1433,9 +1433,11 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
 };
 											 
 Blockly.Blocks['otto9_matrixp']={ init:function(){
-  this.appendDummyInput() .appendField("pixel X")
-  this.appendValueInput("X") .setCheck("Number")
-  this.appendValueInput("Y") .setCheck("Number").appendField("Y")
+  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  this.appendDummyInput() .appendField("pixel X");
+  this.appendValueInput("X") .setCheck("Number");
+  this.appendValueInput("Y") .setCheck("Number").appendField("Y");
+  this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -1456,8 +1458,11 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
 	+ '#define CLK_PIN A1\n'
 	+ '#define LED_DIRECTION 1';
   Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);'
-  var code = 'Otto.setLed('+valuex+','+valuey+',1);\n';
-    return code;
+  var draw = ''
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
+  var code = 'Otto.setLed('+valuex+','+valuey+','+draw+');\n';
+  return code;
 };
 
 	Blockly.Python['otto9_matrixp'] = function(block) {

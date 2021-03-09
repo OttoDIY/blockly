@@ -181,6 +181,7 @@
                         </value>
                         <statement name="DO">
                           <block type="otto9_matrixp" id="QpJ-#wP]JN{g)2C.90~h">
+                            <field name="draw">FALSE</field>
                             <value name="X">
                               <shadow type="math_number" id="@^2[lA3/Oy*Y4B.;5^`q">
                                 <field name="NUM">0</field>
