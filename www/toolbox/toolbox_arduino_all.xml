@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_OTTO_DIY,CAT_del,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
+	<parametre id="defaultCategories">CAT_LOGIC,CAT_MATH,CAT_VARIABLES,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason,CAT_OTTO,CAT_ESCORNABOT,CAT_del,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_matrice16x8,CAT_ARDUINO_matrice8x8,CAT_OLED_U8G,CAT_DFPLAYER</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
 	<!--	<block type="base_begin"></block> -->
 	<!--	<block type="base_end"></block> -->
@@ -46,7 +46,6 @@
 		<block type="otto9_gyro"></block>
 		<block type="otto9_getg"></block>
 	</category>	
-	
 	<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 		<block type="otto9_eyes"></block>
 		<block type="otto9_eyes_text"></block>
@@ -106,6 +105,27 @@
 	</category>
 		
 </category>
+	
+	<category name="CAT_ESCORNABOT" colour="#C39BD3">
+			<block type="escornabot_init"></block>
+			<block type="escornabot_spin"></block>
+			<block type="escornabot_distance"></block>
+			<block type="escornabot_turnspin"></block>
+			<block type="escornabot_turnangle"></block>
+			<block type="escornabot_stop"></block>
+			<block type="escornabot_beep"></block>
+			<block type="escornabot_ledon"></block>
+			<block type="escornabot_ledoff"></block>
+			<block type="escornabot_getbutton"></block>
+			<block type="escornabot_us_init"></block>
+			<block type="escornabot_getus"></block>
+			<block type="escornabot_ir_init"></block>
+			<block type="escornabot_blackLeft"></block>
+			<block type="escornabot_blackRight"></block>
+			<block type="escornabot_whiteLeft"></block>
+			<block type="escornabot_whiteRight"></block>
+			<block type="escornabot_app"></block>
+	</category>
 	
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 		
