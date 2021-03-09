@@ -77,6 +77,7 @@ Blockly.Msg.CAT_SSENSORS = "Sensores simples";
 Blockly.Msg.CAT_LED = "Led";
 Blockly.Msg.CAT_LEDRGB = "RGB Led";
 Blockly.Msg.CAT_MAX7219 = "Matriz MAX7219";
+Blockly.Msg.CAT_MAX1640 = "Matriz TM1640";
 Blockly.Msg.CAT_BARGRAPH = "BarGraph";
 Blockly.Msg.CAT_LCDI2C = "LCD I2C";
 Blockly.Msg.CAT_RTC_DS3231 = "RTC DS3231";
@@ -90,6 +91,7 @@ Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Brújula HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
 Blockly.Msg.CAT_KEYBOARD="Teclado y Ratón";
+Blockly.Msg.CAT_GPS="GPS NEO6";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -224,6 +226,36 @@ Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Imprimir en formato";
 Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Leer como número";
 Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Leer como String";
 Blockly.Msg.SSERIAL_BT_Readlf="hasta el salto de línea";
+
+// SOFTWARE SERIAL 
+Blockly.Msg.SSERIAL_Init="Ini SoftwareSerial";
+Blockly.Msg.SSERIAL_TX="Pin TX#";
+Blockly.Msg.SSERIAL_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BAUD="Baudios";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Leer byte";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Imprimir en una nueva linea";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Imprimir en la misma linea";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial escribir"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial disponible?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Imprimir en formato";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Leer como número";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Leer como String";
+Blockly.Msg.SSERIAL_Readlf="hasta el salto de línea";
+
+// SERIAL 
+Blockly.Msg.SERIAL_Init="Ini Serial ";
+Blockly.Msg.SERIAL_TX="Pin TX#";
+Blockly.Msg.SERIAL_RX="Pin RX#";
+Blockly.Msg.SERIAL_BAUD="Baudios";
+Blockly.Msg.SERIAL_Read="Serial  Read byte";
+Blockly.Msg.SERIAL_Println="Serial Imprimir en una nueva linea";
+Blockly.Msg.SERIAL_Print="Serial Imprimir en la misma linea";
+Blockly.Msg.SERIAL_Write="Serial escribir"
+Blockly.Msg.SERIAL_Avai="Serial disponible?";
+Blockly.Msg.Serial_Print_Format="Serial Imprimir en formato";
+Blockly.Msg.SERIAL_ReadNum="Serial Leer como número";
+Blockly.Msg.SERIAL_ReadString="Serial Leer como String";
+Blockly.Msg.SERIAL_Readlf="hasta el salto de línea";
 
 
 //Pantalla LCD
@@ -611,6 +643,13 @@ Blockly.Msg.KEY="Botón";
 Blockly.Msg.GENERAL_IR="Control Remoto por IR";
 Blockly.Msg.GENERAL_PRESSED="Tecla leida";
 Blockly.Msg.PIN="PIN";
+
+//REMOTE CONTROL MRT
+Blockly.Msg.MRT_IR="Ini Control Remoto MRT";
+Blockly.Msg.MRT_CHANNEL="Canal";
+Blockly.Msg.MRT_KEY="Tecla MRT";
+Blockly.Msg.MRT_PRESSED="¿pulsado?";
+Blockly.Msg.PIN2="PIN con interrupción";
 
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
