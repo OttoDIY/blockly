@@ -11,7 +11,7 @@ goog.provide('Blockly.Arduino.masaylo');
 Blockly.Blocks['escornabot_init'] = {init: function() {
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/escornabot.png', 48, 48, "*")) .appendField(Blockly.Msg.ESCORNABOT_MODE_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.ESCORNABOT_MODE_CHOICE), "escornabot_mode_choice") ;
     this.setInputsInline(false);
-    this.setPreviousStatement(false);
+    this.setPreviousStatement(true);
     this.setNextStatement(true);
   this.setColour("#C39BD3");
     this.setTooltip(Blockly.Msg.ESCORNABOT_INIT_TOOLTIP);

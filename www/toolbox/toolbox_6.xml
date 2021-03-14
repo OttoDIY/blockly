@@ -43,6 +43,7 @@
 			</value>
 			</block>
     </category>
+	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
 	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
 	<category name="CAT_servo" colour="#2d2dd1">	
 			<block type="servo_move">
@@ -59,4 +60,26 @@
 		</block>
 		<block type="otto9_wheels"></block>
 	</category>
+	
+	<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
+			<block type="serial_init">
+			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
+			<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+			</block>
+			<block type="serial_available"></block>  
+            <block type="serial_read"></block>
+			<block type="serial_read_string"></block>
+			<block type="serial_read_number"></block>
+			<block type="serial_printfor" x="13" y="38"><field name="TYPE">DEC</field>
+			<value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+			<block type="serial_print">
+			<value name="CONTENT"><shadow type="text"><field name="TEXT">text</field></shadow></value>
+			</block>
+            <block type="serial_println">
+			<value name="CONTENT"><shadow type="text"><field name="TEXT">text</field></shadow></value>
+			</block>
+            <block type="serial_write" x="38" y="38"><value name="CONTENT"><shadow type="text"><field name="TEXT">A</field></shadow></value>
+			</block>
+		</category>
 </toolbox>
