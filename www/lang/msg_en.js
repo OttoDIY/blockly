@@ -1,5 +1,5 @@
 var MSG = {
-  btn_variable: "OK",
+  btn_variable: "👌 OK",
   btn_close: "Close",
   btn_valid: "Accept",
   btn_config: "Settings",

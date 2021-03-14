@@ -490,9 +490,9 @@ BlocklyDuino.buildExamples = function() {
 				if (example.visible) {
 					var line = "<tr><td>"
 							   + "<a href='?url=./examples/"+example.source_url+"'>" + example.source_text + "</a>"
-							   + "</td><td>"
-							   + "<a href='"+example.link_url+"' data-toggle='modal'>"
-							   + "<img class='vignette' src='./examples/"+example.image+"'></a>"
+							  // + "</td><td>"
+							  // + "<a href='"+example.link_url+"' data-toggle='modal'>"
+							 //  + "<img class='vignette' src='./examples/"+example.image+"'></a>"
 							   + "</td></tr>";
 					$("#includedContent").append(line);
 				}

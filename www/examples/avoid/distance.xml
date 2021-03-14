@@ -14,7 +14,7 @@
       <block type="serial_print" id="*p,J5gA%qN5eNaA|1w$m">
         <value name="CONTENT">
           <shadow type="text" id="4@S!lvG7`NR1Qc:_r$7q">
-            <field name="TEXT">Sound sensor reading:</field>
+            <field name="TEXT">Ultrasonic sensor reading:</field>
           </shadow>
         </value>
         <next>
@@ -23,15 +23,24 @@
               <shadow type="text" id="8E7%8t(oH=%==yi-Rd6=">
                 <field name="TEXT">text</field>
               </shadow>
-              <block type="otto9_getnoise" id="S~l9RqfOf:d^QLfl=6FC"></block>
+              <block type="otto9_getdistance" id="I]+/]e*P42[0891wN?%{"></block>
             </value>
             <next>
-              <block type="serial_println" id="O#0K6}DSPrMXPd0,5Rm9">
+              <block type="serial_print" id="89Pc{W]aad]!mFZQVuJR">
                 <value name="CONTENT">
-                  <shadow type="text" id=")Wg1OnvKg?S-O~G7w]8C">
-                    <field name="TEXT"></field>
+                  <shadow type="text" id="O[,0*eJ]/eD.]$tsFGLS">
+                    <field name="TEXT">cm</field>
                   </shadow>
                 </value>
+                <next>
+                  <block type="serial_println" id="O#0K6}DSPrMXPd0,5Rm9">
+                    <value name="CONTENT">
+                      <shadow type="text" id=")Wg1OnvKg?S-O~G7w]8C">
+                        <field name="TEXT"></field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>

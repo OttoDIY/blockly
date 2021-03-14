@@ -7,9 +7,8 @@ html,body {
 }
 body {
 	background-color: #2d2d64;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Nunito', sans-serif;
 	margin: 0
-
 }
 
 #div_var {
@@ -63,6 +62,7 @@ body {
 }
 #title {
 	position: fixed;
+	font-weight: bold;
 	top: 0px;
 	left: 6px;
 	color:white
@@ -160,6 +160,8 @@ body {
 	opacity: 0.9
 }
 #content_code {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
 	font-size: 16px;
     position: absolute;
 	border: 1px solid #727272;
@@ -194,6 +196,7 @@ body {
 }
 .blocklyToolboxDiv {
 	background-color: #f2f2f2  !important;
+	
 	font-weight: bold;
 	margin-left: 5px;
 	width: 210px;

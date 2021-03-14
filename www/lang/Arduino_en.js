@@ -3,17 +3,17 @@ goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
 Blockly.Msg.com1 = "Select USB port";
-Blockly.Msg.com2 = "🔔 Select USB please" ;
-Blockly.Msg.check = "Check...";
-Blockly.Msg.upload = "Upload...";
-Blockly.Msg.error = "🔔 ERROR: Blocks not connected";
-Blockly.Msg.verif = "🔔 Check the code first "
+Blockly.Msg.com2 = "⚠️ Select USB please" ;
+Blockly.Msg.check = "Checking...";
+Blockly.Msg.upload = "Uploading...";
+Blockly.Msg.error = "🛑 ERROR: Blocks not connected";
+Blockly.Msg.verif = "⛔ Check the code first "
 Blockly.Msg.save = "Save as format";
 Blockly.Msg.update = "Update";
 Blockly.Msg.new_update = "A new version is available, do you want to download and install it now?" ;
-Blockly.Msg.yes = "yes";
-Blockly.Msg.no = "no";
-Blockly.Msg.uptodate = "💯 Version is up to date!" ;
+Blockly.Msg.yes = "Yes";
+Blockly.Msg.no = "No";
+Blockly.Msg.uptodate = "✅ Version is up to date!" ;
 Blockly.Msg.download = "Download completed, the application will install and restart ..."
 // common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate

@@ -14,7 +14,7 @@ window.addEventListener('load', function load(event) {
 	document.getElementById('versionapp').textContent = " OttoBlockly v" + appVersion
 	function uploadOK(){
 		messageDiv.style.color = '#009000'
-		messageDiv.innerHTML = Blockly.Msg.upload + ': OK' + quitDiv
+		messageDiv.innerHTML = Blockly.Msg.upload + ': ✅ OK' + quitDiv
 	}
 	$('#btn_forum').on('click', function(){
 		shell.openExternal('http://builders.ottodiy.com/')
@@ -157,7 +157,7 @@ window.addEventListener('load', function load(event) {
 					return
 				}
 				messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+				messageDiv.innerHTML = Blockly.Msg.check + ':✅ OK' + quitDiv
 			})
 		} else {
 			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
@@ -197,7 +197,7 @@ window.addEventListener('load', function load(event) {
 						}
 						
 			    messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ OK' + quitDiv
 		    })
 		
 			
@@ -241,7 +241,7 @@ window.addEventListener('load', function load(event) {
 						}
 						
 			    messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
+				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ OK' + quitDiv
 		    			
 			/*
 		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
