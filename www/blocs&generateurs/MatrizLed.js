@@ -466,7 +466,7 @@ Blockly.Blocks['matrizledm2'] = {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['matrizledm2'] = function(block) {
+Blockly.Arduino['matrizledm2_old'] = function(block) {
 	
   var code = 'static const uint8_t PROGMEM\n'
   +'eyesm_bmp[]  = {B';
@@ -509,3 +509,47 @@ Blockly.Arduino['matrizledm2'] = function(block) {
   return code;
 };
 
+
+Blockly.Arduino['matrizledm2'] = function(block) {
+	
+  Blockly.Arduino.definitions_['eyesm_bmp_definition'] = 'uint8_t eyesm_bmp[16];\n'
+	
+  var code = 'eyesm_bmp[0] = B';
+  for (var i=0; i<8; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[1] = B'
+  for (var i=8; i<16; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[2] = B'
+  for (var i=16; i<24; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[3] = B'
+  for (var i=24; i<32; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[4] = B'
+  for (var i=32; i<40; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[5] = B'
+  for (var i=40; i<48; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[6] = B'
+  for (var i=48; i<56; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[7] = B'
+  for (var i=56; i<64; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[8] = B'
+  for (var i=64; i<72; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[9] = B'
+  for (var i=72; i<80; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';}; 
+  code += ';eyesm_bmp[10] = B'
+  for (var i=80; i<88; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[11] = B'
+  for (var i=88; i<96; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[12] = B'
+  for (var i=96; i<104; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[13] = B'
+  for (var i=104; i<112; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';eyesm_bmp[14] = B'
+  for (var i=112; i<120; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE') code += '1';else code +='0';};
+  code += ';eyesm_bmp[15] = B'
+  for (var i=120; i<128; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
+  code += ';\n'
+  +'ematrix.fillScreen(0);\n'
+  +'ematrix.drawBitmap(0, 0,eyesm_bmp, 8, 16, 1);\n'
+  +'ematrix.write();\n'
+  +'delay(10);\n';
+  return code;
+};
