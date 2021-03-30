@@ -160,8 +160,6 @@ body {
 	opacity: 0.9
 }
 #content_code {
-	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
 	font-size: 16px;
     position: absolute;
 	border: 1px solid #727272;
