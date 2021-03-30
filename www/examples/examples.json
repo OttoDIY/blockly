@@ -100,8 +100,8 @@
         "visible": true
     },
     {
-        "source_url": "matrix/counter.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📓 Variable counter |Otto DIY Humanoid",
+        "source_url": "matrix/handcleandots.xml",
+        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📓 Clean you hands |Otto DIY Humanoid",
         "visible": true
     },
     {
@@ -127,6 +127,26 @@
     {
         "source_url": "oled/oledtimer.xml",
         "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Timer | Arduino",
+        "visible": true
+    },
+    {
+        "source_url": "oled/oledframe.xml",
+        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Frame | Arduino",
+        "visible": true
+    },
+    {
+        "source_url": "oled/oledicon.xml",
+        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Icon | Arduino",
+        "visible": true
+    },
+    {
+        "source_url": "oled/TFTicon.xml",
+        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 TFT Icon |Arduino",
+        "visible": true
+    },
+    {
+        "source_url": "oled/TFTAnimation.xml",
+        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 TFT Animation |Arduino",
         "visible": true
     },
     {
