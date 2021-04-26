@@ -95,9 +95,15 @@ Blockly.Blocks["matrice8x8_init_2"]={init:function(){
         this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
 Blockly.Arduino["matrice8x8_init_2"]=function(block){
-    var cs=Blockly.Python.valueToCode(block, "CS", Blockly.Python.ORDER_ASSIGNMENT);
-    var clk=Blockly.Python.valueToCode(block, "CLK", Blockly.Python.ORDER_ASSIGNMENT);
-    var din=Blockly.Python.valueToCode(block, "DIN", Blockly.Python.ORDER_ASSIGNMENT);
+    //var cs=Blockly.Python.valueToCode(block, "CS", Blockly.Python.ORDER_ASSIGNMENT);
+    //var clk=Blockly.Python.valueToCode(block, "CLK", Blockly.Python.ORDER_ASSIGNMENT);
+    //var din=Blockly.Python.valueToCode(block, "DIN", Blockly.Python.ORDER_ASSIGNMENT);
+	
+	
+	 var cs = Blockly.Arduino.valueToCode(this, "CS", Blockly.Arduino.ORDER_NONE);
+     var clk = Blockly.Arduino.valueToCode(this, "CLK", Blockly.Arduino.ORDER_NONE);
+	 var din = Blockly.Arduino.valueToCode(this, "DIN", Blockly.Arduino.ORDER_NONE);
+	 
     Blockly.Arduino.includes_["matrice8x8init"]='#include <LedControl.h>';
     Blockly.Arduino.definitions_["matrice8x8init"]="LedControl lc=LedControl(" + din + "," + clk + "," + cs + ",1);";
     Blockly.Arduino.codeFunctions_["matrice8x8init"]="void afficher(byte s[]) {\n  for (int i=0; i<8; i++) {\n    lc.setRow(0,i,s[i]);\n  };\n}";

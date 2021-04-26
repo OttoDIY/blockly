@@ -152,7 +152,7 @@ Blockly.Arduino["math_number"]=function(block){
 
 Blockly.Arduino['analog_pin'] = function(block) {
   // Numeric value.
-  var code = this.getFieldValue('NUM');
+  var code = this.getFieldValue("NUM");
   
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
