@@ -225,16 +225,24 @@ BlocklyDuino.change_card = function() {
 				$('#btn_preview').attr('title', MSG['btn_preview_ino']);
 				$('#btn_saveino').attr('title', MSG['btn_save_ino']);
 				$('#btn_bin').removeClass("hidden");
-				var new_toolbox = "toolbox_arduino_all";
+				
 				window.localStorage.prog = new_prog;
+				var new_toolbox = "toolbox_arduino_all"; //by default
+				var mystartfile;
+					mystartfile= '<xml xmlns="http://www.w3.org/1999/xhtml">';
+					mystartfile +=  '<block type="base_setup_loop" x="-4" y="48"></block>';
+					mystartfile += '</xml>';
+				
+				if (window.profile[new_card].cpu == "esp8266") 
+				  new_toolbox = "toolbox_arduino_all-esp8266";
+				  
 				window.localStorage.toolbox = new_toolbox;
 				BlocklyDuino.workspace.clear();
-				//var mystartfile;
-				//	mystartfile= '<xml xmlns="http://www.w3.org/1999/xhtml">';
-				//	mystartfile +=  '<block type="base_setup_loop" x="0" y="0"></block>';
-				//	mystartfile += '</xml>';
-				//BlocklyDuino.loadBlocks(mystartfile)
-				BlocklyDuino.loadBlocks()
+				
+				if (((window.profile[new_card].cpu == "esp8266") && (window.profile[card].cpu != "esp8266")) || ((window.profile[new_card].cpu != "esp8266") && (window.profile[card].cpu == "esp8266")) )
+					BlocklyDuino.loadBlocks(mystartfile);
+			    else
+					BlocklyDuino.loadBlocks();
 				
 				BlocklyDuino.loadToolboxDefinition(new_toolbox);
 				Blockly.getMainWorkspace().updateToolbox(BlocklyDuino.buildToolbox());
