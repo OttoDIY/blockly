@@ -4,6 +4,103 @@ goog.require("Blockly.Blocks");
   /////////////
  /*  audio  */
 /////////////
+
+Blockly.Blocks["play"]={init:function(){
+    this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+    this.appendDummyInput()
+		.appendField(Blockly.Msg.play)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
+		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#a600d3");
+    this.setTooltip(Blockly.Msg.play_tooltip);
+    this.setHelpUrl(Blockly.Msg.play_helpurl)}
+};
+Blockly.Arduino["play"]=function(block){
+    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_note=block.getFieldValue("note");
+    var value_tempo=block.getFieldValue("tempo");
+    Blockly.Arduino.setups_["setup_output"]="pinMode( "+value_pin+" , OUTPUT);";
+    return "tone(  "+value_pin+"," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
+};
+Blockly.Python["play"]=function(block){
+    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_note=block.getFieldValue("note");
+    var value_tempo=block.getFieldValue("tempo");
+	Blockly.Python.imports_["pin"]="from machine import Pin";
+	Blockly.Python.imports_["pwm"]="from machine import PWM";
+	Blockly.Python.imports_["time"]="import time";
+	return "Play_"+value_pin+" = PWM(Pin("+value_pin+"), freq=" + value_note + ")\ntime.sleep(" + value_tempo + ")\nPlay_" + value_pin + ".deinit()\n"
+};
+//////////////
+Blockly.Blocks["tone"]={init:function(){
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+        this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
+        this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
+};
+Blockly.Arduino["tone"]=function(block){
+    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
+    var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
+    return "tone(" + value_pin + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
+};
+Blockly.Python["tone"]=function(block){
+    var dropdown_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_num=Blockly.Python.valueToCode(block, "NUM", Blockly.Python.ORDER_ATOMIC);
+    var value_tps=Blockly.Python.valueToCode(block, "TPS", Blockly.Python.ORDER_ATOMIC);
+	Blockly.Python.imports_["pin"]="from machine import Pin";
+	Blockly.Python.imports_["pwm"]="from machine import PWM";
+    Blockly.Python.imports_["time"]="import time";
+    return "Buzzer_"+dropdown_pin+" = PWM(Pin("+dropdown_pin+"), freq=" + value_num + ")\ntime.sleep(" + value_tps + ")\nBuzzer_"+dropdown_pin+".deinit()\n"
+};
+//////////////
+Blockly.Blocks["beep"]={init:function(){
+    this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.beep);
+    this.setColour("#a600d3");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);this.setNextStatement(true, null);
+    this.setHelpUrl(Blockly.Msg.HELPURL);this.setTooltip(Blockly.Msg.beep_TOOLTIP)}
+};
+Blockly.Arduino["beep"]=function(block){
+    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
+    return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
+};
+Blockly.Python["beep"]=function(block){
+    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
+    return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
+};
+//////////////
+Blockly.Blocks["notone"]={init:function(){
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT);
+        this.setPreviousStatement(true, null);
+        this.setInputsInline(true);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
+};
+Blockly.Arduino["notone"]=function(block){
+    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
+    return "noTone(" + value_pin + ");\n"
+};
+Blockly.Python["notone"]=function(block){
+    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
+    return "noTone(" + value_pin + ");\n"
+};
+//////////////
 Blockly.Blocks["lp2i_mp3_play_track"]={init:function(){
     this.appendValueInput("num", "Number").appendField(new Blockly.FieldImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYzRkRFQjcxODUzNTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYzRkRFQjcwODUzNTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+5iogFwAAAGhJREFUeNpiYGBgKABigf///zOQg0EARH4A4gZyDIIZ8B/JoAJKDIDhB0CcQIkBRBtEyABkgxwoMQCGD6AbRKoBGAYxQgXIBRuZGKgAKPIC3QLxArnRSHZCIjspk52ZKMrOFBUoAAEGAKnq593MQAZtAAAAAElFTkSuQmCC", 11, 15))
 		.appendField(Blockly.Msg.lp2i_mp3_play+" n°");
@@ -39,98 +136,7 @@ Blockly.Arduino["lp2i_mp3_play"]=function(block){
 Blockly.Python["lp2i_mp3_play"]=function(block){
     return "mp3.Play()\n"
 };
-//////////////
-Blockly.Blocks["play"]={init:function(){
-    this.appendDummyInput()
-		.appendField(Blockly.Msg.play)
-		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
-		.appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("#a600d3");
-    this.setTooltip(Blockly.Msg.play_tooltip);
-    this.setHelpUrl(Blockly.Msg.play_helpurl)}
-};
-Blockly.Arduino["play"]=function(block){
-    var value_note=block.getFieldValue("note");
-    var value_tempo=block.getFieldValue("tempo");
-    Blockly.Arduino.setups_["setup_output"]="pinMode( 13 , OUTPUT);";
-    return "tone( 13," + value_note + "," + value_tempo + ");\ndelay(" + value_tempo + ");\n"
-};
-Blockly.Python["play"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
-    var value_note=block.getFieldValue("note");
-    var value_tempo=block.getFieldValue("tempo");
-	Blockly.Python.imports_["pin"]="from machine import Pin";
-	Blockly.Python.imports_["pwm"]="from machine import PWM";
-	Blockly.Python.imports_["time"]="import time";
-	return "Play_"+value_pin+" = PWM(Pin("+value_pin+"), freq=" + value_note + ")\ntime.sleep(" + value_tempo + ")\nPlay_" + value_pin + ".deinit()\n"
-};
-//////////////
-Blockly.Blocks["tone"]={init:function(){
-        this.setColour("#a600d3");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-        this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
-        this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
-        this.setInputsInline(false);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
-};
-Blockly.Arduino["tone"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
-    var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "tone(" + value_pin + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
-};
-Blockly.Python["tone"]=function(block){
-    var dropdown_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
-    var value_num=Blockly.Python.valueToCode(block, "NUM", Blockly.Python.ORDER_ATOMIC);
-    var value_tps=Blockly.Python.valueToCode(block, "TPS", Blockly.Python.ORDER_ATOMIC);
-	Blockly.Python.imports_["pin"]="from machine import Pin";
-	Blockly.Python.imports_["pwm"]="from machine import PWM";
-    Blockly.Python.imports_["time"]="import time";
-    return "Buzzer_"+dropdown_pin+" = PWM(Pin("+dropdown_pin+"), freq=" + value_num + ")\ntime.sleep(" + value_tps + ")\nBuzzer_"+dropdown_pin+".deinit()\n"
-};
-//////////////
-Blockly.Blocks["beep"]={init:function(){
-    this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.beep);
-    this.setColour("#a600d3");
-    this.setPreviousStatement(true, null);this.setNextStatement(true, null);
-    this.setHelpUrl(Blockly.Msg.HELPURL);this.setTooltip(Blockly.Msg.beep_TOOLTIP)}
-};
-Blockly.Arduino["beep"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
-};
-Blockly.Python["beep"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
-    Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
-};
-//////////////
-Blockly.Blocks["notone"]={init:function(){
-        this.setColour("#a600d3");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
-};
-Blockly.Arduino["notone"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "noTone(" + value_pin + ");\n"
-};
-Blockly.Python["notone"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
-    Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "noTone(" + value_pin + ");\n"
-};
+
 //////////////
 Blockly.Blocks["lp2i_mp3_init"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/dfplayer.png', 48, 48, "*"))
@@ -574,6 +580,30 @@ Blockly.Python["inout_buildin_led"]=function(block){
 	Blockly.Python.definitions_["pin_"+profile[card].BUILTIN_LED]="BROCHE_"+profile[card].BUILTIN_LED+" = Pin("+profile[card].BUILTIN_LED+", Pin.OUT)";
     return "BROCHE_"+profile[card].BUILTIN_LED+".value("+dropdown_stat+")\n"
 };
+
+//////////////
+Blockly.Blocks["blink"]={init:function(){
+    this.appendDummyInput().appendField(Blockly.Msg.blink).appendField(new Blockly.FieldDropdown(Blockly.Msg.menublink), "speed");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setTooltip(Blockly.Msg.blink_tooltip);
+    this.setHelpUrl(Blockly.Msg.HELPURL)}
+};
+Blockly.Arduino["blink"]=function(block){
+var card=window.localStorage.card;
+var dropdown_speed=block.getFieldValue("speed");
+Blockly.Arduino.setups_["setup_output_13"]="pinMode("+profile[card].BUILTIN_LED+", OUTPUT);";
+return "digitalWrite("+profile[card].BUILTIN_LED+", HIGH);\ndelay(" + dropdown_speed + ");\ndigitalWrite("+profile[card].BUILTIN_LED+", LOW);\ndelay(" + dropdown_speed + ");\n"
+};
+Blockly.Python["blink"]=function(block){
+var card=window.localStorage.card;
+var dropdown_speed=block.getFieldValue("speed");
+Blockly.Python.imports_["time"]="import time";
+Blockly.Python.imports_["pin"]="from machine import Pin";
+Blockly.Python.definitions_["pin_"+profile[card].BUILTIN_LED]="BROCHE_"+profile[card].BUILTIN_LED+" = Pin("+profile[card].BUILTIN_LED+", Pin.OUT)";
+return "BROCHE_"+profile[card].BUILTIN_LED+".value(0)\ntime.sleep_ms("+dropdown_speed+")\nBROCHE_"+profile[card].BUILTIN_LED+".value(1)\ntime.sleep_ms("+dropdown_speed+")\n"
+};
 //////////////
 Blockly.Blocks['rvb_init']={init:function() {
 	var card=window.localStorage.card;
@@ -629,9 +659,6 @@ Blockly.Arduino['rvb_init_2'] = function(block) {
   return '';
 };
 
-
-
-
 //////////////
 Blockly.Blocks['rvb_set']={init:function() {
     this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set);
@@ -660,29 +687,7 @@ Blockly.Python['rvb_set'] = function(block) {
   return code;
 }
 //////////////
-Blockly.Blocks["blink"]={init:function(){
-        this.appendDummyInput().appendField(Blockly.Msg.blink).appendField(new Blockly.FieldDropdown(Blockly.Msg.menublink), "speed");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("#4b009f");
-        this.setTooltip(Blockly.Msg.blink_tooltip);
-        this.setHelpUrl(Blockly.Msg.HELPURL)}
-};
-Blockly.Arduino["blink"]=function(block){
-	var card=window.localStorage.card;
-    var dropdown_speed=block.getFieldValue("speed");
-    Blockly.Arduino.setups_["setup_output_13"]="pinMode("+profile[card].BUILTIN_LED+", OUTPUT);";
-    return "digitalWrite("+profile[card].BUILTIN_LED+", HIGH);\ndelay(" + dropdown_speed + ");\ndigitalWrite("+profile[card].BUILTIN_LED+", LOW);\ndelay(" + dropdown_speed + ");\n"
-};
-Blockly.Python["blink"]=function(block){
-	var card=window.localStorage.card;
-    var dropdown_speed=block.getFieldValue("speed");
-	Blockly.Python.imports_["time"]="import time";
-	Blockly.Python.imports_["pin"]="from machine import Pin";
-	Blockly.Python.definitions_["pin_"+profile[card].BUILTIN_LED]="BROCHE_"+profile[card].BUILTIN_LED+" = Pin("+profile[card].BUILTIN_LED+", Pin.OUT)";
-    return "BROCHE_"+profile[card].BUILTIN_LED+".value(0)\ntime.sleep_ms("+dropdown_speed+")\nBROCHE_"+profile[card].BUILTIN_LED+".value(1)\ntime.sleep_ms("+dropdown_speed+")\n"
-};
-//////////////
+
 Blockly.Blocks["bargraphe"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/LEDbar.png', 48, 48, "*"))
 			.appendField(Blockly.Msg.bargraphe);
@@ -728,8 +733,6 @@ Blockly.Arduino["bargraphe_2"]=function(block){
     Blockly.Arduino.setups_["ledbar"]="pinMode(" + _clock + ", OUTPUT);\n  pinMode(" + _data + ", OUTPUT);";
     return ""
 };
-
-
 
 //////////////
 Blockly.Blocks["bargraphe_allume"]={init:function(){

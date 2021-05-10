@@ -1766,7 +1766,7 @@ Blockly.Blocks["procedures_mutatorcontainer"] = {
 Blockly.Blocks["procedures_mutatorarg"] = {
     init: function() {
         var field = new Blockly.FieldTextInput("x", this.validator_);
-        this.appendDummyInput().appendField("utiliser la variable").appendField(field, "NAME").appendField(Blockly.Msg.PROCEDURES_MUTATORARG_TYPE)
+        this.appendDummyInput().appendField("use variable").appendField(field, "NAME").appendField(Blockly.Msg.PROCEDURES_MUTATORARG_TYPE)
 			.appendField(new Blockly.FieldDropdown(Blockly.Types.getValidTypeArray()), "TYPEVAR");
         this.setPreviousStatement(true);
         this.setNextStatement(true);

@@ -22,6 +22,26 @@
 		<block type="otto9_calibration"></block>
 		<block type="otto9_eeprom"></block>
 	</category>
+		<category name="CAT_ESCORNABOT" colour="#C39BD3">
+			<block type="escornabot_init"></block>
+			<block type="escornabot_spin"></block>
+			<block type="escornabot_distance"></block>
+			<block type="escornabot_turnspin"></block>
+			<block type="escornabot_turnangle"></block>
+			<block type="escornabot_stop"></block>
+			<block type="escornabot_beep"></block>
+			<block type="escornabot_ledon"></block>
+			<block type="escornabot_ledoff"></block>
+			<block type="escornabot_getbutton"></block>
+			<block type="escornabot_us_init"></block>
+			<block type="escornabot_getus"></block>
+			<block type="escornabot_ir_init"></block>
+			<block type="escornabot_blackLeft"></block>
+			<block type="escornabot_blackRight"></block>
+			<block type="escornabot_whiteLeft"></block>
+			<block type="escornabot_whiteRight"></block>
+			<block type="escornabot_app"></block>
+	</category>
 		<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="digital_read"></block>
 		<block type="inout_analog_read"></block>
@@ -105,6 +125,32 @@
 		</block>
 		<block type="otto9_wheels"></block>
 		</category>		
+		<!--	<category name="CAT_ARDUINO_moteur" colour="#2d2dd1"></category> -->
+	<!--<category name="CAT_numerique" colour="#2a93e8">
+		<block type="inout_bp"></block> 
+		<block type="mc005"></block>
+		<block type="inter"></block>
+		<block type="block_sensitif"></block>
+		<block type="block_anticollision"></block>
+		<block type="suiveur_ligne"></block>
+		<block type="block_pir"></block>
+		<block type="block_feu"></block>
+		<block type="m_pap"></block>
+		<block type="m_pap_step"></block> 
+	</category> -->
+	<!-- <category name="CAT_analogique" colour="#2a93e8">
+		<block type="ultrason"></block>
+		<block type="ultrason_distance"></block>
+		<block type="BME280"></block>
+		<block type="BME280_pressure"></block>
+		<block type="VL53L0X"></block>
+		<block type="VL53L0X_distance"></block>
+		<block type="cap661"></block>
+		<block type="grove_ldr"></block>
+		<block type="cap615"></block>
+		<block type="potentiometre"></block> 
+		<block type="encoder"></block>
+		</category> -->
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
 			<block type="pixel_init">
 			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
@@ -133,6 +179,15 @@
 			<block type="pixel_show"></block>
 			<block type="pixel_setbrightness"></block>
 		</category>
+			<!--	<category name="CAT_DFRobot_SHIELD_LCDKEYPAD" colour="#4b009f">
+			<block type="lcd_i2c_2"></block>
+			<block type="lcd_symbole"></block>
+			<block type="lcd_aff_symbole"></block>
+			<block type="LCD_Keypad_Shield_DFR_09"></block>
+			<block type="LCD_Keypad_Shield_DFR_09_lc"></block>
+			<block type="LCD_Keypad_Shield_DFR_09_RAZ"></block>
+			<block type="lcd"></block>
+	</category> -->
 		<category name="CAT_ARDUINO_matrice8x8" colour="#747F8A">
 			<block type="otto9_mouth"></block>
 			<block type="otto9_matrix_text"></block>

@@ -137,6 +137,7 @@ Blockly.Blocks["toggle"]={init:function(){
         this.setColour("#00929f");
         this.setHelpUrl(Blockly.Msg.tempo_helpurl);
         this.appendValueInput("PIN", "Number").setCheck("Number").appendField(Blockly.Msg.toggle);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.toggle_tooltip)}
@@ -147,7 +148,7 @@ Blockly.Blocks["inout_digital_write"]={init:function(){
         this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1);
         this.setInputsInline(true);
         this.appendValueInput("STAT", "Boolean").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP)}
@@ -164,7 +165,7 @@ Blockly.Blocks["digital_read"]={init:function(){
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup").appendField(Blockly.Msg.in_pullup);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setOutput(true, "Boolean");
         this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
 };
@@ -174,7 +175,7 @@ Blockly.Blocks["inout_analog_write"]={init:function(){
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "broche");
         this.appendValueInput("NUM", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT).setCheck("Number");
-        this.setInputsInline(false);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
