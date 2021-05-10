@@ -378,10 +378,10 @@ var profile = {
 		voltage: "3,3V",
 		inout: "11"
 	},
-	Diymore: {
+	OttoESP: {
 	    description: "ESP12E NodeMcu",
 	    BUILTIN_LED: 2,
-		picture : "media/diymore.jpg",
+		picture : "media/esp8266.jpg",
 		dropdownAllPins: [["A0", "A0"],["D0", "16"],["D1", "5"],["D2", "4"],["D3", "0"],["D4", "2"], ["D5", "14"], ["D6", "12"], ["D7", "13"], ["D8", "15"], ["RX", "3"], ["TX", "1"]],
 		dropdownDigital: [["D0", "16"],["D1", "5"],["D2", "4"],["D3", "0"],["D4", "2"], ["D5", "14"], ["D6", "12"], ["D7", "13"], ["D8", "15"]],
 		dropdownPWM: [["D1", "5"],["D2", "4"],["D3", "0"],["D4", "2"], ["D5", "14"], ["D6", "12"], ["D7", "13"], ["D8", "15"]],
