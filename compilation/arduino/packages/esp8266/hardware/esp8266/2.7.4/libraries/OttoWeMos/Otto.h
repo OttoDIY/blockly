@@ -24,7 +24,7 @@ class Otto
   public:
 
     //-- Otto initialization
-    void init(int YL, int YR, int RL, int RR, bool load_calibration, int Sensor, int Buzzer);
+    void init(int YL, int YR, int RL, int RR, bool load_calibration, int Buzzer);
     //-- Attach & detach functions
     void attachServos();
     void detachServos();

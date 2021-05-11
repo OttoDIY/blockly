@@ -7,7 +7,7 @@
 #include "Otto.h"
 #include <Oscillator.h>
 
-void Otto::init(int YL, int YR, int RL, int RR, bool load_calibration, int Sensor, int Buzzer) {
+void Otto::init(int YL, int YR, int RL, int RR, bool load_calibration, int Buzzer) {
 
   servo_pins[0] = YL;
   servo_pins[1] = YR;
@@ -27,12 +27,10 @@ void Otto::init(int YL, int YR, int RL, int RR, bool load_calibration, int Senso
 
   for (int i = 0; i < 4; i++) servo_position[i] = 90;
 
-  //Buzzer &  sensor pins:
+  //Buzzer pin:
   pinBuzzer = Buzzer;
-  pinSensor = Sensor;
-
   pinMode(Buzzer,OUTPUT);
-  pinMode(Sensor,INPUT);
+ 
 }
 
 ///////////////////////////////////////////////////////////////////

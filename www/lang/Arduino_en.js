@@ -17,7 +17,7 @@ Blockly.Msg.uptodate = "✅ Version is up to date!" ;
 Blockly.Msg.download = "Download completed, the application will install and restart ..."
 // common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
-Blockly.Msg.pin = "Pin";
+Blockly.Msg.pin = "pin";
 Blockly.Msg._AT = "at";
 Blockly.Msg.AV = "forward";
 Blockly.Msg.AR = "backward";
@@ -47,7 +47,7 @@ Blockly.Msg.CAT_ARDUINO_matrice8x8 = "👅 LED Mouth";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "👀 LED Eyes";
 Blockly.Msg.CAT_ESCORNABOT="🐞 Escornabot";
 Blockly.Msg.CAT_servo = "🦾 Servo";
-Blockly.Msg.CAT_actionneur = "⚙️ Motor DC";
+Blockly.Msg.CAT_actionneur = "⚙️ Motor";
 Blockly.Msg.CAT_ARDUINO_moteur="⚙️ Motor Stepper";
 Blockly.Msg.CAT_ultrason = "👂 Sensors";
 Blockly.Msg.CAT_SENSORS = "👂 Sensors";
@@ -99,7 +99,7 @@ Blockly.Msg.CAT_wifi = "🌐 WiFi";
 Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
 
 //RTC DS3231
-Blockly.Msg.RTCDS3231_NAME="RTC DS3231 I²C";
+Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
 Blockly.Msg.RTCDS3231_RTC="Set DateTime DS3231";
 Blockly.Msg.RTCDS3231_DAY="Day";
 Blockly.Msg.RTCDS3231_MONTH="Month";
@@ -139,12 +139,12 @@ Blockly.Msg.esp8266_request = "if in the query we find";
 Blockly.Msg.esp8266_request_container = "we find";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Interrupt: when a';
-Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "disable interrupt on Pin";
+Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "disable interrupt on pin";
 Blockly.Msg.LKL_TOOLTIP_INOUT_ATTACHINTERRUPT = "Specifies an action to take when an external interrupt (4 possible modes) occurs on pin 2 or 3";
 Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT = "Disable the previously specified external interrupt";
-Blockly.Msg.LKL_MODE = 'is detected on the Pin';
+Blockly.Msg.LKL_MODE = 'is detected on the pin';
 // FIELDDROPDOWN
-Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
+Blockly.Msg.note = [[ "DO \u2083", "261"], [ "RE \u2083", "293"], [ "MI \u2083", "329"], [ "FA \u2083", "349"], [ "SOL \u2083", "392"], [ "LA \u2083", "440"], [ "SI \u2083", "493"], [ "DO \u2084", "523 "], [" RE \u2084 "," 587 "], [" MI \u2084 "," 659 "], [" FA \u2084 "," 698 "], [" SOL \u2084 "," 784 "], [ "LA \u2084", "880"]];
 Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]; // do not translate
 Blockly.Msg.on_off = [["on", "LOW"], ["off", "HIGH"]];
 Blockly.Msg.menublink = [["slowly", "1000"], ["fast", "100"]];
@@ -153,53 +153,53 @@ Blockly.Msg.times = [["seconds", "s"], ["milliseconds", "m"], ["microseconds", "
 Blockly.Msg.time = [["seconds", "s"], ["milliseconds", "m"]];
 Blockly.Msg.char_lcd = [[ "# 1", "1"], [ "# 2", "2"], [ "3", "3"], [ "# 4", "4"], [ "# 5", "5"], [ "# 6", "6"], [ "No. 7", "7"], [ "# 8", "8 "]];
 Blockly.Msg.rxtx = [[ "2", "2"], [ "3", "3"], [ "4", "4"], [ "5", "5"], [ "6 "," 6 "], [" 7 "," 7 "], [" 8 "," 8 "], [" 9 "," 9 "], [" 10 "," 10 "], [" 11 "," 11 "], [" 12 "," 12 "], [" 13 "," 13 "]];
-Blockly.Msg.FIELDDROPDOWN = [["1 HIGH", Blockly.Msg.high], ["0 LOW", Blockly.Msg.low]];
+Blockly.Msg.FIELDDROPDOWN = [["1(high state)", Blockly.Msg.high], ["0(low state)", Blockly.Msg.low]];
 Blockly.Msg.FIELDDROPDOWN_0_1 = [["UP", Blockly.Msg.high], ["DOWN", Blockly.Msg.low]];
 Blockly.Msg.ligne = [["1", "0"], ["2", "1"]];
 Blockly.Msg.colonne = [[ "1", "0"], [ "2", "1"], [ "3", "2"], [ "4", "3"], [ "5 "," 4 "], [" 6 "," 5 "], [" 7 "," 6 "], [" 8 "," 7 "], [" 9 "," 8 "], [" 10 "," 9 "], [" 11 "," 10 "], [" 12 "," 11 "], [" 13 "," 12 "], [" 14 "," 13 "], [" 15 "," 14 "], [" 16 "," 15 "]];
 Blockly.Msg.FIELDDROPDOWN_ONOFF = [["turn on", Blockly.Msg.high], ["turn off", Blockly.Msg.low]];
 Blockly.Msg.FIELDDROPDOWN_ONOFF_matrice = [["1", "true"], ["0", "false"]];
 Blockly.Msg.FIELDDROPDOWN_av_ar = [[Blockly.Msg.AV, Blockly.Msg.high], [Blockly.Msg.AR, Blockly.Msg.low]];
-Blockly.Msg.LKL_DROPDOWN = [['rising edge', 'RISING'], ['falling edge', 'FALLING'], ['changing state', 'CHANGE'], ['LOW state', Blockly. Msg.low]];
-Blockly.Msg.irq = [['rising edge', 'Pin.IRQ_RISING'], ['falling edge', 'Pin.IRQ_FALLING'], ['HIGH state', 'Pin.IRQ_HIGH_LEVEL'], ["LOW state "," Pin.IRQ_LOW_LEVEL "]];
+Blockly.Msg.LKL_DROPDOWN = [['rising edge', 'RISING'], ['falling edge', 'FALLING'], ['changing state', 'CHANGE'], ['low state', Blockly. Msg.low]];
+Blockly.Msg.irq = [['rising edge', 'Pin.IRQ_RISING'], ['falling edge', 'Pin.IRQ_FALLING'], ['high state', 'Pin.IRQ_HIGH_LEVEL'], ["low state "," Pin.IRQ_LOW_LEVEL "]];
 Blockly.Msg.menudht = [["humidity", "h"], ["temperature", "t"]];
 Blockly.Msg.couleur = [["blue", "blue"], ["yellow", "yellow"], ["red", "red"], ["green", "green"]];
 Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"]];
 //sensor
-Blockly.Msg.VL53L0X="VL53L0X Laser distance sensor I²C";
+Blockly.Msg.VL53L0X="VL53L0X Init laser distance sensor.Pins I2C";
 Blockly.Msg.VL53L0X_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.VL53L0X_distance="distance measured by laser";
 Blockly.Msg.VL53L0X_distance_tooltip="VL530X :\nreturn Distance measured by laser in mm";
-Blockly.Msg.bme280="BME280 Atmospheric pressure sensor I²C";
+Blockly.Msg.bme280="BME280 Init atmospheric pressure sensor.Pins I2C";
 Blockly.Msg.bme280_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.bme280_pressure="atmospheric pressure";
 Blockly.Msg.bme280_pressure_tooltip="BME280 :\nreturn atmospheric pressure in hPa";
 Blockly.Msg.inter="switch is";
 Blockly.Msg.inter_tooltip="returns true (false) if the switch is (is not) at the indicated position";
-Blockly.Msg.mc005="presence detected on Pin";
+Blockly.Msg.mc005="presence detected on the pin";
 Blockly.Msg.mc005_tooltip="MC005:\nreturns true (false) if a presence is (is not) detected";
-Blockly.Msg.bp = "button pressed on Pin";
+Blockly.Msg.bp = "button pressed on the pin";
 Blockly.Msg.bp_tooltip = "returns true (false) if a pushbutton is (is not) pressed";
 Blockly.Msg.dht11_tooltip="DHT11 :\nreturns the humidity of the air (from 20 to 80%) or \n the temperature (from 2 to 50�C)";
 Blockly.Msg.dht22_tooltip = "DHT22: \nreturns the humidity of the air (from 0 to 100%) or \n the temperature (from -40 to 80 � C)";
-Blockly.Msg.suiveur_ligne = "black line detected on Pin";
+Blockly.Msg.suiveur_ligne = "black line detected on the pin";
 Blockly.Msg.suiveur_ligne_tooltip = "CAP227: \nreturns true (false) if a black line is (is not) detected";
-Blockly.Msg.light = "brightness on pin";
+Blockly.Msg.light = "brightness on the pin";
 Blockly.Msg.light_tooltip = "returns a value depending on the brightness \n0: darkness \n255: full light";
 Blockly.Msg.hum = "soil moisture on the pin";
 Blockly.Msg.hum_tooltip = "CAP 615: \nreturns soil moisture from 0 to 100%";
 Blockly.Msg.light_tooltip = "returns a value depending on the brightness \n0: darkness \n255: full light";
-Blockly.Msg.grove_ldr = "brightness on pin";
+Blockly.Msg.grove_ldr = "brightness on the pin";
 Blockly.Msg.grove_ldr_tooltip = "returns the measured brightness \n0: no light \n100: very intense light";
-Blockly.Msg.potar = "cursor position on pin";
+Blockly.Msg.potar = "cursor position on the pin";
 Blockly.Msg.potar_tooltip = "returns a value based on the cursor position \n0: cursor left \n255: cursor right";
-Blockly.Msg.lm35 = "temperature on pin";
+Blockly.Msg.lm35 = "temperature on the pin";
 Blockly.Msg.lm35_tooltip = "LM35: \nreturns the measured temperature in degrees celcius (from 0 to 80 �)";
 Blockly.Msg.ultrason_1 = "distance < limit";
 Blockly.Msg.ultrason_2 = "returns a High state if the measured distance is less than the limit";
 Blockly.Msg.ultrason_distance1 = "distance measured by ultrasound";
 Blockly.Msg.ultrason_tooltip = "HC-SR04: \nSound sensor that allows to make distance measurements (of 3 cm and 4 m) \nindicate the pins of the Arduino to which will be connected TRIG and ECHO";
-Blockly.Msg.ultrason = "Ultrasonic Pin";
+Blockly.Msg.ultrason = "ultrasound pins";
 Blockly.Msg.ultrason_distance2 = "HC-SR04: \nreturns the distance measured in cm by the ultrasonic detector";
 Blockly.Msg.ultrason_helpurl = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
 Blockly.Msg.pir = "motion detected ";
@@ -212,46 +212,49 @@ Blockly.Msg.presence_tooltip = "CAP711: \nreturns true (false) if a contact has 
 Blockly.Msg.appui_tooltip = "CAP831: \nreturns true (false) if a support is (is not) detected";
 // bluetooth
 Blockly.Msg.bluetooth1 = "if the data received by bluetooth";
-Blockly.Msg.bluetooth1_tooltip = "bluetooth data reception \nconnecting module HC-06 to Pins 0 and 1 \net cross Rx & Tx Pins";
+Blockly.Msg.bluetooth1_tooltip = "bluetooth data reception \nconnecting module HC-06 to pins 0 and 1 \net cross Rx and Tx pins";
 Blockly.Msg.bluetooth2 = "send by bluetooth";
-Blockly.Msg.bluetooth2_tooltip = "sends data via bluetooth \nconnecting module HC-06 to Pins 0 and 1 \net cross Pins Rx & Tx";
+Blockly.Msg.bluetooth2_tooltip = "sends data via bluetooth \nconnecting module HC-06 to pins 0 and 1 \net cross pins Rx and Tx";
 Blockly.Msg.bluetooth_init_tooltip = "";
 Blockly.Msg.bluetooth_helpurl = "https://wikifactory.com/+OttoDIY/otto-diy-plus"; // do not translate
 
 
 // SOFTWARE SERIAL FOR BT
-Blockly.Msg.SSERIAL_BT_Init="Bluetooth Software Serial";
-Blockly.Msg.SSERIAL_BT_TX="TX";
-Blockly.Msg.SSERIAL_BT_RX="RX";
+Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="Software Serial BT Read byte";
-Blockly.Msg.SSERIAL_BT_Println="Software Serial BT Print on new line";
-Blockly.Msg.SSERIAL_BT_Print="Software Serial BT Print on same line";
-Blockly.Msg.SSERIAL_BT_Write="Software Serial BT Write"
-Blockly.Msg.SSERIAL_BT_Avai="Software Serial BT Available?";
-Blockly.Msg.SSerial_BT_Print_Format="Software Serial BT Print  Format";
-Blockly.Msg.SSERIAL_BT_ReadNum="Software Serial BT Read as number";
-Blockly.Msg.SSERIAL_BT_ReadString="Software Serial BT Read String";
+Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
+Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
+Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
+Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
+Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
+Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
 Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
 
 // SOFTWARE SERIAL 
-Blockly.Msg.SSERIAL_Init="Software Serial";
-Blockly.Msg.SSERIAL_TX="TX";
-Blockly.Msg.SSERIAL_RX="RX";
+Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
+Blockly.Msg.SSERIAL_TX="Pin TX#";
+Blockly.Msg.SSERIAL_RX="Pin RX#";
 Blockly.Msg.SSERIAL_BAUD="Baudios";
-Blockly.Msg.SSERIAL_Read="Software Serial Read byte";
-Blockly.Msg.SSERIAL_Println="Software Serial Print on new line";
-Blockly.Msg.SSERIAL_Print="Software Serial Print on same line";
-Blockly.Msg.SSERIAL_Write="Software Serial Write"
-Blockly.Msg.SSERIAL_Avai="Software Serial Available?";
-Blockly.Msg.SSerial_Print_Format="Software Serial Print  Format";
-Blockly.Msg.SSERIAL_ReadNum="Software Serial Read as number";
-Blockly.Msg.SSERIAL_ReadString="Software Serial Read String";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Read byte";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Print on new line";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Print on same line";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial write"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial Available?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Print  Format";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Read as number";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Read String";
 Blockly.Msg.SSERIAL_Readlf="until line feed";
 
 // SERIAL 
-Blockly.Msg.SERIAL_Init="USB Serial";
-Blockly.Msg.SERIAL_Read="Serial Read byte";
+Blockly.Msg.SERIAL_Init="Init Serial ";
+Blockly.Msg.SERIAL_TX="Pin TX#";
+Blockly.Msg.SERIAL_RX="Pin RX#";
+Blockly.Msg.SERIAL_BAUD="Baudios";
+Blockly.Msg.SERIAL_Read="Serial  Read byte";
 Blockly.Msg.SERIAL_Println="Serial Print on new line";
 Blockly.Msg.SERIAL_Print="Serial Print on same line";
 Blockly.Msg.SERIAL_Write="Serial write"
@@ -265,7 +268,7 @@ Blockly.Msg.SERIAL_Readlf="until line feed";
 //LCD screen
 Blockly.Msg.lcd_fond = "bottom";
 Blockly.Msg.LCD = "LCD screen";
-Blockly.Msg.LCDi2c_tooltip = "initializes the 2-line, 16-character I²C LCD with RGB backlight. \n Displayer <-> Arduino \nSDA <--------> A4 \nSCL <- -------> A5 ";
+Blockly.Msg.LCDi2c_tooltip = "initializes the 2-line, 16-character I2C LCD with RGB backlight. \n Displayer <-> Arduino \nSDA <--------> A4 \nSCL <- -------> A5 ";
 Blockly.Msg.LCD_tooltip = "initializes the LCD, 2 lines and 16 characters, indicating the pins to connect";
 Blockly.Msg.LCD_SHIELD_PRINT_HELPURL = "https://www.arduino.cc/en/Tutorial/HelloWorld";// do not translate
 Blockly.Msg.LCD_SHIELD_PRINT_TEXT = "show on LCD";
@@ -334,21 +337,21 @@ Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink";// do not
 Blockly.Msg.tempo_tooltip = "This block checks if the indicated time has arrived, if it is the case then it executes the blocks placed inside .. Unlike the block 'to wait' this one is not blocking." ;
 Blockly.Msg.tempo1 = "all";
 //OLED
-Blockly.Msg.lp2i_u8g_draw_string = "OLED I²C display";
+Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
 Blockly.Msg.lp2i_u8g_draw_string_X = "raw x (127 max) =";
 Blockly.Msg.lp2i_u8g_draw_string_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I²C display";
+Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "texts to display :";
 Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "line 1 =";
 Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "line 2 =";
 Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "line 3 =";
 Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "line 4 =";
-Blockly.Msg.lp2i_u8g_print = "OLED I²C display";
+Blockly.Msg.lp2i_u8g_print = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_print_N = "Number to display ="
 Blockly.Msg.lp2i_u8g_print_X = "raw x (127 max) =";
 Blockly.Msg.lp2i_u8g_print_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_4draw_print = "OLED I²C display";
+Blockly.Msg.lp2i_u8g_4draw_print = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_4draw_print_to_display = "to display :";
 Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "line 1 =";
 Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Number 1 (at end) ="
@@ -363,14 +366,14 @@ Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "the LED on the board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";
 Blockly.Msg.blink = "blink the board LED";
 Blockly.Msg.blink_tooltip = "The board LED flashes 1 or 10 times per second";
-Blockly.Msg.del = "the LED in Pin";
-Blockly.Msg.del_tooltip = "turns on (off) the LED connected to the indicated Pin";
+Blockly.Msg.del = "the LED in pin";
+Blockly.Msg.del_tooltip = "turns on (off) the LED connected to the indicated pin";
 Blockly.Msg.bargraphe = "bargraph";
 Blockly.Msg.bargraphe_allume="turn on LEDs to";
 Blockly.Msg.bargraphe_allume_tooltip="0 lights no LEDs \n2,5 lights up the first 2 LEDs and the 3rd half turns on \n10 turns on all LEDs";
 Blockly.Msg.bargraphe_tooltip = "bargraph module composed of 10 LEDs (8 green, 1 yellow and 1 red), it is necessary to indicate the pins of the arduino on which will be connected DCKI and DI";
 Blockly.Msg.rvb_init="LED RGB";
-Blockly.Msg.rvb_init_tooltip="indicate the PWM Pins to connect to the RGB LED";
+Blockly.Msg.rvb_init_tooltip="indicate the PWM pins to connect to the RGB LED";
 Blockly.Msg.rvb_set="show color";
 Blockly.Msg.rvb_set_tooltip="displays a color indicating a value for the three components (red, green, blue)";
 Blockly.Msg.pixel1 = "NeoPixel";
@@ -379,41 +382,41 @@ Blockly.Msg.pixel3 = "color";
 Blockly.Msg.pixel4 = "# of pixels";
 Blockly.Msg.pixel5 = "set pixels brightness";
 Blockly.Msg.pixel6 = "pixel #";
-Blockly.Msg.pixel1_tooltip="neopixel RGB module indicate the Pin to be connected and the number of pixels";
+Blockly.Msg.pixel1_tooltip="neopixel RGB module indicate the pin to be connected and the number of pixels";
 Blockly.Msg.pixel2_tooltip="show changes made";
 Blockly.Msg.pixel5_tooltip="adjusts pixel brightness (from 0 to 255)";
 Blockly.Msg.pixel3_tooltip="choose the pixel to light and its color \ nCaution the numbering starts at 0";
 // output
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "put the DIGITAL Pin";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "put the DIGITAL pin";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP = "write a 0 or 1 logical state to a specific output";
-Blockly.Msg.toggle = "toggle the state of the Pin";
+Blockly.Msg.toggle = "toggle the state of the pin";
 Blockly.Msg.toggle_tooltip = "Toggle: \n write a logical state 0 if before there was a state 1 (and vice versa) on the specified output";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "put the PWM Pin";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "put the PWM pin";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP = "send a value between 0 and 255 on a specific output";
 // input
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL Pin state";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL pin state";
 Blockly.Msg.in_pullup = "Pull-Up";
 Blockly.Msg.in_pullup_tooltip = "returns the logical state (0 or 1) of the indicated pin \nreturns 1 (high state) by default if pull-up enabled";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "read logical state 0 or 1 of the digital Pin";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG Pin value";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "read logical state 0 or 1 of the digital pin";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG pin value";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP = "returns a value between 0 and 1023";
 // audio
 Blockly.Msg.play = "play";
 Blockly.Msg.play_tooltip = "play the note";
 Blockly.Msg.play_helpurl = "";
-Blockly.Msg.beep = "beep on Pin";
-Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected Pin";
-Blockly.Msg.ARDUINO_TONE_INPUT1 = "🔔 sound on Pin";
-Blockly.Msg.ARDUINO_TONE_INPUT2 = "🎼 frequency (Hz)";
-Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ duration (ms)";
-Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected Pin, at the desired frequency and for the desired duration";
-Blockly.Msg.ARDUINO_NOTONE_INPUT = "stop sound on Pin";
-Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stop the sound on the selected Pin";
+Blockly.Msg.beep = "beep on the pin";
+Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1 = "emit a sound on the pin";
+Blockly.Msg.ARDUINO_TONE_INPUT2 = "frequency (Hz)";
+Blockly.Msg.ARDUINO_TONE_INPUT3 = "duration (ms)";
+Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected pin, at the desired frequency and for the desired duration";
+Blockly.Msg.ARDUINO_NOTONE_INPUT = "stop the sound on the pin";
+Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stop the sound on the selected pin";
 Blockly.Msg.lp2i_mp3_helpurl = "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299";// do not translate
-Blockly.Msg.lp2i_mp3_Volume = "Volume [0-48]";
+Blockly.Msg.lp2i_mp3_Volume = "volume [0-48]";
 Blockly.Msg.lp2i_mp3_autoplay = "AutoPlay";
 Blockly.Msg.lp2i_mp3 = "MP3 player";
-Blockly.Msg.lp2i_mp3_tooltip = "DFPlayer Mini mp3: \ninitialization of the module, volume and operating mode \nModule MP3 <-> Arduino \nRx () <------------- -> Tx () ";
+Blockly.Msg.lp2i_mp3_tooltip = "DFPlayer Mini mp3: \ninitialization of the module, volume and operating mode \nModule MP3 <-> Arduino \nRx (2) <------------- -> Tx (1) ";
 Blockly.Msg.lp2i_mp3_play = "play the mp3 file";
 Blockly.Msg.lp2i_mp3_play_track_tooltip = "play the specified song";
 Blockly.Msg.lp2i_mp3_play_tooltip = "plays the current song";
@@ -450,7 +453,7 @@ Blockly.Msg.ADAFRUIT_MOTORSHIELD_ARRIERE = "backward";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_STOP = "stop";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP1 = "v1 - Stepper Motor";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP2 = "v2 - stepper motor";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_CONNECT = "Pin";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_CONNECT = "pin";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_PPT = "not per turn";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_RPM = "speed (RPM)";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_NB_PAS = "number of steps";
@@ -476,7 +479,7 @@ Blockly.Msg.Serial_space = "a separator";
 Blockly.Msg.Serial_space_tooltip = "return a space on the serial monitor";
 Blockly.Msg.repl_read = "user entered command";
 // software serial
-Blockly.Msg.SSERIAL_Init = "Software port on Rx";
+Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip = "Creating a new communication port using the specified pins and speed";
 Blockly.Msg.SSERIAL_Read = "data read on the software port";
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";
@@ -533,7 +536,7 @@ Blockly.Msg.OTTO9_MOUTH_CHOICE = [["😃 happy1", "happyOpen"],["🙂 happy2", "
 Blockly.Msg.OTTO9_MATRIX_TOOLTIP = "Pins: DIN A3, CS A2, CLK A1, Limited to CAPITALS A to Z NUMBERS 0 to 9 : ; < >  = @, max.9 characters";
 Blockly.Msg.OTTO9_MATRIXTEXT_TEXT = "Mouth text";
 Blockly.Msg.OTTO9_EYES_TEXT = "Eyes";
-Blockly.Msg.OTTO9_EYES_TOOLTIP = "Pins I²C, Eyes emotion for the 16x8 I²C LED matrix ";
+Blockly.Msg.OTTO9_EYES_TOOLTIP = "Pins I2C, Eyes emotion for the 16x8 I2C LED matrix ";
 Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 happy1", "happy_bmp"],["🙂 happy2", "eyes_bmp"], ["😦 sad", "sad_bmp"], ["😡 angry1", "angry_bmp"], ["😡 angry2", "angry2_bmp"], ["😰 freetful", "freetful_bmp"], ["😕 confused", "confused_bmp"],["😴 sleep", "sleep_bmp"],["😍 love", "love_bmp"],  ["😑 wave", "wave_bmp"], ["🤩 magic", "magic_bmp"], ["😞 fail", "fail_bmp"], ["🤖 logo", "logo_bmp"], ["❌❌ no", "XX_bmp"], ["x x", "xx_bmp"],["▉", "full_bmp"]];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "Eyes text";
 Blockly.Msg.OTTO9_EYES_CLEAR_TEXT = "Clear eyes";
@@ -543,8 +546,19 @@ Blockly.Msg.OTTO9_ARMS_TEXT = "Arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"],["hands down", "HANDSDOWN"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 
+/// ESP8266
+Blockly.Msg.OTTO9_YL="Left leg";
+Blockly.Msg.OTTO9_YR="Right leg";
+Blockly.Msg.OTTO9_RL="Left foot";
+Blockly.Msg.OTTO9_RR="Right foot";
+Blockly.Msg.OTTO9_BUZZER="Buzzer";
+Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto goes to home position straight.";
+Blockly.Msg.OTTO_HOME_TEXT = "Configuration";
+
+///
+
 ////////////ESCORNABOT Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
-Blockly.Msg.ESCORNABOT_MODE_TEXT="Escornabot";
+Blockly.Msg.ESCORNABOT_MODE_TEXT="Init Escornabot";
 Blockly.Msg.ESCORNABOT_MODE_CHOICE= [["Weak", ""], ["Strong", "(2)"], ["Medium", "(3)"]];;
 Blockly.Msg.ESCORNABOT_INIT_TOOLTIP="Mode choice: 1-> weaker but less electrical consumption, 2->Stronger, but needs more supply, 3->Intermediate mode ";
 Blockly.Msg.ESCORNABOT_URL="https://escornabot.com/es/index";
@@ -576,9 +590,9 @@ Blockly.Msg.ESCORNABOT_GETBUTTON_TOOLTIP="Check if the selected button is being 
 Blockly.Msg.ESCORNABOT_BUTTON_SELECTED=[["Forward", "1"], ["Backward", "3"], ["Left", "2"],["Right", "4"],["Center", "5"]];;
 Blockly.Msg.ESCORNABOT_APP_TOOLTIP="Autonomous working";
 Blockly.Msg.ESCORNABOT_APP_URL="https://escornabot.com/es/descargas";
-Blockly.Msg.ESCORNABOT_USINIT_TEXT="Ultrasonic";
-Blockly.Msg.ESCORNABOT_TRIGGER_TEXT="Trigger";
-Blockly.Msg.ESCORNABOT_ECHO_TEXT="Echo";
+Blockly.Msg.ESCORNABOT_USINIT_TEXT="Ultrasound inits";
+Blockly.Msg.ESCORNABOT_TRIGGER_TEXT="Trigger pin";
+Blockly.Msg.ESCORNABOT_ECHO_TEXT="Echo pin";
 Blockly.Msg.ESCORNABOT_GETUS_TEXT="Distance";
 Blockly.Msg.ESCORNABOT_GETUS_TOOLTIP="Distance";
 Blockly.Msg.ESCORNABOT_IRINIT_TEXT="Inits ir";
@@ -605,7 +619,7 @@ Blockly.Msg.KNOCK_DETECTED="detected?";
 Blockly.Msg.TILT_NAME="Digital Tilt";
 Blockly.Msg.TILT_DETECTED="detected?";
 Blockly.Msg.POTE_NAME="Potentiometer";
-Blockly.Msg.PERCENT="(0-100%)";
+Blockly.Msg.PERCENT="percent(0-100)%";
 Blockly.Msg.VALUE="Value(0-1023)";
 Blockly.Msg.PHOTO_NAME="Photo Interrupter";
 Blockly.Msg.PHOTO_DETECTED="detected?";
@@ -647,40 +661,40 @@ Blockly.Msg.ultrasonic_ranger="HC-SR04 Ultrasonic (cm)";
 Blockly.Msg.unit="Unit";
 Blockly.Msg.cm="cm";
 Blockly.Msg.inch="inch";
-Blockly.Msg.TRIG="Trigger";
+Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
 
 //CCS811
-Blockly.Msg.CCS811="CO2(CCS811) sensor"; 
+Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
 Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
-Blockly.Msg.CCS811_2="I²C & WAK to GND";
+Blockly.Msg.CCS811_2="- SDA-SCL and connect WAK to GND";
 Blockly.Msg.CCS811_available="Is the sensor available?";
 Blockly.Msg.CCS811_readed = "Is the measure readed?";
 Blockly.Msg.CCS811_values="value";
 
 //LCD I2C
-Blockly.Msg.LCD_I2C_setup = "LCD I²C Address";
+Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
 Blockly.Msg.LCDP_Column = "Columns";
 Blockly.Msg.LCDP_Row = "Rows";
 Blockly.Msg.LCDP_Column2 = "column";
 Blockly.Msg.LCDP_Row2 = "row";
 Blockly.Msg.LCDP_Print = "and print";
-Blockly.Msg.LCDP_Clear = "LCD I²C clear";
-Blockly.Msg.LCDP_scrollDisplay = "LCD I²C scroll display ";
-Blockly.Msg.LCDP_setBcklight = "LCD I²C set Backlight ";
-Blockly.Msg.LCDP_showCursor = "LCD I²C show Cursor ";
-Blockly.Msg.LCDP_blinkCursor = "LCD I²C blink Cursor ";
-Blockly.Msg.LCDP_Home = "LCD I²C home";
-Blockly.Msg.LCDP_SetCursor = "LCD I²C set cursor";
-Blockly.Msg.LCDP_Display = "LCD I²C ";
+Blockly.Msg.LCDP_Clear = "LCD I2C clear";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
+Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
+Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
+Blockly.Msg.LCDP_Home = "LCD I2C home";
+Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
+Blockly.Msg.LCDP_Display = "LCD I2C ";
 
 //GESTURE SENSOR APDS9960
 Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
 Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
 Blockly.Msg.APDS9960_detection = "detection";
-Blockly.Msg.APDS9960_init = "APDS9960 Gesture & Color sensor";
-Blockly.Msg.APDS9960_init2 = "I²C";
+Blockly.Msg.APDS9960_init = "Init APDS9960 gesture and color sensor.";
+Blockly.Msg.APDS9960_init2 = "SDA-SCL";
 Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
 Blockly.Msg.APDS9960_color_gain = "Config color gain";
 Blockly.Msg.APDS9960_gesture_detected = "detected?";
@@ -692,26 +706,26 @@ Blockly.Msg.APDS9960_colors = "Frequency";
 Blockly.Msg.KEY="Key";
 Blockly.Msg.GENERAL_IR="Remote Control IR";
 Blockly.Msg.GENERAL_PRESSED="Read key";
-Blockly.Msg.PIN="Pin";
+Blockly.Msg.PIN="PIN";
 
 //REMOTE CONTROL MRT
-Blockly.Msg.MRT_IR="Remote Control MRT";
+Blockly.Msg.MRT_IR="Init Remote Control MRT";
 Blockly.Msg.MRT_CHANNEL="Channel";
 Blockly.Msg.MRT_KEY="Key MRT";
 Blockly.Msg.MRT_PRESSED="Pressed?";
-Blockly.Msg.PIN2="Interrupt Pin";
+Blockly.Msg.PIN2="Interrupt PIN";
 
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
-Blockly.Msg.MP3OS_init = "Mp3 Opensmart Software Serial";
-Blockly.Msg.MP3OS_TX="TX";
-Blockly.Msg.MP3OS_RX="RX";
+Blockly.Msg.MP3OS_init = "Init Mp3 Opensmart using software serial";
+Blockly.Msg.MP3OS_TX="Port TX#";
+Blockly.Msg.MP3OS_RX="Port RX#";
 Blockly.Msg.MP3OS_equalizer = "Set equalizer";
-Blockly.Msg.MP3OS_volumen = "Set Volume(0-30)";
+Blockly.Msg.MP3OS_volumen = "Set volumen(0-30)";
 Blockly.Msg.MP3OS_operation = "Operation:";
 Blockly.Msg.MP3OS_check = "Check mp3.Need to be executed in main loop";
-Blockly.Msg.MP3OS_playsong = "Play track #";
-Blockly.Msg.MP3OS_playsongdirectory = "folder #";
+Blockly.Msg.MP3OS_playsong = "Play track number";
+Blockly.Msg.MP3OS_playsongdirectory = "in folder number";
 Blockly.Msg.MP3OS_inject="Inject track number";
 
 //Mu Vision
@@ -855,24 +869,24 @@ Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
 
 //DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
-Blockly.Msg.ST7735_init = "TFT ST7735";
-Blockly.Msg.ST7735_init2 = "SCL=SCK SDA=MOSI.";
-Blockly.Msg.ST7735_PIN_CS = "CS";
-Blockly.Msg.ST7735_PIN_RST = "RST/RES";
-Blockly.Msg.ST7735_PIN_DC = "A0/DC";
-Blockly.Msg.ST7735_WRAP = "color";
+Blockly.Msg.ST7735_init = "Init TFT ST7735 1.8\" or 0.96\".";
+Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
+Blockly.Msg.ST7735_PIN_CS = "CS Pin";
+Blockly.Msg.ST7735_PIN_RST = "RST or RES Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 or DC Pin";
+Blockly.Msg.ST7735_WRAP = "Tab color";
 Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
 Blockly.Msg.ST7735_Rotate = "Rotate display";
 Blockly.Msg.ST7735_Invert = "Invert display";
 Blockly.Msg.ST7735_SetCursor = "Set cursor";
-Blockly.Msg.ST7735_X0 = "X0";
-Blockly.Msg.ST7735_Y0 = "Y0";
-Blockly.Msg.ST7735_X1 = "Y1";
-Blockly.Msg.ST7735_Y1 = "Y1";
-Blockly.Msg.ST7735_X2 = "X2";
-Blockly.Msg.ST7735_Y2 = "Y2";
+Blockly.Msg.ST7735_X0 = "x0";
+Blockly.Msg.ST7735_Y0 = "y0";
+Blockly.Msg.ST7735_X1 = "x1";
+Blockly.Msg.ST7735_Y1 = "y1";
+Blockly.Msg.ST7735_X2 = "x2";
+Blockly.Msg.ST7735_Y2 = "y2";
 Blockly.Msg.ST7735_TEXTCOLOR = "Set text color";
-Blockly.Msg.ST7735_TEXTCOLOR2 = "color";
+Blockly.Msg.ST7735_TEXTCOLOR2 = "Set color";
 Blockly.Msg.ST7735_TEXTsize = "Set text size";
 Blockly.Msg.ST7735_TEXTwrap = "Set text wrap";
 Blockly.Msg.ST7735_PrintTextLN = "Print the text/value";
@@ -883,7 +897,7 @@ Blockly.Msg.ST7735_Drawlineto = "to";
 Blockly.Msg.ST7735_Drawrectangle = "Draw rectangle";
 Blockly.Msg.ST7735_Drawtriangle = "Draw triangle.Corner points";
 Blockly.Msg.ST7735_Drawroundrectangle = "Draw round rectangle";
-Blockly.Msg.ST7735_Drawroundrectangleradius = "round";
+Blockly.Msg.ST7735_Drawroundrectangleradius = "rounding radius";
 Blockly.Msg.ST7735_Drawrectanglewidth = "width";
 Blockly.Msg.ST7735_Drawrectangleheight = "height";
 Blockly.Msg.ST7735_Drawcircle = "Draw circle.Center in";
@@ -898,30 +912,30 @@ Blockly.Msg.OLED_IconName = "Icon";
 Blockly.Msg.OLED_ValueList = "Values(hex array)";
 Blockly.Msg.OLED_DrawiconName = "Draw Icon";
 Blockly.Msg.OLED_name = "OLED";
-Blockly.Msg.OLED_X0 = "X0";
-Blockly.Msg.OLED_Y0 = "Y0";
+Blockly.Msg.OLED_X0 = "x0";
+Blockly.Msg.OLED_Y0 = "y0";
 Blockly.Msg.OLED_width = "width";
 Blockly.Msg.OLED_height = "height";
 Blockly.Msg.OLED_COLOR = "Set color";
 
 //TCS34725 color sensor
-Blockly.Msg.TCS34725_name_init="TCS34725 color sensor";
-Blockly.Msg.TCS34725_name_init2="I²C";
-Blockly.Msg.TCS34725_name="color sensor.";
+Blockly.Msg.TCS34725_name_init="Init TCS34725 color sensor";
+Blockly.Msg.TCS34725_name_init2="SDA - SCL Gain";
+Blockly.Msg.TCS34725_name="TCS34725 color sensor.";
 Blockly.Msg.TCS34725_read="Read all values";
 Blockly.Msg.TCS34725_values="Value";
 Blockly.Msg.TCS34725_color="Is";
 Blockly.Msg.TCS34725_color2="color(No gain configured)?";
 
 //HMC5883 compass sensor
-Blockly.Msg.HMC5883="HMC5883 Compass sensor";
-Blockly.Msg.HMC5883_2=" I²C";
+Blockly.Msg.HMC5883="Init HMC5883 compass sensor";
+Blockly.Msg.HMC5883_2="- SDA - SCL";
 Blockly.Msg.HMC5883_read="HMC5883 compass sensor.Read values";
 Blockly.Msg.HMC5883_values="value";
 
 //RADIO TEA5767
-Blockly.Msg.TEA5767_name = "Radio TEA5767";
-Blockly.Msg.TEA5767_init = "Radio TEA5767 I²C";
+Blockly.Msg.TEA5767_name = "Radio TEA5767.";
+Blockly.Msg.TEA5767_init = "Init Radio TEA5767.SDA - SCL";
 Blockly.Msg.TEA5767_turnOFF_ON = "Turn";
 Blockly.Msg.TEA5767_muteOFF_ON = "Mute";
 Blockly.Msg.TEA5767_Level = "Level of the signal";
@@ -931,9 +945,9 @@ Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
 
 //RFID MFRC522
-Blockly.Msg.RFID_name = "RFID MFRC522";
-Blockly.Msg.RFID_init = "RFID MFRC522";
-Blockly.Msg.RFID_init2 = "SCK, MOSI & MISO";
+Blockly.Msg.RFID_name = "RFID MFRC522.";
+Blockly.Msg.RFID_init = "Init RFID MFRC522.";
+Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI and MISO.";
 Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
 Blockly.Msg.RFID_PIN_RST = "RST Pin";
 Blockly.Msg.RFID_VALID_VAR = "Define Validation card name:";
@@ -960,15 +974,15 @@ Blockly.Msg.MouseMoveW="Wheel";
 
 //GPS
 Blockly.Msg.GPS_name = "GPS NEO-6";
-Blockly.Msg.GPS_init = "GPS Software Serial";
-Blockly.Msg.GPS_TX="TX";
-Blockly.Msg.GPS_RX="RX";
-Blockly.Msg.GPS_readvalues = "Read and save values using Software Serial";
+Blockly.Msg.GPS_init = "Init GPS using software serial";
+Blockly.Msg.GPS_TX="TX#";
+Blockly.Msg.GPS_RX="RX#";
+Blockly.Msg.GPS_readvalues = "Read and save values using software serial";
 Blockly.Msg.GPS_paramter = "Location Parameters:";
 Blockly.Msg.GPS_paramter3 = "DateTime:";
 
 //TM1640
-Blockly.Msg.TM1640_init = "TM1640 Led matrix";
+Blockly.Msg.TM1640_init = "Init TM1640 Led matrix";
 Blockly.Msg.TM1640_SCL="SCL Pin";
 Blockly.Msg.TM1640_SDA="SDA Pin";
 
@@ -979,17 +993,17 @@ Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";
 
 //STEPPERS
-Blockly.Msg.STEEPER_name="Stepper ID";
-Blockly.Msg.STEEPER_name2="Stepper 28BYJ ID";
+Blockly.Msg.STEEPER_name="Init Stepper ID";
+Blockly.Msg.STEEPER_name2="Init Stepper28BYJ ID";
 Blockly.Msg.STEEPER2_name="Stepper ID";
-Blockly.Msg.STEEPER2_name2="Stepper 28BYJ ID";
+Blockly.Msg.STEEPER2_name2="Stepper28BYJ ID";
 Blockly.Msg.STEEPER_steprev="Steps/Rev.";
 Blockly.Msg.STEEPER_step="Steps";
 Blockly.Msg.STEEPER_speed="Speed (rpm)";
-Blockly.Msg.STEEPER_pin1="Pin A";
-Blockly.Msg.STEEPER_pin2="B";
-Blockly.Msg.STEEPER_pin3="C";
-Blockly.Msg.STEEPER_pin4="D";
+Blockly.Msg.STEEPER_pin1="PIN-A";
+Blockly.Msg.STEEPER_pin2="PIN-B";
+Blockly.Msg.STEEPER_pin3="PIN-C";
+Blockly.Msg.STEEPER_pin4="PIN-D";
 Blockly.Msg.STEEPER_Move="Move";
 Blockly.Msg.STEEPER_MoveTo="Move to step(0-4096)";
 Blockly.Msg.STEEPER_Degree="degrees";

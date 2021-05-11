@@ -12,31 +12,38 @@
 	</category>
 	
 	<category name="CAT_OTTO" colour="#32D900">
-		<block type="otto9_home"></block>
-		<block type="otto9_move"></block>
-		<block type="otto9_dance"></block>
-		<block type="otto9_do"></block>
-		<block type="otto9_sound"></block>
-		<block type="otto9_gesture"></block>
-		<block type="otto9_arms"></block>
-		<block type="otto9_tone"></block>
-		<block type="otto9_tonehz">
+	
+	
+		<block type="otto_configuration">
+		<field name="PIN_YL">0</field>
+		<field name="PIN_YR">2</field>
+		<field name="PIN_RL">13</field>
+		<field name="PIN_RR">15</field>
+		<field name="PIN_Buzzer">16</field>
+
+		</block>
+		<block type="otto_home"></block>
+		<block type="otto_move"></block>
+		<block type="otto_dance"></block>
+		<block type="otto_do"></block>
+		<block type="otto_sound"></block>
+		<block type="otto_gesture"></block>
+		<block type="otto_tone"></block>
+		<block type="otto_tonehz">
 			<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 			<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
 			<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
 		</block>
-		<block type="otto9_bendtone">
+		<block type="otto_bendtone">
 			<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
 			<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
 			<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
 			<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
 			<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>
-		<block type="otto9_app"></block>
-		<block type="otto9_smooth"></block>
-		<block type="otto9_calibration"></block>
-		<block type="otto9_eeprom"></block>
-		<block type="otto9_wheels"></block>
+		<block type="otto_calibration"></block>
+		<block type="otto_eeprom"></block>
+		
 	<!--	
 	<category name="CAT_ultrason" colour="#2a93e8">
 		<block type="otto9_obstacle"></block>
@@ -269,8 +276,8 @@
 		<block type="CCS811_values"></block>
 	</category>	
 		<category name="CAT_GAS" colour="#2a93e8">
-		 <block type="Gas_sensor"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-		 <block type="Gas_status_sensor"><value name="PIN_GAS"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
+		 <block type="Gas_sensor2"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+		 <block type="Gas_status_sensor2"><value name="PIN_GAS"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
 		 <block type="Alcohol_sensor"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
 		 <block type="Alcohol_status_sensor"><value name="PIN_ALCOHOL"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
 	</category>	
@@ -425,12 +432,14 @@
 		</block>
 		
 	</category>	
-	<category name="CAT_actionneur" colour="#2d2dd1">
+	
+	<!--
+	<category name="CAT_actionneur" colour="#2d2dd1"> -->
 		
 	<!--	<block type="m_pap"></block>
 		<block type="m_pap_step"></block> -->
 		
-		<block type="stepper_configuration">
+	<!--	<block type="stepper_configuration">
 		       
 				<value name="STEP_RPM">
                     <shadow type="math_number">
@@ -472,7 +481,7 @@
                         <field name="NUM">4096</field>
                     </shadow>
                 </value>
-		   </block>
+		   </block> -->
 	<!--			
 		<block type="motor_run">
 		 <value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
@@ -483,9 +492,9 @@
 		<block type="moteur_dc"></block>
 		<block type="moteur_dc_stop"></block>
 		<block type="dagu_rs027"></block>
-		-->
+		
 			
-	</category>
+	</category>  -->
 	
 <!--	<category name="CAT_ARDUINO_moteur" colour="#2d2dd1"></category> -->
 	<!--<category name="CAT_numerique" colour="#2a93e8">

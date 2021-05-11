@@ -657,27 +657,29 @@ Blockly.Arduino['dht_sensor2'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-/*
 
-Blockly.Blocks['Gas_sensor'] = {
+
+Blockly.Blocks['Gas_sensor2'] = {
   helpUrl: '',
   init: function() {
+	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
 	    .appendField(Blockly.Msg.GAS_NAME)
         .appendField(Blockly.Msg.PIN)
-    this.appendValueInput("PIN_GAS", "Number").setCheck("Number")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_GAS")
 	this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
+	this.setInputsInline(true);
     this.setTooltip('Target gas: carbon monoxide.Gas sensor.Value');
   }
 };
 
 
-Blockly.Arduino['Gas_sensor'] = function(block) {
-    var PinGas = Blockly.Arduino.valueToCode(this, "PIN_GAS", Blockly.Arduino.ORDER_NONE); 
+Blockly.Arduino['Gas_sensor2'] = function(block) {
+    var PinGas = block.getFieldValue('PIN_GAS');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
@@ -689,15 +691,16 @@ Blockly.Arduino['Gas_sensor'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Blocks['Gas_status_sensor'] = {
+Blockly.Blocks['Gas_status_sensor2'] = {
   helpUrl: '',
   init: function() {
+	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
 	    .appendField(Blockly.Msg.GAS_NAME)
 	    .appendField(Blockly.Msg.PIN)
-    this.appendValueInput("PIN_GAS", "Number").setCheck("Number")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_GAS")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.GAS_DETECTED)
@@ -707,14 +710,17 @@ Blockly.Blocks['Gas_status_sensor'] = {
   }
 };
 
-Blockly.Arduino['Gas_status_sensor'] = function(block) {
-  var dropdown_pin = Blockly.Arduino.valueToCode(this, "PIN_GAS", Blockly.Arduino.ORDER_NONE);
+Blockly.Arduino['Gas_status_sensor2'] = function(block) {
   
+  var dropdown_pin = block.getFieldValue('PIN_GAS');
   Blockly.Arduino.setups_['setup_gas_'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
   
   var code = 'digitalRead('+dropdown_pin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+/*
+
 
 Blockly.Blocks['Alcohol_sensor'] = {
   helpUrl: '',
