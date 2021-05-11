@@ -90,14 +90,15 @@
 					<span class="fa fa-cog fa-lg fa-fw"></span>
 				</button>
 				<span style="color:white;font-size:20"> | </span>
+				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
+					<span class="fa fa-file-text fa-lg fa-fw"></span>
+				</button>
+				<span id="exampleModalLabel" style="color:white;font-size:4" > </span>
 				<button id="btn_new" class="btn btn-arduino-rect">
 					<span class="fa fa-file fa-fw"></span>
 				</button>
 				<button id="btn_fakeload" class="btn btn-arduino-rect">
 					<span class="fa fa-folder-open fa-lg fa-fw"></span>
-				</button>
-				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
-					<span class="fa fa-file-text fa-lg fa-fw"></span>
 				</button>
 				<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
 				<button id="btn_saveXML" class="btn btn-arduino-rect">
@@ -114,7 +115,7 @@
 				<button id="btn_redo" class="btn btn-arduino">
 					<span class="fa fa-repeat"> </span>
 				</button>
-				<!--
+				
 				<span style="color: white; font-size: 4">|</span>
 				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: -2px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-microchip fa-fw" > </span>
@@ -125,11 +126,11 @@
 						<option value="nanooptiboot">Arduino Nano</option>
 						<option value="nano" >Arduino Nano (old bootloader)</option>
 						<option value="nona4809">Arduino Nano Every</option>
-						<option value="leonardo" >Arduino Leonardo</option>
+						<option value="leonardo" >Arduino Léonardo</option>
 						<option value="micro" >Arduino Micro</option>
 						<option value="mini" >Arduino Mini</option>
 						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
-						<option value="mega" >Arduino Mega 2560</option>					
+						<option value="mega" >Arduino Méga 2560</option>					
 						<option value="yun" >Arduino Yun</option> 
 						<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
 						<option value="wemosD1miniPro" >ESP8266:Wemos D1 mini pro</option>
@@ -155,11 +156,11 @@
 				<button id="btn_flash" class='btn btn-arduino' data-toggle="modal" data-target="#message">
 					<span class="fa fa-arrow-right fa-1_5x fa-fw"> </span>
 				</button>
-				<span id="survol" style="color:#fff"></span>-->
+				<span id="survol" style="color:#fff"></span>
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
+			<button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button>
 			<button id="btn_search" class='btn btn-default'><span class="fa fa-binoculars"> </span></button>
-			<!--<button id="btn_bin" class='btn btn-default'>	<span class="fa fa-code-fork fa-lg fa-fw"> </span> </button> -->
 			<button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button> 
 			<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question fa-lg fa-fw"></span> </button>
 			<button id="btn_term" class="btn btn-default"><span class="fa fa-search fa-lg fa-fw"></span></button>
@@ -291,23 +292,23 @@
 					<option value="nanooptiboot">Arduino Nano</option>
 					<option value="nano" >Arduino Nano (old bootloader)</option>
 					<option value="nona4809">Arduino Nano Every</option>
-					<option value="leonardo" >Arduino Leonardo</option>
+					<option value="leonardo" >Arduino Léonardo</option>
 					<option value="micro" >Arduino Micro</option>
 					<option value="mini" >Arduino Mini</option>
 					<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>	
-					<option value="mega" >Arduino Mega 2560</option>					
-					<!--<option value="yun" >Arduino Yun</option>-->
+					<option value="mega" >Arduino Méga 2560</option>					
+					<option value="yun" >Arduino Yun</option>
 					<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
 					<option value="wemosD1miniPro" >ESP8266:Wemos D1 mini pro</option>
 					<option value="OttoESP" >ESP8266:ESP12E NodeMcu</option>
 				</optgroup>
 				
-				<optgroup label="Python">
+				<!--<optgroup label="Python">
 					<option value="esp8266" >ESP 8266</option>
 					<option value="esp32" >ESP 32</option>
-					<!--<option value="microbit" >micro:bit</option>-->
-					<!--<option value="pyboard" >Pyboard</option>-->
-				</optgroup>
+					<option value="microbit" >micro:bit</option>
+					<option value="pyboard" >Pyboard</option>
+				</optgroup>-->
 			</select>
 			<br><br>
 			<div id="infoboard"></div>

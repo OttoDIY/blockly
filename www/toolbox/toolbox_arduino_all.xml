@@ -16,28 +16,30 @@
 		<block type="otto9_move"></block>
 		<block type="otto9_dance"></block>
 		<block type="otto9_do"></block>
-		<block type="otto9_sound"></block>
 		<block type="otto9_gesture"></block>
 		<block type="otto9_arms"></block>
-		<block type="otto9_tone"></block>
-		<block type="otto9_tonehz">
-			<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
-			<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
-		</block>
-		<block type="otto9_bendtone">
-			<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
-			<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
-			<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
-			<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
-			<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		</block>
 		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
 		<block type="otto9_calibration"></block>
 		<block type="otto9_eeprom"></block>
 		<block type="otto9_wheels"></block>
 		
+		<category name="OTTO9_BUZZER" colour="#a600d3">
+			<block type="otto9_sound"></block>
+			<block type="otto9_tone"></block>
+			<block type="otto9_tonehz">
+				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
+				<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
+			</block>
+			<block type="otto9_bendtone">
+				<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
+				<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
+				<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
+				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
+				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+		</category>	
 		<category name="CAT_ultrason" colour="#2a93e8">
 			<block type="otto9_obstacle"></block>
 			<block type="otto9_getdistance"></block>
