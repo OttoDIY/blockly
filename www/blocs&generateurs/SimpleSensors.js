@@ -41,7 +41,7 @@ Blockly.Blocks['button_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/button.png",65,38))
+		.appendField(new Blockly.FieldImage("media/button.png",50,38))
 	    .appendField(Blockly.Msg.BUTTON_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_BUTTON", "Number").setCheck("Number")
@@ -75,7 +75,7 @@ Blockly.Blocks['button_touch_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_touch.png",49,38))
+		.appendField(new Blockly.FieldImage("media/sensor_touch.png",50,38))
 	    .appendField(Blockly.Msg.BUTTON_TOUCH_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_BUTTON", "Number").setCheck("Number")
@@ -109,7 +109,7 @@ Blockly.Blocks['tilt_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tilt.png",53,38))
+		.appendField(new Blockly.FieldImage("media/tilt.png",50,38))
 	    .appendField(Blockly.Msg.TILT_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_BUTTON", "Number").setCheck("Number")
@@ -139,7 +139,7 @@ Blockly.Blocks['photointerrupter_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/photointerrupter.png",52,38))
+		.appendField(new Blockly.FieldImage("media/photointerrupter.png",50,38))
 	    .appendField(Blockly.Msg.PHOTO_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_BUTTON", "Number").setCheck("Number")
@@ -167,7 +167,7 @@ Blockly.Blocks['knock_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/knock.png",54,38))
+		.appendField(new Blockly.FieldImage("media/knock.png",50,38))
 	    .appendField(Blockly.Msg.KNOCK_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_BUTTON", "Number").setCheck("Number")
@@ -235,7 +235,7 @@ Blockly.Blocks['Analog_temperature_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/Analog_temperature.png",58,38))
+	    .appendField(new Blockly.FieldImage("media/Analog_temperature.png",50,38))
         .appendField(Blockly.Msg.VAR_TemSens)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN", "Number").setCheck("Number")
@@ -268,7 +268,7 @@ Blockly.Blocks['LM35_temperature_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/LM35_temperature.png",52,38))
+	    .appendField(new Blockly.FieldImage("media/LM35_temperature.png",50,38))
         .appendField(Blockly.Msg.VAR_LM35)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN", "Number").setCheck("Number")
@@ -291,7 +291,7 @@ Blockly.Blocks['potentiometer_ranger_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/potentiometer.png",47,38))
+	    .appendField(new Blockly.FieldImage("media/potentiometer.png",50,38))
 	    .appendField(Blockly.Msg.POTE_NAME)
         .appendField(Blockly.Msg.PIN)
 	this.appendValueInput("PIN_POTENTIOMETER", "Number").setCheck("Number")
@@ -321,7 +321,7 @@ Blockly.Blocks['LDR_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/light.png",59,38))
+		.appendField(new Blockly.FieldImage("media/light.png",50,38))
 	    .appendField(Blockly.Msg.LDR_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_LDR", "Number").setCheck("Number")
@@ -351,7 +351,7 @@ Blockly.Blocks['LDR_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/light.png",59,38))
+		.appendField(new Blockly.FieldImage("media/light.png",50,38))
 	    .appendField(Blockly.Msg.LDR_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_LDR", "Number").setCheck("Number")
@@ -380,7 +380,7 @@ Blockly.Blocks['IR_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/linefollow.png",60,38))
+	    .appendField(new Blockly.FieldImage("media/linefollow.png",50,38))
 	    .appendField(Blockly.Msg.IR_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_IR", "Number").setCheck("Number")
@@ -410,7 +410,7 @@ Blockly.Blocks['IR_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/linefollow.png",60,38))
+		.appendField(new Blockly.FieldImage("media/linefollow.png",50,38))
 	    .appendField(Blockly.Msg.IR_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_IR", "Number").setCheck("Number")
@@ -438,7 +438,7 @@ Blockly.Blocks['Flame_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/flame.png",58,38))
+		.appendField(new Blockly.FieldImage("media/flame.png",50,38))
 	    .appendField(Blockly.Msg.FLAME_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_FLAME", "Number").setCheck("Number")
@@ -467,7 +467,7 @@ Blockly.Blocks['Flame_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/flame.png",58,38))
+		.appendField(new Blockly.FieldImage("media/flame.png",50,38))
 	    .appendField(Blockly.Msg.FLAME_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_FLAME", "Number").setCheck("Number")
@@ -495,7 +495,7 @@ Blockly.Blocks['Sound_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_noise.png",54,38))
+		.appendField(new Blockly.FieldImage("media/sensor_noise.png",50,38))
 	    .appendField(Blockly.Msg.SOUND_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_SOUND", "Number").setCheck("Number")
@@ -525,7 +525,7 @@ Blockly.Blocks['Sound_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_noise.png",54,38))
+		.appendField(new Blockly.FieldImage("media/sensor_noise.png",50,38))
 	    .appendField(Blockly.Msg.SOUND_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_SOUND", "Number").setCheck("Number")
@@ -552,8 +552,8 @@ Blockly.Blocks['dht_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/humidity11.png",55,38))
-		.appendField(new Blockly.FieldImage("media/humidity22.png",55,38))
+		.appendField(new Blockly.FieldImage("media/humidity11.png",50,38))
+		.appendField(new Blockly.FieldImage("media/humidity22.png",50,38))
 	    .appendField(Blockly.Msg.DHT_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_DHT", "Number").setCheck("Number")
@@ -609,7 +609,7 @@ Blockly.Blocks['Gas_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
+		.appendField(new Blockly.FieldImage("media/gas.png",50,38))
 	    .appendField(Blockly.Msg.GAS_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_GAS", "Number").setCheck("Number")
@@ -639,7 +639,7 @@ Blockly.Blocks['Gas_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
+		.appendField(new Blockly.FieldImage("media/gas.png",50,38))
 	    .appendField(Blockly.Msg.GAS_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_GAS", "Number").setCheck("Number")
@@ -666,7 +666,7 @@ Blockly.Blocks['Alcohol_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alcohol.png",63,38))
+		.appendField(new Blockly.FieldImage("media/alcohol.png",50,38))
 	    .appendField(Blockly.Msg.ALCOHOL_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_ALCOHOL", "Number").setCheck("Number")
@@ -696,7 +696,7 @@ Blockly.Blocks['Alcohol_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alcohol.png",63,38))
+		.appendField(new Blockly.FieldImage("media/alcohol.png",50,38))
 	    .appendField(Blockly.Msg.ALCOHOL_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_ALCOHOL", "Number").setCheck("Number")
@@ -724,7 +724,7 @@ Blockly.Blocks['Vibration_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vibration.png",53,38))
+		.appendField(new Blockly.FieldImage("media/vibration.png",50,38))
 	    .appendField(Blockly.Msg.VIBRATION_NAME)
         .appendField(Blockly.Msg.PIN)
 	this.appendValueInput("PIN_VIBRATION", "Number").setCheck("Number")
@@ -754,7 +754,7 @@ Blockly.Blocks['Vibration_status_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vibration.png",53,38))
+		.appendField(new Blockly.FieldImage("media/vibration.png",50,38))
 	    .appendField(Blockly.Msg.VIBRATION_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_VIBRATION", "Number").setCheck("Number")
@@ -781,7 +781,7 @@ Blockly.Blocks['hall_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/hall.png",45,38))
+		.appendField(new Blockly.FieldImage("media/hall.png",50,38))
 	    .appendField(Blockly.Msg.HALL_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_HALL", "Number").setCheck("Number")
@@ -809,7 +809,7 @@ Blockly.Blocks['pir_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/pir.png",59,38))
+		.appendField(new Blockly.FieldImage("media/pir.png",50,38))
 	    .appendField(Blockly.Msg.PIR_NAME)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_PIR", "Number").setCheck("Number")
@@ -837,7 +837,7 @@ Blockly.Blocks['Vapor_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vapor.png",54,38))
+		.appendField(new Blockly.FieldImage("media/vapor.png",50,38))
 	    .appendField(Blockly.Msg.VAPOR_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_VAPOR", "Number").setCheck("Number")
@@ -866,7 +866,7 @@ Blockly.Blocks['AmbientLight_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alight.png",48,38))
+		.appendField(new Blockly.FieldImage("media/alight.png",50,38))
 	    .appendField(Blockly.Msg.ALIGHT_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_ALIGHT", "Number").setCheck("Number")
@@ -896,7 +896,7 @@ Blockly.Blocks['Water_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/water.png",47,38))
+		.appendField(new Blockly.FieldImage("media/water.png",50,38))
 	    .appendField(Blockly.Msg.WATER_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_WATER", "Number").setCheck("Number")
@@ -926,7 +926,7 @@ Blockly.Blocks['Moisture_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/moisture.png",61,38))
+		.appendField(new Blockly.FieldImage("media/moisture.png",50,38))
 	    .appendField(Blockly.Msg.MOISTURE_NAME)
         .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_MOISTURE", "Number").setCheck("Number")
@@ -957,7 +957,7 @@ Blockly.Blocks['Joystick_axis_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/joystick.png",46,38))
+		.appendField(new Blockly.FieldImage("media/joystick.png",50,38))
 	    .appendField(Blockly.Msg.JOYSTICK_NAME)
 		.appendField(new Blockly.FieldDropdown([["X", "0"], ["Y", "1"]]), "OUTPUT_AXIS")
         .appendField(Blockly.Msg.PIN)
@@ -988,7 +988,7 @@ Blockly.Blocks['joystick_button_sensor'] = {
   init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/joystick.png",46,38))
+		.appendField(new Blockly.FieldImage("media/joystick.png",50,38))
 	    .appendField(Blockly.Msg.JOYSTICK_BUTTON)
 	    .appendField(Blockly.Msg.PIN)
     this.appendValueInput("PIN_JOYSTICK", "Number").setCheck("Number")
@@ -1000,8 +1000,6 @@ Blockly.Blocks['joystick_button_sensor'] = {
   }
 };
 
-
-
 Blockly.Arduino['joystick_button_sensor'] = function(block) {
   var dropdown_pin = Blockly.Arduino.valueToCode(this, "PIN_JOYSTICK", Blockly.Arduino.ORDER_NONE);
   
@@ -1010,7 +1008,3 @@ Blockly.Arduino['joystick_button_sensor'] = function(block) {
   var code = 'digitalRead('+dropdown_pin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-
-
-
-

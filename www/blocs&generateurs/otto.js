@@ -379,7 +379,7 @@ Blockly.Blocks['otto9_sound'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#a600d3");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
 };
@@ -417,7 +417,7 @@ Blockly.Blocks['otto9_tone'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#a600d3");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -458,7 +458,7 @@ Blockly.Blocks['otto9_tonehz'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#a600d3");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -492,7 +492,7 @@ Blockly.Blocks['otto9_bendtone'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#a600d3");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -771,7 +771,7 @@ Blockly.Arduino['otto9_eyes#'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesp']={ init:function(){
-  this.appendDummyInput() .appendField(". X")
+  this.appendDummyInput() .appendField("👀 . X")
   this.appendValueInput("X")  .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.setInputsInline(true);
@@ -795,7 +795,7 @@ Blockly.Arduino['otto9_eyesp'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesl']={ init:function(){
-  this.appendDummyInput() .appendField("_ X1")
+  this.appendDummyInput() .appendField("👀 _ X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
@@ -824,7 +824,7 @@ Blockly.Arduino['otto9_eyesl'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesr']={ init:function(){
-  this.appendDummyInput() .appendField("🔲 X1")
+  this.appendDummyInput() .appendField("👀 🔲 X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
@@ -852,7 +852,7 @@ Blockly.Arduino['otto9_eyesr'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesf']={ init:function(){
-  this.appendDummyInput() .appendField("⬛ X1")
+  this.appendDummyInput() .appendField("👀 ⬛ X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
@@ -881,7 +881,7 @@ Blockly.Arduino['otto9_eyesf'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesc']={ init:function(){
-  this.appendDummyInput()  .appendField("⚪ X") 
+  this.appendDummyInput()  .appendField("👀 ⚪ X") 
   this.appendValueInput("X") .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendValueInput("R") .setCheck("Number").appendField("R");
@@ -907,7 +907,7 @@ Blockly.Arduino['otto9_eyesc'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyescf']={ init:function(){
-  this.appendDummyInput()  .appendField("⚫ X") 
+  this.appendDummyInput()  .appendField("👀 ⚫ X") 
   this.appendValueInput("X") .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendValueInput("R") .setCheck("Number").appendField("R");
@@ -1434,7 +1434,7 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
 											 
 Blockly.Blocks['otto9_matrixp']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
-  this.appendDummyInput() .appendField("pixel X");
+  this.appendDummyInput() .appendField("👅 . X");
   this.appendValueInput("X") .setCheck("Number");
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");

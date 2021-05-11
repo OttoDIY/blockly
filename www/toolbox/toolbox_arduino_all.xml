@@ -720,13 +720,21 @@
 			<block type="beep">
 			<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
 		<category name="CAT_DFPLAYER" colour="#a600d3">
-			<block type="lp2i_mp3_init"></block>
+			<block type="lp2i_mp3_init">
+				<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+				<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
+				<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+			</block>
+			<block type="lp2i_mp3_volume">			 
+			<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+			</block>
 			<block type="lp2i_mp3_play"></block>
-			<block type="lp2i_mp3_play_track"></block>
+			<block type="lp2i_mp3_play_track">
+				<value name="num"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+			</block>
 			<block type="lp2i_mp3_pause"></block>
 			<block type="lp2i_mp3_next"></block>
 			<block type="lp2i_mp3_prev"></block>
-			<block type="lp2i_mp3_volume"></block>
 		</category>	
 		
 		<category name="CAT_OPENSMART" colour="#a600d3">
