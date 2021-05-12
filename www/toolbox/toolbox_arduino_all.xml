@@ -119,17 +119,22 @@
 	
 		<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="inout_digital_write">
-		<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
+		<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
 		<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
 		</block>	
 		<block type="inout_onoff"></block>
 		<block type="digital_read">
-				<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
+				<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
 				</block>
 		<block type="inout_analog_write">
 		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
 		</block>
+		<block type="inout_analog_write2">
+		<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
+		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+		</block>
 		<block type="inout_analog_read"></block>
+		<block type="inout_analog_read2">		<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value></block>
 		<block type="toggle">
 				<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
 				</block>
@@ -158,6 +163,12 @@
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
 		<block type="analog_pin"></block>
+		<block type="math_map">
+		<value name="A1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="A2"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
+		<value name="B1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="B2"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		</block>
         <block type="logic_compare">
 			<value name="B"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 		</block>

@@ -180,6 +180,16 @@ Blockly.Blocks["inout_analog_write"]={init:function(){
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
 };
+Blockly.Blocks["inout_analog_write2"]={init:function(){
+    this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1).setCheck("Number");
+    this.appendValueInput("NUM", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT).setCheck("Number");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#00929f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
+};
 Blockly.Blocks["inout_analog_read"]={init:function(){
 		var card=window.localStorage.card;
 		var prog = window.localStorage.prog;
@@ -192,6 +202,20 @@ Blockly.Blocks["inout_analog_read"]={init:function(){
 		}
 		this.setOutput(true, "Number");
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP)}
+};
+Blockly.Blocks["inout_analog_read2"]={init:function(){
+    var card=window.localStorage.card;
+    var prog = window.localStorage.prog;
+    this.setColour("#00929f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    if (prog != "python") {
+        this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT).setCheck("Number");
+    } else {
+        this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT).setCheck("Number");
+    }
+    this.setInputsInline(true);
+    this.setOutput(true, "Number");
+    this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP)}
 };
 Blockly.Blocks["inout_attachInterrupt"]={init:function(){
 		var card=window.localStorage.card;

@@ -846,9 +846,18 @@ Blockly.Blocks['analog_pin'] = {
     this.setTooltip('Analog input');
   }
 };
-
-
-
+Blockly.Blocks["math_map"]={init:function(){
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("map");
+    this.appendValueInput("A1", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("from");
+    this.appendValueInput("A2", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("-");
+    this.appendValueInput("B1", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("to");
+    this.appendValueInput("B2", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("-");
+	this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.m_pap_tooltip);
+    this.setHelpUrl(Blockly.Msg.HELPURL);}
+};
 
 Blockly.Blocks["math_arithmetic"] = {
     init: function() {

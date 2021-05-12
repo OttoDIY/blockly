@@ -153,10 +153,22 @@ Blockly.Arduino["math_number"]=function(block){
 Blockly.Arduino['analog_pin'] = function(block) {
   // Numeric value.
   var code = this.getFieldValue("NUM");
-  
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+Blockly.Arduino["math_map"]=function(block){
+    var pin=Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var A1=Blockly.Arduino.valueToCode(block, "A1", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var A2=Blockly.Arduino.valueToCode(block, "A2", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var B1=Blockly.Arduino.valueToCode(block, "B1", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var B2=Blockly.Arduino.valueToCode(block, "B2", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var code ='map('+pin+','+A1+','+A2+','+B1+','+B2+')';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
+Blockly.Arduino["inout_angle_maths"]=function(block){
+    var angle=block.getFieldValue("ANGLE");
+    return [angle, Blockly.Arduino.ORDER_ATOMIC]
+};
 
 Blockly.Arduino["math_arithmetic"]=function(block){
     var mode = block.getFieldValue("OP");

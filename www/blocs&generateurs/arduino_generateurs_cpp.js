@@ -338,15 +338,24 @@ Blockly.Arduino["inout_analog_write"]=function(block){
     var code="analogWrite(" + dropdown_pin + ", " + value_num + ");\n";
     return code
 };
+Blockly.Arduino["inout_analog_write2"]=function(block){
+    var pin =Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ATOMIC);
+    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output" + pin]="pinMode(" + pin + ", OUTPUT);";
+    var code="analogWrite(" + pin + ", " + value_num + ");\n";
+    return code
+};
 Blockly.Arduino["inout_analog_read"]=function(block){
     var dropdown_pin=block.getFieldValue("broche");
     var code="analogRead(" + dropdown_pin + ")";
     return [code, Blockly.Arduino.ORDER_ATOMIC]
 };
-Blockly.Arduino["inout_angle_maths"]=function(block){
-    var angle=block.getFieldValue("ANGLE");
-    return [angle, Blockly.Arduino.ORDER_ATOMIC]
+Blockly.Arduino["inout_analog_read2"]=function(block){
+    var pin =Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ATOMIC);
+    var code="analogRead(" + pin + ")";
+    return [code, Blockly.Arduino.ORDER_ATOMIC]
 };
+
 Blockly.Arduino["toggle"]=function(block){
     var dropdown_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
 	Blockly.Arduino.definitions_["toggle"+dropdown_pin]="boolean etat_" + dropdown_pin + "=LOW;";
