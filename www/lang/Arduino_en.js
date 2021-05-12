@@ -147,7 +147,7 @@ Blockly.Msg.LKL_MODE = 'is detected on the Pin';
 Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
 Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]; // do not translate
 Blockly.Msg.on_off = [["on", "LOW"], ["off", "HIGH"]];
-Blockly.Msg.menublink = [["slowly", "1000"], ["fast", "100"]];
+Blockly.Msg.menublink = [["slow", "1000"], ["fast", "100"]];
 Blockly.Msg.AV_AR = [[Blockly.Msg.AV, "FORWARD"], [Blockly.Msg.AR, "BACKWARD"]]; // do not translate
 Blockly.Msg.times = [["seconds", "s"], ["milliseconds", "m"], ["microseconds", "u"]];
 Blockly.Msg.time = [["seconds", "s"], ["milliseconds", "m"]];
@@ -359,11 +359,11 @@ Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) ="
 Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
 Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) ="
 // LED
-Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "the LED on the board";
+Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "LED on the board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";
-Blockly.Msg.blink = "blink the board LED";
+Blockly.Msg.blink = "Blink LED on the board";
 Blockly.Msg.blink_tooltip = "The board LED flashes 1 or 10 times per second";
-Blockly.Msg.del = "the LED in Pin";
+Blockly.Msg.del = "💡 LED Pin";
 Blockly.Msg.del_tooltip = "turns on (off) the LED connected to the indicated Pin";
 Blockly.Msg.bargraphe = "bargraph";
 Blockly.Msg.bargraphe_allume="turn on LEDs to";
@@ -384,26 +384,26 @@ Blockly.Msg.pixel2_tooltip="show changes made";
 Blockly.Msg.pixel5_tooltip="adjusts pixel brightness (from 0 to 255)";
 Blockly.Msg.pixel3_tooltip="choose the pixel to light and its color \ nCaution the numbering starts at 0";
 // output
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "put the DIGITAL Pin";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP = "write a 0 or 1 logical state to a specific output";
-Blockly.Msg.toggle = "toggle the state of the Pin";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "Write -Digital Pin";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP = "Write a 0 or 1 logical state to a specific output";
+Blockly.Msg.toggle = "Toggle the state of the Pin";
 Blockly.Msg.toggle_tooltip = "Toggle: \n write a logical state 0 if before there was a state 1 (and vice versa) on the specified output";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "put the PWM Pin";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP = "send a value between 0 and 255 on a specific output";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "Write 〰️Analog PWM Pin";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP = "Send a value between 0 and 255 on a specific output";
 // input
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL Pin state";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "Read -Digital state Pin";
 Blockly.Msg.in_pullup = "Pull-Up";
 Blockly.Msg.in_pullup_tooltip = "returns the logical state (0 or 1) of the indicated pin \nreturns 1 (high state) by default if pull-up enabled";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "read logical state 0 or 1 of the digital Pin";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG Pin value";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "Read logical state 0 or 1 of the digital Pin";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "Read 〰️Analog value Pin ";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP = "returns a value between 0 and 1023";
 // audio
-Blockly.Msg.play = "play";
+Blockly.Msg.play = "Play";
 Blockly.Msg.play_tooltip = "play the note";
 Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "beep on Pin";
 Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected Pin";
-Blockly.Msg.ARDUINO_TONE_INPUT1 = "🔔 sound on Pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1 = "🔔 Buzzer Pin";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "🎼 frequency (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ duration (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected Pin, at the desired frequency and for the desired duration";
@@ -548,9 +548,9 @@ Blockly.Msg.OTTO9_YL="Left leg";
 Blockly.Msg.OTTO9_YR="Right leg";
 Blockly.Msg.OTTO9_RL="Left foot";
 Blockly.Msg.OTTO9_RR="Right foot";
-Blockly.Msg.OTTO9_BUZZER="Buzzer";
+Blockly.Msg.OTTO9_BUZZER="🔔Buzzer";
 Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto goes to home position straight.";
-Blockly.Msg.OTTO_HOME_TEXT = "Configuration";
+Blockly.Msg.OTTO_HOME_TEXT = "Configure";
 
 ///
 

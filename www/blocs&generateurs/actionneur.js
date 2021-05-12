@@ -127,17 +127,17 @@ var vol=Blockly.Arduino.valueToCode(block, "Volume", Blockly.Arduino.ORDER_ATOMI
 var volume=parseInt(vol);
 var volume_hex;
 Blockly.Arduino.includes_['define_softwareserial'] = '#include <SoftwareSerial.h>\n'; 
-Blockly.Arduino.definitions_['setup_osmp3'] = 'SoftwareSerial mySerial('+pin_rx+','+pin_tx+');\n';
+Blockly.Arduino.definitions_['setup_osmp3'] = 'SoftwareSerial DFMiniSerial('+pin_rx+','+pin_tx+');\n';
 if (volume>48){
     volume_hex="0x30";
 }else{
     volume_hex="0x"+volume.toString(16);
 }
-Blockly.Arduino.codeFunctions_["fonction_mp3"]="void exe_cmd(byte CMD, byte Par1, byte Par2) {\n  word check=-(0xFF + 0x06 + CMD + 0x00 + Par1 + Par2);\n  byte Command[10]={0x7E,0xFF,0x06,CMD,0x00,Par1,Par2,highByte(check),lowByte(check),0xEF};\n  for (int i=0; i<10; i++) {\n    mySerial.write( Command[i]);\n  };\n}";
+Blockly.Arduino.codeFunctions_["fonction_mp3"]="void exe_cmd(byte CMD, byte Par1, byte Par2) {\n  word check=-(0xFF + 0x06 + CMD + 0x00 + Par1 + Par2);\n  byte Command[10]={0x7E,0xFF,0x06,CMD,0x00,Par1,Par2,highByte(check),lowByte(check),0xEF};\n  for (int i=0; i<10; i++) {\n    DFMiniSerial.write( Command[i]);\n  };\n}";
 if (autoplay){
-    Blockly.Arduino.setups_["setup_mp3"]="mySerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);\n  exe_cmd(0x11,0,1);\n  delay(500);";
+    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);\n  exe_cmd(0x11,0,1);\n  delay(500);";
 }else{
-    Blockly.Arduino.setups_["setup_mp3"]="mySerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);";
+    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);";
 };
 return ""
 };
@@ -548,12 +548,14 @@ Blockly.Python["LCD_Keypad_Shield_DFR_09_RAZ"]=function(block){
   ///////////
  /*  del  */
 ///////////
-Blockly.Blocks["digital_write"]={init:function(){
-    this.setColour("#4b009f");
-    this.setHelpUrl(Blockly.Msg.HELPURL);
-    this.appendValueInput("PIN", "Number").setCheck("Number").appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT").appendField(Blockly.Msg.del);
+Blockly.Blocks["digital_write"]={init:function(){ 
+    this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.del);
+    this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.del_tooltip)}
 };
 Blockly.Arduino["digital_write"]=function(block){
@@ -569,13 +571,31 @@ Blockly.Python["digital_write"]=function(block){
 	Blockly.Python.definitions_["pin_"+dropdown_pin]="BROCHE_"+dropdown_pin+" = Pin("+dropdown_pin+", Pin.OUT)";
     return "BROCHE_"+dropdown_pin+".value("+dropdown_stat+")\n"
 };
+///////////
+Blockly.Blocks["digital_write2"]={init:function(){
+    this.appendValueInput("PIN", "Number").setCheck("Number")  .appendField(Blockly.Msg.del)
+    this.appendValueInput("STAT", "Boolean").appendField(Blockly.Msg._AT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_write2"]=function(block){
+    var dropdown_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var dropdown_stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+    return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
-        this.setColour("#4b009f");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT").appendField(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT);
+        
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT).appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+        this.setColour("#4b009f");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP)}
 };
 Blockly.Arduino["inout_buildin_led"]=function(block){

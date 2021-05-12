@@ -49,7 +49,7 @@
 	<script type="text/javascript" src="blocs&generateurs/otto.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/ottoesp.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/oled.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/sensors.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/encoder.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/motors.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/escornabot.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/neopixel.js"></script>
@@ -115,7 +115,6 @@
 				<button id="btn_redo" class="btn btn-arduino">
 					<span class="fa fa-repeat"> </span>
 				</button>
-				<!--
 				<span style="color: white; font-size: 4">|</span>
 				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: -2px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-microchip fa-fw" > </span>
@@ -135,15 +134,16 @@
 						<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
 						<option value="wemosD1miniPro" >ESP8266:Wemos D1 mini pro</option>
 						<option value="OttoESP" >ESP8266:ESP12E NodeMcu</option>
-						 
+						
 					</optgroup>
-					<optgroup label="Python">
+					<!--<optgroup label="Python">
 						<option value="esp8266" >ESP 8266</option>
 						<option value="esp32" >ESP 32</option>
 						<option value="microbit" >micro:bit</option>
 						<option value="pyboard" >Pyboard</option>
-					</optgroup>
+					</optgroup>-->
 				</select>
+				<!--
 				<span style="color:white;font-size:4">|</span>
 				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: -2px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-usb fa-fw"></span>

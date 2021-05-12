@@ -532,6 +532,8 @@ Blockly.Arduino["VL53L0X"]=function(block){
     Blockly.Arduino.includes_["VL53L0X"]='#include <VL53L0X.h>';
 	Blockly.Arduino.variables_["VL53L0X"]="VL53L0X cpt;";
 	Blockly.Arduino.setups_["VL53L0X"]='Wire.begin();\n  cpt.init();\n  cpt.setTimeout(500);\n  cpt.startContinuous();'
+    var code='';
+    return code;
 };
 Blockly.Python["VL53L0X"]=function(block){
     Blockly.Python.imports_["VL53L0X"]='import VL53L0X';
