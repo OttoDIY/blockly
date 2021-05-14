@@ -1644,57 +1644,6 @@ Blockly.Python['otto9_arms'] = function(block) {
  */
 'use strict';
 
-Blockly.Blocks['otto9_wheels'] = {  init: function() {
-  this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"))
-      .appendField(Blockly.Msg.OTTO9_MOVE_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens")
-  this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
-  this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto9_wheels'] = function(block) {
-  var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
-  var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-  var otto_move_time = block.getFieldValue('time');
-  Blockly.Arduino.includes_['otto9_lib'] =  '#include <Servo.h> \n'
-  + '#include <math.h>   \n'
-  + 'Servo rightServo;\n'
-  + 'Servo leftServo;\n'
-  Blockly.Arduino.definitions_['otto9_wheels'] = 'int rightSpeed = 0;\n'
-  + 'int leftSpeed = 0;\n'
-  + 'void motorControl2(int rightSpeed, int leftSpeed, int stepDelay) {\n'
-  + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
-  + 'delay(stepDelay*1000);}';
-   Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
-  +'leftServo.write(90);\n'
-  +'delay(1000);\n'
-  +'rightServo.attach(3);\n'
-  +'leftServo.attach(2);';
-  var code = '';
-  switch(dropdown_otto_move_sens) {
-	case 'FORWARD':
-		code = 'motorControl2 ('+-1*dropdown_otto_move_speed+', '+dropdown_otto_move_speed*-1+', '+otto_move_time+' );\n';
-		break;
-	case 'BACKWARD':
-		code = 'motorControl2 ('+dropdown_otto_move_speed+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
-		break;
-	case 'LEFT':
-		code = 'motorControl2 ('+dropdown_otto_move_speed*-1+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
-		break;
-	case 'RIGHT':
-		code = 'motorControl2 ('+dropdown_otto_move_speed+', '+-1*dropdown_otto_move_speed+', '+otto_move_time+' );\n';
-		break;
-  }
-  return code;
-};
-
-
 Blockly.Blocks['otto9_app'] = {init: function() {
   this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 33, 33, "*"))   .appendField('App code');
   this.setInputsInline(false);
