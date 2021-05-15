@@ -956,6 +956,8 @@
 	</category> 
 		
 	<category name="CAT_iot" colour="#154360">
+	
+	<!--
 		<category name="CAT_wifi" colour="#154360">
 			<block type="esp8266_init"></block>
 			<block type="esp8266_send"></block>
@@ -963,6 +965,17 @@
 			<block type="esp8266_start"></block>
 			<block type="esp8266_request_find"></block>
 		</category>
+		-->
+		
+		<category name="CAT_MQTT" colour="#008080">
+			<block type="mqtt_init"></block>
+			<block type="mqtt_loop"></block>
+			<block type="mqtt_subscribe_num"></block>
+			<block type="mqtt_subscribe_text"></block>
+			<block type="mqtt_publish"></block>
+		</category>
+		
+		<!--
 		<category name="CAT_html" colour="#000000">
 			<block type="emptytext"></block>
 			<block type="textmod"></block>
@@ -985,6 +998,8 @@
 			<block type="bgcolor"></block>
 			<block type="border"></block>
 		</category> 
+		
+		-->
 	</category>	
 <!--	<category name="CAT_list" colour="#154360">
 		<block type="list_create"></block>

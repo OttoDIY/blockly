@@ -95,6 +95,7 @@ Blockly.Msg.CAT_RADIO_TEA5767="Radio TEA5767";
 Blockly.Msg.CAT_HMC5883="Bussola HMC5883";
 Blockly.Msg.CAT_RFID="RFID MFRC522";
 Blockly.Msg.CAT_KEYBOARD="Tastiera & Mouse";
+Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 
 
 

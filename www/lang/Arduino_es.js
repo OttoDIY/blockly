@@ -97,6 +97,7 @@ Blockly.Msg.CAT_iot = "☁️ IoT";
 Blockly.Msg.CAT_html = "✉️ HTML";
 Blockly.Msg.CAT_wifi = "🌐 WiFi";
 Blockly.Msg.CAT_STOCKAGE = "📦 Almacenamiento";
+Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -1011,4 +1012,21 @@ Blockly.Msg.STEEPER_MoveTo="Ir al paso(0-4096)";
 Blockly.Msg.STEEPER_Degree="grados";
 Blockly.Msg.STEEPER_Steps="Pasos";
 Blockly.Msg.STEEPER_DegreeTo="Grados a mover";
+
+//MQTT
+Blockly.Msg.MQTT_name_init = "Configuracion protocolo MQTT";
+Blockly.Msg.MQTT_password = "password:";
+Blockly.Msg.MQTT_ssid = "Wifi ssid:";
+Blockly.Msg.MQTT_server = "Servidor (broker):";
+Blockly.Msg.MQTT_port = "puerto:";
+Blockly.Msg.MQTT_user = "Usuario:";
+Blockly.Msg.MQTT_APIkey = "API Key:";
+Blockly.Msg.MQTT_client = "ID cliente:";
+Blockly.Msg.MQTT_topicattend = "Loop MQTT";
+Blockly.Msg.MQTT_topicsubscribe = "Subscribirse al topic";
+Blockly.Msg.MQTT_topicsubscribe2 = "y grabar un valor númerico en la variable";
+Blockly.Msg.MQTT_topicsubscribe3 = "y grabar un valor de texto en la variable";
+Blockly.Msg.MQTT_topicpublish = "Publicar en el topic";
+Blockly.Msg.MQTT_topicvalue = "Valor";
+Blockly.Msg.MQTT_logs = "Habilitar logs";
 
