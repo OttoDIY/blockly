@@ -22,7 +22,6 @@
 		<block type="otto9_smooth"></block>
 		<block type="otto9_calibration"></block>
 		<block type="otto9_eeprom"></block>
-		<block type="otto9_wheels"></block>
 		
 		<category name="OTTO9_BUZZER" colour="#a600d3">
 			<block type="otto9_sound"></block>
@@ -329,100 +328,46 @@
 			<block type="GPS_speed"></block>
 			<block type="GPS_datetime"></block>
 		</category>	
+		</category>
 		
-		</category>
-		<category name="CAT_KEYBOARD" colour="#2a93e8">	
-			<block type="keyboard_function">
-				<value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
-			</block>
-			<block type="key_pressed"></block>
-			<block type="keyboard_text">
-				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow>
-				</value>
-			</block>
-			<block type="mouse_function"></block>
-			<block type="mouse_move">
-			<value name="axis_x"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="axis_y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="wheel"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
-		</category>
-
-		<category name="CAT_MUVISION" colour="#0060aa">
-			<block type="Vs2MuInit"></block>
-			<block type="Vs2Setup"></block>
-			<block type="Vs2Reset"></block>
-			<block type="Vs2SetLEDColor">
-			  <value name="LEDLevel"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			</block>
-		    <block type="Vs2VisionBegin"></block>
-			<block type="Vs2SetVisionLevel"></block>
-			<block type="Vs2SetColorRecognitionRegion">
-				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-			</block>
-			<block type="Vs2SetColorBlockMinBlob">
-				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-			</block>
-		    <block type="Vs2SetVisionZoom"></block>
-			<!--<block type="Vs2SetUARTBaud"></block> -->
-			<block type="Vs2SetCameraWhiteBalance"></block>
-			<block type="Vs2SetCameraHFR"></block>
-			<block type="Vs2Detected"></block>
-			<block type="Vs2DetectedRegionColor">
-				<value name="XValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
-				<value name="YValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
-			</block>
-			<block type="Vs2DetectedColorDetect"></block>
-			<block type="Vs2GetMessage"></block>
-			<block type="Vs2GetCardType"></block>
-			<block type="Vs2GetColorLabel"></block>
-			<block type="Mu3LsBegin"></block>
-			<block type="Mu3LsSetSensitivity"></block>
-			<!-- <block type="Mu3LsWhiteBalanceEnable"></block> -->
-			<block type="Mu3LsReadProximity"></block>
-			<block type="Mu3LsReadAmbientLight"></block>
-			<block type="Mu3LsDetectedGesture"></block>
-			<block type="Mu3LsDetectedGestureType"></block>
-			<block type="Mu3AtWiFiInit">
-				<value name="BAUD"><shadow type="math_number"><field name="NUM">9600</field></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiSet"><value name="SSID"><shadow type="text"></shadow></value>
-	        <value name="PASSWORD"><shadow type="text"></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiCon"></block>
-			<block type="Mu3AtWiFiDiscon"></block>	
-			<block type="Mu3AtWiFiCip"></block>
-			<block type="Mu3AtWiFiSip"></block>
-			<block type="Mu3AtWiFiRead"></block>
-			<block type="Mu3AtWiFiUDP">
-				<value name="IP"><shadow type="text"><field name="TEXT">192.168.4.2</field></shadow></value>
-	        <value name="PORT"><shadow type="text"><field name="TEXT">3333</field></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiWrite"><value name="NUMBER"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
-		</category>	
-
-	<category name="CAT_servo" colour="#2d2dd1">
-	
+	<category name="CAT_actionneur" colour="#2d2dd1">
+		<category name="CAT_servo" colour="#2d2dd1">
 		<block type="servo_move">
 			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+			<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+				<block type="servo_movemicros">
+			<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
 			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
 		<block type="servo_read_degrees">
 			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
 		</block>
+		<block type="servo_attached">
+			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+		</block>
+		<block type="servo_detach">
+			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+		</block>
+			<block type="servo_PWM">
+			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+		</block>
+	
 		<block type="servo_rot_continue_param">
 			<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
 			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
-		<block type="servo_PWM">
-			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+				<block type="servo_rot_stop">
+			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
-		
+			<block type="servo_2wheels">
+				<value name="PINL"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+				<value name="PINR"><shadow type="math_number">	<field name="NUM">3</field></shadow></value>
+			</block>
 	</category>	
-	<category name="CAT_actionneur" colour="#2d2dd1">
+		
+	
 			<block type="motor_run"><value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value></block>
 			<block type="motor_stop"></block>
 			<block type="moteur_action"></block>
@@ -875,6 +820,79 @@
 	     <block type="IR_RemoteMRT_Key"></block>	  
 		</category>
 	</category> 
+	<category name="CAT_KEYBOARD" colour="#2a93e8">	
+			<block type="keyboard_function">
+				<value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
+			</block>
+			<block type="key_pressed"></block>
+			<block type="keyboard_text">
+				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow>
+				</value>
+			</block>
+			<block type="mouse_function"></block>
+			<block type="mouse_move">
+			<value name="axis_x"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="axis_y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="wheel"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+		</category>
+
+		<category name="CAT_MUVISION" colour="#0060aa">
+			<block type="Vs2MuInit"></block>
+			<block type="Vs2Setup"></block>
+			<block type="Vs2Reset"></block>
+			<block type="Vs2SetLEDColor">
+			  <value name="LEDLevel"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			</block>
+		    <block type="Vs2VisionBegin"></block>
+			<block type="Vs2SetVisionLevel"></block>
+			<block type="Vs2SetColorRecognitionRegion">
+				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+			</block>
+			<block type="Vs2SetColorBlockMinBlob">
+				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+			</block>
+		    <block type="Vs2SetVisionZoom"></block>
+			<!--<block type="Vs2SetUARTBaud"></block> -->
+			<block type="Vs2SetCameraWhiteBalance"></block>
+			<block type="Vs2SetCameraHFR"></block>
+			<block type="Vs2Detected"></block>
+			<block type="Vs2DetectedRegionColor">
+				<value name="XValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+				<value name="YValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
+			</block>
+			<block type="Vs2DetectedColorDetect"></block>
+			<block type="Vs2GetMessage"></block>
+			<block type="Vs2GetCardType"></block>
+			<block type="Vs2GetColorLabel"></block>
+			<block type="Mu3LsBegin"></block>
+			<block type="Mu3LsSetSensitivity"></block>
+			<!-- <block type="Mu3LsWhiteBalanceEnable"></block> -->
+			<block type="Mu3LsReadProximity"></block>
+			<block type="Mu3LsReadAmbientLight"></block>
+			<block type="Mu3LsDetectedGesture"></block>
+			<block type="Mu3LsDetectedGestureType"></block>
+			<block type="Mu3AtWiFiInit">
+				<value name="BAUD"><shadow type="math_number"><field name="NUM">9600</field></shadow></value>
+			</block>
+			<block type="Mu3AtWiFiSet"><value name="SSID"><shadow type="text"></shadow></value>
+	        <value name="PASSWORD"><shadow type="text"></shadow></value>
+			</block>
+			<block type="Mu3AtWiFiCon"></block>
+			<block type="Mu3AtWiFiDiscon"></block>	
+			<block type="Mu3AtWiFiCip"></block>
+			<block type="Mu3AtWiFiSip"></block>
+			<block type="Mu3AtWiFiRead"></block>
+			<block type="Mu3AtWiFiUDP">
+				<value name="IP"><shadow type="text"><field name="TEXT">192.168.4.2</field></shadow></value>
+	        <value name="PORT"><shadow type="text"><field name="TEXT">3333</field></shadow></value>
+			</block>
+			<block type="Mu3AtWiFiWrite"><value name="NUMBER"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+		</category>	
+
 	<!--	
 	<category name="CAT_iot" colour="#154360">
 		<category name="CAT_wifi" colour="#154360">
@@ -907,19 +925,22 @@
 			<block type="border"></block>
 		</category> 
 	</category>	
+
 	-->
 <!--	<category name="CAT_list" colour="#154360">
+
+	<category name="CAT_list" colour="#154360">
 		<block type="list_create"></block>
 		<block type="array_create_with"></block>
 		<block type="list_set"></block>
 		<block type="list_get"></block>
 		<block type="list_append"></block>
 		<block type="list_size"></block>
-    </category> -->
+    </category> 
 	
 	<category name="CAT_STOCKAGE" colour="#154360">	
 		<block type="eeprom_read"></block>		
         <block type="eeprom_write"></block>
-	</category>
+	</category>-->
 	
 </toolbox>

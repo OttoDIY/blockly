@@ -256,9 +256,10 @@ Blockly.Python['m_pap_step'] = function(block) {
  /*  servo  */
 /////////////
 Blockly.Blocks["servo_move"]={init:function(){
-        this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1);
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1);
         this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
         this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE);
+        this.appendValueInput("DELAY", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("⏲");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -269,10 +270,11 @@ Blockly.Blocks["servo_move"]={init:function(){
 Blockly.Arduino["servo_move"]=function(block){
     var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
     var value_degree=Blockly.Arduino.valueToCode(block, "DEGREE", Blockly.Arduino.ORDER_ATOMIC);
+    var value_delay=Blockly.Arduino.valueToCode(block, "DELAY", Blockly.Arduino.ORDER_ATOMIC);
     Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
     Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
     Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
-    return "servo_" + value_pin + ".write(" + value_degree + ");\n"
+    return "servo_" + value_pin + ".write(" + value_degree + "); delay("+value_delay+");\n"
 };
 Blockly.Python["servo_move"]=function(block){
     var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
@@ -283,9 +285,47 @@ Blockly.Python["servo_move"]=function(block){
     return "servo_" + value_pin + ".duty(30+(" + value_degree + "/2))\n"
 };
 
+Blockly.Blocks["servo_movemicros"]={init:function(){
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1);
+    this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+    this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Microseconds");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#2d2dd1");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
+};
+Blockly.Arduino["servo_movemicros"]=function(block){
+var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+var value_degree=Blockly.Arduino.valueToCode(block, "DEGREE", Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
+return "servo_" + value_pin + ".writeMicroseconds(" + value_degree + ");\n"
+};
+
+Blockly.Blocks["servo_detach"]={init:function(){
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField("Detach Servo");
+    this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#2d2dd1");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
+};
+Blockly.Arduino["servo_detach"]=function(block){
+var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
+return "servo_" + value_pin + ".detach();\n"
+};
+
 Blockly.Blocks["servo_read_degrees"]= {
     init: function() {
-      this.appendDummyInput() .appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*")) .appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE) ;
+      this.appendDummyInput() .appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")) .appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE) ;
       this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
       this.setInputsInline(true);
       this.setOutput(true, 'Number');
@@ -301,11 +341,30 @@ Blockly.Arduino.servo_read_degrees = function() {
     var code = "servo_" + value_pin +  '.read()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
   };
+
+  Blockly.Blocks["servo_attached"]= {
+    init: function() {
+      this.appendDummyInput() .appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")) .appendField("attached?") ;
+      this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+      this.setInputsInline(true);
+      this.setOutput(true);
+      this.setColour("#2d2dd1");
+      this.setHelpUrl(Blockly.Msg.HELPURL);
+      this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP);
+    }
+};
+Blockly.Arduino.servo_attached = function() {
+    var value_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC);
+	Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+	Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+    var code = "servo_" + value_pin +  '.attached()';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+  };
 //////////////
 Blockly.Blocks["servo_rot_continue_param"]={init:function(){
-        this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 48, 48, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT) .appendField(Blockly.Msg.direction);
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.AV_AR), "ETAT");
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 33, 33, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT) ;
         this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.pin);
+        this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.AV_AR), "ETAT");
         this.appendValueInput("SPEED", "Null").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(Blockly.Msg.values);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -336,6 +395,79 @@ Blockly.Python["servo_rot_continue_param"]=function(block){
     Blockly.Python.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
     return "servo_" + value_pin + ".write(" + value_degree + ");\n"
 };
+
+Blockly.Blocks["servo_rot_stop"]={init:function(){
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 33, 33, "*")).appendField(Blockly.Msg.MOTOR_Stop) ;
+    this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.pin);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#2d2dd1");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP)}
+};
+Blockly.Arduino["servo_rot_stop"]=function(block){
+var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
+return "servo_" + value_pin + ".write(90);\n"
+};
+
+Blockly.Blocks['servo_2wheels'] = {  init: function() {
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"));
+    this.appendValueInput("PINL", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin+" "+Blockly.Msg.left);
+    this.appendValueInput("PINR", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin+" "+Blockly.Msg.right)
+    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#2d2dd1");
+    this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+  }
+  };
+  
+  Blockly.Arduino['servo_2wheels'] = function(block) {
+    var pinl=Blockly.Python.valueToCode(block, "PINL", Blockly.Python.ORDER_ATOMIC);
+    var pinr=Blockly.Python.valueToCode(block, "PINR", Blockly.Python.ORDER_ATOMIC);
+    var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
+    var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
+    var otto_move_time = block.getFieldValue('time');
+    Blockly.Arduino.includes_['otto9_lib'] =  '#include <Servo.h> \n'
+    + '#include <math.h>   \n'
+    + 'Servo rightServo;\n'
+    + 'Servo leftServo;\n'
+    Blockly.Arduino.definitions_['otto9_wheels'] = 'int rightSpeed = 0;\n'
+    + 'int leftSpeed = 0;\n'
+    + 'void motorControl2(int rightSpeed, int leftSpeed, int stepDelay) {\n'
+    + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
+    + 'delay(stepDelay*1000);}';
+     Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
+    +'leftServo.write(90);\n'
+    +'delay(1000);\n'
+    +'leftServo.attach('+pinl+');\n'
+    +'rightServo.attach('+pinr+');';
+    var code = '';
+    switch(dropdown_otto_move_sens) {
+      case 'FORWARD':
+          code = 'motorControl2 ('+-1*dropdown_otto_move_speed+', '+dropdown_otto_move_speed*-1+', '+otto_move_time+' );\n';
+          break;
+      case 'BACKWARD':
+          code = 'motorControl2 ('+dropdown_otto_move_speed+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+          break;
+      case 'LEFT':
+          code = 'motorControl2 ('+dropdown_otto_move_speed*-1+', '+dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+          break;
+      case 'RIGHT':
+          code = 'motorControl2 ('+dropdown_otto_move_speed+', '+-1*dropdown_otto_move_speed+', '+otto_move_time+' );\n';
+          break;
+    }
+    return code;
+  };
+
 Blockly.Blocks["servo_PWM"]={init:function(){
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/pc9685.png', 48, 48, "*")).appendField(new Blockly.FieldImage('media/servo.png', 48, 48, "*")).appendField("PCA9685 "+ Blockly.Msg.pin);;
     this.appendDummyInput().appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"],["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"],["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"],["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"]]), "PIN");
