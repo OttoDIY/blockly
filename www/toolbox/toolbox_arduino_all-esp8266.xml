@@ -957,15 +957,19 @@
 		
 	<category name="CAT_iot" colour="#154360">
 	
-	<!--
-		<category name="CAT_wifi" colour="#154360">
-			<block type="esp8266_init"></block>
+	
+		<category name="CAT_wifi" colour="#008080">
+		<block type="wifi_init_sta"></block>
+		<block type="wifi_init_ap"></block>
+		
+		
+		<!--	<block type="esp8266_init"></block>
 			<block type="esp8266_send"></block>
 			<block type="esp8266_html"></block>
 			<block type="esp8266_start"></block>
-			<block type="esp8266_request_find"></block>
+			<block type="esp8266_request_find"></block> -->
 		</category>
-		-->
+		
 		
 		<category name="CAT_MQTT" colour="#008080">
 			<block type="mqtt_init"></block>

@@ -1010,6 +1010,17 @@ Blockly.Msg.STEEPER_Degree="degrees";
 Blockly.Msg.STEEPER_Steps="steps";
 Blockly.Msg.STEEPER_DegreeTo="Move to degree";
 
+//WiFi basic functions
+Blockly.Msg.WIFI_sta_init = "WIFI.Connect as Station";
+Blockly.Msg.WIFI_ap_init = "WIFI.Create an Access Point";
+Blockly.Msg.WIFI_password = "password:";
+Blockly.Msg.WIFI_ssid = "Wifi ssid:";
+Blockly.Msg.WIFI_password_ap = "and this password:";
+Blockly.Msg.WIFI_ssid_ap = "Wifi ssid name:";
+Blockly.Msg.WIFI_logs = "Enable logs";
+
+
+
 //MQTT
 Blockly.Msg.MQTT_name_init = "Configuration MQTT protocol";
 Blockly.Msg.MQTT_password = "password:";
