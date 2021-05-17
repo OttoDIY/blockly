@@ -79,7 +79,7 @@ Blockly.Blocks["pixel_rgb"]={init:function(){
     
 };
 Blockly.Arduino["pixel_rgb"]=function(block){
-    var pin=Blockly.Python.valueToCode(block, "pin", Blockly.Python.ORDER_ASSIGNMENT);
+    var pin =Blockly.Arduino.valueToCode(block, 'pin', Blockly.Arduino.ORDER_ASSIGNMENT);
     var R = Blockly.Arduino.valueToCode(block, 'R', Blockly.Arduino.ORDER_ATOMIC);
     var G = Blockly.Arduino.valueToCode(block, 'G', Blockly.Arduino.ORDER_ATOMIC);
     var B = Blockly.Arduino.valueToCode(block, 'B', Blockly.Arduino.ORDER_ATOMIC);

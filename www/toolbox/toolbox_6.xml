@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories">CAT_OTTO,CAT_LOGIC,CAT_MATH,CAT_ARDUINO,CAT_ARDUINO_TIME,CAT_servo,CAT_ultrason</parametre>
+	<parametre id="defaultCategories">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_FUNCTIONS,CAT_VARIABLES</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
 	</category>
