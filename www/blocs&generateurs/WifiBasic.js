@@ -199,7 +199,7 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 '   Serial.println(WiFi.SSID()); \n'+
 '   Serial.print("IP address:\t");\n'+
 '   Serial.println(WiFi.localIP());\n'+
-' 	Serial.print("AP dirección IP: ");\n'+
+' 	Serial.print("AP direcciÃ³n IP: ");\n'+
 '	Serial.println(WiFi.softAPIP());\n';
 }
 else{
