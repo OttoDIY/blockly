@@ -138,6 +138,90 @@ Blockly.Arduino.setups_['wifi_ap_connect'] = 'delay(2000);\n'+
   return code;
 };
 
+Blockly.Blocks['wifi_init_sta_ap'] = {
+   init: function() {
+    this.setColour("#008080");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/wifi.png",62,38))
+        .appendField(Blockly.Msg.WIFI_sta_ap_init)
+		.appendField(Blockly.Msg.WIFI_logs)
+        .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.WIFI_ssid)
+        .appendField(new Blockly.FieldTextInput("Red Wifi"), "SSID")
+		.appendField(Blockly.Msg.WIFI_password)
+        .appendField(new Blockly.FieldTextInput("xxxxxxxxxxxxxxxxx"), "PASSWORD");	
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.WIFI_ssid_ap)
+        .appendField(new Blockly.FieldTextInput("Otto_Wifi"), "SSID2")
+		.appendField(Blockly.Msg.WIFI_password_ap)
+        .appendField(new Blockly.FieldTextInput("otto1234"), "PASSWORD2");
+	this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init and connect Wifi in station and ap mode');
+    this.setHelpUrl(''); 
+  }
+};
+
+
+Blockly.Arduino['wifi_init_sta_ap'] = function(block) {
+	
+   var ssid = block.getFieldValue('SSID');  
+   var wifipassword = block.getFieldValue('PASSWORD');  
+   var ssid2 = block.getFieldValue('SSID2');  
+   var wifipassword2 = block.getFieldValue('PASSWORD2');  
+     
+   var logic = this.getFieldValue('LOGIC');
+  
+  Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+  
+  Blockly.Arduino.variables_['define_wifi_variables'] = 'const char wifi_ssid[]="'+ssid+'";\n'+
+'const char wifi_ssid2[]="'+ssid2+'";\n'+
+'const char wifi_pass[]="'+wifipassword+'";\n'+
+'const char wifi_pass2[]="'+wifipassword2+'";\n';
+ 
+if(logic=='TRUE')
+{
+Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
+'	delay(2000);\n'+
+'   WiFi.mode(WIFI_AP_STA);\n'+
+'	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
+'	WiFi.begin(wifi_ssid,wifi_pass);\n'+
+'	Serial.println("Conectando");\n'+
+'	while (WiFi.status() != WL_CONNECTED){\n'+
+'	Serial.print(".");\n'+
+'	delay(500);\n'+
+'	}\n'+
+'	WiFi.setAutoReconnect(true);\n'+
+'   Serial.println();\n'+
+'   Serial.print("Conectado a:\t");\n'+
+'   Serial.println(WiFi.SSID()); \n'+
+'   Serial.print("IP address:\t");\n'+
+'   Serial.println(WiFi.localIP());\n'+
+' 	Serial.print("AP dirección IP: ");\n'+
+'	Serial.println(WiFi.softAPIP());\n';
+}
+else{
+Blockly.Arduino.setups_['wifi_station_connect'] = 'delay(2000);\n'+
+'   WiFi.mode(WIFI_AP_STA);\n'+
+'	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
+'	WiFi.begin(wifi_ssid,wifi_pass);\n'+
+'	while (WiFi.status() != WL_CONNECTED){\n'+
+'	delay(500);\n'+
+'	}\n'+
+'	WiFi.setAutoReconnect(true);\n';
+}
+
+  var code='';
+  return code;
+};
+
+
+
+
+
+
 
 /*
 

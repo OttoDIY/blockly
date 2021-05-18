@@ -1013,6 +1013,7 @@ Blockly.Msg.STEEPER_DegreeTo="Move to degree";
 //WiFi basic functions
 Blockly.Msg.WIFI_sta_init = "WIFI.Connect as Station";
 Blockly.Msg.WIFI_ap_init = "WIFI.Create an Access Point";
+Blockly.Msg.WIFI_sta_ap_init = "WIFI. Station and create an Access Point";
 Blockly.Msg.WIFI_password = "password:";
 Blockly.Msg.WIFI_ssid = "Wifi ssid:";
 Blockly.Msg.WIFI_password_ap = "and this password:";

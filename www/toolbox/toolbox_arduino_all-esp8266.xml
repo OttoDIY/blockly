@@ -961,7 +961,7 @@
 		<category name="CAT_wifi" colour="#008080">
 		<block type="wifi_init_sta"></block>
 		<block type="wifi_init_ap"></block>
-		
+		<block type="wifi_init_sta_ap"></block>
 		
 		<!--	<block type="esp8266_init"></block>
 			<block type="esp8266_send"></block>
