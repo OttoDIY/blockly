@@ -64,7 +64,7 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 }
 else{
 Blockly.Arduino.setups_['wifi_station_connect'] = 'delay(2000);\n'+
-'	WiFi.begin(mqtt_wifi_ssid,mqtt_wifi_pass);\n'+
+'	WiFi.begin(wifi_ssid,wifi_pass);\n'+
 '	while (WiFi.status() != WL_CONNECTED){\n'+
 '	delay(500);\n'+
 '	}\n';

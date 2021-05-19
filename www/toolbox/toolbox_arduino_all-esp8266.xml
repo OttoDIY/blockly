@@ -962,7 +962,7 @@
 		<block type="wifi_init_sta"></block>
 		<block type="wifi_init_ap"></block>
 		<block type="wifi_init_sta_ap"></block>
-		
+
 		<!--	<block type="esp8266_init"></block>
 			<block type="esp8266_send"></block>
 			<block type="esp8266_html"></block>
@@ -978,6 +978,18 @@
 			<block type="mqtt_subscribe_text"></block>
 			<block type="mqtt_publish"></block>
 		</category>
+		
+		<category name="CAT_IFTTT" colour="#008080">
+			<block type="ifttt_init"></block>
+			<block type="ifttt_send">
+				<value name="evento"><shadow type="text"><field name="TEXT">Event name </field></shadow></value>
+				<value name="value1"><shadow type="text"><field name="TEXT">Value1 or empty</field></shadow></value>
+				<value name="value2"><shadow type="text"><field name="TEXT">Value2 or empty</field></shadow></value>
+				<value name="value3"><shadow type="text"><field name="TEXT">Value3 or empty</field></shadow></value>
+			</block>
+						
+		</category>
+				
 		
 		<!--
 		<category name="CAT_html" colour="#000000">

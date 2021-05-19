@@ -98,6 +98,7 @@ Blockly.Msg.CAT_html = "✉️ HTML";
 Blockly.Msg.CAT_wifi = "🌐 WiFi";
 Blockly.Msg.CAT_STOCKAGE = "📦 Almacenamiento";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
+Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -1022,6 +1023,14 @@ Blockly.Msg.WIFI_ssid = "Wifi ssid:";
 Blockly.Msg.WIFI_password_ap = "y su password:";
 Blockly.Msg.WIFI_ssid_ap = "Wifi ssid nombre:";
 Blockly.Msg.WIFI_logs = "Habilitar logs";
+
+//IFTTT
+Blockly.Msg.IFTTT_init = "Configuracion.Api key";
+Blockly.Msg.IFTTT_send = "Enviar información";
+Blockly.Msg.IFTTT_event = "Evento como String";
+Blockly.Msg.IFTTT_value1 = "Valor 1 como String";
+Blockly.Msg.IFTTT_value2 = "Valor 2 como String";
+Blockly.Msg.IFTTT_value3 = "Valor 3 como String";
 
 //MQTT
 Blockly.Msg.MQTT_name_init = "Configuracion protocolo MQTT";
