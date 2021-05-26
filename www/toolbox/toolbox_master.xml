@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
 	<parametre id="defaultCategories">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com</parametre>
     <category name="CAT_ARDUINO" colour="#2d2d64">
@@ -6,8 +6,10 @@
 		<block type="base_setup_loop"></block>
 		<block type="base_code"></block>
 		<block type="base_code_entree"></block>
+		<block type="base_begin"></block>
+		<block type="base_end"></block>
+		<block type="base_loop"></block>
 	</category>
-	
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
 		<value name="PIN_YL"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
@@ -25,6 +27,7 @@
 		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
 		<block type="otto9_calibration"></block>
+		<block type="otto9_eeprom"></block>
 		
 		<category name="OTTO9_BUZZER" colour="#a600d3">
 			<block type="otto9_sound"></block>
@@ -106,15 +109,25 @@
 			<block type="otto9_matrix8x8"></block>
 		</category>
 	</category>
-
-		<category name="CAT_ARDUINO_TIME" colour="#00929f">		
-			<block type="base_delay">
-				<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value></block>	
-			<block type="tempo_sans_delay">
-				<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field></shadow></value></block>
-			<block type="millis_start"></block>	
-			<block type="millis"></block>		
-			<block type="inout_pulsein"></block>
+		<category name="CAT_ESCORNABOT" colour="#C39BD3">
+			<block type="escornabot_init"></block>
+			<block type="escornabot_spin"></block>
+			<block type="escornabot_distance"></block>
+			<block type="escornabot_turnspin"></block>
+			<block type="escornabot_turnangle"></block>
+			<block type="escornabot_stop"></block>
+			<block type="escornabot_beep"></block>
+			<block type="escornabot_ledon"></block>
+			<block type="escornabot_ledoff"></block>
+			<block type="escornabot_getbutton"></block>
+			<block type="escornabot_us_init"></block>
+			<block type="escornabot_getus"></block>
+			<block type="escornabot_ir_init"></block>
+			<block type="escornabot_blackLeft"></block>
+			<block type="escornabot_blackRight"></block>
+			<block type="escornabot_whiteLeft"></block>
+			<block type="escornabot_whiteRight"></block>
+			<block type="escornabot_app"></block>
 	</category>
 	
 		<category name="CAT_ARDUINO_IN" colour="#00929f">
@@ -262,6 +275,8 @@
 
 		<category name="CAT_TEMP" colour="#2a93e8">
 			 <block type="dht_sensor"><value name="PIN_DHT"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>	
+			 <block type="dht11"></block>
+			 <block type="dht22"></block>
  			 <block type="Analog_temperature_sensor"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
 			 <block type="LM35_temperature_sensor"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
 			 <block type="Flame_sensor"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
@@ -525,14 +540,15 @@
 		<category name="CAT_BARGRAPH" colour="#4b009f">
 			<block type="bargraphe_2"></block>
 			<block type="bargraphe_allume"></block>
-			<!--<block type="matrice_init"></block>
-			<block type="matrice_symbole"></block>-->
+			<block type="matrice_init"></block>
+			<block type="matrice_symbole"></block>
 		</category>	
 	</category>	
 	<category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_init"></block>
 		<block type="oled_icon"></block>
+		<block type="OLED_bitmap"></block> 
 		 <block type="OLED_bitmap2">
 			<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
 			<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
@@ -864,7 +880,7 @@
 				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
 			</block>
 		    <block type="Vs2SetVisionZoom"></block>
-			<!--<block type="Vs2SetUARTBaud"></block> -->
+			<block type="Vs2SetUARTBaud"></block> 
 			<block type="Vs2SetCameraWhiteBalance"></block>
 			<block type="Vs2SetCameraHFR"></block>
 			<block type="Vs2Detected"></block>
@@ -878,7 +894,7 @@
 			<block type="Vs2GetColorLabel"></block>
 			<block type="Mu3LsBegin"></block>
 			<block type="Mu3LsSetSensitivity"></block>
-			<!-- <block type="Mu3LsWhiteBalanceEnable"></block> -->
+			<block type="Mu3LsWhiteBalanceEnable"></block>
 			<block type="Mu3LsReadProximity"></block>
 			<block type="Mu3LsReadAmbientLight"></block>
 			<block type="Mu3LsDetectedGesture"></block>
@@ -901,5 +917,51 @@
 			<block type="Mu3AtWiFiWrite"><value name="NUMBER"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			</block>
 		</category>	
+	
+	<category name="CAT_iot" colour="#154360">
+		<category name="CAT_wifi" colour="#154360">
+			<block type="esp8266_init"></block>
+			<block type="esp8266_send"></block>
+			<block type="esp8266_html"></block>
+			<block type="esp8266_start"></block>
+			<block type="esp8266_request_find"></block>
+		</category>
+		<category name="CAT_html" colour="#000000">
+			<block type="emptytext"></block>
+			<block type="textmod"></block>
+			<block type="link"></block>
+			<block type="emptyVar"></block>
+			<block type="br"></block>
+			<block type="header"></block>
+			<block type="paragraph"></block>
+			<block type="image"></block>
+			<block type="table"></block>
+			<block type="tablerow"></block>
+			<block type="tableheading"></block>
+			<block type="tabledata"></block>
+			<block type="form"></block>
+			<block type="input"></block>
+			<block type="label"></block>
+			<block type="args"></block>
+			<block type="textalign"></block>
+			<block type="color"></block>
+			<block type="bgcolor"></block>
+			<block type="border"></block>
+		</category> 
+	</category>	
+
+	<category name="CAT_list" colour="#154360">
+		<block type="list_create"></block>
+		<block type="array_create_with"></block>
+		<block type="list_set"></block>
+		<block type="list_get"></block>
+		<block type="list_append"></block>
+		<block type="list_size"></block>
+    </category> 
+	
+	<category name="CAT_STOCKAGE" colour="#154360">	
+		<block type="eeprom_read"></block>		
+        <block type="eeprom_write"></block>
+	</category>
 	
 </toolbox>
