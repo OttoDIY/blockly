@@ -364,8 +364,7 @@ Blockly.Arduino.servo_attached = function() {
 Blockly.Blocks["servo_rot_continue_param"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo360.png', 33, 33, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT) ;
         this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.pin);
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.AV_AR), "ETAT");
-        this.appendValueInput("SPEED", "Null").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(Blockly.Msg.values);
+        this.appendValueInput("SPEED", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(Blockly.Msg.values);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -376,13 +375,10 @@ Blockly.Blocks["servo_rot_continue_param"]={init:function(){
 Blockly.Arduino["servo_rot_continue_param"]=function(block){
     var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
     var degree=Blockly.Arduino.valueToCode(block, "SPEED", Blockly.Arduino.ORDER_ATOMIC);
-    var dropdown_etat=block.getFieldValue("ETAT");
-    if (dropdown_etat == "FORWARD") var value_degree=90 + parseInt(degree);
-    if (dropdown_etat == "BACKWARD") var value_degree=90 - parseInt(degree);
     Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
     Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
     Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
-    return "servo_" + value_pin + ".write(" + value_degree + ");\n"
+    return "servo_" + value_pin + ".write(" + degree + ");\n"
 };
 Blockly.Python["servo_rot_continue_param"]=function(block){
     var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);

@@ -135,9 +135,9 @@ if (volume>48){
 }
 Blockly.Arduino.codeFunctions_["fonction_mp3"]="void exe_cmd(byte CMD, byte Par1, byte Par2) {\n  word check=-(0xFF + 0x06 + CMD + 0x00 + Par1 + Par2);\n  byte Command[10]={0x7E,0xFF,0x06,CMD,0x00,Par1,Par2,highByte(check),lowByte(check),0xEF};\n  for (int i=0; i<10; i++) {\n    DFMiniSerial.write( Command[i]);\n  };\n}";
 if (autoplay){
-    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);\n  exe_cmd(0x11,0,1);\n  delay(500);";
+    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  exe_cmd(0x06,0," + volume_hex + ");\n  exe_cmd(0x11,0,1);\n";
 }else{
-    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  delay(500);\n  exe_cmd(0x06,0," + volume_hex + ");\n  delay(500);";
+    Blockly.Arduino.setups_["setup_mp3"]="DFMiniSerial.begin(9600);\n  delay(1000);\n  exe_cmd(0x3F,0,0);\n  exe_cmd(0x06,0," + volume_hex + ");";
 };
 return ""
 };
@@ -171,7 +171,7 @@ Blockly.Blocks["lp2i_mp3_play_track"]={init:function(){
 };
 Blockly.Arduino["lp2i_mp3_play_track"]=function(block){
 	var piste=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ATOMIC);
-    return "exe_cmd(0x03,0,"+piste+");\ndelay(500);\n"
+    return "exe_cmd(0x03,0,"+piste+");\n"
 };
 Blockly.Python["lp2i_mp3_play_track"]=function(block){
 	var piste=Blockly.Python.valueToCode(block, "num", Blockly.Python.ORDER_ATOMIC);
@@ -189,7 +189,7 @@ Blockly.Blocks["lp2i_mp3_play"]={init:function(){
     this.setHelpUrl(Blockly.Msg.lp2i_mp3_helpurl)}
 };
 Blockly.Arduino["lp2i_mp3_play"]=function(block){
-    return "exe_cmd(0x0D,0,1);\ndelay(500);\n"
+    return "exe_cmd(0x0D,0,1);\n"
 };
 Blockly.Python["lp2i_mp3_play"]=function(block){
     return "mp3.Play()\n"
@@ -214,7 +214,7 @@ Blockly.Arduino["lp2i_mp3_volume"]=function(block){
 	}else{
 		volume_hex="0x"+volume.toString(16);
 	}
-	return "exe_cmd(0x06,0," + volume_hex + ");\ndelay(500);\n"
+	return "exe_cmd(0x06,0," + volume_hex + ");\n"
 };
 Blockly.Python["lp2i_mp3_volume"]=function(block){
     var vol=Blockly.Python.valueToCode(block, "Volume", Blockly.Python.ORDER_ATOMIC);
@@ -237,7 +237,7 @@ Blockly.Blocks["lp2i_mp3_next"]={init:function(){
         this.setHelpUrl(Blockly.Msg.lp2i_mp3_helpurl)}
 };
 Blockly.Arduino["lp2i_mp3_next"]=function(block){
-    return "exe_cmd(0x01,0,1);\ndelay(500);\n"
+    return "exe_cmd(0x01,0,1);\n"
 };
 Blockly.Python["lp2i_mp3_next"]=function(block){
     return "mp3.PlayNext()\n"
@@ -253,7 +253,7 @@ Blockly.Blocks["lp2i_mp3_prev"]={init:function(){
         this.setHelpUrl(Blockly.Msg.lp2i_mp3_helpurl)}
 };
 Blockly.Arduino["lp2i_mp3_prev"]=function(block){
-    return "exe_cmd(0x02,0,1);\ndelay(500);\n"
+    return "exe_cmd(0x02,0,1);\n"
 };
 Blockly.Python["lp2i_mp3_prev"]=function(block){
     return "mp3.PlayPrevious()\n"
@@ -269,7 +269,7 @@ Blockly.Blocks["lp2i_mp3_pause"]={init:function(){
         this.setHelpUrl(Blockly.Msg.lp2i_mp3_helpurl)}
 };
 Blockly.Arduino["lp2i_mp3_pause"]=function(block){
-    return "exe_cmd(0x0E,0,0);\ndelay(500);\n"
+    return "exe_cmd(0x0E,0,0);\n"
 };
 Blockly.Python["lp2i_mp3_pause"]=function(block){
     return "mp3.Pause()\n"

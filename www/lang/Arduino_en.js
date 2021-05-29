@@ -28,7 +28,7 @@ Blockly.Msg.left = "left";
 Blockly.Msg.LetR = "right & left";
 Blockly.Msg.direction = "direction";
 Blockly.Msg.vitesse = "speed";
-Blockly.Msg.values = "[0-90]";
+Blockly.Msg.values = "↺0-90 | ↻90-180";
 // categories (menu)
 Blockly.Msg.CAT_TAB = "🔠 Arrays";
 Blockly.Msg.CAT_list = "🔤 List";
