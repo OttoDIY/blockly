@@ -375,6 +375,10 @@ BlocklyDuino.bindFunctions = function() {
 		$('#load').click()
 	});
 	$('#btn_config').on("click", BlocklyDuino.openConfigToolbox);
+	$('#btn_level1').on("click", BlocklyDuino.buildToolboxLevel1);
+	$('#btn_level2').on("click", BlocklyDuino.buildToolboxLevel2);
+	$('#btn_level3').on("click", BlocklyDuino.buildToolboxLevel3);
+	
 	$('#select_all').on("click", BlocklyDuino.checkAll);
 	$('#btn_valid_config').on("click", BlocklyDuino.changeToolbox);
 	$('#btn_example').on("click", BlocklyDuino.buildExamples);
@@ -463,6 +467,74 @@ BlocklyDuino.buildToolbox = function() {
 	xmlValue += '</xml>';
 	return xmlValue;
 };
+
+
+BlocklyDuino.buildToolboxLevel1 = function() {
+	var loadIds = []; 
+	
+	if ($('#defaultCategories1').length) {
+			loadIds = $('#defaultCategories1').html();
+	} 
+	window.localStorage.toolboxids=loadIds;
+	
+	
+	var xmlValue = '<xml id="toolbox">';	
+	var xmlids = loadIds.split(",");
+	for (var i = 0; i < xmlids.length; i++) {
+		if ($('#'+xmlids[i]).length) {
+			xmlValue += $('#'+xmlids[i])[0].outerHTML;
+		}
+	}
+	xmlValue += '</xml>';
+	Blockly.getMainWorkspace().updateToolbox(xmlValue);
+	
+};
+
+BlocklyDuino.buildToolboxLevel2 = function() {
+	var loadIds = []; 
+	
+	if ($('#defaultCategories2').length) {
+			loadIds = $('#defaultCategories2').html();
+	} 
+	window.localStorage.toolboxids=loadIds;
+	
+	
+	var xmlValue = '<xml id="toolbox">';	
+	var xmlids = loadIds.split(",");
+	for (var i = 0; i < xmlids.length; i++) {
+		if ($('#'+xmlids[i]).length) {
+			xmlValue += $('#'+xmlids[i])[0].outerHTML;
+		}
+	}
+	xmlValue += '</xml>';
+	Blockly.getMainWorkspace().updateToolbox(xmlValue);
+	
+};
+
+BlocklyDuino.buildToolboxLevel3 = function() {
+	var loadIds = []; 
+	
+	if ($('#defaultCategories3').length) {
+			loadIds = $('#defaultCategories3').html();
+	} 
+	
+	window.localStorage.toolboxids=loadIds;
+	
+	var xmlValue = '<xml id="toolbox">';	
+	var xmlids = loadIds.split(",");
+	for (var i = 0; i < xmlids.length; i++) {
+		if ($('#'+xmlids[i]).length) {
+			xmlValue += $('#'+xmlids[i])[0].outerHTML;
+		}
+	}
+	xmlValue += '</xml>';
+	Blockly.getMainWorkspace().updateToolbox(xmlValue);
+	
+	
+};
+
+
+
 BlocklyDuino.loadToolboxDefinition = function(toolboxFile) {
 	$.ajax({
 		type: "GET",
