@@ -448,6 +448,15 @@ BlocklyDuino.changeToolbox = function() {
 	$('#configModal').modal('hide')
 	window.location.reload();
 };
+
+BlocklyDuino.changelanguage = function() {
+	window.localStorage.lang = $('#languageMenu').val();
+	window.location.reload();
+};
+
+
+
+
 BlocklyDuino.buildToolbox = function() {
 	var loadIds = window.localStorage.toolboxids;
 	if (loadIds === undefined || loadIds === "") {

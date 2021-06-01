@@ -99,9 +99,13 @@
 					<span class="fa fa-graduation fa-lg fa-fw"></span>
 				</button>
 				<span style="color:white;font-size:20"> | </span>
-				<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
+				
+				 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();" ></select>
+				
+			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
 					<span class="fa fa-cog fa-lg fa-fw"></span>
-				</button>
+				</button> -->
+				
 				<span style="color:white;font-size:20"> | </span>
 				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
 					<span class="fa fa-file-text fa-lg fa-fw"></span>
