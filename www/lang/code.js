@@ -62,6 +62,7 @@ Code.initLanguage = function() {
   $('#configModalLabel').text(MSG['configModalLabel']);
   $('#versionModalLabel').text(MSG['versionModalLabel']); 
   $('#exampleModalLabel').text(MSG['exampleModalLabel']); 
+  $('#levelLabel').text(MSG['levelLabel']); 
   $('#variableModalLabel').text(MSG['variableModalLabel']);
   $('#variablebody').text(MSG['variablebody']);
   $('#labelToolboxDefinition').text(MSG['labelToolboxDefinition']); 

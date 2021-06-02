@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Языки и Блоки",
   exampleModalLabel: "Примеры",
+  levelLabel: "Level",
   versionModalLabel: "Загрузки",
   variableModalLabel: "Переменные",
   cardLabel: "Доступные платы",

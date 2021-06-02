@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Lingua & Blocchi",
   exampleModalLabel: "Esempi",
+  levelLabel: "Level",
   versionModalLabel: "Download",
   variableModalLabel: "Variabile",
   cardLabel: "Schede disponibili",

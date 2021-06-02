@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Sprachen und Blöcke",
   exampleModalLabel: "Beispiele",
+  levelLabel: "Level",
   versionModalLabel: "Downloads",
   variableModalLabel: "Variablen",
   cardLabel: "Verfügbare Boards",

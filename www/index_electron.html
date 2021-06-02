@@ -89,15 +89,22 @@
 			</ul>
 				<input id="codeORblock" checked data-size="small" data-toggle="toggle" data-on="<span class='fa fa-puzzle fa-1_5x' style='color:#727272'></span>" data-off="<span class='fa fa-code fa-1_5x'></span>" data-style="ios" data-onstyle="default" data-offstyle="default" type="checkbox">
 				<span style="color:white;font-size:20"> | </span>
-				<button id="btn_level1" class="btn btn-arduino" >
-					<span class="fa fa-reddit fa-lg fa-fw"></span>
+				<span id="levelLabel" style="color:white;font-size:4" > </span> 
+				<div id="btn_group1"  class="btn-group" >
+				<button id="btn_level1" class="btn btn-arduino-rect" >
+				    <img src='./media/level1.png' >
+				
+					<!-- <span class="fa fa-reddit fa-lg fa-fw"></span> -->
 				</button>
-				<button id="btn_level2" class="btn btn-arduino" >
-					<span class="fa fa-user fa-lg fa-fw"></span>
+				<button id="btn_level2" class="btn btn-arduino-rect" >
+					<img src='./media/level2.png' >
+					<!--<span class="fa fa-user fa-lg fa-fw"></span>-->
 				</button>
-				<button id="btn_level3" class="btn btn-arduino" >
-					<span class="fa fa-graduation fa-lg fa-fw"></span>
+				<button id="btn_level3" class="btn btn-arduino-rect" >
+					<img src='./media/level3.png' >
+					<!--<span class="fa fa-graduation fa-lg fa-fw"></span>-->
 				</button>
+				</div>
 				<span style="color:white;font-size:20"> | </span>
 				
 				 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();" ></select>
@@ -108,7 +115,7 @@
 				
 				<span style="color:white;font-size:20"> | </span>
 				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
-					<span class="fa fa-file-text fa-lg fa-fw"></span>
+					<span class="fa fa-graduation fa-lg fa-fw"></span>
 				</button>
 			<!--	<span id="exampleModalLabel" style="color:white;font-size:4" > </span> -->
 				<button id="btn_new" class="btn btn-arduino-rect">
@@ -170,9 +177,9 @@
 				<span id="survol" style="color:#fff"></span>
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
-			<button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button>
+			<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
 			<button id="btn_search" class='btn btn-default'><span class="fa fa-binoculars"> </span></button>
-			<button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button> 
+			<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
 			<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question fa-lg fa-fw"></span> </button>
 			<button id="btn_term" class="btn btn-default"><span class="fa fa-search fa-lg fa-fw"></span></button>
 			<button id="btn_preview" class="btn btn-default"><span class="fa fa-code fa-lg fa-fw"> </span>	</button>

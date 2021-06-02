@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "שפה ובלוקים",
   exampleModalLabel: "דוגמאות",
+  levelLabel: "Level",
   versionModalLabel: "הורדה",
   variableModalLabel: "משתנים",
   cardLabel: "לוחות זמינים",

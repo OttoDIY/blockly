@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Jazyk a bloky",
   exampleModalLabel: "Příklady",
+  levelLabel: "Level",
   versionModalLabel: "Stažení",
   variableModalLabel: "Proměnná",
   cardLabel: "K dispozici mikrokontrolér",

@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Language & Blocks",
   exampleModalLabel: "示例",
+  levelLabel: "Level",
   versionModalLabel: "下载",
   variableModalLabel: "可用",
   cardLabel: "可用 主板",

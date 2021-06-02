@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Nyelv & Blokkok",
   exampleModalLabel: "Példák",
+  levelLabel: "Level",
   versionModalLabel: "Letöltés",
   variableModalLabel: "Változó",
   cardLabel: "Választható lapkák",

@@ -31,6 +31,7 @@ var MSG = {
   survol: "",
   configModalLabel: "Język & Bloczki",
   exampleModalLabel: "Przykłady",
+  levelLabel: "Level",
   versionModalLabel: "Ściągnij",
   variableModalLabel: "Zmienna",
   cardLabel: "Dostępne płytki",
