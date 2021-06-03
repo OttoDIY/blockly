@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_com</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION</parametre>
     
@@ -14,31 +14,33 @@
 	
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
-		<value name="PIN_YL"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-		<value name="PIN_YR"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
-		<value name="PIN_RL"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-		<value name="PIN_RR"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-		<value name="PIN_Buzzer"><shadow type="math_number"><field name="NUM">13</field></shadow></value>
+		<value name="PIN_YL"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+		<value name="PIN_YR"><shadow type="analog_pin">	<field name="NUM">3</field>	</shadow></value>
+		<value name="PIN_RL"><shadow type="analog_pin"><field name="NUM">4</field></shadow></value>
+		<value name="PIN_RR"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
+		<value name="PIN_TRIG"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
+		<value name="PIN_ECHO"><shadow type="analog_pin"><field name="NUM">9</field></shadow></value>
+		<value name="PIN_Buzzer"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
 				</block>
-		<block type="otto9_home"></block>
-		<block type="otto9_move"></block>
-		<block type="otto9_dance"></block>
-		<block type="otto9_do"></block>
-		<block type="otto9_gesture"></block>
+		<block type="otto_home"></block>
+		<block type="otto_move"></block>
+		<block type="otto_dance"></block>
+		<block type="otto_do"></block>
+		<block type="otto_gesture"></block>
 		<block type="otto9_arms"></block>
 		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
-		<block type="otto9_calibration"></block>
+		<block type="otto_calibration"></block>
 		
 		<category name="OTTO9_BUZZER" colour="#a600d3">
-			<block type="otto9_sound"></block>
-			<block type="otto9_tone"></block>
-			<block type="otto9_tonehz">
+			<block type="otto_sound"></block>
+			<block type="otto_tone"></block>
+			<block type="otto_tonehz">
 				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
 				<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
 			</block>
-			<block type="otto9_bendtone">
+			<block type="otto_bendtone">
 				<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
 				<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
 				<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>

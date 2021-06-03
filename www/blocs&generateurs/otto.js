@@ -14,6 +14,8 @@ Blockly.Blocks['otto9_configuration'] = {init: function() {
   this.appendValueInput("PIN_YR") .setCheck("Number").appendField(Blockly.Msg.OTTO9_YR)
   this.appendValueInput("PIN_RL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_RL)
   this.appendValueInput("PIN_RR") .setCheck("Number").appendField(Blockly.Msg.OTTO9_RR)
+  this.appendValueInput("PIN_TRIG") .setCheck("Number").appendField(Blockly.Msg.TRIG)
+  this.appendValueInput("PIN_ECHO") .setCheck("Number").appendField(Blockly.Msg.Echo)
   this.appendValueInput("PIN_Buzzer") .setCheck("Number").appendField(Blockly.Msg.OTTO9_BUZZER)
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -28,6 +30,8 @@ Blockly.Arduino['otto9_configuration'] = function(block) {
   var PIN_YR= Blockly.Arduino.valueToCode(block, 'PIN_YR', Blockly.Arduino.ORDER_ATOMIC);
   var PIN_RL= Blockly.Arduino.valueToCode(block, 'PIN_RL', Blockly.Arduino.ORDER_ATOMIC);
   var PIN_RR= Blockly.Arduino.valueToCode(block, 'PIN_RR', Blockly.Arduino.ORDER_ATOMIC);
+  var PIN_TRIG= Blockly.Arduino.valueToCode(block, 'PIN_TRIG', Blockly.Arduino.ORDER_ATOMIC);
+  var PIN_ECHO= Blockly.Arduino.valueToCode(block, 'PIN_ECHO', Blockly.Arduino.ORDER_ATOMIC);
   var PIN_Buzzer= Blockly.Arduino.valueToCode(block, 'PIN_Buzzer', Blockly.Arduino.ORDER_ATOMIC);
 	
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
@@ -37,8 +41,8 @@ Blockly.Arduino['otto9_configuration'] = function(block) {
  	+ '#define PIN_YR '+ PIN_YR +' // right leg, servo[1]\n'
 	+ '#define PIN_RL '+ PIN_RL +' // left foot, servo[2]\n'
     + '#define PIN_RR '+ PIN_RR +' // right foot, servo[3]\n'
-    + '#define PIN_Trigger 8 // ultrasound \n'
-    + '#define PIN_Echo 9 // ultrasound \n'
+    + '#define PIN_Trigger '+PIN_TRIG+' // ultrasonic sensor trigger \n'
+    + '#define PIN_Echo '+PIN_ECHO+' // ultrasonic sensor echo \n'
     + '#define PIN_Buzzer '+ PIN_Buzzer +' //buzzer \n'; 
 	
   Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true,  A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
@@ -1618,8 +1622,8 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
   Blockly.Arduino.includes_['otto9_arms'] = '#include <Servo.h>\n'
 	+ 'Servo AL, AR;';
-  Blockly.Arduino.variables_['otto9_arms'] = 'int adj[]={ 0, 0, 0, 0 };\n'
-  +'int pos[]={ 90,90,90,90 }; \n'
+  Blockly.Arduino.variables_['otto9_arms'] = 'int adj[]={ 0, 0,};\n'
+  +'int pos[]={ 90,90}; \n'
   +'int shift = 60; \n'
   +'int shift_inc = 10;  \n'
   +'int shift_delay = 50;  \n'
@@ -1700,7 +1704,7 @@ Blockly.Arduino['otto9_app'] = function(block) {
  + 'SerialCommand SCmd(BTserial);\n'
 +  '#include <Otto9.h>\n'
 +  'Otto9 Otto;  \n';
-  Blockly.Arduino.variables_['otto9_var'] = 'const char programID[] = "OttoPLUS_V9";\n'
+  Blockly.Arduino.variables_['otto9_var'] = 'const char programID[] = "Otto Bluetooth App Firmware";\n'
   +'const char name_fac = \'$\'; \n'
   +'const char name_fir = \'#\';\n'
   

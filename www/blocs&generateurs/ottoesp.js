@@ -253,7 +253,7 @@ Blockly.Blocks['otto_sound'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#a600d3");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
 };
@@ -273,7 +273,7 @@ Blockly.Blocks['otto_tone'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#a600d3");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -295,7 +295,7 @@ Blockly.Blocks['otto_tonehz'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#a600d3");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -320,7 +320,7 @@ Blockly.Blocks['otto_bendtone'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#a600d3");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }

@@ -87,8 +87,6 @@
 				<li role="presentation" class="active"><a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab"></a></li>
 				<li role="presentation"><a href="#content_code" aria-controls="content_code" role="tab" data-toggle="tab"></a></li>
 			</ul>
-				<input id="codeORblock" checked data-size="small" data-toggle="toggle" data-on="<span class='fa fa-puzzle fa-1_5x' style='color:#727272'></span>" data-off="<span class='fa fa-code fa-1_5x'></span>" data-style="ios" data-onstyle="default" data-offstyle="default" type="checkbox">
-				<span style="color:white;font-size:20"> | </span>
 				<span id="levelLabel" style="color:white;font-size:4" > </span> 
 				<div id="btn_group1"  class="btn-group" >
 				<button id="btn_level1" class="btn btn-arduino-rect" >
@@ -107,7 +105,7 @@
 				</div>
 				<span style="color:white;font-size:20"> | </span>
 				
-			    <select id="languageMenu" onchange="BlocklyDuino.changelanguage();" ></select>
+				 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();" ></select>
 				
 			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
 					<span class="fa fa-cog fa-lg fa-fw"></span>
@@ -159,15 +157,9 @@
 						<option value="mega" >Arduino Méga 2560</option>					
 						<option value="yun" >Arduino Yun</option> -->
 						<option value="mkrwifi1010" >Arduino:samd MKR WiFi 1010</option>
+						
 					</optgroup>
-					<!--<optgroup label="Python">
-						<option value="esp8266" >ESP 8266</option>
-						<option value="esp32" >ESP 32</option>
-						<option value="microbit" >micro:bit</option>
-						<option value="pyboard" >Pyboard</option>
-					</optgroup>-->
 				</select>
-				<!--
 				<span style="color:white;font-size:4">|</span>
 				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: -2px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-usb fa-fw"></span>
@@ -180,16 +172,20 @@
 				<button id="btn_flash" class='btn btn-arduino' data-toggle="modal" data-target="#message">
 					<span class="fa fa-arrow-right fa-1_5x fa-fw"> </span>
 				</button>
-				<span id="survol" style="color:#fff"></span>-->
+				<span id="survol" style="color:#fff"></span>
+				
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
-			<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
-			<button id="btn_search" class='btn btn-default'><span class="fa fa-binoculars"> </span></button>
-			<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button> -->
-			<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question fa-lg fa-fw"></span> </button>
-			<button id="btn_term" class="btn btn-default"><span class="fa fa-search fa-lg fa-fw"></span></button>
-			<button id="btn_preview" class="btn btn-default"><span class="fa fa-code fa-lg fa-fw"> </span>	</button>
+			<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question fa-lg fa-fw"></span> </button>
+						<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
+						<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
+			<button id="btn_term" class="btn btn-arduino-rect"><span class="fa fa-search fa-lg fa-fw"></span></button>
+			<button id="btn_preview" class="btn btn-arduino-rect"><span class="fa fa-code fa-lg fa-fw"> </span>	</button>
+			<button id="btn_search" class='btn btn-arduino-rect'><span class="fa fa-binoculars"> </span></button>
+			<input id="codeORblock" checked data-size="small" data-toggle="toggle" data-on="<span class='fa fa-puzzle fa-1_5x' style='color:#727272'></span>" data-off="<span class='fa fa-code fa-1_5x'></span>" data-style="ios" data-onstyle="default" data-offstyle="default" type="checkbox">
+				
 		</div>
+		
 	</div>
 	<div id="divBody" class="tab-content">
 		<div role="tabpanel" id="content_blocks" class="tab-pane fade in active" style="position: relative;">
