@@ -69,9 +69,9 @@ Blockly.Msg.CAT_BME280 = "🗜️ Pressure";
 Blockly.Msg.CAT_VL53L0X = "📏 Distance";
 Blockly.Msg.CAT_APDS9960 = "👋 Gesture";
 Blockly.Msg.CAT_TCS34725 = "🌈 Color";
-Blockly.Msg.CAT_Displays = "🖥️ Displays";
-Blockly.Msg.CAT_OLED_U8G = "⬛ OLED";
-Blockly.Msg.CAT_TFT_ST7735 = "⬛ TFT";
+Blockly.Msg.CAT_Displays = "💻 Displays";
+Blockly.Msg.CAT_OLED_U8G = "🖥️ OLED";
+Blockly.Msg.CAT_TFT_ST7735 = "📺 TFT";
 Blockly.Msg.CAT_del = "💡 Single LED";
 Blockly.Msg.CAT_LED = "💡 LED";
 Blockly.Msg.CAT_LEDRGB = "🚥 RGB LED";
@@ -337,31 +337,7 @@ Blockly.Msg.ARDUINO_PULSEIN = "state duration";
 Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink";// do not translate
 Blockly.Msg.tempo_tooltip = "This block checks if the indicated time has arrived, if it is the case then it executes the blocks placed inside .. Unlike the block 'to wait' this one is not blocking." ;
 Blockly.Msg.tempo1 = "all";
-//OLED
-Blockly.Msg.lp2i_u8g_draw_string = "OLED I²C display";
-Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
-Blockly.Msg.lp2i_u8g_draw_string_X = "raw x (127 max) =";
-Blockly.Msg.lp2i_u8g_draw_string_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I²C display";
-Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "texts to display :";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "line 1 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "line 2 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "line 3 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "line 4 =";
-Blockly.Msg.lp2i_u8g_print = "OLED I²C display";
-Blockly.Msg.lp2i_u8g_print_N = "Number to display ="
-Blockly.Msg.lp2i_u8g_print_X = "raw x (127 max) =";
-Blockly.Msg.lp2i_u8g_print_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_4draw_print = "OLED I²C display";
-Blockly.Msg.lp2i_u8g_4draw_print_to_display = "to display :";
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "line 1 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Number 1 (at end) ="
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line2 = "line 2 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N2 = "Number 2 (at end) ="
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "line 3 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) ="
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) ="
+
 // LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "LED on the board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";
@@ -680,7 +656,7 @@ Blockly.Msg.LCDP_Column = "Columns";
 Blockly.Msg.LCDP_Row = "Rows";
 Blockly.Msg.LCDP_Column2 = "column";
 Blockly.Msg.LCDP_Row2 = "row";
-Blockly.Msg.LCDP_Print = "and print";
+Blockly.Msg.LCDP_Print = "Print";
 Blockly.Msg.LCDP_Clear = "LCD I²C clear";
 Blockly.Msg.LCDP_scrollDisplay = "LCD I²C scroll display ";
 Blockly.Msg.LCDP_setBcklight = "LCD I²C set Backlight ";
@@ -909,10 +885,10 @@ Blockly.Msg.ST7735_IconName = "Icon";
 Blockly.Msg.ST7735_ValueList = "Hex array";
 Blockly.Msg.ST7735_DrawiconName = "Draw Icon";
 
+//OLED
 Blockly.Msg.OLED_IconName = "Icon";
 Blockly.Msg.OLED_ValueList = "Values(hex array)";
-Blockly.Msg.OLED_DrawiconName = "Draw Icon";
-Blockly.Msg.OLED_name = "OLED";
+Blockly.Msg.OLED_DrawiconName = "Draw";
 Blockly.Msg.OLED_X0 = "X0";
 Blockly.Msg.OLED_Y0 = "Y0";
 Blockly.Msg.OLED_width = "width";
