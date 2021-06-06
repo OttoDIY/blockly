@@ -345,9 +345,10 @@ BlocklyDuino.bindFunctions = function() {
 			window.localStorage.content="on"
 		}
 	});
+/* 	Keep code preview window visible when clicked to allow selection
 	$('#pre_previewArduino').on("click", function() {
 		$("#toggle").toggle("slide");
-	});
+	}); */
 	$('#btn_verify').mouseover(function() {
 		document.getElementById("survol").textContent = "Check the code";
 	}).mouseout(function() {
