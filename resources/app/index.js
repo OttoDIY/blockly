@@ -11,10 +11,14 @@ window.addEventListener('load', function load(event) {
 	var portserie = document.getElementById('portserie')
 	var messageDiv = document.getElementById('messageDIV')
 	localStorage.setItem("verif",false)
-	document.getElementById('versionapp').textContent = " OttoBlockly v" + appVersion
+	document.getElementById('versionapp').textContent = " Otto Blockly V" + appVersion
 	function uploadOK(){
 		messageDiv.style.color = '#009000'
-		messageDiv.innerHTML = Blockly.Msg.upload + ': ✅ OK' + quitDiv
+		messageDiv.innerHTML = Blockly.Msg.upload + ': ✅ OK code uploaded' + quitDiv
+		$('#message').modal('show');
+		setTimeout(function() {
+		$('#message').modal('hide');
+		}, 3000);
 	}
 	$('#btn_forum').on('click', function(){
 		shell.openExternal('http://builders.ottodiy.com/')
@@ -197,7 +201,12 @@ window.addEventListener('load', function load(event) {
 						}
 						
 			    messageDiv.style.color = '#009000'
-				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ OK' + quitDiv
+				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ Code is ready to upload' + quitDiv
+				$('#message').modal('show');
+				setTimeout(function() {
+    			$('#message').modal('hide');
+				}, 3000);
+
 		    })
 		
 			
@@ -313,7 +322,7 @@ window.addEventListener('load', function load(event) {
 					setTimeout(uploadOK, 7000)
 				} else {
 					messageDiv.style.color = '#000000'
-					messageDiv.innerHTML = 'Connecter la carte microBit !' + quitDiv
+					messageDiv.innerHTML = 'Connect micro:bit!' + quitDiv
 				}
 			} else {
 				

@@ -2,21 +2,21 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "Válassz USB portot";
-Blockly.Msg.com2 = "🔔 Kérlek válassz USB-t" ;
+Blockly.Msg.com1 = "⚠️ Válassz USB portot";
+Blockly.Msg.com2 = "⚠️ Kérlek válassz USB-t" ;
 Blockly.Msg.check = "Ellenőrzés...";
 Blockly.Msg.upload = "Feltöltés...";
-Blockly.Msg.error = "🔔 HIBA: Blokkok nincsenek összekapcsolva";
-Blockly.Msg.verif = "🔔 Először ellenőrizd a kódot "
+Blockly.Msg.error = "🛑 HIBA: Blokkok nincsenek összekapcsolva";
+Blockly.Msg.verif = "⛔ Először ellenőrizd a kódot "
 Blockly.Msg.save = "Save as format";
 Blockly.Msg.update = "Frissítés";
 Blockly.Msg.new_update = "Új verzió elérhető, akarod most letölteni és telepíteni?" ;
 Blockly.Msg.yes = "igen";
 Blockly.Msg.no = "nem";
-Blockly.Msg.uptodate = "💯 Version is up to date!" ;
+Blockly.Msg.uptodate = "✅ Version is up to date!" ;
 Blockly.Msg.download = "Letöltés befejezve, a program települni fog és újraindul ..."
 // common to all blocks
-Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
+Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "pin";
 Blockly.Msg._AT = "legyen";
 Blockly.Msg.AV = "előre";

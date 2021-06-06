@@ -2,21 +2,21 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "USB bağlantı noktasını seçin";
-Blockly.Msg.com2 = "🔔 Lütfen USB'yi seçin" ;
+Blockly.Msg.com1 = "⚠️ USB bağlantı noktasını seçin";
+Blockly.Msg.com2 = "⚠️ Lütfen USB'yi seçin" ;
 Blockly.Msg.check = "Kontrol...";
 Blockly.Msg.upload = "Yükleme...";
-Blockly.Msg.error = "🔔 HATA: Bağlı olmayan bloklar";
-Blockly.Msg.verif = "🔔 Önce kodu kontrol edin "
+Blockly.Msg.error = "🛑 HATA: Bağlı olmayan bloklar";
+Blockly.Msg.verif = "⛔ Önce kodu kontrol edin "
 Blockly.Msg.save = "Biçim olarak kaydet";
 Blockly.Msg.update = "Güncelleme";
 Blockly.Msg.new_update = "Yeni bir sürüm mevcut, şimdi indirmek ve yüklemek ister misiniz?" ;
 Blockly.Msg.yes = "Evet";
 Blockly.Msg.no = "Hayır";
-Blockly.Msg.uptodate = "💯 Sürüm güncel!" ;
+Blockly.Msg.uptodate = "✅ Sürüm güncel!" ;
 Blockly.Msg.download = "İndirme tamamlandı, uygulama yüklenecek ve yeniden başlatılacak..."
 // common to all blocks
-Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
+Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "Pinde";
 Blockly.Msg._AT = "'de";
 Blockly.Msg.AV = "ileri";

@@ -2,21 +2,21 @@
 goog.provide('Blockly.Msg.fr');
 goog.require('Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "Choisir le port" ; 
-Blockly.Msg.com2 = "Sélectionner un port !" ; 
+Blockly.Msg.com1 = "⚠️ Choisir le port" ; 
+Blockly.Msg.com2 = "⚠️ Sélectionner un port !" ; 
 Blockly.Msg.check = "Vérification " ; 
 Blockly.Msg.upload = "Téléversement " ; 
-Blockly.Msg.error = "ERREUR : Blocs non connectés " ;
-Blockly.Msg.verif = "Vérifier d'abord le programme !"
+Blockly.Msg.error = "🛑 ERREUR : Blocs non connectés " ;
+Blockly.Msg.verif = "⛔ Vérifier d'abord le programme !"
 Blockly.Msg.save = "Enregistrer au format " ; 
 Blockly.Msg.update = "Mise à jour" ; 
 Blockly.Msg.new_update = "Une nouvelle version est disponible, voulez-vous la télécharger et l'installer maintenant ?" ; 
 Blockly.Msg.yes = "oui" ; 
 Blockly.Msg.no = "non" ; 
-Blockly.Msg.uptodate = "Votre version est à jour." ; 
+Blockly.Msg.uptodate = "✅ Votre version est à jour." ; 
 Blockly.Msg.download = "Téléchargement terminé, l'application va s'installer puis redémarrer..." 
 // commun à tous les blocs
-Blockly.Msg.HELPURL="http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ReferenceMaxi"; //ne pas traduire
+Blockly.Msg.HELPURL="https://ottodiy.com"; //ne pas traduire
 Blockly.Msg.pin="sur la broche";
 Blockly.Msg._AT="à";
 Blockly.Msg.AV="avant";

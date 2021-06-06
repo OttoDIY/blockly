@@ -2,7 +2,7 @@
 goog.provide ('Blockly.Msg.es');
 goog.require ('Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "Seleccionar puerto USB";
+Blockly.Msg.com1 = "⚠️ Seleccionar puerto USB";
 Blockly.Msg.com2 = "⚠️ Seleccione un puerto USB por favor";
 Blockly.Msg.check = "Verificando ...";
 Blockly.Msg.upload = "Cargando ...";
@@ -69,13 +69,13 @@ Blockly.Msg.CAT_BME280 = "🗜️ Presión";
 Blockly.Msg.CAT_VL53L0X = "📏 Distancia";
 Blockly.Msg.CAT_APDS9960 = "👋 Gestos";
 Blockly.Msg.CAT_TCS34725 = "🌈 Color";
-Blockly.Msg.CAT_Displays = "🖥️ Displays";
-Blockly.Msg.CAT_OLED_U8G = "⬛ OLED";
-Blockly.Msg.CAT_TFT_ST7735 = "⬛ TFT";
+Blockly.Msg.CAT_Displays = "💻 Displays";
+Blockly.Msg.CAT_OLED_U8G = "🖥️ OLED";
+Blockly.Msg.CAT_TFT_ST7735 = "📺 TFT";
 Blockly.Msg.CAT_del = "💡 LED";
 Blockly.Msg.CAT_LED = "💡 LED";
-Blockly.Msg.CAT_LEDRGB = "🌈 RGB LED";
-Blockly.Msg.CAT_NEOPIXEL = "🚥 NeoPixel";
+Blockly.Msg.CAT_LEDRGB = "🚥 RGB LED";
+Blockly.Msg.CAT_NEOPIXEL = "🌈 NeoPixel";
 Blockly.Msg.CAT_MAX7219 = "💡 Matriz 8x8";
 Blockly.Msg.CAT_MAX1640 = "💡 Matriz 16x8";
 Blockly.Msg.CAT_BARGRAPH = "💡 Barra LED";

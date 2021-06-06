@@ -2,12 +2,12 @@
 goog.provide ( 'Blockly.Msg.pl');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "Wybierz port USB.";
-Blockly.Msg.com2 = "🔔 Proszę wybierz port USB." ;
+Blockly.Msg.com1 = "⚠️ Wybierz port USB.";
+Blockly.Msg.com2 = "⚠️ Proszę wybierz port USB." ;
 Blockly.Msg.check = "Sprawdź...";
 Blockly.Msg.upload = "Wyślij...";
-Blockly.Msg.error = "🔔 Błąd: Bloki nie są połączone.";
-Blockly.Msg.verif = "🔔 Najpierw sprawdź kod. "
+Blockly.Msg.error = "🛑 Błąd: Bloki nie są połączone.";
+Blockly.Msg.verif = "⛔ Najpierw sprawdź kod. "
 Blockly.Msg.save = "Zapisz jako...";
 Blockly.Msg.update = "Zaktualizuj.";
 Blockly.Msg.new_update = "Dostępna jest nowa wersja , czy chcesz ściągnąć i zaktualizować teraz ?" ;
@@ -16,7 +16,7 @@ Blockly.Msg.no = "Nie";
 Blockly.Msg.uptodate = "💯 Ta wersja jest nieaktualna!" ;
 Blockly.Msg.download = "Ściąganie zakończone, nastąpi instalacja i restart aplikacji ..."
 // common to all blocks
-Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
+Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "na pinie";
 Blockly.Msg._AT = "na";
 Blockly.Msg.AV = "do przodu";

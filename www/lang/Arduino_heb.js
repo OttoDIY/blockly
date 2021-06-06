@@ -2,21 +2,21 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "בחר יציאה";
-Blockly.Msg.com2 = "🔔 בחר יציאה בבקשה" ;
+Blockly.Msg.com1 = "⚠️ בחר יציאה";
+Blockly.Msg.com2 = "⚠️ בחר יציאה בבקשה" ;
 Blockly.Msg.check = "בודק...";
 Blockly.Msg.upload = "מעלה...";
-Blockly.Msg.error = "🔔 שגיאה! רובוט לא מחובר";
-Blockly.Msg.verif = "🔔 בדוק את הקוד "
+Blockly.Msg.error = "🛑 שגיאה! רובוט לא מחובר";
+Blockly.Msg.verif = "⛔ בדוק את הקוד "
 Blockly.Msg.save = "שמור כפורמט";
 Blockly.Msg.update = "עדכון";
 Blockly.Msg.new_update = "A new version is available, do you want to download and install it now?" ;
 Blockly.Msg.yes = "כן";
 Blockly.Msg.no = "לא";
-Blockly.Msg.uptodate = "💯 Version is up to date!" ;
+Blockly.Msg.uptodate = "✅ Version is up to date!" ;
 Blockly.Msg.download = "ההורדה הושלמה, האפליקציה תפעיל עצמה מחדש..."
 // common to all blocks
-Blockly.Msg.HELPURL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
+Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "בחיבור";
 Blockly.Msg._AT = "ב";
 Blockly.Msg.AV = "קדימה";
