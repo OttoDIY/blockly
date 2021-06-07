@@ -38,10 +38,41 @@ Blockly.Blocks['OLED_init'] = {
   return ""
 };
 
+Blockly.Blocks['OLED_display'] = {
+  init: function() {
+    this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+  }
+};
+Blockly.Arduino['OLED_display'] = function(block) {
+  var code = 'display.display();\n' ;
+  return code;
+};
+Blockly.Blocks['OLED_clear'] = {
+  init: function() {
+    this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_raz_tooltip);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+  }
+};
+Blockly.Arduino['OLED_clear'] = function(block) {
+  var code = 'display.clearDisplay();\n' ;
+  return code;
+};
+
 Blockly.Blocks['OLED_rotate'] = {
   init: function() {
      this.appendDummyInput()
-     .appendField("🖥️ rotate")
+     .appendField("🖥️ "+Blockly.Msg.ST7735_Rotate)
      .appendField(new Blockly.FieldDropdown([["0°", "0"], ["90°", "1"], ["180°", "2"], ["270°", "3"]]), "angle");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
@@ -205,8 +236,7 @@ Blockly.Blocks['OLED_line'] = {
   var code = 'display.drawLine('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
   return code
 };
-Blockly.Blocks['OLED_rectangle'] = {
-  init: function() {
+Blockly.Blocks['OLED_rectangle'] = { init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '▉'
   this.appendDummyInput()  .appendField("🖥️🔲") ;
   this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
@@ -229,8 +259,8 @@ Blockly.Blocks['OLED_rectangle'] = {
   var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
   var value_height = Blockly.Arduino.valueToCode(block, 'height', Blockly.Arduino.ORDER_ATOMIC);
   var draw = ''
-  if(this.getFieldValue('draw') == 'TRUE') draw= "WHITE";
-  else draw = "BLACK";
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
   var code = ''
   if (this.getFieldValue('fill') == 'TRUE')code = 'display.fillRect('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
   else code = 'display.drawRect('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
@@ -271,8 +301,7 @@ Blockly.Blocks['OLED_round'] = {
   return code
 };
 
-Blockly.Blocks['OLED_circle'] = {
-  init: function() {
+Blockly.Blocks['OLED_circle'] = {init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '▉'
   this.appendDummyInput()  .appendField("🖥️⚪") ;
   this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
@@ -411,36 +440,6 @@ Blockly.Arduino['OLED_bitmap2'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['OLED_clear'] = {
-  init: function() {
-    this.appendDummyInput()  .appendField("🖥️ clear");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#4b009f");
-    this.setTooltip('');
-     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
-  }
-};
-Blockly.Arduino['OLED_clear'] = function(block) {
-  var code = 'display.clearDisplay();\n' ;
-  return code;
-};
-Blockly.Blocks['OLED_display'] = {
-  init: function() {
-    this.appendDummyInput()  .appendField("🖥️ show");
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#4b009f");
-    this.setTooltip('');
-     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
-  }
-};
-Blockly.Arduino['OLED_display'] = function(block) {
-  var code = 'display.display();\n' ;
-  return code;
-};
 
 
 Blockly.Blocks['oled_icon'] = {
