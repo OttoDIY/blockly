@@ -386,15 +386,22 @@
 				<value name="PINR"><shadow type="math_number">	<field name="NUM">3</field></shadow></value>
 			</block>
 	</category>	
-		
-	
+			<block type="moteur_dc_init">
+			<value name="ENA"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+			<value name="ENB"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
+			<value name="IN1"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value>
+			<value name="IN2"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
+			<value name="IN3"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
+			<value name="IN4"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
+			</block>
+			<block type="moteur_dc">
+			<value name="speed"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			</block>
+			<block type="moteur_dc_stop"></block>	
 			<block type="motor_run"><value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value></block>
 			<block type="motor_stop"></block>
-			<block type="moteur_action"></block>
-			<block type="moteur_stop"></block>
-			<block type="moteur_dc"></block>
-			<block type="moteur_dc_stop"></block>
-			<block type="dagu_rs027"></block>		
+			<!--<block type="moteur_action"></block>
+			//<block type="moteur_stop"></block>-->
 		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
 		<block type="stepper_configuration"><value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
 			<value name="PIN_STEEPER1"><shadow type="math_number"><field name="NUM">2</field></shadow></value>

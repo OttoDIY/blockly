@@ -413,10 +413,10 @@ Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT = "Spin wheel";
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP = "Spin the servo wheel connected to the specified pin, at the indicated speed [0-90] and in the selected direction";
 //engine
 Blockly.Msg.mot_tooltip = "Shield motor controller L293D: \n activates both motors (M1 and M2) to advance or turn, the speed can be set between 0 and 90";
-Blockly.Msg.mot_stop = "stop";
+Blockly.Msg.motor = "Motor DC";
 Blockly.Msg.mot_stop_tooltip = "L293D Motor Controller Shield: \nstop the two motors (M1 and M2)";
-Blockly.Msg.moteur = "activate the engine";
-Blockly.Msg.moteurstop = "stop the engine";
+Blockly.Msg.moteur = "Spin motor DC";
+Blockly.Msg.moteurstop = "🛑 stop";
 Blockly.Msg.moteur_tooltip = "starts the DC motor connected to the specified pin, at the indicated speed \nspeed = 0 -> motor stop";
 Blockly.Msg.moteurdagu_tooltiprs040 = "RS 040 board: \n activates one of the 2 outputs to drive DC motors, the speed can be set between 0 and 90";
 Blockly.Msg.moteurdagu_tooltiprs040stop = "RS 040 board: \nstop one of the 2 motors";
