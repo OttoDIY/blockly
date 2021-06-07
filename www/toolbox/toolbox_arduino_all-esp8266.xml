@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_iot</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_com</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_com,CAT_iot</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
-	<!--<block type="base_begin"></block> -->
-	<!--<block type="base_end"></block> -->
-	<!--<block type="base_loop"></block> -->
 		<block type="base_define"></block> 
 		<block type="base_setup_loop"></block>
 		<block type="base_code"></block>
@@ -15,8 +12,6 @@
 	</category>
 	
 	<category name="CAT_OTTO" colour="#32D900">
-	
-	
 		<block type="otto_configuration">
 		<field name="PIN_YL">0</field>
 		<field name="PIN_YR">2</field>
@@ -48,17 +43,7 @@
 			</category>	
 		<block type="otto_calibration"></block>
 		<block type="otto_eeprom"></block>
-		
-	<!--	
-	<category name="CAT_ultrason" colour="#2a93e8">
-		<block type="otto9_obstacle"></block>
-		<block type="otto9_getdistance"></block>
-		<block type="otto9_touchbutton"></block>
-		<block type="otto9_getnoise"></block>
-		<block type="otto9_gyro"></block>
-		<block type="otto9_getg"></block>
-	</category>	
-	-->
+
 	<!--
 	<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 		<block type="otto9_eyes"></block>
@@ -101,71 +86,57 @@
 		<block type="otto9_eyes_clear"></block>
 	</category>
 	-->
-	<!--
-	<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
-			<block type="otto9_mouth"></block>
-			<block type="otto9_matrix_brightness">
-			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>
-			<block type="otto9_matrix_text"></block>
-			<block type="otto9_mouth#">
-				<value name="mouth"><shadow type="math_number">	<field name="NUM">10</field></shadow></value>
-		</block>
-			<block type="otto9_matrix"></block>
-			<block type="otto9_matrixp">
-				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow>	</value>
-			</block>
-			<block type="otto9_clear"></block>
-			<block type="otto9_matrix8x8"></block>
-	</category>
-	-->
+
 		
 </category>
-	<!--
-	<category name="CAT_ESCORNABOT" colour="#C39BD3">
-			<block type="escornabot_init"></block>
-			<block type="escornabot_spin"></block>
-			<block type="escornabot_distance"></block>
-			<block type="escornabot_turnspin"></block>
-			<block type="escornabot_turnangle"></block>
-			<block type="escornabot_stop"></block>
-			<block type="escornabot_beep"></block>
-			<block type="escornabot_ledon"></block>
-			<block type="escornabot_ledoff"></block>
-			<block type="escornabot_getbutton"></block>
-			<block type="escornabot_us_init"></block>
-			<block type="escornabot_getus"></block>
-			<block type="escornabot_ir_init"></block>
-			<block type="escornabot_blackLeft"></block>
-			<block type="escornabot_blackRight"></block>
-			<block type="escornabot_whiteLeft"></block>
-			<block type="escornabot_whiteRight"></block>
-			<block type="escornabot_app"></block>
-	</category>
-	-->
+
 	
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 			<block type="base_delay">
-			<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value></block>	
+				<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value></block>	
 			<block type="tempo_sans_delay">
-			<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field></shadow></value></block>
-		<!--	<block type="millis_start"></block>	-->
+				<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field></shadow></value></block>
+			<block type="millis_start"></block>	
 			<block type="millis"></block>		
 			<block type="inout_pulsein"></block>
 	</category>
+				<category name="CAT_ARDUINO_IN" colour="#00929f">
+		<block type="inout_digital_write">
+		<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
+		<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
+		</block>	
+		<block type="inout_onoff"></block>
+		<block type="digital_read">
+				<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
+				</block>
+		<block type="inout_analog_write">
+		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+		</block>
+		<block type="inout_analog_write2">
+		<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
+		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+		</block>
+		<block type="inout_analog_read"></block>
+		<block type="inout_analog_read2">		<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value></block>
+		<block type="toggle">
+				<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
+				</block>
+		<block type="inout_attachInterrupt"></block>
+		<block type="inout_detachInterrupt"></block>
+	</category>	
 
 	<category name="CAT_LOGIC" colour="#ffb400">
 		<block type="controls_if"></block>
-        <block type="controls_repeat_ext">
-		<value name="TIMES"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-		</block>
+        <block type="controls_repeat_ext">	<value name="TIMES"><shadow type="math_number"><field name="NUM">2</field></shadow></value></block>
         <block type="controls_whileUntil"></block>
-        <block type="controls_flow_statements"></block>
-		<block type="inout_onoff"></block>
-        <block type="logic_operation"></block>
-		<block type="controls_for"></block>
+		<block type="controls_for">	
+		<value name="FROM"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="TO"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+		<value name="BY"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+		</block>
 		<block type="controls_switch"></block>
+		<block type="controls_flow_statements"></block>
+		<block type="logic_operation"></block>
         <block type="logic_negate"></block>
         <block type="logic_null"></block>
 	</category>
@@ -175,17 +146,31 @@
 		<block type="inout_angle_maths"></block>
 		<block type="analog_pin"></block>
         <block type="logic_compare">
-		<value name="B"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			<value name="B"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 		</block>
         <block type="math_arithmetic"></block>
 		<block type="intervalle"></block>
+				<block type="math_map">
+		<value name="A1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="A2"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
+		<value name="B1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="B2"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		</block>
+		        <block type="math_modulo"></block>
+		<block type="math_random_int">
+		<value name="FROM"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="TO"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
+		</block>
+		<block type="math_constrain">
+		<value name="LOW"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="HIGH"><shadow type="math_number"><field name="NUM">100</field></shadow></value>
+		</block>
         <block type="math_single"></block>
         <block type="math_round"></block>
         <block type="math_trig"></block>
         <block type="math_constant"></block>
         <block type="math_number_property"></block>
-        <block type="math_modulo"></block>
-		<block type="math_random_int"></block>
+
     </category>
 
 	<category name="CAT_TEXT" colour="#FD6C9E">
@@ -196,6 +181,7 @@
         <block type="text_isEmpty"></block>
     </category>
 	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
+
 	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
 
 	<category name="CAT_TAB" colour="#ff5700">
@@ -205,16 +191,6 @@
 		<block type="array_getIndex"></block>
 		<block type="array_getsize"></block>
     </category>
-		<category name="CAT_ARDUINO_IN" colour="#00929f">
-		<block type="digital_read"></block>
-		<block type="inout_analog_read"></block>
-		<block type="inout_attachInterrupt"></block>
-		<block type="inout_detachInterrupt"></block>
-		<block type="inout_digital_write"></block>
-		<block type="inout_analog_write"></block>
-		<block type="toggle"></block>
-		<block type="mrtduino_pin"></block>
-	</category>	
 
 	<category name="CAT_SENSORS" colour="#2a93e8">
 		 <block type="button_sensor2"></block>
@@ -335,6 +311,11 @@
 		<block type="HMC5883_values"></block>
 	</category>	
 
+	<category name="CAT_GYRO" colour="#2a93e8">
+			<block type="gyro_read"></block>
+			<block type="gyro_get"></block>
+		</category>	
+
 	<category name="CAT_GPS" colour="#2a93e8">
 		 <block type="GPS_init_ss">
 			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
@@ -348,102 +329,39 @@
 	
 </category>
 
-<!--
-<category name="CAT_KEYBOARD" colour="#2a93e8">	
-		<block type="keyboard_function">
-		    <value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
-		</block>
-		<block type="key_pressed"></block>
-		<block type="keyboard_text">
-			<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow>
-            </value>
-		</block>
-		<block type="mouse_function"></block>
-		<block type="mouse_move">
-		  <value name="axis_x"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		  <value name="axis_y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		  <value name="wheel"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		</block>
-</category>
-
-		<category name="CAT_MUVISION" colour="#0060aa">
-			<block type="Vs2MuInit"></block>
-			<block type="Vs2Setup"></block>
-			<block type="Vs2Reset"></block>
-			<block type="Vs2SetLEDColor">
-			  <value name="LEDLevel"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			</block>
-		    <block type="Vs2VisionBegin"></block>
-			<block type="Vs2SetVisionLevel"></block>
-			<block type="Vs2SetColorRecognitionRegion">
-				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-			</block>
-			<block type="Vs2SetColorBlockMinBlob">
-				<value name="Width"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-				<value name="Height"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-			</block>
-		    <block type="Vs2SetVisionZoom"></block>
-		<block type="Vs2SetUARTBaud"></block> 
-			<block type="Vs2SetCameraWhiteBalance"></block>
-			<block type="Vs2SetCameraHFR"></block>
-			<block type="Vs2Detected"></block>
-			<block type="Vs2DetectedRegionColor">
-				<value name="XValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
-				<value name="YValue"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
-			</block>
-			<block type="Vs2DetectedColorDetect"></block>
-			<block type="Vs2GetMessage"></block>
-			<block type="Vs2GetCardType"></block>
-			<block type="Vs2GetColorLabel"></block>
-			<block type="Mu3LsBegin"></block>
-			<block type="Mu3LsSetSensitivity"></block>
-			 <block type="Mu3LsWhiteBalanceEnable"></block> 
-			<block type="Mu3LsReadProximity"></block>
-			<block type="Mu3LsReadAmbientLight"></block>
-			<block type="Mu3LsDetectedGesture"></block>
-			<block type="Mu3LsDetectedGestureType"></block>
-			<block type="Mu3AtWiFiInit">
-				<value name="BAUD"><shadow type="math_number"><field name="NUM">9600</field></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiSet"><value name="SSID"><shadow type="text"></shadow></value>
-	        <value name="PASSWORD"><shadow type="text"></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiCon"></block>
-			<block type="Mu3AtWiFiDiscon"></block>	
-			<block type="Mu3AtWiFiCip"></block>
-			<block type="Mu3AtWiFiSip"></block>
-			<block type="Mu3AtWiFiRead"></block>
-			<block type="Mu3AtWiFiUDP">
-				<value name="IP"><shadow type="text"><field name="TEXT">192.168.4.2</field></shadow></value>
-	        <value name="PORT"><shadow type="text"><field name="TEXT">3333</field></shadow></value>
-			</block>
-			<block type="Mu3AtWiFiWrite"><value name="NUMBER"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
-		</category>	
-		-->
-
 	<category name="CAT_servo" colour="#2d2dd1">
 		<block type="servo_move">
 			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+			<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+			<block type="servo_movemicros">
+			<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
 			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
 		<block type="servo_read_degrees">
 			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
 		</block>
+		<block type="servo_attached">
+			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+		</block>
+		<block type="servo_detach">
+			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+		</block>
+			<block type="servo_PWM">
+			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+		</block>
+	
 		<block type="servo_rot_continue_param">
 			<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
 			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
-		<block type="servo_PWM">
-			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+				<block type="servo_rot_stop">
+			<value name="PIN"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
 		
 	</category>	
 	
-	<!--
-	<category name="CAT_actionneur" colour="#2d2dd1"> -->
-		
 	<!--	<block type="m_pap"></block>
 		<block type="m_pap_step"></block> -->
 		
@@ -528,12 +446,136 @@
 		<block type="potentiometre"></block> 
 		<block type="encoder"></block>
 		</category> -->
+	<category name="CAT_LED" colour="#4b009f">		
+		<block type="blink"></block>
+		<block type="inout_buildin_led"></block>
+		<block type="digital_write">
+		<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		</block>	
+		<block type="digital_write2">
+		<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+		</block>	
+		
+	<category name="CAT_LEDRGB" colour="#4b009f">
+		<block type="rvb_init_2"></block>
+		<block type="rvb_set">
+		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		</block>
+	</category>	
 	
+	<category name="CAT_NEOPIXEL" colour="#4b009f">	
+			<block type="pixel_init_2">
+			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			<value name="num"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+		</block>
+		<block type="pixel_setcolor">
+			<value name="pin"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="pixel_rgb">
+			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		</block>
+		<block type="pixel_setbrightness">
+			<value name="brightness"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
+		</block>	
+		<block type="pixel_clear"></block>	
+		<block type="MatrixLED_WS2812B_init_2">
+			<value name="Pin_Matrix_init"><shadow type="math_number"><field name="NUM">13</field></shadow></value>
+			<value name="Number_of_Pixels"><shadow type="math_number"><field name="NUM">1</field></shadow>	</value>
+		</block>
+		<block type="MatrixLED_WS2812B_draw"></block>
+		<block type="MatrixLED_WS2812B_setBrightness">
+		<value name="brightness"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
+		</block>
+		<block type="MatrixLED_WS2812B_setPixelColor"><value name="Pixel_number"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Red"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="Green"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="Blue"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		<value name="brightness"><shadow type="math_number"><field name="NUM">127</field></shadow></value>
+		</block>
+		<block type="MatrixLED_WS2812B_CLEAN"></block>
+	</category>	
+	
+	<category name="CAT_MAX1640" colour="#4b009f">
+	    <block type="matrizled_init">
+				<value name="PIN_SCL"><shadow type="analog_pin"><field name="NUM">A4</field></shadow></value>
+				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">A5</field></shadow></value>
+	    </block>
+		<block type="matrizled_eyeface"></block>
+		<block type="matrizled_text2"></block>
+		<block type="matrizled#2">
+			<value name="eyes"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+		</block>
+		<block type="matrizledm2"></block>
+		<block type="matrizledp2">	
+			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+		</block>
+		<block type="matrizledl_2">
+			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
+		</block>
+		<block type="matrizledr2">
+			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
+		<block type="matrizledf2">
+			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
+		</block>
+		<block type="matrizledc2">
+			<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+			<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
+			<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+			</block>
+		<block type="matrizledcf2">
+			<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+			<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
+			<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+		</block>
+		<block type="matrizled_clear2"></block>
+		</category>
+	
+		<category name="CAT_MAX7219" colour="#4b009f">	
+			<block type="matrice8x8_init_2">
+			<value name="CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			<value name="CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
+			<value name="DIN"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
+			</block>
+			<block type="matrice8x8_brightness">
+			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			</block>	
+			<block type="matrice8x8_del">
+			<value name="X"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="Y"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="matrice8x8_row">
+			<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>	
+			<block type="matrice8x8_column">
+			<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>	
+			<block type="matrice8x8_symbole"></block>
+			<block type="matrice8x8_aff"></block>
+			<block type="matrice8x8_animation"></block>
+			<block type="matrice8x8_efface"></block>
+		</category>	
+		</category>	
+
 <category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_init"></block>
 		<block type="oled_icon"></block>
-		<!--	<block type="OLED_bitmap"></block> -->
 		 <block type="OLED_bitmap2">
 			<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
 			<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
@@ -660,139 +702,6 @@
 	</category> 
 	
 	-->
-	
-	<category name="CAT_LED" colour="#4b009f">		
-		<block type="inout_buildin_led"></block>
-		<block type="blink"></block>
-		<block type="digital_write">
-		<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-		</block>
-	</category>		
-		
-	<category name="CAT_LEDRGB" colour="#4b009f">
-		<block type="rvb_init_2"></block>
-		<block type="rvb_set">
-		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		</block>
-	</category>	
-	
-	<category name="CAT_NEOPIXEL" colour="#4b009f">	
-			<block type="pixel_init_2">
-			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			<value name="num"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
-		</block>
-		<block type="pixel_setcolor">
-			<value name="pin"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		</block>
-		<block type="pixel_rgb">
-			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-			<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-			<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		</block>
-		<block type="pixel_setbrightness">
-			<value name="brightness"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
-		</block>	
-		<block type="pixel_clear"></block>	
-		<block type="MatrixLED_WS2812B_init_2">
-			<value name="Pin_Matrix_init"><shadow type="math_number"><field name="NUM">13</field></shadow></value>
-			<value name="Number_of_Pixels"><shadow type="math_number"><field name="NUM">1</field></shadow>	</value>
-		</block>
-		<block type="MatrixLED_WS2812B_draw"></block>
-		<block type="MatrixLED_WS2812B_setBrightness">
-		<value name="brightness"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
-		</block>
-		<block type="MatrixLED_WS2812B_setPixelColor"><value name="Pixel_number"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="Red"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="Green"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="Blue"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="brightness"><shadow type="math_number"><field name="NUM">127</field></shadow></value>
-		</block>
-		<block type="MatrixLED_WS2812B_CLEAN"></block>
-	</category>	
-	
-	<category name="CAT_MAX1640" colour="#4b009f">
-	    <block type="matrizled_init">
-				<value name="PIN_SCL"><shadow type="analog_pin"><field name="NUM">A4</field></shadow></value>
-				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">A5</field></shadow></value>
-	    </block>
-		<block type="matrizled_eyeface"></block>
-		<block type="matrizled_text2"></block>
-		<block type="matrizled#2">
-			<value name="eyes"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
-		</block>
-		<block type="matrizledm2"></block>
-		<block type="matrizledp2">	
-			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-		</block>
-		<block type="matrizledl_2">
-			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
-		</block>
-		<block type="matrizledr2">
-			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
-			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
-		<block type="matrizledf2">
-			<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
-			<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
-		</block>
-		<block type="matrizledc2">
-			<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-			<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
-			<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-			</block>
-		<block type="matrizledcf2">
-			<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-			<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
-			<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-		</block>
-		<block type="matrizled_clear2"></block>
-	</category>
-	
-	<!--
-	
-	<category name="CAT_MAX7219" colour="#4b009f">	
-		<block type="matrice8x8_init_2">
-		<value name="CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-		<value name="CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
-		<value name="DIN"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
-		</block>
-		<block type="matrice8x8_brightness">
-		<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-		</block>	
-		<block type="matrice8x8_del">
-		<value name="X"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		<value name="Y"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		</block>
-		<block type="matrice8x8_row">
-		<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		</block>	
-		<block type="matrice8x8_column">
-		<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		</block>	
-		<block type="matrice8x8_symbole"></block>
-		<block type="matrice8x8_aff"></block>
-		<block type="matrice8x8_animation"></block>
-		<block type="matrice8x8_efface"></block>
-	</category>	
-	
-	-->
-		
-	<category name="CAT_BARGRAPH" colour="#4b009f">
-		<block type="bargraphe_2"></block>
-		<block type="bargraphe_allume"></block>
-		<!--<block type="matrice_init"></block>
-		<block type="matrice_symbole"></block>-->
-	</category>	
 
 	<category name="CAT_LCDI2C" colour="#4b009f">
 				<block type="lcdi2c_setup" x="38" y="138"><field name="NAME">0x3F</field>
@@ -816,20 +725,22 @@
 				<block type="lcdi2c_showCursor"></block>
 				<block type="lcdi2c_blinkCursor"></block>
 	</category> 
-	<!--	<category name="CAT_DFRobot_SHIELD_LCDKEYPAD" colour="#4b009f">
-			<block type="lcd_i2c_2"></block>
-			<block type="lcd_symbole"></block>
-			<block type="lcd_aff_symbole"></block>
-			<block type="LCD_Keypad_Shield_DFR_09"></block>
-			<block type="LCD_Keypad_Shield_DFR_09_lc"></block>
-			<block type="LCD_Keypad_Shield_DFR_09_RAZ"></block>
-			<block type="lcd"></block>
-	</category> -->
 	</category>	
 	
 <category name="CAT_AUDIO" colour="#a600d3">
-
-<!--
+		<block type="play">
+			   <value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		    </block>
+			<block type="tone">
+				<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+				<value name="NUM"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
+				<value name="TPS"><shadow type="math_number"><field name="NUM">100</field></shadow></value>
+			</block>
+			<block type="notone">
+				<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			</block>
+			<block type="beep">
+			<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="lp2i_mp3_init"></block>
 			<block type="lp2i_mp3_play"></block>
@@ -842,7 +753,7 @@
 			<block type="tone"></block>
 			<block type="notone"></block>
 	</category>	
-	-->	
+	
 		<category name="CAT_OPENSMART" colour="#a600d3">
 			<block type="OpenSmartMp3_init_ss">
 				<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
@@ -997,32 +908,6 @@
 						
 		</category>
 				
-		
-		<!--
-		<category name="CAT_html" colour="#000000">
-			<block type="emptytext"></block>
-			<block type="textmod"></block>
-			<block type="link"></block>
-			<block type="emptyVar"></block>
-			<block type="br"></block>
-			<block type="header"></block>
-			<block type="paragraph"></block>
-			<block type="image"></block>
-			<block type="table"></block>
-			<block type="tablerow"></block>
-			<block type="tableheading"></block>
-			<block type="tabledata"></block>
-			<block type="form"></block>
-			<block type="input"></block>
-			<block type="label"></block>
-			<block type="args"></block>
-			<block type="textalign"></block>
-			<block type="color"></block>
-			<block type="bgcolor"></block>
-			<block type="border"></block>
-		</category> 
-		
-		-->
 	</category>	
 <!--	<category name="CAT_list" colour="#154360">
 		<block type="list_create"></block>

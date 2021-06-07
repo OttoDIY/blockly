@@ -21,12 +21,19 @@
 		<value name="PIN_TRIG"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
 		<value name="PIN_ECHO"><shadow type="analog_pin"><field name="NUM">9</field></shadow></value>
 		<value name="PIN_Buzzer"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
-				</block>
+		</block>
 		<block type="otto_home"></block>
 		<block type="otto_move"></block>
 		<block type="otto_dance"></block>
 		<block type="otto_do"></block>
 		<block type="otto_gesture"></block>
+		<block type="otto_movelegs">
+		<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+		<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
+		<value name="PIN_RL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+		<value name="PIN_RR"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+		<value name="TEMPO"><shadow type="math_number"><field name="NUM">200</field></shadow></value>
+		</block>
 		<block type="otto9_arms"></block>
 		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
@@ -206,7 +213,7 @@
     </category>
 	
 	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
-	
+
 	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
 
 	<category name="CAT_TAB" colour="#ff5700">

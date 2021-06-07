@@ -111,6 +111,35 @@ Blockly.Arduino['otto_eeprom'] = function(block) {
   return code;
 };
 
+Blockly.Blocks['otto_movelegs'] = {init: function() {
+this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO9_MOVE_TEXT);
+this.appendValueInput("PIN_YL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+ Blockly.Msg.left)
+this.appendValueInput("PIN_YR") .setCheck("Number").appendField(Blockly.Msg.right)
+this.appendValueInput("PIN_RL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+ Blockly.Msg.left)
+this.appendValueInput("PIN_RR") .setCheck("Number").appendField(Blockly.Msg.right)
+this.appendValueInput("TEMPO") .setCheck("Number").appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_movelegs'] = function(block) {
+var PIN_YL= Blockly.Arduino.valueToCode(block, 'PIN_YL', Blockly.Arduino.ORDER_ATOMIC);
+var PIN_YR= Blockly.Arduino.valueToCode(block, 'PIN_YR', Blockly.Arduino.ORDER_ATOMIC);
+var PIN_RL= Blockly.Arduino.valueToCode(block, 'PIN_RL', Blockly.Arduino.ORDER_ATOMIC);
+var PIN_RR= Blockly.Arduino.valueToCode(block, 'PIN_RR', Blockly.Arduino.ORDER_ATOMIC);
+var TEMPO= Blockly.Arduino.valueToCode(block, 'TEMPO', Blockly.Arduino.ORDER_ATOMIC);
+
+Blockly.Arduino.definitions_['otto_movelegs'] = ' void Otto_moveLegs(int T, int posLegL, int posLegR, int posFootL, int posFootR) {   int posLegs[]={ posLegL,posLegR,posFootL,posFootR };   Otto._moveServos(T,posLegs); }'; 
+
+Blockly.Arduino.setups_['otto_movelegs']='Otto_moveLegs('+200+','+90+','+90+','+90+','+90+');';
+
+var code = 'Otto_moveLegs('+TEMPO+','+PIN_YL+','+PIN_YR+','+PIN_RL+','+PIN_RR+');';
+return code;
+};
+
 Blockly.Blocks['otto_move'] = {init: function() {
     this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))
         .appendField(Blockly.Msg.OTTO9_MOVE_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_CHOICE), "otto_move_sens");
