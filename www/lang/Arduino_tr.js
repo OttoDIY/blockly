@@ -97,6 +97,7 @@ Blockly.Msg.CAT_KEYBOARD="Keyboard & Mouse";
 Blockly.Msg.CAT_GPS="GPS NEO6";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
+Blockly.Msg.CAT_NTP = "🌐 NTP";
 
 
 //RTC DS3231
@@ -1049,3 +1050,23 @@ Blockly.Msg.MQTT_topicsubscribe3 = "and save text value in the variable";
 Blockly.Msg.MQTT_topicpublish = "Publish in the topic";
 Blockly.Msg.MQTT_topicvalue = "Value";
 Blockly.Msg.MQTT_logs = "Enable logs";
+
+//NTP
+//RTC DS3231
+Blockly.Msg.NTP_NAME="Init NTP Server.";
+Blockly.Msg.NTP_NAME2="NTP Server.";
+Blockly.Msg.NTP_READ_RTC="NTP Server.Read the date and time";
+Blockly.Msg.NTP_GMT="GMT";
+Blockly.Msg.NTP_VALUES="value";
+Blockly.Msg.NTP_EPOCH="Epoch";
+Blockly.Msg.NTP_DAY="Day";
+Blockly.Msg.NTP_MONTH="Month";
+Blockly.Msg.NTP_YEAR="Year";
+Blockly.Msg.NTP_HOUR="Hour";
+Blockly.Msg.NTP_MINUTE="Minute";
+Blockly.Msg.NTP_SECOND="Second";
+Blockly.Msg.NTP_DOFWEEK="Day of week";
+Blockly.Msg.NTP_TEXT_DOFWEEK="Day of week in string";
+Blockly.Msg.NTP_TEXT_MONTH="Month in string ";
+Blockly.Msg.NTP_TEXT_TIME="Time in string ";
+

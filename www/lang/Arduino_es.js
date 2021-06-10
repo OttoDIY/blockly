@@ -99,6 +99,7 @@ Blockly.Msg.CAT_wifi = "🌐 WiFi";
 Blockly.Msg.CAT_STOCKAGE = "📦 Almacenamiento";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
+Blockly.Msg.CAT_NTP = "🌐 NTP";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -1048,4 +1049,23 @@ Blockly.Msg.MQTT_topicsubscribe3 = "y grabar un valor de texto en la variable";
 Blockly.Msg.MQTT_topicpublish = "Publicar en el topic";
 Blockly.Msg.MQTT_topicvalue = "Valor";
 Blockly.Msg.MQTT_logs = "Habilitar logs";
+
+//NTP
+//RTC DS3231
+Blockly.Msg.NTP_NAME="Ini Servidor NTP.";
+Blockly.Msg.NTP_NAME2="Servidor NTP.";
+Blockly.Msg.NTP_READ_RTC="Servidor NTP.Leer valores de fecha y hora";
+Blockly.Msg.NTP_GMT="GMT";
+Blockly.Msg.NTP_VALUES="Valor";
+Blockly.Msg.NTP_EPOCH="Epoch";
+Blockly.Msg.NTP_DAY="Dia";
+Blockly.Msg.NTP_MONTH="Mes";
+Blockly.Msg.NTP_YEAR="Año";
+Blockly.Msg.NTP_HOUR="Hora";
+Blockly.Msg.NTP_MINUTE="Minutos";
+Blockly.Msg.NTP_SECOND="Segundos";
+Blockly.Msg.NTP_DOFWEEK="Día de la semana";
+Blockly.Msg.NTP_TEXT_DOFWEEK="Día de la semana en string";
+Blockly.Msg.NTP_TEXT_MONTH="Mes en string ";
+Blockly.Msg.NTP_TEXT_TIME="Hora in string ";
 

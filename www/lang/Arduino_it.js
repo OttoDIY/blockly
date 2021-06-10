@@ -97,6 +97,7 @@ Blockly.Msg.CAT_RFID="RFID MFRC522";
 Blockly.Msg.CAT_KEYBOARD="Tastiera & Mouse";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
+Blockly.Msg.CAT_NTP = "🌐 NTP";
 
 
 

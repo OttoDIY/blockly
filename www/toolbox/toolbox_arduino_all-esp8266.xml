@@ -907,6 +907,13 @@
 			</block>
 						
 		</category>
+		
+		<category name="CAT_NTP" colour="#008080">
+			<block type="Init_NTP"></block>
+			<block type="order_read_NTP_server"></block>
+			<block type="values_NTP_server"></block>
+			<block type="values_text_NTP_server"></block>
+		</category>
 				
 	</category>	
 <!--	<category name="CAT_list" colour="#154360">
