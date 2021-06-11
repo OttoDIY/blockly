@@ -47,7 +47,7 @@ Blockly.Arduino["moteur_dc_init"]=function(block){
 Blockly.Blocks["moteur_dc"]={init:function(){
         this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 33, 33, "*")).appendField(Blockly.Msg.moteur);
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown([[Blockly.Msg.right,"6"],[Blockly.Msg.left,"5"],[Blockly.Msg.LetR,"11"]]), "MOTEUR");
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.direction).appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_av_ar), "ETAT");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.direction).appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV,"1"],[Blockly.Msg.AR,"0"]]), "ETAT");
         this.appendValueInput('speed').setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -61,14 +61,30 @@ Blockly.Arduino["moteur_dc"]=function(block){
     var dropdown_etat=block.getFieldValue("ETAT");
     var value_vitesse=Blockly.Arduino.valueToCode(block, "speed");
 	if (dropdown_moteur=="11") {
-		return "digitalWrite(l298n_in1,LOW);\ndigitalWrite(l298n_in2,"+dropdown_etat+");\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,LOW);\ndigitalWrite(l298n_in4,"+dropdown_etat+");\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
+        if (dropdown_etat=="1"){
+		var code= "digitalWrite(l298n_in1,LOW);\ndigitalWrite(l298n_in2,HIGH);\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,LOW);\ndigitalWrite(l298n_in4,HIGH);\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
 	}
+        else if (dropdown_etat=="0"){
+            var code= "digitalWrite(l298n_in1,HIGH);\ndigitalWrite(l298n_in2,LOW);\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,HIGH);\ndigitalWrite(l298n_in4,HIGH);\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
+        }
+    }
 	if (dropdown_moteur=="6") {
-    return "digitalWrite(l298n_in1,LOW);\ndigitalWrite(l298n_in2,"+dropdown_etat+");\nanalogWrite(l298n_ena,("+value_vitesse+"));\n"
-}
-if (dropdown_moteur=="5") {
-    return "digitalWrite(l298n_in3,LOW);\ndigitalWrite(l298n_in4,"+dropdown_etat+");\nanalogWrite(l298n_enB,("+value_vitesse +"));\n"
-}
+        if (dropdown_etat=="1"){
+        var code= "digitalWrite(l298n_in1,LOW);\ndigitalWrite(l298n_in2,HIGH);\nanalogWrite(l298n_ena,("+value_vitesse+"));\n"
+    }
+        else if (dropdown_etat=="0"){
+            var code= "digitalWrite(l298n_in1,HIGH);\ndigitalWrite(l298n_in2,LOW);\nanalogWrite(l298n_ena,("+value_vitesse+"));\n"
+        }
+    }
+    if (dropdown_moteur=="5") {
+        if (dropdown_etat=="1"){
+        var code= "digitalWrite(l298n_in3,LOW);\ndigitalWrite(l298n_in4,HIGH);\nanalogWrite(l298n_enb,("+value_vitesse +"));\n"
+    }
+        else if (dropdown_etat=="0"){
+            var code= "digitalWrite(l298n_in3,HIGH);\ndigitalWrite(l298n_in4,LOW);\nanalogWrite(l298n_enb,("+value_vitesse +"));\n"
+        }
+    }
+return code
 };
 
 Blockly.Python["moteur_dc"]=function(){return ""};
@@ -250,6 +266,23 @@ Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin
 Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
 return "servo_" + value_pin + ".writeMicroseconds(" + value_degree + ");\n"
 };
+Blockly.Blocks["servo_attach"]={init:function(){
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField("Attach Servo");
+    this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#2d2dd1");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
+};
+Blockly.Arduino["servo_attach"]=function(block){
+var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
+return "servo_" + value_pin + ".attach();\n"
+};
 
 Blockly.Blocks["servo_detach"]={init:function(){
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField("Detach Servo");
@@ -359,7 +392,7 @@ return "servo_" + value_pin + ".write(90);\n"
 Blockly.Blocks['servo_2wheels'] = {  init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"));
     this.appendValueInput("PINL", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin+" "+Blockly.Msg.left);
-    this.appendValueInput("PINR", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin+" "+Blockly.Msg.right)
+    this.appendValueInput("PINR", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.right)
     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");

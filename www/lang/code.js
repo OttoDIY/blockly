@@ -2,19 +2,20 @@
 
 var Code = {};
 Code.LANGUAGE_NAME = {
-  'en': 'English',
-  'es': 'Español',
-  'pt': 'Português',
-  'it': 'Italiano',
-  'fr': 'Français',
-  'de': 'Deutsch',
-  'cz': 'Čeština',
-  'pl': 'Polski',
-  'hu': 'Magyar',
-  'tr': 'Türk',
-  'ru': 'Pусский',
-  'heb': 'עִברִית',
-  'cn': '中文'
+  'en': '🇬🇧 English',
+  'es': '🇪🇸 Español',
+  'pt': '🇵🇹 Português',
+  'it': '🇮🇹 Italiano',
+  'fr': '🇫🇷 Français',
+  'de': '🇩🇪 Deutsch',
+  'cz': '🇨🇿 Čeština',
+  'pl': '🇵🇱 Polski',
+  'hu': '🇭🇺 Magyar',
+  'tr': '🇹🇷 Türk',
+  'ru': '🇷🇺 Pусский',
+  'heb': '🇮🇱 עִברִית',
+  'zh': '🇹🇼 漢語',
+  'cn': '🇨🇳 汉语'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {

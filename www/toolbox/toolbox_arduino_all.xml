@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_com</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION</parametre>
     
 	
@@ -364,10 +364,13 @@
 		<block type="servo_read_degrees">
 			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
 		</block>
-		<block type="servo_attached">
+				<block type="servo_detach">
 			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
 		</block>
-		<block type="servo_detach">
+		<block type="servo_attach">
+			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
+		</block>
+		<block type="servo_attached">
 			<value name="PIN"><shadow type="math_number">	<field name="NUM">2</field></shadow></value>
 		</block>
 			<block type="servo_PWM">
