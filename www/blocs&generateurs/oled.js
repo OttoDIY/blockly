@@ -181,6 +181,31 @@ Blockly.Blocks['OLED_scroll'] = {
   }
   return code
 };
+Blockly.Blocks['OLED_invert'] = {
+  init: function() {
+    this.appendDummyInput()  .appendField("🖥️ invert") .appendField(new Blockly.FieldDropdown([[Blockly.Msg.yes, "true"], [Blockly.Msg.no, "false"]]), "mode") ;
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip('');
+    this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+  }
+};
+
+ Blockly.Arduino['OLED_invert'] = function(block) {
+  var mode = block.getFieldValue('mode');
+  var code = '';
+  switch(mode) {
+	case 'true':
+		code = 'display.invertDisplay(true);\n';
+    break;
+    case 'false':
+		code = 'display.invertDisplay(false);\n';
+    break;
+  }
+  return code
+};
 Blockly.Blocks['OLED_pixel'] = {
   init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '▉'

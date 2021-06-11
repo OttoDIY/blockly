@@ -1,0 +1,145 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="variables_set_init" id="$^|ju/nOTrev@VoN1+p8" x="78" y="-283">
+    <field name="VAR">angle</field>
+    <field name="VARIABLE_SETTYPE_TYPE">UNUMBER</field>
+    <value name="VALUE">
+      <block type="math_number" id="(oWEQ/%^Z^L9A`c~;FW3">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="base_setup_loop" id="pz(ZWPdl%sLWUFOfU7r*" x="79" y="-231">
+    <statement name="DO">
+      <block type="OLED_init" id="WQfi?Bd%5;nZ[MAGV?]6">
+        <field name="height">64</field>
+        <field name="address">0x3C</field>
+        <next>
+          <block type="OLED_clear" id="TuN`ga3r$6Nq6f-66hbp"></block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="S7/Fs,Nm_jd!.ShP^[kF">
+        <field name="VAR">angle</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="0?5ToNA$lweCi*g2mAz9">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <block type="inout_analog_read" id="-i3lYC2S2z3^t(*zVG;.">
+                <field name="broche">A1</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="srB#18#cf3O2gfzk:$-M">
+                <field name="NUM">60</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="Z@U(Jd!rXRTjuN94/M;n">
+            <field name="VAR">angle</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="t-pc8569C^[bflkN2zZG">
+                <field name="OP">DIVIDE</field>
+                <value name="A">
+                  <block type="variables_get" id=";/_`Y9S#iN~`rSwtDR-,">
+                    <field name="VAR">angle</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="($(m,0u=cEvuINvHQ$;d">
+                    <field name="NUM">341</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="OLED_data" id="lvhF/l0+:F*5fYKMn7c~">
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="$C3AH4|%C|gDi*Z-P)R9">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="9TMZqhR%+y15lG1SNvVR">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="vWr%CDpIZTB9q1+)vqi[">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+                <value name="print">
+                  <shadow type="text" id="{KaSZ4.ykZF`)%Lb@VyO">
+                    <field name="TEXT">Angle</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_data" id="e.9N^qn3.|u|Rzay7$a1">
+                    <field name="draw">TRUE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="6iy8Iza=FJiaAoI0_HK]">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="HZA,Kdgz@XvWl|m}3ys^">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="U0l16.DO*}HV2v9L9=te">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                    <value name="print">
+                      <shadow type="text" id="4RMity!ZX:^$j?:yVUy@">
+                        <field name="TEXT">Angle</field>
+                      </shadow>
+                      <block type="variables_get" id="AZZ}Ax2T4u+f4QRu|T2m">
+                        <field name="VAR">angle</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="OLED_display" id="E$TMZWpEZgw{0y3]0vdg">
+                        <next>
+                          <block type="servo_move" id="X[64+L)~cr$c7w`vT;.(">
+                            <value name="PIN">
+                              <shadow type="math_number" id="j6D=8DwP*U{RH8QS)3IH">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                            <value name="DEGREE">
+                              <shadow type="inout_angle_maths" id="[#Iyovj(P)c}((DtkAOO">
+                                <field name="ANGLE">90</field>
+                              </shadow>
+                              <block type="variables_get" id="s8.EBnL}Sg:(*@Uer[HK">
+                                <field name="VAR">angle</field>
+                              </block>
+                            </value>
+                            <value name="DELAY">
+                              <block type="math_number" id="5HM6CXC0Ap4y8,eMXCNE">
+                                <field name="NUM">250</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_clear" id="*RjpRYzeYievgaeve.-z"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,111 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="3j-tzt2SJy)moPP,Z9*+" x="-86" y="-183">
+    <statement name="DO">
+      <block type="pixel_init" id="*tg1ucZ8K5+6s/B!f;o3">
+        <value name="pin">
+          <shadow type="analog_pin" id=",*iT:xlp*v{Ozqu{iF#k">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="num">
+          <shadow type="analog_pin" id="al0,.O-ILh9k6!{PjQ;]">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="pixel_setbrightness" id="fD~lCFEbsxzw9tH({}{b">
+            <value name="brightness">
+              <shadow type="analog_pin" id="eS4laTp@Wcd@[XLYcbw`">
+                <field name="NUM">99</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="pixel_setcolor" id="+HT$52kzoTq}@EmW4dUR">
+        <field name="color">#ffff00</field>
+        <value name="pin">
+          <shadow type="analog_pin" id="/4b%7hPh|y/Q|+Owwd},">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="pixel_setcolor" id="$KGP~Q1WTZc,t,ax7u#d">
+            <field name="color">#ffff00</field>
+            <value name="pin">
+              <shadow type="analog_pin" id="Y44@Qyxg#^Z[%!,usUhh">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="pixel_setcolor" id="O:mg._OaERt9%kUBJ{%-">
+                <field name="color">#ffff00</field>
+                <value name="pin">
+                  <shadow type="analog_pin" id="m0[:P{k|BJ=f5ll+e*hF">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="pixel_setcolor" id="h_1W^a8Qq0lW[CHIkS7i">
+                    <field name="color">#ffff00</field>
+                    <value name="pin">
+                      <shadow type="analog_pin" id="PN|XCY9{?dE+f0I0w}IB">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="pixel_setcolor" id="qO})@^P*NGU{JoYxDxgc">
+                        <field name="color">#000099</field>
+                        <value name="pin">
+                          <shadow type="analog_pin" id="8g~(cW7!Iy6[y.xbXrTl">
+                            <field name="NUM">4</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="pixel_setcolor" id="4#;/HK5$$0$__{W_o|v@">
+                            <field name="color">#000099</field>
+                            <value name="pin">
+                              <shadow type="analog_pin" id="?iX%y`fJL#xo?ifW)8)y">
+                                <field name="NUM">5</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="pixel_setcolor" id="!Y;=zCf]PJN`$F!Glf[Q">
+                                <field name="color">#ff0000</field>
+                                <value name="pin">
+                                  <shadow type="analog_pin" id="A!+RZfU%w{Ll,;5.t,UH">
+                                    <field name="NUM">6</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="pixel_setcolor" id="0,lo9:_m!x(2h$mrUv}g">
+                                    <field name="color">#ff0000</field>
+                                    <value name="pin">
+                                      <shadow type="analog_pin" id="ii7v,XB}YlHP^i%PGce]">
+                                        <field name="NUM">7</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="pixel_show" id="Hf(kmv$dKJMQT:2w8cE]"></block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

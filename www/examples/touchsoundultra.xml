@@ -1,0 +1,114 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="f~q0s`a;@!;gu{QM[EJB" x="371" y="69">
+    <statement name="DO">
+      <block type="otto9_configuration" id="x$2z{yKzIT.-|0a$Mm#5">
+        <value name="PIN_YL">
+          <shadow type="analog_pin" id="$9g%vNV;#c%XTO~#6z`~">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="PIN_YR">
+          <shadow type="analog_pin" id="$^SWeoOy~Pb*_teaFIj*">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+        <value name="PIN_RL">
+          <shadow type="analog_pin" id="FhanDBTAflaBUz.rG{DO">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <value name="PIN_RR">
+          <shadow type="analog_pin" id="rhoQvxi1~:^w7[1MhRGy">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="PIN_TRIG">
+          <shadow type="analog_pin" id="BKVy+|eG#imf]wJ]l.Dp">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <value name="PIN_ECHO">
+          <shadow type="analog_pin" id="rW1$[gW(Vt#FLXIa5|WN">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+        <value name="PIN_Buzzer">
+          <shadow type="analog_pin" id="*J%7ya,L_5:Kl#[RA!t^">
+            <field name="NUM">13</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="O{9$e%(3VCYc]H+ROUb8">
+        <value name="IF0">
+          <block type="otto9_touchbutton" id=".2jce(-|ZyAW_rL~M5ER"></block>
+        </value>
+        <statement name="DO0">
+          <block type="otto_do" id="IxnOfy2l0*WrYwyhi.!^">
+            <field name="otto_do_movement">updown</field>
+            <field name="otto_move_speed">1000</field>
+            <field name="otto_dance_size">25</field>
+            <next>
+              <block type="otto_sound" id="i9@6~^-Xi*$C=xBOB3w!">
+                <field name="otto_sound">S_superHappy</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="0K%XlG+i*fHLIV@nmv1Y">
+            <value name="IF0">
+              <block type="logic_compare" id="gT:@OwUWba`6../`EI6|">
+                <field name="OP">GTE</field>
+                <value name="A">
+                  <block type="otto9_getnoise" id="b/}sA~~`(@:BOpjc{#zY"></block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="aft78dBt?/oZO)]KbGP(">
+                    <field name="NUM">700</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="otto_gesture" id="dup*~pG7hY$-7HgPCsG(">
+                <field name="otto_gesture">OttoSleeping</field>
+                <next>
+                  <block type="otto_sound" id="N%2f;dACL,mji3b^HDT}">
+                    <field name="otto_sound">S_sleeping</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="(7Yy=LP+R0@(qi+Y3iYr">
+                <value name="IF0">
+                  <block type="otto9_obstacle" id="pcT:=AO)*66B5LG.}_S3">
+                    <field name="obstacle">10</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="otto_move" id="uw;T0T9paaBQ+r+ky]O_">
+                    <field name="otto_move_sens">BACKWARD</field>
+                    <field name="otto_move_speed">1000</field>
+                    <next>
+                      <block type="otto_tone" id="*4~jdSkvRD(]}tmTQ(zN">
+                        <field name="otto_note">262</field>
+                        <field name="otto_note_duration">125</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="otto_home" id=";(DW.#9fe2fEw(P49OIU"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

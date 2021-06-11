@@ -1,0 +1,1778 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="pu:*bK|G8SG~Z%q8h(p?" x="-2905" y="-1495">
+    <statement name="DO">
+      <block type="OLED_init" id="Ot[Jc)6-SURFds%WE/1w">
+        <field name="height">64</field>
+        <field name="address">0x3C</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="OLED_clear" id=")TQs%p2o]OQyc(}N45;|">
+        <next>
+          <block type="procedures_callnoreturn" id="1P:y6/8$vAr9O.UgwqIh">
+            <mutation name="logo_main">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="zcK$_%?@POs@T)AhokZD">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_number" id="UV}S~/,A=$sFINCcdd$c">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="OLED_display" id="vU^WP2A4a~jn6o_A`sA3">
+                <next>
+                  <block type="base_delay" id="Z,55d~B1R`BLMhcA;8JB">
+                    <field name="unite">s</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="b$Xv%F22Qp(f||L)0]@,">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="(ycP@E.NK(n~I#U*/I}w">
+                        <mutation name="logo_split"></mutation>
+                        <next>
+                          <block type="base_delay" id="$h(49?~_:`OGk;,L{o-~">
+                            <field name="unite">s</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="ZKV2xkLS4$M6h87p`j_4">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn" id="{R|uu]F0`|khN:l.gsAN">
+                                <mutation name="logo_spin"></mutation>
+                                <next>
+                                  <block type="base_delay" id="$Xw$85ki$+Fv!]}p02/1">
+                                    <field name="unite">s</field>
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="Cp`$tp#{*HJ7Sr1c8wb]">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="procedures_callnoreturn" id="*zwpgns#Crg^F4K$^|Gg">
+                                        <mutation name="logo_random"></mutation>
+                                        <next>
+                                          <block type="base_delay" id="H4^Gt)MWfx~)Y0J5fafO">
+                                            <field name="unite">s</field>
+                                            <value name="DELAY_TIME">
+                                              <shadow type="math_number" id="^1H4k43^ItEA/CVlUWnw">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="5:YhRQptq=Bl[YJgu@p{">
+                                                <mutation name="logo_invert"></mutation>
+                                                <next>
+                                                  <block type="base_delay" id="sN,ZSBAk8-X=_@3.:~TL">
+                                                    <field name="unite">s</field>
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="6;[Idx]$Xmo$@sAF1;JT">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="-:hC6qF0pm)-3e0fc7X}" x="-2539" y="-1302">
+    <mutation>
+      <arg name="x" vartype="NUMBER"></arg>
+      <arg name="y" vartype="NUMBER"></arg>
+    </mutation>
+    <field name="NAME">logo_frame</field>
+    <statement name="STACK">
+      <block type="OLED_round" id="JP?vFA-0Qtsx?AMel}je">
+        <field name="fill">FALSE</field>
+        <field name="draw">TRUE</field>
+        <value name="X">
+          <shadow type="math_number" id="eX|3[K=-fvJM`CtTx/8X">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id="TXQV{]ZgiNZQkw$}^S0L">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+        <value name="Y">
+          <shadow type="math_number" id="T#%%i.piqg2,gF#,lu:=">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id="vO=3Gz^Y$2?HW`R^%HMR">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="width">
+          <shadow type="math_number" id="8s[qM*m#k@4Ju73n{|Rc">
+            <field name="NUM">52</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number" id="Y*sQusFweP%U,mfZ;]{`">
+            <field name="NUM">52</field>
+          </shadow>
+        </value>
+        <value name="round">
+          <shadow type="math_number" id="N]aksEVf6dS?:=+LZ?@s">
+            <field name="NUM">6</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="OLED_round" id="J|JftG[OMdlGID3:~it)">
+            <field name="fill">FALSE</field>
+            <field name="draw">TRUE</field>
+            <value name="X">
+              <shadow type="math_number" id="uBo2RWFe9+p0xyt9-.dW">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="ahUY$D!as.P`}pc.jV9A">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="y4^a:r%G#rqkUUgZEp:T">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="v~Zl-5$%4BXsg)m*_)Lc">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="Y">
+              <shadow type="math_number" id="JN3:;1V.|w}TG8:Wg.;|">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="6GrSWG=wJ:U,B(3FD=I~">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="I$Wz;71@bfD3wPW`5.ae">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="ARtpmL,yYf53h/JR#i)W">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="width">
+              <shadow type="math_number" id="+~t(nCIE?jb|7%+:?[LC">
+                <field name="NUM">50</field>
+              </shadow>
+            </value>
+            <value name="height">
+              <shadow type="math_number" id="|uDF*Iu(4oh+7duBnvGG">
+                <field name="NUM">50</field>
+              </shadow>
+            </value>
+            <value name="round">
+              <shadow type="math_number" id="B1|*bTGHoTC,elBvV$bU">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="OLED_round" id="`,l/jW-*mc#nX]`o*-Ta">
+                <field name="fill">FALSE</field>
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="D!_R14:QOSZdY,si9isL">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_arithmetic" id="p8:X77o6Vab$qp*o!9d~">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="l8P}[?_-vYpM;?|K/nTz">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="qWiAh5gN9xj^aOf(SKu2">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="MG.@M2?_$HizioClE/q-">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_arithmetic" id="n6dG0_`.}i/(uaLsVwMw">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="3G~^A49%Zt]=`6Ss8kf(">
+                        <field name="VAR">y</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="wAU4,Ft0gwh:$g2yi6wK">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="width">
+                  <shadow type="math_number" id="^4XFv58#R8IfpCI#q[YH">
+                    <field name="NUM">50</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="qHV|AOZR$9QL-nhncsqi">
+                    <field name="NUM">50</field>
+                  </shadow>
+                </value>
+                <value name="round">
+                  <shadow type="math_number" id="ZM?e(8^zifo*p4(%DwHU">
+                    <field name="NUM">6</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="HXJZhb6Zh*,2rK-05)@V" x="-2544" y="-1098">
+    <mutation>
+      <arg name="x" vartype="NUMBER"></arg>
+      <arg name="y" vartype="NUMBER"></arg>
+    </mutation>
+    <field name="NAME">logo_o</field>
+    <statement name="STACK">
+      <block type="OLED_circle" id="zqfcuYA$Da[t+~:JV~p~">
+        <field name="fill">FALSE</field>
+        <field name="draw">TRUE</field>
+        <value name="X">
+          <shadow type="math_number" id="6~~E:1Gg1%fQdtbno7]a">
+            <field name="NUM">10</field>
+          </shadow>
+          <block type="variables_get" id="DR8SEO_=,n:{#7v]}kry">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+        <value name="Y">
+          <shadow type="math_number" id="ScN_)0{#.dI6qob5H$mJ">
+            <field name="NUM">40</field>
+          </shadow>
+          <block type="variables_get" id="l#}DM6:J{~|$S:3Kbl0;">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="width">
+          <shadow type="math_number" id="h1mx@)3?{aD^7PCBSwS=">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="OLED_circle" id="*kX@mKwj!1|Vmr3_5FZi">
+            <field name="fill">FALSE</field>
+            <field name="draw">TRUE</field>
+            <value name="X">
+              <shadow type="math_number" id="0:;t4}tw[E*@Q-CSAF%i">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="variables_get" id=":jK+4[iKbRJBCuQk8(q)">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="Y">
+              <shadow type="math_number" id="AI%w^w.][7(g1U_MUsN_">
+                <field name="NUM">40</field>
+              </shadow>
+              <block type="variables_get" id="5wxT?q*8:vcsA5$PA3aD">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+            <value name="width">
+              <shadow type="math_number" id="q$$Q8hmkg+q8W|J!)_,:">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Vw~.HzjE)r6OLip5~V7n" x="-2103" y="-1098">
+    <mutation>
+      <arg name="x" vartype="NUMBER"></arg>
+      <arg name="y" vartype="NUMBER"></arg>
+    </mutation>
+    <field name="NAME">logo_plus</field>
+    <statement name="STACK">
+      <block type="OLED_rectangle" id="r^-V=6!o%GY-c3Qdts@h">
+        <field name="fill">FALSE</field>
+        <field name="draw">TRUE</field>
+        <value name="X">
+          <shadow type="math_number" id="*}^B%y#-l^-m=gW@UyV#">
+            <field name="NUM">58</field>
+          </shadow>
+          <block type="variables_get" id="*yB5~gcRn$eAKa+A?:3I">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+        <value name="Y">
+          <shadow type="math_number" id="voO#EgDmBM0B[]r|lOM-">
+            <field name="NUM">44</field>
+          </shadow>
+          <block type="variables_get" id="gl{(-[fvr`Y.i}1,Cf+6">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="width">
+          <shadow type="math_number" id="iJ10{3eOF=3eovH6F99{">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="height">
+          <shadow type="math_number" id="dyhAOpRqFB(U4Y`*R9,h">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="OLED_rectangle" id="r5(.#Zji6jSa{#=7KGbc">
+            <field name="fill">FALSE</field>
+            <field name="draw">TRUE</field>
+            <value name="X">
+              <shadow type="math_number" id="@CQr$MF@No|efz,Kulrh">
+                <field name="NUM">55</field>
+              </shadow>
+              <block type="math_arithmetic" id="}1oI[8**6dDbCxXX$p8E">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <block type="variables_get" id="X2jav!jRCFFsjdpL;9G)">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="f?,Vh{L*3O||#4XeVgIC">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="Y">
+              <shadow type="math_number" id="__6dRsmeO`iF!$n1|^Rd">
+                <field name="NUM">47</field>
+              </shadow>
+              <block type="math_arithmetic" id="Fd^6OHa+i9@k1yMAsW!Y">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id=";cTUsax~@04~q;7vh|WS">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="Q2~urtfO[E=xcw6V`Z?G">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="width">
+              <shadow type="math_number" id="R;QDLwUkF,q2aDgeebM9">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+            <value name="height">
+              <shadow type="math_number" id="4|S}PV6c=A%;_R-Z=Zxp">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="y5uQS/In{AIWxKEop{aj" x="-2549" y="-943">
+    <mutation>
+      <arg name="x" vartype="NUMBER"></arg>
+      <arg name="y" vartype="NUMBER"></arg>
+    </mutation>
+    <field name="NAME">logo_main</field>
+    <statement name="STACK">
+      <block type="procedures_callnoreturn" id="2DH|PGZjhN%0g,!%^syn">
+        <mutation name="logo_frame">
+          <arg name="x"></arg>
+          <arg name="y"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="math_arithmetic" id="`z1bq]PK#g@;44bi@!)F">
+            <field name="OP">ADD</field>
+            <value name="A">
+              <block type="variables_get" id="icL?9~s%4LN,dTx5fBM+">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="8M`jMjTY`81q1P})sS/L">
+                <field name="NUM">38</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="math_arithmetic" id="o}cAA_^;zPJtKaG$o}{`">
+            <field name="OP">ADD</field>
+            <value name="A">
+              <block type="variables_get" id="5f7fCA/T:H={~BY%wu+?">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="O8r]4Lw7zXZ8#wF+U,.B">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="ZNEUSvT}hm3%UOV*T(=?">
+            <mutation name="logo_o">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_arithmetic" id="-lI8gx$r%gjh7.IY23tS">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="ad-iRO-tR3hF7C/y/Nag">
+                    <field name="VAR">x</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="T#6qgDgQdTBP~T,=3|13">
+                    <field name="NUM">48</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_arithmetic" id="yvjgLPy{yPEYf8/[%3Sk">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="_{d0=.[Gnp:t_AsC3M[,">
+                    <field name="VAR">y</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="9cqk-!^L,S]c^5#G(T4|">
+                    <field name="NUM">47</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="`Mk0ZR:Xs{q3f,p*OOo!">
+                <mutation name="logo_plus">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_arithmetic" id="T2j@5CG}JfYUlYjxF8o_">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="^S30^;OLxUjA~/w0@RKS">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="`2BT[xa(;CEk$os9wst[">
+                        <field name="NUM">58</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_arithmetic" id="2w=MI1/V+FJ-%v(^r(1y">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="P|fv%])u-p;:e8)CCl3)">
+                        <field name="VAR">y</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="hsJME@8go9].^F*c3r-?">
+                        <field name="NUM">43</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="TR7)lU5f[%C/E-v{vz}^">
+                    <mutation name="logo_plus">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_arithmetic" id="iprnGogy4fG${A:;%Mo_">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="variables_get" id="Q?s,5c*]QQPp0G*EK5wq">
+                            <field name="VAR">x</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="R+XlF|9f.(ZLEJ@8XM{/">
+                            <field name="NUM">68</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_arithmetic" id=";x4HPNqnFry$%m:0Ce^s">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="variables_get" id="4RkdA!`}2Gz@lsI-Qo(;">
+                            <field name="VAR">y</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="sU_@AY;[hP,DJ(::#G,=">
+                            <field name="NUM">43</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="R1p1orW]}3XE@u`{{}E-">
+                        <mutation name="logo_o">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_arithmetic" id=",yA.5i+sXGgEB|USM8K4">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="-k!`fZx)w!J}g2pKBS.{">
+                                <field name="VAR">x</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="53=++wSFGe(qbrAgEhDv">
+                                <field name="NUM">79</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_arithmetic" id="oE1gA)76q{D#i]_`#pM@">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="W`kH;~PY|.j8nXD)NS4M">
+                                <field name="VAR">y</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="Xvzm:q!_47E2}k9I:Vrr">
+                                <field name="NUM">47</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="t7h1qEg#Vzu,+a1(S^.d" x="-2164" y="-933">
+    <field name="NAME">logo_left</field>
+    <statement name="STACK">
+      <block type="OLED_clear" id="D7(tdWUdv.80gF1D9M][">
+        <next>
+          <block type="procedures_callnoreturn" id="CO/x7i8Y@J.VBBHnFi%n">
+            <mutation name="logo_frame">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="L+yiHY9J/F#T++,0i*Q8">
+                <field name="NUM">38</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_number" id="Jqg!1:8`98)KxzLD+,lM">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="z|0~n]joxy-x[jfA6I`u">
+                <mutation name="logo_o">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="$_8.9Y72P/h${,H_MtLB">
+                    <field name="NUM">47</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="6e9Qw77~NepOXi^}A%gE">
+                    <field name="NUM">16</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="5IC?cDydp[6!s8in(xSc">
+                    <mutation name="logo_plus">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_number" id="O)]oP8m-kd}^uNZhe51r">
+                        <field name="NUM">47</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_number" id="L2_|*xz_(h-q3BzAW}`|">
+                        <field name="NUM">23</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="{7Bl=b!S|PA]P;O$)jH~">
+                        <mutation name="logo_plus">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="ZKy;k]kl:(gl(,haYj[(">
+                            <field name="NUM">47</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_number" id="6]y8vL9dOT],r;KSdgp.">
+                            <field name="NUM">33</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="1~-2}Ma2^LO?E+ZG^AhK">
+                            <mutation name="logo_o">
+                              <arg name="x"></arg>
+                              <arg name="y"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id="bl;8aVHuX+Q2:qMLTLXS">
+                                <field name="NUM">47</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_number" id="N|+0*wC46v:v]m!rMKy!">
+                                <field name="NUM">47</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id=":p7IkeZX;1QtU|}y5P$D"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="jzn7jz8?;6]Fd5@Ub+9Q" x="-1926" y="-933">
+    <field name="NAME">logo_top</field>
+    <statement name="STACK">
+      <block type="OLED_clear" id="7ACS+p}ZaA[)1I`n{[9G">
+        <next>
+          <block type="procedures_callnoreturn" id="DCy#WV^]LM0n[_GM~0mT">
+            <mutation name="logo_frame">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="?b2#Ptnu1=j51qvY.G#/">
+                <field name="NUM">38</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_number" id="~u|)#,Tjy6k%4?bGYOCj">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id=",dyHD^w}2hGu4E8_BtrY">
+                <mutation name="logo_o">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="`8WuU+G$g2v+iTBeSjaC">
+                    <field name="NUM">48</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="klp`z)L$e#$Btx=bR!#P">
+                    <field name="NUM">15</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="mO{dA-1Hf4Kn,(:B8|(8">
+                    <mutation name="logo_plus">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_number" id="F9)@*FB]=N@G(#:h95|(">
+                        <field name="NUM">58</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_number" id="c+oE!~sQ$qz:=@Mu`3{4">
+                        <field name="NUM">11</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="8%,5UaN8~EKpeJ%f`ui6">
+                        <mutation name="logo_plus">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="2jeoK$Tz?Du[^0ZQj.9j">
+                            <field name="NUM">68</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_number" id="CZi?6T27$tFcu^CUlozx">
+                            <field name="NUM">11</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="6BHBLpS`@nNl,W~Oi)OY">
+                            <mutation name="logo_o">
+                              <arg name="x"></arg>
+                              <arg name="y"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id="=pwzuGgl}#2]~Xw/IImN">
+                                <field name="NUM">79</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_number" id="eQW`Mmf6J)K;HIxMQ/|X">
+                                <field name="NUM">15</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id="zH8=~FgGmV0UoplD($dH"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="^OaoJt^j,nzKf9voy`p_" x="-1706" y="-938">
+    <field name="NAME">logo_right</field>
+    <statement name="STACK">
+      <block type="OLED_clear" id="D[kvBu.1/GG2qgp6|[J!">
+        <next>
+          <block type="procedures_callnoreturn" id="TR%fuvzw#0zEk|kxb^:V">
+            <mutation name="logo_frame">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="~Wc0+nf5cg,sAqAL9v*2">
+                <field name="NUM">38</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_number" id="(yww}]{T+I3f%_-0e!B!">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="pXV#JK{LY?)Ylr3=jPi,">
+                <mutation name="logo_o">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="S=MPRP=s+$bDS,b;w6#3">
+                    <field name="NUM">79</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="rCOp{Yhbmi,5Lpt#|`!q">
+                    <field name="NUM">16</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="SPecAHySdys=qqe.BBlt">
+                    <mutation name="logo_plus">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_number" id="%G50OS.;g#+PsG5AuZK6">
+                        <field name="NUM">78</field>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_number" id="cV@rcH{~hl@uY1C?iQK_">
+                        <field name="NUM">23</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="n-0n-D:`63V~O5g{#E;+">
+                        <mutation name="logo_plus">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="xW9)L~prwKU`f,Vjc[Lz">
+                            <field name="NUM">78</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_number" id="yAzhc{bQn-#@kqngMMi7">
+                            <field name="NUM">33</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="ZpdR!tM4Jy:.Dh67DgQo">
+                            <mutation name="logo_o">
+                              <arg name="x"></arg>
+                              <arg name="y"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id="^uCB~X84c|[TojfGFY@Q">
+                                <field name="NUM">79</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_number" id="9eUjuru2sDLJ1(N{@N^r">
+                                <field name="NUM">47</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id="}@s]7#~#!@=K8/]=HLY9"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="A~5]~r=n6%%pxLQ3w91r" x="-3121" y="-352">
+    <field name="NAME">logo_split</field>
+    <statement name="STACK">
+      <block type="controls_for" id="dgs`oF5FOqm9Zl6w:4YC">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="!t3OgKn^R2k!A,[6n9IZ">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="-/Ujh|Mkx{~=NPC0a^u*">
+            <field name="NUM">90</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="y{BC7|qkK[9dTuB]}t#|">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="OLED_clear" id="edM-bVdmYyIUD$XQuEt:">
+            <next>
+              <block type="procedures_callnoreturn" id="Bu|0fed.03lOh2f(u`_w">
+                <mutation name="logo_main">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="variables_get" id="?!ZV#Sdc0rtmb_r]6Fyj">
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="^MDG}*TI~a]#g=WoPQ10">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="fQV%0sh6[):m31_dQ5J;">
+                    <mutation name="logo_main">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_arithmetic" id="-bS~LO@SCeKF9a^X#+=2">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <block type="math_number" id="x#Zn4Wsl!^)@8vjUsJNx">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="xx|J0HtK?yG}g,jvZt_g">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_number" id="f[/T-q~,x--5;=U{T-nn">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="@qd!0_F5cf*n%=t=21)A">
+                        <mutation name="logo_main">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="GRwn_;!(9Ksu(zk7i5}h">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="variables_get" id="HkDMkD{+Fz;,#4#h@bPl">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="3v[;cn/y1swWT?:(fnAM">
+                            <mutation name="logo_main">
+                              <arg name="x"></arg>
+                              <arg name="y"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id="L%lRX8wOG%rS#wZiv;TY">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_arithmetic" id="vhj8UrHRiW+5})ObXn`l">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="math_number" id="kjOEVjM~Z};n^)nN.T%R">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="_0Aq5%RiP*1/=:{-6tf)">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id="e+_h4yxhd2:HufN-L4t?"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_for" id="*:{4|d-qd9dWGj)xksVX">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="qD8d$2#|uHWzn=tWGmz5">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="*));{y8Uc,Kn:5H~:H8t">
+                <field name="NUM">90</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="tZX=J{7sn.)!X66TKLs4">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="OLED_clear" id="afo2J7O5(e]t$1Rw|s_6">
+                <next>
+                  <block type="procedures_callnoreturn" id="6UTV/M6u9~bL!*|e.wO6">
+                    <mutation name="logo_main">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_arithmetic" id="/:sw_BuoU?aUlVn_BmdD">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <block type="math_number" id="EcTp~itoRG5Ryp8zKnT!">
+                            <field name="NUM">90</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id=".2HVQDa?f]TN]3m^*eL)">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_number" id="p`Kbc$fZAiQlM^F@]j;:">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="XF8Lx#V;3DkN*o.sB]W9">
+                        <mutation name="logo_main">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_arithmetic" id="`84cA87CsS(3]UJ}.uzb">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_number" id="?$4#D3*kw_qkmb^PQyR%">
+                                <field name="NUM">-90</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="r%|1n?.u*vm)%tk2^E4N">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_number" id="q9V,|Po{ktu5fX?SXAC_">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="t^xl$6.ZuS.wZg)8;:.t">
+                            <mutation name="logo_main">
+                              <arg name="x"></arg>
+                              <arg name="y"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id=";r$R~WE[,:9r_|N5gik;">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_arithmetic" id="f)zbL3p5L,UT3Y7[EDK6">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="math_number" id="b_~L;KZe#/51h^-Xe^r`">
+                                    <field name="NUM">90</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="2T%kbP~UMR|Q628i=su{">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn" id="5n#3~]c+JG)hV(Mgk4q.">
+                                <mutation name="logo_main">
+                                  <arg name="x"></arg>
+                                  <arg name="y"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="math_number" id="`O`Vi(tP2?Sy#XHFJ@U.">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="math_arithmetic" id="x]-kE#2u[(26=}E@A?^/">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="math_number" id="kwIt:vHvB?mgQ$E6=M-K">
+                                        <field name="NUM">-90</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="variables_get" id="z~Op-eqrz:m.GTiU_gZ@">
+                                        <field name="VAR">i</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="OLED_display" id="RdnWREjh2NdNA*{3z%32"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="]#_FE_p:3seIN6p]?ZiR" x="-2637" y="-314">
+    <field name="NAME">logo_spin</field>
+    <statement name="STACK">
+      <block type="OLED_clear" id="TRm5Y/W06E8[Rpn_}zz8">
+        <next>
+          <block type="procedures_callnoreturn" id=";w^]V(0id_*y;Z9dIv2s">
+            <mutation name="logo_main">
+              <arg name="x"></arg>
+              <arg name="y"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="%vyz7%.j9,Gi(UMLTwX{">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="math_number" id="dY#9HLZB`Z~5y.TOJt$5">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="OLED_display" id="?g*8UTB4_OsFy-G:UcEK">
+                <next>
+                  <block type="base_delay" id="/FNF!xTAQga#fuScH}y5">
+                    <field name="unite">m</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="?*t8joc$xmF{Bh_Hr6$[">
+                        <field name="NUM">150</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="controls_for" id="j_;c.w$6I5JC9}?J$T/~">
+                        <field name="VAR">i</field>
+                        <value name="FROM">
+                          <shadow type="math_number" id="jN:wOY$+HAPi%+a7W.$w">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="TO">
+                          <shadow type="math_number" id="kj~#g?*^7_M,8R1*Tsco">
+                            <field name="NUM">300</field>
+                          </shadow>
+                        </value>
+                        <value name="BY">
+                          <shadow type="math_number" id=";`1,:,xyrb+CS/;$EuM#">
+                            <field name="NUM">50</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="procedures_callnoreturn" id="[^22V35e@6]=L*A`R`j;">
+                            <mutation name="logo_left"></mutation>
+                            <next>
+                              <block type="base_delay" id="sx0[!X0FBkWGm?sDSNgf">
+                                <field name="unite">m</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id=")-ngmhlt@|X4#!AnC?[.">
+                                    <field name="NUM">150</field>
+                                  </shadow>
+                                  <block type="variables_get" id="oJ!x1i}rOBP{ClHlN_u6">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="procedures_callnoreturn" id=")}QJ2zKc3!8_8z!5*d$U">
+                                    <mutation name="logo_top"></mutation>
+                                    <next>
+                                      <block type="base_delay" id="pWGtja21+GM5/]]pqNJH">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="yu!4Gx%`!lo}#[iR@!}{">
+                                            <field name="NUM">150</field>
+                                          </shadow>
+                                          <block type="variables_get" id="(9:Z;hvNp(s8e3FBQS*B">
+                                            <field name="VAR">i</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="procedures_callnoreturn" id="Qfe,^.fi-5?8h0s)}eTt">
+                                            <mutation name="logo_right"></mutation>
+                                            <next>
+                                              <block type="base_delay" id="k[J,!6TxqN!ly3}a=i$l">
+                                                <field name="unite">m</field>
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="EE/78h2/~1Le:d[~}]n2">
+                                                    <field name="NUM">150</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="/j{Yr.I30R`vBBw*%P/#">
+                                                    <field name="VAR">i</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="OLED_clear" id="e0?pM`57Pn9Hx5L-*^KX">
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="#2NT=)pd/RZpJ*!g5;M4">
+                                                        <mutation name="logo_main">
+                                                          <arg name="x"></arg>
+                                                          <arg name="y"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="math_number" id="@#G,imG-l`-i2RzlR0_D">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="ARG1">
+                                                          <block type="math_number" id="2SxMI?V;R;e]MRg`OfkB">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="OLED_display" id="RY=e[=x$%^k@h8-*#sxT">
+                                                            <next>
+                                                              <block type="base_delay" id="-Pt}#f7=rQo~sK-8SlQ3">
+                                                                <field name="unite">m</field>
+                                                                <value name="DELAY_TIME">
+                                                                  <shadow type="math_number" id="EE/78h2/~1Le:d[~}]n2">
+                                                                    <field name="NUM">150</field>
+                                                                  </shadow>
+                                                                  <block type="variables_get" id="0cuKu)#U{pJ[k3yRLbE?">
+                                                                    <field name="VAR">i</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="base_delay" id="T6wYFV;KW)O:3t1q0Od:">
+                            <field name="unite">s</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="tH)}B6e^HW9QRuySt(`$">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="}{gLw:CPbrz8Y*?YxU%)" x="-2175" y="-281">
+    <field name="NAME">logo_random</field>
+    <statement name="STACK">
+      <block type="controls_for" id="*f)Ew|gS?4S1.Mbpb3DH">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="e)wtt6`k9k~zj]5PF32N">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="d1s*2]^;2Sv887Q{@hPB">
+            <field name="NUM">35</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="wrI?IjH)#2aACIr9}SgM">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="OLED_clear" id="^EJ1LWigrbpoPq.-),ZX">
+            <next>
+              <block type="procedures_callnoreturn" id="J4G(m.n/RzF3l*_q,:C*">
+                <mutation name="logo_frame">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="=0sEDo^$.sj8Z%59l^+M">
+                    <field name="NUM">38</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="^9UqNA1R1f8)x@h9Bicf">
+                    <field name="NUM">6</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="2H|-^#LR50BY~AZ4^via">
+                    <mutation name="logo_o">
+                      <arg name="x"></arg>
+                      <arg name="y"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_random_int" id="``4(lJ}5j-GQ4WRHx.O^">
+                        <value name="FROM">
+                          <shadow type="math_number" id="qkD~_Ct=y$F*DHp*L2Y~">
+                            <field name="NUM">47</field>
+                          </shadow>
+                        </value>
+                        <value name="TO">
+                          <shadow type="math_number" id="h`6yX5N3Gyr|gO1T:XG#">
+                            <field name="NUM">79</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ARG1">
+                      <block type="math_random_int" id="BtLD|NZ-fbI=od#G*L!#">
+                        <value name="FROM">
+                          <shadow type="math_number" id="Rff]~EOuJO:W`S9R/yop">
+                            <field name="NUM">12</field>
+                          </shadow>
+                        </value>
+                        <value name="TO">
+                          <shadow type="math_number" id="P]YieCPAZ||65ae#o-sq">
+                            <field name="NUM">47</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="dYW/4KeXFGG?=Uj[ti4(">
+                        <mutation name="logo_plus">
+                          <arg name="x"></arg>
+                          <arg name="y"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_random_int" id="@rL?KL;2T:~yj)%$EcTW">
+                            <value name="FROM">
+                              <shadow type="math_number" id="bc_ZlY^@cgtAbt|R0=,V">
+                                <field name="NUM">47</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="Rb3A]M*p,V(u}QiMg=jk">
+                                <field name="NUM">79</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_random_int" id="5@+vph3#yL=O`)bA^2I0">
+                            <value name="FROM">
+                              <shadow type="math_number" id="hOzk~#$(2+CL/M#(CnFn">
+                                <field name="NUM">12</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="G`qX/fiR0h#=+uJ{F1.k">
+                                <field name="NUM">47</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="OLED_display" id="(rL+~g$S1H?,p?}v-)*$"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="OLED_clear" id="S}?{M#^[t;^,]+Y22T^4">
+            <next>
+              <block type="procedures_callnoreturn" id="xaE6?|0adL@^~GzYC!2w">
+                <mutation name="logo_main">
+                  <arg name="x"></arg>
+                  <arg name="y"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="VH=ZOBmhfzq`_|F,nqnB">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="d7]N~Y+R)mOD,RqHn+D;">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="OLED_display" id="I/_IoK^=eln=$hP%I`Gd">
+                    <next>
+                      <block type="base_delay" id="p^SLT}AfR40c_;Cw^Ctv">
+                        <field name="unite">m</field>
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id=",1MzBp5@%I3rfjqdA7Fm">
+                            <field name="NUM">1500</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="b/]vMYH9dt8CF-08@Lqf" x="-1687" y="-252">
+    <field name="NAME">logo_invert</field>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="/Eg;P`mbb2B{xC^+9qs@">
+        <value name="TIMES">
+          <shadow type="math_number" id="=}TUL=$I6NE*H81p0+uL">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="OLED_clear" id="OOJ-%I$Bp:9|*s2[R97`">
+            <next>
+              <block type="OLED_round" id="eZIXUM2!/TPhT3{1BjoH">
+                <field name="fill">TRUE</field>
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="eX|3[K=-fvJM`CtTx/8X">
+                    <field name="NUM">38</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="T#%%i.piqg2,gF#,lu:=">
+                    <field name="NUM">6</field>
+                  </shadow>
+                </value>
+                <value name="width">
+                  <shadow type="math_number" id="zsefM.cngJd/g/H0cO:N">
+                    <field name="NUM">52</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="~#3d.wcZS(jfKMH:TI,m">
+                    <field name="NUM">52</field>
+                  </shadow>
+                </value>
+                <value name="round">
+                  <shadow type="math_number" id="R$W5*ioC^UkX4z^!G$V-">
+                    <field name="NUM">6</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_circle" id="A+XJ,hc|uEaS!0FCo%Pb">
+                    <field name="fill">TRUE</field>
+                    <field name="draw">FALSE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="6~~E:1Gg1%fQdtbno7]a">
+                        <field name="NUM">48</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="ScN_)0{#.dI6qob5H$mJ">
+                        <field name="NUM">47</field>
+                      </shadow>
+                    </value>
+                    <value name="width">
+                      <shadow type="math_number" id=".tg.^ST8K+6DlgqQ7J54">
+                        <field name="NUM">4</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="OLED_circle" id=":Bu6-ZIuM}xt7-%PGNED">
+                        <field name="fill">TRUE</field>
+                        <field name="draw">TRUE</field>
+                        <value name="X">
+                          <shadow type="math_number" id="0:;t4}tw[E*@Q-CSAF%i">
+                            <field name="NUM">48</field>
+                          </shadow>
+                        </value>
+                        <value name="Y">
+                          <shadow type="math_number" id="AI%w^w.][7(g1U_MUsN_">
+                            <field name="NUM">47</field>
+                          </shadow>
+                        </value>
+                        <value name="width">
+                          <shadow type="math_number" id="M~Bgd1e1?*[P4q,e/7=C">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="OLED_circle" id="[bcmwO;gBV!OL_Oxwm?v">
+                            <field name="fill">TRUE</field>
+                            <field name="draw">FALSE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="bUBP$g]aqmk@eM=s6*xX">
+                                <field name="NUM">79</field>
+                              </shadow>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="0+62T~[S=[`k5.W.SF%N">
+                                <field name="NUM">47</field>
+                              </shadow>
+                            </value>
+                            <value name="width">
+                              <shadow type="math_number" id=")fc,=JD|}Yq5qkDX1QRQ">
+                                <field name="NUM">4</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="OLED_circle" id="S!IHFq=s`bA?A4Fge6!B">
+                                <field name="fill">TRUE</field>
+                                <field name="draw">TRUE</field>
+                                <value name="X">
+                                  <shadow type="math_number" id="Pc4nr6?`=wn_FE.D}n(m">
+                                    <field name="NUM">79</field>
+                                  </shadow>
+                                </value>
+                                <value name="Y">
+                                  <shadow type="math_number" id="ffb!!(Q}T~Fxsx7^X,cU">
+                                    <field name="NUM">47</field>
+                                  </shadow>
+                                </value>
+                                <value name="width">
+                                  <shadow type="math_number" id="0S7FRp(-cM6QKbAoEdH]">
+                                    <field name="NUM">2</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="OLED_rectangle" id="+noUHBWw?LV9hPp94LG_">
+                                    <field name="fill">TRUE</field>
+                                    <field name="draw">FALSE</field>
+                                    <value name="X">
+                                      <shadow type="math_number" id="*}^B%y#-l^-m=gW@UyV#">
+                                        <field name="NUM">58</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="Y">
+                                      <shadow type="math_number" id="voO#EgDmBM0B[]r|lOM-">
+                                        <field name="NUM">43</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="width">
+                                      <shadow type="math_number" id="%o6,5+JilRnmG:J|v_Ai">
+                                        <field name="NUM">2</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="height">
+                                      <shadow type="math_number" id="x1-=:6watnD1Mwbynw?]">
+                                        <field name="NUM">8</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="OLED_rectangle" id="%?cc5@X3_z,;:(!D_1Z%">
+                                        <field name="fill">TRUE</field>
+                                        <field name="draw">FALSE</field>
+                                        <value name="X">
+                                          <shadow type="math_number" id="@CQr$MF@No|efz,Kulrh">
+                                            <field name="NUM">55</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="Y">
+                                          <shadow type="math_number" id="__6dRsmeO`iF!$n1|^Rd">
+                                            <field name="NUM">46</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="width">
+                                          <shadow type="math_number" id="i-Z$}cd::M9nQvwYz%zO">
+                                            <field name="NUM">8</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="height">
+                                          <shadow type="math_number" id="5zcM[^MuGJ/M9_egdTKS">
+                                            <field name="NUM">2</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="OLED_rectangle" id="JLy4}sgYKZ,YeGz!^fq7">
+                                            <field name="fill">TRUE</field>
+                                            <field name="draw">FALSE</field>
+                                            <value name="X">
+                                              <shadow type="math_number" id="0Ymr;[1E{5:EC*O.!NA{">
+                                                <field name="NUM">68</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="Y">
+                                              <shadow type="math_number" id="v6(/zXeJW}PqfzY}L@Ly">
+                                                <field name="NUM">43</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="width">
+                                              <shadow type="math_number" id="DIfHvp7w=*:,t2sx=@UJ">
+                                                <field name="NUM">2</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="height">
+                                              <shadow type="math_number" id="_o-I1.|(Iybo0^O5da6D">
+                                                <field name="NUM">8</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="OLED_rectangle" id="FRxX.Uu7ZN^sMg]aLeQY">
+                                                <field name="fill">TRUE</field>
+                                                <field name="draw">FALSE</field>
+                                                <value name="X">
+                                                  <shadow type="math_number" id="OSL!UJgfR97=hX!Qy[7~">
+                                                    <field name="NUM">65</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="Y">
+                                                  <shadow type="math_number" id="IP2uQ/gG,c||8F7[2Q18">
+                                                    <field name="NUM">46</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="width">
+                                                  <shadow type="math_number" id="Xvd1@-LQN%u9I8U{YcRb">
+                                                    <field name="NUM">8</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="height">
+                                                  <shadow type="math_number" id="n8qC[yDrZ)z)aX@$n$*9">
+                                                    <field name="NUM">2</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="OLED_display" id="V*3pu9`;MjTs_).99]5m">
+                                                    <next>
+                                                      <block type="base_delay" id="#Caim$IQb!YS%Kt/bHLJ">
+                                                        <field name="unite">m</field>
+                                                        <value name="DELAY_TIME">
+                                                          <shadow type="math_number" id="wN|@LXBjbHHLH;amvNJy">
+                                                            <field name="NUM">100</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="OLED_clear" id="A0{Pqn6dfK2kg:neYr1b">
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id=";6J3n_+B+MgRCPaIrJ[V">
+                                                                <mutation name="logo_main">
+                                                                  <arg name="x"></arg>
+                                                                  <arg name="y"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                  <block type="math_number" id="/m1.}(d]4{c);OUdkTFC">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ARG1">
+                                                                  <block type="math_number" id="F,*nJ^o5%Ce67Wtj8LHw">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="OLED_display" id="Rs-*wfsa!~8.0zMm/Bkz">
+                                                                    <next>
+                                                                      <block type="base_delay" id="%xT[cqvwxeL5}GI5E~i9">
+                                                                        <field name="unite">m</field>
+                                                                        <value name="DELAY_TIME">
+                                                                          <shadow type="math_number" id="0:c-6ocYRWdJ).Eqg}zS">
+                                                                            <field name="NUM">100</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

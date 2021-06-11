@@ -68,8 +68,8 @@ Blockly.Arduino['otto9_home'] = function(block) {
 	+ '#define PIN_YR 3 // right leg, servo[1]\n'
 	+ '#define PIN_RL 4 // left foot, servo[2]\n'
   + '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
+  + '#define PIN_Trigger 8 // ultrasonic \n'
+  + '#define PIN_Echo 9 // ultrasonic \n'
   + '#define PIN_Buzzer  13 //buzzer';
   Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
   var code = 'Otto.home();\n';
@@ -573,8 +573,6 @@ Blockly.Arduino['otto9_getdistance'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
   Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
 	+ 'bool obstacleDetected = false;';
-  Blockly.Arduino.definitions_['otto9_distance'] = '#define PIN_Trigger 8 // ultrasound \n'
-	+ '#define PIN_Echo 9 // ultrasound';
   var code = 'Otto.getDistance()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -600,8 +598,6 @@ Blockly.Arduino['otto9_obstacle'] = function(block) {
   Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
   Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
 	+ 'bool obstacleDetected = false;';
-  Blockly.Arduino.definitions_['otto9_distance'] = '#define PIN_Trigger 8 // ultrasound \n'
-	+ '#define PIN_Echo 9 // ultrasound';
   var code = '(Otto.getDistance() <' + dropdown_obstacle+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

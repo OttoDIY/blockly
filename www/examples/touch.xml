@@ -1,0 +1,58 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="XG`E4EYgms8v@sG,-[y(" x="215" y="53">
+    <statement name="DO">
+      <block type="otto9_configuration" id="EtYl*.p2Iag{1t]TU8h(">
+        <value name="PIN_YL">
+          <shadow type="analog_pin" id="=r,{Ey3~{B$?^dR.],.}">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="PIN_YR">
+          <shadow type="analog_pin" id="r(3bGB9gR@^wD!,*Pk{x">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+        <value name="PIN_RL">
+          <shadow type="analog_pin" id="gqv1SLJ21DF^eB[f$dL]">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <value name="PIN_RR">
+          <shadow type="analog_pin" id="iQQJ93K_|K@[O])ZZyzA">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="PIN_TRIG">
+          <shadow type="analog_pin" id="/I6[1k!+VKNeAk/:OUwO">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <value name="PIN_ECHO">
+          <shadow type="analog_pin" id="$Uq2D04Gzsn5u((^ljHQ">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+        <value name="PIN_Buzzer">
+          <shadow type="analog_pin" id="U(n_!eC]l=O7]7)ubZS?">
+            <field name="NUM">13</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="O{9$e%(3VCYc]H+ROUb8">
+        <value name="IF0">
+          <block type="otto9_touchbutton" id="/ip~!+G([k*qD9|-_N}+"></block>
+        </value>
+        <statement name="DO0">
+          <block type="otto_do" id="*rpYzdOMaKHUu)fyRV.;">
+            <field name="otto_do_movement">updown</field>
+            <field name="otto_move_speed">1000</field>
+            <field name="otto_dance_size">25</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -5,7 +5,7 @@ goog.require('Blockly.Types');
 
 //////////////
 
-Blockly.Blocks["pixel_init_2"]={init:function(){
+Blockly.Blocks["pixel_init"]={init:function(){
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1);
 	this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
@@ -16,7 +16,7 @@ Blockly.Blocks["pixel_init_2"]={init:function(){
     this.setTooltip(Blockly.Msg.pixel1_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
-Blockly.Arduino["pixel_init_2"]=function(block){
+Blockly.Arduino["pixel_init"]=function(block){
     var pin=Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ASSIGNMENT);
 	var number=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ASSIGNMENT);
     Blockly.Arduino.includes_["pixel"]="#include <Adafruit_NeoPixel.h>";
@@ -25,7 +25,7 @@ Blockly.Arduino["pixel_init_2"]=function(block){
     +'pixel.clear();\n';
     return ""
 };
-Blockly.Python["pixel_init_2"]=function(block){
+Blockly.Python["pixel_init"]=function(block){
     var pin=Blockly.Python.valueToCode(block, "pin", Blockly.Python.ORDER_ASSIGNMENT);
 	var number=Blockly.Python.valueToCode(block, "num", Blockly.Python.ORDER_ASSIGNMENT);
     Blockly.Python.imports_["neopixel"]="from neopixel import NeoPixel";
@@ -148,7 +148,6 @@ Blockly.Arduino["pixel_clear"]=function(block){
     var code = 'pixel.clear();\n';
     return code;
 };
-
 
 //////////////
 Blockly.Blocks["pixel_setbrightness"]={init:function(){

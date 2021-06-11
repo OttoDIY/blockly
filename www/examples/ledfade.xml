@@ -1,0 +1,132 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="5z;VHZm0^aG5L!uH9jd#" x="-143" y="156">
+    <statement name="DO">
+      <block type="variables_set_init" id="2taJFzttqJJW3%n6[6$4">
+        <field name="VAR">brightness</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="-e$6_KEiq9R8;H29N~X(">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set_init" id="ue7#?,oKG(qhIKpYS7ko">
+            <field name="VAR">fade</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="YwAySDahWQ}snSKfXGya">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="inout_analog_write" id="Lf#94?GWFSA=M6Wr;Y#{">
+        <field name="broche">9</field>
+        <value name="NUM">
+          <block type="variables_get" id="yk7,w1L;TiFwcMZ{J{2}">
+            <field name="VAR">brightness</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="Q]gyK:0@QPDfD8u$_Z$7">
+            <field name="VAR">brightness</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="t=RxJlp06^fzsx!kviz8">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="G[MI]JSu6pqH_sEd=MGR">
+                    <field name="VAR">brightness</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="S*q}lU6WY^nS|O@i}it^">
+                    <field name="VAR">fade</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="T18`fig!M-%[@?H?RLM.">
+                <value name="IF0">
+                  <block type="logic_operation" id="jCFnZ!`2K7w.NI@^?br%">
+                    <field name="OP">or</field>
+                    <value name="A">
+                      <block type="logic_compare" id=",=WClg#:x#H094ptxKLm">
+                        <field name="OP">LTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="0gEq=/8eT*=S-`IhGp`I">
+                            <field name="VAR">brightness</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id=",Y??NS#=DF6CT!(LmE+5">
+                            <field name="NUM">10</field>
+                          </shadow>
+                          <block type="math_number" id="H;Cb,xET7r(~muxY5uIn">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="nE1f:9x!z?AhVk[2N7|L">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="Mo,QUaz+]7s%pBf`gPE5">
+                            <field name="VAR">brightness</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id=",Y??NS#=DF6CT!(LmE+5">
+                            <field name="NUM">10</field>
+                          </shadow>
+                          <block type="math_number" id="#|!r(uU71M.Z7n.@aSZ]">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="7AO%k44s?NDo+{.ucmE(">
+                    <field name="VAR">fade</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="Xz#_uq^^8n!1C21ySHOv">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="math_number" id="JV`tj7kqoqKdfR^)Q/^5">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="U69Q}mP,DFq9xc$6Ilno">
+                            <field name="VAR">fade</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="base_delay" id="xPBJ6Hks4oquP_rZE:nJ">
+                    <field name="unite">m</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="}5K+IDK]|)]Yb2=pRy^!">
+                        <field name="NUM">30</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,426 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="#@+@sgW^nfuTs5A:3Y/p" x="723" y="-230">
+    <statement name="LOOP">
+      <block type="variables_set" id="aaN0zR!hoQz!=G:v.-@|">
+        <field name="VAR">Velocidad</field>
+        <value name="VALUE">
+          <block type="math_number" id="1r%bzLyB|}{[xf+qaDNX">
+            <field name="NUM">30</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="])YeK/pr+L52el*@)jyd">
+            <field name="VAR">Pausa</field>
+            <value name="VALUE">
+              <block type="math_number" id="bpEKf^/C=(p/d8h)2ZXK">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="+;~E}K/GU=RIiKG`5?(3">
+                <field name="VAR">Centro</field>
+                <value name="VALUE">
+                  <block type="inout_angle_maths" id="qE+{{-2lP!``~laD|g^9">
+                    <field name="ANGLE">80</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="ooVHzQk$az:8Ejs]?A?i">
+                    <field name="VAR">Mov Cabeza</field>
+                    <value name="VALUE">
+                      <block type="inout_angle_maths" id="W1R]SO4/)CIPVqp#,-E7">
+                        <field name="ANGLE">90</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="Jb5V;_q/x;-]%-^r9-/o">
+                        <field name="VAR">Cabeza LH</field>
+                        <value name="VALUE">
+                          <block type="inout_angle_maths" id="iL,X4HR294=8Dwd!1gtR">
+                            <field name="ANGLE">175</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="8BNfyRo%GD=y!04lP7_N">
+                            <field name="VAR">Cabeza RH</field>
+                            <value name="VALUE">
+                              <block type="inout_angle_maths" id="IsOV[K{mcxCcQj7J(y8A">
+                                <field name="ANGLE">15</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="base_delay" id="2t029n!/C[U|N)2d25$Y">
+                                <field name="unite">m</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id="[q:+_mYl/TR,^ipL+A*m">
+                                    <field name="NUM">500</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="controls_whileUntil" id="J^sNgNX).g3P__T#1{?w">
+                                    <field name="MODE">WHILE</field>
+                                    <value name="BOOL">
+                                      <block type="logic_compare" id="Bx#%(F|b`;m%_C*eYham">
+                                        <field name="OP">LTE</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="!iUvHPC_s?h/q)-pbDw;">
+                                            <field name="VAR">Cabeza RH</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="9TKEI{!J9`(Ha`C@)fTc">
+                                            <field name="NUM">90</field>
+                                          </shadow>
+                                          <block type="variables_get" id="LEHa35Cs5%aP]R*G:D:u">
+                                            <field name="VAR">Mov Cabeza</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="servo_move" id="3+@Ol(Yi}^/{hEW?00gA">
+                                        <value name="PIN">
+                                          <shadow type="math_number" id="emz=LLOnzC?=XUtgp$lG">
+                                            <field name="NUM">10</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="DEGREE">
+                                          <shadow type="inout_angle_maths" id="bGCx=M?%q6Gsx$pY8{-h">
+                                            <field name="ANGLE">90</field>
+                                          </shadow>
+                                          <block type="variables_get" id="JI!z%a+Om[@Bigwb(eD7">
+                                            <field name="VAR">Mov Cabeza</field>
+                                          </block>
+                                        </value>
+                                        <value name="DELAY">
+                                          <block type="math_number" id="BoaDbRi^$UZWxO+[QhOb">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="a$4#-/hu6e`|!mQBKN~A">
+                                            <field name="VAR">Mov Cabeza</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic" id="yuV)qeXM?FF?T7I)al;q">
+                                                <field name="OP">MINUS</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="JQvVTd0Xv[4EHA:QV4C1">
+                                                    <field name="VAR">Mov Cabeza</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="bQu3Q^QAz+;HJ4=whoj)">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="base_delay" id="wunL33Tr=l!h01MBw3T]">
+                                                <field name="unite">m</field>
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="f$,_6@T@$sw)[n#40iYn">
+                                                    <field name="NUM">50</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="wQuN6jPuBAc]u;)rHB}B">
+                                                    <field name="VAR">Velocidad</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="base_delay" id="No%RAjWaM-wF,ON]mEC`">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="[8ioC?)IG}YAUKt=DK_/">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="~hc^[2s5tlpM+zQKdQ.d">
+                                            <field name="VAR">Pausa</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="controls_whileUntil" id="IY#!PC9DRF|%0Gq64x`i">
+                                            <field name="MODE">WHILE</field>
+                                            <value name="BOOL">
+                                              <block type="logic_compare" id="W*^g!)irU#^8c|rrT#jU">
+                                                <field name="OP">LTE</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="[my)1Jf-J3#EKa3/Z}Z:">
+                                                    <field name="VAR">Mov Cabeza</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <shadow type="math_number" id="pL(NAWQ7WrH%F)Qr6Q{P">
+                                                    <field name="NUM">70</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="e=*cbVAQMd-E9~/h$N8u">
+                                                    <field name="VAR">Centro</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO">
+                                              <block type="servo_move" id="*P2hr3!|U1}]nu/s[B.p">
+                                                <value name="PIN">
+                                                  <shadow type="math_number" id="z6W/Ca[eLG^NTEHaQn},">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="DEGREE">
+                                                  <shadow type="inout_angle_maths" id="yU.#^vueGG@6qi,wy)L3">
+                                                    <field name="ANGLE">90</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="s]T-jyLI6J3?7~;)LyQG">
+                                                    <field name="VAR">Mov Cabeza</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DELAY">
+                                                  <block type="math_number" id="eU-{wrwV]MaWnri=}]%Y">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="variables_set" id="?$qod7^eGtp3ld2a3ge]">
+                                                    <field name="VAR">Mov Cabeza</field>
+                                                    <value name="VALUE">
+                                                      <block type="math_arithmetic" id=";k6pnierU5wY/39Q,(0L">
+                                                        <field name="OP">ADD</field>
+                                                        <value name="A">
+                                                          <block type="variables_get" id="7!lBl4,u+Nes=Jq~x1F2">
+                                                            <field name="VAR">Mov Cabeza</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="9F_:nMy;,+i!Znc9Tb.~">
+                                                            <field name="NUM">1</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="base_delay" id="~sN0+Q-3[fa~}9Wad]?q">
+                                                        <field name="unite">m</field>
+                                                        <value name="DELAY_TIME">
+                                                          <shadow type="math_number" id="03P?aeb+s=E!=L`9#j;^">
+                                                            <field name="NUM">50</field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="!26!X^sX=K@yT}Scs!9a">
+                                                            <field name="VAR">Velocidad</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="base_delay" id="D3a.%Xm3)wnM)LR#ULVD">
+                                                <field name="unite">m</field>
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="(YhTwp@7My17sEv-*)K+">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="?sal?ZV3_M#0Q]ij3Ad`">
+                                                    <field name="VAR">Pausa</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="controls_whileUntil" id="b13=j4F`;[:rl[SM|Mwe">
+                                                    <field name="MODE">WHILE</field>
+                                                    <value name="BOOL">
+                                                      <block type="logic_compare" id="s2=]RHuR~TjP$/MOnqRJ">
+                                                        <field name="OP">GTE</field>
+                                                        <value name="A">
+                                                          <block type="variables_get" id="U}+Vv}O`t_jCu[V,6:3?">
+                                                            <field name="VAR">Cabeza LH</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <shadow type="math_number" id="9TKEI{!J9`(Ha`C@)fTc">
+                                                            <field name="NUM">90</field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="k(hCaIwRqWlg^2{uKPUc">
+                                                            <field name="VAR">Mov Cabeza</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO">
+                                                      <block type="servo_move" id="pLQvvfUvZ(8!ez3M5AK:">
+                                                        <value name="PIN">
+                                                          <shadow type="math_number" id="/L@=t:(y({WY@4wUS%8}">
+                                                            <field name="NUM">10</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="DEGREE">
+                                                          <shadow type="inout_angle_maths" id="bGCx=M?%q6Gsx$pY8{-h">
+                                                            <field name="ANGLE">90</field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="SS81}8Dk.9P0N84``u[^">
+                                                            <field name="VAR">Mov Cabeza</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="DELAY">
+                                                          <block type="math_number" id="i1O*cN]CyaN}kE|H`pYS">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="variables_set" id="vG7@lk(cd*W7@iTli.mY">
+                                                            <field name="VAR">Mov Cabeza</field>
+                                                            <value name="VALUE">
+                                                              <block type="math_arithmetic" id="k01Sl.2*#IVd0urb$-@C">
+                                                                <field name="OP">ADD</field>
+                                                                <value name="A">
+                                                                  <block type="variables_get" id="kP@s7oAu^]1:9Jaxo2w=">
+                                                                    <field name="VAR">Mov Cabeza</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="math_number" id="p~ETu|.(#sc~=zn_K=#]">
+                                                                    <field name="NUM">1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="base_delay" id="U~]7peDKtB^d-HURZ@%}">
+                                                                <field name="unite">m</field>
+                                                                <value name="DELAY_TIME">
+                                                                  <shadow type="math_number" id="PoGYFbr/,e_xV+j4[`x#">
+                                                                    <field name="NUM">50</field>
+                                                                  </shadow>
+                                                                  <block type="variables_get" id="c)aD$ql7R3,H5o5sjKr-">
+                                                                    <field name="VAR">Velocidad</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="base_delay" id="N(OMZabKF*QZh)Hg4fs=">
+                                                        <field name="unite">m</field>
+                                                        <value name="DELAY_TIME">
+                                                          <shadow type="math_number" id="8fj#*EjU{LUF5zfH.NQ1">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="AdEznB;pFE%[;!dW$tc@">
+                                                            <field name="VAR">Pausa</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="controls_whileUntil" id="in.]44DT9#Go@Z~6z`9e">
+                                                            <field name="MODE">WHILE</field>
+                                                            <value name="BOOL">
+                                                              <block type="logic_compare" id="WvK5:Qy{ldPcl|8r?N*w">
+                                                                <field name="OP">GTE</field>
+                                                                <value name="A">
+                                                                  <block type="variables_get" id=":4|H)~sK3[63wzmQC16r">
+                                                                    <field name="VAR">Mov Cabeza</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <shadow type="math_number" id="pL(NAWQ7WrH%F)Qr6Q{P">
+                                                                    <field name="NUM">70</field>
+                                                                  </shadow>
+                                                                  <block type="variables_get" id="}vL14fwtfjzB(b-,icR+">
+                                                                    <field name="VAR">Centro</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="DO">
+                                                              <block type="servo_move" id="Eixh/FK}0J@4_edX@z:[">
+                                                                <value name="PIN">
+                                                                  <shadow type="math_number" id="40v3823I;qfe*4i3C[32">
+                                                                    <field name="NUM">10</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="DEGREE">
+                                                                  <shadow type="inout_angle_maths" id="yU.#^vueGG@6qi,wy)L3">
+                                                                    <field name="ANGLE">90</field>
+                                                                  </shadow>
+                                                                  <block type="variables_get" id="VU3yWe1S,2`hArc_7N$4">
+                                                                    <field name="VAR">Mov Cabeza</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="DELAY">
+                                                                  <block type="math_number" id="Y,H5L+B?4E4%-G)+`Ay;">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set" id="bjkw+P:ei^{8Yyr[C/qV">
+                                                                    <field name="VAR">Mov Cabeza</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="math_arithmetic" id="Hq@J3|j*B7ir^5CK0yA`">
+                                                                        <field name="OP">MINUS</field>
+                                                                        <value name="A">
+                                                                          <block type="variables_get" id="z]/_uAF4lfzP1SToCDWV">
+                                                                            <field name="VAR">Mov Cabeza</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <block type="math_number" id="Lsr^SxqMNxNws=+X|Asg">
+                                                                            <field name="NUM">1</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="base_delay" id="iW*spk||*~/+dx?$KTtf">
+                                                                        <field name="unite">m</field>
+                                                                        <value name="DELAY_TIME">
+                                                                          <shadow type="math_number" id="3B|(.C#SmpvtCwkY2ZRq">
+                                                                            <field name="NUM">50</field>
+                                                                          </shadow>
+                                                                          <block type="variables_get" id="n5M$pjClGLeP^eH6FM5y">
+                                                                            <field name="VAR">Velocidad</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

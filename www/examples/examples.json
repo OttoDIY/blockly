@@ -1,157 +1,41 @@
 [
-    {
-        "source_url": "walk/walk.xml",
-        "source_text": "⭐️☆☆☆☆ | 📗 Walk | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "blink/blink.xml",
-        "source_text": "⭐️☆☆☆☆ | 📗 Blink LED on board | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "buzzer/buzzer.xml",
-        "source_text": "⭐️☆☆☆☆ | 📑 Buzzer beeps | Otto DIY Starter ",
-        "visible": true
-    },
-    {
-        "source_url": "buzzer/bobsong.xml",
-        "source_text": "⭐️☆☆☆☆ | 📑 Melody | Otto DIY Starter ",
-        "visible": true
-    },
-    {
-        "source_url": "dance/dance.xml",
-        "source_text": "⭐️⭐️☆☆☆ | 📗 Dance | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "avoid/avoid.xml",
-        "source_text": "⭐️⭐️☆☆☆ | 📗 Avoid obstacles | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "servo/servo.xml",
-        "source_text": "⭐️⭐️☆☆☆ | 📔 Servo control | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "avoid/distance.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📗 Serial measure distance | Otto DIY Starter",
-        "visible": true
-    },
-    {
-        "source_url": "calibration/calibration.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📗 Legs calibration | Otto DIY Starter",
-        "visible": true
-    },
-	{
-        "source_url": "touch/touch.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📙 Touch interaction | Otto DIY +",
-        "visible": true
-    },
-    {
-        "source_url": "noise/noise.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📙 Sound interaction | Otto DIY +",
-        "visible": true
-    },
-    {
-        "source_url": "touch/touchsoundultra.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📙 Touch, Sound and Ultrasonic interaction | Otto DIY +",
-        "visible": true
-    },
-    {
-        "source_url": "noise/serial.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📙 Serial noise readings | Otto DIY +",
-        "visible": true
-    },
-    {
-        "source_url": "eyes/eyes.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📕 Emotions | Otto DIY Eyes",
-        "visible": true
-    },
-    {
-        "source_url": "eyes/eyespixel.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📕 Matrix pixels | Otto DIY Eyes",
-        "visible": true
-    },
-    {
-        "source_url": "avoid/avoidH.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📓 Avoid, touch & noise | Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "matrix/matrixTEST.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📓 LED Matrix Test | Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "matrix/matrixALLmouths.xml",
-        "source_text": "⭐️⭐️⭐️☆☆ | 📓 LED Matrix All Mouths | Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "matrix/matrix.xml",
-        "source_text": "⭐️⭐️⭐️⭐️☆ | 📓 Arms & LED Matrix | Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "matrix/counter.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📓 Variable counter |Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "matrix/handcleandots.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📓 Clean you hands |Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "gyro/gyro.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📓 Gyro |Otto DIY Humanoid",
-        "visible": true
-    },
-    {
-        "source_url": "neopixel/neopixel.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 Neopixels | Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "bluetooth/bluetooth.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 Bluetooth | Otto DIY +",
-        "visible": true
-    },
-    {
-        "source_url": "oled/oled.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Display | Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "oled/oledtimer.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Timer | Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "oled/oledframe.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Frame | Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "oled/oledicon.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 OLED Icon | Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "oled/TFTicon.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 TFT Icon |Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "oled/TFTAnimation.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 TFT Animation |Arduino",
-        "visible": true
-    },
-    {
-        "source_url": "camera/MUvision.xml",
-        "source_text": "⭐️⭐️⭐️⭐️⭐️ | 📘 AI Camera | MU vision",
-        "visible": true
-    }
+    {"source_url": "servo.xml","source_text": "👶Level 1 | 🦿 Servo centering | Otto DIY Starter","visible": true},
+    {"source_url": "Ottobuzzer.xml","source_text": "👶Level 1 | 🔈 Buzzer | Otto DIY Starter ","visible": true},
+    {"source_url": "bobsong.xml","source_text": "👶Level 1 | 🎼 Melody | Otto DIY Starter ","visible": true},
+    {"source_url": "Ottowalk.xml",  "source_text": "👶Level 1 | 🤖 Walk | Otto DIY Starter",  "visible": true  },
+    {"source_url": "Ottocalibration.xml","source_text": "👶Level 1 | 🤖 Legs calibration | Otto DIY Starter","visible": true },
+    {"source_url": "Ottodance.xml","source_text": "👶Level 1 | 🤖 Dance | Otto DIY Starter","visible": true},
+    {"source_url": "Ottoavoid.xml","source_text": "👶Level 1 | 🤖 Avoid obstacles | Otto DIY Starter","visible": true},
+    {"source_url": "serialdistance.xml","source_text": "👨‍💻Level 2 | 📏 Serial measure distance | Otto DIY Starter","visible": true },
+ 	{"source_url": "touch.xml","source_text": "👨‍💻Level 2 | 👇 Touch interaction | +sensor","visible": true},
+    {"source_url": "noise.xml","source_text": "👨‍💻Level 2 | 👏 Sound interaction | +sensor","visible": true},
+    {"source_url": "serialnoise.xml","source_text": "👨‍💻Level 2 | 👏 Serial noise readings | +sensor","visible": true },
+    {"source_url": "serialpot.xml","source_text": "👨‍💻Level 2 | 🎛️ Serial Potentiometer | +sensor","visible": true },
+    {"source_url": "touchsoundultra.xml","source_text": "👨‍💻Level 2 | 👇 Avoid, touch & noise | +sensor","visible": true},
+    {"source_url": "matrixtest.xml","source_text": "👨‍💻Level 2 | 👄 8x8 LED Matrix Test | +mouth","visible": true },
+    {"source_url": "matrixmouths.xml","source_text": "👨‍💻Level 2 | 👄 Mouths Emotions | +mouth","visible": true  },
+    {"source_url": "matrixsing.xml","source_text": "👨‍💻Level 2 | 👄 Mouths Sing | +mouth","visible": true  },
+    {"source_url": "matrixcounter.xml","source_text": "👨‍💻Level 2 | 👄 Variable counter | +mouth","visible": true},
+    {"source_url": "matrixhands.xml","source_text": "👨‍💻Level 2 | 🧼 Clean you hands | +mouth","visible": true},
+    {"source_url": "matrixeyestest.xml","source_text": "👨‍💻Level 2 | 👀 16x8 LED Matrix Test | +eyes","visible": true },
+    {"source_url": "matrixeyes.xml","source_text": "👨‍💻Level 2 | 👀 Eyes Emotions | +eyes","visible": true},
+    {"source_url": "ledfade.xml","source_text": "👨‍💻Level 2 | 💡 Single LED Fade | +LED","visible": true },
+    {"source_url": "ledpot.xml","source_text": "👨‍💻Level 2 | 💡 Single LED Potentiometer | +LED","visible": true },
+    {"source_url": "ledfadepot.xml","source_text": "👨‍💻Level 2 | 💡 Single LED Potentiometer Fade | +LED","visible": true },
+    {"source_url": "servoadvanced.xml","source_text": "👨‍💻Level 2 | 🦿 Servo Advanced | Otto DIY Starter","visible": true},
+    {"source_url": "neopixel.xml", "source_text": "👨‍🚀Level 3 | 🌈 Color LED | +neopixel","visible": true },
+    {"source_url": "bluetooth.xml","source_text": "👨‍🚀Level 3 | 📱 Bluetooth | +bluetooth","visible": true },
+    {"source_url": "dfmini.xml","source_text": "👨‍🚀Level 3 | 🔊 MP3 basic | +dfmini","visible": true },
+    {"source_url": "dfminitriggers.xml","source_text": "👨‍🚀Level 3 | 🔊 MP3 Triggers | +dfmini","visible": true },
+    {"source_url": "gyro.xml","source_text": "👨‍🚀Level 3 | ⚖️ Gyro | +sensor","visible": true },
+    {"source_url": "oled.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Display | +screen","visible": true},
+    {"source_url": "oledframe.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Frame | +screen","visible": true},
+    {"source_url": "oledicon.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Icon | +screen","visible": true},
+    {"source_url": "oledlogo.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Logo | +screen","visible": true},
+    {"source_url": "oledgyro.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Gyro | +screen","visible": true},
+    {"source_url": "servocalibration.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Servo | +screen","visible": true},
+    {"source_url": "oledlaser.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Laser | +screen","visible": true},
+    {"source_url": "TFTicon.xml","source_text": "👨‍🚀Level 3 | 📺 TFT Icon |+screen","visible": true },
+    {"source_url": "TFTAnimation.xml","source_text": "👨‍🚀Level 3 | 📺 TFT Animation |+screen","visible": true },
+    {"source_url": "MUvision.xml","source_text": "👨‍🚀Level 3 | 👁️ AI Camera | +MU vision camera","visible": true}
 ]
