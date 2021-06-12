@@ -458,8 +458,9 @@
 		</block>	
 		
 	<category name="CAT_LEDRGB" colour="#4b009f">
-		<block type="rvb_init_2"></block>
-		<block type="rvb_set">
+		<block type="rgb_init"></block>
+		<block type="rgb_setcolor"></block>
+		<block type="rgb_set">
 		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
@@ -467,25 +468,32 @@
 	</category>	
 	
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
-			<block type="pixel_init_2">
-			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			<value name="num"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+			<block type="pixel_init">
+			<value name="pin"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
+			<value name="num"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
+		</block>
+		<block type="pixel_show"></block>	
+		<block type="pixel_clear"></block>	
+		<block type="pixel_setbrightness">
+			<value name="brightness"><shadow type="analog_pin"><field name="NUM">99</field></shadow></value>
 		</block>
 		<block type="pixel_setcolor">
-			<value name="pin"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="pin"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>
 		</block>
 		<block type="pixel_rgb">
-			<value name="pin"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			<value name="pin"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
 			<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 			<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 			<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 		</block>
-		<block type="pixel_setbrightness">
-			<value name="brightness"><shadow type="math_number"><field name="NUM">99</field></shadow></value>
-		</block>	
-		<block type="pixel_clear"></block>	
+		<block type="pixel_fill"></block>
+	<block type="pixel_fill2">
+			<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			</block>
 		<block type="MatrixLED_WS2812B_init_2">
-			<value name="Pin_Matrix_init"><shadow type="math_number"><field name="NUM">13</field></shadow></value>
+			<value name="Pin_Matrix_init"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
 			<value name="Number_of_Pixels"><shadow type="math_number"><field name="NUM">1</field></shadow>	</value>
 		</block>
 		<block type="MatrixLED_WS2812B_draw"></block>
@@ -547,14 +555,48 @@
 		</category>
 	
 		<category name="CAT_MAX7219" colour="#4b009f">	
+			<block type="Init_MAX7219_ledmatrix">
+			<value name="PIN_CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			<value name="PIN_CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
+			<value name="PIN_DAT"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
+			</block>
+					
+			<block type="MAX7219_ledmatrix_brightness">
+			<value name="BRIGHTNESS"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_shutdown"></block>
+			<block type="MAX7219_ledmatrix_clear"></block>
+			
+			<block type="MAX7219_ledmatrix_row">
+			<value name="Row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_column">
+			<value name="Column"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_led">
+			<value name="Row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="Column"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_draw"></block>
+			<block type="MAX7219_animation"></block>
+					
+					
+			<!--		
 			<block type="matrice8x8_init_2">
-			<value name="CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			<value name="CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
+			<value name="CLK"><shadow type="analog_pin"><field name="NUM">15</field></shadow></value>
+			<value name="CS"><shadow type="analog_pin"><field name="NUM">16</field></shadow></value>
 			<value name="DIN"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
 			</block>
 			<block type="matrice8x8_brightness">
 			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>	
+			</block>		
+			
 			<block type="matrice8x8_del">
 			<value name="X"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
@@ -566,11 +608,21 @@
 			<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>	
 			<block type="matrice8x8_symbole"></block>
-			<block type="matrice8x8_aff"></block>
-			<block type="matrice8x8_animation"></block>
+			<block type="matrice8x8_aff"></block>  
 			<block type="matrice8x8_efface"></block>
+		
+			<block type="matrice8x8_animation"></block>
+			-->
 		</category>	
+		
+		
+		
+		
 		</category>	
+		
+		
+		
+		
 
 <category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">

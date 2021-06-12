@@ -1066,3 +1066,19 @@ Blockly.Msg.NTP_TEXT_DOFWEEK="Day of week in string";
 Blockly.Msg.NTP_TEXT_MONTH="Month in string ";
 Blockly.Msg.NTP_TEXT_TIME="Time in string ";
 
+//MAX7219-Led Matrix panel
+Blockly.Msg.MAX7219_LM_NAME="Init MAX7219 Led Matrix.";
+Blockly.Msg.MAX7219_LM_CS="CS Pin";
+Blockly.Msg.MAX7219_LM_CLK="CLK Pin";
+Blockly.Msg.MAX7219_LM_DAT="DAT Pin";
+Blockly.Msg.MAX7219_LM_Number="Number of matrix";
+Blockly.Msg.MAX7219_LM_NAME2="MAX7219 Led matrix#";
+Blockly.Msg.MAX7219_LM_Brightness="brightness (0-15)";
+Blockly.Msg.MAX7219_LM_SHUTDOWN="Activate";
+Blockly.Msg.MAX7219_LM_CLEAR="Clear";
+Blockly.Msg.MAX7219_LM_PAINT="Draw this image";
+Blockly.Msg.MAX7219_LM_Row="Row(0-7)";
+Blockly.Msg.MAX7219_LM_value="Value (bin or hex or dec)";
+Blockly.Msg.MAX7219_LM_Column="Column(0-7)";
+Blockly.Msg.MAX7219_LM_Led="Set Led";
+

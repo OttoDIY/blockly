@@ -527,6 +527,40 @@
 		</category>
 	
 		<category name="CAT_MAX7219" colour="#4b009f">	
+			
+			<block type="Init_MAX7219_ledmatrix">
+			<value name="PIN_CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			<value name="PIN_CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
+			<value name="PIN_DAT"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
+			</block>
+					
+			<block type="MAX7219_ledmatrix_brightness">
+			<value name="BRIGHTNESS"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_shutdown"></block>
+			<block type="MAX7219_ledmatrix_clear"></block>
+			
+			<block type="MAX7219_ledmatrix_row">
+			<value name="Row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_column">
+			<value name="Column"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_led">
+			<value name="Row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="Column"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			
+			<block type="MAX7219_ledmatrix_draw"></block>
+			<block type="MAX7219_animation"></block>
+					
+					
+			<!--		
 			<block type="matrice8x8_init_2">
 			<value name="CLK"><shadow type="analog_pin"><field name="NUM">15</field></shadow></value>
 			<value name="CS"><shadow type="analog_pin"><field name="NUM">16</field></shadow></value>
@@ -534,7 +568,8 @@
 			</block>
 			<block type="matrice8x8_brightness">
 			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>	
+			</block>		
+			
 			<block type="matrice8x8_del">
 			<value name="X"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
@@ -546,11 +581,12 @@
 			<value name="row"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>	
 			<block type="matrice8x8_symbole"></block>
-			<block type="matrice8x8_aff"></block>
-			<block type="matrice8x8_animation"></block>
+			<block type="matrice8x8_aff"></block>  
 			<block type="matrice8x8_efface"></block>
-			<!--<block type="matrice_init"></block>
-			<block type="matrice_symbole"></block>-->
+		
+			<block type="matrice8x8_animation"></block>
+			-->
+			
 		</category>	
 		
 		<category name="CAT_BARGRAPH" colour="#4b009f">
