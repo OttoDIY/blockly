@@ -31,11 +31,15 @@
     {"source_url": "oled.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Display | +screen","visible": true},
     {"source_url": "oledframe.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Frame | +screen","visible": true},
     {"source_url": "oledicon.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Icon | +screen","visible": true},
+    {"source_url": "oledmouth.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Mouth | +screen","visible": true},
     {"source_url": "oledlogo.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Logo | +screen","visible": true},
     {"source_url": "oledgyro.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Gyro | +screen","visible": true},
     {"source_url": "servocalibration.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Servo | +screen","visible": true},
     {"source_url": "oledlaser.xml","source_text": "👨‍🚀Level 3 | 🖥️ OLED Laser | +screen","visible": true},
     {"source_url": "TFTicon.xml","source_text": "👨‍🚀Level 3 | 📺 TFT Icon |+screen","visible": true },
     {"source_url": "TFTAnimation.xml","source_text": "👨‍🚀Level 3 | 📺 TFT Animation |+screen","visible": true },
+    {"source_url": "IFTTT.xml","source_text": "👨‍🚀Level 3 | ☁️ IoT IFTTT | Otto IoT","visible": true },
+    {"source_url": "MQTT.xml","source_text": "👨‍🚀Level 3 | ☁️ IoT MQTT | Otto IoT","visible": true },
+    {"source_url": "NTP.xml","source_text": "👨‍🚀Level 3 | ☁️ IoT NTP | Otto IoT","visible": true },
     {"source_url": "MUvision.xml","source_text": "👨‍🚀Level 3 | 👁️ AI Camera | +MU vision camera","visible": true}
 ]

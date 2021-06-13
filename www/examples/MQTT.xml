@@ -1,0 +1,147 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="06zEsew^U=VIeKbo+rO!" x="-482" y="11">
+    <statement name="DO">
+      <block type="variables_set_init" id="*-PhI^T`PUGRY2eq4sZl">
+        <field name="VAR">contador</field>
+        <field name="VARIABLE_SETTYPE_TYPE">LARGE_NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="0^ZT3.og6;TQ-@K2BCS`">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set_init" id="OAqkI*/8X^iB,-n;#IWQ">
+            <field name="VAR">ReleText</field>
+            <field name="VARIABLE_SETTYPE_TYPE">TEXT</field>
+            <value name="VALUE">
+              <block type="text" id="q2]2$g;z+JFlB`W-`7Mn">
+                <field name="TEXT">OFF</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id="@*sIGOa9H=_6HoW,l/d.">
+                <field name="VAR">AnguloServo</field>
+                <field name="VARIABLE_SETTYPE_TYPE">UNUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="t?Wa]@lM(Kpx.~S}l2?b">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="mqtt_init" id="ohgvXcPiq/KsJ]l=JRE{">
+                    <field name="LOGIC">FALSE</field>
+                    <field name="SSID">tu red wifi </field>
+                    <field name="PASSWORD">tu password wifi</field>
+                    <field name="SERVER">io.adafruit.com</field>
+                    <field name="PORT">1883</field>
+                    <field name="USER">usuario en adafruit</field>
+                    <field name="APIKEY">Tu api de conexion</field>
+                    <field name="IDCLIENT">OTTO_</field>
+                    <next>
+                      <block type="mqtt_subscribe_num" id="kK-#lDKNFu9Vq8AS)n.P">
+                        <field name="TOPIC">oscarlogix5/feeds/pote</field>
+                        <value name="variable">
+                          <block type="variables_get" id="Y`h]w#@3uHq4+BEP;9+E">
+                            <field name="VAR">AnguloServo</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mqtt_subscribe_text" id="==)Gp]b7x2RooaU@m_HE">
+                            <field name="TOPIC">oscarlogix5/feeds/rele</field>
+                            <value name="variable">
+                              <block type="variables_get" id="k{kupUovKzWA6/-q[kA(">
+                                <field name="VAR">ReleText</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="mqtt_loop" id="$NHAlJfd[p=OvmHKG{z}">
+        <next>
+          <block type="tempo_sans_delay" id="%5yY?C8KA@GN6v}8Njk8">
+            <field name="unite">s</field>
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="-GolX#a:DUIk/g5C*)?*">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <statement name="branche">
+              <block type="mqtt_publish" id="b@LIbeg3TPp`j]ymlH^;">
+                <field name="TOPIC">oscarlogix5/feeds/temperaturaoscar</field>
+                <value name="variable">
+                  <block type="variables_get" id="?X(V6reaV`iX`L6M_M|!">
+                    <field name="VAR">contador</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="LLZ_Kq6smf=.VC_SY,0%">
+                    <field name="VAR">contador</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="99NpAHXUmW*m4+u`q.8g">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="variables_get" id="EKw0$X0X;9tqd1;g8wh@">
+                            <field name="VAR">contador</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="l-wiTNb]Uw4|%:m2pKA@">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="nA]|b(p~:;%FbHy_S`jX">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="[*:Q|ETEk8+W#t7.NV]n">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="x.,0`8_JE6jyWFPU6k3!">
+                        <field name="VAR">ReleText</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="2)m$mmK:pHCs,QsSw1V`">
+                        <field name="NUM">10</field>
+                      </shadow>
+                      <block type="text" id="Z?b?s2X/(s*orwpFvBl(">
+                        <field name="TEXT">ON</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="inout_buildin_led" id="lj;#=8K{boYyW1Bk8Vg(">
+                    <field name="STAT">LOW</field>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="inout_buildin_led" id="|3e.tZjX^I)i0zZJ7t_V">
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
