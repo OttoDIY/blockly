@@ -413,8 +413,8 @@ BlocklyDuino.openConfigToolbox = function() {
 	var modalbody = $("#modal-body-config");
 	var loadIds = window.localStorage.toolboxids;
 	if (loadIds === undefined || loadIds === "") {
-		if ($('#defaultCategories').length) {
-			loadIds = $('#defaultCategories').html();
+		if ($('#defaultCategories1').length) {
+			loadIds = $('#defaultCategories1').html();
 		} else {
 			loadIds = '';
 		}
@@ -461,8 +461,8 @@ BlocklyDuino.changelanguage = function() {
 BlocklyDuino.buildToolbox = function() {
 	var loadIds = window.localStorage.toolboxids;
 	if (loadIds === undefined || loadIds === "") {
-		if ($('#defaultCategories').length) {
-			loadIds = $('#defaultCategories').html();
+		if ($('#defaultCategories1').length) {
+			loadIds = $('#defaultCategories1').html();
 		} else {
 			loadIds = '';
 		}
@@ -783,8 +783,8 @@ BlocklyDuino.saveXmlFile = function () {
 		}
 		var toolboxids = window.localStorage.toolboxids;
 		if (toolboxids === undefined || toolboxids === "") {
-			if ($('#defaultCategories').length) {
-				toolboxids = $('#defaultCategories').html();
+			if ($('#defaultCategories1').length) {
+				toolboxids = $('#defaultCategories1').html();
 			}
 		}
 		var data = Blockly.Xml.domToPrettyText(xml);
