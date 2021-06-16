@@ -246,6 +246,15 @@ BlocklyDuino.change_card = function() {
 				
 				BlocklyDuino.loadToolboxDefinition(new_toolbox);
 				Blockly.getMainWorkspace().updateToolbox(BlocklyDuino.buildToolbox());
+				if (window.localStorage.level==1)
+				  $("#btn_level1").trigger("click");
+			     else
+					 if (	window.localStorage.level==2)
+				  $("#btn_level2").trigger("click");
+			     else
+				  $("#btn_level3").trigger("click");
+				 
+				 
 				BlocklyDuino.workspace.render()
 			} else {
 				$('#btn_preview').attr('title', MSG['btn_preview_py']);
@@ -486,7 +495,7 @@ BlocklyDuino.buildToolboxLevel1 = function() {
 			loadIds = $('#defaultCategories1').html();
 	} 
 	window.localStorage.toolboxids=loadIds;
-	
+	window.localStorage.level=1;
 	
 	var xmlValue = '<xml id="toolbox">';	
 	var xmlids = loadIds.split(",");
@@ -507,6 +516,7 @@ BlocklyDuino.buildToolboxLevel2 = function() {
 			loadIds = $('#defaultCategories2').html();
 	} 
 	window.localStorage.toolboxids=loadIds;
+	window.localStorage.level=2;
 	
 	
 	var xmlValue = '<xml id="toolbox">';	
@@ -529,6 +539,7 @@ BlocklyDuino.buildToolboxLevel3 = function() {
 	} 
 	
 	window.localStorage.toolboxids=loadIds;
+	window.localStorage.level=3;
 	
 	var xmlValue = '<xml id="toolbox">';	
 	var xmlids = loadIds.split(",");
