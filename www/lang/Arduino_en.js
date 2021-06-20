@@ -101,6 +101,8 @@ Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
+Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
+
 
 
 //RTC DS3231
@@ -1061,3 +1063,27 @@ Blockly.Msg.MAX7219_LM_value="Value (bin or hex or dec)";
 Blockly.Msg.MAX7219_LM_Column="Column(0-7)";
 Blockly.Msg.MAX7219_LM_Led="Set Led";
 
+
+//Thingspeak
+Blockly.Msg.Thingspeak_name_init = "Configuration Thingspeak.";
+Blockly.Msg.Thingspeak_name = "Thingspeak.";
+Blockly.Msg.Thingspeak_channel = "Channel";
+Blockly.Msg.Thingspeak_apiread = "Api read key";
+Blockly.Msg.Thingspeak_apiwrite = "Api write key";
+Blockly.Msg.Thingspeak_Write= "Write value";
+Blockly.Msg.Thingspeak_field = "in field";
+Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
+Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
+
+
+
+//WifiLocation
+
+Blockly.Msg.WFL_NAME="Init WifiLocation.";
+Blockly.Msg.WFL_NAME2="WifiLocation.";
+Blockly.Msg.WFL_APIGOOGLE="Google API Key";
+Blockly.Msg.WFL_READ_LOCATION="WifiLocation.Read values";
+Blockly.Msg.WFL_VALUES="value";
+Blockly.Msg.WFL_LON="Longitude";
+Blockly.Msg.WFL_LAT="Lattitude";
+Blockly.Msg.WFL_ACCURACY="Accuracy";

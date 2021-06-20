@@ -100,6 +100,7 @@ Blockly.Msg.CAT_STOCKAGE = "📦 Almacenamiento";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
+Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -1084,4 +1085,15 @@ Blockly.Msg.MAX7219_LM_Row="Fila(0-7)";
 Blockly.Msg.MAX7219_LM_value="Valor (bin o hex o dec)";
 Blockly.Msg.MAX7219_LM_Column="Columna(0-7)";
 Blockly.Msg.MAX7219_LM_Led="Poner Led";
+
+//Thingspeak
+Blockly.Msg.Thingspeak_name_init = "Configuración Thingspeak.";
+Blockly.Msg.Thingspeak_name = "Thingspeak.";
+Blockly.Msg.Thingspeak_channel = "Número de Canal";
+Blockly.Msg.Thingspeak_apiread = "Api read key";
+Blockly.Msg.Thingspeak_apiwrite = "Api write key";
+Blockly.Msg.Thingspeak_Write= "Escribir valor";
+Blockly.Msg.Thingspeak_field = "en el campo";
+Blockly.Msg.Thingspeak_ReadLong= "Leer como long del campo";
+Blockly.Msg.Thingspeak_ReadFloat= "Leer como float del campo";
 

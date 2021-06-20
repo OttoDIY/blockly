@@ -38,6 +38,7 @@
 		<block type="otto9_app"></block>
 		<block type="otto9_smooth"></block>
 		<block type="otto_calibration"></block>
+		<block type="otto_eeprom"></block>
 		
 		<category name="OTTO9_BUZZER" colour="#a600d3">
 			<block type="otto_sound"></block>

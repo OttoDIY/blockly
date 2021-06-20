@@ -1085,3 +1085,14 @@ Blockly.Msg.MAX7219_LM_Row="Row(0-7)";
 Blockly.Msg.MAX7219_LM_value="Value (bin or hex or dec)";
 Blockly.Msg.MAX7219_LM_Column="Column(0-7)";
 Blockly.Msg.MAX7219_LM_Led="Set Led";
+
+//Thingspeak
+Blockly.Msg.Thingspeak_name_init = "Configuration Thingspeak.";
+Blockly.Msg.Thingspeak_name = "Thingspeak.";
+Blockly.Msg.Thingspeak_channel = "Channel";
+Blockly.Msg.Thingspeak_apiread = "Api read key";
+Blockly.Msg.Thingspeak_apiwrite = "Api write key";
+Blockly.Msg.Thingspeak_Write= "Write value";
+Blockly.Msg.Thingspeak_field = "in field";
+Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
+Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
