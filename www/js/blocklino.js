@@ -234,12 +234,15 @@ BlocklyDuino.change_card = function() {
 					mystartfile += '</xml>';
 				
 				if (window.profile[new_card].cpu == "esp8266") 
-				  new_toolbox = "toolbox_arduino_all-esp8266";
+				  new_toolbox = "toolbox_arduino_all-esp8266"
+				else if (window.profile[new_card].cpu == "esp32") 
+				new_toolbox = "toolbox_arduino_all-esp32"
 				  
 				window.localStorage.toolbox = new_toolbox;
 				BlocklyDuino.workspace.clear();
 				
-				if (((window.profile[new_card].cpu == "esp8266") && (window.profile[card].cpu != "esp8266")) || ((window.profile[new_card].cpu != "esp8266") && (window.profile[card].cpu == "esp8266")) )
+				// If CPU has changed and any of the 2 CPUs is an esp (32 or 8266) we need to load blocks for the new board
+				if ((window.profile[new_card].cpu != window.profile[card].cpu) && ((window.profile[new_card].cpu.startsWith("esp")) || (window.profile[card].cpu.startsWith("esp")) ))
 					BlocklyDuino.loadBlocks(mystartfile);
 			    else
 					BlocklyDuino.loadBlocks();

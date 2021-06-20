@@ -29,6 +29,8 @@ Blockly.Msg.LetR = "doleva a doprava";
 Blockly.Msg.direction = "směr";
 Blockly.Msg.vitesse = "rychlost ";
 Blockly.Msg.values = "[0-90]";
+Blockly.Msg.Name = "Name";
+Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_TAB = "🔠 Tabulka";
 Blockly.Msg.CAT_list = "🔤 Seznam";

@@ -28,6 +28,8 @@ Blockly.Msg.left = "左";
 Blockly.Msg.LetR = "右 & 左";
 Blockly.Msg.direction = "方向";
 Blockly.Msg.vitesse = "速度 ";
+Blockly.Msg.Name = "Name";
+Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "🔠 存储";
 Blockly.Msg.CAT_numerique = "- 数字";

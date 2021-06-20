@@ -29,6 +29,8 @@ Blockly.Msg.LetR = "право и лево";
 Blockly.Msg.direction = "направление";
 Blockly.Msg.vitesse = "скорость";
 Blockly.Msg.values = "[0-90]";
+Blockly.Msg.Name = "Name";
+Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ Хранилище";
 Blockly.Msg.CAT_numerique = "- Цифровой";

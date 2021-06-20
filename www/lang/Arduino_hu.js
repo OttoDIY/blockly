@@ -28,6 +28,8 @@ Blockly.Msg.left = "bal";
 Blockly.Msg.LetR = "jobb & bal";
 Blockly.Msg.direction = "irány";
 Blockly.Msg.vitesse = "sebesség ";
+Blockly.Msg.Name = "Name";
+Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ Tárolás";
 Blockly.Msg.CAT_numerique = "- Digital";

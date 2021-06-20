@@ -29,6 +29,8 @@ Blockly.Msg.LetR="droit & gauche";
 Blockly.Msg.direction="direction";
 Blockly.Msg.vitesse="vitesse ";
 Blockly.Msg.values = "[0-90]";
+Blockly.Msg.Name = "Nom";
+Blockly.Msg.ESP32Bluetooth = "Port série ESP32 Bluetooth";
 //catégories (menu)
 Blockly.Msg.CAT_STOCKAGE="⊞ Stockage";
 Blockly.Msg.CAT_numerique="- Binaire";

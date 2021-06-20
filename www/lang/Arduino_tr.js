@@ -29,6 +29,8 @@ Blockly.Msg.LetR = "sağ & sol";
 Blockly.Msg.direction = "yön";
 Blockly.Msg.vitesse = "hız ";
 Blockly.Msg.values = "[0-90]";
+Blockly.Msg.Name = "Name";
+Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ Depolama";
 Blockly.Msg.CAT_numerique = "- Dijital";

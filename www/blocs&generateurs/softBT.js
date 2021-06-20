@@ -45,16 +45,17 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['soft_bt_init'] = {
   helpUrl: 'http://arduino.cc/en/Reference/AnalogWrite',
   init: function() {
+    var card=window.localStorage.card;
     this.setColour("#0060aa");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
-    this.appendValueInput("PIN_TX", "Number")
-    .setCheck("Number")
-	.appendField(Blockly.Msg.SSERIAL_BT_Init)
-    .appendField(Blockly.Msg.SSERIAL_BT_TX)
-    this.appendValueInput("PIN_RX", "Number")
-    .setCheck("Number")
-    .appendField(Blockly.Msg.SSERIAL_BT_RX)
+  .appendField(Blockly.Msg.SSERIAL_BT_Init);
+  this.appendDummyInput()
+  .appendField(Blockly.Msg.SSERIAL_BT_TX)
+  .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
+  this.appendDummyInput()
+  .appendField(Blockly.Msg.SSERIAL_BT_RX)
+  .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RX");
 	this.appendDummyInput()
     .appendField(Blockly.Msg.SSERIAL_BT_BAUD)
 	.appendField(new Blockly.FieldDropdown([['1200', '1200'],['2400', '2400'],['4800', '4800'],['9600', '9600'],['19200', '19200'],['38400', '38400'],['57600', '57600'],['115200', '115200']]), "PINBAUDIOS");
@@ -67,12 +68,39 @@ Blockly.Blocks['soft_bt_init'] = {
 
 Blockly.Arduino['soft_bt_init'] = function(block) {
   
-  var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
-  var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
+  var pin_rx = this.getFieldValue('PIN_RX');
+  var pin_tx = this.getFieldValue('PIN_TX');
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
   
   Blockly.Arduino.includes_['define_ssBT'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerialBT('+pin_rx+','+pin_tx+');\n';
   Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+dropdown_pinbaudios+');\n';
+  var code = '';
+  return code;
+};
+
+
+Blockly.Blocks['esp32_bt_init'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/AnalogWrite',
+  init: function() {
+    this.setColour("#0060aa");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
+  .appendField(Blockly.Msg.ESP32Bluetooth)
+  this.appendDummyInput()
+  .appendField(Blockly.Msg.Name)
+  this.appendValueInput("BT_NAME", "String");
+  this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('A call to SoftwareSerial(rxPin, txPin) creates a new SoftwareSerial object');
+  }
+};
+
+Blockly.Arduino['esp32_bt_init'] = function(block) {
+  
+  var btName = this.getFieldValue("BT_NAME") || "OTTO_ESP32";
+  Blockly.Arduino.includes_['define_ssBT'] = '#include "BluetoothSerial.h"\nBluetoothSerial mySerialBT;\n';
+  Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+btName+');\n';
   var code = '';
   return code;
 };
