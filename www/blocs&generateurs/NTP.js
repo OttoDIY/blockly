@@ -6,7 +6,7 @@
 
 'use strict';
 
-goog.provide('Blockly.Blocks.IFTTT');
+goog.provide('Blockly.Blocks.NTP');
 goog.provide('Blockly.Blocks.arduino');
 goog.require('Blockly.Blocks');
 
