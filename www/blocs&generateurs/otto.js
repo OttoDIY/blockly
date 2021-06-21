@@ -9,14 +9,29 @@ goog.provide('Blockly.Arduino.otto');
 goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto9_configuration'] = {init: function() {
+  var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
-  this.appendValueInput("PIN_YL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+ Blockly.Msg.left)
-  this.appendValueInput("PIN_YR") .setCheck("Number").appendField(Blockly.Msg.right)
-  this.appendValueInput("PIN_RL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+ Blockly.Msg.left)
-  this.appendValueInput("PIN_RR") .setCheck("Number").appendField(Blockly.Msg.right)
-  this.appendValueInput("PIN_TRIG") .setCheck("Number").appendField(Blockly.Msg.TRIG)
-  this.appendValueInput("PIN_ECHO") .setCheck("Number").appendField(Blockly.Msg.Echo)
-  this.appendValueInput("PIN_Buzzer") .setCheck("Number").appendField("🔊")
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.OTTO9_YL)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YL");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.OTTO9_YR)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YR");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.OTTO9_RL)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RL");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.OTTO9_RR)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RR");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.TRIG)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TRIG");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.Echo)
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_ECHO");
+    this.appendDummyInput()
+    .appendField("🔊")
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_Buzzer");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -26,13 +41,13 @@ Blockly.Blocks['otto9_configuration'] = {init: function() {
 
 Blockly.Arduino['otto9_configuration'] = function(block) {
   
-  var PIN_YL= Blockly.Arduino.valueToCode(block, 'PIN_YL', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_YR= Blockly.Arduino.valueToCode(block, 'PIN_YR', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_RL= Blockly.Arduino.valueToCode(block, 'PIN_RL', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_RR= Blockly.Arduino.valueToCode(block, 'PIN_RR', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_TRIG= Blockly.Arduino.valueToCode(block, 'PIN_TRIG', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_ECHO= Blockly.Arduino.valueToCode(block, 'PIN_ECHO', Blockly.Arduino.ORDER_ATOMIC);
-  var PIN_Buzzer= Blockly.Arduino.valueToCode(block, 'PIN_Buzzer', Blockly.Arduino.ORDER_ATOMIC);
+  var PIN_YL= block.getFieldValue('PIN_YL');
+  var PIN_YR= block.getFieldValue('PIN_YR');
+  var PIN_RL= block.getFieldValue('PIN_RL');
+  var PIN_RR= block.getFieldValue('PIN_RR');
+  var PIN_TRIG= block.getFieldValue('PIN_TRIG');
+  var PIN_ECHO= block.getFieldValue('PIN_ECHO');
+  var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
 	
   Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
 	+ 'Otto9 Otto;';
@@ -83,6 +98,40 @@ Blockly.Python['otto9_home'] = function(block) {
     var code = "Otto.home()\n";
     return code;
 };
+
+Blockly.Blocks['otto_i2cConfig'] = {init: function() {
+  var card=window.localStorage.card;
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))
+    .appendField(Blockly.Msg.OTTO_HOME_TEXT).appendField("I²C");
+    this.appendDummyInput()
+    .appendField("SDA")
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SDA");
+    this.appendDummyInput()
+    .appendField("SCL")
+    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SCL");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_i2cConfig'] = function(block) {
+  var PIN_SDA= block.getFieldValue('PIN_SDA');
+  var PIN_SCL= block.getFieldValue('PIN_SCL');
+	
+  Blockly.Arduino.includes_['otto_i2cConfig_lib'] = '#include <Wire.h>\n';
+
+  Blockly.Arduino.definitions_['otto_i2cConfig_def'] = '#define PIN_SDA '+ PIN_SDA +'\n'
+	+ '#define PIN_SCL '+ PIN_SCL +'\n';
+	
+  Blockly.Arduino.setups_['otto_i2cConfig_begin']='Wire.begin(PIN_SDA, PIN_SCL);';
+  
+  var code = '';
+  return code;
+};
+
+
 Blockly.Blocks['otto9_calibration']={init:function(){
   this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left)
   .appendField(new Blockly.FieldNumber("0"), "LL") .appendField(Blockly.Msg.right) .appendField(new Blockly.FieldNumber("0"), "RL")
