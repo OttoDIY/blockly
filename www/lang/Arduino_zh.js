@@ -29,7 +29,6 @@ Blockly.Msg.LetR = "右 & 左";
 Blockly.Msg.direction = "方向";
 Blockly.Msg.vitesse = "速度 ";
 Blockly.Msg.Name = "Name";
-Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "⊞ 儲存";
 Blockly.Msg.CAT_numerique = "- 數位";
@@ -392,6 +391,21 @@ Blockly.Msg.SSERIAL_Write_tooltip = "Send data to the software port";
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";
 Blockly.Msg.SSERIAL_Available = "amount of data on the software port";
 Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes in the software port queue, or 0 if nothing is available";
+// SOFTWARE SERIAL FOR BT
+Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth - SoftwareSerial";
+Blockly.Msg.ESP32Bluetooth = "Init Bluetooth - ESP32 Bluetooth Serial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BT_BAUD="Bauds";
+Blockly.Msg.SSERIAL_BT_Read="Serial BT Read byte";
+Blockly.Msg.SSERIAL_BT_Println="Serial BT Print on new line";
+Blockly.Msg.SSERIAL_BT_Print="Serial BT Print on same line";
+Blockly.Msg.SSERIAL_BT_Write="Serial BT write"
+Blockly.Msg.SSERIAL_BT_Avai="Serial BT Available?";
+Blockly.Msg.SSerial_BT_Print_Format="Serial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Read String";
+Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
 ////////////////////////////OTTO DIY Robot/////////////////////
 Blockly.Msg.OTTO9_HOME_TEXT = "站立";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "OTTO回復到站立準備";

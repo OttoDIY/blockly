@@ -30,7 +30,6 @@ Blockly.Msg.direction = "direction";
 Blockly.Msg.vitesse = "speed";
 Blockly.Msg.values = "↺0-90 | ↻90-180";
 Blockly.Msg.Name = "Name";
-Blockly.Msg.ESP32Bluetooth = "ESP32 Bluetooth Serial";
 // categories (menu)
 Blockly.Msg.CAT_TAB = "🔠 Arrays";
 Blockly.Msg.CAT_list = "🔤 List";
@@ -227,20 +226,20 @@ Blockly.Msg.bluetooth_helpurl = "https://www.ottodiy.com/academy"; // do not tra
 
 
 // SOFTWARE SERIAL FOR BT
-Blockly.Msg.SSERIAL_BT_Init="Bluetooth Software Serial";
-Blockly.Msg.SSERIAL_BT_TX="TX";
-Blockly.Msg.SSERIAL_BT_RX="RX";
-Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="Software Serial BT Read byte";
-Blockly.Msg.SSERIAL_BT_Println="Software Serial BT Print on new line";
-Blockly.Msg.SSERIAL_BT_Print="Software Serial BT Print on same line";
-Blockly.Msg.SSERIAL_BT_Write="Software Serial BT Write"
-Blockly.Msg.SSERIAL_BT_Avai="Software Serial BT Available?";
-Blockly.Msg.SSerial_BT_Print_Format="Software Serial BT Print  Format";
-Blockly.Msg.SSERIAL_BT_ReadNum="Software Serial BT Read as number";
-Blockly.Msg.SSERIAL_BT_ReadString="Software Serial BT Read String";
+Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth - SoftwareSerial";
+Blockly.Msg.ESP32Bluetooth = "Init Bluetooth - ESP32 Bluetooth Serial";
+Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
+Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BT_BAUD="Bauds";
+Blockly.Msg.SSERIAL_BT_Read="Serial BT Read byte";
+Blockly.Msg.SSERIAL_BT_Println="Serial BT Print on new line";
+Blockly.Msg.SSERIAL_BT_Print="Serial BT Print on same line";
+Blockly.Msg.SSERIAL_BT_Write="Serial BT write"
+Blockly.Msg.SSERIAL_BT_Avai="Serial BT Available?";
+Blockly.Msg.SSerial_BT_Print_Format="Serial BT Print  Format";
+Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Read as number";
+Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Read String";
 Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
-
 // SOFTWARE SERIAL 
 Blockly.Msg.SSERIAL_Init="Software Serial";
 Blockly.Msg.SSERIAL_TX="TX";

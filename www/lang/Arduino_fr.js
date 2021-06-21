@@ -30,7 +30,6 @@ Blockly.Msg.direction="direction";
 Blockly.Msg.vitesse="vitesse ";
 Blockly.Msg.values = "[0-90]";
 Blockly.Msg.Name = "Nom";
-Blockly.Msg.ESP32Bluetooth = "Port série ESP32 Bluetooth";
 //catégories (menu)
 Blockly.Msg.CAT_STOCKAGE="⊞ Stockage";
 Blockly.Msg.CAT_numerique="- Binaire";
@@ -828,49 +827,50 @@ Blockly.LKL_VS2_LOCAL_IP = "local IP";                              //"本地IP"
 Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
 
 // SOFTWARE SERIAL FOR BT
-Blockly.Msg.SSERIAL_BT_Init="Init Bluetooth SoftwareSerial";
+Blockly.Msg.SSERIAL_BT_Init="Initialiser le Bluetooth - SoftwareSerial";
+Blockly.Msg.ESP32Bluetooth = "Initialiser le Bluetooth - ESP32 Bluetooth Serial";
 Blockly.Msg.SSERIAL_BT_TX="Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX="Pin RX#";
-Blockly.Msg.SSERIAL_BT_BAUD="Baudios";
-Blockly.Msg.SSERIAL_BT_Read="SoftwareSerial BT Read byte";
-Blockly.Msg.SSERIAL_BT_Println="SoftwareSerial BT Print on new line";
-Blockly.Msg.SSERIAL_BT_Print="SoftwareSerial BT Print on same line";
-Blockly.Msg.SSERIAL_BT_Write="SoftwareSerial BT write"
-Blockly.Msg.SSERIAL_BT_Avai="SoftwareSerial BT Available?";
-Blockly.Msg.SSerial_BT_Print_Format="SoftwareSerial BT Print  Format";
-Blockly.Msg.SSERIAL_BT_ReadNum="SoftwareSerial BT Read as number";
-Blockly.Msg.SSERIAL_BT_ReadString="SoftwareSerial BT Read String";
-Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
+Blockly.Msg.SSERIAL_BT_BAUD="Bauds";
+Blockly.Msg.SSERIAL_BT_Read="Serial BT Lire un octet";
+Blockly.Msg.SSERIAL_BT_Println="Serial BT Ecrire sur une nouvelle ligne";
+Blockly.Msg.SSERIAL_BT_Print="Serial BT Ecrire sur la même ligne";
+Blockly.Msg.SSERIAL_BT_Write="Serial BT Ecrire"
+Blockly.Msg.SSERIAL_BT_Avai="Serial BT Disponible ?";
+Blockly.Msg.SSerial_BT_Print_Format="Serial BT Ecrire avec format";
+Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Lire un nombre";
+Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Lire un texte";
+Blockly.Msg.SSERIAL_BT_Readlf="jusqu'au saut de ligne";
 
 // SOFTWARE SERIAL 
-Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
+Blockly.Msg.SSERIAL_Init="Initialiser SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";
-Blockly.Msg.SSERIAL_BAUD="Baudios";
-Blockly.Msg.SSERIAL_Read="SoftwareSerial Read byte";
-Blockly.Msg.SSERIAL_Println="SoftwareSerial Print on new line";
-Blockly.Msg.SSERIAL_Print="SoftwareSerial Print on same line";
-Blockly.Msg.SSERIAL_Write="SoftwareSerial write"
-Blockly.Msg.SSERIAL_Avai="SoftwareSerial Available?";
-Blockly.Msg.SSerial_Print_Format="SoftwareSerial Print  Format";
-Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Read as number";
-Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Read String";
-Blockly.Msg.SSERIAL_Readlf="until line feed";
+Blockly.Msg.SSERIAL_BAUD="Bauds";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Lire un octet";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Ecrire sur une nouvelle ligne";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Ecrire sur la même ligne";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial Ecrire"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial Disponible ?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Ecrire avec format";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Lire un nombre";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Lire un texte";
+Blockly.Msg.SSERIAL_Readlf="jusqu'au saut de ligne";
 
 // SERIAL 
-Blockly.Msg.SERIAL_Init="Init Serial ";
+Blockly.Msg.SERIAL_Init="Initialiser Serial ";
 Blockly.Msg.SERIAL_TX="Pin TX#";
 Blockly.Msg.SERIAL_RX="Pin RX#";
 Blockly.Msg.SERIAL_BAUD="Baudios";
-Blockly.Msg.SERIAL_Read="Serial  Read byte";
-Blockly.Msg.SERIAL_Println="Serial Print on new line";
-Blockly.Msg.SERIAL_Print="Serial Print on same line";
-Blockly.Msg.SERIAL_Write="Serial write"
-Blockly.Msg.SERIAL_Avai="Serial Available?";
-Blockly.Msg.Serial_Print_Format="Serial Print  Format";
-Blockly.Msg.SERIAL_ReadNum="Serial Read as number";
-Blockly.Msg.SERIAL_ReadString="Serial Read String";
-Blockly.Msg.SERIAL_Readlf="until line feed";
+Blockly.Msg.SERIAL_Read="Serial Lire un octet";
+Blockly.Msg.SERIAL_Println="Serial Ecrire sur une nouvelle ligne";
+Blockly.Msg.SERIAL_Print="Serial Ecrire sur la même ligne";
+Blockly.Msg.SERIAL_Write="Serial Ecrire"
+Blockly.Msg.SERIAL_Avai="Serial Disponible ?";
+Blockly.Msg.Serial_Print_Format="Serial Ecrire avec format";
+Blockly.Msg.SERIAL_ReadNum="Serial Lire un nombre";
+Blockly.Msg.SERIAL_ReadString="Serial Lire un texte";
+Blockly.Msg.SERIAL_Readlf="jusqu'au saut de ligne";
 
 //DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
