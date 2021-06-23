@@ -100,6 +100,7 @@ Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
 Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
+Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -1097,3 +1098,14 @@ Blockly.Msg.Thingspeak_Write= "Write value";
 Blockly.Msg.Thingspeak_field = "in field";
 Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
 Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
+
+//Telegram
+Blockly.Msg.Telegram_name_init = "Configuration Telegram chat.";
+Blockly.Msg.Telegram_name = "Telegram.";
+Blockly.Msg.Telegram_BotToken = "BOT token";
+Blockly.Msg.Telegram_ChatID = "Chat ID";
+Blockly.Msg.Telegram_Loop = "Telegram Loop.Update messages";
+Blockly.Msg.Telegram_receive = "Telegram.When message is recived";
+Blockly.Msg.TelegramSend= "Send message:";
+Blockly.Msg.Telegram_message = "Telegram.Received message";
+Blockly.Msg.Telegram_fromName= "Name of person sent the message";

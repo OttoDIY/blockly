@@ -15,7 +15,7 @@ Blockly.Blocks['Init_NTP'] = {
    init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/ntp_icon.png",53,38))
+		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
        	.appendField(Blockly.Msg.NTP_NAME);
     this.appendDummyInput()
         .appendField(Blockly.Msg.NTP_GMT)
@@ -53,7 +53,7 @@ Blockly.Blocks['order_read_NTP_server'] = {
   init: function() {
    this.setColour("#008080");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/ntp_icon.png",53,38))
+	    .appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
         .appendField(Blockly.Msg.NTP_READ_RTC);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -77,7 +77,7 @@ Blockly.Blocks['values_NTP_server'] = {
   init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/ntp_icon.png",53,38))
+		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
 		.appendField(Blockly.Msg.NTP_NAME2)
 		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.NTP_EPOCH, "0"],[Blockly.Msg.NTP_YEAR, "1"], [Blockly.Msg.NTP_MONTH, "2"],[Blockly.Msg.NTP_DAY, "3"],[Blockly.Msg.NTP_HOUR, "4"],[Blockly.Msg.NTP_MINUTE, "5"],[Blockly.Msg.NTP_SECOND, "6"]]), "OUTPUT_VALUE")
 	    .appendField(Blockly.Msg.NTP_VALUES)
@@ -115,7 +115,7 @@ Blockly.Blocks['values_text_NTP_server'] = {
   init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/ntp_icon.png",53,38))
+		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
 		.appendField(Blockly.Msg.NTP_NAME2)
 		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.NTP_TEXT_DOFWEEK, "0"], [Blockly.Msg.NTP_TEXT_MONTH, "1"],[Blockly.Msg.NTP_TEXT_TIME, "2"]]), "OUTPUT_VALUE")
     this.setOutput(true, 'String');

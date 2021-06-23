@@ -1098,3 +1098,14 @@ Blockly.Msg.Thingspeak_Write= "Write value";
 Blockly.Msg.Thingspeak_field = "in field";
 Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
 Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
+
+//Telegram
+Blockly.Msg.Telegram_name_init = "Configuration Telegram chat.";
+Blockly.Msg.Telegram_name = "Telegram.";
+Blockly.Msg.Telegram_BotToken = "BOT token";
+Blockly.Msg.Telegram_ChatID = "Chat ID";
+Blockly.Msg.Telegram_Loop = "Telegram Loop.Update messages";
+Blockly.Msg.Telegram_receive = "Telegram.When message is recived";
+Blockly.Msg.TelegramSend= "Send message:";
+Blockly.Msg.Telegram_message = "Telegram.Received message";
+Blockly.Msg.Telegram_fromName= "Name of person sent the message";

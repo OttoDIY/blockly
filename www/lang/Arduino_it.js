@@ -100,6 +100,7 @@ Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
 Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
+Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 
 
 

@@ -922,7 +922,14 @@
 			
 		</category>
 		
-		
+		<category name="CAT_TELEGRAM" colour="#008080">
+			<block type="telegram_init"></block>
+			<block type="telegram_loop_message"></block>
+			<block type="telegram_reception_function"></block>
+			<block type="telegram_sendmessage"></block>
+			<block type="telegram_message_received"></block>
+			<block type="telegram_message_name_received"></block>
+		</category>
 		
 				
 	</category>	

@@ -15,7 +15,7 @@ Blockly.Blocks['thingspeak_init'] = {
    init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/thingspeak.png",62,38))
+		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name_init)
 		.appendField(Blockly.Msg.Thingspeak_channel)
         .appendField(new Blockly.FieldTextInput("1233456"), "CHANNEL")
@@ -58,7 +58,7 @@ Blockly.Blocks['thingspeak_write'] = {
    init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/thingspeak.png",62,38))
+		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)
 		.appendField(Blockly.Msg.Thingspeak_Write)
 	this.appendValueInput("variable");	
@@ -87,7 +87,7 @@ Blockly.Blocks['thingspeak_write_long'] = {
   init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/thingspeak.png",62,38))
+		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)
 		.appendField(Blockly.Msg.Thingspeak_ReadLong)
 		.appendField(new Blockly.FieldDropdown([['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8']]),"FIELD")	
@@ -111,7 +111,7 @@ Blockly.Blocks['thingspeak_write_float'] = {
   init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/thingspeak.png",62,38))
+		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)
 		.appendField(Blockly.Msg.Thingspeak_ReadFloat)
 		.appendField(new Blockly.FieldDropdown([['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8']]),"FIELD")	
