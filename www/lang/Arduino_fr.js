@@ -101,6 +101,7 @@ Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
 Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
+Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -1110,4 +1111,30 @@ Blockly.Msg.Telegram_receive = "Telegram.When message is recived";
 Blockly.Msg.TelegramSend= "Send message:";
 Blockly.Msg.Telegram_message = "Telegram.Received message";
 Blockly.Msg.Telegram_fromName= "Name of person sent the message";
+
+//OpenWeather
+Blockly.Msg.Openweather_init = "Configuration OpenWeather.";
+Blockly.Msg.Api_key = "Api Key";
+Blockly.Msg.ReadWeather = "OpenWeather.Read Weather.";
+Blockly.Msg.City = "City";
+Blockly.Msg.CountryCode = "Country Code";
+Blockly.Msg.OW_Value = "OpenWeather. Value:";
+Blockly.Msg.LocationOW = "Location";
+Blockly.Msg.Country = "Country";
+Blockly.Msg.Icon = "Icon";
+Blockly.Msg.Weather = "Weather";
+Blockly.Msg.Description = "Description";
+Blockly.Msg.OW_Temperature = "Temperature ºC";
+Blockly.Msg.Temp_max = "Temperature Max ºC";
+Blockly.Msg.Temp_min = "Temperature Min ºC";
+Blockly.Msg.Humidity = "Humedad";
+Blockly.Msg.Preassure = "Preassure";
+Blockly.Msg.Feels_like = "Feels like Temperature ºC";
+Blockly.Msg.Cloud = "Cloud %";
+Blockly.Msg.Visibility = "Visibility %";
+Blockly.Msg.wind_speed = "Wind Speed";
+Blockly.Msg.wind_angle = "Wind Angle";
+Blockly.Msg.icon_id = "Icon Weather Id";
+Blockly.Msg.sunrise = "Sunrise EPOC";
+Blockly.Msg.sunset = "Sunset EPOC";
 
