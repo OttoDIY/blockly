@@ -122,10 +122,10 @@ Blockly.Blocks['order_read_OpenWeather_server'] = {
         .appendField(Blockly.Msg.ReadWeather);
 	this.appendValueInput("city")
         .setCheck(null)
-		.appendField(Blockly.Msg.ReadWeather);	
+		.appendField(Blockly.Msg.City);	
 	this.appendValueInput("countrycode")
         .setCheck(null)
-		.appendField(Blockly.Msg.TelegramSend);		
+		.appendField(Blockly.Msg.CountryCode);		
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
