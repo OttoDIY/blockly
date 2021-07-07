@@ -15,12 +15,10 @@
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
 		<field name="PIN_YL">2</field>
-		<field name="PIN_YR">3</field>
-		<field name="PIN_RL">4</field>
-		<field name="PIN_RR">5</field>
-		<field name="PIN_TRIG">8</field>
-		<field name="PIN_ECHO">9</field>
-		<field name="PIN_Buzzer">13</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
 		</block>
 		<block type="otto_home"></block>
 		<block type="otto_move"></block>
@@ -57,13 +55,16 @@
 			</block>
 		</category>	
 		<category name="CAT_ultrason" colour="#2a93e8">
-			<block type="otto9_obstacle"></block>
-			<block type="otto9_getdistance"></block>
-			<block type="otto9_touchbutton"></block>
-			<block type="otto9_getnoise"></block>
+		<block type="ultrasonic_ranger_sensor2">
+				<value name="PIN_TRIG"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
+				<value name="PIN_ECHO"><shadow type="analog_pin"><field name="NUM">9</field></shadow></value>
+			</block>
+				<block type="button_touch_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value></block>
+				<block type="Sound_status_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
 		</category>	
 		<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 			<block type="otto9_eyes"></block>
+			<block type="otto9_eyes_display"></block>
 			<block type="otto9_eyes_clear"></block>
 			<block type="otto9_eyes_rotate"></block>
 			<block type="otto9_eyes_brightness">
@@ -95,7 +96,7 @@
 				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 				<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
 				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
-				<block type="otto9_eyes_display"></block>
+
 		</category>
 		<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
 			<block type="otto9_mouth"></block>
@@ -221,28 +222,28 @@
     </category>
 
 	<category name="CAT_SENSORS" colour="#2a93e8">
-		 <block type="button_sensor"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 <block type="button_touch_sensor"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">14</field></shadow></value></block>
-		 <block type="potentiometer_ranger_sensor"><value name="PIN_POTENTIOMETER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+		 <block type="button_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 <block type="button_touch_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">14</field></shadow></value></block>
+		 <block type="potentiometer_ranger_sensor2"><value name="PIN_POTENTIOMETER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
 		 <block type="Joystick_axis_sensor"><value name="PIN_JOYSTICK"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
 		 <block type="joystick_button_sensor"><value name="PIN_JOYSTICK"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 <block type="hall_sensor"><value name="PIN_HALL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 <block type="tilt_sensor"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 <block type="hall_sensor2"><value name="PIN_HALL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 <block type="tilt_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
 		<category name="CAT_SOUND" colour="#2a93e8">
-			 <block type="Sound_sensor"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="Sound_status_sensor"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
-			 <block type="knock_sensor"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			 <block type="Vibration_sensor"><value name="PIN_VIBRATION"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="Vibration_status_sensor"><value name="PIN_VIBRATION"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
+			 <block type="Sound_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			 <block type="Sound_status_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
+			 <block type="knock_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+			 <block type="Vibration_sensor2"><value name="PIN_VIBRATION"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			 <block type="Vibration_status_sensor2"><value name="PIN_VIBRATION"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
 		</category>
 		<category name="CAT_LIGHT" colour="#2a93e8">
-			<block type="LDR_sensor"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="LDR_status_sensor"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			<block type="AmbientLight_sensor"><value name="PIN_ALIGHT"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="IR_sensor"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="IR_status_sensor"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 	<block type="pir_sensor"><value name="PIN_PIR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 	<block type="photointerrupter_sensor"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+			<block type="LDR_sensor2"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+		 	<block type="LDR_status_sensor2"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+			<block type="AmbientLight_sensor2"><value name="PIN_ALIGHT"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+		 	<block type="IR_sensor2"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+		 	<block type="IR_status_sensor2"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 	<block type="pir_sensor2"><value name="PIN_PIR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 	<block type="photointerrupter_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
 		</category>
 		<category name="CAT_APDS9960" colour="#2a93e8">
 			<block type="APDS9960_init"></block>
@@ -264,17 +265,17 @@
 		</category>
 
 		<category name="CAT_WATER" colour="#2a93e8">
-		 	<block type="Water_sensor"><value name="PIN_WATER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-			 <block type="Moisture_sensor"><value name="PIN_MOISTURE"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-		 	<block type="Vapor_sensor"><value name="PIN_VAPOR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+		 	<block type="Water_sensor2"><value name="PIN_WATER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+			 <block type="Moisture_sensor2"><value name="PIN_MOISTURE"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+		 	<block type="Vapor_sensor2"><value name="PIN_VAPOR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
 		 </category>
 
 		<category name="CAT_TEMP" colour="#2a93e8">
-			 <block type="dht_sensor"><value name="PIN_DHT"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
- 			 <block type="Analog_temperature_sensor"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="LM35_temperature_sensor"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-			 <block type="Flame_sensor"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="Flame_status_sensor"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
+			 <block type="dht_sensor2"><value name="PIN_DHT"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
+ 			 <block type="Analog_temperature_sensor2"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			 <block type="LM35_temperature_sensor2"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
+			 <block type="Flame_sensor2"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			 <block type="Flame_status_sensor2"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
 		</category>
 		<category name="CAT_CCS811" colour="#2a93e8">
 			<block type="Init_CCS811"></block>
@@ -283,10 +284,10 @@
 			<block type="CCS811_values"></block>
 		</category>	
 		<category name="CAT_GAS" colour="#2a93e8">
-			<block type="Gas_sensor"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			<block type="Gas_status_sensor"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			<block type="Alcohol_sensor"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			<block type="Alcohol_status_sensor"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+			<block type="Gas_sensor2"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			<block type="Gas_status_sensor2"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+			<block type="Alcohol_sensor2"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			<block type="Alcohol_status_sensor2"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
 		</category>	
 		<category name="CAT_BME280" colour="#2a93e8">
 			<block type="BME280"></block>

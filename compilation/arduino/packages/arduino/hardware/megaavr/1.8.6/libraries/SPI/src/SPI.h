@@ -21,6 +21,7 @@
 #define _SPI_H_INCLUDED
 
 #include <Arduino.h>
+#include <api/HardwareSPI.h>
 
 #ifndef USE_MALLOC_FOR_IRQ_MAP
 #define USE_MALLOC_FOR_IRQ_MAP  0

@@ -236,7 +236,7 @@ Blockly.Arduino['ultrasonic_ranger_sensor2'] = function(block) {
         '   return distance;\n'+
         '}\n';;
     var code;
-    code = 'ultrason_'+PIN_TRIG+'()';
+    code = 'ultrasound_'+PIN_TRIG+'()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

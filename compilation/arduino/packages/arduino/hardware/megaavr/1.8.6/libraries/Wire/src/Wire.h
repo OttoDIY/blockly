@@ -23,6 +23,7 @@
 #define TwoWire_h
 
 #include <Arduino.h>
+#include <api/HardwareI2C.h>
 
 #define BUFFER_LENGTH 128
 
@@ -57,10 +58,10 @@ class TwoWire : public HardwareI2C
     void beginTransmission(int);
     uint8_t endTransmission(void);
     uint8_t endTransmission(bool);
-    uint8_t requestFrom(uint8_t, size_t);
-    uint8_t requestFrom(uint8_t, size_t, bool);
-    uint8_t requestFrom(int, int);
-    uint8_t requestFrom(int, int, int);
+    size_t requestFrom(uint8_t, size_t);
+    size_t requestFrom(uint8_t, size_t, bool);
+    size_t requestFrom(int, int);
+    size_t requestFrom(int, int, int);
     virtual size_t write(uint8_t);
     virtual size_t write(const uint8_t *, size_t);
     virtual int available(void);

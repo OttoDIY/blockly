@@ -43,13 +43,13 @@ Blockly.Arduino['otto_configuration'] = function(block) {
   Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
 	+ 'Otto Otto;';
 
-  Blockly.Arduino.definitions_['otto_legs'] = '#define PIN_YL '+ PIN_YL +' // left leg, servo[0]\n'
- 	+ '#define PIN_YR '+ PIN_YR +' // right leg, servo[1]\n'
-	+ '#define PIN_RL '+ PIN_RL +' // left foot, servo[2]\n'
-    + '#define PIN_RR '+ PIN_RR +' // right foot, servo[3]\n'
-    + '#define PIN_Buzzer '+ PIN_Buzzer +' //buzzer \n'; 
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
+ 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
+	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
+    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
+    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
 	
-  Blockly.Arduino.setups_['otto_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, PIN_Buzzer);';
+  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);';
   
   var code = '';
   return code;

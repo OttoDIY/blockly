@@ -9,29 +9,23 @@ goog.provide('Blockly.Arduino.otto');
 goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto9_configuration'] = {init: function() {
-  var card=window.localStorage.card;
+	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.OTTO9_YL)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YL");
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.OTTO9_YR)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YR");
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.OTTO9_RL)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RL");
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.OTTO9_RR)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RR");
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.TRIG)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TRIG");
-    this.appendDummyInput()
-    .appendField(Blockly.Msg.Echo)
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_ECHO");
-    this.appendDummyInput()
-    .appendField("🔊")
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_Buzzer");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_YL)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_YR)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_RL)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_RR)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_BUZZER)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -45,58 +39,21 @@ Blockly.Arduino['otto9_configuration'] = function(block) {
   var PIN_YR= block.getFieldValue('PIN_YR');
   var PIN_RL= block.getFieldValue('PIN_RL');
   var PIN_RR= block.getFieldValue('PIN_RR');
-  var PIN_TRIG= block.getFieldValue('PIN_TRIG');
-  var PIN_ECHO= block.getFieldValue('PIN_ECHO');
   var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
 	
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
+	+ 'Otto Otto;';
 
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL '+ PIN_YL +' // left leg, servo[0]\n'
- 	+ '#define PIN_YR '+ PIN_YR +' // right leg, servo[1]\n'
-	+ '#define PIN_RL '+ PIN_RL +' // left foot, servo[2]\n'
-    + '#define PIN_RR '+ PIN_RR +' // right foot, servo[3]\n'
-    + '#define PIN_Trigger '+PIN_TRIG+' // ultrasonic sensor trigger \n'
-    + '#define PIN_Echo '+PIN_ECHO+' // ultrasonic sensor echo \n'
-    + '#define PIN_Buzzer '+ PIN_Buzzer +' //buzzer \n'; 
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
+ 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
+	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
+    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
+    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
 	
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true,  A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
+  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);';
   
   var code = '';
   return code;
-};
-
-Blockly.Blocks['otto9_home'] = {init: function() {
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO9_HOME_TEXT);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Arduino['otto9_home'] = function(block) {
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-  + '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasonic \n'
-  + '#define PIN_Echo 9 // ultrasonic \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = 'Otto.home();\n';
-  return code;
-};
-
-Blockly.Python['otto9_home'] = function(block) {
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = "Otto.home()\n";
-    return code;
 };
 
 Blockly.Blocks['otto_i2cConfig'] = {init: function() {
@@ -132,448 +89,6 @@ Blockly.Arduino['otto_i2cConfig'] = function(block) {
 };
 
 
-Blockly.Blocks['otto9_calibration']={init:function(){
-  this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left)
-  .appendField(new Blockly.FieldNumber("0"), "LL") .appendField(Blockly.Msg.right) .appendField(new Blockly.FieldNumber("0"), "RL")
-  this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+  Blockly.Msg.left)
-  .appendField(new Blockly.FieldNumber("0"), "LF")  .appendField(Blockly.Msg.right).appendField(new Blockly.FieldNumber("0"), "RF");
-  this.setInputsInline(false);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#32D900");
-  this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
-};
-
-Blockly.Arduino['otto9_calibration']=function(block){
-  var valuell = block.getFieldValue('LL');
-  var valuerl = block.getFieldValue('RL');
-  var valuelf = block.getFieldValue('LF');
-  var valuerf = block.getFieldValue('RF');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-  + '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  Blockly.Arduino.setups_['otto9_cal']= 'Otto.setTrims('+ valuell +','+ valuerl +',' +valuelf +','+ valuerf+');';
-  var code = '//calibrated\n';
-  return code;
-};
-
-Blockly.Python['otto9_calibration'] = function(block) {
-    var valuell = block.getFieldValue('LL');
-    var valuerl = block.getFieldValue('RL');
-    var valuelf = block.getFieldValue('LF');
-    var valuerf = block.getFieldValue('RF');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = 'Otto.setTrims('+ valuell +','+ valuerl +',' +valuelf +','+ valuerf+')\n';
-    return code;
-};
-
-Blockly.Blocks['otto9_eeprom'] = {init: function() {
-    this.appendDummyInput("")  .appendField(Blockly.Msg.OTTO9_EEPROM_TEXT);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#ff6600");
-    this.setTooltip(Blockly.Msg.OTTO9_EEPROM_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
-};
-
-Blockly.Arduino['otto9_eeprom'] = function(block) {
-  Blockly.Arduino.setups_['otto9_eeprom']='Otto.saveTrimsOnEEPROM();';
-  var code = '//calibration saved\n';
-  return code;
-};
-
-Blockly.Python['otto9_eeprom'] = function(block) {
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    var code = 'Otto.saveTrimsOnEEPROM()\n';
-    return code;
-									  
-};
-
-Blockly.Blocks['otto9_move'] = {init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))
-        .appendField(Blockly.Msg.OTTO9_MOVE_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_CHOICE), "otto_move_sens");
-    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
-};
-
-
-Blockly.Arduino['otto9_move'] = function(block) {
-  var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
-  var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = '';
-  switch(dropdown_otto_move_sens) {
-	case 'FORWARD':
-		code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',1); // FORWARD\n';
-		break;
-	case 'BACKWARD':
-		code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',-1); // BACKWARD\n';
-		break;
-	case 'LEFT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1); // LEFT\n';
-		break;
-	case 'RIGHT':
-		code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1); // RIGHT\n';
-		break;
-	case 'BENDLEFT':
-		code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',1);\n';
-		break;
-	case 'BENDRIGHT':
-		code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',-1);\n';
-		break;
-	case 'SHAKERIGHT':
-		code = 'Otto.shakeLeg(1,' + dropdown_otto_move_speed + ',1);\n';
-		break;
-	case 'SHAKELEFT':
-		code = 'Otto.shakeLeg(1,' + dropdown_otto_move_speed + ',-1);\n';
-    break;
-    case 'jump':
-		code = 'Otto.jump(1,' + dropdown_otto_move_speed + ');\n';
-		break;
-  }
-  return code;
-};
-
-Blockly.Python['otto9_move'] = function(block) {
-    var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
-    var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = '';
-    switch(dropdown_otto_move_sens) {
-        case 'FORWARD':
-            code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',1) # FORWARD\n';
-            break;
-        case 'BACKWARD':
-            code = 'Otto.walk(1,' + dropdown_otto_move_speed + ',-1) # BACKWARD\n';
-            break;
-        case 'LEFT':
-            code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',1) # LEFT\n';
-            break;
-        case 'RIGHT':
-            code = 'Otto.turn(1,' + dropdown_otto_move_speed + ',-1) # RIGHT\n';
-            break;
-        case 'BENDLEFT':
-            code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',1)\n';
-            break;
-        case 'BENDRIGHT':
-            code = 'Otto.bend(1,' + dropdown_otto_move_speed + ',-1)\n';
-            break;
-        case 'SHAKERIGHT':
-            code = 'Otto.shakeLeg(1,' + dropdown_otto_move_speed + ',1)\n';
-            break;
-        case 'SHAKELEFT':
-            code = 'Otto.shakeLeg(1,' + dropdown_otto_move_speed + ',-1)\n';
-            break;
-        case 'jump':
-            code = 'Otto.jump(1,' + dropdown_otto_move_speed + ')\n';
-            break;
-    }
-    return code;
-};												
-
-Blockly.Blocks['otto9_dance'] = {
-  init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_DANCE_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DANCE_CHOICE), "otto_dance_movement");
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
-    this.appendDummyInput()
-    .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_DANCE_SIZE_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE), "otto_dance_size");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
-};
-
-Blockly.Arduino['otto9_dance'] = function(block) {
-  var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
-  var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-  var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = '';
-  switch(dropdown_otto_dance_movement) {
-    case 'moonwalkerLEFT':
-      code = 'Otto.moonwalker(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1);\n';
-      break;
-    case 'moonwalkerRIGHT':
-      code = 'Otto.moonwalker(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1);\n';
-      break;
-    case 'crusaitoLEFT':
-      code = 'Otto.crusaito(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1);\n';
-      break;
-    case 'crusaitoRIGHT':
-      code = 'Otto.crusaito(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1);\n';
-      break;
-    case 'flappingFRONT':
-      code = 'Otto.flapping(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1);\n';
-      break;
-    case 'flappingBACK':
-      code = 'Otto.flapping(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1);\n';
-      break;
-    }
-  return code;
-};
-
-	Blockly.Python['otto9_dance'] = function(block) {
-    var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
-    var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-    var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = '';
-    switch(dropdown_otto_dance_movement) {
-        case 'moonwalkerLEFT':
-            code = 'Otto.moonwalker(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1)\n';
-            break;
-        case 'moonwalkerRIGHT':
-            code = 'Otto.moonwalker(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1)\n';
-            break;
-        case 'crusaitoLEFT':
-            code = 'Otto.crusaito(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1)\n';
-            break;
-        case 'crusaitoRIGHT':
-            code = 'Otto.crusaito(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1)\n';
-            break;
-        case 'flappingFRONT':
-            code = 'Otto.flapping(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1)\n';
-            break;
-        case 'flappingBACK':
-            code = 'Otto.flapping(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', -1)\n';
-            break;
-    }
-    return code;
-};
-
-
-Blockly.Blocks['otto9_do'] = {init: function() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldImage('media/otto_do.png', 33, 33, "*"))
-        .appendField(Blockly.Msg.OTTO9_DO_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DO_CHOICE), "otto_do_movement");
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.OTTO9_DANCE_SIZE_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE), "otto_dance_size");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_DO_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Arduino['otto9_do'] = function(block) {
-  var dropdown_otto_do_movement = block.getFieldValue('otto_do_movement');
-  var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-  var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ');\n';
-  return code;
-};
-
-Blockly.Python['otto9_do'] = function(block) {
-    var dropdown_otto_do_movement = block.getFieldValue('otto_do_movement');
-    var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-    var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ')\n';
-    return code;
-};
-
-Blockly.Blocks['otto9_gesture'] = {init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_emoji.png', 22, 22, "*")).appendField(Blockly.Msg.OTTO9_GESTURE_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_GESTURE_CHOICE), "otto_gesture");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO9_GESTURE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
-};
-
-Blockly.Arduino['otto9_gesture'] = function(block) {
-  var dropdown_otto_gesture = block.getFieldValue('otto_gesture');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = 'Otto.playGesture(' + dropdown_otto_gesture + ');\n';
-  return code;
-};
-
-Blockly.Python['otto9_gesture'] = function(block) {
-    var dropdown_otto_gesture = block.getFieldValue('otto_gesture');
-    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
-    Blockly.Python.definitions_['import_gestures'] = 'import gestures';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
-    return code;
-};
-Blockly.Blocks['otto9_sound'] = {init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_music.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "otto_sound");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#a600d3");
-    this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
-};
-
-Blockly.Arduino['otto9_sound'] = function(block) {
-  var dropdown_otto_sound = block.getFieldValue('otto_sound');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = 'Otto.sing(' + dropdown_otto_sound + ');\n';
-  return code;
-};
-
-Blockly.Python['otto9_sound'] = function(block) {
-    var dropdown_otto_sound = block.getFieldValue('otto_sound');
-    Blockly.Python.definitions_['import_otto9'] = 'import otto9';
-    Blockly.Python.definitions_['import_songs'] = 'import songs';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = 'Otto.sing(songs.' + dropdown_otto_sound.toUpperCase().substring(2) + ')\n';
-    return code;
-};
-Blockly.Blocks['otto9_tone'] = {init: function() {
-    this.appendDummyInput().appendField("🎼")
-        .appendField(new Blockly.FieldDropdown([["C₄ | Do₄", "262"], ["D₄ | Re₄", "294"], ["E₄ | Mi₄", "330"], ["F₄ | Fa₄", "349"], ["G₄ | Sol₄", "392"], ["A₄ | La₄", "440"], ["B₄ | Si₄", "494"], ["C₅ | Do₅", "523"], ["D₅ | Re₅", "587"] ,["E₅ | Mi₅", "659"], ["F₅ | Fa₅", "698"], ["G₅ | Sol₅", "784"], ["A₅ | La₅", "880"], ["B₅ | Si₅", "988"], ["C₆ | Do₆", "1047"], ["D₆ | Re₆", "1175"], ["E₆ | Mi₆", "1319"], ["F₆ | Fa₆", "1397"], ["G₆ | Sol₆", "1568"], ["A₆ | La₆", "1760"], ["B₆ | Si₆", "1976"]]), "otto_note");
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(" ")
-        .appendField(new Blockly.FieldDropdown([["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]), "otto_note_duration");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#a600d3");
-    this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto9_tone'] = function(block) {
-  var dropdown_otto_note = block.getFieldValue('otto_note');
-  var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-	+ 'Otto9 Otto;';
-  Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-	+ '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define PIN_Trigger 8 // ultrasound \n'
-  + '#define PIN_Echo 9 // ultrasound \n'
-  + '#define PIN_Buzzer  13 //buzzer';
-  Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-  var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
-return code;				
-};
-
-Blockly.Python['otto9_tone'] = function(block) {
-    var dropdown_otto_note = block.getFieldValue('otto_note');
-    var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9'] = 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
-    var code = "Otto._tone(" + dropdown_otto_note + ", " + dropdown_otto_note_duration + ", 1)\n";
-    return code;
-};
-
-Blockly.Blocks['otto9_tonehz'] = {init: function() {
-  this.appendDummyInput() .appendField("🎼 Hz")
-  this.appendValueInput("Hz1")
-  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
-  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#a600d3");
-  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto9_tonehz'] = function(block) {
-  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
-  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
-  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
-Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-+ 'Otto9 Otto;';
-Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-+ '#define PIN_YR 3 // right leg, servo[1]\n'
-+ '#define PIN_RL 4 // left foot, servo[2]\n'
-+ '#define PIN_RR 5 // right foot, servo[3]\n'
-+ '#define PIN_Trigger 8 // ultrasound \n'
-+ '#define PIN_Echo 9 // ultrasound \n'
-+ '#define PIN_Buzzer  13 //buzzer';
-Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-var code = "Otto._tone( " + Hz1 + "," + duration + "," + silent + "); //(float noteFrequency, long noteDuration, int silentDuration)\n";
-return code;				
-};
-
 Blockly.Blocks['otto9_bendtone'] = {init: function() {
   this.appendDummyInput() .appendField("🎼 Hz1")
   this.appendValueInput("Hz1")
@@ -589,120 +104,7 @@ Blockly.Blocks['otto9_bendtone'] = {init: function() {
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
 };
-
-Blockly.Arduino['otto9_bendtone'] = function(block) {
-  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
-  var Hz2 = Blockly.Arduino.valueToCode(block, 'Hz2', Blockly.Arduino.ORDER_ATOMIC);
-  var prop = Blockly.Arduino.valueToCode(block, 'prop', Blockly.Arduino.ORDER_ATOMIC);
-  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
-  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
-Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto9.h>\n'
-+ 'Otto9 Otto;';
-Blockly.Arduino.definitions_['otto9_legs'] = '#define PIN_YL 2 // left leg, servo[0]\n'
-+ '#define PIN_YR 3 // right leg, servo[1]\n'
-+ '#define PIN_RL 4 // left foot, servo[2]\n'
-+ '#define PIN_RR 5 // right foot, servo[3]\n'
-+ '#define PIN_Trigger 8 // ultrasound \n'
-+ '#define PIN_Echo 9 // ultrasound \n'
-+ '#define PIN_Buzzer  13 //buzzer';
-Blockly.Arduino.setups_['otto9_init']='Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, A6, PIN_Buzzer, PIN_Trigger, PIN_Echo);';
-var code = "Otto.bendTones( " + Hz1 + "," + Hz2 + "," + prop + "," + duration + "," + silent + "); // (float initFrequency, float finalFrequency, float prop, long noteDuration, int silentDuration) \n";
-return code;				
-};
-
-Blockly.Blocks['otto9_getdistance'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
-    this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
-};
-Blockly.Arduino['otto9_getdistance'] = function(block) {
-  Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
-  Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
-	+ 'bool obstacleDetected = false;';
-  var code = 'Otto.getDistance()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Python['otto9_getdistance'] = function(block) {
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    var code = 'Otto.getDistance()\n';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};
-Blockly.Blocks['otto9_obstacle'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_ultrasound.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle")
-    this.setInputsInline(true);
-    this.setOutput(true);
-    this.setColour("#2a93e8");
-    this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-  }
-};
-Blockly.Arduino['otto9_obstacle'] = function(block) {
-  var dropdown_obstacle = block.getFieldValue('obstacle');
-  Blockly.Arduino.includes_['otto9_lib_dist'] = '#include <US.h>';
-  Blockly.Arduino.variables_['otto9_distance'] = 'int distance;\n'
-	+ 'bool obstacleDetected = false;';
-  var code = '(Otto.getDistance() <' + dropdown_obstacle+')';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Python['otto9_obstacle'] = function(block) {
-    var dropdown_obstacle = block.getFieldValue('obstacle');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    var code = '(Otto.getDistance() < ' + dropdown_obstacle +')';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};													
-Blockly.Blocks['otto9_getnoise'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
-    this.setTooltip(Blockly.Msg.OTTO9_GETNOISE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-  }
-};
-Blockly.Arduino['otto9_getnoise'] = function(block) {
-  Blockly.Arduino.variables_['otto9_noise'] = 'bool estado = false;';
-  Blockly.Arduino.definitions_['otto9_noise'] = '#define PIN_NoiseSensor A6';
-  var code = 'Otto.getNoise()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Python['otto9_getnoise'] = function(block) {
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    var code = 'Otto.getNoise()';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};
-Blockly.Blocks['otto9_touchbutton'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_touch.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
-    this.setInputsInline(true);
-    this.setOutput(true);
-    this.setColour("#2a93e8");
-    this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-  }
-};
-Blockly.Arduino['otto9_touchbutton'] = function(block) {
-  Blockly.Arduino.variables_['otto9_touchbutton'] = 'volatile bool buttonPushed = false;';
-  Blockly.Arduino.definitions_['otto9_sound'] = '#define PIN_Button A0';
-  Blockly.Arduino.setups_['otto9_init']='pinMode(PIN_Button, INPUT);\n';
-  var code = 'digitalRead(PIN_Button)';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
-	Blockly.Python['otto9_touchbutton'] = function(block) {
-    Blockly.Python.definitions_['touch_pin'] = 'touch1 = TouchPad(Pin(14))'
-    var code = 'touch1.read()';
-    return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-												   
+										   
 Blockly.Blocks['otto9_gyro'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 28, 28, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
     this.setPreviousStatement(true);
@@ -1762,12 +1164,11 @@ Blockly.Arduino['otto9_app'] = function(block) {
   +'#include <SerialCommand.h>\n'
   + 'SoftwareSerial BTserial = SoftwareSerial(11,12);\n'
  + 'SerialCommand SCmd(BTserial);\n'
-+  '#include <Otto9.h>\n'
-+  'Otto9 Otto;  \n';
++  '#include <Otto.h>\n'
++  'Otto Otto;  \n';
   Blockly.Arduino.variables_['otto9_var'] = 'const char programID[] = "Otto Bluetooth App Firmware";\n'
   +'const char name_fac = \'$\'; \n'
   +'const char name_fir = \'#\';\n'
-  
   +'int T = 1000;  \n'          
   +'int moveId = 0; \n'        
  +'int moveSize = 15;\n'      
@@ -1776,10 +1177,8 @@ Blockly.Arduino['otto9_app'] = function(block) {
  + 'int randomDance = 0;\n'
  + 'int randomSteps = 0;\n'
 +  'bool obstacleDetected = false;\n'
-+  'double batteryCHECK = 0;\n'
 +  'unsigned long int matrix;\n'
 +  'unsigned long timerMillis = 0;\n'
-+'void obstacleDetector() { int distance = Otto.getDistance(); if (distance < 15) obstacleDetected = true; else obstacleDetected = false; } \n'
 +'void receiveStop() { sendAck(); Otto.home(); sendFinalAck(); }\n'
 +'void receiveLED() { sendAck(); Otto.home(); unsigned long int matrix; char *arg; char *endstr; arg = SCmd.next(); if (arg != NULL) { matrix = strtoul(arg, &endstr, 2); Otto.putMouth(matrix, false); } else { Otto.putMouth(xMouth); delay(2000); Otto.clearMouth(); } sendFinalAck(); }\n'
 +'void recieveBuzzer() { sendAck(); Otto.home(); bool error = false; int frec; int duration; char *arg; arg = SCmd.next(); if (arg != NULL) frec = atoi(arg); else error = true; arg = SCmd.next(); if (arg != NULL) duration = atoi(arg); else error = true; if (error == true) { Otto.putMouth(xMouth); delay(2000); Otto.clearMouth(); } else Otto._tone(frec, duration, 1); sendFinalAck(); }\n'
@@ -1789,42 +1188,31 @@ Blockly.Arduino['otto9_app'] = function(block) {
 +'void move(int moveId) { bool manualMode = false; switch (moveId) { case 0: Otto.home(); break; case 1: Otto.walk(1, T, 1); break; case 2: Otto.walk(1, T, -1); break; case 3: Otto.turn(1, T, 1); break; case 4: Otto.turn(1, T, -1); break; case 5: Otto.updown(1, T, moveSize); break; case 6: Otto.moonwalker(1, T, moveSize, 1); break; case 7: Otto.moonwalker(1, T, moveSize, -1); break; case 8: Otto.swing(1, T, moveSize); break; case 9: Otto.crusaito(1, T, moveSize, 1); break; case 10: Otto.crusaito(1, T, moveSize, -1); break; case 11: Otto.jump(1, T); break; case 12: Otto.flapping(1, T, moveSize, 1); break; case 13: Otto.flapping(1, T, moveSize, -1); break; case 14: Otto.tiptoeSwing(1, T, moveSize); break; case 15: Otto.bend(1, T, 1); break; case 16: Otto.bend(1, T, -1); break; case 17: Otto.shakeLeg(1, T, 1); break; case 18: Otto.shakeLeg(1, T, -1); break; case 19: Otto.jitter(1, T, moveSize); break; case 20: Otto.ascendingTurn(1, T, moveSize); break; default: manualMode = true; break; } if (!manualMode) sendFinalAck(); } \n'
 +'void receiveGesture() { sendAck(); Otto.home();  int gesture = 0; char *arg; arg = SCmd.next(); if (arg != NULL) gesture = atoi(arg); else     delay(2000); switch (gesture) { case 1: Otto.playGesture(OttoHappy); break; case 2: Otto.playGesture(OttoSuperHappy); break; case 3: Otto.playGesture(OttoSad); break; case 4: Otto.playGesture(OttoSleeping); break; case 5: Otto.playGesture(OttoFart); break; case 6: Otto.playGesture(OttoConfused); break; case 7: Otto.playGesture(OttoLove); break; case 8: Otto.playGesture(OttoAngry); break; case 9: Otto.playGesture(OttoFretful); break; case 10: Otto.playGesture(OttoMagic); break; case 11: Otto.playGesture(OttoWave); break; case 12: Otto.playGesture(OttoVictory); break; case 13: Otto.playGesture(OttoFail); break; default: break; } sendFinalAck(); }\n'
 +'void receiveSing() { sendAck(); Otto.home(); int sing = 0; char *arg; arg = SCmd.next(); if (arg != NULL) sing = atoi(arg); else     delay(2000); switch (sing) { case 1: Otto.sing(S_connection); break; case 2: Otto.sing(S_disconnection); break; case 3: Otto.sing(S_surprise); break; case 4: Otto.sing(S_OhOoh); break; case 5: Otto.sing(S_OhOoh2); break; case 6: Otto.sing(S_cuddly); break; case 7: Otto.sing(S_sleeping); break; case 8: Otto.sing(S_happy); break; case 9: Otto.sing(S_superHappy); break; case 10: Otto.sing(S_happy_short); break; case 11: Otto.sing(S_sad); break; case 12: Otto.sing(S_confused); break; case 13: Otto.sing(S_fart1); break; case 14: Otto.sing(S_fart2); break; case 15: Otto.sing(S_fart3); break; case 16: Otto.sing(S_mode1); break; case 17: Otto.sing(S_mode2); break; case 18: Otto.sing(S_mode3); break; case 19: Otto.sing(S_buttonPushed); break; default: break; } sendFinalAck(); }\n'
-+'void receiveMode() { sendAck(); Otto.home(); int modeId = 0; char *arg; arg = SCmd.next(); if (arg != NULL) modeId = atoi(arg); else     delay(2000); switch (modeId) { case 0: Otto.putMouth(0); Otto.sing(S_cuddly); Otto.home(); break; case 1: Otto.putMouth(one); randomDance = random(5, 21); if ((randomDance > 14) && (randomDance < 19)) { randomSteps = 1; T = 1600; } else { randomSteps = random(3, 6); T = 1000; } Otto.putMouth(random(10, 21)); for (int i = 0; i < randomSteps; i++) move(randomDance); break; case 2: Otto.putMouth(two); break; case 3: Otto.putMouth(three); break; case 4: Otto.putMouth(four); if (Otto.getBatteryLevel() < 35) { Otto.putMouth(thunder); Otto.bendTones (880, 2000, 1.04, 8, 3); delay(30); Otto.bendTones (2000, 880, 1.02, 8, 3); delay(30); Otto.bendTones (880, 2000, 1.04, 8, 3); delay(30); Otto.bendTones (2000, 880, 1.02, 8, 3); Otto.clearMouth(); matrix = 0b00001100010010010010010010011110; Otto.putMouth(matrix, false); delay(2000); Otto.clearMouth(); delay(1000); matrix = 0b00001100010010010010010010011110; Otto.putMouth(matrix, false); delay(2000); Otto.clearMouth(); Otto.putMouth(happyOpen); } break; default: break; } sendFinalAck(); }\n'
 +'void receiveName() { sendAck(); Otto.home(); char newOttoName[11] = ""; int eeAddress = 5; char *arg; arg = SCmd.next(); if (arg != NULL) { int k = 0; while ((*arg) && (k < 11)) { newOttoName[k] = *arg++; k++; } EEPROM.put(eeAddress, newOttoName); } else { delay(2000); } sendFinalAck(); }\n'
 +'void requestName() { Otto.home(); char actualOttoName[11] = ""; int eeAddress = 5; EEPROM.get(eeAddress, actualOttoName); Serial.print(F("&&")); Serial.print(F("E ")); Serial.print(actualOttoName); Serial.println(F("%%")); Serial.flush(); }\n'
-+'void requestDistance() { Otto.home(); int distance = Otto.getDistance(); Serial.print(F("&&")); Serial.print(F("D ")); Serial.print(distance); Serial.println(F("%%")); Serial.flush(); }\n'
-+'void requestNoise() { Otto.home(); int microphone = Otto.getNoise(); Serial.print(F("&&")); Serial.print(F("N ")); Serial.print(microphone); Serial.println(F("%%")); Serial.flush(); }\n'
-+'void requestBattery() { Otto.home(); double batteryLevel = Otto.getBatteryLevel(); Serial.print(F("&&")); Serial.print(F("B ")); Serial.print(batteryLevel); Serial.println(F("%%")); Serial.flush(); }\n'
 +'void requestProgramId() { Otto.home(); Serial.print(F("&&")); Serial.print(F("I ")); Serial.print(programID); Serial.println(F("%%")); Serial.flush(); }\n'
 +'void sendAck() { delay(30); Serial.print(F("&&")); Serial.print(F("A")); Serial.println(F("%%")); Serial.flush(); }\n'
 +'void sendFinalAck() { delay(30); Serial.print(F("&&")); Serial.print(F("F")); Serial.println(F("%%")); Serial.flush(); }\n'
 +'void ButtonPushed(){ if(!buttonPushed){ buttonPushed=true; Otto.putMouth(smallSurprise); } } \n'
 
 Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
-  + '#define PIN_YL 2 // left leg, servo[0]\n'
-	+ '#define PIN_YR 3 // right leg, servo[1]\n'
-	+ '#define PIN_RL 4 // left foot, servo[2]\n'
-  + '#define PIN_RR 5 // right foot, servo[3]\n'
- +'#define PIN_Trigger  8\n'
-  +'#define PIN_Echo     9\n'
-  +'#define PIN_Buzzer  13 \n'
- +'#define PIN_NoiseSensor A6\n'
+  + '#define LeftLeg 2 \n'
+	+ '#define RightLeg 3 \n'
+	+ '#define LeftFoot 4 \n'
+  + '#define RightFoot 5 \n'
+  +'#define Buzzer  13 \n'
  +'#define DIN_PIN    A3 \n'
   +'#define CS_PIN     A2 \n'
   +'#define CLK_PIN    A1 \n'
   +'#define LED_DIRECTION  1 \n'
-  +'boolean BATTcheck = false; \n'
-  +'#define PIN_Battery   A7 \n'
   +'#define PIN_Button   A0 \n'
   +'#define PIN_ASSEMBLY    7\n'
   ;
   Blockly.Arduino.setups_['otto9_init']='Serial.begin(9600);\n'
   +'BTserial.begin(9600);\n'
- +'Otto.init(PIN_YL, PIN_YR, PIN_RL, PIN_RR, true, PIN_NoiseSensor, PIN_Buzzer, PIN_Trigger, PIN_Echo);\n'
+ +'Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
   +'Otto.initMATRIX(DIN_PIN, CS_PIN, CLK_PIN, LED_DIRECTION);\n'
   +'Otto.matrixIntensity(1);\n'
-  +'Otto.initBatLevel(PIN_Battery);\n'
-  +'randomSeed(analogRead(PIN_NoiseSensor));\n'
   +'pinMode(PIN_ASSEMBLY, INPUT_PULLUP);\n'
   +'pinMode(PIN_Button, INPUT);\n'
   +'SCmd.addCommand("S", receiveStop);    \n'
@@ -1833,17 +1221,12 @@ Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
   +'SCmd.addCommand("M", receiveMovement);   \n'
   +'SCmd.addCommand("H", receiveGesture);    \n'
   +'SCmd.addCommand("K", receiveSing);       \n'
-  +'SCmd.addCommand("J", receiveMode);       \n'
   +'SCmd.addCommand("C", receiveTrims);      \n'
   +'SCmd.addCommand("G", receiveServo);      \n'
   +'SCmd.addCommand("R", receiveName);       \n'
   +'SCmd.addCommand("E", requestName);\n'
-  +'SCmd.addCommand("D", requestDistance);\n'
-  +'SCmd.addCommand("N", requestNoise);\n'
-  +'SCmd.addCommand("B", requestBattery);  \n'
   +'SCmd.addCommand("I", requestProgramId);\n'
   +'SCmd.addDefaultHandler(receiveStop);\n'
-
   +'Otto.sing(S_connection);\n'
   +'Otto.home();\n'
 
