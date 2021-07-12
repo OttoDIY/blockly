@@ -242,7 +242,7 @@ BlocklyDuino.change_card = function() {
 				BlocklyDuino.workspace.clear();
 				
 				// If CPU has changed and any of the 2 CPUs is an esp (32 or 8266) we need to load blocks for the new board
-				if ((window.profile[new_card].cpu != window.profile[card].cpu) && ((window.profile[new_card].cpu.startsWith("esp")) || (window.profile[card].cpu.startsWith("esp")) ))
+				if ((window.profile[new_card].cpu != window.profile[card].cpu) /*&& ((window.profile[new_card].cpu.startsWith("esp")) || (window.profile[card].cpu.startsWith("esp")) ) */  )
 					BlocklyDuino.loadBlocks(mystartfile);
 			    else
 					BlocklyDuino.loadBlocks();
