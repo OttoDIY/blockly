@@ -45,7 +45,7 @@ Blockly.Blocks['button_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/button.png",65,38))
 	    .appendField(Blockly.Msg.BUTTON_NAME)
 	    .appendField(Blockly.Msg.PIN)
-   	    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_BUTTON")
+   	    .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.appendDummyInput()
 	    .appendField(Blockly.Msg.BUTTON_LOGIC)
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
@@ -80,7 +80,7 @@ Blockly.Blocks['button_touch_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/sensor_touch.png",49,38))
 	    .appendField(Blockly.Msg.BUTTON_TOUCH_NAME)
 	    .appendField(Blockly.Msg.PIN)
-        .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_BUTTON")
+        .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
     this.appendDummyInput()
 	    .appendField(Blockly.Msg.BUTTON_LOGIC)
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
@@ -118,7 +118,7 @@ Blockly.Blocks['tilt_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/tilt.png",53,38))
 	    .appendField(Blockly.Msg.TILT_NAME)
 	    .appendField(Blockly.Msg.PIN)
-        .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_BUTTON")
+        .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.TILT_DETECTED)
@@ -149,7 +149,7 @@ Blockly.Blocks['photointerrupter_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/photointerrupter.png",52,38))
 	    .appendField(Blockly.Msg.PHOTO_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_BUTTON")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.PHOTO_DETECTED)
@@ -179,7 +179,7 @@ Blockly.Blocks['knock_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/knock.png",54,38))
 	    .appendField(Blockly.Msg.KNOCK_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_BUTTON")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.KNOCK_DETECTED)
@@ -208,10 +208,10 @@ Blockly.Blocks['ultrasonic_ranger_sensor2'] = {
 	    .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",45,38))
 	    .appendField(Blockly.Msg.ultrasonic_ranger)
         .appendField(Blockly.Msg.TRIG)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TRIG")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.Echo)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_ECHO")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
     this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip('Non-contact distance measurement module');
@@ -382,7 +382,7 @@ Blockly.Blocks['LDR_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/light.png",59,38))
 	    .appendField(Blockly.Msg.LDR_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_LDR")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LDR")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.LDR_DETECTED)
@@ -447,7 +447,7 @@ Blockly.Blocks['IR_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/linefollow.png",60,38))
 	    .appendField(Blockly.Msg.IR_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_IR")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.IR_DETECTED)
@@ -511,7 +511,7 @@ Blockly.Blocks['Flame_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/flame.png",58,38))
 	    .appendField(Blockly.Msg.FLAME_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_FLAME")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_FLAME")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.FLAME_DETECTED)
@@ -576,7 +576,7 @@ Blockly.Blocks['Sound_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/sensor_noise.png",54,38))
 	    .appendField(Blockly.Msg.SOUND_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SOUND")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SOUND")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.SOUND_DETECTED)
@@ -607,7 +607,7 @@ Blockly.Blocks['dht_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/humidity22.png",55,38))
 	    .appendField(Blockly.Msg.DHT_NAME)
         .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_DHT")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.DHT_Type)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]]), "OUTPUT_TYPE")
@@ -700,7 +700,7 @@ Blockly.Blocks['Gas_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
 	    .appendField(Blockly.Msg.GAS_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_GAS")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_GAS")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.GAS_DETECTED)
@@ -762,7 +762,7 @@ Blockly.Blocks['Alcohol_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/alcohol.png",63,38))
 	    .appendField(Blockly.Msg.ALCOHOL_NAME)
 	    .appendField(Blockly.Msg.PIN)
-        .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_ALCOHOL")
+        .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ALCOHOL")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.ALCOHOL_DETECTED)
@@ -826,7 +826,7 @@ Blockly.Blocks['Vibration_status_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/vibration.png",53,38))
 	    .appendField(Blockly.Msg.VIBRATION_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_VIBRATION")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_VIBRATION")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.VIBRATION_DETECTED)
@@ -856,7 +856,7 @@ Blockly.Blocks['hall_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/hall.png",45,38))
 	    .appendField(Blockly.Msg.HALL_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_HALL")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_HALL")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.HALL_DETECTED)
@@ -885,7 +885,7 @@ Blockly.Blocks['pir_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/pir.png",59,38))
 	    .appendField(Blockly.Msg.PIR_NAME)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_PIR")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_PIR")
 	this.setOutput(true, 'Boolean');
    	this.appendDummyInput()
 		.appendField(Blockly.Msg.PIR_DETECTED)
@@ -1087,7 +1087,7 @@ Blockly.Blocks['joystick_button_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/joystick.png",46,38))
 	    .appendField(Blockly.Msg.JOYSTICK_BUTTON)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_JOYSTICK")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_JOYSTICK")
     this.appendDummyInput()
 		.appendField(Blockly.Msg.JOYSTICK_PRESSED)
 	this.setOutput(true, 'Boolean');
