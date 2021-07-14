@@ -115,50 +115,32 @@ Blockly.Blocks['tcs34725_values'] = {
 
 Blockly.Arduino['tcs34725_values'] = function(block) {
   
-  var typeValue = block.getFieldValue('TypeValue');  
-  
-   switch (typeValue) {
-    case '0':
-      code = 'tcs34725_r';
-      break;
-    case '1':
-      code = 'tcs34725_g';
-      break;
-    case '2':
-      code = 'tcs34725_b';
-      break;
-	case '3':
-      code = 'tcs34725_clear';
-      break;
-	case '4':
-      code = 'tcs34725_h';
-      break;
-	case '5':
-      code = 'tcs34725_s';
-      break;
-	case '6':
-      code = 'tcs34725_v';
-      break;
-	case '7':
-      code = 'lux';
-      break;
-	case '8':
-      code = 'colorTemp';
-      break;
-	case '10':
-      code = 'tcs_red';
-      break;
-	case '11':
-      code = 'tcs_green';
-      break;
-	case '12':
-      code = 'tcs_blue';
-    break;
-	    
-    default:
-	  code = 'tcs34725_r';
-	  break;
-  }
+  var typeValue = this.getFieldValue("TypeValue"); 
+
+ if (typeValue==0)
+	var code = 'tcs34725_r';
+	else if (typeValue==1)
+		var code = 'tcs34725_g';
+		else if (typeValue==2)
+			var code = 'tcs34725_b';
+			else if (typeValue==3)
+				var code = 'tcs34725_clear';
+				else if (typeValue==4)
+					var code = 'tcs34725_h';
+					else if (typeValue==5)
+						var code = 'tcs34725_s';
+						else if (typeValue==6)
+							var code = 'tcs34725_v';
+							else if (typeValue==7)
+								var code = 'lux';
+								else if (typeValue==8)
+									var code = 'colorTemp';
+									else if (typeValue==10)
+										var code = 'tcs_red';
+										else if (typeValue==11)
+											var code = 'tcs_green';
+											else 
+												var code = 'tcs_blue';
    
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -195,34 +177,26 @@ Blockly.Arduino.definitions_['define_tcs34725_iscolor'] = 'bool fnc_tcs34725_isc
 '	return false;\n'+
 '}\n';
 	 
-  var typeColor = block.getFieldValue('TypeColor');  
+  var typeColor = this.getFieldValue('TypeColor');  
   
-   switch (typeColor) {
-    case '0':
-      code = 'fnc_tcs34725_iscolor(2)';
-      break;
-    case '1':
-      code = 'fnc_tcs34725_iscolor(3)';
-      break;
-    case '2':
-      code = 'fnc_tcs34725_iscolor(4)';
-      break;
-	case '3':
-      code = 'fnc_tcs34725_iscolor(5)';
-      break;
-	case '4':
-      code = 'fnc_tcs34725_iscolor(6)';
-      break;
-	case '5':
-      code = 'fnc_tcs34725_iscolor(7)';
-      break;
-	case '6':
-      code = 'fnc_tcs34725_iscolor(8)';
-      break;
-    default:
-	  code = 'fnc_tcs34725_iscolor(2)';
-	  break;
-  }
+  
+  if (typeColor==0)
+	var code = 'fnc_tcs34725_iscolor(2)';
+	else if (typeColor==1)
+		var code = 'fnc_tcs34725_iscolor(3)';
+		else if (typeColor==2)
+			var code = 'fnc_tcs34725_iscolor(4)';
+			else if (typeColor==3)
+				var code = 'fnc_tcs34725_iscolor(5)';
+				else if (typeColor==4)
+					var code = 'fnc_tcs34725_iscolor(6)';
+					else if (typeColor==5)
+						var code = 'fnc_tcs34725_iscolor(7)';
+						else if (typeColor==6)
+							var code = 'fnc_tcs34725_iscolor(8)';
+							else 
+								var code = 'fnc_tcs34725_iscolor(2)';
+  
  
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
