@@ -9,7 +9,7 @@ Blockly.Blocks['OLED_init'] = {
   init: function() {
   this.appendDummyInput()
      .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("I²C")
+     .appendField("OLED Pins I²C")
      this.appendDummyInput()
      .setAlign(Blockly.ALIGN_RIGHT)
      .appendField(Blockly.Msg.OLED_height)

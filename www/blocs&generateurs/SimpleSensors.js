@@ -196,13 +196,10 @@ Blockly.Blocks['ultrasonic_ranger_sensor'] = {
   helpUrl: '',
   init: function() {
     this.setColour("#2a93e8");
-    this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",45,38))
-	    .appendField(Blockly.Msg.ultrasonic_ranger)
-        .appendField(Blockly.Msg.TRIG)
+    this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",45,38)) .appendField(Blockly.Msg.ultrasonic_ranger)  .appendField(Blockly.Msg.TRIG)
     this.appendValueInput("PIN_TRIG", "Number").setCheck("Number")
-	this.appendValueInput("PIN_ECHO", "Number").setCheck("Number").appendField(Blockly.Msg.Echo);
-	this.setInputsInline(true);
+	  this.appendValueInput("PIN_ECHO", "Number").setCheck("Number").appendField(Blockly.Msg.Echo);
+	  this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip('Non-contact distance measurement module');
   }
@@ -213,7 +210,7 @@ Blockly.Arduino['ultrasonic_ranger_sensor'] = function(block) {
     var PIN_ECHO = Blockly.Arduino.valueToCode(this, "PIN_ECHO", Blockly.Arduino.ORDER_NONE);
     Blockly.Arduino.setups_['setup_output_'+PIN_TRIG] = 'pinMode('+PIN_TRIG+', OUTPUT);';
     Blockly.Arduino.setups_['setup_input_'+PIN_ECHO] = 'pinMode('+PIN_ECHO+', INPUT);';
-    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrason_'+PIN_TRIG+ '() {\n'+
+    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_'+PIN_TRIG+ '() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(2);\n'+
@@ -225,7 +222,7 @@ Blockly.Arduino['ultrasonic_ranger_sensor'] = function(block) {
         '   return distance;\n'+
         '}\n';;
     var code;
-    code = 'ultrason_'+PIN_TRIG+'()';
+    code = 'ultrasound_'+PIN_TRIG+'()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

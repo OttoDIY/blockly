@@ -12,19 +12,19 @@ Blockly.Blocks['otto9_configuration'] = {init: function() {
 	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_YL)
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_YR)
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_RL)
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_RR)
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_BUZZER)
+	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -88,66 +88,7 @@ Blockly.Arduino['otto_i2cConfig'] = function(block) {
   return code;
 };
 
-
-Blockly.Blocks['otto9_bendtone'] = {init: function() {
-  this.appendDummyInput() .appendField("🎼 Hz1")
-  this.appendValueInput("Hz1")
-  this.appendValueInput("Hz2") .appendField("Hz2");
-  this.appendValueInput("prop") .setCheck("Number").appendField("P");
-  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
-  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#a600d3");
-  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-										   
-Blockly.Blocks['otto9_gyro'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 28, 28, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#2a93e8");
-    this.setTooltip("gyro read");
-    this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
-  }
-};
-Blockly.Arduino['otto9_gyro'] = function(block) {
-  Blockly.Arduino.variables_['otto9_gyro'] = 'int16_t ax, ay, az; \n'
-  +'int16_t gx, gy, gz;\n';
-  Blockly.Arduino.includes_['otto9_gyro'] = '#include "Wire.h"\n'
-  +'#include "I2Cdev.h"\n'
-  +'#include "MPU6050.h"\n';
-  Blockly.Arduino.definitions_['otto9_gyro'] = 'MPU6050 accelgyro;';
-  Blockly.Arduino.setups_['otto9_gyro']=' Wire.begin();\n'
-  +'Serial.begin(9600);    //  initialize serial communication\n'
-  +'Serial.println("Initializing I2C devices...");\n'
-  +'accelgyro.initialize();\n'
-  +'Serial.println("Testing device connections...");\n'
-  +'Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");\n';
-  var code = 'accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);\n'
-  +' //Serial.print("ax "); Serial.print(ax);Serial.print(" ay ");Serial.print(ay);Serial.print(" az ");Serial.print(az);Serial.print(" gx ");Serial.print(gx);Serial.print(" gy ");Serial.print(gy); Serial.print(" gz "); Serial.println(gz);\n';
-  return code;
-};
-
-Blockly.Blocks['otto9_getg'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2)
-    .appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "getg");
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setColour("#2a93e8");
-    this.setTooltip("gyro get actual value");
-    this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
-  }
-};
-Blockly.Arduino['otto9_getg'] = function(block) {
-  var dropdown_getg = block.getFieldValue('getg');
-  var code = dropdown_getg;
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
-};
-
+	
 											  
 Blockly.Blocks['otto9_eyes'] = { init: function() {
     this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*"))
@@ -268,7 +209,7 @@ Blockly.Blocks["otto9_eyes_brightness"]={init:function(){
   this.setNextStatement(true, null);
   this.setColour("#4b009f");
   this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
-  this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
+  this.setHelpUrl('https://xantorohara.github.io/led-matrix-editor/')}
 };
 Blockly.Arduino["otto9_eyes_brightness"]=function(block){
 var brightness=Blockly.Arduino.valueToCode(block, "brightness");
@@ -1023,7 +964,7 @@ Blockly.Blocks["otto9_matrix_brightness"]={init:function(){
     this.setNextStatement(true, null);
     this.setColour("#4b009f");
     this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
-    this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
+    this.setHelpUrl('https://xantorohara.github.io/led-matrix-editor/')}
 };
 Blockly.Arduino["otto9_matrix_brightness"]=function(block){
 	var brightness=Blockly.Arduino.valueToCode(block, "brightness");

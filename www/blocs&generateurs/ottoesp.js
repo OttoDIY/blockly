@@ -11,20 +11,20 @@ Blockly.Blocks['otto_configuration'] = {init: function() {
 	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_YL)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YL");
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_YR)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_YR");
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_RL)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RL");
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_RR)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RR");
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
 	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_BUZZER)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_Buzzer");
+	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -61,7 +61,7 @@ Blockly.Blocks['otto_home'] = {init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#32D900");
-    this.setTooltip(Blockly.Msg.OTTO_HOME_TOOLTIP);
+    this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 

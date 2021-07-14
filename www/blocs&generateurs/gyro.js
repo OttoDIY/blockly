@@ -8,8 +8,8 @@ goog.provide('Blockly.Arduino.gyro');
 goog.require('Blockly.Arduino');
 
 												   
-Blockly.Blocks['gyro_read'] = {init: function() {
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 28, 28, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
+Blockly.Blocks['otto9_gyro'] = {init: function() {
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#2a93e8");
@@ -17,7 +17,7 @@ Blockly.Blocks['gyro_read'] = {init: function() {
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
 };
-Blockly.Arduino['gyro_read'] = function(block) {
+Blockly.Arduino['otto9_gyro'] = function(block) {
   Blockly.Arduino.variables_['gyro'] = 'int16_t ax, ay, az; \n'
   +'int16_t gx, gy, gz;\n';
   Blockly.Arduino.includes_['gyro'] = '#include "Wire.h"\n'
@@ -35,8 +35,8 @@ Blockly.Arduino['gyro_read'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['gyro_get'] = {init: function() {
-  this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2)
+Blockly.Blocks['otto9_getg'] = {init: function() {
+  this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 15, 15, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2)
   .appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "getg");
   this.setInputsInline(true);
   this.setOutput(true, "Number");
@@ -45,7 +45,7 @@ Blockly.Blocks['gyro_get'] = {init: function() {
   this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
 }
 };
-Blockly.Arduino['gyro_get'] = function(block) {
+Blockly.Arduino['otto9_getg'] = function(block) {
 var dropdown_getg = block.getFieldValue('getg');
 var code = dropdown_getg;
 return [code, Blockly.Arduino.ORDER_ATOMIC];

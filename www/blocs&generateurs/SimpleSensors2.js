@@ -1,35 +1,3 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview Colour blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
- */
- 
- /***************************************************************
- *
- *  This module was created by Oscar Ferruz. oferruz@logix5.com
- *
- ****************************************************************/
- 
-  
 'use strict';
 
 goog.provide('Blockly.Blocks.simpleSensors');
@@ -42,16 +10,14 @@ Blockly.Blocks['button_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/button.png",65,38))
+		.appendField(new Blockly.FieldImage("media/button.png",33,33))
 	    .appendField(Blockly.Msg.BUTTON_NAME)
 	    .appendField(Blockly.Msg.PIN)
    	    .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.appendDummyInput()
-	    .appendField(Blockly.Msg.BUTTON_LOGIC)
+  .appendField(Blockly.Msg.BUTTON_PRESSED)
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
 		this.setOutput(true, 'Boolean');
-		this.appendDummyInput()
-		.appendField(Blockly.Msg.BUTTON_PRESSED)
 	this.appendDummyInput()
 	this.setInputsInline(true);
     this.setTooltip('');
@@ -77,17 +43,14 @@ Blockly.Blocks['button_touch_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_touch.png",49,38))
+		.appendField(new Blockly.FieldImage("media/sensor_touch.png",33,33))
 	    .appendField(Blockly.Msg.BUTTON_TOUCH_NAME)
 	    .appendField(Blockly.Msg.PIN)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
     this.appendDummyInput()
-	    .appendField(Blockly.Msg.BUTTON_LOGIC)
+    .appendField(Blockly.Msg.BUTTON_PRESSED)
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
 	this.setOutput(true, 'Boolean');
-	this.appendDummyInput()
-		.appendField(Blockly.Msg.BUTTON_PRESSED)
-	this.appendDummyInput()
 	this.setInputsInline(true);
     this.setTooltip('');
   }
@@ -115,7 +78,7 @@ Blockly.Blocks['tilt_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tilt.png",53,38))
+		.appendField(new Blockly.FieldImage("media/tilt.png",33,33))
 	    .appendField(Blockly.Msg.TILT_NAME)
 	    .appendField(Blockly.Msg.PIN)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
@@ -146,7 +109,7 @@ Blockly.Blocks['photointerrupter_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/photointerrupter.png",52,38))
+		.appendField(new Blockly.FieldImage("media/photointerrupter.png",33,33))
 	    .appendField(Blockly.Msg.PHOTO_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
@@ -176,7 +139,7 @@ Blockly.Blocks['knock_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/knock.png",54,38))
+		.appendField(new Blockly.FieldImage("media/knock.png",33,33))
 	    .appendField(Blockly.Msg.KNOCK_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
@@ -199,32 +162,28 @@ Blockly.Arduino['knock_sensor2'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Blocks['ultrasonic_ranger_sensor2'] = {
-  helpUrl: '',
-  init: function() {
+
+
+Blockly.Blocks['ultrasonic_sensor'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
-    this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",45,38))
-	    .appendField(Blockly.Msg.ultrasonic_ranger)
-        .appendField(Blockly.Msg.TRIG)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
-	this.appendDummyInput()
-		.appendField(Blockly.Msg.Echo)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
-    this.setInputsInline(true);
-    this.setOutput(true, 'Number');
-    this.setTooltip('Non-contact distance measurement module');
+    this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))  .appendField(Blockly.Msg.ultrasonic_ranger)
+        .appendField(Blockly.Msg.TRIG).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
+	this.appendDummyInput()	.appendField(Blockly.Msg.Echo)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
+  this.setInputsInline(true);
+  this.setPreviousStatement(true, null);
+  this.setNextStatement(true, null);
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ultrason_tooltip);
   }
 };
 
-Blockly.Arduino['ultrasonic_ranger_sensor2'] = function(block) {
-    var PIN_TRIG = block.getFieldValue('PIN_TRIG');
+Blockly.Arduino['ultrasonic_sensor'] = function(block) {
+  var PIN_TRIG = block.getFieldValue('PIN_TRIG');
 	var PIN_ECHO = block.getFieldValue('PIN_ECHO');
-	
     Blockly.Arduino.setups_['setup_output_'+PIN_TRIG] = 'pinMode('+PIN_TRIG+', OUTPUT);';
     Blockly.Arduino.setups_['setup_input_'+PIN_ECHO] = 'pinMode('+PIN_ECHO+', INPUT);';
-    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrason_'+PIN_TRIG+ '() {\n'+
+    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(2);\n'+
@@ -235,12 +194,21 @@ Blockly.Arduino['ultrasonic_ranger_sensor2'] = function(block) {
         '   distance = duration/58;\n'+
         '   return distance;\n'+
         '}\n';;
-    var code;
-    code = 'ultrasound_'+PIN_TRIG+'()';
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-
+Blockly.Blocks["ultrasonic_distance"]={init:function(){
+  this.appendDummyInput() .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",25,15)) .appendField(Blockly.Msg.ultrason_distance1);
+  this.setColour("#2a93e8");
+  this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
+  this.setInputsInline(false);
+  this.setOutput(true, "Number");
+  this.setTooltip(Blockly.Msg.ultrason_distance2)}
+};
+Blockly.Arduino["ultrasonic_distance"]=function(block){
+  var code;
+  code = 'ultrasound_distance()';
+return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
 
 Blockly.Blocks['Analog_temperature_sensor2'] = {
@@ -249,7 +217,7 @@ Blockly.Blocks['Analog_temperature_sensor2'] = {
 	 var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/Analog_temperature.png",58,38))
+	    .appendField(new Blockly.FieldImage("media/Analog_temperature.png",33,33))
         .appendField(Blockly.Msg.VAR_TemSens)
         .appendField(Blockly.Msg.PIN)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN")
@@ -287,7 +255,7 @@ Blockly.Blocks['LM35_temperature_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/LM35_temperature.png",52,38))
+	    .appendField(new Blockly.FieldImage("media/LM35_temperature.png",33,33))
         .appendField(Blockly.Msg.VAR_LM35)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN")
@@ -313,12 +281,12 @@ Blockly.Blocks['potentiometer_ranger_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/potentiometer.png",47,38))
+	    .appendField(new Blockly.FieldImage("media/potentiometer.png",33,33))
 	    .appendField(Blockly.Msg.POTE_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_POTENTIOMETER")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
 	this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setTooltip('Potentiometer');
@@ -346,15 +314,15 @@ Blockly.Blocks['LDR_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/light.png",59,38))
+		.appendField(new Blockly.FieldImage("media/light.png",33,33))
 	    .appendField(Blockly.Msg.LDR_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_LDR")
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
-    this.setTooltip('LDR Light sensor. Value');
+    this.setTooltip('LDR or CDS Light sensor. Value');
   }
 };
 
@@ -379,7 +347,7 @@ Blockly.Blocks['LDR_status_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/light.png",59,38))
+		.appendField(new Blockly.FieldImage("media/light.png",33,33))
 	    .appendField(Blockly.Msg.LDR_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LDR")
@@ -388,7 +356,7 @@ Blockly.Blocks['LDR_status_sensor2'] = {
 		.appendField(Blockly.Msg.LDR_DETECTED)
 	this.appendDummyInput()
 	this.setInputsInline(true);
-    this.setTooltip('');
+    this.setTooltip('(LDR or CDS) ');
   }
 };
 
@@ -411,12 +379,12 @@ Blockly.Blocks['IR_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-	    .appendField(new Blockly.FieldImage("media/linefollow.png",60,38))
+	    .appendField(new Blockly.FieldImage("media/linefollow.png",33,33))
 	    .appendField(Blockly.Msg.IR_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_IR")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, "Number");
 	this.setInputsInline(true);
     this.setTooltip('Infrared sensor.Value');
@@ -444,7 +412,7 @@ Blockly.Blocks['IR_status_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/linefollow.png",60,38))
+		.appendField(new Blockly.FieldImage("media/linefollow.png",33,33))
 	    .appendField(Blockly.Msg.IR_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
@@ -476,12 +444,12 @@ Blockly.Blocks['Flame_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/flame.png",58,38))
+		.appendField(new Blockly.FieldImage("media/flame.png",33,33))
 	    .appendField(Blockly.Msg.FLAME_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_FLAME")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Flame infrared sensor.Value');
@@ -508,7 +476,7 @@ Blockly.Blocks['Flame_status_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/flame.png",58,38))
+		.appendField(new Blockly.FieldImage("media/flame.png",33,33))
 	    .appendField(Blockly.Msg.FLAME_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_FLAME")
@@ -530,22 +498,18 @@ Blockly.Arduino['Flame_status_sensor2'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-
-
-
-
 Blockly.Blocks['Sound_sensor2'] = {
   helpUrl: '',
   init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_noise.png",54,38))
+		.appendField(new Blockly.FieldImage("media/sensor_noise.png",33,33))
 	    .appendField(Blockly.Msg.SOUND_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_SOUND")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Analog sound sensor.Value');
@@ -553,9 +517,8 @@ Blockly.Blocks['Sound_sensor2'] = {
 };
 
 Blockly.Arduino['Sound_sensor2'] = function(block) {
-     
 	var PinSound = block.getFieldValue('PIN_SOUND');
-    var Status = this.getFieldValue('OUTPUT_VALUE');
+  var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
@@ -566,14 +529,13 @@ Blockly.Arduino['Sound_sensor2'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-
 Blockly.Blocks['Sound_status_sensor2'] = {
   helpUrl: '',
   init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/sensor_noise.png",54,38))
+		.appendField(new Blockly.FieldImage("media/sensor_noise.png",33,33))
 	    .appendField(Blockly.Msg.SOUND_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SOUND")
@@ -587,96 +549,119 @@ Blockly.Blocks['Sound_status_sensor2'] = {
 };
 
 Blockly.Arduino['Sound_status_sensor2'] = function(block) {
-  
   var dropdown_pin = block.getFieldValue('PIN_SOUND');
   Blockly.Arduino.setups_['setup_sound_'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
-  
   var code = 'digitalRead('+dropdown_pin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 
+//////////////
 
 Blockly.Blocks['dht_sensor2'] = {
   helpUrl: '',
   init: function() {
 	  var card=window.localStorage.card;
     this.setColour("#2a93e8");
-    this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/humidity11.png",55,38))
-		.appendField(new Blockly.FieldImage("media/humidity22.png",55,38))
-	    .appendField(Blockly.Msg.DHT_NAME)
-        .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
-	this.appendDummyInput()
-		.appendField(Blockly.Msg.DHT_Type)
+    this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/humidity11.png",33,33))
+    		.appendField(Blockly.Msg.DHT_Type)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]]), "OUTPUT_TYPE")
-		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
-	this.setInputsInline(true);
-    this.setOutput(true, 'Number');
+        .setAlign(Blockly.ALIGN_RIGHT)
+	  this.appendDummyInput()
+  .appendField(Blockly.Msg.PIN)
+  .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
+  .setAlign(Blockly.ALIGN_RIGHT)
+	  this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+	  this.setNextStatement(true, null);
     this.setTooltip('DHT temperature, humidity and headindex sensor.Reading temperature or humidity takes about 250 milliseconds.OLD Sensor readings may also be up to 2 seconds (its a very slow sensor)');
   }
 };
 
-
 Blockly.Arduino['dht_sensor2'] = function(block) {
-   
 	var PinDHT = block.getFieldValue('PIN_DHT');
 	var TypeDHT = this.getFieldValue('OUTPUT_TYPE');
-    var Status = this.getFieldValue('OUTPUT_VALUE');
-	var code;
-	
+
 	Blockly.Arduino.includes_['include_dht'] = '#include "DHT.h" \n';
 	
 	if (TypeDHT=='0')
 	{
-		//Blockly.Arduino.definitions_['define_dht'] = '#define DHTTYPE DHT11   // DHT 11\n';
-		Blockly.Arduino.definitions_['begin_dht_'+PinDHT] = 'DHT dht_'+PinDHT+'('+PinDHT+',DHT11);\n';
+		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT11);\n';
 		}
 	else if (TypeDHT=='1')
 		{
-		//Blockly.Arduino.definitions_['define_dht'] = '#define DHTTYPE DHT21   // DHT 21\n';
-		Blockly.Arduino.definitions_['begin_dht_'+PinDHT] = 'DHT dht_'+PinDHT+'('+PinDHT+',DHT21);\n';
+		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT21);\n';
 		}
 	else
 		{
-		//Blockly.Arduino.definitions_['define_dht'] = '#define DHTTYPE DHT22   // DHT 22\n';
-		Blockly.Arduino.definitions_['begin_dht_'+PinDHT] = 'DHT dht_'+PinDHT+'('+PinDHT+',DHT22);\n';
+		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT22);\n';
 		}
-	//Blockly.Arduino.definitions_['begin_dht_'+PinDHT] = 'DHT dht_'+PinDHT+'('+PinDHT+',DHTTYPE);\n';
-	Blockly.Arduino.setups_['setup_input_'+PinDHT] = 'dht_'+PinDHT+'.begin();\n';
+	Blockly.Arduino.setups_['setup_input_'] = 'dht.begin();\n';
 	
-    if(Status=='0')
-      var code = 'dht_'+PinDHT+'.readTemperature()';  
-    else if (Status=='1')
-      var code = 'dht_'+PinDHT+'.readHumidity()';
-    else
-		var code= 'dht_'+PinDHT+'.computeHeatIndex(dht_'+PinDHT+'.readTemperature(),dht_'+PinDHT+'.readHumidity(),true)';	
-  
-   
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+
 };
 
+Blockly.Blocks["dht_measure"]={init:function(){
+ this.appendDummyInput().appendField("🌡️ ").appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
+  this.setColour("#2a93e8");
+  this.setOutput(true, "Number");
+  this.setInputsInline(true);
+  this.setTooltip(Blockly.Msg.dht22_tooltip)}
+};
+Blockly.Arduino["dht_measure"]=function(block){
+var Status = this.getFieldValue('OUTPUT_VALUE');
+var code;
+if(Status=='0')
+var code = 'dht.readTemperature()';  
+else if (Status=='1')
+var code = 'dht.readHumidity()';
+else
+var code= 'dht.computeHeatIndex(dht.readTemperature(),dht.readHumidity(),true)';	
 
+return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
+Blockly.Blocks["dht11"]={init:function(){
+  this.appendValueInput("PIN", "Number").appendField(new Blockly.FieldImage('media/humidity11.png', 33, 33, "*"))
+.appendField(new Blockly.FieldDropdown(Blockly.Msg.menudht), "choix").appendField(Blockly.Msg.pin);
+  this.setColour("#2a93e8");
+  this.setOutput(true, "Number");
+  this.setTooltip(Blockly.Msg.dht11_tooltip)}
+};
+Blockly.Arduino["dht11"]=function(block){
+var dropdown_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+var choice=block.getFieldValue("choix");
+Blockly.Arduino.includes_["dht.h"]='#include <DHT.h>';
+Blockly.Arduino.definitions_["dht11"]="DHT dht11(" + dropdown_pin + ", DHT11);";
+Blockly.Arduino.setups_["dht11"]="dht11.begin();";
+switch (choice) {
+  case "h":
+      var code="dht11.readHumidity()";
+      break;
+  case "t":
+      var code="dht11.readTemperature()";
+      break;
+}
+return [code, Blockly.Arduino.ORDER_ATOMIC]
+};
+//////////////
 Blockly.Blocks['Gas_sensor2'] = {
   helpUrl: '',
   init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
+		.appendField(new Blockly.FieldImage("media/gas.png",33,33))
 	    .appendField(Blockly.Msg.GAS_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_GAS")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
-	this.setInputsInline(true);
-    this.setTooltip('Target gas: carbon monoxide.Gas sensor.Value');
+  	this.setInputsInline(true);
+    this.setTooltip('(MQ-7) Target gas: carbon monoxide.Gas sensor.Value');
   }
 };
-
 
 Blockly.Arduino['Gas_sensor2'] = function(block) {
     var PinGas = block.getFieldValue('PIN_GAS');
@@ -697,7 +682,7 @@ Blockly.Blocks['Gas_status_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/gas.png",63,38))
+		.appendField(new Blockly.FieldImage("media/gas.png",33,33))
 	    .appendField(Blockly.Msg.GAS_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_GAS")
@@ -706,7 +691,7 @@ Blockly.Blocks['Gas_status_sensor2'] = {
 		.appendField(Blockly.Msg.GAS_DETECTED)
 	this.appendDummyInput()
 	this.setInputsInline(true);
-    this.setTooltip('');
+    this.setTooltip('(MQ-7)');
   }
 };
 
@@ -726,15 +711,15 @@ Blockly.Blocks['Alcohol_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alcohol.png",63,38))
+		.appendField(new Blockly.FieldImage("media/alcohol.png",33,33))
 	    .appendField(Blockly.Msg.ALCOHOL_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_ALCOHOL")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
-    this.setTooltip('Target gas: alcohol.Value');
+    this.setTooltip('(MQ-3) Target gas: alcohol.Value');
   }
 };
 
@@ -759,7 +744,7 @@ Blockly.Blocks['Alcohol_status_sensor2'] = {
 	var card=window.localStorage.card;  
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alcohol.png",63,38))
+		.appendField(new Blockly.FieldImage("media/alcohol.png",33,33))
 	    .appendField(Blockly.Msg.ALCOHOL_NAME)
 	    .appendField(Blockly.Msg.PIN)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ALCOHOL")
@@ -790,12 +775,12 @@ Blockly.Blocks['Vibration_sensor2'] = {
 	var card=window.localStorage.card;  
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vibration.png",53,38))
+		.appendField(new Blockly.FieldImage("media/vibration.png",33,33))
 	    .appendField(Blockly.Msg.VIBRATION_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_VIBRATION")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Vibration sensor.Value');
@@ -823,7 +808,7 @@ Blockly.Blocks['Vibration_status_sensor2'] = {
 	var card=window.localStorage.card;  
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vibration.png",53,38))
+		.appendField(new Blockly.FieldImage("media/vibration.png",33,33))
 	    .appendField(Blockly.Msg.VIBRATION_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_VIBRATION")
@@ -853,7 +838,7 @@ Blockly.Blocks['hall_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/hall.png",45,38))
+		.appendField(new Blockly.FieldImage("media/hall.png",33,33))
 	    .appendField(Blockly.Msg.HALL_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_HALL")
@@ -882,7 +867,7 @@ Blockly.Blocks['pir_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/pir.png",59,38))
+		.appendField(new Blockly.FieldImage("media/pir.png",33,33))
 	    .appendField(Blockly.Msg.PIR_NAME)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_PIR")
@@ -913,12 +898,12 @@ Blockly.Blocks['Vapor_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/vapor.png",54,38))
+		.appendField(new Blockly.FieldImage("media/vapor.png",33,33))
 	    .appendField(Blockly.Msg.VAPOR_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_VAPOR")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Vapor sensor.Value');
@@ -947,15 +932,15 @@ Blockly.Blocks['AmbientLight_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/alight.png",48,38))
+		.appendField(new Blockly.FieldImage("media/alight.png",33,33))
 	    .appendField(Blockly.Msg.ALIGHT_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_ALIGHT")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
-    this.setTooltip('Ambient light sensor.Value');
+    this.setTooltip('Ambient light sensor (TEMT6000).Value');
   }
 };
 
@@ -980,12 +965,12 @@ Blockly.Blocks['Water_sensor2'] = {
 	  var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/water.png",47,38))
+		.appendField(new Blockly.FieldImage("media/water.png",33,33))
 	    .appendField(Blockly.Msg.WATER_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_WATER")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Water level sensor.Value');
@@ -1015,12 +1000,12 @@ Blockly.Blocks['Moisture_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/moisture.png",61,38))
+		.appendField(new Blockly.FieldImage("media/moisture.png",33,33))
 	    .appendField(Blockly.Msg.MOISTURE_NAME)
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_MOISTURE")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Water level sensor.Value');
@@ -1050,13 +1035,13 @@ Blockly.Blocks['Joystick_axis_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/joystick.png",46,38))
+		.appendField(new Blockly.FieldImage("media/joystick.png",33,33))
 	    .appendField(Blockly.Msg.JOYSTICK_NAME)
 		.appendField(new Blockly.FieldDropdown([["X", "0"], ["Y", "1"]]), "OUTPUT_AXIS")
         .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_JOYSTICK")
 	this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PERCENT, "0"], [Blockly.Msg.VALUE, "1"]]), "OUTPUT_VALUE");
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
     this.setOutput(true, 'Number');
 	this.setInputsInline(true);
     this.setTooltip('Joystick axes sensor.Value');
@@ -1084,7 +1069,7 @@ Blockly.Blocks['joystick_button_sensor2'] = {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/joystick.png",46,38))
+		.appendField(new Blockly.FieldImage("media/joystick.png",33,33))
 	    .appendField(Blockly.Msg.JOYSTICK_BUTTON)
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_JOYSTICK")

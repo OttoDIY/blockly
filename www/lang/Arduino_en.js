@@ -54,7 +54,9 @@ Blockly.Msg.CAT_ultrason = "👂 Sensors";
 Blockly.Msg.CAT_SENSORS = "👂 Sensing";
 Blockly.Msg.CAT_numerique = "0️⃣ Digital";
 Blockly.Msg.CAT_analogique = "🔢 Analog";
-Blockly.Msg.CAT_GYRO = "⚖️ Gyroscope ";
+Blockly.Msg.CAT_GYRO = "⚖️ Gyroscope";
+Blockly.Msg.CAT_VIBRATE = "🖐️ Vibration";
+Blockly.Msg.CAT_MAGNET= "🧲 Magnetic";
 Blockly.Msg.CAT_TEMP = "🌡️ Temperature"
 Blockly.Msg.CAT_LIGHT = "🌞 Light"
 Blockly.Msg.CAT_WATER = "💧 Water"
@@ -62,7 +64,7 @@ Blockly.Msg.CAT_SOUND ="🎤 Noise"
 Blockly.Msg.CAT_HMC5883="🧭 Compass";
 Blockly.Msg.CAT_RFID="💳 RFID";
 Blockly.Msg.CAT_KEYBOARD="🖱️Mouse & ⌨️Keys";
-Blockly.Msg.CAT_CCS811 = "⛅ CO2";
+Blockly.Msg.CAT_CCS811 = "⛅ CO₂";
 Blockly.Msg.CAT_GAS = "⛽ Gas"
 Blockly.Msg.CAT_RTC_DS3231 = "⏲️ Real Time Clock";
 Blockly.Msg.CAT_TIME_GENERAL = "General";
@@ -75,13 +77,12 @@ Blockly.Msg.CAT_OLED_U8G = "🖥️ OLED";
 Blockly.Msg.CAT_TFT_ST7735 = "📺 TFT";
 Blockly.Msg.CAT_del = "💡 Single LED";
 Blockly.Msg.CAT_LED = "💡 LED";
-Blockly.Msg.CAT_LEDRGB = "🚥 RGB LED";
+Blockly.Msg.CAT_LEDRGB = "🚥 LED RGB";
 Blockly.Msg.CAT_NEOPIXEL = "🌈 NeoPixel";
 Blockly.Msg.CAT_MAX7219 = "💡 Matrix 8x8";
 Blockly.Msg.CAT_MAX1640 = "💡 Matrix 16x8";
 Blockly.Msg.CAT_BARGRAPH = "💡 LED Bar Graph";
 Blockly.Msg.CAT_LCDI2C = "📟 LCD";
-Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "📟 LCD Grove";
 Blockly.Msg.CAT_BUZZER="🔈 Buzzer";
 Blockly.Msg.CAT_AUDIO = "🔉 Audio Sound";
 Blockly.Msg.CAT_DFPLAYER = "🔊 MP3 DFMini";
@@ -98,18 +99,16 @@ Blockly.Msg.CAT_GPS="🛰️ GPS";
 Blockly.Msg.CAT_iot = "☁️ IoT";
 Blockly.Msg.CAT_html = "✉️ HTML";
 Blockly.Msg.CAT_wifi = "🌐 WiFi";
-Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
 Blockly.Msg.CAT_MQTT = "🌐 MQTT";
 Blockly.Msg.CAT_IFTTT = "🌐 IFTTT";
 Blockly.Msg.CAT_NTP = "🌐 NTP";
 Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
-Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
-
+Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
 
 //RTC DS3231
-Blockly.Msg.RTCDS3231_NAME="RTC DS3231 I²C";
-Blockly.Msg.RTCDS3231_RTC="Set DateTime DS3231";
+Blockly.Msg.RTCDS3231_NAME="RTC Pins I²C";
+Blockly.Msg.RTCDS3231_RTC="⏲️ Set Date & Time ";
 Blockly.Msg.RTCDS3231_DAY="Day";
 Blockly.Msg.RTCDS3231_MONTH="Month";
 Blockly.Msg.RTCDS3231_YEAR="Year";
@@ -117,9 +116,9 @@ Blockly.Msg.RTCDS3231_HOUR="Hour";
 Blockly.Msg.RTCDS3231_MINUTE="Minute";
 Blockly.Msg.RTCDS3231_SECOND="Second";
 Blockly.Msg.RTCDS3231_DOFWEEK="Day of week";
-Blockly.Msg.RTCDS3231_READ_RTC="RTC DS3231.Read the date and time";
+Blockly.Msg.RTCDS3231_READ_RTC="⏲️ RTC Read Date & Time";
 Blockly.Msg.RTCDS3231_VALUES="value";
-Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
+Blockly.Msg.RTCDS3231_Name2="⏲️ RTC.";
 Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
 Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
 
@@ -175,13 +174,13 @@ Blockly.Msg.menudht = [["humidity", "h"], ["temperature", "t"]];
 Blockly.Msg.couleur = [["blue", "blue"], ["yellow", "yellow"], ["red", "red"], ["green", "green"]];
 Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"]];
 //sensor
-Blockly.Msg.VL53L0X="VL53L0X Laser distance sensor I²C";
-Blockly.Msg.VL53L0X_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
-Blockly.Msg.VL53L0X_distance="distance measured by laser";
+Blockly.Msg.VL53L0X="Laser Pins I²C";
+Blockly.Msg.VL53L0X_tooltip="initialize VL53L0X sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
+Blockly.Msg.VL53L0X_distance="distance (mm)";
 Blockly.Msg.VL53L0X_distance_tooltip="VL530X :\nreturn Distance measured by laser in mm";
-Blockly.Msg.bme280="BME280 Atmospheric pressure sensor I²C";
-Blockly.Msg.bme280_tooltip="initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
-Blockly.Msg.bme280_pressure="atmospheric pressure";
+Blockly.Msg.bme280="Atmospheric pressure Pins I²C";
+Blockly.Msg.bme280_tooltip="initialize BME280 sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
+Blockly.Msg.bme280_pressure="atmospheric pressure (hPa)";
 Blockly.Msg.bme280_pressure_tooltip="BME280 :\nreturn atmospheric pressure in hPa";
 Blockly.Msg.inter="switch is";
 Blockly.Msg.inter_tooltip="returns true (false) if the switch is (is not) at the indicated position";
@@ -206,11 +205,10 @@ Blockly.Msg.lm35 = "temperature on pin";
 Blockly.Msg.lm35_tooltip = "LM35: \nreturns the measured temperature in degrees celcius (from 0 to 80 �)";
 Blockly.Msg.ultrason_1 = "distance < limit";
 Blockly.Msg.ultrason_2 = "returns a High state if the measured distance is less than the limit";
-Blockly.Msg.ultrason_distance1 = "distance measured by ultrasound";
-Blockly.Msg.ultrason_tooltip = "HC-SR04: \nSound sensor that allows to make distance measurements (of 3 cm and 4 m) \nindicate the pins of the Arduino to which will be connected TRIG and ECHO";
-Blockly.Msg.ultrason = "Ultrasonic Pin";
+Blockly.Msg.ultrason_distance1 = "distance (cm)";
+Blockly.Msg.ultrason_tooltip = "HC-SR04: \nUltrasonic sensor ranger to make distance measurements (between 3cm and 400cm)\nindicate the pins of the Arduino to which will be connected TRIG and ECHO";
+Blockly.Msg.ultrason = "Ultrasound Pins";
 Blockly.Msg.ultrason_distance2 = "HC-SR04: \nreturns the distance measured in cm by the ultrasonic detector";
-Blockly.Msg.ultrason_helpurl = "https://www.ottodiy.com/academy"; // do not translate
 Blockly.Msg.pir = "motion detected ";
 Blockly.Msg.feu = "flame detected ";
 Blockly.Msg.presence = "obstacle detected ";
@@ -316,7 +314,6 @@ Blockly.Msg.matrice8x8_binaire_tooltip = "1 turns on an LED of the matrix and 0 
 Blockly.Msg.matrice8x8_del_tooltip = "Turns on (off) an LED in the array indicating its coordinates \nCaution dialing starts at 0";
 Blockly.Msg.matrice8x8_aff_tooltip = "Display the symbol that has been previously defined";
 Blockly.Msg.matrice8x8_efface_tooltip = "Turn off all LEDs in the matrix";
-Blockly.Msg.matrice8x8_helpurl = "https://xantorohara.github.io/led-matrix-editor/";// do not translate
 Blockly.Msg.matrice16x8_tooltip = "Initialization of the array to 128 LEDs. \nMatrix <-> Arduino \nSDA <--------> A4 \nSCL <--------> A5";
 Blockly.Msg.matrice16x8_symbole = "define the symbol";
 Blockly.Msg.matrice16x8_symbole_tooltip = "definition of a symbol for the matrix: \n 0 turns off an LED \n 1 turns on an LED";
@@ -326,7 +323,6 @@ Blockly.Msg.matrice16x8_binaire_tooltip = "1 turns on an LED of the matrix and 0
 Blockly.Msg.matrice16x8_del_tooltip = "Turns on (off) an LED in the matrix indicating its coordinates \nCaution dialing starts at 0";
 Blockly.Msg.matrice16x8_aff_tooltip = "Display the symbol that has been previously defined";
 Blockly.Msg.matrice16x8_efface_tooltip = "Turn off all LEDs in the matrix";
-Blockly.Msg.matrice16x8_helpurl = "";
 //time
 Blockly.Msg.millis ="time elapsed in";
 Blockly.Msg.millis_start="start a timekeeping in";
@@ -354,7 +350,7 @@ Blockly.Msg.bargraphe = "bargraph";
 Blockly.Msg.bargraphe_allume="turn on LEDs to";
 Blockly.Msg.bargraphe_allume_tooltip="0 lights no LEDs \n2,5 lights up the first 2 LEDs and the 3rd half turns on \n10 turns on all LEDs";
 Blockly.Msg.bargraphe_tooltip = "bargraph module composed of 10 LEDs (8 green, 1 yellow and 1 red), it is necessary to indicate the pins of the arduino on which will be connected DCKI and DI";
-Blockly.Msg.rvb_init="LED RGB";
+Blockly.Msg.rvb_init="LED RGB Pins";
 Blockly.Msg.rvb_init_tooltip="indicate the PWM Pins to connect to the RGB LED";
 Blockly.Msg.rvb_set="🚥 show color";
 Blockly.Msg.rvb_set_tooltip="displays a color indicating a value for the three components (red, green, blue)";
@@ -388,7 +384,7 @@ Blockly.Msg.play_tooltip = "play the note";
 Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "🦗 beep on Pin";
 Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected Pin";
-Blockly.Msg.ARDUINO_TONE_INPUT1 = "🔈 Buzzer Pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1 = "🎼 Buzzer Pin";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "🎼 frequency (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ duration (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected Pin, at the desired frequency and for the desired duration";
@@ -473,7 +469,9 @@ Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes i
 
 ////////////OTTO DIY Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
 Blockly.Msg.OTTO9_HOME_TEXT = "Home";
-Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 8-Trigger US 9-Echo US and 13-Passive buzzer";
+Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
+Blockly.Msg.OTTO9_BUZZER="🎼 Buzzer";
+Blockly.Msg.OTTO_HOME_TEXT = "Pins";
 Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/academy";// do not translate
 Blockly.Msg.OTTO9_CALIBRATION='Calibrate ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='Leg ';
@@ -527,17 +525,6 @@ Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
 Blockly.Msg.OTTO9_ARMS_TEXT = "Arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"],["hands down", "HANDSDOWN"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
-
-/// ESP8266
-Blockly.Msg.OTTO9_YL="Left leg";
-Blockly.Msg.OTTO9_YR="Right leg";
-Blockly.Msg.OTTO9_RL="Left foot";
-Blockly.Msg.OTTO9_RR="Right foot";
-Blockly.Msg.OTTO9_BUZZER="🔈 Buzzer";
-Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto goes to home in straight position";
-Blockly.Msg.OTTO_HOME_TEXT = "Configure";
-
-///
 
 ////////////ESCORNABOT Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
 Blockly.Msg.ESCORNABOT_MODE_TEXT="Escornabot";
@@ -601,12 +588,12 @@ Blockly.Msg.KNOCK_DETECTED="detected?";
 Blockly.Msg.TILT_NAME="Digital Tilt";
 Blockly.Msg.TILT_DETECTED="detected?";
 Blockly.Msg.POTE_NAME="Potentiometer";
-Blockly.Msg.PERCENT="(0-100%)";
-Blockly.Msg.VALUE="Value(0-1023)";
+Blockly.Msg.PERCENT="0-100%";
+Blockly.Msg.VALUE="0-1023";
 Blockly.Msg.PHOTO_NAME="Photo Interrupter";
 Blockly.Msg.PHOTO_DETECTED="detected?";
-Blockly.Msg.VAR_LM35="LM35 Temperature (ºC)";
-Blockly.Msg.LDR_NAME="Photocell (LDR or CDS) ";
+Blockly.Msg.VAR_LM35="Temperature LM35 (ºC)";
+Blockly.Msg.LDR_NAME="Photocell";
 Blockly.Msg.LDR_DETECTED="detected?";
 Blockly.Msg.IR_NAME="Infrared";
 Blockly.Msg.IR_DETECTED="sensed?";
@@ -620,11 +607,11 @@ Blockly.Msg.DHT_Type11="DHT11";
 Blockly.Msg.DHT_Type21="DHT21";
 Blockly.Msg.DHT_Type22="DHT22";
 Blockly.Msg.DHT_Temp="Temperature ºC";
-Blockly.Msg.DHT_Humi="Humidity";
+Blockly.Msg.DHT_Humi="Humidity %";
 Blockly.Msg.DHT_Head="Heat Index ºC";
-Blockly.Msg.GAS_NAME="Gas CO (MQ-7)";
+Blockly.Msg.GAS_NAME="Gas CO";
 Blockly.Msg.GAS_DETECTED="detected?";
-Blockly.Msg.ALCOHOL_NAME="Alcohol (MQ-3)";
+Blockly.Msg.ALCOHOL_NAME="Alcohol";
 Blockly.Msg.ALCOHOL_DETECTED="detected?";
 Blockly.Msg.VIBRATION_NAME="Vibration";
 Blockly.Msg.VIBRATION_DETECTED="detected?";
@@ -633,26 +620,26 @@ Blockly.Msg.HALL_DETECTED="detected?";
 Blockly.Msg.PIR_NAME="PIR Motion";
 Blockly.Msg.PIR_DETECTED="detected?";
 Blockly.Msg.VAPOR_NAME="Vapor (Steam)";
-Blockly.Msg.ALIGHT_NAME="Ambient Light (TEMT6000)";
+Blockly.Msg.ALIGHT_NAME="Ambient Light";
 Blockly.Msg.WATER_NAME="Water level";
 Blockly.Msg.MOISTURE_NAME="Soil Moisture";
 Blockly.Msg.JOYSTICK_NAME="Joystick axis";
 Blockly.Msg.JOYSTICK_BUTTON="Joystick button";
 Blockly.Msg.JOYSTICK_PRESSED="pressed?";
-Blockly.Msg.ultrasonic_ranger="HC-SR04 Ultrasonic (cm)";
+Blockly.Msg.ultrasonic_ranger="Ultrasound Pins";
 Blockly.Msg.unit="Unit";
 Blockly.Msg.cm="cm";
 Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
-Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+Blockly.Msg.VAR_TemSens="Temperature NTC (ºC)";
 
 //CCS811
-Blockly.Msg.CCS811="CO2(CCS811) sensor"; 
-Blockly.Msg.CCS811_name="CO2(CCS811) sensor";
+Blockly.Msg.CCS811="CO₂ Pins"; 
+Blockly.Msg.CCS811_name="CO₂";
 Blockly.Msg.CCS811_2="I²C & WAK to GND";
-Blockly.Msg.CCS811_available="Is the sensor available?";
-Blockly.Msg.CCS811_readed = "Is the measure readed?";
+Blockly.Msg.CCS811_available="sensor available?";
+Blockly.Msg.CCS811_readed = "measure readed?";
 Blockly.Msg.CCS811_values="value";
 
 //LCD I2C
@@ -672,15 +659,15 @@ Blockly.Msg.LCDP_SetCursor = "LCD I²C set cursor";
 Blockly.Msg.LCDP_Display = "LCD I²C ";
 
 //GESTURE SENSOR APDS9960
-Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
-Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
+Blockly.Msg.APDS9960_name_gesture = "👋 Gesture";
+Blockly.Msg.APDS9960_name_color = "Color";
 Blockly.Msg.APDS9960_detection = "detection";
-Blockly.Msg.APDS9960_init = "APDS9960 Gesture & Color sensor";
+Blockly.Msg.APDS9960_init = "Gesture & Color Pins";
 Blockly.Msg.APDS9960_init2 = "I²C";
 Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
 Blockly.Msg.APDS9960_color_gain = "Config color gain";
 Blockly.Msg.APDS9960_gesture_detected = "detected?";
-Blockly.Msg.APDS9960_readgesture = ".Read gesture";
+Blockly.Msg.APDS9960_readgesture = "Read";
 Blockly.Msg.APDS9960_readcolors = "Read color frecuencies";
 Blockly.Msg.APDS9960_colors = "Frequency";
 
@@ -901,18 +888,18 @@ Blockly.Msg.OLED_height = "height";
 Blockly.Msg.OLED_COLOR = "Set color";
 
 //TCS34725 color sensor
-Blockly.Msg.TCS34725_name_init="TCS34725 color sensor";
+Blockly.Msg.TCS34725_name_init="Color Pins";
 Blockly.Msg.TCS34725_name_init2="I²C";
-Blockly.Msg.TCS34725_name="color sensor.";
+Blockly.Msg.TCS34725_name="Color sense";
 Blockly.Msg.TCS34725_read="Read all values";
 Blockly.Msg.TCS34725_values="Value";
-Blockly.Msg.TCS34725_color="Is";
-Blockly.Msg.TCS34725_color2="color(No gain configured)?";
+Blockly.Msg.TCS34725_color="is";
+Blockly.Msg.TCS34725_color2="No gain configured?";
 
 //HMC5883 compass sensor
-Blockly.Msg.HMC5883="HMC5883 Compass sensor";
+Blockly.Msg.HMC5883="Compass Pins";
 Blockly.Msg.HMC5883_2=" I²C";
-Blockly.Msg.HMC5883_read="HMC5883 compass sensor.Read values";
+Blockly.Msg.HMC5883_read="🧭 compass read values";
 Blockly.Msg.HMC5883_values="value";
 
 //RADIO TEA5767
@@ -927,21 +914,21 @@ Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
 
 //RFID MFRC522
-Blockly.Msg.RFID_name = "RFID MFRC522";
-Blockly.Msg.RFID_init = "RFID MFRC522";
+Blockly.Msg.RFID_name = "💳 RFID ";
+Blockly.Msg.RFID_init = "RFID Pins";
 Blockly.Msg.RFID_init2 = "SCK, MOSI & MISO";
-Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
-Blockly.Msg.RFID_PIN_RST = "RST Pin";
-Blockly.Msg.RFID_VALID_VAR = "Define Validation card name:";
-Blockly.Msg.RFID_STOP = "Stop the current reading";
+Blockly.Msg.RFID_PIN_SDA = "SDA";
+Blockly.Msg.RFID_PIN_RST = "RST";
+Blockly.Msg.RFID_VALID_VAR = "Validation card:";
+Blockly.Msg.RFID_STOP = "Stop reading";
 Blockly.Msg.RFID_C1 = "Value1";
 Blockly.Msg.RFID_C2 = "Value2";
 Blockly.Msg.RFID_C3 = "Value3";
 Blockly.Msg.RFID_C4 = "Value4";
-Blockly.Msg.RFID_DETECTED = "Is RFID card detected?";
-Blockly.Msg.RFID_READED = "Is RFID card readed?";
-Blockly.Msg.RFID_CARD_READED = "Value of the read card";
-Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
+Blockly.Msg.RFID_DETECTED = "card detected?";
+Blockly.Msg.RFID_READED = "card read?";
+Blockly.Msg.RFID_CARD_READED = "Read Value";
+Blockly.Msg.RFID_CHECK_CARD = "Is card Read = Validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
 //KEYBOARD AND MOUSE
@@ -955,11 +942,11 @@ Blockly.Msg.MouseMoveY="Y pos";
 Blockly.Msg.MouseMoveW="Wheel";
 
 //GPS
-Blockly.Msg.GPS_name = "GPS NEO-6";
-Blockly.Msg.GPS_init = "GPS Software Serial";
+Blockly.Msg.GPS_name = "🛰️ GPS NEO-6";
+Blockly.Msg.GPS_init = "GPS Pins";
 Blockly.Msg.GPS_TX="TX";
 Blockly.Msg.GPS_RX="RX";
-Blockly.Msg.GPS_readvalues = "Read and save values using Software Serial";
+Blockly.Msg.GPS_readvalues = "Read and save values";
 Blockly.Msg.GPS_paramter = "Location Parameters:";
 Blockly.Msg.GPS_paramter3 = "DateTime:";
 
@@ -1089,31 +1076,6 @@ Blockly.Msg.Telegram_message = "Telegram.Received message";
 Blockly.Msg.Telegram_fromName= "Name of person sent the message";
 
 
-//OpenWeather
-Blockly.Msg.Openweather_init = "Configuration OpenWeather.";
-Blockly.Msg.Api_key = "Api Key";
-Blockly.Msg.ReadWeather = "OpenWeather.Read Weather.";
-Blockly.Msg.City = "City";
-Blockly.Msg.CountryCode = "Country Code";
-Blockly.Msg.OW_Value = "OpenWeather. Value:";
-Blockly.Msg.LocationOW = "Location";
-Blockly.Msg.Country = "Country";
-Blockly.Msg.Icon = "Icon";
-Blockly.Msg.Weather = "Weather";
-Blockly.Msg.Description = "Description";
-Blockly.Msg.OW_Temperature = "Temperature ºC";
-Blockly.Msg.Temp_max = "Temperature Max ºC";
-Blockly.Msg.Temp_min = "Temperature Min ºC";
-Blockly.Msg.Humidity = "Humedad";
-Blockly.Msg.Preassure = "Preassure";
-Blockly.Msg.Feels_like = "Feels like Temperature ºC";
-Blockly.Msg.Cloud = "Cloud %";
-Blockly.Msg.Visibility = "Visibility %";
-Blockly.Msg.wind_speed = "Wind Speed";
-Blockly.Msg.wind_angle = "Wind Angle";
-Blockly.Msg.icon_id = "Icon Weather Id";
-Blockly.Msg.sunrise = "Sunrise EPOC";
-Blockly.Msg.sunset = "Sunset EPOC";
 
 
 //WifiLocation

@@ -14,7 +14,7 @@ Blockly.Blocks['GPS_init_ss'] = {
   init: function() {
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPS.png",54,38))
+		.appendField(new Blockly.FieldImage("media/GPS.png",33,33))
         .appendField(Blockly.Msg.GPS_init)
 	this.appendValueInput("PIN_TX", "Number")
 		.setCheck("Number")
@@ -57,7 +57,6 @@ Blockly.Blocks['GPS_read_save_values'] = {
   init: function() {
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
 		.appendField(Blockly.Msg.GPS_readvalues)
     this.setInputsInline(true);
@@ -94,7 +93,6 @@ Blockly.Blocks['GPS_location'] = {
   init: function() {
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
 		.appendField(Blockly.Msg.GPS_paramter)
 		.appendField(new Blockly.FieldDropdown([['Latitude','0'],['Longitude','1'],['Altitude in meters','2'],['Course in degrees','3'],['Number of satellites','4']]), "PARAMETERS1")
@@ -129,7 +127,6 @@ Blockly.Blocks['GPS_speed'] = {
   init: function() {
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
         .appendField(Blockly.Msg.GPS_name)
 		.appendField(new Blockly.FieldDropdown([['Speed in knots','0'],['Speed in miles/h','1'],['Speed in m/sec','2'],['Speed in km/h','3']]), "PARAMETERS2")
 	this.setInputsInline(true);
@@ -162,7 +159,7 @@ Blockly.Blocks['GPS_datetime'] = {
   init: function() {
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/GPSicon.png",25,25))
+
         .appendField(Blockly.Msg.GPS_name)
 		.appendField(Blockly.Msg.GPS_paramter3)
 		.appendField(new Blockly.FieldDropdown([['Year','0'],['Month','1'],['Day','2'],['Hours','3'],['Minutes','4'],['Seconds','5']]), "PARAMETERS3")

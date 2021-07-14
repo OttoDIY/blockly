@@ -281,7 +281,7 @@ Blockly.Python["lp2i_mp3_pause"]=function(block){
  /*	 lcd  */
 ///////////
 Blockly.Blocks["lcd_i2c"]={init:function(){
-        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 48, 48, "*"))
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 33, 33, "*"))
 			.appendField(Blockly.Msg.LCD+" I2C");
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lcd_fond).appendField(new Blockly.FieldDropdown(Blockly.Msg.couleur), "fond");
         this.setColour("#4b009f");
@@ -333,7 +333,7 @@ Blockly.Python["lcd_i2c"]=function(block){
 
 
 Blockly.Blocks["lcd_i2c_2"]={init:function(){
-        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 48, 48, "*"))
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 33, 33, "*"))
 			.appendField(Blockly.Msg.LCD+" I2C");
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lcd_fond).appendField(new Blockly.FieldDropdown(Blockly.Msg.couleur), "fond");
         this.setColour("#4b009f");
@@ -551,6 +551,23 @@ Blockly.Python["LCD_Keypad_Shield_DFR_09_RAZ"]=function(block){
   ///////////
  /*  del  */
 ///////////
+Blockly.Blocks["digital_write0"]={init:function(){ 
+    var card=window.localStorage.card;
+    this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+    this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_write0"]=function(block){
+    var dropdown_pin=block.getFieldValue("PIN");
+    var dropdown_stat=block.getFieldValue("STAT");
+    Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+    return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
 Blockly.Blocks["digital_write"]={init:function(){ 
     this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.del);
     this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
@@ -591,6 +608,22 @@ Blockly.Arduino["digital_write2"]=function(block){
     Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
     return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
 };
+Blockly.Blocks['led_pwm']={init:function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput().appendField(Blockly.Msg.del+" (PWM)").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "PWM");
+    this.appendValueInput("STAT", "Number").appendField(Blockly.Msg._AT);
+    this.setInputsInline(true);
+	this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");}
+};
+Blockly.Arduino['led_pwm'] = function(block) {
+  var droppinpwm = block.getFieldValue('PWM');
+  var stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
+  Blockly.Arduino.setups_["setup_output_"+ droppinpwm]="pinMode("+droppinpwm+", OUTPUT);"; 
+  var code="analogWrite("+droppinpwm+", " + stat + ");//on a scale of 0 - 255\n"; 
+  return code;
+};
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
         
@@ -615,6 +648,7 @@ Blockly.Python["inout_buildin_led"]=function(block){
 	Blockly.Python.definitions_["pin_"+profile[card].BUILTIN_LED]="BROCHE_"+profile[card].BUILTIN_LED+" = Pin("+profile[card].BUILTIN_LED+", Pin.OUT)";
     return "BROCHE_"+profile[card].BUILTIN_LED+".value("+dropdown_stat+")\n"
 };
+
 
 //////////////
 Blockly.Blocks["blink"]={init:function(){
@@ -642,7 +676,7 @@ return "BROCHE_"+profile[card].BUILTIN_LED+".value(0)\ntime.sleep_ms("+dropdown_
 //////////////
 Blockly.Blocks['rgb_init']={init:function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/rgb.png', 48, 48, "*")) .appendField(Blockly.Msg.rvb_init);
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/rgb.png', 33, 33, "*")) .appendField(Blockly.Msg.rvb_init);
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("R").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "rouge");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT)  .appendField("G").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "vert");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("B").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "bleu");

@@ -912,18 +912,6 @@
 			<block type="values_text_NTP_server"></block>
 		</category>
 		
-		<category name="CAT_OPENWEATHER" colour="#008080">
-			<block type="Init_OpenWeather"></block>
-			<block type="order_read_OpenWeather_server">
-				<value name="city"><shadow type="text"><field name="TEXT">Madrid</field></shadow></value>
-				<value name="countrycode"><shadow type="text"><field name="TEXT">ES</field></shadow></value>
-			</block>
-			<block type="values_OpenWeather_server"></block>
-			<block type="values_text_OpenWeather_server"></block>
-		</category>
-		
-		
-		
 		<category name="CAT_THINGSPEAK" colour="#008080">
 			<block type="thingspeak_init"></block>
 			<block type="thingspeak_write">

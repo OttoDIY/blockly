@@ -14,7 +14,7 @@ Blockly.Blocks['init_tcs34725'] = {
    init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/TCS34725.png",62,38))
+		.appendField(new Blockly.FieldImage("media/TCS34725.png",33,33))
         .appendField(Blockly.Msg.TCS34725_name_init)
 		.appendField(Blockly.Msg.TCS34725_name_init2)
 	 this.appendDummyInput()
@@ -22,7 +22,7 @@ Blockly.Blocks['init_tcs34725'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Init tcs34725 functions');
+    this.setTooltip('Init TCS34725 functions');
     this.setHelpUrl('');
   }
 };
@@ -79,7 +79,7 @@ Blockly.Blocks['read_tcs34725'] = {
    init: function() {
     this.setColour("#2a93e8");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/TCS34725.png",49,38))
+		.appendField(new Blockly.FieldImage("media/color.png",15,15))
         .appendField(Blockly.Msg.TCS34725_name)
 		.appendField(Blockly.Msg.TCS34725_read)
     this.setInputsInline(true);
@@ -102,7 +102,7 @@ Blockly.Blocks['tcs34725_values'] = {
   init: function() {
     this.setColour("#2a93e8");
 	 this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/TCS34725.png",49,38))
+   .appendField(new Blockly.FieldImage("media/color.png",15,15))
 		.appendField(Blockly.Msg.TCS34725_name)
     this.appendDummyInput()
 		.appendField(new Blockly.FieldDropdown([['Red Raw','10'],['Green Raw','11'],['Blue Raw','12'],['Red (RGB)','0'],['Green (RGB)','1'],['Blue (RGB)','2'],['Clarity','3'],['Hue (HSV)','4'],['Saturation (HSV)','5'],['Value (HSV)','6'],['Lux','7'],['Temp ','8']]), "TypeValue")
@@ -169,7 +169,7 @@ Blockly.Blocks['tcs34725_color'] = {
   init: function() {
     this.setColour("#2a93e8");
 	 this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/TCS34725.png",49,38))
+   .appendField(new Blockly.FieldImage("media/color.png",15,15))
 		.appendField(Blockly.Msg.TCS34725_name)
     this.appendDummyInput()
 		.appendField(Blockly.Msg.TCS34725_color)
