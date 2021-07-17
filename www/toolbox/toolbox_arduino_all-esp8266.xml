@@ -729,7 +729,7 @@
 	</category>	
 	
 <category name="CAT_AUDIO" colour="#a600d3">
-		<block type="play">
+			<block type="play">
 			   <value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 		    </block>
 			<block type="tone">
@@ -740,8 +740,12 @@
 			<block type="notone">
 				<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 			</block>
+			<block type="RTTTL_music"></block>
 			<block type="beep">
 			<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
+			
+			
+			
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="lp2i_mp3_init"></block>
 			<block type="lp2i_mp3_play"></block>

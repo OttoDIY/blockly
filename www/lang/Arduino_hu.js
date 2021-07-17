@@ -341,6 +341,7 @@ Blockly.Msg.ARDUINO_TONE_INPUT3 = "duration (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected pin, at the desired frequency and for the desired duration";
 Blockly.Msg.ARDUINO_NOTONE_INPUT = "stop the sound on the pin";
 Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stop the sound on the selected pin";
+Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play blocking RTTTL ";
 Blockly.Msg.lp2i_mp3_helpurl = "http://ouilogique.com/tests_DFPlayer/";
 Blockly.Msg.lp2i_mp3_Volume = "volume [0-48]";
 Blockly.Msg.lp2i_mp3_autoplay = "AutoPlay";

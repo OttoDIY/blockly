@@ -369,6 +369,7 @@ Blockly.Msg.ARDUINO_TONE_INPUT3 = "duração (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emita um som no pin selecionado, na frequência desejada e para a duração desejada";
 Blockly.Msg.ARDUINO_NOTONE_INPUT = "pare o som no pin";
 Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "pare o som no pin selecionado";
+Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play blocking RTTTL ";
 Blockly.Msg.lp2i_mp3_helpurl = "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299";
 Blockly.Msg.lp2i_mp3_Volume = "volume [0-48]";
 Blockly.Msg.lp2i_mp3_autoplay = "AutoPlay";

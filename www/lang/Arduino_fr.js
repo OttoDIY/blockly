@@ -369,6 +369,7 @@ Blockly.Msg.ARDUINO_TONE_INPUT3="durée (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP="émettre un son sur la broche selectionnée, à la fréquence désirée et pendant la durée souhaitée";
 Blockly.Msg.ARDUINO_NOTONE_INPUT="stopper le son sur la broche";
 Blockly.Msg.ARDUINO_NOTONE_TOOLTIP="arrêter le son sur la broche selectionnée";
+Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play blocking RTTTL ";
 Blockly.Msg.lp2i_mp3_helpurl="http://ouilogique.com/tests_DFPlayer/";
 Blockly.Msg.lp2i_mp3_Volume="volume [0-48]";
 Blockly.Msg.lp2i_mp3_autoplay="lecture automatique";
