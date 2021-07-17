@@ -193,13 +193,15 @@
 		 <block type="potentiometer_ranger_sensor2"></block>	
 		 <block type="hall_sensor2"></block>
 		 <block type="tilt_sensor2"></block>
-	<category name="CAT_SOUND" colour="#2a93e8">
+		
+		<category name="CAT_SOUND" colour="#2a93e8">
 		 <block type="Sound_sensor2"></block>	
 		 <block type="Sound_status_sensor2"></block>	
 		 <block type="knock_sensor2"></block>
 		 <block type="Vibration_sensor2"></block>	
 		 <block type="Vibration_status_sensor2"></block>	
 		</category>
+	
 		<category name="CAT_LIGHT" colour="#2a93e8">
 			<block type="LDR_sensor2"></block>
 		 	<block type="LDR_status_sensor2"></block>
@@ -209,6 +211,7 @@
 		 	<block type="pir_sensor2"></block>
 		 	<block type="photointerrupter_sensor2"></block>
 		</category>
+		
 		<category name="CAT_APDS9960" colour="#2a93e8">
 		<block type="APDS9960_init"></block>
 		<block type="APDS9960_gesture_init"></block>
@@ -286,8 +289,8 @@
 	
 	<category name="CAT_RFID" colour="#2a93e8">
 		 <block type="rfid_init">
-		 <value name="PIN_SDA"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-		 <value name="PIN_RST"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+		 <value name="PIN_SDA"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+		 <value name="PIN_RST"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
 		</block>
 		<block type="rfid_validationcard"></block>
 		<block type="RFID_detected"></block>
@@ -311,8 +314,8 @@
 
 	<category name="CAT_GPS" colour="#2a93e8">
 		 <block type="GPS_init_ss">
-			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
-			<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>	  
+			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+			<value name="PIN_RX"><shadow type="math_number"><field name="NUM">4</field></shadow></value>	  
 		 </block>
 		<block type="GPS_read_save_values"></block>
 		<block type="GPS_location"></block>

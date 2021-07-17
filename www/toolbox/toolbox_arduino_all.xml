@@ -159,7 +159,8 @@
 		<block type="array_getIndex"></block>
 		<block type="array_getsize"></block>
     </category>
-		<category name="CAT_ultrason" colour="#2a93e8">
+	
+	<!--	<category name="CAT_ultrason" colour="#2a93e8">
 			<block type="ultrasonic_sensor">
 			    <field name="PIN_TRIG">8</field>
 		   		<field name="PIN_ECHO">9</field>
@@ -167,140 +168,155 @@
 			<block type="ultrasonic_distance"></block>
 			<block type="button_touch_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value></block>
 			<block type="Sound_status_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-		</category>	
+		</category>	 -->
+		
+		
 	<category name="CAT_SENSORS" colour="#2a93e8">
-		 <block type="button_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 <block type="button_touch_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">14</field></shadow></value></block>
+		 <block type="button_sensor2"></block>
+		 <block type="button_touch_sensor2"></block>
 		 <block type="potentiometer_ranger_sensor2"></block>	
-		 <block type="Joystick_axis_sensor2"><value name="PIN_JOYSTICK"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 <block type="joystick_button_sensor2"><value name="PIN_JOYSTICK"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		<category name="CAT_VL53L0X" colour="#2a93e8">
-		<block type="ultrasonic_sensor">
-			    <field name="PIN_TRIG">8</field>
-		   		<field name="PIN_ECHO">9</field>
-		   </block>			
-			<block type="ultrasonic_distance"></block>
-			<block type="VL53L0X"></block>
-			<block type="VL53L0X_distance"></block>
-		</category>	
-		<category name="CAT_SOUND" colour="#2a93e8">
-			 <block type="Sound_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="Sound_status_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
-		</category>
-
-
-		<category name="CAT_TEMP" colour="#2a93e8">
-			 <block type="dht_sensor2"><value name="PIN_DHT"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
-			 <block type="dht_measure"></block>	
- 			 <block type="Analog_temperature_sensor2"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="LM35_temperature_sensor2"><value name="PIN"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-			 <block type="Flame_sensor2"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			 <block type="Flame_status_sensor2"><value name="PIN_FLAME"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
-		</category>		
-		<category name="CAT_LIGHT" colour="#2a93e8">
-			<block type="LDR_sensor2"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="LDR_status_sensor2"><value name="PIN_LDR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			<block type="AmbientLight_sensor2"><value name="PIN_ALIGHT"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="IR_sensor2"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 	<block type="IR_status_sensor2"><value name="PIN_IR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 	<block type="pir_sensor2"><value name="PIN_PIR"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		 	<block type="photointerrupter_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		</category>
-						<category name="CAT_TCS34725" colour="#2a93e8">	
-			<block type="init_tcs34725"></block>
-			<block type="read_tcs34725"></block>
-			<block type="tcs34725_values"></block>
-			<block type="tcs34725_color"></block>
-		</category>
-		<category name="CAT_APDS9960" colour="#2a93e8">
-			<block type="APDS9960_init"></block>
-			<block type="APDS9960_gesture_init"></block>
-			<block type="APDS9960_gesture_gain"></block>
-			<block type="APDS9960_gesture_detected"></block>
-			<block type="APDS9960_readgesture"></block>
-			<block type="APDS9960_gesture"></block>
-			<block type="APDS9960_color_init"></block>
-			<block type="APDS9960_color_gain"></block>
-			<block type="APDS9960_read_colors"></block>
-			<block type="APDS9960_color"></block>
-		</category>
-
-					<category name="CAT_MAGNET" colour="#2a93e8">
-			<block type="hall_sensor2"><value name="PIN_HALL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		</category>
-				<category name="CAT_VIBRATE" colour="#2a93e8">
-			<block type="Vibration_sensor2"><value name="PIN_VIBRATION"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			<block type="tilt_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			<block type="knock_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
+		 <block type="Joystick_axis_sensor2"></block>
+		 <block type="joystick_button_sensor2"></block>
+		 
+			<category name="CAT_VL53L0X" colour="#2a93e8">
+					<block type="ultrasonic_sensor">
+						<field name="PIN_TRIG">8</field>
+						<field name="PIN_ECHO">9</field>
+				   </block>			
+					<block type="ultrasonic_distance"></block>
+					<block type="VL53L0X"></block>
+					<block type="VL53L0X_distance"></block>
+			</category>	
+				
+			<category name="CAT_SOUND" colour="#2a93e8">
+				 <block type="Sound_sensor2"></block>	
+				 <block type="Sound_status_sensor2"></block>	
 			</category>
-				<category name="CAT_WATER" colour="#2a93e8">
-		 	<block type="Water_sensor2"><value name="PIN_WATER"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-			 <block type="Moisture_sensor2"><value name="PIN_MOISTURE"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-		 	<block type="Vapor_sensor2"><value name="PIN_VAPOR"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>
-		 </category>
-		 			<category name="CAT_GAS" colour="#2a93e8">
-			<block type="Gas_sensor2"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			<block type="Gas_status_sensor2"><value name="PIN_GAS"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-			<block type="Alcohol_sensor2"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
-			<block type="Alcohol_status_sensor2"><value name="PIN_ALCOHOL"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
-		</category>	
-		<category name="CAT_BME280" colour="#2a93e8">
-			<block type="BME280"></block>
-			<block type="BME280_pressure"></block>
-		</category>
-		<category name="CAT_CCS811" colour="#2a93e8">
-			<block type="Init_CCS811"></block>
-			<block type="CCS811_available"></block>
-			<block type="CCS811_readed"></block>
-			<block type="CCS811_values"></block>
-		</category>			
-				<category name="CAT_GYRO" colour="#2a93e8">
-			<block type="otto9_gyro"></block>
-			<block type="otto9_getg"></block>
 
-		</category>	
+
+			<category name="CAT_TEMP" colour="#2a93e8">
+				 <block type="dht_sensor2"><value name="PIN_DHT"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	
+				 <block type="dht_measure"></block>	
+				 <block type="Analog_temperature_sensor2"></block>	
+				 <block type="LM35_temperature_sensor2"></block>
+				 <block type="Flame_sensor2"></block>	
+				 <block type="Flame_status_sensor2"></block>	
+			</category>		
+			
+			<category name="CAT_LIGHT" colour="#2a93e8">
+				<block type="LDR_sensor2"></block>
+				<block type="LDR_status_sensor2"></block>
+				<block type="AmbientLight_sensor2"></block>
+				<block type="IR_sensor2"></block>
+				<block type="IR_status_sensor2"></block>
+				<block type="pir_sensor2"></block>
+				<block type="photointerrupter_sensor2"></block>
+			</category>
+			
+			<category name="CAT_TCS34725" colour="#2a93e8">	
+				<block type="init_tcs34725"></block>
+				<block type="read_tcs34725"></block>
+				<block type="tcs34725_values"></block>
+				<block type="tcs34725_color"></block>
+			</category>
+			
+			<category name="CAT_APDS9960" colour="#2a93e8">
+				<block type="APDS9960_init"></block>
+				<block type="APDS9960_gesture_init"></block>
+				<block type="APDS9960_gesture_gain"></block>
+				<block type="APDS9960_gesture_detected"></block>
+				<block type="APDS9960_readgesture"></block>
+				<block type="APDS9960_gesture"></block>
+				<block type="APDS9960_color_init"></block>
+				<block type="APDS9960_color_gain"></block>
+				<block type="APDS9960_read_colors"></block>
+				<block type="APDS9960_color"></block>
+			</category>
+
+			<category name="CAT_MAGNET" colour="#2a93e8">
+				<block type="hall_sensor2"></block>
+			</category>
+			
+			<category name="CAT_VIBRATE" colour="#2a93e8">
+				<block type="Vibration_sensor2"></block>	
+				<block type="tilt_sensor2"></block>
+				<block type="knock_sensor2"></block>
+			</category>
+			
+			<category name="CAT_WATER" colour="#2a93e8">
+				<block type="Water_sensor2"></block>
+				<block type="Moisture_sensor2"></block>	
+				<block type="Vapor_sensor2"></block>
+			</category>
+			
+		 	<category name="CAT_GAS" colour="#2a93e8">
+				<block type="Gas_sensor2"></block>	
+				<block type="Gas_status_sensor2"></block>
+				<block type="Alcohol_sensor2"></block>	
+				<block type="Alcohol_status_sensor2"></block>
+			</category>
+			
+			<category name="CAT_BME280" colour="#2a93e8">
+				<block type="BME280"></block>
+				<block type="BME280_pressure"></block>
+			</category>
+		
+			<category name="CAT_CCS811" colour="#2a93e8">
+				<block type="Init_CCS811"></block>
+				<block type="CCS811_available"></block>
+				<block type="CCS811_readed"></block>
+				<block type="CCS811_values"></block>
+			</category>		
+			
+			<category name="CAT_GYRO" colour="#2a93e8">
+				<block type="otto9_gyro"></block>
+				<block type="otto9_getg"></block>
+			</category>	
+			
 			<category name="CAT_HMC5883" colour="#2a93e8"> 
-		<block type="Init_Compass_HMC5883"></block>
-			<block type="order_to_read_HMC5883_values"></block>
-			<block type="HMC5883_values"></block>
-		</category>	
+				<block type="Init_Compass_HMC5883"></block>
+				<block type="order_to_read_HMC5883_values"></block>
+				<block type="HMC5883_values"></block>
+			</category>	
 
-		<category name="CAT_GPS" colour="#2a93e8">
-			<block type="GPS_init_ss">
-				<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
-				<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>	  
-			</block>
-			<block type="GPS_read_save_values"></block>
-			<block type="GPS_location"></block>
-			<block type="GPS_speed"></block>
-			<block type="GPS_datetime"></block>
-		</category>	
-				<category name="CAT_RTC_DS3231" colour="#2a93e8">	
-			<block type="Init_RTC_ds3231"></block>
-			<block type="DateTime_RTC_ds3231">
-				<value name="DS3231_DAY"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
-				<value name="DS3231_MONTH"><shadow type="analog_pin"><field name="NUM">9</field></shadow></value>
-				<value name="DS3231_YEAR"><shadow type="analog_pin"><field name="NUM">2021</field></shadow></value>
-				<value name="DS3231_HOUR"><shadow type="analog_pin"><field name="NUM">23</field></shadow></value>
-				<value name="DS3231_MINUTE"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>	
-				<value name="DS3231_SECOND"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>				
-			</block>
+			<category name="CAT_GPS" colour="#2a93e8">
+				<block type="GPS_init_ss">
+					<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
+					<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>	  
+				</block>
+				<block type="GPS_read_save_values"></block>
+				<block type="GPS_location"></block>
+				<block type="GPS_speed"></block>
+				<block type="GPS_datetime"></block>
+			</category>	
+			
+			<category name="CAT_RTC_DS3231" colour="#2a93e8">	
+				<block type="Init_RTC_ds3231"></block>
+				<block type="DateTime_RTC_ds3231">
+					<value name="DS3231_DAY"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
+					<value name="DS3231_MONTH"><shadow type="analog_pin"><field name="NUM">9</field></shadow></value>
+					<value name="DS3231_YEAR"><shadow type="analog_pin"><field name="NUM">2021</field></shadow></value>
+					<value name="DS3231_HOUR"><shadow type="analog_pin"><field name="NUM">23</field></shadow></value>
+					<value name="DS3231_MINUTE"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>	
+					<value name="DS3231_SECOND"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>				
+				</block>
 				<block type="order_read_rtc_ds3231"></block>
 				<block type="values_ds3231"></block>
 				<block type="values_text_ds3231"></block>	
-		</category>	
-				<category name="CAT_RFID" colour="#2a93e8">
-			<block type="rfid_init">
-			<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
-			<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
-			</block>
-			<block type="rfid_validationcard"></block>
-			<block type="RFID_detected"></block>
-			<block type="RFID_readed"></block>
-			<block type="RFID_card_readed"></block>
-			<block type="RFID_check_card"></block>
-			<block type="rfid_stopread"></block>
-		</category>
+			</category>	
+		
+			<category name="CAT_RFID" colour="#2a93e8">
+				<block type="rfid_init">
+				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
+				<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+				</block>
+				<block type="rfid_validationcard"></block>
+				<block type="RFID_detected"></block>
+				<block type="RFID_readed"></block>
+				<block type="RFID_card_readed"></block>
+				<block type="RFID_check_card"></block>
+				<block type="rfid_stopread"></block>
+			</category>
 		</category>
 		
 	<category name="CAT_actionneur" colour="#2d2dd1">
@@ -910,8 +926,7 @@
 			</block>
 			<block type="key_pressed"></block>
 			<block type="keyboard_text">
-				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow>
-				</value>
+				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow></value>
 			</block>
 			<block type="mouse_function"></block>
 			<block type="mouse_move">
