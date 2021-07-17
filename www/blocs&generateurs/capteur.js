@@ -379,7 +379,7 @@ Blockly.Python["BME280"]=function(block){
 };
 //////////////
 Blockly.Blocks["BME280_pressure"]={init:function(){
-    this.appendDummyInput().appendField("🗜️").appendField(Blockly.Msg.bme280_pressure);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/pressure.png', 23, 23, "*")).appendField(Blockly.Msg.bme280_pressure);
     this.setColour("#2a93e8");
     this.setHelpUrl("");
     this.setOutput(true, "Number");
@@ -511,11 +511,11 @@ Blockly.Blocks['CCS811_values'] = {
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/CCS811.png",15,15))
 		.appendField(Blockly.Msg.CCS811_name)
-		.appendField(new Blockly.FieldDropdown([['eCO₂ ppm','0'],['TVOC ppb','1']]), "TypeMeasure")
+		.appendField(new Blockly.FieldDropdown([['eCO2 ppm','0'],['TVOC ppb','1']]), "TypeMeasure")
 	    .appendField(Blockly.Msg.ADXL345_values);
     this.setOutput(true, "Number");
 	this.setInputsInline(true);
-    this.setTooltip('Refund the parameter selected. eCO₂ (equivalent calculated carbon-dioxide) or TVOC (Total Volatile Organic Compound)');
+    this.setTooltip('Refund the parameter selected. eCO2 (equivalent calculated carbon-dioxide) or TVOC (Total Volatile Organic Compound)');
   }
 };
 

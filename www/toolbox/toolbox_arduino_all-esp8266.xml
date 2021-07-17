@@ -236,6 +236,7 @@
 
 	<category name="CAT_TEMP" colour="#2a93e8">
 		 <block type="dht_sensor2"></block>	
+		 <block type="dht_measure"></block>	
 		 <!--<block type="dht11"></block>
 		 <block type="dht22"></block> -->
  		 <block type="Analog_temperature_sensor2"></block>	

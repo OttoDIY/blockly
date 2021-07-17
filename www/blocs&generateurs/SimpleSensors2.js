@@ -167,23 +167,29 @@ Blockly.Arduino['knock_sensor2'] = function(block) {
 Blockly.Blocks['ultrasonic_sensor'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
-    this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))  .appendField(Blockly.Msg.ultrasonic_ranger)
-        .appendField(Blockly.Msg.TRIG).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
+    this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
+		.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
+		.appendField(Blockly.Msg.ultrasonic_ranger)
+        .appendField(Blockly.Msg.TRIG)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
 	this.appendDummyInput()	.appendField(Blockly.Msg.Echo)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
-  this.setInputsInline(true);
-  this.setPreviousStatement(true, null);
-  this.setNextStatement(true, null);
+	this.setInputsInline(true);
+	this.setPreviousStatement(true, null);
+	this.setNextStatement(true, null);
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.ultrason_tooltip);
   }
 };
 
 Blockly.Arduino['ultrasonic_sensor'] = function(block) {
-  var PIN_TRIG = block.getFieldValue('PIN_TRIG');
+	var PIN_TRIG = block.getFieldValue('PIN_TRIG');
 	var PIN_ECHO = block.getFieldValue('PIN_ECHO');
+	var us_number = this.getFieldValue('US_NUMBER');
+	
     Blockly.Arduino.setups_['setup_output_'+PIN_TRIG] = 'pinMode('+PIN_TRIG+', OUTPUT);';
     Blockly.Arduino.setups_['setup_input_'+PIN_ECHO] = 'pinMode('+PIN_ECHO+', INPUT);';
-    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance() {\n'+
+	
+    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(2);\n'+
@@ -193,11 +199,17 @@ Blockly.Arduino['ultrasonic_sensor'] = function(block) {
         '   duration = pulseIn('+ PIN_ECHO +', HIGH);\n'+
         '   distance = duration/58;\n'+
         '   return distance;\n'+
-        '}\n';;
+        '}\n';
+		
+	 var code = '';
+	 return code;	
 };
 
 Blockly.Blocks["ultrasonic_distance"]={init:function(){
-  this.appendDummyInput() .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",25,15)) .appendField(Blockly.Msg.ultrason_distance1);
+  this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",25,15)) 
+	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
+	.appendField(Blockly.Msg.ultrason_distance1);
   this.setColour("#2a93e8");
   this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
   this.setInputsInline(false);
@@ -206,7 +218,9 @@ Blockly.Blocks["ultrasonic_distance"]={init:function(){
 };
 Blockly.Arduino["ultrasonic_distance"]=function(block){
   var code;
-  code = 'ultrasound_distance()';
+  var us_number = this.getFieldValue('US_NUMBER');
+  
+  code = 'ultrasound_distance_'+us_number+'()';
 return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -563,15 +577,16 @@ Blockly.Blocks['dht_sensor2'] = {
   init: function() {
 	  var card=window.localStorage.card;
     this.setColour("#2a93e8");
-    this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/humidity11.png",33,33))
-    		.appendField(Blockly.Msg.DHT_Type)
+    this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/humidity11.png",33,33)).appendField(new Blockly.FieldImage("media/humidity22.png",33,33))
+		.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
+    	.appendField(Blockly.Msg.DHT_Type)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]]), "OUTPUT_TYPE")
         .setAlign(Blockly.ALIGN_RIGHT)
-	  this.appendDummyInput()
-  .appendField(Blockly.Msg.PIN)
-  .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
-  .setAlign(Blockly.ALIGN_RIGHT)
-	  this.setInputsInline(true);
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.PIN)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
+		.setAlign(Blockly.ALIGN_RIGHT)
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
 	  this.setNextStatement(true, null);
     this.setTooltip('DHT temperature, humidity and headindex sensor.Reading temperature or humidity takes about 250 milliseconds.OLD Sensor readings may also be up to 2 seconds (its a very slow sensor)');
@@ -581,42 +596,53 @@ Blockly.Blocks['dht_sensor2'] = {
 Blockly.Arduino['dht_sensor2'] = function(block) {
 	var PinDHT = block.getFieldValue('PIN_DHT');
 	var TypeDHT = this.getFieldValue('OUTPUT_TYPE');
+	var dht_number = this.getFieldValue('DHT_NUMBER');
 
 	Blockly.Arduino.includes_['include_dht'] = '#include "DHT.h" \n';
 	
 	if (TypeDHT=='0')
 	{
-		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT11);\n';
+		Blockly.Arduino.definitions_['begin_dht_'+dht_number] = 'DHT dht_'+dht_number+'('+PinDHT+',DHT11);\n';
 		}
 	else if (TypeDHT=='1')
 		{
-		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT21);\n';
+		Blockly.Arduino.definitions_['begin_dht_'+dht_number] = 'DHT dht_'+dht_number+'('+PinDHT+',DHT21);\n';
 		}
 	else
 		{
-		Blockly.Arduino.definitions_['begin_dht'] = 'DHT dht('+PinDHT+',DHT22);\n';
+		Blockly.Arduino.definitions_['begin_dht_'+dht_number] = 'DHT dht_'+dht_number+'('+PinDHT+',DHT22);\n';
 		}
-	Blockly.Arduino.setups_['setup_input_'] = 'dht.begin();\n';
 	
-
+	Blockly.Arduino.setups_['setup_input_'+dht_number] = 'dht_'+dht_number+'.begin();\n';
+	
+     var code = '';
+	 return code;
 };
 
+
+
 Blockly.Blocks["dht_measure"]={init:function(){
- this.appendDummyInput().appendField("🌡️ ").appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
+ this.appendDummyInput().appendField(new Blockly.FieldImage("media/humidity11.png",23,23)).appendField(new Blockly.FieldImage("media/humidity22.png",23,23))
+ .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
+ .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
   this.setColour("#2a93e8");
   this.setOutput(true, "Number");
   this.setInputsInline(true);
   this.setTooltip(Blockly.Msg.dht22_tooltip)}
 };
+
+
 Blockly.Arduino["dht_measure"]=function(block){
 var Status = this.getFieldValue('OUTPUT_VALUE');
 var code;
+var dht_number = this.getFieldValue('DHT_NUMBER');
+
 if(Status=='0')
-var code = 'dht.readTemperature()';  
+    code = 'dht_'+dht_number+'.readTemperature()';  
 else if (Status=='1')
-var code = 'dht.readHumidity()';
-else
-var code= 'dht.computeHeatIndex(dht.readTemperature(),dht.readHumidity(),true)';	
+      code = 'dht_'+dht_number+'.readHumidity()';
+     else
+       code= 'dht_'+dht_number+'.computeHeatIndex(dht_'+dht_number+'.readTemperature(),dht_'+dht_number+'.readHumidity(),true)';	
 
 return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
