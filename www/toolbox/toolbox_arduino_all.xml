@@ -877,8 +877,8 @@
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block> -->
 			<block type="soft_init">
-			<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
-			<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+				<field name="PIN_TX">12</field>
+				<field name="PIN_RX">11</field>
 			</block>
 			<block type="soft_available"></block>  
             <block type="soft_read"></block>

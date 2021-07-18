@@ -39,12 +39,14 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['Init_generalremotecontrol'] = {
   init: function() {
+	var card=window.localStorage.card;
     this.setColour("#0060aa");
-	this.appendValueInput("PIN_IR")
-        .appendField(new Blockly.FieldImage("media/genericRC.png",57,38))
+	this.appendDummyInput()
+	    .appendField(new Blockly.FieldImage("media/genericRC.png",57,38))
 		.appendField(Blockly.Msg.GENERAL_IR)
         .appendField(Blockly.Msg.PIN)
-		.setCheck("Number");
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR");	
+		
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.GENERAL_PRESSED);	
 	this.setInputsInline(true);
@@ -55,7 +57,7 @@ Blockly.Blocks['Init_generalremotecontrol'] = {
 
 Blockly.Arduino['Init_generalremotecontrol'] = function(block) {
 
-  var pin_ir = Blockly.Arduino.valueToCode(this, "PIN_IR", Blockly.Arduino.ORDER_NONE);
+  var pin_ir = this.getFieldValue('PIN_IR');
    
   Blockly.Arduino.includes_['include_IRremote'] = '#include <IRremote.h>\n';
  

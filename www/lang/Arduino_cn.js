@@ -434,7 +434,7 @@ Blockly.Msg.Serial_space = "a separator";
 Blockly.Msg.Serial_space_tooltip = "return a space on the serial monitor";
 Blockly.Msg.repl_read = "user entered command";
 // software serial
-Blockly.Msg.SSERIAL_Init = "software port on Rx";
+//Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip = "Creating a new communication port using the specified pins and speed";
 Blockly.Msg.SSERIAL_Read = "data read on the software port";
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";

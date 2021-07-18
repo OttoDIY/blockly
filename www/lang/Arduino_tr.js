@@ -437,7 +437,7 @@ Blockly.Msg.Serial_space = "bir ayırıcı";
 Blockly.Msg.Serial_space_tooltip = "seri monitörde boşluk bırak";
 Blockly.Msg.repl_read = "kullanıcının girdiği komut";
 // software serial
-Blockly.Msg.SSERIAL_Init = "Rx üzerinde yazılım bağlantı noktası";
+//Blockly.Msg.SSERIAL_Init = "Rx üzerinde yazılım bağlantı noktası";
 Blockly.Msg.SSERIAL_tooltip = "Belirtilen pinleri ve hızı kullanarak yeni bir iletişim portu oluşturma";
 Blockly.Msg.SSERIAL_Read = "yazılım portundan veri okunuyor";
 Blockly.Msg.SSERIAL_Read_tooltip = "yazılım portunda bulunan ilk verinin baytını veya veri yoksa -1'i döndürür";

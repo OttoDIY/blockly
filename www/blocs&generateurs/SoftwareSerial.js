@@ -45,19 +45,19 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['soft_init'] = {
   helpUrl: '',
   init: function() {
+	var card=window.localStorage.card;
     this.setColour("#0060aa");
 	this.appendDummyInput()
-	.appendField(new Blockly.FieldImage("media/serie.png", 20,25 ))
-    this.appendValueInput("PIN_TX", "Number")
-    .setCheck("Number")
-	.appendField(Blockly.Msg.SSERIAL_Init)
-    .appendField(Blockly.Msg.SSERIAL_TX)
-    this.appendValueInput("PIN_RX", "Number")
-    .setCheck("Number")
-    .appendField(Blockly.Msg.SSERIAL_RX)
+		.appendField(new Blockly.FieldImage("media/serie.png", 20,25 ))
+		.appendField(Blockly.Msg.SSERIAL_Init)
+		.appendField(Blockly.Msg.SSERIAL_TX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
 	this.appendDummyInput()
-    .appendField(Blockly.Msg.SSERIAL_BAUD)
-	.appendField(new Blockly.FieldDropdown([['1200', '1200'],['2400', '2400'],['4800', '4800'],['9600', '9600'],['19200', '19200'],['38400', '38400'],['57600', '57600'],['115200', '115200']]), "PINBAUDIOS");
+		.appendField(Blockly.Msg.SSERIAL_RX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RX");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.SSERIAL_BAUD)
+		.appendField(new Blockly.FieldDropdown([['1200', '1200'],['2400', '2400'],['4800', '4800'],['9600', '9600'],['19200', '19200'],['38400', '38400'],['57600', '57600'],['115200', '115200']]), "PINBAUDIOS");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -67,8 +67,8 @@ Blockly.Blocks['soft_init'] = {
 
 Blockly.Arduino['soft_init'] = function(block) {
   
-  var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
-  var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
+  var pin_rx = this.getFieldValue('PIN_RX');
+  var pin_tx = this.getFieldValue('PIN_TX');
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
   
   Blockly.Arduino.includes_['define_ss'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerial('+pin_rx+','+pin_tx+');\n';

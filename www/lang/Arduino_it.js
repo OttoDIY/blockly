@@ -458,7 +458,7 @@ Blockly.Msg.Serial_space = "separatore";
 Blockly.Msg.Serial_space_tooltip = "restituisce uno spazio sul monitor seriale";
 Blockly.Msg.repl_read = "comando inserito dall'utente";
 // software serial
-Blockly.Msg.SSERIAL_Init = "Porta software su Rx";
+//Blockly.Msg.SSERIAL_Init = "Porta software su Rx";
 Blockly.Msg.SSERIAL_tooltip = "Creazione di una nuova porta di comunicazione con i pin e la velocità specificati";
 Blockly.Msg.SSERIAL_Read = "dati letti sulla porta software";
 Blockly.Msg.SSERIAL_Read_tooltip = "restituisce il primo byte di dati disponibile nella porta software, oppure -1 se non ci sono dati disponibili";
@@ -932,4 +932,17 @@ Blockly.Msg.MouseMoveX="Posizione X";
 Blockly.Msg.MouseMoveY="Posizione Y";
 Blockly.Msg.MouseMoveW="Rotellina";
 
-
+// SOFTWARE SERIAL 
+Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
+Blockly.Msg.SSERIAL_TX="Pin TX#";
+Blockly.Msg.SSERIAL_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BAUD="Baudios";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Read byte";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Print on new line";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Print on same line";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial write"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial Available?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Print  Format";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Read as number";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Read String";
+Blockly.Msg.SSERIAL_Readlf="until line feed";

@@ -383,7 +383,7 @@ Blockly.Msg.Serial_space = "a separator";
 Blockly.Msg.Serial_space_tooltip = "return a space on the serial monitor";
 Blockly.Msg.repl_read = "user entered command";
 // software serial
-Blockly.Msg.SSERIAL_Init = "software port on Rx";
+//Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip = "Creating a new communication port using the specified pins and speed";
 Blockly.Msg.SSERIAL_Read = "data read on the software port";
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";
@@ -464,3 +464,18 @@ Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
 Blockly.Msg.OTTO9_ARMS_TEXT = "arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
+
+// SOFTWARE SERIAL 
+Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
+Blockly.Msg.SSERIAL_TX="Pin TX#";
+Blockly.Msg.SSERIAL_RX="Pin RX#";
+Blockly.Msg.SSERIAL_BAUD="Baudios";
+Blockly.Msg.SSERIAL_Read="SoftwareSerial Read byte";
+Blockly.Msg.SSERIAL_Println="SoftwareSerial Print on new line";
+Blockly.Msg.SSERIAL_Print="SoftwareSerial Print on same line";
+Blockly.Msg.SSERIAL_Write="SoftwareSerial write"
+Blockly.Msg.SSERIAL_Avai="SoftwareSerial Available?";
+Blockly.Msg.SSerial_Print_Format="SoftwareSerial Print  Format";
+Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Read as number";
+Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Read String";
+Blockly.Msg.SSERIAL_Readlf="until line feed";

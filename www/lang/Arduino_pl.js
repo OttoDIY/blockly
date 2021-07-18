@@ -436,7 +436,7 @@ Blockly.Msg.Serial_space = "Separator";
 Blockly.Msg.Serial_space_tooltip = "Zwraca odstęp / spację w porcie szeregowym.";
 Blockly.Msg.repl_read = "Użytkownik wprowadził komendę/polecenie.";
 // software serial ///////////////////////////////
-Blockly.Msg.SSERIAL_Init = "Port programu na Rx.";
+//Blockly.Msg.SSERIAL_Init = "Port programu na Rx.";
 Blockly.Msg.SSERIAL_tooltip = "Utworzenie nowego portu komunikacji o podanej prędkości na podanym pinie.";
 Blockly.Msg.SSERIAL_Read = "Odczyt danych na porcie programu.";
 Blockly.Msg.SSERIAL_Read_tooltip = "Zwraca pierwsze dostępne dane w porcie programu lub '-1' jeżeli nie ma danych.";

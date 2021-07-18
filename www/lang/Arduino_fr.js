@@ -437,7 +437,7 @@ Blockly.Msg.Serial_space="un séparateur";
 Blockly.Msg.Serial_space_tooltip="retourne un espace sur le moniteur série";
 Blockly.Msg.repl_read="commande entrée par l'utilisateur";
 //com logicielle
-Blockly.Msg.SSERIAL_Init="port logiciel sur Rx";
+//Blockly.Msg.SSERIAL_Init="port logiciel sur Rx";
 Blockly.Msg.SSERIAL_tooltip="Création d'un nouveau port de communication en utilisant les broches et la vitesse spécifiées";
 Blockly.Msg.SSERIAL_Read="donnée lue sur le port logiciel";
 Blockly.Msg.SSERIAL_Read_tooltip="retourne le premier octet de donnée entrant disponible dans le port logiciel, ou -1 si aucune donnée n'est disponible";
