@@ -49,8 +49,8 @@ Blockly.Arduino['otto_configuration'] = function(block) {
     + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
     + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
 	
-  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);';
-  
+  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
+  + 'Otto.home();\n';
   var code = '';
   return code;
 };

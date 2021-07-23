@@ -168,7 +168,7 @@ Blockly.Blocks['ultrasonic_sensor'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
-		.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
+    .appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
 		.appendField(Blockly.Msg.ultrasonic_ranger)
         .appendField(Blockly.Msg.TRIG)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
@@ -208,7 +208,7 @@ Blockly.Arduino['ultrasonic_sensor'] = function(block) {
 Blockly.Blocks["ultrasonic_distance"]={init:function(){
   this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",25,15)) 
-	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
+  .appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
 	.appendField(Blockly.Msg.ultrason_distance1);
   this.setColour("#2a93e8");
   this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
@@ -572,25 +572,45 @@ Blockly.Arduino['Sound_status_sensor2'] = function(block) {
 
 //////////////
 
-Blockly.Blocks['dht_sensor2'] = {
-  helpUrl: '',
-  init: function() {
+Blockly.Blocks['dht_sensor2'] = {init: function() {
 	  var card=window.localStorage.card;
     this.setColour("#2a93e8");
-    this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/humidity11.png",33,33)).appendField(new Blockly.FieldImage("media/humidity22.png",33,33))
-		.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
-    	.appendField(Blockly.Msg.DHT_Type)
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]]), "OUTPUT_TYPE")
-        .setAlign(Blockly.ALIGN_RIGHT)
-	this.appendDummyInput()
-		.appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")
-		.setAlign(Blockly.ALIGN_RIGHT)
-	this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-	  this.setNextStatement(true, null);
+    this.appendDummyInput("DHT11").appendField(new Blockly.FieldImage("media/humidity11.png",33,33));
+    this.appendDummyInput()	.appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
+    this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]],function(option){this.sourceBlock_.updateShape(option)}), "OUTPUT_TYPE");
+    this.appendDummyInput()	.appendField(Blockly.Msg.PIN)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")	.setAlign(Blockly.ALIGN_RIGHT)
     this.setTooltip('DHT temperature, humidity and headindex sensor.Reading temperature or humidity takes about 250 milliseconds.OLD Sensor readings may also be up to 2 seconds (its a very slow sensor)');
-  }
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);},   
+   updateShape:function(option){
+        if (option=="0") {
+          this.removeInput("DHT11");
+          this.removeInput("DHT21");
+          this.removeInput("DHT22");
+          this.appendDummyInput("DHT11").appendField(new Blockly.FieldImage("media/humidity11.png",33,33,"*"))
+        }
+        if (option=="1"){
+          this.removeInput("DHT11");
+          this.removeInput("DHT21");
+          this.removeInput("DHT22");
+          this.appendDummyInput("DHT21").appendField(new Blockly.FieldImage('media/humidity21.png', 33, 33, "*"))
+        }
+        if (option=="2"){
+          this.removeInput("DHT11");
+          this.removeInput("DHT21");
+          this.removeInput("DHT22");
+          this.appendDummyInput("DHT22").appendField(new Blockly.FieldImage('media/humidity22.png', 33, 33, "*"))
+        }
+        },
+        mutationToDom:function(){
+          var container = document.createElement("mutation");
+          container.setAttribute("matrix", this.getFieldValue("matrix"));
+          return container
+      },
+      domToMutation:function(xmlElement){
+          this.updateShape(xmlElement.getAttribute("matrix"))
+      }
 };
 
 Blockly.Arduino['dht_sensor2'] = function(block) {
@@ -617,20 +637,50 @@ Blockly.Arduino['dht_sensor2'] = function(block) {
 	
      var code = '';
 	 return code;
+   
 };
 
 
 
 Blockly.Blocks["dht_measure"]={init:function(){
- this.appendDummyInput().appendField(new Blockly.FieldImage("media/humidity11.png",23,23)).appendField(new Blockly.FieldImage("media/humidity22.png",23,23))
- .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
- .appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
+  this.appendDummyInput("DHT11").appendField(new Blockly.FieldImage("media/humidity11.png",22,22));
+  this.appendDummyInput()	.appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
+  this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]],function(option){this.sourceBlock_.updateShape(option)}), "OUTPUT_TYPE");
+ this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Temp, "0"], [Blockly.Msg.DHT_Humi, "1"],[Blockly.Msg.DHT_Head, "2"]]), "OUTPUT_VALUE");
   this.setColour("#2a93e8");
   this.setOutput(true, "Number");
   this.setInputsInline(true);
-  this.setTooltip(Blockly.Msg.dht22_tooltip)}
-};
+  this.setTooltip(Blockly.Msg.dht22_tooltip)},  
+  updateShape:function(option){
+    if (option=="0") {
+      this.removeInput("DHT11");
+      this.removeInput("DHT21");
+      this.removeInput("DHT22");
+      this.appendDummyInput("DHT11").appendField(new Blockly.FieldImage("media/humidity11.png",22,22,"*"))
+    }
+    if (option=="1"){
+      this.removeInput("DHT11");
+      this.removeInput("DHT21");
+      this.removeInput("DHT22");
+      this.appendDummyInput("DHT21").appendField(new Blockly.FieldImage('media/humidity21.png', 22, 22, "*"))
+    }
+    if (option=="2"){
+      this.removeInput("DHT11");
+      this.removeInput("DHT21");
+      this.removeInput("DHT22");
+      this.appendDummyInput("DHT22").appendField(new Blockly.FieldImage('media/humidity22.png', 22, 22, "*"))
+    }
+    },
+    mutationToDom:function(){
+      var container = document.createElement("mutation");
+      container.setAttribute("matrix", this.getFieldValue("matrix"));
+      return container
+  },
+  domToMutation:function(xmlElement){
+      this.updateShape(xmlElement.getAttribute("matrix"))
 
+  }
+};
 
 Blockly.Arduino["dht_measure"]=function(block){
 var Status = this.getFieldValue('OUTPUT_VALUE');

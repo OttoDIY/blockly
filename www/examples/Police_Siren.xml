@@ -1,0 +1,966 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="6zxeilHZv!r=xr!|jx*S" x="-1257" y="-672">
+    <statement name="DO">
+      <block type="pixel_init" id="seBB+^B*uGx5qsfrtX~Q">
+        <value name="pin">
+          <shadow type="analog_pin" id="MhnpDTAneu}m,$9,UH3~">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="num">
+          <shadow type="analog_pin" id="JG2lV(@EE=`~K/o6W_OB">
+            <field name="NUM">6</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_repeat_ext" id="vnXLSy@QHdANH{9x9c=6">
+        <value name="TIMES">
+          <shadow type="math_number" id="v)#x*V2V@D{WPyQS+|+p">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="procedures_callnoreturn" id="q)E9E1{l%YiB5^,2SoxP">
+            <mutation name="sequence1"></mutation>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_repeat_ext" id="RU|Qv|)ql$qw*T7.YWH%">
+            <value name="TIMES">
+              <shadow type="math_number" id="xnTmOw1%Hf~aNZNc2GlB">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="procedures_callnoreturn" id="J3#*GdOUrPJjifpu{F+*">
+                <mutation name="sequence2"></mutation>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_repeat_ext" id="A$MTqk0Bg`I.A~JcFa1N">
+                <value name="TIMES">
+                  <shadow type="math_number" id="^e$EkJ}E7T`{c#KIz[;K">
+                    <field name="NUM">8</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="procedures_callnoreturn" id="{c*ym2f/jWRez##8pXA{">
+                    <mutation name="sequence3"></mutation>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_repeat_ext" id=":^=K`~VB45{E~{,2UN$T">
+                    <value name="TIMES">
+                      <shadow type="math_number" id=":)gOD(J*ycJ4VpMJ8jV`">
+                        <field name="NUM">8</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="procedures_callnoreturn" id="WbUQZ5AHzXNpRW9j!~%N">
+                        <mutation name="sequence4"></mutation>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="8GIc9#=p{Cerpy)_5xif" x="-850" y="-651">
+    <field name="NAME">sequence1</field>
+    <statement name="STACK">
+      <block type="controls_for" id="d@2+RXVYY~(^*Crl?^q|">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="[%WD,z%Yo*+gs@=wGfuT">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="vVt/E0/5ibU31Iij7-^X">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="5{^yrJ=YLVP%Nyi(Tv#*">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="pixel_setcolor" id=")fB:U-jpK]6:cFUVLzqZ">
+            <field name="color">#ff0000</field>
+            <value name="pin">
+              <shadow type="analog_pin" id=";75oxn9SN)sd1XZA;cbb">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_modulo" id="x0g;8{3{eaRau}nMb^@-">
+                <value name="DIVIDEND">
+                  <block type="variables_get" id=";-dD-HLom;E;pkRBQccx">
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <value name="DIVISOR">
+                  <block type="math_number" id="gNi~EVcu]u~jmqR6s/v9">
+                    <field name="NUM">6</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="pixel_setcolor" id="M53{CTLA%4KyP$PVFQpK">
+                <field name="color">#ff0000</field>
+                <value name="pin">
+                  <shadow type="analog_pin" id=";75oxn9SN)sd1XZA;cbb">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_modulo" id="W[R-^fxyTlMmX.?ajZSI">
+                    <value name="DIVIDEND">
+                      <block type="math_arithmetic" id="j7]mNB:%(}]{^Ke$lU5u">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="variables_get" id="VJQsm;+x,^A/.ooCf-WS">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="pW+rIM%Qywl-R.y:N=T8">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="DIVISOR">
+                      <block type="math_number" id="KtQ)|sqGsm^,IzD~(gUj">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="pixel_setcolor" id="wp}Px2_k(_B]@W?+IU-:">
+                    <field name="color">#ffffff</field>
+                    <value name="pin">
+                      <shadow type="analog_pin" id=";75oxn9SN)sd1XZA;cbb">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="math_modulo" id="-{IpV0LIs5#L,cY)v8/L">
+                        <value name="DIVIDEND">
+                          <block type="math_arithmetic" id="I{OH02@o|OWw4CJA|r)s">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="jENTV!uSq%c!y.]3pT*P">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="sVd:2X,j@HrY+*0_[c8V">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="DIVISOR">
+                          <block type="math_number" id="u;CQFg0t)LLRW1v^07Gp">
+                            <field name="NUM">6</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="pixel_rgb" id="zK8/`Y-w7*%-@kTii-I+">
+                        <value name="pin">
+                          <shadow type="analog_pin" id="b=]p1$+B9NK+JdoyOLs}">
+                            <field name="NUM">10</field>
+                          </shadow>
+                          <block type="math_modulo" id="Ut^xAT?Irsfh2P~1-_hN">
+                            <value name="DIVIDEND">
+                              <block type="math_arithmetic" id="[QU4h9+q`DL/pQi@(Wj#">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="variables_get" id="?iYtFOHijbY9(!KvY;LV">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="DcyA6poFeI6D@T+V15%c">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="DIVISOR">
+                              <block type="math_number" id="Ue^kD(^Me309+?)]#OBx">
+                                <field name="NUM">6</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="R">
+                          <shadow type="math_number" id="!HD*#JkBc:ow/A:oYmi{">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="G">
+                          <shadow type="math_number" id="3?ljkal1qU`l2)1.tTW5">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="Gr/Fvt~6q{CC/Wx8WcI9">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="pixel_rgb" id="VN$[d#@L:U.s!zWy1)M4">
+                            <value name="pin">
+                              <shadow type="analog_pin" id="b=]p1$+B9NK+JdoyOLs}">
+                                <field name="NUM">10</field>
+                              </shadow>
+                              <block type="math_modulo" id=",[B(7++JXMICSEDAmv=8">
+                                <value name="DIVIDEND">
+                                  <block type="math_arithmetic" id="}7n[cD60dk}*WAS-4~s!">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="MmVT-A4L),{trdiBcu^_">
+                                        <field name="VAR">i</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="?IgEW@3^@,1UqkTtx`0b">
+                                        <field name="NUM">4</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="DIVISOR">
+                                  <block type="math_number" id="~o[=EAXwgmy5BzAq#|N0">
+                                    <field name="NUM">6</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="R">
+                              <shadow type="math_number" id="aS(|B^DT~m?z[;?94CY`">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="G">
+                              <shadow type="math_number" id="HF_{LyPmIrZn^1Ns^H@|">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="yNsNMk8bOd7SHSHapg!}">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="pixel_setcolor" id="lqA+te*?KF~DNb6Ci8:u">
+                                <field name="color">#ffffff</field>
+                                <value name="pin">
+                                  <shadow type="analog_pin" id=";75oxn9SN)sd1XZA;cbb">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_modulo" id="dN8x3128Unuk5WZ6:YD9">
+                                    <value name="DIVIDEND">
+                                      <block type="math_arithmetic" id="VcQBR/DSr1DR/5;GvOxU">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="-!O/aWjofY}%N=2OS{*|">
+                                            <field name="VAR">i</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="=4g*a|4Z*B+t,k;zzwF^">
+                                            <field name="NUM">5</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="DIVISOR">
+                                      <block type="math_number" id="%]WcfZ9xDG*]AszH!hjs">
+                                        <field name="NUM">6</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="pixel_show" id="U0=o%,L4uR)/$T]d4n;q">
+                                    <next>
+                                      <block type="base_delay" id="(KL3n~oGR3JU.Mu%:v~Q">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="f,$Z{T]@[Mu]@8xy{vRg">
+                                            <field name="NUM">75</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="fuA(ET2)=dvz0`3.hAZ," x="-85" y="-613">
+    <field name="NAME">sequence2</field>
+    <statement name="STACK">
+      <block type="pixel_setcolor" id="Ay;!dy*}KJ{lYRsn^[}F">
+        <field name="color">#ff0000</field>
+        <value name="pin">
+          <shadow type="analog_pin" id=";75oxn9SN)sd1XZA;cbb">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="pixel_setcolor" id="fI,!;T{:JhEJ-mM.xEv8">
+            <field name="color">#ff0000</field>
+            <value name="pin">
+              <shadow type="analog_pin" id="[;Sy}Y~]NP{cDyvw$h8~">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="pixel_show" id=",#kW#d3ez4ow`5yyW117">
+                <next>
+                  <block type="base_delay" id="PJk-_6H@qqEA/R-Gq(OW">
+                    <field name="unite">m</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="(B|?*qQ=cF]3RH{0C5/B">
+                        <field name="NUM">40</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="pixel_clear" id="hhg]{G,qj8729(WK$/a/">
+                        <next>
+                          <block type="pixel_show" id="!I%zW~ZBd8G`BdkEzzG4">
+                            <next>
+                              <block type="base_delay" id="qYZ0{#{XD};IlUY-Z1.3">
+                                <field name="unite">m</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id="k#tn=z(G|#fehdZA00zl">
+                                    <field name="NUM">150</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="pixel_setcolor" id="%+C)[y@n^kTak?:(@IFw">
+                                    <field name="color">#ffffff</field>
+                                    <value name="pin">
+                                      <shadow type="analog_pin" id="5TRB:}F9ja%YU4$V5A*C">
+                                        <field name="NUM">2</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="pixel_setcolor" id="_)q.6`b/8l6Eo$?)?}*%">
+                                        <field name="color">#ffffff</field>
+                                        <value name="pin">
+                                          <shadow type="analog_pin" id="ljnv-tSc2o!og)%/(zj/">
+                                            <field name="NUM">5</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="pixel_show" id="[!.W0CnBhG9Uf`7QiOyn">
+                                            <next>
+                                              <block type="base_delay" id="c*HONBbr5{IX3FNEzLNP">
+                                                <field name="unite">m</field>
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="nR6p*XC+x[V%O7`7fW;J">
+                                                    <field name="NUM">40</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="pixel_clear" id="Gc/f6ZJ^csp@jQ{Y9]OQ">
+                                                    <next>
+                                                      <block type="pixel_show" id=",`rpahPQ5^L@n_Ae!?m0">
+                                                        <next>
+                                                          <block type="base_delay" id="0ZB}F6pqB.1CJR-:eJ:A">
+                                                            <field name="unite">m</field>
+                                                            <value name="DELAY_TIME">
+                                                              <shadow type="math_number" id="(n3Trb;O89a(BkU!-(9f">
+                                                                <field name="NUM">150</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="pixel_rgb" id="9Z]0JvWtOGWpVRqab~hg">
+                                                                <value name="pin">
+                                                                  <shadow type="analog_pin" id="b=]p1$+B9NK+JdoyOLs}">
+                                                                    <field name="NUM">3</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="R">
+                                                                  <shadow type="math_number" id="%+iA`T]@=NhMI]??K9U@">
+                                                                    <field name="NUM">0</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="G">
+                                                                  <shadow type="math_number" id="sU{_cDHB7!STL.D6l[.^">
+                                                                    <field name="NUM">0</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <shadow type="math_number" id="PJ|=a2vmC:Yd3%b2g:,:">
+                                                                    <field name="NUM">255</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="pixel_rgb" id="k5;BZTc4G`[Jd~{XKcRF">
+                                                                    <value name="pin">
+                                                                      <shadow type="analog_pin" id="=~ryiZ_pk%|zmjiY4qSK">
+                                                                        <field name="NUM">4</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="R">
+                                                                      <shadow type="math_number" id="*j`b@@(#AE!)UcNZ6*A;">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="G">
+                                                                      <shadow type="math_number" id="WR1`,:R553{=q;WG+:Ke">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <shadow type="math_number" id="D!)`nkg]b2Xz%;_FdbwS">
+                                                                        <field name="NUM">255</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="pixel_show" id="U8K,wP|d[nFxW8XOR=cC">
+                                                                        <next>
+                                                                          <block type="base_delay" id="7!I60GV:bo;.tJKnf:8e">
+                                                                            <field name="unite">m</field>
+                                                                            <value name="DELAY_TIME">
+                                                                              <shadow type="math_number" id="z+2bLmQecB.6[CoHbVHE">
+                                                                                <field name="NUM">40</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="pixel_clear" id="rTU[x_wheR1E0P3RfsU|">
+                                                                                <next>
+                                                                                  <block type="pixel_show" id=".Y5e(ZeqK21kR9b}H7X_">
+                                                                                    <next>
+                                                                                      <block type="base_delay" id="_|hcm(GJ~ioK(X1_b7Tn">
+                                                                                        <field name="unite">m</field>
+                                                                                        <value name="DELAY_TIME">
+                                                                                          <shadow type="math_number" id="S;Q_;DGufdYb[)~1:9hi">
+                                                                                            <field name="NUM">150</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Poit2-1;Jy;8l%.{*;[7" x="-917" y="-113">
+    <field name="NAME">sequence3</field>
+    <statement name="STACK">
+      <block type="controls_for" id="W*CL.HLT`4A9jvoXn7Fk">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="UQqdo.X_$WH{wy3%HeOW">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="Je+o!zUc[$2^G6A3:6Il">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="FOxkC-`{D9}GM);Z2HIS">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="pixel_setcolor" id="w8@f4XdkM~A$YI[g..1`">
+            <field name="color">#ff0000</field>
+            <value name="pin">
+              <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="variables_get" id="$*MR1*$O2rYDkqUeTsC%">
+                <field name="VAR">i</field>
+              </block>
+            </value>
+            <next>
+              <block type="pixel_show" id=";[mAJdkZuKeD6vc$yp|o">
+                <next>
+                  <block type="base_delay" id="tXkVw6QA5KMhXXipyLe0">
+                    <field name="unite">m</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="pxgV9c})c`l70R/*bvuv">
+                        <field name="NUM">25</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_for" id="#2R|o=bajMsh?aFcP3BK">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="ZMB)ebrWQRBwL4TL9vzo">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="2!]+],$K`lXc:r,~@m]4">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="*W%OzIx!r4rUSY4;%10,">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="pixel_setcolor" id="2t3NLBq!qlie;JRdjGNB">
+                <field name="color">#ffffff</field>
+                <value name="pin">
+                  <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id=":7q.:pHPNSA~C![n}In[">
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="pixel_show" id="E@Tp*@:xvbuLQ6QLi~]3">
+                    <next>
+                      <block type="base_delay" id="1Pr+^T2I7DQ8cN)L4Zqc">
+                        <field name="unite">m</field>
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id="d/%4dbnQZE`7`#=GUV?Y">
+                            <field name="NUM">25</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_for" id="X%_FheJJjkn-cUqNF#tr">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="Fu-2RKt0WJ7p)RZPCR2Q">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="+VR,kbecGT#VyG9[!D}2">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="KN9BKQFY,s}{jT%O$QV7">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="pixel_rgb" id="nw|w|k@Jcw$ZCs(n4+F#">
+                    <value name="pin">
+                      <shadow type="analog_pin" id="Fe*qACd3}S+P2=86=|_~">
+                        <field name="NUM">3</field>
+                      </shadow>
+                      <block type="variables_get" id="$}0dW,~gDas~1Umpp2Bw">
+                        <field name="VAR">i</field>
+                      </block>
+                    </value>
+                    <value name="R">
+                      <shadow type="math_number" id=";{CSI~[yi$6.lB$Qon#@">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="G">
+                      <shadow type="math_number" id="0(}PB3w%b5S3g9ks/.2l">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id=":1p)N9]QR0}^lToA;I[*">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="pixel_show" id="@yx8GPQ,GcJD8Cb*,~]T">
+                        <next>
+                          <block type="base_delay" id="j#3{oa@Ytk`=cKsBwgDn">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="qI$vTYF[xjP~6t~LA8m:">
+                                <field name="NUM">25</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="r?kbZW8?Xo7g@V:{:+ED" x="-443" y="167">
+    <field name="NAME">sequence4</field>
+    <statement name="STACK">
+      <block type="controls_for" id="#nTax=p*5j(U4]pGO_qt">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="!}OP^W}1US]-AMD^eaLb">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id=";|~sE{+*_gz)|{uZA@6x">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="_}CMv%co9vBln=82PWkN">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="pixel_setcolor" id="gz4v,JQHA9OYz{2Zv.I$">
+            <field name="color">#ff0000</field>
+            <value name="pin">
+              <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="variables_get" id="-hc{y92hgFRmB;a/1YVu">
+                <field name="VAR">i</field>
+              </block>
+            </value>
+            <next>
+              <block type="pixel_show" id="`3HLol9;!JMK2n)Uia]m">
+                <next>
+                  <block type="base_delay" id="Qxfd!sSlwQdJlkxP~]v:">
+                    <field name="unite">m</field>
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="sZqal{7+:IuUL}ReAK^f">
+                        <field name="NUM">25</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_for" id="nszjKR;O(|:JPhh-PdXZ">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id=":`FD[kzCQ1!f8X|~yk#a">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="o0?!YA}wwx8w8H5^8uTA">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="_)nM/~KD.4rKqR-T5[3]">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="pixel_setcolor" id="-uy}tA/FCg@5@Qo2vHK~">
+                <field name="color">#000000</field>
+                <value name="pin">
+                  <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id="{]d)-:%MIdRNqTCmFdbF">
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="pixel_show" id="FVFok47oup@Cze`RJ~OY">
+                    <next>
+                      <block type="base_delay" id="u*z;#**fhacuc%s^;L%R">
+                        <field name="unite">m</field>
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id="5rS3=Ehhv3]!UJOsLKDQ">
+                            <field name="NUM">25</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_for" id="NC}Rvh+d*1I1^?pQ].qU">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="(zpPV_a7bF?yfK^a*i_Y">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="mRKz]K`.N?gPWGP.J7C`">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="#7cX?R)b8z,x_-B86Ak(">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="pixel_setcolor" id="R^XfWI=b``/8hwPUISm6">
+                    <field name="color">#ffffff</field>
+                    <value name="pin">
+                      <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get" id="j,A~skybBM;xkjUTGtmB">
+                        <field name="VAR">i</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="pixel_show" id="B/b?iutc_]$dZSu!kcq?">
+                        <next>
+                          <block type="base_delay" id="uS)Ti2q/f|nTgY[+O0bk">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="M0#}i:KlgND)$nsZD:nV">
+                                <field name="NUM">25</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_for" id=",GHl1[bv`OB]HJPSiv+j">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <shadow type="math_number" id="!2WIKM:rX6x)__6Nv-B@">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="TO">
+                      <shadow type="math_number" id="2a.t$h]=/{0ufkcJ4bh^">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <value name="BY">
+                      <shadow type="math_number" id="3~gCxnUvbEv^}a,EsJNI">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="pixel_setcolor" id="FC6gv=j-!+BpATJU)NN3">
+                        <field name="color">#000000</field>
+                        <value name="pin">
+                          <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="variables_get" id="3{rJu`1}WTn]gSew.]t|">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="pixel_show" id="|%6IkbNNG+|G/;)Bl=_A">
+                            <next>
+                              <block type="base_delay" id="*a~|Pzwl?+=]^d0QNDTk">
+                                <field name="unite">m</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id="u}:Slf;tUV6;B`,_[k:y">
+                                    <field name="NUM">25</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_for" id="m,1q|r]!6?X[6`lH3,#,">
+                        <field name="VAR">i</field>
+                        <value name="FROM">
+                          <shadow type="math_number" id=";z3xpX8/3=#pG1d^F2CR">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="TO">
+                          <shadow type="math_number" id="F$nff@AF}NM|2fYu!8:*">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                        <value name="BY">
+                          <shadow type="math_number" id="omwP:H%Fi|F/Xz*g_R#C">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="pixel_rgb" id="xUJ2{}D[_N)z,(Oee=8=">
+                            <value name="pin">
+                              <shadow type="analog_pin" id="Fe*qACd3}S+P2=86=|_~">
+                                <field name="NUM">3</field>
+                              </shadow>
+                              <block type="variables_get" id="k;)Uh!MKnAz2m*]^Yi5[">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                            <value name="R">
+                              <shadow type="math_number" id="t5;=oCAR;Rx**E+~;4=n">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="G">
+                              <shadow type="math_number" id="nE4+w/!J!-ilw5nd%ivX">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="iG2[~U}k1j528v9UJ_ze">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="pixel_show" id="?N}PNbBwv=]}3S+O-[Uz">
+                                <next>
+                                  <block type="base_delay" id="KeM0TtFK@qC5S@Ugci4J">
+                                    <field name="unite">m</field>
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="#^O(4fdpbavwF-3-4O$K">
+                                        <field name="NUM">25</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_for" id="~X_.sJ|-:L3;|F,H-OQ)">
+                            <field name="VAR">i</field>
+                            <value name="FROM">
+                              <shadow type="math_number" id="G@3Oc3E`@LXs?+Xh?i^_">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id=",d_w^lq8Lz_}2f%B#(h]">
+                                <field name="NUM">5</field>
+                              </shadow>
+                            </value>
+                            <value name="BY">
+                              <shadow type="math_number" id="!t3#nGL{6giC74ds@gj+">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <statement name="DO">
+                              <block type="pixel_setcolor" id="(u`f=Ul5#8gkfPqm9Moh">
+                                <field name="color">#000000</field>
+                                <value name="pin">
+                                  <shadow type="analog_pin" id="p}s$)nJu:A[yNe|r]f.@">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="variables_get" id="w|e2hhY`#fl-Y??R),}E">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="pixel_show" id="4I,MI0JA__lhUD/s|YW|">
+                                    <next>
+                                      <block type="base_delay" id="/]4!i2Mv^-UV?+AT#zl2">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="OWSIy$O021PeiRXi0Omf">
+                                            <field name="NUM">25</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

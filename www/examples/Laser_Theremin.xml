@@ -1,0 +1,115 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="f~q0s`a;@!;gu{QM[EJB" x="159" y="32">
+    <statement name="DO">
+      <block type="otto9_configuration" id="x$2z{yKzIT.-|0a$Mm#5">
+        <value name="PIN_YL">
+          <shadow type="analog_pin" id="$9g%vNV;#c%XTO~#6z`~">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="PIN_YR">
+          <shadow type="analog_pin" id="$^SWeoOy~Pb*_teaFIj*">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+        <value name="PIN_RL">
+          <shadow type="analog_pin" id="FhanDBTAflaBUz.rG{DO">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <value name="PIN_RR">
+          <shadow type="analog_pin" id="rhoQvxi1~:^w7[1MhRGy">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="PIN_TRIG">
+          <shadow type="analog_pin" id="BKVy+|eG#imf]wJ]l.Dp">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <value name="PIN_ECHO">
+          <shadow type="analog_pin" id="rW1$[gW(Vt#FLXIa5|WN">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+        <value name="PIN_Buzzer">
+          <shadow type="analog_pin" id="*J%7ya,L_5:Kl#[RA!t^">
+            <field name="NUM">13</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="VL53L0X" id="nG^ROjOLI{G=sExSd0~q">
+            <next>
+              <block type="serial_init" id=")C}:)).l%y*mFx}qbX]O">
+                <field name="PINBAUDIOS">9600</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="SFdIcLAy0z.,l|#0`p-I">
+        <field name="VAR">freq</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="TBFTyg2z?ASQJbu#_)B1">
+            <field name="OP">MINUS</field>
+            <value name="A">
+              <block type="math_number" id="FogA_.%JuMV%T!B?*6J0">
+                <field name="NUM">3200</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_arithmetic" id="~hhjc$Z#o;J)0ki8?K?g">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <block type="VL53L0X_distance" id="0k[0GqAxiVm4WrLpWNEV"></block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="$IrMNett:TIs}`24~Vyw">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="/532InIdt/$ScCx:Hh{c">
+            <value name="CONTENT">
+              <shadow type="text" id="pN+YY}7Lxrd}ey/9=(_-">
+                <field name="TEXT">text</field>
+              </shadow>
+              <block type="variables_get" id="P#rJ+Q1GmLbXGMy?UObp">
+                <field name="VAR">freq</field>
+              </block>
+            </value>
+            <next>
+              <block type="otto_tonehz" id="W-oW,Z$y`I]dW]Z_brOB">
+                <value name="Hz1">
+                  <shadow type="math_number" id="2Veq`FEit304e/RQ(z1~">
+                    <field name="NUM">10</field>
+                  </shadow>
+                  <block type="variables_get" id="]6S:QS[Ir_/2U5$4AskY">
+                    <field name="VAR">freq</field>
+                  </block>
+                </value>
+                <value name="duration">
+                  <shadow type="math_number" id="_OMCLV1[`QedHF@w7M`%">
+                    <field name="NUM">40</field>
+                  </shadow>
+                </value>
+                <value name="silent">
+                  <shadow type="math_number" id="lS!,t9tJ-7s3YwN=Hq#w">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

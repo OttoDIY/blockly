@@ -33,7 +33,8 @@ class TM16xxMatrixGFX : public Adafruit_GFX
   void drawPixel(int16_t x, int16_t y, uint16_t color);
   uint16_t getPixel(int16_t x, int16_t y); // required for scroll support as implemented by Adafruit GFX pull request #60
 
-  void write();
+  void writeDisplay();
+  void clear();
 
  protected:
   byte _nModules;

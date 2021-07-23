@@ -183,7 +183,7 @@ uint16_t TM16xxMatrixGFX::getPixel(int16_t x, int16_t y)
   return (bitmap[y+ (x/8)*WIDTH] >> (x%8)) & 0x1;
 }
 
-void TM16xxMatrixGFX::write()
+void TM16xxMatrixGFX::writeDisplay()
 {	// write the memory to the display
 	for(uint8_t n=0;n<_nModules;n++)
 	{
@@ -193,3 +193,6 @@ void TM16xxMatrixGFX::write()
 		}
 	}
 }
+void TM16xxMatrixGFX::clear() {
+ fillScreen(0);
+  }

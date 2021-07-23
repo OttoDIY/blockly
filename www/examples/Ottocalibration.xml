@@ -2,52 +2,25 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="Q)pa6%kQX/l;F0=Y5$B6" x="-271" y="140">
     <statement name="DO">
-      <block type="otto9_configuration" id="4/5Q?/=#{Vdoxp;8cnan">
-        <value name="PIN_YL">
-          <shadow type="analog_pin" id="OcwCE`QIfns+SJXkro!g">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="PIN_YR">
-          <shadow type="analog_pin" id="^=g(*uadiZ3aGOUw!4/:">
-            <field name="NUM">3</field>
-          </shadow>
-        </value>
-        <value name="PIN_RL">
-          <shadow type="analog_pin" id="/LHo9{h;y_@C[)n]Phk9">
-            <field name="NUM">4</field>
-          </shadow>
-        </value>
-        <value name="PIN_RR">
-          <shadow type="analog_pin" id="`9A*6],[8Nm52!xcZhva">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-        <value name="PIN_TRIG">
-          <shadow type="analog_pin" id="OL0~h*N~{%DcW+}IMxuM">
-            <field name="NUM">8</field>
-          </shadow>
-        </value>
-        <value name="PIN_ECHO">
-          <shadow type="analog_pin" id="lVU72Y5wqzEdiLjC`]T_">
-            <field name="NUM">9</field>
-          </shadow>
-        </value>
-        <value name="PIN_Buzzer">
-          <shadow type="analog_pin" id="1A2Fp$s+IJS!|8Lkr}-=">
-            <field name="NUM">13</field>
-          </shadow>
-        </value>
+      <block type="otto9_configuration" id="@42-xV+AdobI.37wV^bH">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
         <next>
           <block type="otto_calibration" id="QnYoP$_W6*QUFclV0byO">
             <field name="LL">0</field>
             <field name="RL">0</field>
             <field name="LF">0</field>
             <field name="RF">0</field>
-            <comment pinned="true" h="147.60000610351562" w="551.5999755859375">Change the legs and feet values gradually with small values and increments(+5 or - 5 degrees)
+            <comment pinned="true" h="147" w="551">Change the legs and feet values gradually with small values and increments(+5 or - 5 degrees)
 
 Iteratively you have to check/upload the code multiple times, until Otto legs and feet looks completely straight.
             </comment>
+            <next>
+              <block type="otto_eeprom" id="f{K/Er,?W:^pleg?GJ#-" disabled="true"></block>
+            </next>
           </block>
         </next>
       </block>
