@@ -458,7 +458,45 @@
 	</category>	
 	
 	<category name="CAT_MAX1640" colour="#4b009f">
-	    <block type="matrizled_init">
+			<block type="matrix16x8_init">
+				<field name="PIN_SCL">D2</field>
+		   		<field name="PIN_SDA">D3</field>
+			</block>
+			<block type="otto9_eyes_display"></block>
+			<block type="otto9_eyes_clear"></block>
+			<block type="otto9_eyes_rotate"></block>
+			<block type="otto9_eyes_brightness">
+			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			</block>
+			<block type="otto9_eyes_blink"></block>
+			<block type="otto9_eyes_face"></block>
+			<block type="otto9_eyes_text"></block>
+			<block type="otto9_eyes#">
+				<value name="eyes"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+			</block>
+			<block type="otto9_eyesm"></block>
+			<block type="otto9_eyesp">	
+				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			</block>
+			<block type="otto9_eyesc">
+				<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+				<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
+				<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="otto9_eyesl">
+				<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+				<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
+			</block>
+			<block type="otto9_eyesr">
+				<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+				<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
+			</block>
+	<!--    <block type="matrizled_init">
 				<value name="PIN_SCL"><shadow type="analog_pin"><field name="NUM">A4</field></shadow></value>
 				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">A5</field></shadow></value>
 	    </block>
@@ -499,7 +537,7 @@
 			<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
 			<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 		</block>
-		<block type="matrizled_clear2"></block>
+		<block type="matrizled_clear2"></block> -->
 		</category>
 	
 		<category name="CAT_MAX7219" colour="#4b009f">	

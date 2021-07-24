@@ -4,19 +4,27 @@ goog.provide('Blockly.Blocks.arduino');
 goog.require('Blockly.Blocks');
 
 Blockly.Blocks['matrix16x8_init'] = {  init: function() {
+	var card=window.localStorage.card;
 	this.setColour("#4b009f");
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/eyes.png",58,33))    .appendField(Blockly.Msg.TM1640_init)
-	this.appendValueInput("PIN_SCL", "Number")	.setCheck("Number")	.appendField(Blockly.Msg.TM1640_SCL)
-  this.appendValueInput("PIN_SDA", "Number").setCheck("Number")	.appendField(Blockly.Msg.TM1640_SDA)
+	this.appendDummyInput()	.appendField(Blockly.Msg.TM1640_SCL).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SCL");
+	this.appendDummyInput()	.appendField(Blockly.Msg.TM1640_SDA).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SDA");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip("TM1640 LED matrix 16x8");
 	this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
+
+
+
 Blockly.Arduino['matrix16x8_init'] = function(block) {
- var pin_scl = Blockly.Arduino.valueToCode(this, "PIN_SCL", Blockly.Arduino.ORDER_NONE);
- var pin_sda = Blockly.Arduino.valueToCode(this, "PIN_SDA", Blockly.Arduino.ORDER_NONE);
+// var pin_scl = Blockly.Arduino.valueToCode(this, "PIN_SCL", Blockly.Arduino.ORDER_NONE);
+ //var pin_sda = Blockly.Arduino.valueToCode(this, "PIN_SDA", Blockly.Arduino.ORDER_NONE);
+ 
+  var pin_scl = this.getFieldValue('PIN_SCL');
+  var pin_sda = this.getFieldValue('PIN_SDA');
+ 
  Blockly.Arduino.includes_['define_Adafruit_GFX'] = '#include <Adafruit_GFX.h>\n';
  Blockly.Arduino.includes_['matrizled'] = '#include <TM1640.h>\n'
   +'#include <TM16xxMatrixGFX.h>\n'

@@ -954,7 +954,7 @@ Blockly.Msg.GPS_paramter = "Location Parameters:";
 Blockly.Msg.GPS_paramter3 = "DateTime:";
 
 //TM1640
-Blockly.Msg.TM1640_init = "Matrix Pins";
+Blockly.Msg.TM1640_init = "TM1640 Matrix Pins";
 Blockly.Msg.TM1640_SCL="DIN";
 Blockly.Msg.TM1640_SDA="CLK";
 

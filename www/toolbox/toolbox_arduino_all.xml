@@ -441,6 +441,10 @@
 					</category>
 		<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 			<block type="otto9_eyes_init"></block>
+			<block type="matrix16x8_init">
+				<field name="PIN_SCL">A4</field>
+		   		<field name="PIN_SDA">A5</field>
+			</block>
 			<block type="otto9_eyes_display"></block>
 			<block type="otto9_eyes_clear"></block>
 			<block type="otto9_eyes_rotate"></block>
@@ -477,12 +481,11 @@
 
 		</category>
 
-	<category name="CAT_MAX1640" colour="#4b009f">
-	    <block type="matrix16x8_init">
-				<value name="PIN_SCL"><shadow type="analog_pin"><field name="NUM">A4</field></shadow></value>
-				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">A5</field></shadow></value>
-	    </block>
-		</category>
+		<!--<category name="CAT_MAX1640" colour="#4b009f">
+	   
+		</category> -->
+		
+		
 			<category name="CAT_LEDRGB" colour="#4b009f">
 		<block type="rgb_init"></block>
 		<block type="rgb_setcolor"></block>
