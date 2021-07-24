@@ -13,37 +13,28 @@
 	
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto_configuration">
-		<field name="PIN_YL">0</field>
-		<field name="PIN_YR">2</field>
-		<field name="PIN_RL">13</field>
-		<field name="PIN_RR">15</field>
-		<field name="PIN_Buzzer">16</field>
-
+			<field name="PIN_YL">0</field>
+			<field name="PIN_YR">2</field>
+			<field name="PIN_RL">13</field>
+			<field name="PIN_RR">15</field>
+			<field name="PIN_Buzzer">16</field>
 		</block>
 		<block type="otto_home"></block>
 		<block type="otto_move"></block>
 		<block type="otto_dance"></block>
 		<block type="otto_do"></block>
 		<block type="otto_gesture"></block>
-				<block type="otto_calibration"></block>
+		<block type="otto_movelegs">
+			<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
+			<value name="PIN_RL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN_RR"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="TEMPO"><shadow type="math_number"><field name="NUM">200</field></shadow></value>
+		</block>
+		<block type="otto_calibration"></block>
 		<block type="otto_eeprom"></block>
-		<category name="OTTO9_BUZZER" colour="#a600d3">
-			<block type="otto_sound"></block>
-			<block type="otto_tone"></block>
-			<block type="otto_tonehz">
-				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
-				<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
-			</block>
-			<block type="otto_bendtone">
-				<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
-				<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
-				<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
-				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
-				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-			</block>
-			</category>	
-
+		
+<!--
 		<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 			<block type="otto9_eyes"></block>
 			<block type="otto9_eyes_clear"></block>
@@ -79,6 +70,7 @@
 				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
 				<block type="otto9_eyes_display"></block>
 		</category>
+		-->
 		
 </category>
 
@@ -397,13 +389,15 @@
 	<category name="CAT_LED" colour="#4b009f">		
 		<block type="blink"></block>
 		<block type="inout_buildin_led"></block>
+				<block type="digital_write0"></block>
 		<block type="digital_write">
-		<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
+		<value name="PIN"><shadow type="analog_pin"><field name="NUM">D1</field></shadow></value>
 		</block>	
 		<block type="digital_write2">
-		<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
+		<value name="PIN"><shadow type="analog_pin"><field name="NUM">D1</field></shadow></value>
 		<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>	
+		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 		
 	<category name="CAT_LEDRGB" colour="#4b009f">
 		<block type="rgb_init"></block>
@@ -675,7 +669,7 @@
 		</block>
 	</category>
 	
-	<!--
+	
 	
 	<category name="CAT_TFT_ST7735" colour="#4b009f">
 			 <block type="st7735_init">
@@ -741,8 +735,7 @@
 			   <block type="st7735_properties"></block>
 	</category> 
 	
-	-->
-
+	
 	<category name="CAT_LCDI2C" colour="#4b009f">
 				<block type="lcdi2c_setup" x="38" y="138"><field name="NAME">0x3F</field>
                     <value name="COLUMNS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
@@ -768,36 +761,61 @@
 	</category>	
 	
 <category name="CAT_AUDIO" colour="#a600d3">
-			<block type="play">
-			   <value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			
+	<category name="OTTO9_BUZZER" colour="#a600d3">
+			<block type="otto_sound"></block>
+			<block type="otto_tone"></block>
+			<block type="otto_tonehz">
+				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
+				<value name="silent"><shadow type="math_number"><field name="NUM">500</field></shadow></value>
+			</block>
+			<block type="otto_bendtone">
+				<value name="Hz1"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
+				<value name="Hz2"><shadow type="math_number"><field name="NUM">2093</field></shadow></value>
+				<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
+				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
+				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="RTTTL_music">  <field name="PIN_BUZZER">D0</field></block>
+			<block type="RTTTL_music_custom">
+			<field name="PIN_BUZZER">D0</field>
+			<value name="rtttl_melody"><shadow type="text"><field name="TEXT">text</field></shadow></value>
+			</block>
+						<block type="play">
+			   <value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
 		    </block>
 			<block type="tone">
-				<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
 				<value name="NUM"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
 				<value name="TPS"><shadow type="math_number"><field name="NUM">100</field></shadow></value>
 			</block>
 			<block type="notone">
-				<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
 			</block>
-			<block type="RTTTL_music"></block>
-			<block type="RTTTL_music_custom"></block>
-			
 			<block type="beep">
-			<value name="PIN"><shadow type="math_number"><field name="NUM">10</field></shadow></value></block>
+			<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>
 			
+		</category>			
 			
 			
 	<category name="CAT_DFPLAYER" colour="#a600d3">
-			<block type="lp2i_mp3_init"></block>
+			<block type="lp2i_mp3_init">
+				<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+				<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">D1</field></shadow></value>
+				<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">D2</field></shadow></value>
+			</block>
+			<block type="lp2i_mp3_volume">			 
+			<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+			</block>
 			<block type="lp2i_mp3_play"></block>
-			<block type="lp2i_mp3_play_track"></block>
+			<block type="lp2i_mp3_play_track">
+				<value name="num"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+			</block>
 			<block type="lp2i_mp3_pause"></block>
 			<block type="lp2i_mp3_next"></block>
 			<block type="lp2i_mp3_prev"></block>
-			<block type="lp2i_mp3_volume"></block>
-			<block type="play"></block>
-			<block type="tone"></block>
-			<block type="notone"></block>
+			
 	</category>	
 	
 		<category name="CAT_OPENSMART" colour="#a600d3">
@@ -821,7 +839,7 @@
 			</block>
 		</category>	
 		
-	<!--
+	
 		<category name="CAT_RADIO_TEA5767" colour="#a600d3"> 
 			<block type="RadioTEA5767_init"></block>
 		 	<block type="RadioTEA5767_activate"></block>
@@ -833,7 +851,7 @@
 			</block>
 			<block type="frequenciesMadrid"></block>
 		 </category> 
-		-->
+		
 	</category>
 	
     <category name="CAT_com"  colour="#0060aa">

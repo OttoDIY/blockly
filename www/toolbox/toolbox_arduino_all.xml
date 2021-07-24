@@ -26,11 +26,11 @@
 		<block type="otto_do"></block>
 		<block type="otto_gesture"></block>
 		<block type="otto_movelegs">
-		<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-		<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
-		<value name="PIN_RL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-		<value name="PIN_RR"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-		<value name="TEMPO"><shadow type="math_number"><field name="NUM">200</field></shadow></value>
+			<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
+			<value name="PIN_RL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="PIN_RR"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			<value name="TEMPO"><shadow type="math_number"><field name="NUM">200</field></shadow></value>
 		</block>
 		<block type="otto9_arms"></block>
 		<block type="otto9_app"></block>
@@ -382,7 +382,7 @@
 		<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
 		<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>	
-			<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
+		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 		
 		<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
 				<block type="otto9_matrix_init">
@@ -486,13 +486,13 @@
 		</category> -->
 		
 		
-			<category name="CAT_LEDRGB" colour="#4b009f">
+	<category name="CAT_LEDRGB" colour="#4b009f">
 		<block type="rgb_init"></block>
 		<block type="rgb_setcolor"></block>
 		<block type="rgb_set">
-		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 		</block>
 	</category>	
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
@@ -698,7 +698,7 @@
 	</category>	
 
 <category name="CAT_AUDIO" colour="#a600d3">
-					<category name="CAT_BUZZER" colour="#a600d3">
+		<category name="CAT_BUZZER" colour="#a600d3">
 			<block type="otto_sound"></block>
 			<block type="otto_tone"></block>
 			<block type="otto_tonehz">
