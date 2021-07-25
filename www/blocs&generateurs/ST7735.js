@@ -13,21 +13,21 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['st7735_init'] = {
    init: function() {
+	var card=window.localStorage.card;
     this.setColour("#4b009f");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/tft7735.png",53,38))
         .appendField(Blockly.Msg.ST7735_init)
 		.appendField(Blockly.Msg.ST7735_init2);
 	this.appendDummyInput()	
-	this.appendValueInput("PIN_CS", "Number")
-		.setCheck("Number")
         .appendField(Blockly.Msg.ST7735_PIN_CS)
-	this.appendValueInput("PIN_DC", "Number")
-		.setCheck("Number")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");	
+	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_PIN_DC)
-	this.appendValueInput("PIN_RST", "Number")
-		.setCheck("Number")
-        .appendField(Blockly.Msg.ST7735_PIN_RST)		
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DC");	
+	this.appendDummyInput()	
+        .appendField(Blockly.Msg.ST7735_PIN_RST)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RST");		
 	this.appendDummyInput()
         .appendField(Blockly.Msg.ST7735_WRAP)
 		.appendField(new Blockly.FieldDropdown([["1.8\" Black Tab", "INITR_BLACKTAB"], ["1.8\" Green Tab ", "INITR_GREENTAB"],["1.8\"  Red Tab", "INITR_REDTAB"],["0.96\" Mini TFT","INITR_MINI160x80"]]), "WRAP")
@@ -39,12 +39,14 @@ Blockly.Blocks['st7735_init'] = {
   }
 };
 
+
 Blockly.Arduino['st7735_init'] = function(block) {
 
      
-   var pin_RST = Blockly.Arduino.valueToCode(this, "PIN_RST", Blockly.Arduino.ORDER_NONE);
-   var pin_CS = Blockly.Arduino.valueToCode(this, "PIN_CS", Blockly.Arduino.ORDER_NONE);
-   var pin_DC = Blockly.Arduino.valueToCode(this, "PIN_DC", Blockly.Arduino.ORDER_NONE);
+   var pin_RST = this.getFieldValue('PIN_RST');
+   var pin_CS = this.getFieldValue('PIN_CS');
+   var pin_DC = this.getFieldValue('PIN_DC');
+   
    var wrap = block.getFieldValue('WRAP');  
    	
    Blockly.Arduino.includes_['define_spi'] = '#include <SPI.h>\n';

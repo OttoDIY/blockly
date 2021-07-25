@@ -264,8 +264,8 @@
 
 			<category name="CAT_GPS" colour="#2a93e8">
 				<block type="GPS_init_ss">
-					<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
-					<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>	  
+					<field name="PIN_TX">12</field>
+					<field name="PIN_RX">11</field>	  
 				</block>
 				<block type="GPS_read_save_values"></block>
 				<block type="GPS_location"></block>
@@ -290,8 +290,8 @@
 		
 			<category name="CAT_RFID" colour="#2a93e8">
 				<block type="rfid_init">
-				<value name="PIN_SDA"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
-				<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+				    <field name="PIN_SDA">10</field>
+					<field name="PIN_RST">11</field>	  
 				</block>
 				<block type="rfid_validationcard"></block>
 				<block type="RFID_detected"></block>
@@ -360,10 +360,10 @@
 		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
 		<block type="stepper_configuration">
 			<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
-			<value name="PIN_STEEPER1"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			<value name="PIN_STEEPER2"><shadow type="analog_pin"><field name="NUM">3</field></shadow></value>
-			<value name="PIN_STEEPER3"><shadow type="analog_pin"><field name="NUM">4</field></shadow></value>
-			<value name="PIN_STEEPER4"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
+				<field name="PIN_STEEPER1">2</field>
+				<field name="PIN_STEEPER2">3</field>
+				<field name="PIN_STEEPER3">4</field>
+				<field name="PIN_STEEPER4">5</field>
 		</block>
 		<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
 	    <block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
@@ -611,9 +611,9 @@
 	
 	<category name="CAT_TFT_ST7735" colour="#4b009f">
 			 <block type="st7735_init">
-			    <value name="PIN_CS"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
-				<value name="PIN_DC"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
-				<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
+			   	<field name="PIN_CS">A1</field>
+				<field name="PIN_DC">A2</field>
+				<field name="PIN_RST">A3</field>	
 			 </block>
 			 <block type="st7735_icon"></block>
 			<block type="st7735_backgroundcolor"></block>
@@ -753,8 +753,8 @@
 		
 		<category name="CAT_OPENSMART" colour="#a600d3">
 			<block type="OpenSmartMp3_init_ss">
-				<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
-				<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+				<field name="PIN_TX">12</field>
+				<field name="PIN_RX">11</field>
 			</block>
 			<block type="OpenSmartMp3_set_volumen">
 			 <value name="Volumen"><shadow type="math_number"><field name="NUM">20</field></shadow></value>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_iot</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_com,CAT_iot</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,OTTO9_BUZZER,CAT_iot</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_com,OTTO9_BUZZER,CAT_iot</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_STOCKAGE</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
@@ -282,8 +282,8 @@
 	
 	<category name="CAT_RFID" colour="#2a93e8">
 		 <block type="rfid_init">
-		 <value name="PIN_SDA"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-		 <value name="PIN_RST"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+		    <field name="PIN_SDA">D5</field>
+			<field name="PIN_RST">D4</field>	  
 		</block>
 		<block type="rfid_validationcard"></block>
 		<block type="RFID_detected"></block>
@@ -307,8 +307,8 @@
 
 	<category name="CAT_GPS" colour="#2a93e8">
 		 <block type="GPS_init_ss">
-			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-			<value name="PIN_RX"><shadow type="math_number"><field name="NUM">4</field></shadow></value>	  
+			<field name="PIN_TX">D2</field>
+			<field name="PIN_RX">D3</field>	  
 		 </block>
 		<block type="GPS_read_save_values"></block>
 		<block type="GPS_location"></block>
@@ -320,43 +320,43 @@
 
 	<category name="CAT_actionneur" colour="#2d2dd1">
 		<category name="CAT_servo" colour="#2d2dd1">
-		<block type="servo_move">
-			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		</block>
-				<block type="servo_movemicros">
-			<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-		</block>
-		<block type="servo_read_degrees">
-			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-		</block>
-				<block type="servo_detach">
-			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-		</block>
-		<block type="servo_attach">
-			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-		</block>
-		<block type="servo_attached">
-			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-		</block>
+			<block type="servo_move">
+				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+			<block type="servo_movemicros">
+				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_read_degrees">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_detach">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_attach">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_attached">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
 			<block type="servo_PWM">
-			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-		</block>
+				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			</block>
 	
-		<block type="servo_rot_continue_param">
-			<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-		</block>
-				<block type="servo_rot_stop">
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-		</block>
+			<block type="servo_rot_continue_param">
+				<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_rot_stop">
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+			</block>
 			<block type="servo_2wheels">
 				<value name="PINL"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
 				<value name="PINR"><shadow type="analog_pin">	<field name="NUM">3</field></shadow></value>
 			</block>
-	</category>	
+		</category>	
 			<block type="moteur_dc_init">
 			<value name="ENA"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
 			<value name="ENB"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
@@ -373,19 +373,20 @@
 			<block type="motor_stop"></block>
 			<!--<block type="moteur_action"></block>
 			//<block type="moteur_stop"></block>-->
-		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
-		<block type="stepper_configuration">
-			<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
-			<value name="PIN_STEEPER1"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			<value name="PIN_STEEPER2"><shadow type="analog_pin"><field name="NUM">3</field></shadow></value>
-			<value name="PIN_STEEPER3"><shadow type="analog_pin"><field name="NUM">4</field></shadow></value>
-			<value name="PIN_STEEPER4"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
-		</block>
-		<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
-	    <block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
+			<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
+				<block type="stepper_configuration">
+					<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
+					<field name="PIN_STEEPER1">D1</field>
+					<field name="PIN_STEEPER2">D2</field>
+					<field name="PIN_STEEPER3">D3</field>
+					<field name="PIN_STEEPER4">D4</field>
+				</block>
+				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
+				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
 			</category>
 
-				</category>
+		</category>
+		
 	<category name="CAT_LED" colour="#4b009f">		
 		<block type="blink"></block>
 		<block type="inout_buildin_led"></block>
@@ -673,9 +674,9 @@
 	
 	<category name="CAT_TFT_ST7735" colour="#4b009f">
 			 <block type="st7735_init">
-			    <value name="PIN_CS"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
-				<value name="PIN_DC"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
-				<value name="PIN_RST"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
+			   	<field name="PIN_CS">D1</field>
+				<field name="PIN_DC">D2</field>
+				<field name="PIN_RST">D3</field>					
 			 </block>
 			 <block type="st7735_icon"></block>
 			<block type="st7735_backgroundcolor"></block>
@@ -820,8 +821,8 @@
 	
 		<category name="CAT_OPENSMART" colour="#a600d3">
 			<block type="OpenSmartMp3_init_ss">
-				<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
-				<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
+				<field name="PIN_TX">D2</field>
+				<field name="PIN_RX">D3</field>
 			</block>
 			<block type="OpenSmartMp3_set_volumen">
 			 <value name="Volumen"><shadow type="math_number"><field name="NUM">20</field></shadow></value>

@@ -11,16 +11,16 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['OpenSmartMp3_init_ss'] = {
   init: function() {
+	 var card=window.localStorage.card;
 	this.setColour("#a600d3");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/opensmart.png",43,38))
         .appendField(Blockly.Msg.MP3OS_init)
-	this.appendValueInput("PIN_TX", "Number")
-		.setCheck("Number")
 		.appendField(Blockly.Msg.MP3OS_TX)
-    this.appendValueInput("PIN_RX", "Number")
-		.setCheck("Number")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
+   this.appendDummyInput()
 		.appendField(Blockly.Msg.MP3OS_RX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RX");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -28,11 +28,13 @@ Blockly.Blocks['OpenSmartMp3_init_ss'] = {
   }
 };
 
+
 Blockly.Arduino['OpenSmartMp3_init_ss'] = function(block) {
 	
- var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
- var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
- 
+ //var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
+ //var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
+ var pin_rx = this.getFieldValue('PIN_RX');
+ var pin_tx = this.getFieldValue('PIN_TX');
 
  Blockly.Arduino.includes_['define_softwareserial'] = '#include <SoftwareSerial.h>\n'; 
  Blockly.Arduino.includes_['define_osmp3_library'] = '#include <RedMP3.h>\n';

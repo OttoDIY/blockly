@@ -12,16 +12,17 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['GPS_init_ss'] = {
   helpUrl: '',
   init: function() {
+	 var card=window.localStorage.card;
 	this.setColour("#2a93e8");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/GPS.png",33,33))
         .appendField(Blockly.Msg.GPS_init)
-	this.appendValueInput("PIN_TX", "Number")
-		.setCheck("Number")
+	this.appendDummyInput()
 		.appendField(Blockly.Msg.GPS_TX)
-    this.appendValueInput("PIN_RX", "Number")
-		.setCheck("Number")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
+    this.appendDummyInput()
 		.appendField(Blockly.Msg.GPS_RX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RX");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -31,8 +32,8 @@ Blockly.Blocks['GPS_init_ss'] = {
 
 Blockly.Arduino['GPS_init_ss'] = function(block) {
 	
- var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
- var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
+ var pin_rx = this.getFieldValue('PIN_RX');
+ var pin_tx = this.getFieldValue('PIN_TX');
   
  Blockly.Arduino.includes_['define_softwareserial_library'] = '#include <SoftwareSerial.h>';
  Blockly.Arduino.includes_['define_gps_library'] = '#include <TinyGPS.h>';

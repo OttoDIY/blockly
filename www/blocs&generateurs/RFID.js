@@ -13,17 +13,18 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['rfid_init'] = {
    init: function() {
+	var card=window.localStorage.card;
     this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/RFIDreader.png",33,33))
         .appendField(Blockly.Msg.RFID_init)
 		.appendField(Blockly.Msg.RFID_init2);
-	this.appendValueInput("PIN_SDA", "Number")
-		.setCheck("Number")
-		.appendField(Blockly.Msg.RFID_PIN_SDA)	
-	this.appendValueInput("PIN_RST", "Number")
-		.setCheck("Number")
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_SDA)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SDA");
+	this.appendDummyInput()
 		.appendField(Blockly.Msg.RFID_PIN_RST)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RST");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -34,8 +35,8 @@ Blockly.Blocks['rfid_init'] = {
 
 Blockly.Arduino['rfid_init'] = function(block) {
 
-   var pin_RST = Blockly.Arduino.valueToCode(this, "PIN_RST", Blockly.Arduino.ORDER_NONE);
-   var pin_SDA = Blockly.Arduino.valueToCode(this, "PIN_SDA", Blockly.Arduino.ORDER_NONE);
+   var pin_RST = this.getFieldValue('PIN_RST');
+   var pin_SDA = this.getFieldValue('PIN_SDA');
     
 	
    Blockly.Arduino.includes_['define_spi'] = '#include <SPI.h>';

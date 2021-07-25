@@ -631,13 +631,14 @@ Blockly.Arduino['motor_stop'] = function(block) {
 
 
 Blockly.Blocks['stepper_configuration'] = { init: function() {
+	var card=window.localStorage.card;
     this.setColour("#2d2dd1");
 	this.appendDummyInput().appendField(new Blockly.FieldImage("media/motorstep.png",33,33)).appendField(Blockly.Msg.STEEPER_name).appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
 	this.appendValueInput("STEP_RPM", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_steprev)
-	this.appendValueInput("PIN_STEEPER1", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_pin1)
-	this.appendValueInput("PIN_STEEPER2", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_pin2)
-	this.appendValueInput("PIN_STEEPER3", 'Number') .setCheck('Number').appendField(Blockly.Msg.STEEPER_pin3)
-	this.appendValueInput("PIN_STEEPER4", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_pin4)		
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER1");	
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin2).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER2");	
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin3).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER3");	
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin4).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER4");			
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -645,14 +646,24 @@ Blockly.Blocks['stepper_configuration'] = { init: function() {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
 Blockly.Arduino['stepper_configuration'] = function(block) {
   // TODO: Assemble Python into code variable.
   
   var steeper_number = this.getFieldValue('STEEPER_NUMBER');
-  var steeper_pin1 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER1', Blockly.Arduino.ORDER_ATOMIC);
-  var steeper_pin2 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER2', Blockly.Arduino.ORDER_ATOMIC);
-  var steeper_pin3 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER3', Blockly.Arduino.ORDER_ATOMIC);
-  var steeper_pin4 = Blockly.Arduino.valueToCode(this, 'PIN_STEEPER4', Blockly.Arduino.ORDER_ATOMIC);
+  var steeper_pin1 = this.getFieldValue('PIN_STEEPER1');
+  var steeper_pin2 = this.getFieldValue('PIN_STEEPER2');
+  var steeper_pin3 = this.getFieldValue('PIN_STEEPER3');
+  var steeper_pin4 = this.getFieldValue('PIN_STEEPER4');
   var stepper_steprev = Blockly.Arduino.valueToCode(this, 'STEP_RPM', Blockly.Arduino.ORDER_ATOMIC);
   
   Blockly.Arduino.includes_['define_stepper'] = '#include <Stepper.h>\n';
