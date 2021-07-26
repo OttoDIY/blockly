@@ -160,7 +160,7 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
 Blockly.Arduino.otto9_matrix8x8 = function() {
 var code = '';
 for (var i=0; i<64; i++) {
-s
+
  if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
      var on = this.getFieldValue('Pixel' + i)== "TRUE"? "1" : "0";
      var row= i +1 

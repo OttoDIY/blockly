@@ -401,7 +401,11 @@
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 		
 	<category name="CAT_LEDRGB" colour="#4b009f">
-		<block type="rgb_init"></block>
+		<block type="rgb_init">
+			<field name="rouge">D1</field>
+			<field name="vert">D2</field>
+			<field name="bleu">D3</field>		
+		</block>
 		<block type="rgb_setcolor"></block>
 		<block type="rgb_set">
 		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
@@ -537,9 +541,9 @@
 	
 		<category name="CAT_MAX7219" colour="#4b009f">	
 			<block type="Init_MAX7219_ledmatrix">
-			<value name="PIN_CLK"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			<value name="PIN_CS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
-			<value name="PIN_DAT"><shadow type="math_number"><field name="NUM">17</field></shadow></value>
+			<field name="PIN_CLK">D1</field>
+       		<field name="PIN_CS">D2</field>
+       		<field name="PIN_DAT">D3</field>
 			</block>
 					
 			<block type="MAX7219_ledmatrix_brightness">
@@ -803,8 +807,8 @@
 	<category name="CAT_DFPLAYER" colour="#a600d3">
 			<block type="lp2i_mp3_init">
 				<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
-				<value name="PIN_TX"><shadow type="analog_pin"><field name="NUM">D1</field></shadow></value>
-				<value name="PIN_RX"><shadow type="analog_pin"><field name="NUM">D2</field></shadow></value>
+				<field name="PIN_TX">D1</field>
+				<field name="PIN_RX">D2</field>
 			</block>
 			<block type="lp2i_mp3_volume">			 
 			<value name="Volume"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
