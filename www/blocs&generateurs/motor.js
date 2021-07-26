@@ -7,13 +7,14 @@ goog.require("Blockly.Blocks");
 //////////////
 
 Blockly.Blocks["moteur_dc_init"]={init:function(){
+    var card=window.localStorage.card;
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 33, 33, "*")).appendField(Blockly.Msg.motor);
-    this.appendValueInput("ENA", 'Number').setCheck('Number').appendField("ENA")
-	this.appendValueInput("ENB", 'Number').setCheck('Number').appendField("ENB")
-	this.appendValueInput("IN1", 'Number') .setCheck('Number').appendField("IN1")
-	this.appendValueInput("IN2", 'Number') .setCheck('Number').appendField("IN2")
-    this.appendValueInput("IN3", 'Number') .setCheck('Number').appendField("IN3")
-    this.appendValueInput("IN4", 'Number') .setCheck('Number').appendField("IN4")
+    this.appendDummyInput()	.appendField("ENA").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "ENA");
+    this.appendDummyInput()	.appendField("ENB").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "ENB");
+    this.appendDummyInput()	.appendField("IN1").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "IN1");
+    this.appendDummyInput()	.appendField("IN2").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "IN2");
+    this.appendDummyInput()	.appendField("IN3").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "IN3");
+    this.appendDummyInput()	.appendField("IN4").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "IN4");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -22,12 +23,12 @@ Blockly.Blocks["moteur_dc_init"]={init:function(){
     this.setHelpUrl("https://builders.ottodiy.com/")}
 };
 Blockly.Arduino["moteur_dc_init"]=function(block){
-    var ENA = Blockly.Arduino.valueToCode(this, 'ENA', Blockly.Arduino.ORDER_ATOMIC);
-    var ENB = Blockly.Arduino.valueToCode(this, 'ENB', Blockly.Arduino.ORDER_ATOMIC);
-    var IN1 = Blockly.Arduino.valueToCode(this, 'IN1', Blockly.Arduino.ORDER_ATOMIC);
-    var IN2 = Blockly.Arduino.valueToCode(this, 'IN2', Blockly.Arduino.ORDER_ATOMIC);
-    var IN3 = Blockly.Arduino.valueToCode(this, 'IN3', Blockly.Arduino.ORDER_ATOMIC);
-    var IN4 = Blockly.Arduino.valueToCode(this, 'IN4', Blockly.Arduino.ORDER_ATOMIC);
+    var ENA = this.getFieldValue('ENA');
+    var ENB = this.getFieldValue('ENB');
+    var IN1 = this.getFieldValue('IN1');
+    var IN2 = this.getFieldValue('IN2');
+    var IN3 = this.getFieldValue('IN3');
+    var IN4 = this.getFieldValue('IN4');
     Blockly.Arduino.definitions_['motordc'] = 'int l298n_ena='+ENA+';\n'
     +'const int l298n_enb='+ENB+';\n'
     +'const int l298n_in1='+IN1+';\n'
@@ -406,8 +407,8 @@ Blockly.Blocks['servo_2wheels'] = {  init: function() {
   };
   
   Blockly.Arduino['servo_2wheels'] = function(block) {
-    var pinl=Blockly.Python.valueToCode(block, "PINL", Blockly.Python.ORDER_ATOMIC);
-    var pinr=Blockly.Python.valueToCode(block, "PINR", Blockly.Python.ORDER_ATOMIC);
+    var pinl=Blockly.Arduino.valueToCode(block, "PINL", Blockly.Arduino.ORDER_ATOMIC);
+    var pinr=Blockly.Arduino.valueToCode(block, "PINR", Blockly.Arduino.ORDER_ATOMIC);
     var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     var otto_move_time = block.getFieldValue('time');

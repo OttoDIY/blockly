@@ -6,8 +6,9 @@ goog.require('Blockly.Types');
 //////////////
 
 Blockly.Blocks["pixel_init"]={init:function(){
+    var card=window.localStorage.card;
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1);
-	this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+    this.appendDummyInput()	.appendField(Blockly.Msg.pin).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
     this.setInputsInline(true); 
 	this.setPreviousStatement(true, null);
@@ -17,7 +18,7 @@ Blockly.Blocks["pixel_init"]={init:function(){
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
 Blockly.Arduino["pixel_init"]=function(block){
-    var pin=Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ASSIGNMENT);
+    var pin = this.getFieldValue('pin');
 	var number=Blockly.Arduino.valueToCode(block, "num", Blockly.Arduino.ORDER_ASSIGNMENT);
     Blockly.Arduino.includes_["pixel"]="#include <Adafruit_NeoPixel.h>";
     Blockly.Arduino.definitions_["pixel"]="Adafruit_NeoPixel pixel = Adafruit_NeoPixel(" + number + ", " + pin + ", NEO_GRB + NEO_KHZ800);";

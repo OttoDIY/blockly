@@ -53,6 +53,8 @@ Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
 +'#include "Adafruit_LEDBackpack.h"\n'
 +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
 Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address\n';
+var code='';
+return code; 
 };
 
 Blockly.Blocks["otto9_eyes_brightness"]={init:function(){
@@ -176,7 +178,9 @@ Blockly.Arduino['otto9_eyes_face'] = function(block) {
   +'magic_bmp[] = {  B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000},\n'
   +'fail_bmp[] = {  B00000000,B00110000,B01111000,B01111000,B01111100,B00111100,B00001000,B00000000,B00000000,B00001000,B00111100,B01111100,B01111000,B01111000,B00110000,B00000000},\n'
   +'full_bmp[] =  {   B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111 };';
-  var code = 'ematrix.drawBitmap(0, 0, + '+ dropdown_otto9_eyes_choice + ' , 8, 16, 1);\n';
+  var code = 'ematrix.clear();\n'
+  +'ematrix.drawBitmap(0, 0, + '+ dropdown_otto9_eyes_choice + ' , 8, 16, 1);\n'
+  +'ematrix.writeDisplay();\n';
   return code;
 };
  
@@ -521,7 +525,9 @@ Blockly.Arduino['otto9_eyesm'] = function(block) {
    code += ';eyesm_bmp[15] = B'
    for (var i=120; i<128; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')code += '1';else code +='0';};
    code += ';\n'
+   +'ematrix.clear();\n'
    +'ematrix.drawBitmap(0, 0,eyesm_bmp, 8, 16, 1);\n'
+   +'ematrix.writeDisplay();\n';
    return code;
 };
 
