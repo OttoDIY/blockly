@@ -1139,6 +1139,9 @@ Blockly.Msg.icon_id = "Icono del tiempo Id";
 Blockly.Msg.sunrise = "Amanecer EPOC";
 Blockly.Msg.sunset = "Atardecer EPOC";
 
-
+//ESP8266
+Blockly.Msg.ESP_yield=" Función Yield ";
+Blockly.Msg.ESP_deepsleep="DeepSleep ";
+Blockly.Msg.ESP_timesleep="Segundos";
 
 

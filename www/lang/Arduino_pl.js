@@ -1136,3 +1136,8 @@ Blockly.Msg.icon_id = "Icon Weather Id";
 Blockly.Msg.sunrise = "Sunrise EPOC";
 Blockly.Msg.sunset = "Sunset EPOC";
 
+//ESP8266
+Blockly.Msg.ESP_yield=" Yield function";
+Blockly.Msg.ESP_deepsleep="DeepSleep ";
+Blockly.Msg.ESP_timesleep="Seconds";
+

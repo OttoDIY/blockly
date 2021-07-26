@@ -1114,3 +1114,8 @@ Blockly.Msg.WFL_VALUES="value";
 Blockly.Msg.WFL_LON="Longitude";
 Blockly.Msg.WFL_LAT="Lattitude";
 Blockly.Msg.WFL_ACCURACY="Accuracy";
+
+//ESP8266
+Blockly.Msg.ESP_yield=" Yield function";
+Blockly.Msg.ESP_deepsleep="DeepSleep ";
+Blockly.Msg.ESP_timesleep="Seconds";
