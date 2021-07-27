@@ -77,6 +77,7 @@ Blockly.Msg.CAT_del = "💡 LED";
 Blockly.Msg.CAT_LED = "💡 LED";
 Blockly.Msg.CAT_LEDRGB = "🚥 RGB LED";
 Blockly.Msg.CAT_NEOPIXEL = "🌈 NeoPixel";
+Blockly.Msg.CAT_NEOMATRIX = "🌈 NeoMatrix";
 Blockly.Msg.CAT_MAX7219 = "💡 Matriz 8x8";
 Blockly.Msg.CAT_MAX1640 = "💡 Matriz 16x8";
 Blockly.Msg.CAT_BARGRAPH = "💡 Barra LED";

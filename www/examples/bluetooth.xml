@@ -3,18 +3,10 @@
   <block type="base_setup_loop" id=",wD]ZInrWt+|@z)Oq$[^" x="-312" y="-21">
     <statement name="DO">
       <block type="soft_bt_init" id="hvR}Tj4rYLCf;PLP!^#I">
+        <field name="PIN_TX">11</field>
+        <field name="PIN_RX">12</field>
         <field name="PINBAUDIOS">9600</field>
         <comment pinned="true" h="159" w="231">1. Initialize as a serial port but to use Bluetooth, in this case using the serial software library to simulate serial port on other pins, PLEASE NOTE THE TX &amp; RX PINS ARE INVERTED FOR THE BLUETOOTH MODULE</comment>
-        <value name="PIN_TX">
-          <shadow type="math_number" id="D^0[}fb`JZeC~O.hc8KC">
-            <field name="NUM">12</field>
-          </shadow>
-        </value>
-        <value name="PIN_RX">
-          <shadow type="math_number" id="-B6lOMAo,unZe`^Hzu=u">
-            <field name="NUM">11</field>
-          </shadow>
-        </value>
         <next>
           <block type="variables_set_init" id="+6)fZTri-[nd8R9MC}iW">
             <field name="VAR">Dato</field>

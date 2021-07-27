@@ -19,13 +19,9 @@
               <shadow type="text" id="8E7%8t(oH=%==yi-Rd6=">
                 <field name="TEXT">text</field>
               </shadow>
-              <block type="Sound_sensor" id="14=u{p!EHCS.VoEW~zQ;">
-                <field name="OUTPUT_VALUE">0</field>
-                <value name="PIN_SOUND">
-                  <shadow type="analog_pin" id="s(;eEOFFL8qHfO?]yo!?">
-                    <field name="NUM">A6</field>
-                  </shadow>
-                </value>
+              <block type="Sound_sensor2" id="w%N1jxuQeF,0BJJfy#.}">
+                <field name="PIN_SOUND">A6</field>
+                <field name="OUTPUT_VALUE">1</field>
               </block>
             </value>
             <next>

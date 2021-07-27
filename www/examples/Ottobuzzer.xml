@@ -2,92 +2,55 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="sYpp.M_hPV=wn]G[Y!?e" x="-172" y="110">
     <statement name="DO">
-      <block type="otto9_configuration" id="JVt!o#eEgwAJyISmv`VH">
-        <value name="PIN_YL">
-          <shadow type="analog_pin" id="Mw=O4}sIL,c`ZJ#cUaBU">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="PIN_YR">
-          <shadow type="analog_pin" id="/*ML7qN`x0doDB5li/M,">
-            <field name="NUM">3</field>
-          </shadow>
-        </value>
-        <value name="PIN_RL">
-          <shadow type="analog_pin" id="Sj=5Ly#BoHR{waTchPcJ">
-            <field name="NUM">4</field>
-          </shadow>
-        </value>
-        <value name="PIN_RR">
-          <shadow type="analog_pin" id="w+cK{W~3}m*9!$tM,mqs">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-        <value name="PIN_TRIG">
-          <shadow type="analog_pin" id="Cg:_vsc$VeS{.GZwl+ml">
-            <field name="NUM">8</field>
-          </shadow>
-        </value>
-        <value name="PIN_ECHO">
-          <shadow type="analog_pin" id="+i5c?.PqO]Lnds4(ctn|">
-            <field name="NUM">9</field>
-          </shadow>
-        </value>
-        <value name="PIN_Buzzer">
-          <shadow type="analog_pin" id="`V|6HcCy,Qn,z([]+@i8">
-            <field name="NUM">13</field>
-          </shadow>
-        </value>
+      <block type="otto9_configuration" id=")Isv0^^Pknf/2{$?NcS-">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
         <next>
-          <block type="otto_tone" id="(%O4_S3=z9%h(U)gQlvb">
-            <field name="otto_note">349</field>
-            <field name="otto_note_duration">125</field>
+          <block type="otto_sound" id="bV!T}Ry7_TrQz}u|fwsW">
+            <field name="otto_sound">S_connection</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_sound" id="Q$eJKk{FA1OApb%rNw{W">
+        <field name="otto_sound">S_superHappy</field>
+        <next>
+          <block type="otto_sound" id="(z?}^0SjcWN-28pF=1@a">
+            <field name="otto_sound">S_happy</field>
             <next>
-              <block type="otto_tone" id="j-gE)_Q~XF1XMyJ#,AEY">
-                <field name="otto_note">349</field>
-                <field name="otto_note_duration">125</field>
+              <block type="otto_sound" id="B4=!mK;|;!;Th!vbBmLv">
+                <field name="otto_sound">S_happy_short</field>
                 <next>
-                  <block type="otto_tone" id="o#IoQm?$O8NbITK14EKW">
-                    <field name="otto_note">349</field>
-                    <field name="otto_note_duration">125</field>
+                  <block type="otto_sound" id="qwzPeW#eiC.7a`Qk)o+O">
+                    <field name="otto_sound">S_sad</field>
                     <next>
-                      <block type="otto_tone" id="Sje7Hk(*dc.N:`)!eqhZ">
-                        <field name="otto_note">262</field>
-                        <field name="otto_note_duration">125</field>
+                      <block type="otto_sound" id="ErtOMF_l1ciih(=~6jqk">
+                        <field name="otto_sound">S_confused</field>
                         <next>
-                          <block type="otto_tone" id="MV1)N9I6nY$qqpcE);;E">
-                            <field name="otto_note">294</field>
-                            <field name="otto_note_duration">125</field>
+                          <block type="otto_sound" id=";*9k7[6)a=*]VfcuFN/H">
+                            <field name="otto_sound">S_cuddly</field>
                             <next>
-                              <block type="otto_tone" id="c9FH^[-7D:PKB@4OUOUD">
-                                <field name="otto_note">294</field>
-                                <field name="otto_note_duration">125</field>
+                              <block type="otto_sound" id="FPBX;GiLt-C:x+q$7x/.">
+                                <field name="otto_sound">S_OhOoh</field>
                                 <next>
-                                  <block type="otto_tone" id="i9`!cbV?=UHQf!}S%vl#">
-                                    <field name="otto_note">262</field>
-                                    <field name="otto_note_duration">125</field>
+                                  <block type="otto_sound" id="#-g^uVv7Y_-WJP+y~`{H">
+                                    <field name="otto_sound">S_surprise</field>
                                     <next>
-                                      <block type="otto_tone" id="xm5=xG6Wa]kE)kTH3]mf">
-                                        <field name="otto_note">440</field>
-                                        <field name="otto_note_duration">125</field>
+                                      <block type="otto_sound" id="dLicbMy1y:D/RW8e,f[w">
+                                        <field name="otto_sound">S_buttonPushed</field>
                                         <next>
-                                          <block type="otto_tone" id="a,=%0bx/j+LR;kDRS/Du">
-                                            <field name="otto_note">440</field>
-                                            <field name="otto_note_duration">125</field>
+                                          <block type="otto_sound" id="|i=7yg^pfNfg.IT78m5P">
+                                            <field name="otto_sound">S_fart1</field>
                                             <next>
-                                              <block type="otto_tone" id="MA9C/3:k`iadY=M;qoXh">
-                                                <field name="otto_note">392</field>
-                                                <field name="otto_note_duration">125</field>
+                                              <block type="otto_sound" id="#dTWt,cMGf+x?-lfXWxv">
+                                                <field name="otto_sound">S_sleeping</field>
                                                 <next>
-                                                  <block type="otto_tone" id="kD4Z:,Cbew*iuxsYLp$4">
-                                                    <field name="otto_note">392</field>
-                                                    <field name="otto_note_duration">125</field>
-                                                    <next>
-                                                      <block type="otto_tone" id="Ln_OkcXS,g7gKzDJ)uA-">
-                                                        <field name="otto_note">349</field>
-                                                        <field name="otto_note_duration">125</field>
-                                                      </block>
-                                                    </next>
+                                                  <block type="otto_sound" id="l04u29#K*lj4x/),bp:@">
+                                                    <field name="otto_sound">S_disconnection</field>
                                                   </block>
                                                 </next>
                                               </block>

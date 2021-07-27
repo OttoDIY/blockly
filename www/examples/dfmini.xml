@@ -3,20 +3,12 @@
   <block type="base_setup_loop" id="n!YmQ#j4Ih$j(rN-Rm/+" x="202" y="-125">
     <statement name="DO">
       <block type="lp2i_mp3_init" id="56RjF}HfX6hB;_wo!/td">
+        <field name="PIN_TX">11</field>
+        <field name="PIN_RX">12</field>
         <field name="play">FALSE</field>
         <value name="Volume">
           <shadow type="math_number" id="Gws;ueC}zRjo!~WKOt{P">
             <field name="NUM">27</field>
-          </shadow>
-        </value>
-        <value name="PIN_TX">
-          <shadow type="math_number" id="?A=FvqOHiIxYp:CC?D)D">
-            <field name="NUM">12</field>
-          </shadow>
-        </value>
-        <value name="PIN_RX">
-          <shadow type="math_number" id="(Bm{vaVOVF=}BM8@,3[=">
-            <field name="NUM">11</field>
           </shadow>
         </value>
         <next>

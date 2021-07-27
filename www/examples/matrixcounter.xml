@@ -2,37 +2,45 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="Yep!f$#$,9z]C}@!H8xa" x="-53" y="85">
     <statement name="DO">
-      <block type="otto9_matrix" id="SA@J07r#o.vQ7W(IMCnv">
-        <field name="otto9_matrix_pixel0">FALSE</field>
-        <field name="otto9_matrix_pixel1">TRUE</field>
-        <field name="otto9_matrix_pixel2">FALSE</field>
-        <field name="otto9_matrix_pixel3">FALSE</field>
-        <field name="otto9_matrix_pixel4">TRUE</field>
-        <field name="otto9_matrix_pixel5">FALSE</field>
-        <field name="otto9_matrix_pixel6">TRUE</field>
-        <field name="otto9_matrix_pixel7">TRUE</field>
-        <field name="otto9_matrix_pixel8">TRUE</field>
-        <field name="otto9_matrix_pixel9">TRUE</field>
-        <field name="otto9_matrix_pixel10">TRUE</field>
-        <field name="otto9_matrix_pixel11">TRUE</field>
-        <field name="otto9_matrix_pixel12">TRUE</field>
-        <field name="otto9_matrix_pixel13">TRUE</field>
-        <field name="otto9_matrix_pixel14">TRUE</field>
-        <field name="otto9_matrix_pixel15">TRUE</field>
-        <field name="otto9_matrix_pixel16">TRUE</field>
-        <field name="otto9_matrix_pixel17">TRUE</field>
-        <field name="otto9_matrix_pixel18">FALSE</field>
-        <field name="otto9_matrix_pixel19">TRUE</field>
-        <field name="otto9_matrix_pixel20">TRUE</field>
-        <field name="otto9_matrix_pixel21">TRUE</field>
-        <field name="otto9_matrix_pixel22">TRUE</field>
-        <field name="otto9_matrix_pixel23">FALSE</field>
-        <field name="otto9_matrix_pixel24">FALSE</field>
-        <field name="otto9_matrix_pixel25">FALSE</field>
-        <field name="otto9_matrix_pixel26">TRUE</field>
-        <field name="otto9_matrix_pixel27">TRUE</field>
-        <field name="otto9_matrix_pixel28">FALSE</field>
-        <field name="otto9_matrix_pixel29">FALSE</field>
+      <block type="otto9_matrix_init" id="[JbtejjZA#kaH?17aZGl">
+        <field name="PIN_CLK">A1</field>
+        <field name="PIN_CS">A2</field>
+        <field name="PIN_DIN">A3</field>
+        <field name="Orientation">0</field>
+        <next>
+          <block type="otto9_matrix" id="SA@J07r#o.vQ7W(IMCnv">
+            <field name="otto9_matrix_pixel0">FALSE</field>
+            <field name="otto9_matrix_pixel1">TRUE</field>
+            <field name="otto9_matrix_pixel2">FALSE</field>
+            <field name="otto9_matrix_pixel3">FALSE</field>
+            <field name="otto9_matrix_pixel4">TRUE</field>
+            <field name="otto9_matrix_pixel5">FALSE</field>
+            <field name="otto9_matrix_pixel6">TRUE</field>
+            <field name="otto9_matrix_pixel7">TRUE</field>
+            <field name="otto9_matrix_pixel8">TRUE</field>
+            <field name="otto9_matrix_pixel9">TRUE</field>
+            <field name="otto9_matrix_pixel10">TRUE</field>
+            <field name="otto9_matrix_pixel11">TRUE</field>
+            <field name="otto9_matrix_pixel12">TRUE</field>
+            <field name="otto9_matrix_pixel13">TRUE</field>
+            <field name="otto9_matrix_pixel14">TRUE</field>
+            <field name="otto9_matrix_pixel15">TRUE</field>
+            <field name="otto9_matrix_pixel16">TRUE</field>
+            <field name="otto9_matrix_pixel17">TRUE</field>
+            <field name="otto9_matrix_pixel18">FALSE</field>
+            <field name="otto9_matrix_pixel19">TRUE</field>
+            <field name="otto9_matrix_pixel20">TRUE</field>
+            <field name="otto9_matrix_pixel21">TRUE</field>
+            <field name="otto9_matrix_pixel22">TRUE</field>
+            <field name="otto9_matrix_pixel23">FALSE</field>
+            <field name="otto9_matrix_pixel24">FALSE</field>
+            <field name="otto9_matrix_pixel25">FALSE</field>
+            <field name="otto9_matrix_pixel26">TRUE</field>
+            <field name="otto9_matrix_pixel27">TRUE</field>
+            <field name="otto9_matrix_pixel28">FALSE</field>
+            <field name="otto9_matrix_pixel29">FALSE</field>
+          </block>
+        </next>
       </block>
     </statement>
     <statement name="LOOP">

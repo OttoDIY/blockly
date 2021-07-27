@@ -2,42 +2,12 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="/V$.K[q13F;DE3d0k=aL" x="201" y="0">
     <statement name="DO">
-      <block type="otto9_configuration" id="=A3+=XRKt;m2VvBO[QA_">
-        <value name="PIN_YL">
-          <shadow type="analog_pin" id="R+/`gW;WswRgd;l}M(^P">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="PIN_YR">
-          <shadow type="analog_pin" id="A`/4l`%uT((=YcPgSL6N">
-            <field name="NUM">3</field>
-          </shadow>
-        </value>
-        <value name="PIN_RL">
-          <shadow type="analog_pin" id="Di/Bmf=)ikS+vq4FMCY9">
-            <field name="NUM">4</field>
-          </shadow>
-        </value>
-        <value name="PIN_RR">
-          <shadow type="analog_pin" id=";I{/LLW,a|:-Q%$q,Igb">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-        <value name="PIN_TRIG">
-          <shadow type="analog_pin" id="toid]t?q5;3y8K$*G0-0">
-            <field name="NUM">8</field>
-          </shadow>
-        </value>
-        <value name="PIN_ECHO">
-          <shadow type="analog_pin" id="9S7*cY9i4:w(5g/#5.[6">
-            <field name="NUM">9</field>
-          </shadow>
-        </value>
-        <value name="PIN_Buzzer">
-          <shadow type="analog_pin" id="AC1!`dI5gZWIj,[}=a(A">
-            <field name="NUM">13</field>
-          </shadow>
-        </value>
+      <block type="otto9_configuration" id="ZerwE_x~@DWCI0j;O1~p">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
       </block>
     </statement>
     <statement name="LOOP">

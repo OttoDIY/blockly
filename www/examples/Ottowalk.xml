@@ -2,43 +2,13 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id=".~st,jZ4bTq`x#VS,}*}" x="52" y="76">
     <statement name="DO">
-      <block type="otto9_configuration" id="d7/(ulMAAO2L}SqT@JaG">
-        <comment pinned="true" h="78" w="371">Here is where your robot is configured, servo pins , sensor and buzzer</comment>
-        <value name="PIN_YL">
-          <shadow type="analog_pin" id="b$eX8Zh?I;Ru[:T-%JX.">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="PIN_YR">
-          <shadow type="analog_pin" id="B}+rSP9BYuA2^ZkP|Eqs">
-            <field name="NUM">3</field>
-          </shadow>
-        </value>
-        <value name="PIN_RL">
-          <shadow type="analog_pin" id=",.yJlozOzw-uDcQ49Jr;">
-            <field name="NUM">4</field>
-          </shadow>
-        </value>
-        <value name="PIN_RR">
-          <shadow type="analog_pin" id="KLs$@e^U%]c-]Rs7Z/=8">
-            <field name="NUM">5</field>
-          </shadow>
-        </value>
-        <value name="PIN_TRIG">
-          <shadow type="analog_pin" id="nPe`Uf`gr8:k^-xe6U7C">
-            <field name="NUM">8</field>
-          </shadow>
-        </value>
-        <value name="PIN_ECHO">
-          <shadow type="analog_pin" id="$7]c?@wqJ,@xh-:]IW-^">
-            <field name="NUM">9</field>
-          </shadow>
-        </value>
-        <value name="PIN_Buzzer">
-          <shadow type="analog_pin" id="p;/ffht;5A|3kDDoAC)S">
-            <field name="NUM">13</field>
-          </shadow>
-        </value>
+      <block type="otto9_configuration" id="1PF3]w+U(p}|2P.EZl2]">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <comment pinned="true" h="66" w="503">Here is where your robot is configured, the servo pins connections and buzzer</comment>
       </block>
     </statement>
     <statement name="LOOP">

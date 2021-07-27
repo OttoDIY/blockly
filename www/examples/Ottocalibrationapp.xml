@@ -1,0 +1,381 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_define" id="Sh.QL-_%t){TaQico6=5" x="-209" y="-577">
+    <comment pinned="true" h="274.61293029785156" w="717.2330017089844">You have carefully followed the instructions on how to build Otto and have made sure that all the servos are centralised (set at 90 degrees) before you attach the horns. You are now at the very exciting moment where you check to see how Otto moves and dances and so you upload your first simple Blockly code.
+
+:( What happened? Why did the legs and feet move out of position? Otto doesn’t look right and doesn’t move smoothly.
+
+Do not be disappointed and do not worry! This is completely normal and happens in every Otto build. This is the stage where you need to adjust the central positions of the servos using a simple process called calibration. This will only need to be done once and then the correct positions will be remembered every time you turn on your Otto.
+    </comment>
+    <statement name="DO">
+      <block type="base_code" id="ZdTsp[rp?8t-~).GeQfC">
+        <field name="TEXT">int positions[] = {90, 90, 90, 90};</field>
+        <next>
+          <block type="base_code" id="Exen@Te5+@.4X0:1n|Cu">
+            <field name="TEXT">int8_t trims[4] = {0,0,0,0};</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="base_setup_loop" id="pz(ZWPdl%sLWUFOfU7r*" x="-226" y="-429">
+    <statement name="DO">
+      <block type="otto9_configuration" id="pS=n(/m!/U4Xu7FcXMon">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <comment pinned="true" h="685.6584167480469" w="478.02984619140625">To calibrate Otto, you will first need to upload this code to Otto. Once the uploading is complete, unplug the USB connection to Otto.
+
+Servo Calibration GUI
+You will now need to run the Servo Calibration software from ottodiy.com. Make sure that the USB is unplugged. Depending on your Windows platform, you will need to run either the 32- or 64- bit executable file contained in its relevant folder. Please leave the file in its folder - the program will not run if it does not have access to the data files.On start up you should see a red cross by the USB label at the top of the interface. Plug the USB into Otto and the red cross should turn into a green tick when the program has recognised that the USB connection has been made (this might take a second or two). If you forgot to unplug the USB, you will need to close the program, unplug the USB and start the program again. Then plug in the USB. You can now calibrate the servo positions so the the legs and feet are correctly aligned. The slider allows for large changes in the angle and the +/- buttons much finer control on the position of each servo.
+
+When the servos on Otto are correctly aligned, click on 'Walk Test' to see how Otto moves. If further fine adjustments are required, they should be done now and the walk test repeated. Be careful that the USB cable does not interfere with Otto's movement.
+
+When you are happy that everything is aligned, click 'Save'. A tick and properly aligned Otto will appear on the interface. Your Otto will produce a happy sound (if you have connected the buzzer) and dance.
+
+CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions have been saved to Otto and will not need to be calibrated again unless you change the Nano or any of the servos.
+        </comment>
+        <next>
+          <block type="variables_set" id="Uw!O)#L088CsER?K_]:|">
+            <field name="VAR">v</field>
+            <value name="VALUE">
+              <block type="math_number" id=",ugJE@jJV~cZ1MlRy`^~">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_init" id="7VfS5EcA6t[KNj[-EO:H">
+                <field name="PINBAUDIOS">9600</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="L=U.qOH,6/:={r(FGv4B">
+        <value name="IF0">
+          <block type="serial_available" id="b+7y(=%)2NkZ-p@5.rP["></block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="If5=H{kLxLVJuS@-hN#P">
+            <mutation name="readChar">
+              <arg name="ch"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="serial_read" id="p;];)zGM3{mGZrEzro)I"></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id=",1r:t8DZ5WWbY9;CAmGq" x="618" y="-406">
+    <mutation>
+      <arg name="ch" vartype="CHARACTER"></arg>
+    </mutation>
+    <field name="NAME">readChar</field>
+    <statement name="STACK">
+      <block type="controls_switch" id="6$/Z3uVVxd#VP]m88vU^">
+        <mutation casebreak="6"></mutation>
+        <field name="SWVAR">ch</field>
+        <value name="CASE0">
+          <block type="text_char" id="B}3-Et@-0H+;8?`1YQN$">
+            <field name="TEXT">0'...'9</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="/oxLd}nod)?{8+;triUe">
+            <field name="VAR">v</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="~Te8#r^WHjGDB4qnBkb3">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <block type="math_arithmetic" id="T;BZ!%-301.j!I%@+w`[">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="math_arithmetic" id="E#pU1gI2fJ[BSoR3}l{}">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="U!{2Y(qbLi/Wzy.X!OEM">
+                            <field name="VAR">v</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="D7GWLLJ;OT)*vK{otW=;">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="sLh2ga*1(szqfLM1q[^k">
+                        <field name="VAR">ch</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="8WjNMr.xIO=?W!|)(Eg6">
+                    <field name="NUM">48</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="CASE1">
+          <block type="analog_pin" id=",YGmE@BIO*?#zl{IM1[Y">
+            <field name="NUM">'a'</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="base_code" id="MA~hX=YP8%CYs?9].8,/">
+            <field name="TEXT">trims[0] = v-90;</field>
+            <next>
+              <block type="procedures_callnoreturn" id="s/f2b;nJ6tj94}?n`X^@">
+                <mutation name="setTrims"></mutation>
+                <next>
+                  <block type="variables_set" id="k-m~sZ/21+m#d4/C[%(:">
+                    <field name="VAR">v</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="MOcHsevVxxW%^`4,/#.Z">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="CASE2">
+          <block type="analog_pin" id="|X(hzP;cv9v7T]!k{9OY">
+            <field name="NUM">'b'</field>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="base_code" id="1pK`Ou@07aG:*IG*GMYr">
+            <field name="TEXT">trims[1] = v-90;</field>
+            <next>
+              <block type="procedures_callnoreturn" id="|8l6zQ~wKoJEVqucgHFE">
+                <mutation name="setTrims"></mutation>
+                <next>
+                  <block type="variables_set" id="Zt!=bthP-j#;LkE-KAEE">
+                    <field name="VAR">v</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="s.39#j^L6fv`H^p+jm7#">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="CASE3">
+          <block type="analog_pin" id="!jg4O_%X%13B]4U%-H2R">
+            <field name="NUM">'c'</field>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="base_code" id="aPt7-hy^K)}VNbu=ijv#">
+            <field name="TEXT">trims[2] = v-90;</field>
+            <next>
+              <block type="procedures_callnoreturn" id="PM?wM67^8/0;drMy},=C">
+                <mutation name="setTrims"></mutation>
+                <next>
+                  <block type="variables_set" id="F#pHKvnckH~;,20~XSe5">
+                    <field name="VAR">v</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="~6YYW,TfKy@N}/Zi|ZW9">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="CASE4">
+          <block type="analog_pin" id=";I[w]ej,rXXNRfc;WV*0">
+            <field name="NUM">'d'</field>
+          </block>
+        </value>
+        <statement name="DO4">
+          <block type="base_code" id="d$XnGq8@)PcdD5GyelOp">
+            <field name="TEXT">trims[3] = v-90;</field>
+            <next>
+              <block type="procedures_callnoreturn" id="pg93xtQ]W@|M4Ak]*4]`">
+                <mutation name="setTrims"></mutation>
+                <next>
+                  <block type="variables_set" id="D3a~r*b,zJ$cY=`@^c}Y">
+                    <field name="VAR">v</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="r!)MuHxx]glyd/l$mt5[">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="CASE5">
+          <block type="analog_pin" id="Rt-4}6:Ja}F=42yr)|E%">
+            <field name="NUM">'w'</field>
+          </block>
+        </value>
+        <statement name="DO5">
+          <block type="controls_repeat_ext" id="1ogc^F_aUew9olZ4v=`p">
+            <value name="TIMES">
+              <shadow type="math_number" id="j8|]|EAI4*=ff5zK]WJ[">
+                <field name="NUM">4</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="otto_move" id="savtPvEnt5BHcuzD4l,:">
+                <field name="otto_move_sens">FORWARD</field>
+                <field name="otto_move_speed">1000</field>
+              </block>
+            </statement>
+          </block>
+        </statement>
+        <value name="CASE6">
+          <block type="analog_pin" id="y$O128v(BWG)Ah*xb9,(">
+            <field name="NUM">'s'</field>
+          </block>
+        </value>
+        <statement name="DO6">
+          <block type="controls_for" id="HX@%Q!u%MLScd]h|qABP">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="=c[aPyo;yXhhiKH.1_#J">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="5ZL_*rW`Dq!ZO-VD-,4T">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="/r2u^ur{vkv$YSg*Lkeo">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="eeprom_write" id="cIKtCMN$Fn-7*{U-~O;6" inline="true">
+                <value name="val">
+                  <block type="base_code_entree" id="J?%eM8cN2v8`(C#N!F)|">
+                    <field name="TEXT">trims[i]</field>
+                  </block>
+                </value>
+                <value name="adr">
+                  <block type="variables_get" id="U,0lqn1Y#B(ik~-_a2S7">
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="base_delay" id="imD`fx#@o@*O:J[1?A2%">
+                <field name="unite">m</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="cV4grUv|wowlnhHLgeOF">
+                    <field name="NUM">500</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="otto_sound" id="Grp^L*pK[#o.(G1[A7pV">
+                    <field name="otto_sound">S_superHappy</field>
+                    <next>
+                      <block type="otto_dance" id="H;UMIBlAObrU`UeRCF=b">
+                        <field name="otto_dance_movement">crusaitoRIGHT</field>
+                        <field name="otto_move_speed">1000</field>
+                        <field name="otto_dance_size">25</field>
+                        <next>
+                          <block type="otto_dance" id="c+0hE.FBL9Rw%6hhKP?0">
+                            <field name="otto_dance_movement">crusaitoLEFT</field>
+                            <field name="otto_move_speed">1000</field>
+                            <field name="otto_dance_size">25</field>
+                            <next>
+                              <block type="otto_sound" id="vF:?u}vaSEbx(Rt]%t=c">
+                                <field name="otto_sound">S_happy_short</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="2RQ1}L0X]Ed3H+6#sv?c" x="-223" y="-114">
+    <field name="NAME">setTrims</field>
+    <statement name="STACK">
+      <block type="otto_calibration" id="xNxLOK=Zxn$n^$,bb}CJ">
+        <value name="LL">
+          <shadow type="math_number" id="(,%yJQ~xk1sn;MzJ#*|n">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="base_code_entree" id="EZVTLTrGoEt.Br/9)uGg">
+            <field name="TEXT">trims[1]</field>
+          </block>
+        </value>
+        <value name="RL">
+          <shadow type="math_number" id="g+7tWy(8{wTWZlCp0{{~">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="base_code_entree" id="R[1|j@|N6G=d/#Zh{;na">
+            <field name="TEXT">trims[2]</field>
+          </block>
+        </value>
+        <value name="LF">
+          <shadow type="math_number" id="0@S9uDX/i`^%Fz#,MV]x">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="base_code_entree" id="3_(6JjXu4x+bC)LN-QGt">
+            <field name="TEXT">trims[3]</field>
+          </block>
+        </value>
+        <value name="RF">
+          <shadow type="math_number" id="LK$tH~J~bVIKq{Ff4Gem">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="base_code_entree" id="3+[irJ_eF#PZydmK,Vs[">
+            <field name="TEXT">trims[3]</field>
+          </block>
+        </value>
+        <next>
+          <block type="otto_moveservos" id="ZQS_`hsaVHpb*O`S:$q*">
+            <value name="Period">
+              <shadow type="math_number" id="f^dWhhFjsOblNd[EP)b=">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+            <value name="Pos">
+              <shadow type="math_number" id="LT9j28rr9KlNl6U10U=d">
+                <field name="NUM">90</field>
+              </shadow>
+              <block type="base_code_entree" id="+cZ3+]?lJ@C;m$q[BTi8">
+                <field name="TEXT">positions</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

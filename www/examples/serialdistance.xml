@@ -4,6 +4,13 @@
     <statement name="DO">
       <block type="serial_init" id="=n;5RsGh~kc6O`Sob1a6">
         <field name="PINBAUDIOS">9600</field>
+        <next>
+          <block type="ultrasonic_sensor" id="^2_qL+d*q}:P[G$CpN2`">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+          </block>
+        </next>
       </block>
     </statement>
     <statement name="LOOP">
@@ -19,17 +26,8 @@
               <shadow type="text" id="8E7%8t(oH=%==yi-Rd6=">
                 <field name="TEXT">text</field>
               </shadow>
-              <block type="ultrasonic_ranger_sensor" id="Af`-ytH6zc664,PwSIst">
-                <value name="PIN_TRIG">
-                  <shadow type="math_number" id="I_.z/%!@~Wu?:3B;0]:*">
-                    <field name="NUM">8</field>
-                  </shadow>
-                </value>
-                <value name="PIN_ECHO">
-                  <shadow type="math_number" id="o]25BtTTuj%L8E9(~2{J">
-                    <field name="NUM">9</field>
-                  </shadow>
-                </value>
+              <block type="ultrasonic_distance" id="g[PTweiJhrG2lI0*kCmU">
+                <field name="US_NUMBER">1</field>
               </block>
             </value>
             <next>

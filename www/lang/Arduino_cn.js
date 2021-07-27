@@ -69,6 +69,7 @@ Blockly.Msg.CAT_SOUND ="🎤 Noise"
 Blockly.Msg.CAT_GAS = "⛽ Gas"
 Blockly.Msg.CAT_OLED_U8G = "🖥️ OLED 显示屏";
 Blockly.Msg.CAT_NEOPIXEL = "🌈 Neopixel";
+Blockly.Msg.CAT_NEOMATRIX = "🌈 NeoMatrix";
 Blockly.Msg.CAT_CCS811 = "Sensor CO2";
 Blockly.Msg.CAT_Displays = "💻 Displays";
 Blockly.Msg.CAT_AUDIO = "♫ Audio";

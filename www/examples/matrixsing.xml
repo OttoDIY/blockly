@@ -2,14 +2,22 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="?qsO|(d0$rk=;tf$;x86" x="294" y="-1249">
     <statement name="DO">
-      <block type="variables_const" id="Mg8P`RQ5Vs0{x;Py`fX@">
-        <field name="VAR">frame</field>
-        <field name="VARIABLE_SETTYPE_TYPE">SHORT_NUMBER</field>
-        <value name="VAL_CONST">
-          <block type="math_number" id="W3^hyj7,.`,!se8n/GVW">
-            <field name="NUM">100</field>
+      <block type="otto9_matrix_init" id="kT?si6x+B8-QXN1t?dJ4">
+        <field name="PIN_CLK">A1</field>
+        <field name="PIN_CS">A2</field>
+        <field name="PIN_DIN">A3</field>
+        <field name="Orientation">0</field>
+        <next>
+          <block type="variables_const" id="Mg8P`RQ5Vs0{x;Py`fX@">
+            <field name="VAR">frame</field>
+            <field name="VARIABLE_SETTYPE_TYPE">SHORT_NUMBER</field>
+            <value name="VAL_CONST">
+              <block type="math_number" id="W3^hyj7,.`,!se8n/GVW">
+                <field name="NUM">100</field>
+              </block>
+            </value>
           </block>
-        </value>
+        </next>
       </block>
     </statement>
     <statement name="LOOP">

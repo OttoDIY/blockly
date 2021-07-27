@@ -72,11 +72,12 @@ Blockly.Arduino['otto_home'] = function(block) {
 };
 
 Blockly.Blocks['otto_calibration']={init:function(){
-  this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left)
-  .appendField(new Blockly.FieldNumber("0"), "LL") .appendField(Blockly.Msg.right) .appendField(new Blockly.FieldNumber("0"), "RL")
-  this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+  Blockly.Msg.left)
-  .appendField(new Blockly.FieldNumber("0"), "LF")  .appendField(Blockly.Msg.right).appendField(new Blockly.FieldNumber("0"), "RF");
-  this.setInputsInline(false);
+
+this.appendValueInput("LL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+this.appendValueInput("RL") .setCheck("Number").appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+this.appendValueInput("LF") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+ Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+this.appendValueInput("RF") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+  this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
   this.setColour("#32D900");
@@ -85,13 +86,12 @@ Blockly.Blocks['otto_calibration']={init:function(){
 };
 
 Blockly.Arduino['otto_calibration']=function(block){
-  var valuell = block.getFieldValue('LL');
-  var valuerl = block.getFieldValue('RL');
-  var valuelf = block.getFieldValue('LF');
-  var valuerf = block.getFieldValue('RF');
-  
-  Blockly.Arduino.setups_['otto_cal']= 'Otto.setTrims('+ valuell +','+ valuerl +',' +valuelf +','+ valuerf+');';
-  var code = '';
+var valuell= Blockly.Arduino.valueToCode(block, 'LL', Blockly.Arduino.ORDER_ATOMIC);
+var valuerl= Blockly.Arduino.valueToCode(block, 'RL', Blockly.Arduino.ORDER_ATOMIC);
+var valuelf= Blockly.Arduino.valueToCode(block, 'LF', Blockly.Arduino.ORDER_ATOMIC);
+var valuerf= Blockly.Arduino.valueToCode(block, 'RF', Blockly.Arduino.ORDER_ATOMIC);
+
+  var code = 'Otto.setTrims('+ valuell +','+ valuerl +',' +valuelf +','+ valuerf+');\n';
   return code;
 };
 
@@ -139,6 +139,24 @@ Blockly.Arduino.setups_['otto_movelegs']='Otto_moveLegs('+200+','+90+','+90+','+
 var code = 'Otto_moveLegs('+TEMPO+','+PIN_YL+','+PIN_YR+','+PIN_RL+','+PIN_RR+');';
 return code;
 };
+
+Blockly.Blocks['otto_moveservos'] = {init: function() {
+  this.appendDummyInput("") .appendField(Blockly.Msg.OTTO9_MOVE_TEXT);
+  this.appendValueInput("Period") .setCheck("Number").appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+  this.appendValueInput("Pos") .setCheck("Number").appendField("Positions")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+  };
+  
+  Blockly.Arduino['otto_moveservos'] = function(block) {
+  var Period= Blockly.Arduino.valueToCode(block, 'Period', Blockly.Arduino.ORDER_ATOMIC);
+  var Pos= Blockly.Arduino.valueToCode(block, 'Pos', Blockly.Arduino.ORDER_ATOMIC);
+  var code = ' Otto._moveServos('+Period+', '+Pos+');';
+  return code;
+  };
 
 Blockly.Blocks['otto_move'] = {init: function() {
     this.appendDummyInput() .appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))

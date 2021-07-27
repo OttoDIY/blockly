@@ -64,6 +64,7 @@ Blockly.Msg.CAT_OTTO = "⊟ Otto";
 Blockly.Msg.CAT_OTTOH = "⊟ Humanoid";
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED 螢幕";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
+Blockly.Msg.CAT_NEOMATRIX = "🌈 NeoMatrix";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "設定wifi的網路連線模式";
