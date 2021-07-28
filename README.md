@@ -7,7 +7,7 @@ This is a free and open source visual programming language based on Blockly from
 ## Installer
 This software can work offline by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly) or [for Linux operating systems](https://github.com/OttoDIY/blockly/tree/versionlinux). You can [download the latest release version from here](https://github.com/OttoDIY/blockly/releases). After the software is installed in your PC, it is ready to use immediately, no need to import Arduino libraries or any additional boards because it comes with a copy of the Arduino CLI, it is all in one software!, ready to upload codes directly to your robot or any other Arduino project via USB. 
 
-If your computer do not recognize the USB device or Otto, you have to [install the CH340 or CH341 or FTDI driver that is in the "pilotes" folder](https://github.com/OttoDIY/blockly/tree/master/pilotes) or [download from this link](https://sparks.gogo.co.nz/ch340.html)
+If your computer do not recognize the USB device or Otto, you have to [install the CH340 or CH341 or FTDI driver that is in the "driversUSB" folder](https://github.com/OttoDIY/blockly/tree/master/driversUSB) or [download from this link](https://sparks.gogo.co.nz/ch340.html)
 
 MAC and Chrome  versions are under development,you will need a Virtual Machine or use the online version of App
 
