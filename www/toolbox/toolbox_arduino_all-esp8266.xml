@@ -34,46 +34,7 @@
 		<block type="otto_calibration"></block>
 		<block type="otto_eeprom"></block>
 		
-<!--
-		<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
-			<block type="otto9_eyes"></block>
-			<block type="otto9_eyes_clear"></block>
-			<block type="otto9_eyes_rotate"></block>
-			<block type="otto9_eyes_brightness">
-			<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>
-			<block type="otto9_eyes_blink"></block>
-			<block type="otto9_eyes_text"></block>
-			<block type="otto9_eyes#">
-				<value name="eyes"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
-			</block>
-			<block type="otto9_eyesm"></block>
-			<block type="otto9_eyesp">	
-				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-				<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			</block>
-						<block type="otto9_eyesc">
-				<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-				<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
-				<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="otto9_eyesl">
-				<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-				<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value>
-			</block>
-			<block type="otto9_eyesr">
-				<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-				<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
-				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
-				<block type="otto9_eyes_display"></block>
-		</category>
-		-->
-		
 </category>
-
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 			<block type="base_delay">
@@ -86,25 +47,32 @@
 	</category>
 				<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="inout_digital_write">
-		<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-		<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
+			<value name="STAT"><shadow type="inout_onoff">	<field name="NUM">1</field>	</shadow></value>
+		</block>
+		<block type="inout_digital_write2">
+			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
+			<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
 		</block>	
-		<block type="inout_onoff"></block>
-		<block type="digital_read">
-				<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-				</block>
+		<block type="inout_digital_read">
+		</block>
+		<block type="inout_digital_read2">
+			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
+		</block>
 		<block type="inout_analog_write">
-		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
 		</block>
 		<block type="inout_analog_write2">
-		<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
-		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+			<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
+			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
 		</block>
 		<block type="inout_analog_read"></block>
-		<block type="inout_analog_read2">		<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value></block>
-		<block type="toggle">
-				<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
-				</block>
+		<block type="inout_analog_read2">		
+			<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value>
+		</block>
+		<block type="toggle"></block>
+		<block type="toggle2">
+			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">10</field>	</shadow></value>
+		</block>
 		<block type="inout_attachInterrupt"></block>
 		<block type="inout_detachInterrupt"></block>
 		

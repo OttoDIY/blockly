@@ -1,6 +1,11 @@
 #ifndef Otto_h
 #define Otto_h
+
+#ifdef ARDUINO_ARCH_ESP32
+#include <ESP32Servo.h>
+#else
 #include <Servo.h>
+#endif
 #include <Oscillator.h>
 #include <EEPROM.h>
 #include "Otto_sounds.h"

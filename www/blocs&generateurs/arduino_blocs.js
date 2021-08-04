@@ -3,171 +3,65 @@
 goog.provide("Blockly.Blocks.arduino");
 goog.require("Blockly.Blocks");
 
-/* communication */
-
-
-/*
-
-Blockly.Blocks["soft_init"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput()
-			.appendField(Blockly.Msg.SSERIAL_Init).appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN1").appendField("/ Tx").appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN2");
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
-        this.setInputsInline(false);
-        this.setTooltip(Blockly.Msg.SSERIAL_tooltip)}
-};
-
-Blockly.Blocks["soft_init2"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput()
-			.appendField(Blockly.Msg.SSERIAL_Init).appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN1").appendField("/ Tx").appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN2");
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
-        this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.SSERIAL_tooltip)}
-};
-
-Blockly.Blocks["soft_read"]={init:function(){
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Read);
-        this.setInputsInline(true);
-        this.setOutput(true, "String");
-        this.setTooltip(Blockly.Msg.SSERIAL_Read_tooltip)}
-};
-Blockly.Blocks["soft_write"]={init:function(){
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.setColour("#0060aa");
-        this.appendValueInput("CONTENT", "String").appendField(Blockly.Msg.SSERIAL_Write);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.SSERIAL_Write_tooltip)}
-};
-Blockly.Blocks["soft_available"]={init:function(){
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.setColour("#0060aa");
-        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Available);
-        this.setInputsInline(true);
-        this.setOutput(true, "Number");
-        this.setTooltip(Blockly.Msg.SSERIAL_Available_tooltip)}
-};
-Blockly.Blocks["serial_init"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.setInputsInline(false);
-        this.appendDummyInput().appendField(Blockly.Msg.Serial_Init).appendField(new Blockly.FieldDropdown(profile[card].serialPin), "pin");
-		this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
-        this.setTooltip(Blockly.Msg.Serial_Init_tooltip)}
-		};
-Blockly.Blocks["serial_init2"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.setInputsInline(false);
-        this.appendDummyInput().appendField(Blockly.Msg.Serial_Init).appendField(new Blockly.FieldDropdown(profile[card].serialPin), "pin");
-		this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
-		this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-		 this.setInputsInline(true);
-        this.setTooltip(Blockly.Msg.Serial_Init_tooltip)}
-};
-Blockly.Blocks["serial_read"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-		if (card!="python"){this.appendDummyInput().appendField(Blockly.Msg.Serial_read);} else {this.appendDummyInput().appendField(Blockly.Msg.repl_read);}
-        this.setInputsInline(true);
-        this.setOutput(true, "Number");
-        this.setTooltip(Blockly.Msg.Serial_read_tooltip)}
-};
-
-Blockly.Blocks["serial_available"]={init:function(){
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.setColour("#0060aa");
-        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Available);
-        this.setInputsInline(true);
-        this.setOutput(true, "Number");
-        this.setTooltip(Blockly.Msg.SSERIAL_Available_tooltip)}
-};
-
-Blockly.Blocks["serial_line"]={init:function(){
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.Serial_saut);
-        this.setInputsInline(true);
-        this.setOutput(true, "String");
-        this.setTooltip(Blockly.Msg.Serial_saut_tooltip)}
-};
-Blockly.Blocks["serial_tab"]={init:function(){
-    this.setColour("#0060aa");
-    this.setHelpUrl(Blockly.Msg.HELPURL);
-    this.appendDummyInput().appendField(Blockly.Msg.Serial_space);
-    this.setInputsInline(true);
-    this.setOutput(true, "String");
-    this.setTooltip(Blockly.Msg.Serial_space_tooltip)}
-};
-
-Blockly.Blocks["serial_write"]={init:function(){
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("CONTENT", String).appendField(Blockly.Msg.Serial_Write);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.Serial_write_tooltip)}
-};
-Blockly.Blocks["serial_input"]={init:function(){
-        this.setColour("#0060aa");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("CONTENT", String).appendField("wait user command");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.Serial_write_tooltip)}
-};
-
-/*
-
-/*	entrée-sortie */
 Blockly.Blocks["toggle"]={init:function(){
+    var card=window.localStorage.card;
         this.setColour("#00929f");
         this.setHelpUrl(Blockly.Msg.tempo_helpurl);
-        this.appendValueInput("PIN", "Number").setCheck("Number").appendField(Blockly.Msg.toggle);
+        this.appendDummyInput().appendField(Blockly.Msg.toggle).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.toggle_tooltip)}
 };
+Blockly.Blocks["toggle2"]={init:function(){
+    this.setColour("#00929f");
+    this.setHelpUrl(Blockly.Msg.tempo_helpurl);
+    this.appendValueInput("PIN", "Number").setCheck("Number").appendField(Blockly.Msg.toggle);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.toggle_tooltip)}
+};
 Blockly.Blocks["inout_digital_write"]={init:function(){
+    var card=window.localStorage.card;
+    this.setColour("#00929f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN");
+    this.appendValueInput("STAT", "Boolean").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP)}
+};
+Blockly.Blocks["inout_digital_write2"]={init:function(){
         this.setColour("#00929f");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).setCheck("Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1);
-        this.setInputsInline(true);
         this.appendValueInput("STAT", "Boolean").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP)}
 };
+
 Blockly.Blocks["inout_digital_read"]={init:function(){
+    var card=window.localStorage.card;
         this.setColour("#00929f");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
-        this.setOutput(true, "Boolean");
-        this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP)}
-};
-Blockly.Blocks["digital_read"]={init:function(){
-        this.setColour("#00929f");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN");
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup").appendField(Blockly.Msg.in_pullup);
         this.setInputsInline(true);
         this.setOutput(true, "Boolean");
         this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
+};
+Blockly.Blocks["inout_digital_read2"]={init:function(){
+    this.setColour("#00929f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
+    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup").appendField(Blockly.Msg.in_pullup);
+    this.setInputsInline(true);
+    this.setOutput(true, "Boolean");
+    this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
 };
 Blockly.Blocks["inout_analog_write"]={init:function(){
 		var card=window.localStorage.card;
@@ -758,13 +652,9 @@ Blockly.Blocks["esp8266_create_container"]={init:function(){
 };
 /*  stockage  */
 Blockly.Blocks['eeprom_write']={init:function(){
-    this.appendValueInput("val")
-        .appendField("store data");
-	this.appendValueInput("adr")
-        .setCheck("Number")
-		.setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("at the address");
-	this.setInputsInline(false);
+    this.appendValueInput("val") .appendField("Write Variable");
+	this.appendValueInput("adr") .setCheck("Number").setAlign(Blockly.ALIGN_RIGHT) .appendField("Address");
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("#154360");
@@ -773,11 +663,135 @@ Blockly.Blocks['eeprom_write']={init:function(){
   }
 };
 Blockly.Blocks["eeprom_read"]={init:function(){
-        this.appendValueInput("adr")
-			.setCheck("Number")
-			.appendField("data stored at the address");
+        this.appendValueInput("adr").setCheck("Number").appendField("Read variable address");
+        this.setInputsInline(true);
         this.setColour("#154360");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setOutput(true, "Number");
         this.setTooltip("returns the data stored at the specified address (8 bits or one byte)\nATmega328p & ATmega32u4 --> 1024 bytes\nATmega2560 --> 4096 bytes")}
 };
+/* communication */
+/*
+Blockly.Blocks["soft_init"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput()
+			.appendField(Blockly.Msg.SSERIAL_Init).appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN1").appendField("/ Tx").appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN2");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
+        this.setInputsInline(false);
+        this.setTooltip(Blockly.Msg.SSERIAL_tooltip)}
+};
+
+Blockly.Blocks["soft_init2"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput()
+			.appendField(Blockly.Msg.SSERIAL_Init).appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN1").appendField("/ Tx").appendField(new Blockly.FieldDropdown(Blockly.Msg.rxtx), "PIN2");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
+        this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.SSERIAL_tooltip)}
+};
+
+Blockly.Blocks["soft_read"]={init:function(){
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Read);
+        this.setInputsInline(true);
+        this.setOutput(true, "String");
+        this.setTooltip(Blockly.Msg.SSERIAL_Read_tooltip)}
+};
+Blockly.Blocks["soft_write"]={init:function(){
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setColour("#0060aa");
+        this.appendValueInput("CONTENT", "String").appendField(Blockly.Msg.SSERIAL_Write);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.SSERIAL_Write_tooltip)}
+};
+Blockly.Blocks["soft_available"]={init:function(){
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setColour("#0060aa");
+        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Available);
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setTooltip(Blockly.Msg.SSERIAL_Available_tooltip)}
+};
+Blockly.Blocks["serial_init"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setInputsInline(false);
+        this.appendDummyInput().appendField(Blockly.Msg.Serial_Init).appendField(new Blockly.FieldDropdown(profile[card].serialPin), "pin");
+		this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
+        this.setTooltip(Blockly.Msg.Serial_Init_tooltip)}
+		};
+Blockly.Blocks["serial_init2"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setInputsInline(false);
+        this.appendDummyInput().appendField(Blockly.Msg.Serial_Init).appendField(new Blockly.FieldDropdown(profile[card].serialPin), "pin");
+		this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse).appendField(new Blockly.FieldDropdown(profile[card].serial), "SPEED");
+		this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+		 this.setInputsInline(true);
+        this.setTooltip(Blockly.Msg.Serial_Init_tooltip)}
+};
+Blockly.Blocks["serial_read"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+		if (card!="python"){this.appendDummyInput().appendField(Blockly.Msg.Serial_read);} else {this.appendDummyInput().appendField(Blockly.Msg.repl_read);}
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setTooltip(Blockly.Msg.Serial_read_tooltip)}
+};
+
+Blockly.Blocks["serial_available"]={init:function(){
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setColour("#0060aa");
+        this.appendDummyInput().appendField(Blockly.Msg.SSERIAL_Available);
+        this.setInputsInline(true);
+        this.setOutput(true, "Number");
+        this.setTooltip(Blockly.Msg.SSERIAL_Available_tooltip)}
+};
+
+Blockly.Blocks["serial_line"]={init:function(){
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().appendField(Blockly.Msg.Serial_saut);
+        this.setInputsInline(true);
+        this.setOutput(true, "String");
+        this.setTooltip(Blockly.Msg.Serial_saut_tooltip)}
+};
+Blockly.Blocks["serial_tab"]={init:function(){
+    this.setColour("#0060aa");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.appendDummyInput().appendField(Blockly.Msg.Serial_space);
+    this.setInputsInline(true);
+    this.setOutput(true, "String");
+    this.setTooltip(Blockly.Msg.Serial_space_tooltip)}
+};
+
+Blockly.Blocks["serial_write"]={init:function(){
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendValueInput("CONTENT", String).appendField(Blockly.Msg.Serial_Write);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.Serial_write_tooltip)}
+};
+Blockly.Blocks["serial_input"]={init:function(){
+        this.setColour("#0060aa");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendValueInput("CONTENT", String).appendField("wait user command");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.Serial_write_tooltip)}
+};
+
+/*	entrée-sortie */

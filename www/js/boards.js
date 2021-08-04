@@ -428,7 +428,7 @@ var profile = {
 	Ottoky: {
 	    description: "Ottoky ESP32",
 	    BUILTIN_LED: 18,
-		picture : "media/esp32.jpg",
+		picture : "media/tokymaker.png",
 		dropdownAllPins: [["IN1", "34"],["IN2", "33"],["IN3", "32"],["IN4", "39"],["IN5", "35"],["OUT1", "23"], ["OUT2", "26"], ["OUT3", "25"], ["OUT4", "5"], ["OUT5", "27"], ["ECHO", "17"], ["TRIG", "16"], ["SDA", "21"], ["SCL", "22"], ["LED", "18"], ["CAP1", "12"], ["CAP2", "14"], ["CAP3", "13"], ["BTN_A", "36"], ["BTN_B", "2"]],
 		dropdownDigital: [["IN1", "34"],["IN2", "33"],["IN3", "32"],["IN4", "39"],["IN5", "35"],["OUT1", "23"], ["OUT2", "26"], ["OUT3", "25"], ["OUT4", "5"], ["OUT5", "27"], ["ECHO", "17"], ["TRIG", "16"], ["SDA", "21"], ["SCL", "22"], ["LED", "18"], ["CAP1", "12"], ["CAP2", "14"], ["CAP3", "13"], ["BTN_A", "36"], ["BTN_B", "2"]],
 		dropdownPWM: [["IN1", "34"],["IN2", "33"],["IN3", "32"],["IN4", "39"],["IN5", "35"],["OUT1", "23"], ["OUT2", "26"], ["OUT3", "25"], ["OUT4", "5"], ["OUT5", "27"], ["ECHO", "17"], ["TRIG", "16"]],
