@@ -53,8 +53,10 @@ Blockly.Arduino['ESP_DeepSleep'] = function(block) {
  		
  var value = Blockly.Arduino.valueToCode(this, 'Value', Blockly.Arduino.ORDER_ATOMIC);
   
-
-  var code = 'ESP.deepSleep('+value+'e6);\n';
+   if ( value== "0")
+	   var code = 'ESP.deepSleep(0);\n';
+	else
+		var code = 'ESP.deepSleep('+value+'e6);\n';
  
   return code;
 };
