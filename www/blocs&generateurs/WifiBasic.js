@@ -55,6 +55,8 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 '	Serial.print(".");\n'+
 '	delay(500);\n'+
 '	}\n'+
+'	Serial.println("ESP8266 MAC Address:  ");\n'+
+'	Serial.println(WiFi.macAddress());\n'+
 '   Serial.println();\n'+
 '   Serial.print("Conectado a:\t");\n'+
 '   Serial.println(WiFi.SSID()); \n'+
@@ -112,18 +114,20 @@ Blockly.Arduino['wifi_init_ap'] = function(block) {
 if(logic=='TRUE')
 {
 Blockly.Arduino.setups_['wifi_ap_connect'] = 'Serial.begin(115200);\n'+
-'	delay(2000);\n'+
-'   WiFi.mode(WIFI_AP);\n'+
-'	Serial.println("Conectando como modo punto de acceso");\n'+
-'	while (!WiFi.softAP(wifi_ssid,wifi_pass)){\n'+
+'delay(2000);\n'+
+'WiFi.mode(WIFI_AP);\n'+
+'Serial.println("Conectando como modo punto de acceso");\n'+
+'while (!WiFi.softAP(wifi_ssid,wifi_pass)){\n'+
 '	Serial.print(".");\n'+
 '	delay(500);\n'+
 '	}\n'+
-'   Serial.println();\n'+
-'   Serial.print("Iniciado Access point:\t");\n'+
-'   Serial.println(WiFi.SSID()); \n'+
-'   Serial.print("with this IP address:\t");\n'+
-'   Serial.println(WiFi.softAPIP());\n';
+'Serial.println("ESP8266 MAC Address:  ");\n'+
+'Serial.println(WiFi.macAddress());\n'+
+'Serial.println();\n'+
+'Serial.print("Iniciado Access point:\t");\n'+
+'Serial.println(wifi_ssid); \n'+
+'Serial.print("with this IP address:\t");\n'+
+'Serial.println(WiFi.softAPIP());\n';
 
 }
 else{
@@ -195,10 +199,14 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 '	}\n'+
 '	WiFi.setAutoReconnect(true);\n'+
 '   Serial.println();\n'+
+'	Serial.println("ESP8266 MAC Address:  ");\n'+
+'	Serial.println(WiFi.macAddress());\n'+
 '   Serial.print("Conectado a:\t");\n'+
 '   Serial.println(WiFi.SSID()); \n'+
 '   Serial.print("IP address:\t");\n'+
 '   Serial.println(WiFi.localIP());\n'+
+'   Serial.print("Iniciado Access point:\t");\n'+
+'   Serial.println(wifi_ssid2); \n'+
 ' 	Serial.print("AP dirección IP: ");\n'+
 '	Serial.println(WiFi.softAPIP());\n';
 }
