@@ -105,6 +105,7 @@ Blockly.Msg.CAT_NTP = "🌐 NTP";
 Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
+Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -1145,4 +1146,11 @@ Blockly.Msg.ESP_yield=" Función Yield ";
 Blockly.Msg.ESP_deepsleep="DeepSleep ";
 Blockly.Msg.ESP_timesleep="Segundos";
 
-
+//Wifi Server
+Blockly.Msg.WifiServer_wait="Esperar conexiones de clientes"
+Blockly.Msg.WifiServer_port="Levantar servidor en puerto"
+Blockly.Msg.WifiServer_answer="Responder al cliente:"
+Blockly.Msg.WifiServer_stop="Parar el cliente conectado a nuestro servidor"
+Blockly.Msg.WifiServer_flush="Flush el cliente conectado a nuestro servidor"
+Blockly.Msg.WifiServer_ip="IP del cliente conectado"
+Blockly.Msg.WifiServer_request="Petición del cliente conectado"
