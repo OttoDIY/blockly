@@ -1154,3 +1154,75 @@ Blockly.Msg.WifiServer_stop="Parar el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_flush="Flush el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_ip="IP del cliente conectado"
 Blockly.Msg.WifiServer_request="Petición del cliente conectado"
+
+
+//Text with more functions
+Blockly.Msg.TEXT_APPEND_APPENDTEXT = "añade el texto";
+Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
+Blockly.Msg.TEXT_APPEND_TO = "en";
+Blockly.Msg.TEXT_APPEND_TOOLTIP = "Añade texto a la variable '%1'.";
+Blockly.Msg.TEXT_CHANGECASE_HELPURL = "https://github.com/google/blockly/wiki/Text#adjusting-text-case";  // untranslated
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "en minúsculas";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "en mayúscula al comienzo de cada palabra";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "en MAYÚSCULAS";
+Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "Devuelve una copia de texto en una caja diferente.";
+Blockly.Msg.TEXT_CHARAT_FIRST = "obtiene la primera letra";
+Blockly.Msg.TEXT_CHARAT_FROM_END = "obtiene la letra # desde el final";
+Blockly.Msg.TEXT_CHARAT_FROM_START = "obtiene la letra #";
+Blockly.Msg.TEXT_CHARAT_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-text";  // untranslated
+Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "en el texto";
+Blockly.Msg.TEXT_CHARAT_LAST = "obtiene la última letra";
+Blockly.Msg.TEXT_CHARAT_RANDOM = "obtiene una letra al azar";
+Blockly.Msg.TEXT_CHARAT_TAIL = "";  // untranslated
+Blockly.Msg.TEXT_CHARAT_TOOLTIP = "Devuelve la letra a la posición indicada.";
+Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "Añade un elemento al texto.";
+Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "une";
+Blockly.Msg.TEXT_CREATE_JOIN_TOOLTIP = "Añade, suprime, o reordena les secciones para reconfigurar este bloque de texto.";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_END = "hasta la letra # desde el final";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_START = "hasta la letra #";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_LAST = "hasta la última letra";
+Blockly.Msg.TEXT_GET_SUBSTRING_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-a-region-of-text";  // untranslated
+Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT = "al texto";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FIRST = "obtiene la subcadena desde la primera letra";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_END = "obtiene la subcadena desde la letra # desde el final";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = "obtiene la subcadena desde la letra #";
+Blockly.Msg.TEXT_GET_SUBSTRING_TAIL = "";  // untranslated
+Blockly.Msg.TEXT_GET_SUBSTRING_TOOLTIP = "Devuelve una porción especificada del texto.";
+Blockly.Msg.TEXT_INDEXOF_HELPURL = "https://github.com/google/blockly/wiki/Text#finding-text";  // untranslated
+Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = "al texto";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = "encuentra la primera ocurrencia de la cadena";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = "encuentra la última ocurrencia de la cadena";
+Blockly.Msg.TEXT_INDEXOF_TAIL = "";  // untranslated
+Blockly.Msg.TEXT_INDEXOF_TOOLTIP = "Devuelve el índice de la primera/última ocurrencia del primer texto en el segundo texto. Devuelve %1 si el texto no se ha encontrado.";
+Blockly.Msg.TEXT_ISEMPTY_HELPURL = "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";  // untranslated
+Blockly.Msg.TEXT_ISEMPTY_TITLE = "%1 está vacía";
+Blockly.Msg.TEXT_ISEMPTY_TOOLTIP = "Devuelve cierto si el texto dado està vacío.";
+Blockly.Msg.TEXT_JOIN_HELPURL = "https://github.com/google/blockly/wiki/Text#text-creation";  // untranslated
+Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = "crea un texto con";
+Blockly.Msg.TEXT_JOIN_TOOLTIP = "Crea una porción de texto añadiendo un número cualquiera de elementos.";
+Blockly.Msg.TEXT_LENGTH_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
+Blockly.Msg.TEXT_LENGTH_TITLE = "longitud de %1";
+Blockly.Msg.TEXT_LENGTH_TOOLTIP = "Devuelve el número de letras (espacios incluidos) al texto proporcionado.";
+Blockly.Msg.TEXT_PRINT_HELPURL = "https://github.com/google/blockly/wiki/Text#printing-text";  // untranslated
+Blockly.Msg.TEXT_PRINT_TITLE = "añade %1";
+Blockly.Msg.TEXT_PRINT_TOOLTIP = "Añade el texto, el número o otro valor especificado.";
+Blockly.Msg.TEXT_PROMPT_HELPURL = "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user";  // untranslated
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = "Pide un número al usuario.";
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = "Pide un texto al usuario.";
+Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "pide un número con un mensaje.";
+Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "pide un texto con un mensaje.";
+Blockly.Msg.TEXT_TEXT_HELPURL = "https://en.wikipedia.org/wiki/String_(computer_science)";
+Blockly.Msg.TEXT_TEXT_TOOLTIP = "Una letra, una palabra, o una linea de texto.";
+Blockly.Msg.TEXT_TRIM_HELPURL = "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";  // untranslated
+Blockly.Msg.TEXT_TRIM_OPERATOR_BOTH = "suprime los espacios desde los dos lados";
+Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "suprime los espacios del lado izquierdo";
+Blockly.Msg.TEXT_TRIM_OPERATOR_RIGHT = "suprime los espacios del lado derecho";
+Blockly.Msg.TEXT_TRIM = "trim espacios desde";
+Blockly.Msg.TEXT_TRIM_TOOLTIP = "Devuelve una copia de texto con los espacios suprimidos de un lado o de los dos.";
+
+//Conversions
+Blockly.Msg.CONV_tochar="Casting a char "; 
+Blockly.Msg.CONV_toString="Convertir a String ";
+Blockly.Msg.CONV_decimal="Numero de decimales";
+
+

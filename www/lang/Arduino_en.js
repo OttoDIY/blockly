@@ -1130,3 +1130,72 @@ Blockly.Msg.WifiServer_stop="Stop the connected client to the our server"
 Blockly.Msg.WifiServer_flush="Flush the connected client to the our server"
 Blockly.Msg.WifiServer_ip="IP of the connected customer"
 Blockly.Msg.WifiServer_request="Request of the connected customer"
+
+
+//Text with more functions
+
+Blockly.Msg.TEXT_APPEND_APPENDTEXT = "append text";
+Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";
+Blockly.Msg.TEXT_APPEND_TO = "to";
+Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";
+Blockly.Msg.TEXT_CHANGECASE_HELPURL = "https://github.com/google/blockly/wiki/Text#adjusting-text-case";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "to lower case";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "to Title Case";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "to UPPER CASE";
+Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "Return a copy of the text in a different case.";
+Blockly.Msg.TEXT_CHARAT_FIRST = "get first letter";
+Blockly.Msg.TEXT_CHARAT_FROM_END = "get letter # from end";
+Blockly.Msg.TEXT_CHARAT_FROM_START = "get letter #";
+Blockly.Msg.TEXT_CHARAT_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-text";
+Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "in text";
+Blockly.Msg.TEXT_CHARAT_LAST = "get last letter";
+Blockly.Msg.TEXT_CHARAT_RANDOM = "get random letter";
+Blockly.Msg.TEXT_CHARAT_TAIL = "";
+Blockly.Msg.TEXT_CHARAT_TOOLTIP = "Returns the letter at the specified position.";
+Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "Add an item to the text.";
+Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "join";
+Blockly.Msg.TEXT_CREATE_JOIN_TOOLTIP = "Add, remove, or reorder sections to reconfigure this text block.";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_END = "to letter # from end";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_START = "to letter #";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_LAST = "to last letter";
+Blockly.Msg.TEXT_GET_SUBSTRING_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-a-region-of-text";
+Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT = "in text";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FIRST = "get substring from the first letter";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_END = "get substring from letter # from end";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = "get substring from letter #";
+Blockly.Msg.TEXT_GET_SUBSTRING_TAIL = "";
+Blockly.Msg.TEXT_GET_SUBSTRING_TOOLTIP = "Returns a specified portion of the text.";
+Blockly.Msg.TEXT_INDEXOF_HELPURL = "https://github.com/google/blockly/wiki/Text#finding-text";
+Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = "in text";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = "find first occurrence of text";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = "find last occurrence of text";
+Blockly.Msg.TEXT_INDEXOF_TAIL = "";
+Blockly.Msg.TEXT_INDEXOF_TOOLTIP = "Returns the index of the first/last occurrence of the first text in the second text. Returns %1 if text is not found.";
+Blockly.Msg.TEXT_ISEMPTY_HELPURL = "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";
+Blockly.Msg.TEXT_ISEMPTY_TITLE = "%1 is empty";
+Blockly.Msg.TEXT_ISEMPTY_TOOLTIP = "Returns true if the provided text is empty.";
+Blockly.Msg.TEXT_JOIN_HELPURL = "https://github.com/google/blockly/wiki/Text#text-creation";
+Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = "create text with";
+Blockly.Msg.TEXT_JOIN_TOOLTIP = "Create a piece of text by joining together any number of items.";
+Blockly.Msg.TEXT_LENGTH_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";
+Blockly.Msg.TEXT_LENGTH_TITLE = "length of %1";
+Blockly.Msg.TEXT_LENGTH_TOOLTIP = "Returns the number of letters (including spaces) in the provided text.";
+Blockly.Msg.TEXT_PRINT_HELPURL = "https://github.com/google/blockly/wiki/Text#printing-text";
+Blockly.Msg.TEXT_PRINT_TITLE = "print %1";
+Blockly.Msg.TEXT_PRINT_TOOLTIP = "Print the specified text, number or other value.";
+Blockly.Msg.TEXT_PROMPT_HELPURL = "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user";
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = "Prompt for user for a number.";
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = "Prompt for user for some text.";
+Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "prompt for number with message";
+Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "prompt for text with message";
+Blockly.Msg.TEXT_TEXT_HELPURL = "https://en.wikipedia.org/wiki/String_(computer_science)";
+Blockly.Msg.TEXT_TEXT_TOOLTIP = "A letter, word, or line of text.";
+Blockly.Msg.TEXT_TRIM_HELPURL = "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";
+Blockly.Msg.TEXT_TRIM = "trim spaces from ";
+Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed from one or both ends.";
+
+//Conversions
+Blockly.Msg.CONV_tochar="Casting to char "; 
+Blockly.Msg.CONV_toString="Convert to String ";
+Blockly.Msg.CONV_decimal="Number of decimals";
+
