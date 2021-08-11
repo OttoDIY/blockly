@@ -47,7 +47,7 @@ Blockly.Arduino['wifi_init_sta'] = function(block) {
   
 if(logic=='TRUE')
 {
-Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
+ var code= 'Serial.begin(115200);\n'+
 '	delay(2000);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
 '	Serial.println("Conectando");\n'+
@@ -65,14 +65,13 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 
 }
 else{
-Blockly.Arduino.setups_['wifi_station_connect'] = 'delay(2000);\n'+
+ var code= 'delay(2000);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
 '	while (WiFi.status() != WL_CONNECTED){\n'+
 '	delay(500);\n'+
 '	}\n';
 }
 
-  var code='';
   return code;
 };
 
@@ -113,7 +112,7 @@ Blockly.Arduino['wifi_init_ap'] = function(block) {
   
 if(logic=='TRUE')
 {
-Blockly.Arduino.setups_['wifi_ap_connect'] = 'Serial.begin(115200);\n'+
+ var code= 'Serial.begin(115200);\n'+
 'delay(2000);\n'+
 'WiFi.mode(WIFI_AP);\n'+
 'Serial.println("Conectando como modo punto de acceso");\n'+
@@ -131,14 +130,13 @@ Blockly.Arduino.setups_['wifi_ap_connect'] = 'Serial.begin(115200);\n'+
 
 }
 else{
-Blockly.Arduino.setups_['wifi_ap_connect'] = 'delay(2000);\n'+
+ var code= 'delay(2000);\n'+
 '   WiFi.mode(WIFI_AP);\n'+
 '	while (!WiFi.softAP(wifi_ssid,wifi_pass)){\n'+
 '	delay(500);\n'+
 '	}\n';
 }
 
-  var code='';
   return code;
 };
 
@@ -187,7 +185,7 @@ Blockly.Arduino['wifi_init_sta_ap'] = function(block) {
  
 if(logic=='TRUE')
 {
-Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
+ var code= 'Serial.begin(115200);\n'+
 '	delay(2000);\n'+
 '   WiFi.mode(WIFI_AP_STA);\n'+
 '	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
@@ -211,7 +209,7 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'Serial.begin(115200);\n'+
 '	Serial.println(WiFi.softAPIP());\n';
 }
 else{
-Blockly.Arduino.setups_['wifi_station_connect'] = 'delay(2000);\n'+
+var code= 'delay(2000);\n'+
 '   WiFi.mode(WIFI_AP_STA);\n'+
 '	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
@@ -221,206 +219,83 @@ Blockly.Arduino.setups_['wifi_station_connect'] = 'delay(2000);\n'+
 '	WiFi.setAutoReconnect(true);\n';
 }
 
-  var code='';
+
   return code;
 };
 
-
-
-
-
-
-
-/*
-
-Blockly.Blocks['mqtt_loop'] = {
+Blockly.Blocks['wifi_ap_staticip'] = {
    init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
-        .appendField(Blockly.Msg.MQTT_name)
-		.appendField(Blockly.Msg.MQTT_topicattend)
-    this.setInputsInline(true);
+		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
+        .appendField(Blockly.Msg.Wifi_ap_fixip)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.Wifi_ip)
+        .appendField(new Blockly.FieldTextInput("192,168,7,2"), "IP")
+		.appendField(Blockly.Msg.Wifi_Gateway)
+        .appendField(new Blockly.FieldTextInput("192,168,7,1"), "Gateway")
+		.appendField(Blockly.Msg.Wifi_Mask)
+        .appendField(new Blockly.FieldTextInput("255,255,255,0"), "Mask");
+	this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Topic attend in the loop');
-    this.setHelpUrl('');
+    this.setTooltip('In access point fix a ip static');
+    this.setHelpUrl(''); 
   }
 };
 
-Blockly.Arduino['mqtt_loop'] = function(block) {
-
-  var code = 'mqtt_loop();\n';
-  return code;
-};
-
-
-Blockly.Blocks['mqtt_subscribe_num'] = {
-   init: function() {
-    this.setColour("#008080");
-    this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
-        .appendField(Blockly.Msg.MQTT_name)
-		.appendField(Blockly.Msg.MQTT_topicsubscribe)
-		.appendField(new Blockly.FieldTextInput("Topic path"), "TOPIC")
-		.appendField(Blockly.Msg.MQTT_topicsubscribe2)
-	this.appendValueInput("variable");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip('Topic subscription');
-    this.setHelpUrl('');
-  },
-    contextMenuType_: 'variables_set',
-    customContextMenu: Blockly.Blocks["variables_get"].customContextMenu,
-    getVarType: function(varName) {
-        return Blockly.Types.getChildBlockType(this)
-    }
-};
-
-Blockly.Arduino['mqtt_subscribe_num'] = function(block) {
-
- var topic = block.getFieldValue('TOPIC');  
- var varName = Blockly.Arduino.valueToCode(block, 'variable', Blockly.Arduino.ORDER_ATOMIC);
- 
- 
- 
-//Insert in mqtt_subscribe 
- if (typeof(Blockly.Arduino.definitions_['define_mqtt_subscribe']) == "undefined")
-	{
-		Blockly.Arduino.definitions_['define_mqtt_subscribe'] = 'void mqtt_subscribe(){\n'+
-		' mqtt_client.subscribe(String(String("'+topic+'")).c_str());\n'+
-		'}\n';
-	}
-else 
-	{
-		Blockly.Arduino.definitions_['define_mqtt_subscribe']=Blockly.Arduino.definitions_['define_mqtt_subscribe'].split("}",1);
-		Blockly.Arduino.definitions_['define_mqtt_subscribe']=Blockly.Arduino.definitions_['define_mqtt_subscribe'] + 
-		'mqtt_client.subscribe(String(String("'+topic+'")).c_str());\n'+
-		'}\n'; 
-	}
- 
- //Insert in mqtt_callback
- 
- 
- if (typeof(Blockly.Arduino.definitions_['define_mqtt_callback']) == "undefined")
-	{
-		Blockly.Arduino.definitions_['define_mqtt_callback'] = 'void mqtt_callback(char* _topic, unsigned char* _payload, unsigned int _payloadlength){\n'+
-'	double varNum=mqtt_payload2double(_payload,_payloadlength);\n'+
-'	String varText=mqtt_payload2string(_payload,_payloadlength);\n'+
-'   if(String(_topic)==String(String("'+topic+'")))'+varName+'=varNum;\n'+
-'}\n';
-	}
-else 
-	{
-		Blockly.Arduino.definitions_['define_mqtt_callback']=Blockly.Arduino.definitions_['define_mqtt_callback'].split("}",1);
-		Blockly.Arduino.definitions_['define_mqtt_callback']=Blockly.Arduino.definitions_['define_mqtt_callback'] + 
-		'   if(String(_topic)==String(String("'+topic+'")))'+varName+'=varNum;\n'+
-		'}\n';
-	}
-  
+Blockly.Arduino['wifi_ap_staticip'] = function(block) {
+	
+ var IP_ap = block.getFieldValue('IP'); 
+ var Mask_ap = block.getFieldValue('Mask'); 
+ var Gateway_ap = block.getFieldValue('Gateway');  
+     
     
-  var code = '';
-  return code;
-};
-
-Blockly.Blocks['mqtt_subscribe_text'] = {
-   init: function() {
-    this.setColour("#008080");
-    this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
-        .appendField(Blockly.Msg.MQTT_name)
-		.appendField(Blockly.Msg.MQTT_topicsubscribe)
-		.appendField(new Blockly.FieldTextInput("Topic path"), "TOPIC")
-		.appendField(Blockly.Msg.MQTT_topicsubscribe3)
-	this.appendValueInput("variable");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip('Topic subscription');
-    this.setHelpUrl('');
-  },
-    contextMenuType_: 'variables_set',
-    customContextMenu: Blockly.Blocks["variables_get"].customContextMenu,
-    getVarType: function(varName) {
-        return Blockly.Types.getChildBlockType(this)
-    }
-};
-
-Blockly.Arduino['mqtt_subscribe_text'] = function(block) {
-
- var topic = block.getFieldValue('TOPIC');  
- var varName = Blockly.Arduino.valueToCode(block, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+Blockly.Arduino.variables_['define_wifi_static_ip_ap'] = 'IPAddress staticIP_ap('+IP_ap+');\n'+
+'IPAddress gateway_ap('+Gateway_ap+');\n'+
+'IPAddress subnet_ap('+Mask_ap+');\n';
  
- 
- 
-//Insert in mqtt_subscribe 
- if (typeof(Blockly.Arduino.definitions_['define_mqtt_subscribe']) == "undefined")
-	{
-		Blockly.Arduino.definitions_['define_mqtt_subscribe'] = 'void mqtt_subscribe(){\n'+
-		' mqtt_client.subscribe(String(String("'+topic+'")).c_str());\n'+
-		'}\n';
-	}
+  var code='WiFi.softAPConfig(staticIP_ap, gateway_ap, subnet_ap);\n';
 
-else 
-	{
-		Blockly.Arduino.definitions_['define_mqtt_subscribe']=Blockly.Arduino.definitions_['define_mqtt_subscribe'].split("}",1);
-		Blockly.Arduino.definitions_['define_mqtt_subscribe']=Blockly.Arduino.definitions_['define_mqtt_subscribe'] + '\n mqtt_client.subscribe(String(String("'+topic+'")).c_str());\n'+
-		'}\n';
-	}
- 
- //Insert in mqtt_callback
- if (typeof(Blockly.Arduino.definitions_['define_mqtt_callback']) == "undefined")
-	{
-		Blockly.Arduino.definitions_['define_mqtt_callback'] = 'void mqtt_callback(char* _topic, unsigned char* _payload, unsigned int _payloadlength){\n'+
-'	double varNum=mqtt_payload2double(_payload,_payloadlength);\n'+
-'	String varText=mqtt_payload2string(_payload,_payloadlength);\n'+
-'   if(String(_topic)==String(String("'+topic+'")))'+varName+'=varText;\n'+
-'}\n';
-	}
-
-else 
-	{
-		Blockly.Arduino.definitions_['define_mqtt_callback']=Blockly.Arduino.definitions_['define_mqtt_callback'].split("}",1);
-		Blockly.Arduino.definitions_['define_mqtt_callback']=Blockly.Arduino.definitions_['define_mqtt_callback'] + 
-		'   if(String(_topic)==String(String("'+topic+'")))'+varName+'=varText;\n'+
-		'}\n';
-	}
-  
-    
-  var code = '';
   return code;
 };
 
 
-Blockly.Blocks['mqtt_publish'] = {
+
+
+Blockly.Blocks['wifi_sta_staticip'] = {
    init: function() {
     this.setColour("#008080");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
-        .appendField(Blockly.Msg.MQTT_name)
-		.appendField(Blockly.Msg.MQTT_topicpublish)
-		.appendField(new Blockly.FieldTextInput("Topic path"), "TOPIC")
-		.appendField(Blockly.Msg.MQTT_topicvalue)
-	this.appendValueInput("variable");	
-    this.setInputsInline(true);
+		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
+        .appendField(Blockly.Msg.Wifi_sta_fixip)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.Wifi_ip)
+        .appendField(new Blockly.FieldTextInput("192,168,1,150"), "IP")
+		.appendField(Blockly.Msg.Wifi_Gateway)
+        .appendField(new Blockly.FieldTextInput("192,168,1,1"), "Gateway")
+		.appendField(Blockly.Msg.Wifi_Mask)
+        .appendField(new Blockly.FieldTextInput("255,255,255,0"), "Mask");
+	this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('Topic subscription');
-    this.setHelpUrl('');
+    this.setTooltip('In access point fix a ip static');
+    this.setHelpUrl(''); 
   }
 };
 
-Blockly.Arduino['mqtt_publish'] = function(block) {
-
- var topic = block.getFieldValue('TOPIC');  
- var variable = Blockly.Arduino.valueToCode(block, 'variable', Blockly.Arduino.ORDER_ATOMIC);
- 
+Blockly.Arduino['wifi_sta_staticip'] = function(block) {
+	
+ var IP_sta = block.getFieldValue('IP'); 
+ var Mask_sta = block.getFieldValue('Mask'); 
+ var Gateway_sta = block.getFieldValue('Gateway');  
+     
     
-  var code = 'mqtt_client.publish(String(String("'+topic+'")).c_str(),String(String('+variable+')).c_str());\n';
+Blockly.Arduino.variables_['define_wifi_static_ip_sta'] = 'IPAddress staticIP_sta('+IP_sta+');\n'+
+'IPAddress gateway_sta('+Gateway_sta+');\n'+
+'IPAddress subnet_sta('+Mask_sta+');\n';
+ 
+  var code='WiFi.config(staticIP_sta, gateway_sta, subnet_sta);\n';
+
   return code;
 };
-
-
-*/
-

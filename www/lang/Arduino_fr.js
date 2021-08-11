@@ -1155,6 +1155,12 @@ Blockly.Msg.WifiServer_flush="Flush the connected client to the our server"
 Blockly.Msg.WifiServer_ip="IP of the connected customer"
 Blockly.Msg.WifiServer_request="Request of the connected customer"
 
+Blockly.Msg.Wifi_ap_fixip="Access point mode.Static IP"
+Blockly.Msg.Wifi_sta_fixip="Station mode.Static IP"
+Blockly.Msg.Wifi_ip="IP"
+Blockly.Msg.Wifi_Mask="Mask"
+Blockly.Msg.Wifi_Gateway="Gateway"
+
 //Text with more functions
 
 Blockly.Msg.TEXT_APPEND_APPENDTEXT = "append text";
