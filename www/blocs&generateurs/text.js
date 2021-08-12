@@ -937,7 +937,7 @@ Blockly.Arduino['text_indexOf'] = function(block) {
   var operator = block.getFieldValue('END') == 'FIRST' ? '.indexOf' : '.lastIndexOf';
   var substring = Blockly.Arduino.valueToCode(block, 'FIND', Blockly.Arduino.ORDER_UNARY_POSTFIX);
   var text = Blockly.Arduino.valueToCode(block, 'VALUE', Blockly.Arduino.ORDER_UNARY_POSTFIX);
-  var code = text + operator + '(' + substring + ')+1';
+  var code = text + operator + '(' + substring + ')';
   return [code, Blockly.Arduino.ORDER_UNARY_POSTFIX];
 };
 
