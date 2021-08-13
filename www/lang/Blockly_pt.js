@@ -48,6 +48,7 @@ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING = "Aviso: Este bloco deve ser usado
 Blockly.Msg.CONTROLS_FOREACH_TITLE = "para cada item %1 na lista %2";
 Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "Para cada item de uma lista, atribua o valor do item à variável %1 e execute as instruções";
 Blockly.Msg.CONTROLS_FOR_TITLE = "para %1 variando de %2 para %3 em etapas de %4";
+Blockly.Msg.CONTROLS_FOR_TITLE2 = "for %1 ranging from %2 to %3 (>=)in steps of - %4";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = "Definir variável %1 para valores do número inicial para o número final, incrementando pelo passo especificado, e executa as instruções especificadas";
 Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Adicionar Condição";
 Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "Adicionar uma condição final";

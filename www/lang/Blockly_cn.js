@@ -48,6 +48,7 @@ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING = "Warning: This block must be used
 Blockly.Msg.CONTROLS_FOREACH_TITLE = "for each item %1 in list %2";
 Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "For each item in a list, assign the value of the item to variable %1, and then execute statements";
 Blockly.Msg.CONTROLS_FOR_TITLE = "设置 %1 范围 %2 到 %3 幅度 %4";
+Blockly.Msg.CONTROLS_FOR_TITLE2 = "for %1 ranging from %2 to %3 (>=)in steps of %4";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = "Set variable %1 to values ​​from start number to end number, incrementing by specified step, and execute the specified statements";
 Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Add Condition";
 Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "Add a final condition";
