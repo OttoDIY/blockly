@@ -423,11 +423,11 @@
 			<field name="vert">D2</field>
 			<field name="bleu">D3</field>		
 		</block>
-		<block type="rgb_setcolor"></block>
+		<!-- <block type="rgb_setcolor"></block> -->
 		<block type="rgb_set">
-		<value name="r"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="v"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-		<value name="b"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			<value name="r"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
+			<value name="v"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
+			<value name="b"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
 		</block>
 	</category>	
 	
