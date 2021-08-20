@@ -73,10 +73,11 @@
 		<block type="toggle2">
 			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">10</field>	</shadow></value>
 		</block>
-		<block type="inout_attachInterrupt"></block>
+		<block type="inout_attachInterrupt_esp8266"></block>
 		<block type="inout_detachInterrupt"></block>
 		
 		<block type="ESP_yield_block"></block>
+		<block type="ESP_Restart"></block>
 		<block type="ESP_DeepSleep">
 				<value name="Value"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>

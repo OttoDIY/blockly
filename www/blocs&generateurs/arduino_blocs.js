@@ -128,6 +128,27 @@ Blockly.Blocks["inout_attachInterrupt"]={init:function(){
         this.setNextStatement(false);
         this.setTooltip(Blockly.Msg.LKL_TOOLTIP_INOUT_ATTACHINTERRUPT)}
 };
+
+
+Blockly.Blocks["inout_attachInterrupt_esp8266"]={init:function(){
+		var card=window.localStorage.card;
+		var prog = window.localStorage.prog;
+        this.setColour("#00929f");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+		if (prog != "python") {
+			this.appendDummyInput().appendField(Blockly.Msg.LKL_ATTACHINTERRUPT_PIN).appendField(new Blockly.FieldDropdown(Blockly.Msg.LKL_DROPDOWN), "mode");
+        } else {
+			this.appendDummyInput().appendField(Blockly.Msg.LKL_ATTACHINTERRUPT_PIN).appendField(new Blockly.FieldDropdown(Blockly.Msg.irq), "mode");
+		}
+		this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.LKL_MODE).appendField(new Blockly.FieldDropdown(profile[card].interrupt), 'PIN');
+        this.appendStatementInput('DO').appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+        this.setInputsInline(false);
+        this.setPreviousStatement(false);
+        this.setNextStatement(false);
+        this.setTooltip(Blockly.Msg.LKL_TOOLTIP_INOUT_ATTACHINTERRUPT)}
+};
+
+
 Blockly.Blocks["inout_detachInterrupt"]={init:function(){
 		var card=window.localStorage.card;
         this.setColour("#00929f");

@@ -61,3 +61,24 @@ Blockly.Arduino['ESP_DeepSleep'] = function(block) {
   return code;
 };
 
+
+Blockly.Blocks['ESP_Restart'] = {
+  helpUrl: '',
+  init: function() {
+	this.setColour("#00929f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/ESP8266icon.png",33,33))
+        .appendField(Blockly.Msg.ESP_restart)
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Restar ESP8266 ');
+  }
+};
+
+Blockly.Arduino['ESP_Restart'] = function(block) {
+ 		
+	var code = 'ESP.restart();\n';
+ 
+  return code;
+};

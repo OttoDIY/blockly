@@ -1121,6 +1121,7 @@ Blockly.Msg.WFL_ACCURACY="Accuracy";
 Blockly.Msg.ESP_yield=" Yield function";
 Blockly.Msg.ESP_deepsleep="DeepSleep ";
 Blockly.Msg.ESP_timesleep="Seconds";
+Blockly.Msg.ESP_restart="Restart ESP8266";
 
 //Wifi Server
 Blockly.Msg.WifiServer_wait="Wait connections of clients"
