@@ -1156,6 +1156,12 @@ Blockly.Msg.WifiServer_stop="Parar el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_flush="Flush el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_ip="IP del cliente conectado"
 Blockly.Msg.WifiServer_request="Petición del cliente conectado"
+Blockly.Msg.WifiServer_ESP8266webserver_parameter="ESP8266WebServer Leer parámetro: "
+Blockly.Msg.WifiServer_ESP8266webserver_parameter2="ESP8266WebServer Parámetro: "
+Blockly.Msg.WifiServer_esp8266_send_html_URL = "Cuando un cliente con esta URL (vacía para root):";
+Blockly.Msg.WifiServer_esp8266_send_html_HTML_page="es conectado entonces mostrar esta pagina HTML: ";
+Blockly.Msg.WifiServer_esp8266_send_html_execute="(opcional) y hacer: ";
+Blockly.Msg.WifiServer_esp8266_manage_requets="Gestionar las petiones de cliente";
 
 Blockly.Msg.Wifi_ap_fixip="Modo Access point.Static IP"
 Blockly.Msg.Wifi_sta_fixip="Modo Estación.Static IP"

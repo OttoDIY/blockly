@@ -423,7 +423,7 @@ Blockly.Blocks['args'] = {
 };
 Blockly.Arduino['args'] = function(block) {
     var code = Blockly.Arduino.statementToCode(block, 'content');
-    return 'style=\\"' + code + '\\"'
+    return 'style=\"' + code + '\"'
 };
 Blockly.Python['args'] = function(block) {
     var code = Blockly.Python.statementToCode(block, 'content');
