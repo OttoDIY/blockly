@@ -145,6 +145,7 @@ Blockly.Msg.esp8266_start = "iniciar servidor";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "si en la consulta encontramos";
 Blockly.Msg.esp8266_request_container = "encontramos";
+Blockly.Msg.esp8266_html_webpage = "Nombre de la página HTML :";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Interrupción: cuando a';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "deshabilitar interrupción en pin";

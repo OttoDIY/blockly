@@ -21,18 +21,10 @@ Blockly.Blocks['emptyVar'] = {
         });
     }
 };
-/* Blockly.Arduino['emptyVar'] = function(block) {
-    var value = block.getFieldValue('VAR');
-    console.log("Variable: "+value);
+Blockly.Arduino['emptyVar'] = function(block) {
+    var value = block.getFieldValue('value');
     var code = '<meta charset=\\"UTF-8\\">");\n';
     code += '<title>'+looseEscape(value)+'</title>");\n';
-    return code
-}; */
-Blockly.Arduino['emptyVar'] = function(block) {
-    var value = block.getFieldValue('VAR');
-    //console.log("Variable: "+value);
-    
-    var code=')=====\"+'+value+'+R\"=====(\n';
     return code
 };
 Blockly.Python['emptyVar'] = function(block) {
@@ -47,7 +39,7 @@ Blockly.Blocks['emptytext'] = {
                 {
                     "type": "field_input",
                     "name": "content",
-                    "text": "inserte texto"
+                    "text": "un texte."
                 }
             ],
             "previousStatement": "textcontainer",
@@ -65,27 +57,6 @@ Blockly.Python['emptytext'] = function(block) {
     return looseEscape(text_content)
 };
 //////////////
-Blockly.Blocks['esp_dig_pin'] = {init: function() {
-
-    this.appendDummyInput().
-    appendField("Medición: ");
-    this.appendValueInput("estado");
-    
-    this.setInputsInline(false);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-  this.setColour("#FD6C9E");
-     }
-  };
-
-  Blockly.Arduino['esp_dig_pin'] = function(block) {
-    var estado =Blockly.Arduino.valueToCode(block, "estado");
-    var code=')=====\"+'+estado+'+R\"=====(\n';
-    return code;
-};
-
-//////////////
-
 Blockly.Blocks['textmod'] = {
     init: function() {
         this.jsonInit({
@@ -155,7 +126,7 @@ Blockly.Blocks['paragraph'] = {
 Blockly.Arduino['paragraph'] = function(block) {
     var statements_content = Blockly.Arduino.statementToCode(block, 'content');
     var block_modifier = Blockly.Arduino.statementToCode(block, 'modifier');
-    return '<p' + block_modifier + '>' + statements_content + '</p>\n'
+    return '<p' + block_modifier + '>' + statements_content + '</p>");\n'
 };
 Blockly.Python['paragraph'] = function(block) {
     var statements_content = Blockly.Python.statementToCode(block, 'content');
@@ -195,7 +166,7 @@ Blockly.Arduino['header'] = function(block) {
     var statements_content = Blockly.Arduino.statementToCode(block, 'content');
     var header_size = block.getFieldValue("size");
     var block_modifier = Blockly.Arduino.statementToCode(block, 'modifier', Blockly.Arduino.ORDER_ATOMIC);
-    return '<h' + header_size + block_modifier + '>' + statements_content + '</h' + header_size + '>\n'
+    return '<h' + header_size + block_modifier + '>' + statements_content + '</h' + header_size + '>");\n'
 };
 Blockly.Python['header'] = function(block) {
     var statements_content = Blockly.Python.statementToCode(block, 'content');
@@ -231,9 +202,9 @@ Blockly.Blocks['link'] = {
 };
 Blockly.Arduino['link'] = function(block){
     var text = Blockly.Arduino.statementToCode(block, 'content');
-    var link = block.getFieldValue('target');
+    var link = URLInput(block.getFieldValue('target'));
     var block_modifier = Blockly.Arduino.statementToCode(block, 'modifier', Blockly.Arduino.ORDER_ATOMIC);
-    return '<a href=\"' + link + '\" target=\"_blank\"' + block_modifier + '>' + text + '</a>'
+    return '<a href=\\"' + link + '\\" target=\\"_blank\\"' + block_modifier + '>' + text + '</a>'
 };
 Blockly.Python['link'] = function(block){
     var text = Blockly.Python.statementToCode(block, 'content');
@@ -393,7 +364,7 @@ Blockly.Blocks['image'] = {
 };
 Blockly.Arduino['image'] = function(block){
     var source = block.getFieldValue('source');
-    var code = '<img src=\"' + URLInput(source) + '\">\n';
+    var code = '<img src=\\"' + URLInput(source) + '\\">");\n';
     return code
 };
 Blockly.Python['image'] = function(block){
@@ -574,17 +545,12 @@ Blockly.Python['border'] = function(block){
 Blockly.Blocks['input'] = {
     init: function() {
         this.jsonInit({
-            "message0": '<input type=%1 name=%2 value=%3>',
+            "message0": '<input type=%1 value=%2 >',
             "args0": [
                 {
                     "type": "field_dropdown",
                     "name": "type",
                     "options": [["checkbox","checkbox"],["radio","radio"],["submit","submit"],["text","text"]]
-                },
-                {
-                    "type": "field_input",
-                    "name": "name",
-                    "text": ""
                 },
                 {
                     "type": "field_input",
@@ -600,9 +566,8 @@ Blockly.Blocks['input'] = {
 };
 Blockly.Arduino['input'] = function(block){
     var type = block.getFieldValue('type');
-    var name=looseEscape(block.getFieldValue('name'))
     var value = looseEscape(block.getFieldValue('value'));
-    return '<input type=\"' + type + '\" name=\"'+name+'\" value=\"' + value + '\" name=\"' + value + '\">';
+    return '<input type=\\"' + type + '\\" value=\\"' + value + '\\" name=\\"' + value + '\\">';
 };
 Blockly.Python['input'] = function(block){
     var type = block.getFieldValue('type');
@@ -644,10 +609,8 @@ Blockly.Arduino['form'] = function(block){
 	var action = block.getFieldValue('action');
 	var method = block.getFieldValue('method');
     var content = Blockly.Arduino.statementToCode(block, 'content');
-/*     Blockly.Arduino.setups_["esp8266_query"]='server.on(\"/'+action+'\",HTTP_'+method+','+method+action+');\n';
-    Blockly.Arduino.includes_["esp8266query"]='void '+method+action+'(){\n//Here goes the code\n}\n'; */
     var block_modifier = Blockly.Arduino.statementToCode(block, 'modifier', Blockly.Arduino.ORDER_ATOMIC);
-    return '<form action=\"' + action + '\" method=\"' + method + '\" ' + block_modifier + '>\n' + content + '\n</form>\n'
+    return '<form action=\\"' + action + '\\" method=\\"' + method + '\\" ' + block_modifier + '>' + content + '</form>");\n'
 };
 Blockly.Python['form'] = function(block){
 	var action = block.getFieldValue('action');
@@ -680,7 +643,7 @@ Blockly.Blocks['label'] = {
     }
 };
 Blockly.Arduino['label'] = function(block){
-    var content = looseEscape(block.getFieldValue('value'));
+    var content = block.getFieldValue('value');
     var for_value = block.getFieldValue('for');
     return '<label for=' + for_value + '>' + content + '</label>\n'
 };
@@ -711,29 +674,6 @@ Blockly.Arduino['br'] = function(block){
 Blockly.Python['br'] = function(block){
     return '<br>\n'
 };
-
-Blockly.Blocks["esp8266_html"]={init:function(){
-    this.setColour("#154360");
-    this.setHelpUrl(Blockly.Msg.esp8266_url);
-    this.appendDummyInput().appendField(Blockly.Msg.esp8266_html_webpage).appendField(new Blockly.FieldTextInput("Name xxxxx"), "HEAD") ;
-	this.appendStatementInput("BODY");
-    this.setTooltip(Blockly.Msg.esp8266_html_tooltip)}
-};
-
-Blockly.Arduino['esp8266_html']=function(block){
-	var htmlhead=block.getFieldValue("HEAD");
-	var htmlbody=Blockly.Arduino.statementToCode(block, "BODY");
-    Blockly.Arduino.definitions_["esp8266_pag"+htmlhead] ='String p'+htmlhead+'(){\nString cadena=(String) R\"=====(\n'
-    +'<!DOCTYPE HTML>\n'
-    +' <html>\n<head><title>'+htmlhead+'</title></head>\n<body>\n'
-    +htmlbody
-    +'\n</body>\n</html>\n'
-    +')=====\";\n return cadena;\n}\n ';
-   
-	return ''
-};
-
-
   ////////////////
  /*  function  */
 ////////////////
@@ -747,21 +687,7 @@ function looseEscape(input) {
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;")
-        .replace(/á/g, "&aacute;")
-        .replace(/é/g, "&eacute;")
-        .replace(/í/g, "&iacute;")
-        .replace(/ó/g, "&oacute;")
-        .replace(/ú/g, "&uacute;")
-        .replace(/Á/g, "&Aacute;")
-        .replace(/É/g, "&Eacute;")
-        .replace(/Í/g, "&Iacute;")
-        .replace(/Ó/g, "&Oacute;")
-        .replace(/Ú/g, "&Uacute;")
-        .replace(/Ñ/g, "&Ntilde;")
-        .replace(/ñ/g, "&ntilde;")
-        .replace(/Ú/g, "&Uacute;")
-        .replace(/º/g,"&deg;");
+        .replace(/'/g, "&#039;");
 }
 function CSSEscape(input) {
     return input

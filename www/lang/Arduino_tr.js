@@ -144,6 +144,7 @@ Blockly.Msg.esp8266_start = "Sunucuyu başlat";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "sorguda bulursak";
 Blockly.Msg.esp8266_request_container = "bulduk";
+Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Kesme: bir';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "Pimde kesmeyi devre dışı bırak";

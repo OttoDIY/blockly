@@ -143,6 +143,7 @@ Blockly.Msg.esp8266_start = "Urucom serwer.";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "jeżeli w zapytaniu znajdziemy";
 Blockly.Msg.esp8266_request_container = "znaleziono";
+Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Przerwij: kiedy';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "Wyłącz przerwania na pinie.";

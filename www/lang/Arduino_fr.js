@@ -144,6 +144,7 @@ Blockly.Msg.esp8266_start="démarrer le serveur";
 Blockly.Msg.esp8266_request_tooltip="";
 Blockly.Msg.esp8266_request="si dans la requête on trouve";
 Blockly.Msg.esp8266_request_container = "on trouve";
+Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN='Interruption : quand un';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN="désactiver l'interruption sur la broche";

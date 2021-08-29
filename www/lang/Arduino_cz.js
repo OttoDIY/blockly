@@ -143,6 +143,7 @@ Blockly.Msg.esp8266_start = "start server";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "if in the query we find";
 Blockly.Msg.esp8266_request_container = "we find";
+Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Interrupt: when a';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "disable interrupt on pin";

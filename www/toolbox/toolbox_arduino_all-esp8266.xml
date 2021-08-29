@@ -1056,6 +1056,32 @@
 			<block type="telegram_message_name_received"></block>
 		</category>
 		
+		<category name="CAT_html" colour="#008080">
+		
+			<block type="esp8266_html"></block>
+			<block type="emptytext"></block>
+			<block type="esp_dig_pin"></block>
+			<block type="textmod"></block>
+			<block type="link"></block>
+			<block type="emptyVar"></block>
+			<block type="br"></block>
+			<block type="header"></block>
+			<block type="paragraph"></block>
+			<block type="image"></block>
+			<block type="table"></block>
+			<block type="tablerow"></block>
+			<block type="tableheading"></block>
+			<block type="tabledata"></block>
+			<block type="form"></block>
+			<block type="input"></block>
+			<block type="label"></block>
+			<block type="args"></block>
+			<block type="textalign"></block>
+			<block type="color"></block>
+			<block type="bgcolor"></block>
+			<block type="border"></block>
+		</category>
+		
 				
 	</category>	
 <!--	<category name="CAT_list" colour="#154360">
