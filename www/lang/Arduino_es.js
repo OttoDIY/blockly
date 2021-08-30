@@ -1238,5 +1238,9 @@ Blockly.Msg.TEXT_TRIM_TOOLTIP = "Devuelve una copia de texto con los espacios su
 Blockly.Msg.CONV_tochar="Casting a char "; 
 Blockly.Msg.CONV_toString="Convertir a String ";
 Blockly.Msg.CONV_decimal="Numero de decimales";
+Blockly.Msg.CONV_tobyte="Casting a Byte ";
+Blockly.Msg.CONV_toint="Casting a Int ";
+Blockly.Msg.CONV_tounsigendint="Casting a unsigned Int ";
+Blockly.Msg.CONV_tofloat="Casting a Float ";
 
 

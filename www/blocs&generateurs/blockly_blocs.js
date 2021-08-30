@@ -2129,3 +2129,55 @@ Blockly.Blocks['mrtduino_pin'] = {
     this.setTooltip('MRTduino pins conversion. You select port and this block convert into arduino pin');
   }
 };
+
+Blockly.Blocks['conversion_tobyte'] = {
+  init: function() {
+     this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NAME")
+        .appendField(Blockly.Msg.CONV_tobyte);
+	this.setOutput(true, 'Number');
+    //this.setPreviousStatement(true);
+    //this.setNextStatement(true);
+    this.setTooltip('Converts a value to the Byte data type. ');
+    this.setHelpUrl('https://www.arduino.cc/en/Reference/ByteCast');
+  }
+};
+
+Blockly.Blocks['conversion_toint'] = {
+  init: function() {
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NAME")
+        .appendField(Blockly.Msg.CONV_toint);
+	this.setOutput(true, 'Number');
+    //this.setPreviousStatement(true);
+    //this.setNextStatement(true);
+    this.setTooltip('Converts a value to the Int data type. ');
+    this.setHelpUrl('https://www.arduino.cc/en/Reference/IntCast');
+  }
+};
+
+Blockly.Blocks['conversion_tounsignedint'] = {
+  init: function() {
+     this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NAME")
+        .appendField(Blockly.Msg.CONV_tounsigendint);
+	this.setOutput(true, 'Number');
+    //this.setPreviousStatement(true);
+    //this.setNextStatement(true);
+    this.setTooltip('Converts a value to the Int data type. ');
+    this.setHelpUrl('https://www.arduino.cc/en/Reference/IntCast');
+  }
+};
+
+Blockly.Blocks['conversion_tofloat'] = {
+  init: function() {
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NAME")
+        .appendField(Blockly.Msg.CONV_tofloat);
+	this.setOutput(true, 'Number');
+    //this.setPreviousStatement(true);
+    //this.setNextStatement(true);
+    this.setTooltip('Converts a value to the float data type. ');
+    this.setHelpUrl('https://www.arduino.cc/en/Reference/floatCast');
+  }
+};

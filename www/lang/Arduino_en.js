@@ -1215,4 +1215,7 @@ Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed f
 Blockly.Msg.CONV_tochar="Casting to char "; 
 Blockly.Msg.CONV_toString="Convert to String ";
 Blockly.Msg.CONV_decimal="Number of decimals";
-
+Blockly.Msg.CONV_tobyte="Casting to Byte ";
+Blockly.Msg.CONV_toint="Casting to Int ";
+Blockly.Msg.CONV_tounsigendint="Casting to unsigned Int ";
+Blockly.Msg.CONV_tofloat="Casting to Float ";
