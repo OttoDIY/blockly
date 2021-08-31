@@ -396,7 +396,7 @@ Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ duration (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected Pin, at the desired frequency and for the desired duration";
 Blockly.Msg.ARDUINO_NOTONE_INPUT = "🛑 stop sound on Pin";
 Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stop the sound on the selected Pin";
-Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play Ring Tone";
+Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play Ringtone";
 
 Blockly.Msg.lp2i_mp3_helpurl = "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299";// do not translate
 Blockly.Msg.lp2i_mp3_Volume = "Volume [0-30]";

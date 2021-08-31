@@ -1,7 +1,7 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_arduino_all</toolbox>
+  <toolbox>toolbox_arduino_all-esp32</toolbox>
   <block type="base_define" id="Sh.QL-_%t){TaQico6=5" x="-209" y="-577">
-    <comment pinned="true" h="274.61293029785156" w="717.2330017089844">You have carefully followed the instructions on how to build Otto and have made sure that all the servos are centralised (set at 90 degrees) before you attach the horns. You are now at the very exciting moment where you check to see how Otto moves and dances and so you upload your first simple Blockly code.
+    <comment pinned="true" h="274" w="717">You have carefully followed the instructions on how to build Otto and have made sure that all the servos are centralized (set at 90 degrees) before you attach the horns. You are now at the very exciting moment where you check to see how Otto moves and dances and so you upload your first simple Blockly code.
 
 :( What happened? Why did the legs and feet move out of position? Otto doesn’t look right and doesn’t move smoothly.
 
@@ -26,10 +26,12 @@ Do not be disappointed and do not worry! This is completely normal and happens i
         <field name="PIN_RL">4</field>
         <field name="PIN_RR">5</field>
         <field name="PIN_Buzzer">13</field>
-        <comment pinned="true" h="685.6584167480469" w="478.02984619140625">To calibrate Otto, you will first need to upload this code to Otto. Once the uploading is complete, unplug the USB connection to Otto.
+        <comment pinned="true" h="685" w="478">To calibrate Otto, you will first need to upload this code to Otto. Once the uploading is complete, unplug the USB connection to Otto.
 
 Servo Calibration GUI
-You will now need to run the Servo Calibration software from ottodiy.com. Make sure that the USB is unplugged. Depending on your Windows platform, you will need to run either the 32- or 64- bit executable file contained in its relevant folder. Please leave the file in its folder - the program will not run if it does not have access to the data files.On start up you should see a red cross by the USB label at the top of the interface. Plug the USB into Otto and the red cross should turn into a green tick when the program has recognised that the USB connection has been made (this might take a second or two). If you forgot to unplug the USB, you will need to close the program, unplug the USB and start the program again. Then plug in the USB. You can now calibrate the servo positions so the the legs and feet are correctly aligned. The slider allows for large changes in the angle and the +/- buttons much finer control on the position of each servo.
+You will now need to run the Servo Calibration software from ottodiy.com. Make sure that the USB is unplugged. Depending on your Windows platform, you will need to run either the 32- or 64- bit executable file contained in its relevant folder. Please leave the file in its folder - the program will not run if it does not have access to the data files.
+
+On start up you should see a red cross by the USB label at the top of the interface. Plug the USB into Otto and the red cross should turn into a green tick when the program has recognized that the USB connection has been made (this might take a second or two). If you forgot to unplug the USB, you will need to close the program, unplug the USB and start the program again. Then plug in the USB. You can now calibrate the servo positions so the the legs and feet are correctly aligned. The slider allows for large changes in the angle and the +/- buttons much finer control on the position of each servo.
 
 When the servos on Otto are correctly aligned, click on 'Walk Test' to see how Otto moves. If further fine adjustments are required, they should be done now and the walk test repeated. Be careful that the USB cable does not interfere with Otto's movement.
 
@@ -270,7 +272,7 @@ CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions 
               </shadow>
             </value>
             <statement name="DO">
-              <block type="eeprom_write" id="cIKtCMN$Fn-7*{U-~O;6" inline="true">
+              <block type="eeprom_write" id="cIKtCMN$Fn-7*{U-~O;6">
                 <value name="val">
                   <block type="base_code_entree" id="J?%eM8cN2v8`(C#N!F)|">
                     <field name="TEXT">trims[i]</field>
@@ -331,7 +333,7 @@ CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions 
             <field name="NUM">0</field>
           </shadow>
           <block type="base_code_entree" id="EZVTLTrGoEt.Br/9)uGg">
-            <field name="TEXT">trims[1]</field>
+            <field name="TEXT">trims[0]</field>
           </block>
         </value>
         <value name="RL">
@@ -339,7 +341,7 @@ CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions 
             <field name="NUM">0</field>
           </shadow>
           <block type="base_code_entree" id="R[1|j@|N6G=d/#Zh{;na">
-            <field name="TEXT">trims[2]</field>
+            <field name="TEXT">trims[1]</field>
           </block>
         </value>
         <value name="LF">
@@ -347,7 +349,7 @@ CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions 
             <field name="NUM">0</field>
           </shadow>
           <block type="base_code_entree" id="3_(6JjXu4x+bC)LN-QGt">
-            <field name="TEXT">trims[3]</field>
+            <field name="TEXT">trims[2]</field>
           </block>
         </value>
         <value name="RF">

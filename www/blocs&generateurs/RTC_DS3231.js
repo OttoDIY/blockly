@@ -1,35 +1,4 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview Colour blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
- */
- 
- /***************************************************************
- *
- *  This module was created by Oscar Ferruz. oferruz@logix5.com
- *
- ****************************************************************/
- 
-'use strict';
+ 'use strict';
 
 goog.provide('Blockly.Blocks.RTC_DS3231');
 goog.provide('Blockly.Blocks.arduino');
@@ -56,8 +25,8 @@ Blockly.Arduino['Init_RTC_ds3231'] = function(block) {
   
   Blockly.Arduino.definitions_['init_ds3232'] = 'RTC_DS3231 rtc;\n'+
   'DateTime t;\n'+
-  'String daysOfTheWeek[7]={"Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"};\n'+
-  'String monthsNames[12]={"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};\n';
+  'String daysOfTheWeek[7]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};//Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"\n'+
+  'String monthsNames[12]={"January","February","March","April","May","June","July","August","September","October","November","December"};  //"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre" \n';
       
   Blockly.Arduino.setups_['setup_ds3232'] = 'rtc.begin();\n';
   	 	 

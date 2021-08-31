@@ -160,7 +160,7 @@
         <block type="conversion_tofloat"></block>
     </category>
 
-	<category name="CAT_TEXT" colour="#FD6C9E">
+	<category name="CAT_TEXT" colour="160">
 		<block type="text"></block>
 		<block type="text_char"></block>
 		<block type="conversion_tochar"></block>

@@ -281,8 +281,8 @@ Blockly.Arduino["servo_attach"]=function(block){
 var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
 Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
 Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
-Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
-return "servo_" + value_pin + ".attach();\n"
+//Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ");";
+return "servo_" + value_pin + ".attach(" + value_pin + ");\n"
 };
 
 Blockly.Blocks["servo_detach"]={init:function(){
