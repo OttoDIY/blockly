@@ -88,6 +88,7 @@ Blockly.Msg.esp8266_start = "啟動伺服器";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "如果在查詢中找到";
 Blockly.Msg.esp8266_request_container = "找到";
+Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = '中斷: 當';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "停用中斷功能在腳位";

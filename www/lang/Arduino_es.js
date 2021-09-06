@@ -145,6 +145,7 @@ Blockly.Msg.esp8266_start = "iniciar servidor";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "si en la consulta encontramos";
 Blockly.Msg.esp8266_request_container = "encontramos";
+Blockly.Msg.esp8266_html_webpage = "Nombre de la página HTML :";
 //INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = 'Interrupción: cuando a';
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "deshabilitar interrupción en pin";
@@ -1155,6 +1156,12 @@ Blockly.Msg.WifiServer_stop="Parar el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_flush="Flush el cliente conectado a nuestro servidor"
 Blockly.Msg.WifiServer_ip="IP del cliente conectado"
 Blockly.Msg.WifiServer_request="Petición del cliente conectado"
+Blockly.Msg.WifiServer_ESP8266webserver_parameter="ESP8266WebServer Leer parámetro: "
+Blockly.Msg.WifiServer_ESP8266webserver_parameter2="ESP8266WebServer Parámetro: "
+Blockly.Msg.WifiServer_esp8266_send_html_URL = "Cuando un cliente con esta URL (vacía para root):";
+Blockly.Msg.WifiServer_esp8266_send_html_HTML_page="es conectado entonces mostrar esta pagina HTML: ";
+Blockly.Msg.WifiServer_esp8266_send_html_execute="(opcional) y hacer: ";
+Blockly.Msg.WifiServer_esp8266_manage_requets="Gestionar las petiones de cliente";
 
 Blockly.Msg.Wifi_ap_fixip="Modo Access point.Static IP"
 Blockly.Msg.Wifi_sta_fixip="Modo Estación.Static IP"
@@ -1231,5 +1238,9 @@ Blockly.Msg.TEXT_TRIM_TOOLTIP = "Devuelve una copia de texto con los espacios su
 Blockly.Msg.CONV_tochar="Casting a char "; 
 Blockly.Msg.CONV_toString="Convertir a String ";
 Blockly.Msg.CONV_decimal="Numero de decimales";
+Blockly.Msg.CONV_tobyte="Casting a Byte ";
+Blockly.Msg.CONV_toint="Casting a Int ";
+Blockly.Msg.CONV_tounsigendint="Casting a unsigned Int ";
+Blockly.Msg.CONV_tofloat="Casting a Float ";
 
 
