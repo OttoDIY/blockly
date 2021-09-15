@@ -2,6 +2,38 @@
 goog.provide("Blockly.Blocks.arduino");
 goog.require("Blockly.Blocks");
 
+Blockly.Blocks['otto9_matrix_init'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
+  var card=window.localStorage.card;
+  this.setColour("#4b009f");
+this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png',33,33)) .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.Msg.OTTO_HOME_TEXT )
+this.appendDummyInput()	.appendField("CLK").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CLK");
+this.appendDummyInput()	.appendField("CS").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
+this.appendDummyInput()	.appendField("DIN").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DIN");
+this.appendDummyInput()	.appendField(Blockly.Msg.ST7735_Rotate).appendField(new Blockly.FieldDropdown([["0°", "0"], ["90°", "1"], ["180°", "2"], ["270°", "3"]]), "Orientation")
+  this.setInputsInline(true);
+  this.setPreviousStatement(true, null);
+  this.setNextStatement(true, null);
+  this.setTooltip('Init the library Aand define the pins to use the led matrix');}
+};
+Blockly.Arduino['otto9_matrix_init'] = function(block) {
+  var pin_clk = this.getFieldValue('PIN_CLK');
+  var pin_cs = this.getFieldValue('PIN_CS');
+  var pin_dat = this.getFieldValue('PIN_DIN');
+
+  var Orientation = this.getFieldValue('Orientation'); 
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
+	+ 'Otto Otto;';
+  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
+  + 'unsigned long int matrix;';
+  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define CLK '+pin_clk+' // Clock pin\n'
+	+ '#define CS '+pin_cs+'  // Chip Select pin\n'
+  + '#define DIN '+pin_dat+' // Data In pin\n'
+	+ '#define Orientation '+Orientation+'// 8x8 LED Matrix orientation  Top  = 1, Bottom = 2, Left = 3, Right = 4 ';
+  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN, CS, CLK, Orientation);';
+  var code='';
+  return code;
+};
+
 Blockly.Blocks['otto9_matrix'] = { init: function() {
     this.appendDummyInput() .appendField('  ') .appendField('1') .appendField('  2').appendField('  3') .appendField(' 4') .appendField(' 5') .appendField('  6')
    Blockly.FieldCheckbox.CHECK_CHAR= '▉'
@@ -193,37 +225,6 @@ return code;
     return code;
 };
 
-Blockly.Blocks['otto9_matrix_init'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
-  var card=window.localStorage.card;
-  this.setColour("#4b009f");
-this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png',33,33)) .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.Msg.OTTO_HOME_TEXT )
-this.appendDummyInput()	.appendField("CLK").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CLK");
-this.appendDummyInput()	.appendField("CS").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
-this.appendDummyInput()	.appendField("DIN").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DIN");
-this.appendDummyInput()	.appendField(Blockly.Msg.ST7735_Rotate).appendField(new Blockly.FieldDropdown([["0°", "0"], ["90°", "1"], ["180°", "2"], ["270°", "3"]]), "Orientation")
-  this.setInputsInline(true);
-  this.setPreviousStatement(true, null);
-  this.setNextStatement(true, null);
-  this.setTooltip('Init the library Aand define the pins to use the led matrix');}
-};
-Blockly.Arduino['otto9_matrix_init'] = function(block) {
-  var pin_clk = this.getFieldValue('PIN_CLK');
-  var pin_cs = this.getFieldValue('PIN_CS');
-  var pin_dat = this.getFieldValue('PIN_DIN');
-
-  var Orientation = this.getFieldValue('Orientation'); 
-  Blockly.Arduino.includes_['otto9_lib'] = '#include <Otto.h>\n'
-	+ 'Otto Otto;';
-  Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
-  + 'unsigned long int matrix;';
-  Blockly.Arduino.definitions_['otto9_matrix_def'] = '#define CLK '+pin_clk+' // Clock pin\n'
-	+ '#define CS '+pin_cs+'  // Chip Select pin\n'
-  + '#define DIN '+pin_dat+' // Data In pin\n'
-	+ '#define Orientation '+Orientation+'// 8x8 LED Matrix orientation  Top  = 1, Bottom = 2, Left = 3, Right = 4 ';
-  Blockly.Arduino.setups_['otto9_matrix']='Otto.initMATRIX( DIN, CS, CLK, Orientation);';
-  var code='';
-  return code;
-};
 
 Blockly.Blocks['otto9_mouth'] = {  init: function() {
     this.appendDummyInput()  .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
