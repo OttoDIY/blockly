@@ -3,6 +3,7 @@
 goog.provide('Blockly.Blocks.simpleSensors');
 goog.provide('Blockly.Blocks.arduino');
 goog.require('Blockly.Blocks');
+Blockly.FieldCheckbox.CHECK_CHAR= '▉'
 
 Blockly.Blocks['button_sensor2'] = {
   helpUrl: '',
@@ -15,7 +16,7 @@ Blockly.Blocks['button_sensor2'] = {
 	    .appendField(Blockly.Msg.PIN)
    	    .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
 	this.appendDummyInput()
-  .appendField(Blockly.Msg.BUTTON_PRESSED)
+  .appendField("👇")
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
 		this.setOutput(true, 'Boolean');
 	this.appendDummyInput()
@@ -48,7 +49,7 @@ Blockly.Blocks['button_touch_sensor2'] = {
 	    .appendField(Blockly.Msg.PIN)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUTTON")
     this.appendDummyInput()
-    .appendField(Blockly.Msg.BUTTON_PRESSED)
+    .appendField("👇")
         .appendField(new Blockly.FieldCheckbox('FALSE'), 'LOGIC');
 	this.setOutput(true, 'Boolean');
 	this.setInputsInline(true);
@@ -1157,7 +1158,7 @@ Blockly.Blocks['joystick_button_sensor2'] = {
 	    .appendField(Blockly.Msg.PIN)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_JOYSTICK")
     this.appendDummyInput()
-		.appendField(Blockly.Msg.JOYSTICK_PRESSED)
+		.appendField("👇")
 	this.setOutput(true, 'Boolean');
 	this.setInputsInline(true);
     this.setTooltip('');

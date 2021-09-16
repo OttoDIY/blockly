@@ -13,8 +13,19 @@
     <statement name="LOOP">
       <block type="controls_if" id="91$KP.PiKa;B*#Z;JGD0">
         <value name="IF0">
-          <block type="Sound_status_sensor2" id="q!H06|Lu*+KsN|3{y.Pw">
-            <field name="PIN_SOUND">A6</field>
+          <block type="logic_compare" id="]zz9r+D9[:?zccmE[3}9">
+            <field name="OP">GTE</field>
+            <value name="A">
+              <block type="Sound_sensor2" id="56zv-#pEVTwCGc|Et@|u">
+                <field name="PIN_SOUND">A6</field>
+                <field name="OUTPUT_VALUE">1</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="2AE9^qj-2;pr-[uYsLjC">
+                <field name="NUM">100</field>
+              </shadow>
+            </value>
           </block>
         </value>
         <statement name="DO0">

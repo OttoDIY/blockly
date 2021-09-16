@@ -226,14 +226,16 @@
 		   		<field name="PIN_ECHO">9</field>
 		   </block>			
 			<block type="ultrasonic_distance"></block>
-			<block type="button_touch_sensor2"><value name="PIN_BUTTON"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value></block>
-			<block type="Sound_status_sensor2"><value name="PIN_SOUND"><shadow type="analog_pin"><field name="NUM">A6</field></shadow></value></block>	
+			<block type="button_touch_sensor2">
+			<field name="PIN_BUTTON">A0</field>
+			</block>
+			<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>
 		</category>	
 		
 		
 	<category name="CAT_SENSORS" colour="#2a93e8">
-		 <block type="button_sensor2"></block>
-		 <block type="button_touch_sensor2"></block>
+		 <block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
+		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		 <block type="potentiometer_ranger_sensor2"></block>	
 		 <block type="Joystick_axis_sensor2"></block>
 		 <block type="joystick_button_sensor2"></block>
@@ -249,8 +251,8 @@
 		</category>	
 				
 		<category name="CAT_SOUND" colour="#2a93e8">
-				<block type="Sound_status_sensor2"></block>	
-				<block type="Sound_sensor2"></block>	
+				<block type="Sound_status_sensor2"><field name="PIN_SOUND">A6</field></block>	
+				<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>	
 		</category>
 		<category name="CAT_TEMP" colour="#2a93e8">
 				<block type="dht_sensor2"></block>	
