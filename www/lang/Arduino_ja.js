@@ -31,12 +31,12 @@ Blockly.Msg.vitesse = "スピード";
 Blockly.Msg.values = "↺0-90 | ↻90-180";
 Blockly.Msg.Name = "名前";
 // categories (menu)
-Blockly.Msg.CAT_TAB = "🔠 行列";
+Blockly.Msg.CAT_TAB = "🔠 配列";
 Blockly.Msg.CAT_list = "🔤 リスト";
 Blockly.Msg.CAT_LOGIC = "🔂 ロジック・コントロール";
 Blockly.Msg.CAT_MATH = "🔢 計算処理（けいさんしょり）";
 Blockly.Msg.CAT_TEXT = "🔤 文字";
-Blockly.Msg.CAT_VARIABLES = "🔀 値（あたい）";
+Blockly.Msg.CAT_VARIABLES = "🔀 変数";
 Blockly.Msg.CAT_FUNCTIONS = "🔣 ファンクション";
 Blockly.Msg.CAT_ARDUINO = "🔄 ストラクチャ";
 Blockly.Msg.CAT_ARDUINO_IN = "🔛 入力 / 出力";
@@ -409,14 +409,14 @@ Blockly.Msg.lp2i_mp3_pause_tooltip = "現在のソングファイルの再生（
 Blockly.Msg.lp2i_mp3_prev = "⏮️ 前の MP3 を再生（さいせい）";
 Blockly.Msg.lp2i_mp3_prev_tooltip = "⏮️ 前のトラックソングファイルを読む";
 Blockly.Msg.lp2i_mp3_vol = "🎚️ ボリューム設定（せってい）";
-Blockly.Msg.lp2i_mp3_vol_tooltip = "🎚️ 制定の値（あたい）のボリュームを設定（せってい） [0-31]";
+Blockly.Msg.lp2i_mp3_vol_tooltip = "🎚️ 指定の値（あたい）をボリュームに設定（せってい） [0-31]";
 Blockly.Msg.lp2i_mp3_next = "⏭️ 次の MP3 を再生";
 Blockly.Msg.lp2i_mp3_next_tooltip = "⏭️ 次のトラックソングファイルを読む";
 // servomotor
 Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1 = "サーボを回す";
 Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE = "角度 [0°-180°]";
 Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP = "可能な角度 0 から 180 度";
-Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT = "ホイールを回線";
+Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT = "ホイールを回転";
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP = "指定されたピンにつながっているホイールを指定のスピード[0 - 90] で指定の方向に回転させる。";
 //engine
 Blockly.Msg.mot_tooltip = "モータコントローラーシールド L293D: \n 両方のモータ (M1 and M2) を起動し指定されたスピードで回転させる。スピードは 0 から 90 で指定";
@@ -582,7 +582,7 @@ Blockly.Msg.ESCORNABOT_IRLEFT_TEXT="Left";
 Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT="Right";
 
 //SIMPLE SENSORS
-Blockly.Msg.BUTTON_NAME="Button";
+Blockly.Msg.BUTTON_NAME="ボタン";
 Blockly.Msg.INTERNAL_BUTTON_NAME="Start button MRTduino board";
 Blockly.Msg.BUTTON_LOGIC="Logic inverse";
 Blockly.Msg.BUTTON_PRESSED="pressed";
@@ -936,14 +936,14 @@ Blockly.Msg.RFID_CHECK_CARD = "Is card Read = Validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
 //KEYBOARD AND MOUSE
-Blockly.Msg.KeyboardFunction = "Keyboard";
-Blockly.Msg.KeyPressed = "Key";
-Blockly.Msg.WriteText= "Write text";
-Blockly.Msg.LineFeed= "Line Feed";
-Blockly.Msg.MouseFunction = "Mouse";
-Blockly.Msg.MouseMoveX="X Pos";
-Blockly.Msg.MouseMoveY="Y pos";
-Blockly.Msg.MouseMoveW="Wheel";
+Blockly.Msg.KeyboardFunction = "キーボード";
+Blockly.Msg.KeyPressed = "キー";
+Blockly.Msg.WriteText= "文字を書く";
+Blockly.Msg.LineFeed= "改行";
+Blockly.Msg.MouseFunction = "マウス";
+Blockly.Msg.MouseMoveX="X ポジション";
+Blockly.Msg.MouseMoveY="Y ポジション";
+Blockly.Msg.MouseMoveW="ホイール";
 
 //GPS
 Blockly.Msg.GPS_name = "🛰️ GPS NEO-6";
@@ -960,10 +960,10 @@ Blockly.Msg.TM1640_SCL="DIN";
 Blockly.Msg.TM1640_SDA="CLK";
 
 //MOTOR MRT
-Blockly.Msg.MOTOR_Connector="Motor";
-Blockly.Msg.MOTOR_Direction="Direction";
-Blockly.Msg.MOTOR_speed="Speed(0-255)";
-Blockly.Msg.MOTOR_Stop="Stop";
+Blockly.Msg.MOTOR_Connector="モーター";
+Blockly.Msg.MOTOR_Direction="方向";
+Blockly.Msg.MOTOR_speed="スピード(0-255)";
+Blockly.Msg.MOTOR_Stop="ストップ";
 
 //STEPPERS
 Blockly.Msg.STEEPER_name="Stepper #";
@@ -1149,26 +1149,26 @@ Blockly.Msg.Wifi_Gateway="Gateway"
 
 //Text with more functions
 
-Blockly.Msg.TEXT_APPEND_APPENDTEXT = "append text";
+Blockly.Msg.TEXT_APPEND_APPENDTEXT = "文字を追加";
 Blockly.Msg.TEXT_APPEND_HELPURL = "https://github.com/google/blockly/wiki/Text#text-modification";
-Blockly.Msg.TEXT_APPEND_TO = "to";
-Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";
+Blockly.Msg.TEXT_APPEND_TO = "へ";
+Blockly.Msg.TEXT_APPEND_TOOLTIP = "文字を変数 '%1' に追加。";
 Blockly.Msg.TEXT_CHANGECASE_HELPURL = "https://github.com/google/blockly/wiki/Text#adjusting-text-case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "to lower case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "to Title Case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "to UPPER CASE";
-Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "Return a copy of the text in a different case.";
-Blockly.Msg.TEXT_CHARAT_FIRST = "get first letter";
-Blockly.Msg.TEXT_CHARAT_FROM_END = "get letter # from end";
-Blockly.Msg.TEXT_CHARAT_FROM_START = "get letter #";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "英小文字に";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "タイトル文字列に";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "大文字に";
+Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = "英語の大文字、小文字に変えて返す";
+Blockly.Msg.TEXT_CHARAT_FIRST = "最初の文字";
+Blockly.Msg.TEXT_CHARAT_FROM_END = "# 文字目からから最後までの文字";
+Blockly.Msg.TEXT_CHARAT_FROM_START = "# 文字目の文字";
 Blockly.Msg.TEXT_CHARAT_HELPURL = "https://github.com/google/blockly/wiki/Text#extracting-text";
-Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "in text";
-Blockly.Msg.TEXT_CHARAT_LAST = "get last letter";
-Blockly.Msg.TEXT_CHARAT_RANDOM = "get random letter";
+Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "文字の中";
+Blockly.Msg.TEXT_CHARAT_LAST = "最後の文字";
+Blockly.Msg.TEXT_CHARAT_RANDOM = "てきとうな文字を出力";
 Blockly.Msg.TEXT_CHARAT_TAIL = "";
-Blockly.Msg.TEXT_CHARAT_TOOLTIP = "Returns the letter at the specified position.";
-Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "Add an item to the text.";
-Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "join";
+Blockly.Msg.TEXT_CHARAT_TOOLTIP = "指定された場所の文字を返す";
+Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "アイテムを文字に追加";
+Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "つなげる";
 Blockly.Msg.TEXT_CREATE_JOIN_TOOLTIP = "Add, remove, or reorder sections to reconfigure this text block.";
 Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_END = "to letter # from end";
 Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_START = "to letter #";
