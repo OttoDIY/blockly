@@ -9,7 +9,7 @@ Blockly.Blocks['OLED_init'] = {
   init: function() {
   this.appendDummyInput()
      .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("OLED Pins I²C")
+     .appendField("OLED 0.96'' Pins I²C")
      this.appendDummyInput()
      .setAlign(Blockly.ALIGN_RIGHT)
      .appendField(Blockly.Msg.OLED_height)
@@ -33,6 +33,36 @@ Blockly.Blocks['OLED_init'] = {
   +'#define OLED_RESET  -1 // sharing Arduino reset pin\n'
   +'Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);';
   Blockly.Arduino.setups_['OLED']='display.begin(SSD1306_SWITCHCAPVCC, '+value_address+');\n'
+  +'display.clearDisplay();\n'
+  +'display.display();\n';
+  return ""
+};
+
+Blockly.Blocks['OLED_init2'] = {
+  init: function() {
+  this.appendDummyInput()
+     .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
+     .appendField("OLED 1.3'' Pins I²C")
+     this.appendDummyInput()
+     .setAlign(Blockly.ALIGN_RIGHT)
+     .appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
+     this.setInputsInline(true);
+	 this.setPreviousStatement(true);
+	 this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+ Blockly.Arduino['OLED_init2'] = function(block) {
+  var value_address = block.getFieldValue('address');
+  Blockly.Arduino.includes_['OLED'] = '#include <Adafruit_GFX.h>\n'
+  +'#include <Adafruit_SH1106.h>';
+  Blockly.Arduino.definitions_['OLED'] = '#define SCREEN_WIDTH 128 // OLED display width, in pixels\n'
+  +'#define SCREEN_HEIGHT 64  // OLED display height, in pixels\n'
+  +'#define OLED_RESET  -1 // sharing Arduino reset pin\n'
+  +'Adafruit_SH1106 display(OLED_RESET);';
+  Blockly.Arduino.setups_['OLED']='display.begin(SH1106_SWITCHCAPVCC, '+value_address+');\n'
   +'display.clearDisplay();\n'
   +'display.display();\n';
   return ""

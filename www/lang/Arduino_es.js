@@ -48,13 +48,17 @@ Blockly.Msg.CAT_ARDUINO_matrice8x8 = "👅 LED Boca";
 Blockly.Msg.CAT_ARDUINO_matrice16x8 = "👀 LED Ojos";
 Blockly.Msg.CAT_ESCORNABOT="🐞 Escornabot";
 Blockly.Msg.CAT_servo = "🦾 Servo";
+Blockly.Msg.CAT_servo360 = "💿 Servo 360°";
 Blockly.Msg.CAT_actionneur = "⚙️ Motor";
 Blockly.Msg.CAT_ARDUINO_moteur="⚙️ Motor paso";
 Blockly.Msg.CAT_ultrason = "👂 Sensores";
 Blockly.Msg.CAT_SENSORS = "👂 Sensores";
 Blockly.Msg.CAT_numerique = "0️⃣ Digital";
 Blockly.Msg.CAT_analogique = "🔢 Análogo";
-Blockly.Msg.CAT_SSENSORS = "Sensores Simples";
+Blockly.Msg.CAT_GYRO = "⚖️ Giroscopio";
+Blockly.Msg.CAT_VIBRATE = "🖐️ Vibración";
+Blockly.Msg.CAT_MAGNET= "🧲 Magnético";
+Blockly.Msg.CAT_BUZZER="🎼 Zumbador";
 Blockly.Msg.CAT_TEMP = "🌡️ Temperatura"
 Blockly.Msg.CAT_LIGHT = "🌞 Luz"
 Blockly.Msg.CAT_WATER = "💧 Agua"
@@ -719,7 +723,7 @@ Blockly.Msg.APDS9960_colors = "Frecuencia";
 Blockly.Msg.KEY="Botón";
 Blockly.Msg.GENERAL_IR="Control Remoto por IR";
 Blockly.Msg.GENERAL_PRESSED="Tecla leida";
-Blockly.Msg.PIN="PIN";
+Blockly.Msg.PIN="Pin";
 
 //REMOTE CONTROL MRT
 Blockly.Msg.MRT_IR="Ini Control Remoto MRT";

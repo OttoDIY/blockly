@@ -322,6 +322,7 @@ Blockly.Blocks["inout_pulsein"]={init:function(){
         this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_PULSEIN).appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_0_1), "STAT");
         this.appendValueInput("PIN").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
         this.setOutput(true, "Number");
+        this.setInputsInline(true);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_Pulsein)}
 };
 Blockly.Blocks["millis_start"]={init:function(){

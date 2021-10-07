@@ -18,7 +18,7 @@ Blockly.Msg.download = "Download completed, the application will install and res
 // common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "Pin";
-Blockly.Msg._AT = "at";
+Blockly.Msg._AT = "to";
 Blockly.Msg.AV = "forward";
 Blockly.Msg.AR = "backward";
 Blockly.Msg.high = "HIGH"; // do not translate
