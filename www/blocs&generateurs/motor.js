@@ -470,6 +470,34 @@ Blockly.Arduino["servo_PWM"]=function(block){
     return code
 };
 
+
+Blockly.Blocks["servo_move2"]={init:function(){
+        this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 33, 33, "*")).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1);
+        this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+        this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE);
+        this.appendValueInput("DELAY", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("⏲");
+		this.appendValueInput("Min", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Min");
+		this.appendValueInput("Max", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Max");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#2d2dd1");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
+};
+Blockly.Arduino["servo_move2"]=function(block){
+    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_degree=Blockly.Arduino.valueToCode(block, "DEGREE", Blockly.Arduino.ORDER_ATOMIC);
+    var value_delay=Blockly.Arduino.valueToCode(block, "DELAY", Blockly.Arduino.ORDER_ATOMIC);
+	var value_min=Blockly.Arduino.valueToCode(block, "Min", Blockly.Arduino.ORDER_ATOMIC);
+	var value_max=Blockly.Arduino.valueToCode(block, "Max", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.includes_["define_servo"]="#include <Servo.h>";
+    Blockly.Arduino.definitions_["var_servo" + value_pin]="Servo servo_" + value_pin + ";";
+    Blockly.Arduino.setups_["setup_servo_" + value_pin]="servo_" + value_pin + ".attach(" + value_pin + ","+value_min+","+value_max+");";
+    return "servo_" + value_pin + ".write(" + value_degree + "); delay("+value_delay+");\n"
+};
+
+
 /*****************************************************************
  *
  *  These blocks are for MRT motors 

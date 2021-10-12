@@ -347,6 +347,13 @@
 				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
 				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			</block>
+			<block type="servo_move2">
+				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Min"><shadow type="math_number"><field name="NUM">400</field></shadow></value>
+				<value name="Max"><shadow type="math_number"><field name="NUM">2600</field></shadow></value>
+			</block>
 			<block type="servo_movemicros">
 				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
 				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
