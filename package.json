@@ -119,7 +119,7 @@
   "url": "https://github.com/OttoDIY/blockly/issues"
  },
  "devDependencies": {
-  "electron": "4.1.1",
+  "electron": "11.5.0",
   "electron-builder": "^20.39.0",
   "electron-installer-dmg": "^3.0.0"
  },
