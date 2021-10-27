@@ -1,0 +1,25 @@
+/// <reference types="node" />
+import { GithubOptions, ReleaseNoteInfo, UpdateInfo, XElement } from "builder-util-runtime";
+import * as semver from "semver";
+import { URL } from "url";
+import { AppUpdater } from "../AppUpdater";
+import { Provider, ResolvedUpdateFileInfo } from "../main";
+import { ProviderRuntimeOptions } from "./Provider";
+export declare abstract class BaseGitHubProvider<T extends UpdateInfo> extends Provider<T> {
+    protected readonly options: GithubOptions;
+    protected readonly baseUrl: URL;
+    protected readonly baseApiUrl: URL;
+    protected constructor(options: GithubOptions, defaultHost: string, runtimeOptions: ProviderRuntimeOptions);
+    protected computeGithubBasePath(result: string): string;
+}
+export declare class GitHubProvider extends BaseGitHubProvider<UpdateInfo> {
+    protected readonly options: GithubOptions;
+    private readonly updater;
+    constructor(options: GithubOptions, updater: AppUpdater, runtimeOptions: ProviderRuntimeOptions);
+    getLatestVersion(): Promise<UpdateInfo>;
+    private getLatestVersionString;
+    private readonly basePath;
+    resolveFiles(updateInfo: UpdateInfo): Array<ResolvedUpdateFileInfo>;
+    private getBaseDownloadPath;
+}
+export declare function computeReleaseNotes(currentVersion: semver.SemVer, isFullChangelog: boolean, feed: XElement, latestRelease: any): string | ReleaseNoteInfo[];
