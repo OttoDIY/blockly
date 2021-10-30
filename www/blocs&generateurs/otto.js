@@ -10,7 +10,7 @@ goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto9_configuration'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
@@ -88,11 +88,49 @@ Blockly.Arduino['otto_i2cConfig'] = function(block) {
   return code;
 };
 
+Blockly.Blocks['otto_arms_init'] = {init: function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
 
+Blockly.Arduino['otto_arms_init'] = function(block) {
+  
+  var PIN_AL= block.getFieldValue('PIN_AL');
+  var PIN_AR= block.getFieldValue('PIN_AR');
+	
+    Blockly.Arduino.includes_['otto_arms'] = '#include <Servo.h>\n'
+    + 'Servo AL, AR;';
+    Blockly.Arduino.variables_['otto_arms'] = 'int adj[]={ 0, 0,};\n'
+    +'int pos[]={ 90,90}; \n'
+    +'int shift = 60; \n'
+    +'int shift_inc = 10;  \n'
+    +'int shift_delay = 50;  \n'
+  ;
+    Blockly.Arduino.definitions_['otto_arms'] = '#define PIN_AL '+ PIN_AL +' // left arm\n'
+    +'#define PIN_AR '+ PIN_AR +' // right arm \n'
+    +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
+    Blockly.Arduino.setups_['otto_arms']='AL.attach(PIN_AR);\n'
+    +'AR.attach(PIN_AL);\n'
+    +'move_servo();\n'
+    +'delay(100);';
+  var code = '';
+  return code;
+};
 								
-Blockly.Blocks['otto9_arms'] = { init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*"))  
-    .appendField(Blockly.Msg.OTTO9_ARMS_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto9_arms_choice");
+Blockly.Blocks['otto_arms'] = { init: function() {
+    this.appendDummyInput() 
+    .appendField(Blockly.Msg.CAT_OTTO_ARMS) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -101,34 +139,19 @@ Blockly.Blocks['otto9_arms'] = { init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_arms'] = function(block) {
-  var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
-  Blockly.Arduino.includes_['otto9_arms'] = '#include <Servo.h>\n'
-	+ 'Servo AL, AR;';
-  Blockly.Arduino.variables_['otto9_arms'] = 'int adj[]={ 0, 0,};\n'
-  +'int pos[]={ 90,90}; \n'
-  +'int shift = 60; \n'
-  +'int shift_inc = 10;  \n'
-  +'int shift_delay = 50;  \n'
-;
-  Blockly.Arduino.definitions_['otto9_arms'] = '#define PIN_AL 6 // left arm\n'
-  +'#define PIN_AR 7 // right arm \n'
-  +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
-  Blockly.Arduino.setups_['otto9_arms']='AL.attach(PIN_AR);\n'
-  +'AR.attach(PIN_AL);\n'
-  +'move_servo();\n'
-  +'delay(1000);';
+Blockly.Arduino['otto_arms'] = function(block) {
+  var dropdown_otto_arms_choice = block.getFieldValue('otto_arms_choice');
   var code = '';
-  switch(dropdown_otto9_arms_choice) {
+  switch(dropdown_otto_arms_choice) {
 	case 'HANDSUP':
     code += 'AL.write(160);\n'
     +'AR.write(20);\n'
-    +'delay(500);';
+    +'delay(shift_delay);';
     break;
   case 'HANDSDOWN':
     code += 'AL.write(20);\n'
     +'AR.write(160);\n'
-    +'delay(500);';
+    +'delay(shift_delay);';
 		break;
 	case 'HANDWAVE1':
 		code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[1] = angle;    move_servo();  delay(shift_delay);}\n'
@@ -144,31 +167,127 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   return code;
 };
 
-Blockly.Python['otto9_arms'] = function(block) {
-    var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    var code = 'Otto.';
-    switch(dropdown_otto9_arms_choice) {
-        case 'HANDSUP':
-            code += 'handsup()\n';
-            break;
-        case 'HANDWAVE1':
-            code += 'handwave(1)\n';
-            break;
-        case 'HANDWAVE2':
-            code += 'handwave(-1)\n';
-            break;
-    }
-    return code;
+Blockly.Blocks['otto_arms_home'] = {init: function() {
+  this.appendDummyInput("")  .appendField("🦾 "+Blockly.Msg.OTTO9_HOME_TEXT);
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
-/**
- * @fileoverview Helper functions for generating Arduino blocks.
- * @author Sébastien Canet
- */
-'use strict';
+Blockly.Arduino['otto_arms_home'] = function(block) {
+var code = 'AL.write(90);\n'
++'AR.write(90);\n'
++'delay(shift_delay);';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_init'] = {init: function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#0A0A0A");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_ninja_init'] = function(block) {
+  
+  var PIN_YL= block.getFieldValue('PIN_YL');
+  var PIN_YR= block.getFieldValue('PIN_YR');
+  var PIN_RL= block.getFieldValue('PIN_RL');
+  var PIN_RR= block.getFieldValue('PIN_RR');
+	
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
+	+ 'Otto Otto;';
+
+  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
+ 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
+	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
+    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
+    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
+	
+  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
+  + 'Otto.home();\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Blocks['otto_ninja_walk']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤Ninja Walk")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "Fo"], [Blockly.Msg.AR , "Ba"], [Blockly.Msg.right, "Ri"], [Blockly.Msg.left, "Le"]]), "Walk")
+      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+      .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "Speed");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setTooltip('ce bloc sert à...');
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Blocks['otto_ninja_roll']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Ninja roll")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "Fo"], [Blockly.Msg.AR , "Ba"], [Blockly.Msg.right, "Ri"], [Blockly.Msg.left, "Le"]]), "Roll")
+      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+      .appendField(new Blockly.FieldDropdown([["very slow", "VS"], ["slow", "S"], ["normal", "N"], ["fast", "F"], ["very fast", "VF"]]), "Speed");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#18191A");
+  this.setTooltip('ce bloc sert à...');
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+Blockly.Blocks['otto_ninja_setwalk']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Ninja walk mode");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#000000");
+  this.setTooltip('ce bloc sert à...');
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Blocks['otto_ninja_setroll']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Ninja roll mode");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setTooltip('ce bloc sert à...');
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Blocks['otto_ninja_stop']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Ninja Stop");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setTooltip('ce bloc sert à...');
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
 
 Blockly.Blocks['otto9_app'] = {init: function() {
   this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 33, 33, "*"))   .appendField('App code');

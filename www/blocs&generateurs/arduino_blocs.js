@@ -49,7 +49,7 @@ Blockly.Blocks["inout_digital_read"]={init:function(){
         this.setColour("#00929f");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN");
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup").appendField(Blockly.Msg.in_pullup);
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.in_pullup).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup");
         this.setInputsInline(true);
         this.setOutput(true, "Boolean");
         this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
@@ -58,7 +58,7 @@ Blockly.Blocks["inout_digital_read2"]={init:function(){
     this.setColour("#00929f");
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT);
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup").appendField(Blockly.Msg.in_pullup);
+    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.in_pullup).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setTooltip(Blockly.Msg.in_pullup_tooltip)}

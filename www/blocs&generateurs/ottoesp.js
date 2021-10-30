@@ -9,7 +9,7 @@ goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto_configuration'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
@@ -73,7 +73,7 @@ Blockly.Arduino['otto_home'] = function(block) {
 
 Blockly.Blocks['otto_calibration']={init:function(){
 
-this.appendValueInput("LL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+this.appendValueInput("LL") .setCheck("Number").appendField("🦿 "+ Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 this.appendValueInput("RL") .setCheck("Number").appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
 this.appendValueInput("LF") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+ Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 this.appendValueInput("RF") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
@@ -96,7 +96,7 @@ var valuerf= Blockly.Arduino.valueToCode(block, 'RF', Blockly.Arduino.ORDER_ATOM
 };
 
 Blockly.Blocks['otto_eeprom'] = {init: function() {
-    this.appendDummyInput("")  .appendField(Blockly.Msg.OTTO9_EEPROM_TEXT);
+    this.appendDummyInput("")  .appendField("💾 " +Blockly.Msg.OTTO9_EEPROM_TEXT);
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -112,7 +112,7 @@ Blockly.Arduino['otto_eeprom'] = function(block) {
 };
 
 Blockly.Blocks['otto_movelegs'] = {init: function() {
-this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 22, 22, "*")) .appendField(Blockly.Msg.OTTO9_MOVE_TEXT);
+this.appendDummyInput("") .appendField("🦿 "+ Blockly.Msg.OTTO9_MOVE_TEXT);
 this.appendValueInput("PIN_YL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+ Blockly.Msg.left)
 this.appendValueInput("PIN_YR") .setCheck("Number").appendField(Blockly.Msg.right)
 this.appendValueInput("PIN_RL") .setCheck("Number").appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+ Blockly.Msg.left)
@@ -141,7 +141,7 @@ return code;
 };
 
 Blockly.Blocks['otto_moveservos'] = {init: function() {
-  this.appendDummyInput("") .appendField(Blockly.Msg.OTTO9_MOVE_TEXT);
+  this.appendDummyInput("") .appendField("🦿 "+ Blockly.Msg.OTTO9_MOVE_TEXT);
   this.appendValueInput("Period") .setCheck("Number").appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
   this.appendValueInput("Pos") .setCheck("Number").appendField("Positions")
     this.setInputsInline(true);

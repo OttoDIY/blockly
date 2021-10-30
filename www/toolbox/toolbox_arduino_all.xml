@@ -5,10 +5,10 @@
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
 	
 	<category name="CAT_ARDUINO" colour="#2d2d64">
-		<block type="base_define"></block> 
 		<block type="base_setup_loop"></block>
 		<block type="base_code"></block>
 		<block type="base_code_entree"></block>
+		<!--<block type="base_define"></block> -->
 	</category>
 	
 	<category name="CAT_OTTO" colour="#32D900">
@@ -24,8 +24,7 @@
 		<block type="otto_dance"></block>
 		<block type="otto_do"></block>
 		<block type="otto_sound"></block>
-		<block type="otto_gesture"></block>
-		<!--	<block type="otto_tone"></block>
+				<!--	<block type="otto_tone"></block>
 			<block type="otto_tonehz">
 				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
@@ -38,27 +37,62 @@
 				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
 				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block> -->
+		<block type="otto_gesture"></block>
+				<block type="otto9_app"></block>
+		<block type="otto9_smooth"></block>
 		<block type="otto_movelegs">
 			<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 			<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
 			<value name="PIN_RL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 			<value name="PIN_RR"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 			<value name="TEMPO"><shadow type="math_number"><field name="NUM">200</field></shadow></value>
+		</block>		
+		<block type="otto_moveservos">
+			<value name="Period"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
+			<value name="Pos"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
 		</block>
-		<block type="otto9_arms"></block>
-		<block type="otto9_app"></block>
-		<block type="otto9_smooth"></block>
-		<block type="otto_calibration">
+				<block type="otto_calibration">
 			<value name="LL"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RL"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="LF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 		</block>
-		<block type="otto_moveservos">
-			<value name="Period"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
-			<value name="Pos"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
-		</block>
+
 		<block type="otto_eeprom"></block>
+		<category name="CAT_OTTO_ARMS" colour="#32D900">
+		<block type="otto_arms_init">
+			<field name="PIN_AL">6</field>
+			<field name="PIN_AR">7</field>
+			</block>
+		<block type="otto_arms_home"></block>
+		<block type="otto_arms"></block>
+
+	</category>
+	<category name="CAT_OTTO_WHEELS" colour="#2d2dd1">
+	<block type="servo_2wheels_init">
+	<field name="PINL">2</field>
+	<field name="PINR">3</field>
+	</block>
+				<block type="servo_2wheels"></block>
+		<block type="servo_rot_continue_param">
+			<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
+			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+		</block>
+				<block type="servo_rot_stop">
+			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+		</block>
+		</category>
+<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
+<block type="otto_ninja_init"></block>
+<block type="otto_ninja_walk"></block>
+<block type="otto_ninja_roll"></block>
+<block type="otto_ninja_setwalk"></block>
+<block type="otto_ninja_setroll"></block>
+<block type="otto_ninja_stop"></block>
+</category>
+<category name="CAT_OTTO_QUAD" colour="#32D900">
+
+</category>
 	</category>
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
@@ -130,11 +164,11 @@
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
 		<block type="analog_pin"></block>
+		<block type="math_arithmetic"></block>
         <block type="logic_compare">
 			<value name="B"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 		</block>
-        <block type="math_arithmetic"></block>
-		<block type="intervalle"></block>
+        <block type="intervalle"></block>
 		<block type="math_map">
 			<value name="A1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="A2"><shadow type="math_number"><field name="NUM">1023</field></shadow></value>
@@ -407,20 +441,7 @@
 			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 		</block>
 		</category>	
-	<category name="CAT_servo360" colour="#2d2dd1">
-				<block type="servo_2wheels">
-				<value name="PINL"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-				<value name="PINR"><shadow type="analog_pin">	<field name="NUM">3</field></shadow></value>
-			</block>
-		<block type="servo_rot_continue_param">
-			<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-		</block>
-				<block type="servo_rot_stop">
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-		</block>
 
-	</category>	
 			<block type="moteur_dc_init">
 			<field name="ENA">11</field>
 			<field name="ENB">5</field>
