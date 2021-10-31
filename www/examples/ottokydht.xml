@@ -1,0 +1,220 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp32</toolbox>
+  <block type="base_setup_loop" id="G5?gf.r`Pmja39C,]R9u" x="-1660" y="-873">
+    <statement name="DO">
+      <block type="dht_sensor2" id="?}|}snZYn(rJ#~S1B@_6">
+        <mutation matrix="null"></mutation>
+        <field name="DHT_NUMBER">1</field>
+        <field name="OUTPUT_TYPE">0</field>
+        <field name="PIN_DHT">33</field>
+        <next>
+          <block type="OLED_init" id=";T6bcF@Jj/;y$[!3P6Hf">
+            <field name="height">64</field>
+            <field name="address">0x3D</field>
+            <next>
+              <block type="pixel_init" id="r;4h)J#+gVC%U,]wO_Ra">
+                <field name="pin">18</field>
+                <value name="num">
+                  <shadow type="analog_pin" id="BV@$Q9}xEBb!V5%jjGTJ">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="otto9_configuration" id="oBrte=@YC`#Iv$V32.g(">
+                    <field name="PIN_YL">23</field>
+                    <field name="PIN_YR">26</field>
+                    <field name="PIN_RL">25</field>
+                    <field name="PIN_RR">5</field>
+                    <field name="PIN_Buzzer">27</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_move" id="xKGi#4y5mv|}]MqMVw@|">
+        <field name="otto_move_sens">FORWARD</field>
+        <field name="otto_move_speed">1000</field>
+        <next>
+          <block type="OLED_clear" id="_q+tfZx!xY[|En2UK8Gs">
+            <next>
+              <block type="OLED_data" id="rBBq`,-A@NYXvJc1rDOw">
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="l%5_GtV(5!j}[h$z`CdU">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="!9aHu0v)]@;DKeK81:io">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="U#A;T,%(lUx?9Q@MA.R!">
+                    <field name="NUM">1.8</field>
+                  </shadow>
+                </value>
+                <value name="print">
+                  <shadow type="text" id="]S}_2x!va2O9f|-LcLf,">
+                    <field name="TEXT">Temperature: </field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_data" id="WN^IsGQw=lqkRSVs_{!W">
+                    <field name="draw">TRUE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="MSm~o|^mtX?#%09*n=Ki">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="P|sg![2PeTXG;5n$TtaK">
+                        <field name="NUM">18</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="bvyrdArXm0i(L3l%IV3o">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <value name="print">
+                      <shadow type="text" id="1[,)f!ly5cN9iz.OK_.#">
+                        <field name="TEXT">Temperatura: </field>
+                      </shadow>
+                      <block type="dht_measure" id="=q8@l*ImQj^ltFWO2/U_">
+                        <mutation matrix="null"></mutation>
+                        <field name="DHT_NUMBER">1</field>
+                        <field name="OUTPUT_TYPE">0</field>
+                        <field name="OUTPUT_VALUE">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="OLED_data" id="dJ.ol8O_h5d*l94Sl|[o">
+                        <field name="draw">TRUE</field>
+                        <value name="X">
+                          <shadow type="math_number" id="#Y|iXS)pccfX+?3o)W=p">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="Y">
+                          <shadow type="math_number" id="9.Cd?(y:)Kyeg3%*LaDb">
+                            <field name="NUM">38</field>
+                          </shadow>
+                        </value>
+                        <value name="height">
+                          <shadow type="math_number" id="P5`^Bb1D~S`!W!j(3c^N">
+                            <field name="NUM">1.8</field>
+                          </shadow>
+                        </value>
+                        <value name="print">
+                          <shadow type="text" id="@CT1S8j[u*dOjf_F}V#!">
+                            <field name="TEXT">Humidity: </field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="OLED_data" id="sy|{j.z#8t)k?Q8(f!rc">
+                            <field name="draw">TRUE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="Zr,MJ/,nb0UmzkRnpOUN">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="]Hzl|O]SxGTDWR=Y.vgh">
+                                <field name="NUM">48</field>
+                              </shadow>
+                            </value>
+                            <value name="height">
+                              <shadow type="math_number" id="s^EIckIB.z,wn|e:kKzr">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                            <value name="print">
+                              <shadow type="text" id="]S}_2x!va2O9f|-LcLf,">
+                                <field name="TEXT">Hello Otto</field>
+                              </shadow>
+                              <block type="dht_measure" id="I~?FR7ZPbH]IfuNm#p$m">
+                                <mutation matrix="null"></mutation>
+                                <field name="DHT_NUMBER">1</field>
+                                <field name="OUTPUT_TYPE">0</field>
+                                <field name="OUTPUT_VALUE">1</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id="b4;^JF,SEB)~jzn%K:ro">
+                                <next>
+                                  <block type="controls_if" id="T9UckJAJw4/b#]28FtM!">
+                                    <value name="IF0">
+                                      <block type="button_sensor2" id="VldJ)JaQ5$qbhwT8CYnv">
+                                        <field name="PIN_BUTTON">12</field>
+                                        <field name="LOGIC">FALSE</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="pixel_clear" id="5M}YC]*ey.3H|@~9NELi">
+                                        <next>
+                                          <block type="pixel_fill" id="BU]C;t/rL$7)8TD+APY)">
+                                            <field name="color">#ff0000</field>
+                                            <next>
+                                              <block type="pixel_show" id="9$(jzH%?/cNs`!3F6b+D">
+                                                <next>
+                                                  <block type="base_delay" id="vD,vGURu)O#xDS4rqnF(">
+                                                    <field name="unite">s</field>
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="k8!DexhH?oo[1sQ)#r44">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="pixel_clear" id="{sXZ_eDOi.DG6~,%7*[P">
+                                                        <next>
+                                                          <block type="pixel_fill" id="ebhP3~ZOx0`4hj$@2lVv">
+                                                            <field name="color">#00cccc</field>
+                                                            <next>
+                                                              <block type="pixel_show" id="aIPN+Hko,S/1@_]7N}~4">
+                                                                <next>
+                                                                  <block type="base_delay" id="2q[}U6SYn;#FraMKCW;|">
+                                                                    <field name="unite">s</field>
+                                                                    <value name="DELAY_TIME">
+                                                                      <shadow type="math_number" id="LPIJ^F(,HT#R1j8p?+8!">
+                                                                        <field name="NUM">1</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,87 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="#$v~Na{e%2Tj,}iC+G~3" x="-1552" y="-202">
+    <statement name="DO">
+      <block type="OLED_init" id="-MM#ED,%Rh$TT^1{@C_f">
+        <field name="height">64</field>
+        <field name="address">0x3C</field>
+        <next>
+          <block type="dht_sensor2" id="~V*TrqR}SQ%?VT3ei*-R">
+            <mutation matrix="null"></mutation>
+            <field name="DHT_NUMBER">1</field>
+            <field name="OUTPUT_TYPE">0</field>
+            <field name="PIN_DHT">10</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="OLED_clear" id="IG)P7z0(!D2/ADUuB0TR">
+        <next>
+          <block type="OLED_data" id="L%.=EH{wBV1w5f^|vw:f">
+            <field name="draw">TRUE</field>
+            <value name="X">
+              <shadow type="math_number" id="a3az9y(#!u=BgzN8~T:K">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="Y">
+              <shadow type="math_number" id="sK3hNuH,s^eTFoZh](f[">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="height">
+              <shadow type="math_number" id="A)PC*/#t3le,U]ErBd*[">
+                <field name="NUM">4</field>
+              </shadow>
+            </value>
+            <value name="print">
+              <shadow type="text" id="A8wJrnG^MM.-B!wc|e^c">
+                <field name="TEXT">Hello Otto</field>
+              </shadow>
+              <block type="math_round" id="`XI$wPp.%#1]_A/0cq+!">
+                <field name="OP">ROUND</field>
+                <value name="NUM">
+                  <block type="dht_measure" id="pmiC#.5tS13a{|*Qe]h.">
+                    <mutation matrix="null"></mutation>
+                    <field name="DHT_NUMBER">1</field>
+                    <field name="OUTPUT_TYPE">0</field>
+                    <field name="OUTPUT_VALUE">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="OLED_data" id="Hg+UUD5d~,v1|K@7T_v7">
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="C$Po^1XCdF1eY.:RGL:P">
+                    <field name="NUM">40</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="N-}{f%Rr?W~=XYxIa[tm">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="2Mg[`hTIAm{40*8Gg.Ex">
+                    <field name="NUM">4</field>
+                  </shadow>
+                </value>
+                <value name="print">
+                  <shadow type="text" id="KQv*.abg9+AxO}g(*${F">
+                    <field name="TEXT">.C</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_display" id="@oY,E|Nv$dMJe,hE1`%~"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
