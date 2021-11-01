@@ -5,6 +5,9 @@ var fs = require('fs')
 var path = require('path')
 var appVersion = window.require('electron').remote.app.getVersion()
 
+var arduino_basepath = process.platform == 'win32' ? arduino_basepath = './compilation/arduino' : path.join(__dirname, '../../compilation/arduino')
+var arduino_ide_cmd = process.platform == 'win32' ? 'arduino-cli.exe' : arduino_ide_cmd = path.join(__dirname, '../../compilation/arduino/arduino-cli')
+
 window.addEventListener('load', function load(event) {
 	var quitDiv = '<button type="button" class="close" data-dismiss="modal" aria-label="Close">&#215;</button>'
 	var checkBox = document.getElementById('verifyUpdate')
@@ -165,13 +168,14 @@ window.addEventListener('load', function load(event) {
 			})
 		} else {
 			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
-			fs.writeFile('./compilation/arduino/sketch/sketch.ino', data, function(err){	
+
+		fs.writeFile(`${arduino_basepath}/sketch/sketch.ino`, data, function(err){	
 				
-				if (err) return console.log(err)
-			})
+			if (err) return console.log(err)
+		})
 		
-		    var upload_arg = window.profile[carte].upload_arg
-			var cmd = 'arduino-cli.exe compile --fqbn ' + upload_arg +' sketch/sketch.ino'
+		var upload_arg = window.profile[carte].upload_arg
+		var cmd = `${arduino_ide_cmd} compile --fqbn ` + upload_arg +' sketch/sketch.ino'
 		
 		/*
 		   exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
@@ -192,7 +196,7 @@ window.addEventListener('load', function load(event) {
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
 			}) */
 			
-			exec(cmd , {cwd: './compilation/arduino'} , (error, stdout, stderr) => {
+			exec(cmd , {cwd: arduino_basepath} , (error, stdout, stderr) => {
 			if (error) {
 					
 						messageDiv.style.color = '#ff0000'
@@ -232,16 +236,16 @@ window.addEventListener('load', function load(event) {
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
 			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
-			fs.writeFile('./compilation/arduino/sketch/sketch.ino', data, function(err){
+			fs.writeFile(`${arduino_basepath}/sketch/sketch.ino`, data, function(err){
 				
 				if (err) return console.log(err)
 			})
 		
 		  
-			var cmd = 'arduino-cli.exe compile --fqbn ' + upload_arg +' sketch/sketch.ino'
+			var cmd = `${arduino_ide_cmd} compile --fqbn ` + upload_arg +' sketch/sketch.ino'
 			
 			
-			exec(cmd , {cwd: './compilation/arduino'} , (error, stdout, stderr) => {
+			exec(cmd , {cwd: `${arduino_basepath}`} , (error, stdout, stderr) => {
 			if (error) {
 					
 						messageDiv.style.color = '#ff0000'
@@ -272,8 +276,8 @@ window.addEventListener('load', function load(event) {
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.upload + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
 			
-			cmd = 'arduino-cli.exe upload --port '+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
-		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){	
+			cmd = `${arduino_ide_cmd} upload --port `+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
+		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){	
 			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
@@ -339,8 +343,8 @@ window.addEventListener('load', function load(event) {
 		} else {
 			
 		
-			cmd = 'arduino-cli.exe upload --port '+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
-		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){	
+			cmd = `${arduino_ide_cmd} upload --port `+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
+		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){	
 			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
@@ -433,9 +437,9 @@ window.addEventListener('load', function load(event) {
 			fs.writeFile(res[0]+'.bloc', code, function(err){
 				if (err) return console.log(err)
 			})
-			fs.copyFile('./compilation/arduino/build/sketch.ino.with_bootloader.hex', res[0]+'_with_bootloader.hex', (err) => {if (err) throw err})
-			fs.copyFile('./compilation/arduino/build/sketch.ino.hex', res[0]+'.hex', (err) => {if (err) throw err})
-			fs.copyFile('./compilation/arduino/ino/sketch.ino', res[0]+'.ino', (err) => {if (err) throw err})
+			fs.copyFile(`${arduino_basepath}/build/sketch.ino.with_bootloader.hex`, res[0]+'_with_bootloader.hex', (err) => {if (err) throw err})
+			fs.copyFile(`${arduino_basepath}/build/sketch.ino.hex`, res[0]+'.hex', (err) => {if (err) throw err})
+			fs.copyFile(`${arduino_basepath}/ino/sketch.ino`, res[0]+'.ino', (err) => {if (err) throw err})
 		}
 	})
 })
