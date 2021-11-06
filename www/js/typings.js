@@ -44,7 +44,7 @@ Blockly.StaticTyping.prototype.collectVarsWithTypes = function(workspace) {
 		      }
 	        }
 	    }
-      this.assignTypeToVars(blocks[i], variableName, variableType);
+      //this.assignTypeToVars(blocks[i], variableName, variableType);
     }
   }
   return this.varTypeDict;
