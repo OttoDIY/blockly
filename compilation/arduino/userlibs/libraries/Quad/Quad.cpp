@@ -1,24 +1,23 @@
 #include <EEPROM.h>
 #include "Quad.h"
 
+#define __LOAD_TRIM_FROM_EEPROM__
+#define EEPROM_MAGIC  0xabcd
+#define EEPROM_OFFSET 2   //eeprom starting offset to store trim[]
 /*
    (servo index, pin to attach pwm)
    __________ __________ _________________
-  |(3,9)_____)(1,8)      (0,2)(______(2,3)|
+  |(3,FLL)_____)(1,FLH)      (0,FRH)(______(2,FRL)|
   |__|       |left FRONT right|        |__|
              |                |
              |                |
              |                |
    _________ |                | __________
-  |(7,7)_____)(5,6)______(4,4)(______(6,5)|
+  |(7,BLL)_____)(5,BLH)______(4,BRH)(______(6,BRL)|
   |__|                                 |__|
 
 */
 //comment below manually setting trim in Quad() constructor
-#define __LOAD_TRIM_FROM_EEPROM__
-#define EEPROM_MAGIC  0xabcd
-#define EEPROM_OFFSET 2   //eeprom starting offset to store trim[]
-
 // FRONT_RIGHT_HIP servo 0  Pin 2
 // FRONT_LEFT_HIP servo 1  Pin 8
 // FRONT_RIGHT_LEG servo 2  Pin 3
@@ -27,34 +26,26 @@
 // BACK_LEFT_HIP servo 5  Pin 6
 // BACK_RIGHT_LEG servo 6  Pin 5
 // BACK_LEFT_LEG servo 7  Pin 7
-Quad::Quad():/* reverse{0, 0, 0, 0, 0, 0, 0, 0}, */trim{0, 0, 0, 0, 0, 0, 0, 0} {
-  board_pins[FRONT_RIGHT_HIP] = 2; // front left inner
-  board_pins[FRONT_LEFT_HIP] = 8; // front right inner
-  board_pins[BACK_RIGHT_HIP] = 4; // back left inner
-  board_pins[BACK_LEFT_HIP] = 6; // back right inner
-  board_pins[FRONT_RIGHT_LEG] = 3; // front left outer
-  board_pins[FRONT_LEFT_LEG] = 9; // front right outer
-  board_pins[BACK_RIGHT_LEG] = 5; // back left outer
-  board_pins[BACK_LEFT_LEG] = 7; // back right outer
-}
+
 void Quad::reverseServo(int id) {
   if (reverse[id])
     reverse[id] = 0;
   else
     reverse[id] = 1;
 }
-void Quad::init(int Buzzer) {
-  //Buzzer & noise sensor pins: 
+void Quad::init(int FRH, int FLH, int FRL, int FLL, int BRH, int BLH, int BRL, int BLL) {
 
-
-   //Buzzer & noise sensor pins: 
-  pinBuzzer = Buzzer;
-  //pinMode(NoiseSensor,INPUT);
+  board_pins[0] = FRH; // front left inner
+  board_pins[1] = FLH; // front right inner
+  board_pins[2] = FRL; // back left inner
+  board_pins[3] = FLL; // back right inner
+  board_pins[4] = BRH; // front left outer
+  board_pins[5] = BLH; // front right outer
+  board_pins[6] = BRL; // back left outer
+  board_pins[7] = BLL; // back right outer
 
   /*
-     trim[] for calibrating servo deviation,
-     initial posture (home) should like below
-     in symmetric
+     trim[] for calibrating servo deviation, initial posture (home) should like below in symmetric
         \       / front left
          \_____/
          |     |->
@@ -95,6 +86,7 @@ void Quad::init(int Buzzer) {
   home();
 
 }
+
 void Quad::attachServo(){
    for (int i = 0; i < 8; i++) {
     servo[i].attach(board_pins[i]);

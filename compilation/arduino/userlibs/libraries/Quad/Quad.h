@@ -18,8 +18,7 @@ extern "C" void pause(int);
 class Quad {
 
   public:
-    Quad();
-    void init(int Buzzer);
+    void init(int FRH, int FLH, int FRL, int FLL, int BRH, int BLH, int BRL, int BLL);
     void home();
     void run(int dir = 1, float steps = 4, float T = 550);
     void walk(int dir = 1, float steps = 4, float T = 550);
@@ -61,7 +60,7 @@ class Quad {
     bool reverse[8];
     int EEPROMReadWord(int p_address);
     void EEPROMWriteWord(int p_address, int p_value);
-   int pinBuzzer;
+
 };
 
 #endif

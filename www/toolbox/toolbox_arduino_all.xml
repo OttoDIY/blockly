@@ -84,14 +84,30 @@
 		</category>
 <category name="CAT_OTTO_NINJA" colour="#0A0A0A">
 <block type="otto_ninja_init"></block>
+<block type="otto_ninja_home"></block>
 <block type="otto_ninja_walk"></block>
 <block type="otto_ninja_roll"></block>
 <block type="otto_ninja_setwalk"></block>
 <block type="otto_ninja_setroll"></block>
-<block type="otto_ninja_stop"></block>
+<block type="otto_ninja_walkstop"></block>
+<block type="otto_ninja_rollstop"></block>
 </category>
 <category name="CAT_OTTO_QUAD" colour="#32D900">
-
+				<block type="otto_quad_configuration">
+			<field name="FRH">2</field>
+			<field name="FLH">8</field>
+			<field name="FRL">3</field>
+			<field name="FLL">9</field>
+			<field name="BLH">4</field>
+			<field name="BRH">6</field>
+			<field name="BRL">5</field>
+			<field name="BLL">7</field>
+		</block>
+	<block type="otto_quad_home"></block>
+	<block type="otto_quad_move"></block>
+	<block type="otto_quad_hello"></block>
+	<block type="otto_quad_jump"></block>
+	<block type="otto_quad_scared"></block>
 </category>
 	</category>
 
