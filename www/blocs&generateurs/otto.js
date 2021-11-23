@@ -10,7 +10,7 @@ goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto9_configuration'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_plus.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
@@ -88,11 +88,49 @@ Blockly.Arduino['otto_i2cConfig'] = function(block) {
   return code;
 };
 
+Blockly.Blocks['otto_arms_init'] = {init: function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
 
+Blockly.Arduino['otto_arms_init'] = function(block) {
+  
+  var PIN_AL= block.getFieldValue('PIN_AL');
+  var PIN_AR= block.getFieldValue('PIN_AR');
+	
+    Blockly.Arduino.includes_['otto_arms'] = '#include <Servo.h>\n'
+    + 'Servo AL, AR;';
+    Blockly.Arduino.variables_['otto_arms'] = 'int adj[]={ 0, 0,};\n'
+    +'int pos[]={ 90,90}; \n'
+    +'int shift = 60; \n'
+    +'int shift_inc = 10;  \n'
+    +'int shift_delay = 50;  \n'
+  ;
+    Blockly.Arduino.definitions_['otto_arms'] = '#define PIN_AL '+ PIN_AL +' // left arm\n'
+    +'#define PIN_AR '+ PIN_AR +' // right arm \n'
+    +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
+    Blockly.Arduino.setups_['otto_arms']='AL.attach(PIN_AR);\n'
+    +'AR.attach(PIN_AL);\n'
+    +'move_servo();\n'
+    +'delay(100);';
+  var code = '';
+  return code;
+};
 								
-Blockly.Blocks['otto9_arms'] = { init: function() {
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*"))  
-    .appendField(Blockly.Msg.OTTO9_ARMS_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto9_arms_choice");
+Blockly.Blocks['otto_arms'] = { init: function() {
+    this.appendDummyInput() 
+    .appendField(Blockly.Msg.CAT_OTTO_ARMS) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -101,34 +139,19 @@ Blockly.Blocks['otto9_arms'] = { init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_arms'] = function(block) {
-  var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
-  Blockly.Arduino.includes_['otto9_arms'] = '#include <Servo.h>\n'
-	+ 'Servo AL, AR;';
-  Blockly.Arduino.variables_['otto9_arms'] = 'int adj[]={ 0, 0,};\n'
-  +'int pos[]={ 90,90}; \n'
-  +'int shift = 60; \n'
-  +'int shift_inc = 10;  \n'
-  +'int shift_delay = 50;  \n'
-;
-  Blockly.Arduino.definitions_['otto9_arms'] = '#define PIN_AL 6 // left arm\n'
-  +'#define PIN_AR 7 // right arm \n'
-  +'void move_servo(){ AL.write(pos[1]+adj[1]); AR.write(pos[2]+adj[2]);}';
-  Blockly.Arduino.setups_['otto9_arms']='AL.attach(PIN_AR);\n'
-  +'AR.attach(PIN_AL);\n'
-  +'move_servo();\n'
-  +'delay(1000);';
+Blockly.Arduino['otto_arms'] = function(block) {
+  var dropdown_otto_arms_choice = block.getFieldValue('otto_arms_choice');
   var code = '';
-  switch(dropdown_otto9_arms_choice) {
+  switch(dropdown_otto_arms_choice) {
 	case 'HANDSUP':
     code += 'AL.write(160);\n'
     +'AR.write(20);\n'
-    +'delay(500);';
+    +'delay(shift_delay);';
     break;
   case 'HANDSDOWN':
     code += 'AL.write(20);\n'
     +'AR.write(160);\n'
-    +'delay(500);';
+    +'delay(shift_delay);';
 		break;
 	case 'HANDWAVE1':
 		code += 'for(int angle=90; angle<90+shift; angle+=shift_inc){  pos[1] = angle;    move_servo();  delay(shift_delay);}\n'
@@ -144,31 +167,470 @@ Blockly.Arduino['otto9_arms'] = function(block) {
   return code;
 };
 
-Blockly.Python['otto9_arms'] = function(block) {
-    var dropdown_otto9_arms_choice = block.getFieldValue('otto9_arms_choice');
-    Blockly.Python.definitions_['import_otto9']='import otto9';
-    Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
-    Blockly.Python.definitions_['init_otto9h'] = 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-    var code = 'Otto.';
-    switch(dropdown_otto9_arms_choice) {
-        case 'HANDSUP':
-            code += 'handsup()\n';
-            break;
-        case 'HANDWAVE1':
-            code += 'handwave(1)\n';
-            break;
-        case 'HANDWAVE2':
-            code += 'handwave(-1)\n';
-            break;
-    }
-    return code;
+Blockly.Blocks['otto_arms_home'] = {init: function() {
+  this.appendDummyInput("")  .appendField("🦾 "+Blockly.Msg.OTTO9_HOME_TEXT);
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
-/**
- * @fileoverview Helper functions for generating Arduino blocks.
- * @author Sébastien Canet
- */
-'use strict';
+Blockly.Arduino['otto_arms_home'] = function(block) {
+var code = 'AL.write(90);\n'
++'AR.write(90);\n'
++'delay(shift_delay);';
+return code;
+};
+
+Blockly.Blocks['otto_quad_configuration'] = {init: function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_quad.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+	this.appendDummyInput()
+	.appendField("Front R Hip").setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FRH");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.left) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FLH");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FRL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FLL");
+	this.appendDummyInput()
+	.appendField("Back R Hip").setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BRH");
+  this.appendDummyInput()
+	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BLH");
+  this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BRL");
+  this.appendDummyInput()
+	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BLL");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#32D900");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_quad_configuration'] = function(block) {
+  
+  var FRH= block.getFieldValue('FRH');
+  var FLH= block.getFieldValue('FLH');
+  var FRL= block.getFieldValue('FRL');
+  var FLL= block.getFieldValue('FLL');
+  var BLH= block.getFieldValue('BLH');
+  var BRH= block.getFieldValue('BRH');
+  var BRL= block.getFieldValue('BRL');
+  var BLL= block.getFieldValue('BLL');
+	
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Quad.h>\n'
+	+ 'Quad Quad;';
+
+  Blockly.Arduino.definitions_['otto_legs'] = '#define FRH '+ FRH +' // FRONT_RIGHT_HIP pin, servo[0]\n'
+ 	+ '#define FLH '+ FLH +' // FRONT_LEFT_HIP pin, servo[1]\n'
+	+ '#define FRL '+ FRL +' // FRONT_RIGHT_LEG pin, servo[2]\n'
+  + '#define FLL '+ FLL +' // FRONT_LEFT_LEG pin, servo[3]\n'
+  + '#define BLH '+ BLH +' // BACK_RIGHT_HIP pin, servo[4]\n'
+  + '#define BRH '+ BRH +' // BACK_LEFT_HIP pin, servo[5]\n'
+  + '#define BRL '+ BRL +' // BACK_RIGHT_LEG pin, servo[6]\n'
+  + '#define BLL '+ BLL +' // BACK_LEFT_LEG pin, servo[7]\n'
+  + 'void pause(int period) { long timeout = millis() + period;  do   {  Quad.refresh(); } \n'
+  + ' while (millis() <= timeout); }';
+	
+  Blockly.Arduino.setups_['otto_init']='Quad.init(FRH, FLH, FRL, FLL, BLH, BRH, BRL, BLL);\n'
+  + 'Quad.home();\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Blocks['otto_quad_home'] = {init: function() {
+  this.appendDummyInput("") .appendField("🕷️ " + Blockly.Msg.OTTO9_HOME_TEXT);
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_quad_home'] = function(block) {
+var code = 'Quad.home();\n';
+return code;
+};
+
+Blockly.Blocks['otto_quad_hello'] = {init: function() {
+  this.appendDummyInput("") .appendField("🕷️ Hello");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_quad_hello'] = function(block) {
+var code = 'Quad.hello();\n';
+return code;
+};
+
+Blockly.Blocks['otto_quad_jump'] = {init: function() {
+  this.appendDummyInput("") .appendField("🕷️ Jump");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_quad_jump'] = function(block) {
+var code = 'Quad.jump();\n';
+return code;
+};
+
+Blockly.Blocks['otto_quad_scared'] = {init: function() {
+  this.appendDummyInput("") .appendField("🕷️ Scared");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_quad_scared'] = function(block) {
+var code = 'Quad.scared();\n';
+return code;
+};
+
+Blockly.Blocks['otto_quad_move'] = {init: function() {
+  this.appendDummyInput()  .appendField("🕷️ " +Blockly.Msg.OTTO9_MOVE_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_CHOICE), "otto_move_sens");
+  this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)  .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "otto_move_speed");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#32D900");
+  this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
+};
+
+Blockly.Arduino['otto_quad_move'] = function(block) {
+var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
+var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
+
+var code = '';
+switch(dropdown_otto_move_sens) {
+case 'FORWARD':
+  code = 'Quad.walk(1,4,' + dropdown_otto_move_speed + '); // FORWARD\n';
+  break;
+case 'BACKWARD':
+  code = 'Quad.walk(0,4,' + dropdown_otto_move_speed + '); // BACKWARD\n';
+  break;
+case 'LEFT':
+  code = 'Quad.turnL(2,' + dropdown_otto_move_speed + '); // LEFT\n';
+  break;
+case 'RIGHT':
+  code = 'Quad.turnR(2,' + dropdown_otto_move_speed + '); // RIGHT\n';
+  break;
+case 'BENDLEFT':
+  code = 'Quad.pushUp(1,' + dropdown_otto_move_speed + ');\n';
+  break;
+case 'BENDRIGHT':
+  code = 'Quad.frontBack(1,' + dropdown_otto_move_speed + ');\n';
+  break;
+case 'SHAKERIGHT':
+  code = 'Quad.waveHAND(1,' + dropdown_otto_move_speed + ');\n';
+  break;
+case 'SHAKELEFT':
+  code = 'Quad.dance(1,' + dropdown_otto_move_speed + ');\n';
+  break;
+  case 'jump':
+  code = 'Quad.upDown(1,' + dropdown_otto_move_speed + ');\n';
+  break;
+}
+return code;
+};
+
+Blockly.Blocks['otto_ninja_init'] = {init: function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#0A0A0A");
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_ninja_init'] = function(block) {
+  
+  var PIN_YL= block.getFieldValue('PIN_YL');
+  var PIN_YR= block.getFieldValue('PIN_YR');
+  var PIN_RL= block.getFieldValue('PIN_RL');
+  var PIN_RR= block.getFieldValue('PIN_RR');
+	
+  Blockly.Arduino.includes_['otto_lib'] = '#include <Servo.h>\n';
+
+  Blockly.Arduino.definitions_['otto_legs'] = 'int ServoLeftAnklePin   ='+ PIN_YL +'; // D6\n'
+ 	  + 'int ServoRightAnklePin  ='+ PIN_YR +' ;// D4\n'
+	  + 'int ServoLeftFootPin   = '+ PIN_RL +'; // D7\n'
+    + 'int ServoRightFootPin = '+ PIN_RR +'; //D3\n'
+    + 'Servo myservoLeftFoot;\n'
+    + 'Servo myservoLeftAnkle;\n'
+    + 'Servo myservoRightFoot;\n'
+    + 'Servo myservoRightAnkle;\n'
+    + 'int LFFWRS= 20; // Left foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+    + 'int RFFWRS= 20; // Right foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+    + 'int LFBWRS= 20; // Left foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+    + 'int RFBWRS= 20; // Right foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+    + 'int LA0= 60; // Left Ankle standing Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 60\n'
+    + 'int RA0= 120;// Right Ankle standing position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 120 \n'
+    + 'int LA1= 180; // Left Ankle roll Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 170\n'
+    + 'int RA1= 0;  // Right Ankle roll position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 10\n'
+    + 'int LATL= 90;  // Left Ankle tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 90  \n'
+    + 'int RATL= 180;  // Right Ankle tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 180   \n'
+    + 'int LATR= 0;  // Left Ankle tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 0   \n'
+    + 'int RATR= 90;  // Right Ankle tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 90  \n'; 
+  var code = '';
+  return code;
+};
+
+Blockly.Blocks['otto_ninja_home'] = {init: function() {
+  this.appendDummyInput("") .appendField("🐱‍👤 " + Blockly.Msg.OTTO9_HOME_TEXT);
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
+};
+
+Blockly.Arduino['otto_ninja_home'] = function(block) {
+  Blockly.Arduino.definitions_['ninja_home'] =   'void NinjaHome()\n'
+  +'{ myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);myservoRightFoot.attach(ServoRightFootPin, 544, 2400);   myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400); myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);  myservoLeftFoot.write(90); myservoRightFoot.write(90);   myservoLeftAnkle.write(60); myservoRightAnkle.write(120); \n'
+  +' delay(500);\n'
+  +' myservoLeftFoot.detach();myservoRightFoot.detach();   myservoLeftAnkle.detach();myservoRightAnkle.detach();}';
+var code = 'NinjaHome();\n';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_setwalk']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Walk mode");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#000000");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_setwalk'] = function(block) {
+  Blockly.Arduino.definitions_['ninja_setwalk'] =   'void NinjaSetWalk()\n'
+  +' { myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);  myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);   myservoLeftAnkle.write(LA0);myservoRightAnkle.write(RA0); \n'
+  +' delay(300);\n'
+  +' myservoLeftAnkle.detach(); myservoRightAnkle.detach();}';
+var code = 'NinjaSetWalk();\n';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_setroll']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Roll mode");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_setroll'] = function(block) {
+  Blockly.Arduino.definitions_['ninja_setroll'] =   'void NinjaSetRoll()\n'
+  +' { myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400); myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400); myservoLeftAnkle.write(LA1);  myservoRightAnkle.write(RA1);  \n'
+  +' delay(300);\n'
+  +' myservoLeftAnkle.detach(); myservoRightAnkle.detach();}';
+var code = 'NinjaSetRoll();\n';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_walkstop']={init:function(){
+  this.appendDummyInput() .appendField("🐱‍👤 Walk 🛑 Stop");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_walkstop'] = function(block) {
+  Blockly.Arduino.definitions_['ninja_walkstop'] =   'void NinjaWalkStop()\n'
+  + '{myservoLeftFoot.write(90);\n'
+  +' myservoRightFoot.write(90); \n'
+  +' myservoLeftAnkle.write(LA0); \n'
+  +' myservoRightAnkle.write(RA0);}';
+var code = 'NinjaWalkStop();\n';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_rollstop']={init:function(){
+  this.appendDummyInput() .appendField("🐱‍👤 Roll 🛑 Stop");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_rollstop'] = function(block) {
+  Blockly.Arduino.definitions_['ninja_rollstop'] =   'void NinjaRollStop()\n'
+  + '{myservoLeftFoot.write(90);\n'
+  +' myservoRightFoot.write(90); \n'
+  +' myservoLeftFoot.detach(); \n'
+  +' myservoRightFoot.detach();}  ';
+var code = 'NinjaRollStop();\n';
+return code;
+};
+
+Blockly.Blocks['otto_ninja_walk']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤Walk")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Walk")
+      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+      .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "Speed");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#0A0A0A");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_walk'] = function(block) {
+  var Walk = block.getFieldValue('Walk');
+  var Speed = block.getFieldValue('Speed');
+  Blockly.Arduino.definitions_['ninja_walk'] =   'void NinjaWalkForward()\n'
+  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  +' delay(300);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
+  +' delay(300);\n'
+  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' delay(300);\n'
+  +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
+  +' delay(300);\n'
+  +' myservoLeftFoot.detach();} \n'
+  + 'void NinjaWalkBackward()\n'
+  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  +' delay(300);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90+RFFWRS); \n'
+  +' delay(300);\n'
+  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' delay(300);\n'
+  +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90-LFFWRS);  \n'
+  +' delay(300);\n'
+  +' myservoLeftFoot.detach();} \n'
+  + 'void NinjaWalkLeft()\n'
+  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  +' delay(300);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
+  +' delay(100);\n'
+  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' delay(300);\n'
+  +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
+  +' delay(500);\n'
+  +' myservoLeftFoot.detach();} \n'
+  + 'void NinjaWalkRight()\n'
+  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  +' delay(300);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
+  +' delay(500);\n'
+  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' delay(300);\n'
+  +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
+  +' delay(100);\n'
+  +' myservoLeftFoot.detach();} ';
+  var code = '';
+  switch(Walk) {
+  case 'F':
+    code = 'NinjaWalkForward(); \n';
+    break;
+  case 'B':
+    code = 'NinjaWalkBackward(); \n';
+    break;
+  case 'L':
+    code = 'NinjaWalkLeft(); \n';
+    break;
+  case 'R':
+    code = 'NinjaWalkRight();\n';
+    break;
+  }
+  return code;
+  };
+
+Blockly.Blocks['otto_ninja_roll']={init:function(){
+  this.appendDummyInput()
+      .appendField("🐱‍👤 Roll")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Roll")
+      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
+      .appendField(new Blockly.FieldDropdown([["slow", "S"], ["normal", "N"], ["fast", "F"]]), "Speed");
+  this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#18191A");
+  this.setHelpUrl('https://www.ottodiy.com/ninja')}
+};
+
+Blockly.Arduino['otto_ninja_roll'] = function(block) {
+  var Roll = block.getFieldValue('Roll');
+  var Speed = block.getFieldValue('Speed');
+  Blockly.Arduino.definitions_['ninja_roll'] =   'void NinjaRollForward()\n'
+  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
+  +' myservoLeftFoot.write(180); \n'
+  +' myservoRightFoot.write(0);}\n'
+  + 'void NinjaRollBackward()\n'
+  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
+  +' myservoLeftFoot.write(0); \n'
+  +' myservoRightFoot.write(180);}\n'
+  + 'void NinjaRollLeft()\n'
+  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
+  +' myservoLeftFoot.write(0); \n'
+  +' myservoRightFoot.write(0);}\n'
+  + 'void NinjaRollRight()\n'
+  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
+  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
+  +' myservoLeftFoot.write(180); \n'
+  +' myservoRightFoot.write(180);}\n';
+  var code = '';
+  switch(Roll) {
+  case 'F':
+    code = 'NinjaRollForward(); \n';
+    break;
+  case 'B':
+    code = 'NinjaRollBackward(); \n';
+    break;
+  case 'L':
+    code = 'NinjaRollLeft(); \n';
+    break;
+  case 'R':
+    code = 'NinjaRollRight();\n';
+    break;
+  }
+  return code;
+  };
 
 Blockly.Blocks['otto9_app'] = {init: function() {
   this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 33, 33, "*"))   .appendField('App code');

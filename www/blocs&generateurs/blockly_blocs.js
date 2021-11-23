@@ -162,6 +162,7 @@ Blockly.Blocks["controls_switch"] = {
         this.appendStatementInput("DO0").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
         this.setMutator(new Blockly.Mutator(["controls_case_break", "controls_case_default"]));
         var thisBlock = this;
         this.setTooltip(function() {
@@ -325,6 +326,7 @@ Blockly.Blocks["controls_whileUntil"] = {
         this.appendStatementInput("DO").appendField("");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
         var thisBlock = this;
         this.setTooltip(function() {
             var op = thisBlock.getFieldValue("MODE");
@@ -585,6 +587,7 @@ Blockly.Blocks["controls_forEach"] = {
 // variable
 Blockly.Blocks["math_change"] = {
     init: function() {
+        this.setInputsInline(true);
         this.jsonInit({
             message0: Blockly.Msg.MATH_CHANGE_TITLE,
             args0: [{
@@ -633,6 +636,7 @@ Blockly.Blocks["variables_get"] = {
     init: function() {
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setColour(Blockly.Blocks.variables.HUE);
+        this.setInputsInline(true);
         this.appendDummyInput()
             .appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_DEFAULT_NAME), "VAR");
         this.setOutput(true);
@@ -669,6 +673,7 @@ Blockly.Blocks["variables_set"] = {
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.VARIABLES_SET_TOOLTIP);
         this.setColour(Blockly.Blocks.variables.HUE);
+        this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET
@@ -689,6 +694,7 @@ Blockly.Blocks['variables_set_init'] = {
             .appendField(Blockly.Msg._AT);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+        this.setInputsInline(true);
         this.setColour(Blockly.Blocks.variables.HUE);
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.var_set_init_tooltip);
@@ -703,12 +709,13 @@ Blockly.Blocks['variables_set_init'] = {
 Blockly.Blocks["base_define_const"] = {
     init: function() {
         this.appendValueInput("TEXT2")
-            .appendField(Blockly.Msg.base_def_const)
+            .appendField(Blockly.Msg.base_def_const+" constant")
             .appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_DEFAULT_NAME), 'VAR')
             .appendField(Blockly.Msg.base_define_const);
         this.setColour(Blockly.Blocks.variables.HUE);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+        this.setInputsInline(true);
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.base_define_const_tooltip);
         this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET
@@ -730,6 +737,7 @@ Blockly.Blocks['variables_const'] = {
         this.setColour(Blockly.Blocks.variables.HUE);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+        this.setInputsInline(true);
         this.setTooltip(Blockly.Msg.ARDUINO_VAR_CONST_tooltip);
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET
@@ -1279,7 +1287,7 @@ Blockly.Blocks["list_create"]={
 	init: function() {
 		this.appendValueInput("list")
 			.appendField(Blockly.Msg.LISTS_CREATE1).appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_GET_ITEM), 'VAR').appendField(Blockly.Msg.LISTS_CREATE2)
-		this.setInputsInline(false);
+		this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(Blockly.Blocks.tab.HUE);

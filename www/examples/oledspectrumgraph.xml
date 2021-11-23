@@ -1,0 +1,464 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="procedures_defnoreturn" id="MmS8hs6-|i0rR[0cRZzg" x="188" y="-86">
+    <field name="NAME">read</field>
+    <statement name="STACK">
+      <block type="controls_for" id="p1?djbS}Mqj)]wT=q^II">
+        <field name="VAR">band</field>
+        <value name="FROM">
+          <shadow type="math_number" id="Li%l%B9g|NQ?X93gSoaG">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="(eXxv$[4;TmxRjTLSc#Q">
+            <field name="NUM">8</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="@#6aZ,Z5C?qa6aA9$xzj">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="base_delay" id="-x=WttOwJAFp{_WJa|o[">
+            <field name="unite">m</field>
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="^(me@|ClKmd4#!Rg]^0Z">
+                <field name="NUM">50</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="fixer_tableau" id="w_sRBD`OB|wp^}u4(GgP">
+                <mutation dim="1"></mutation>
+                <field name="VAR">i</field>
+                <field name="dim">1</field>
+                <value name="value">
+                  <block type="math_map" id="zCunJi^iz8-Fg+eE^,Aj">
+                    <value name="pin">
+                      <block type="inout_analog_read2" id="#@8n(XbwC_djqW#XcBUh">
+                        <value name="pin">
+                          <shadow type="analog_pin" id="(r:YQ:.J`84FT3ACryvb">
+                            <field name="NUM">A0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="A1">
+                      <shadow type="math_number" id="5e(PuI*~uYF?!biiv8iZ">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="A2">
+                      <shadow type="math_number" id="Ktm)w9CjXtH~Q9$S8`_,">
+                        <field name="NUM">1023</field>
+                      </shadow>
+                    </value>
+                    <value name="B1">
+                      <shadow type="math_number" id="khpwCrFPOFVkGO9|g[nD">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="B2">
+                      <shadow type="math_number" id="d*GeMQZpug}Bc6HoGe)9">
+                        <field name="NUM">64</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="D0">
+                  <block type="variables_get" id="P=}+$XR,#{vh2$-q)tP*">
+                    <field name="VAR">band</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="base_setup_loop" id="qDw@_.t*q}cF;?8vN|BA" x="185" y="119">
+    <statement name="DO">
+      <block type="creer_tableau" id="!7]5*;N857-P8q5JovJ~">
+        <mutation dim="1"></mutation>
+        <field name="VAR">i</field>
+        <field name="type">NUMBER</field>
+        <field name="dim">1</field>
+        <field name="choix">c1</field>
+        <value name="D0">
+          <block type="math_number" id=",8FA2M%hh[cU};LD(/uE">
+            <field name="NUM">8</field>
+          </block>
+        </value>
+        <next>
+          <block type="OLED_init" id="eEA1jniBd:5MNs/Dp?v(">
+            <field name="height">64</field>
+            <field name="address">0x3C</field>
+            <next>
+              <block type="OLED_rotate" id="EYmt=rvNj-H*|].E#_7y">
+                <field name="angle">2</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="procedures_callnoreturn" id="#PLqk,T[@Iec$gLOqE3K">
+        <mutation name="read"></mutation>
+        <next>
+          <block type="OLED_clear" id="*`Cl6$enIW=A29-e^5oG">
+            <next>
+              <block type="OLED_round" id="]qo%.Z_wuXPk9926Os6.">
+                <field name="fill">TRUE</field>
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="$3o+gjt%q2U^[gKf?!Yp">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="hvx9in$zo^j^1NHy[Mo+">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="width">
+                  <shadow type="math_number" id="qcdL4eEMiq%R~q)jo*-x">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                    <field name="NUM">30</field>
+                  </shadow>
+                  <block type="math_random_int" id="JOWTc}1/kHab^4J49ze.">
+                    <value name="FROM">
+                      <block type="math_number" id="c-zM`eP-=k@;K)%ShBZs">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id=":wkMAj(I8`AF,%TD**2$">
+                        <field name="NUM">64</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="round">
+                  <shadow type="math_number" id="i6mSq:{7]Brk{aSIVCh?">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_round" id="@zBI6I:x7!czbG6ihlE,">
+                    <field name="fill">TRUE</field>
+                    <field name="draw">TRUE</field>
+                    <value name="X">
+                      <shadow type="math_number" id=".k$YQuGdP6ma_--Ih%XX">
+                        <field name="NUM">16</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="|O,~wX.~K-U$5MuD,?D/">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="width">
+                      <shadow type="math_number" id="8vj!=n(DM/5yvC|.g[y(">
+                        <field name="NUM">10</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                        <field name="NUM">30</field>
+                      </shadow>
+                      <block type="math_random_int" id="*.W!6$#z]Y`qy,y~[qzI">
+                        <value name="FROM">
+                          <block type="math_number" id="2B(/Fr#WwzwpsA/wVrkP">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="Qd#gz9UN}E+hqdnVj#Hk">
+                            <field name="NUM">64</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="round">
+                      <shadow type="math_number" id="!OmbB|L$6Z#tG}o6DN.;">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="OLED_round" id="dg`lRqf=F754p+st%IWS">
+                        <field name="fill">TRUE</field>
+                        <field name="draw">TRUE</field>
+                        <value name="X">
+                          <shadow type="math_number" id="G-^W0c8_$*fYSZB(|gmI">
+                            <field name="NUM">32</field>
+                          </shadow>
+                        </value>
+                        <value name="Y">
+                          <shadow type="math_number" id="o`A2)PC2DGTxRO*[Iov.">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="width">
+                          <shadow type="math_number" id="[5~4N*H|dB{41SsQgmtW">
+                            <field name="NUM">10</field>
+                          </shadow>
+                        </value>
+                        <value name="height">
+                          <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                            <field name="NUM">30</field>
+                          </shadow>
+                          <block type="math_random_int" id="wn|+1r/rm*nur=psFgLu">
+                            <value name="FROM">
+                              <block type="math_number" id="+1}dE_2YhDZ(-2/}mj.t">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <block type="math_number" id="{lSn8DEf%PEsL)sPlzYu">
+                                <field name="NUM">64</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="round">
+                          <shadow type="math_number" id="QqiHy6wpam3lO!6H_h6U">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="OLED_round" id="dzpVmVvOl?p%?yHJ;+RS">
+                            <field name="fill">TRUE</field>
+                            <field name="draw">TRUE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="6:BL!YBv;]`$M7HSen]m">
+                                <field name="NUM">48</field>
+                              </shadow>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="/68Jsu:Y|:*9K`i{oCrn">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="width">
+                              <shadow type="math_number" id="{i4BeD!|c(FWRV/~9kIU">
+                                <field name="NUM">10</field>
+                              </shadow>
+                            </value>
+                            <value name="height">
+                              <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                                <field name="NUM">30</field>
+                              </shadow>
+                              <block type="math_random_int" id="5Vg[H!Ehz=IqW7]uNZE6">
+                                <value name="FROM">
+                                  <block type="math_number" id="y}93,B*lFs}te7t/^xaI">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="TO">
+                                  <block type="math_number" id="s+zk8ERUk}E)%6z0nL;z">
+                                    <field name="NUM">64</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="round">
+                              <shadow type="math_number" id="R|F?Br;9k.yYHVS`1Rws">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="OLED_round" id="1JwH#mEy%u3b:.QAy?L{">
+                                <field name="fill">TRUE</field>
+                                <field name="draw">TRUE</field>
+                                <value name="X">
+                                  <shadow type="math_number" id="9u^5L2:Y^VlwO,^Dudo5">
+                                    <field name="NUM">64</field>
+                                  </shadow>
+                                </value>
+                                <value name="Y">
+                                  <shadow type="math_number" id="`REeGr}5txdDto.Tiuzo">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="width">
+                                  <shadow type="math_number" id="Yu:`orb(%Lu*].?2BJTu">
+                                    <field name="NUM">10</field>
+                                  </shadow>
+                                </value>
+                                <value name="height">
+                                  <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                                    <field name="NUM">30</field>
+                                  </shadow>
+                                  <block type="math_random_int" id="c-rBdW}N!-FLWpWPA#jg">
+                                    <value name="FROM">
+                                      <block type="math_number" id="^+!2b`0j(WW2Q~(e=1F~">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="TO">
+                                      <block type="math_number" id="o`P:g}q.vNh,qB:LZuoE">
+                                        <field name="NUM">64</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="round">
+                                  <shadow type="math_number" id="3yObD4hBy0vS$vA9P0e[">
+                                    <field name="NUM">2</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="OLED_round" id="%Xj#N-GFq{6/Z/(nc0?Z">
+                                    <field name="fill">TRUE</field>
+                                    <field name="draw">TRUE</field>
+                                    <value name="X">
+                                      <shadow type="math_number" id="D^bITapr%~.!e`5BAD(=">
+                                        <field name="NUM">80</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="Y">
+                                      <shadow type="math_number" id="oUtbuZZ[7%I/zec}GA$R">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="width">
+                                      <shadow type="math_number" id="x`uG(h(:-jAwBF8E|c3N">
+                                        <field name="NUM">10</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="height">
+                                      <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                                        <field name="NUM">30</field>
+                                      </shadow>
+                                      <block type="math_random_int" id="8#-oP2((Pr+jOo1[({i|">
+                                        <value name="FROM">
+                                          <block type="math_number" id="(:y[%oi]2uANA}[Q`2sG">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="TO">
+                                          <block type="math_number" id=".34oR|Z,`.#sLh;8jOtV">
+                                            <field name="NUM">64</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="round">
+                                      <shadow type="math_number" id="syF:Bdc6MW5w`CA=3jJ_">
+                                        <field name="NUM">2</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="OLED_round" id="JX9}J|4(?qp73rsnEYVX">
+                                        <field name="fill">TRUE</field>
+                                        <field name="draw">TRUE</field>
+                                        <value name="X">
+                                          <shadow type="math_number" id="ESB]W6RpWV$PE@WYIX)*">
+                                            <field name="NUM">96</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="Y">
+                                          <shadow type="math_number" id="ZOZX4CA8}[~x{{Flz!.E">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="width">
+                                          <shadow type="math_number" id="2noOijw!dc0(i!NgSI!{">
+                                            <field name="NUM">10</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="height">
+                                          <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                                            <field name="NUM">30</field>
+                                          </shadow>
+                                          <block type="math_random_int" id="Z$/i/aOkbIkLf}[F5XsU">
+                                            <value name="FROM">
+                                              <block type="math_number" id="w+$gxk|rAmT.rl=sH}Nk">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="TO">
+                                              <block type="math_number" id="-$)6ck^,(f#i%D4f{h3A">
+                                                <field name="NUM">64</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="round">
+                                          <shadow type="math_number" id="*,=x5R#.xL@MwBC:[Cg0">
+                                            <field name="NUM">2</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="OLED_round" id="*wO[RBnfO#Sye/[HxDu^">
+                                            <field name="fill">TRUE</field>
+                                            <field name="draw">TRUE</field>
+                                            <value name="X">
+                                              <shadow type="math_number" id="L0:r44Rl/d`qVbR;.PQM">
+                                                <field name="NUM">112</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="Y">
+                                              <shadow type="math_number" id="PcwoKO@5;xBnK^n(xdxj">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="width">
+                                              <shadow type="math_number" id="tcD.bX6]!JI%dB:DKX1.">
+                                                <field name="NUM">10</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="height">
+                                              <shadow type="math_number" id="hUuKsikvoYR,iv5T~`dB">
+                                                <field name="NUM">30</field>
+                                              </shadow>
+                                              <block type="math_random_int" id="}?[=[6=SDzl8a,`m(|29">
+                                                <value name="FROM">
+                                                  <block type="math_number" id="/KkJJE/yI@*=eQ*]xt^/">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="TO">
+                                                  <block type="math_number" id="GG0:ivMo,.r!Sf@hA2B4">
+                                                    <field name="NUM">64</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="round">
+                                              <shadow type="math_number" id="C@W/lD}[H*[j)Ap=+S}p">
+                                                <field name="NUM">2</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="OLED_display" id="}clXCZM66yrjWF[nJkzL"></block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -8,8 +8,12 @@
         <field name="PIN_DIN">A3</field>
         <field name="Orientation">0</field>
         <next>
-          <block type="otto9_mouth" id="@p)}OZm4*Xve^/Bk3RBG">
-            <field name="otto9_mouth_choice">27</field>
+          <block type="otto9_clear" id="/-^PNxrP*.d|3T=PRf7F">
+            <next>
+              <block type="otto9_mouth" id="@p)}OZm4*Xve^/Bk3RBG">
+                <field name="otto9_mouth_choice">27</field>
+              </block>
+            </next>
           </block>
         </next>
       </block>
@@ -86,6 +90,19 @@
         <next>
           <block type="otto9_mouth" id="T(|+Bq73si0U3zBW::Qi">
             <field name="otto9_mouth_choice">okMouth</field>
+            <next>
+              <block type="base_delay" id="@tg_L0=kq1oE-=^mKGQ:">
+                <field name="unite">s</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="nzX}]%U/)+vGs|9CiD9F">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="otto9_clear" id="1(,y[,Xs/JaA~QyjWS@}"></block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

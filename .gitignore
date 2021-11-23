@@ -1,1 +1,17 @@
 *.DS_Store
+/node_modules/
+/compilation/arduino/packages/
+/compilation/arduino/suppr/
+/compilation/arduino/tmp/
+/compilation/arduino/arduino-cli
+/compilation/arduino/arduino-cli.exe
+/compilation/arduino/library_index.json
+/compilation/arduino/library_index.json.sig
+/compilation/arduino/package_digistump_index.json
+/compilation/arduino/package_esp32_index.json
+/compilation/arduino/package_esp8266com_index.json
+/compilation/arduino/package_index.json
+/compilation/arduino/package_index.json.sig
+/compilation/arduino/package_stm_index.json
+/compilation/arduino/package_ustepper_index.json
+/compilation/arduino/inventory.yaml
