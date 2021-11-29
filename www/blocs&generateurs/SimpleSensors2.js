@@ -841,7 +841,6 @@ Blockly.Blocks['Alcohol_status_sensor2'] = {
   }
 };
 
-
 Blockly.Arduino['Alcohol_status_sensor2'] = function(block) {
   
   var dropdown_pin = block.getFieldValue('PIN_ALCOHOL');
@@ -851,6 +850,69 @@ Blockly.Arduino['Alcohol_status_sensor2'] = function(block) {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Blocks['Air_sensor2'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/gas.png",33,33))
+	    .appendField(Blockly.Msg.AIR_NAME)
+        .appendField(Blockly.Msg.PIN)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_AIR")
+	this.appendDummyInput()
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
+    this.setOutput(true, 'Number');
+	this.setInputsInline(true);
+    this.setTooltip('(MQ-135) Air quality. Value');
+  }
+};
+
+
+Blockly.Arduino['Air_sensor2'] = function(block) {
+    
+	var PinAir = block.getFieldValue('PIN_AIR');
+    var Status = this.getFieldValue('OUTPUT_VALUE');
+	var code;
+    //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
+    if(Status=='0')
+      var code = 'map(analogRead('+PinAir+'),0,1023,0,100)';
+    else
+      var code = 'analogRead('+PinAir+')';
+   
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+Blockly.Blocks['Air_status_sensor2'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;  
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/gas.png",33,33))
+	    .appendField(Blockly.Msg.AIR_NAME)
+	    .appendField(Blockly.Msg.PIN)
+        .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AIR")
+	this.setOutput(true, 'Boolean');
+   	this.appendDummyInput()
+		.appendField(Blockly.Msg.ALCOHOL_DETECTED)
+	this.appendDummyInput()
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+
+Blockly.Arduino['Air_status_sensor2'] = function(block) {
+  
+  var dropdown_pin = block.getFieldValue('PIN_AIR');
+  Blockly.Arduino.setups_['setup_Alcohol_'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
+  
+  var code = 'digitalRead('+dropdown_pin+')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
 
 Blockly.Blocks['Vibration_sensor2'] = {

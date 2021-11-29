@@ -325,6 +325,8 @@
 		<block type="CCS811_available"></block>
 		<block type="CCS811_readed"></block>
 		<block type="CCS811_values"></block>
+		<block type="Air_sensor2"></block>	
+		<block type="Air_status_sensor2"></block>
 	</category>	
 		<category name="CAT_GAS" colour="#2a93e8">
 		 <block type="Gas_sensor2"></block>	

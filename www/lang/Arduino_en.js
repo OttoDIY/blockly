@@ -620,6 +620,7 @@ Blockly.Msg.DHT_Head="☀️ Heat Index ºC";
 Blockly.Msg.GAS_NAME="Gas CO";
 Blockly.Msg.GAS_DETECTED="detected";
 Blockly.Msg.ALCOHOL_NAME="Alcohol";
+Blockly.Msg.AIR_NAME="Air quality (MQ-135)";
 Blockly.Msg.ALCOHOL_DETECTED="detected";
 Blockly.Msg.VIBRATION_NAME="Vibration";
 Blockly.Msg.VIBRATION_DETECTED="detected";
