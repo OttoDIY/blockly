@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <toolbox>toolbox_arduino_all</toolbox>
-  <block type="base_setup_loop" id="n!YmQ#j4Ih$j(rN-Rm/+" x="202" y="-125">
+  <block type="base_setup_loop" id="n!YmQ#j4Ih$j(rN-Rm/+" x="206" y="-196">
     <statement name="DO">
       <block type="lp2i_mp3_init" id="56RjF}HfX6hB;_wo!/td">
         <field name="PIN_TX">11</field>
@@ -15,6 +15,28 @@
           <block type="OLED_init" id="A0oJ!tsY:!bX$/SmytQs">
             <field name="height">64</field>
             <field name="address">0x3C</field>
+            <next>
+              <block type="variables_set_init" id="pW86B%8L-S.E2SnsejQJ">
+                <field name="VAR">i</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="WLg3,Yb}3{=xTq:bd6Rk">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="^MVRoapp.wcuC[cGp2Of">
+                    <field name="VAR">x</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="hC.ghMnqdalDU}B*@~uR">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

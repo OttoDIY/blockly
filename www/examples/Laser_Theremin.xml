@@ -2,17 +2,19 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="f~q0s`a;@!;gu{QM[EJB" x="159" y="32">
     <statement name="DO">
-      <block type="otto9_configuration" id="p_|kYVfc^[C9}MSP_`*f">
-        <field name="PIN_YL">2</field>
-        <field name="PIN_YR">3</field>
-        <field name="PIN_RL">4</field>
-        <field name="PIN_RR">5</field>
-        <field name="PIN_Buzzer">13</field>
+      <block type="VL53L0X" id="nG^ROjOLI{G=sExSd0~q">
         <next>
-          <block type="VL53L0X" id="nG^ROjOLI{G=sExSd0~q">
+          <block type="serial_init" id=")C}:)).l%y*mFx}qbX]O">
+            <field name="PINBAUDIOS">9600</field>
             <next>
-              <block type="serial_init" id=")C}:)).l%y*mFx}qbX]O">
-                <field name="PINBAUDIOS">9600</field>
+              <block type="variables_set_init" id="e^jcnLDhpD|ba2mkz,]k">
+                <field name="VAR">freq</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="_r)^{XR=AvE0mN-T1SoS">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
               </block>
             </next>
           </block>
@@ -56,23 +58,23 @@
               </block>
             </value>
             <next>
-              <block type="otto_tonehz" id="W-oW,Z$y`I]dW]Z_brOB">
-                <value name="Hz1">
-                  <shadow type="math_number" id="2Veq`FEit304e/RQ(z1~">
-                    <field name="NUM">10</field>
+              <block type="tone" id="*T#C0]9ca~Dc0CSLUAJV">
+                <value name="PIN">
+                  <shadow type="analog_pin" id="Cu)H;Is7/Kzn4ukJ#v4;">
+                    <field name="NUM">13</field>
+                  </shadow>
+                </value>
+                <value name="NUM">
+                  <shadow type="math_number" id="Io.Mdyy=@E{x|QuA~]_z">
+                    <field name="NUM">40</field>
                   </shadow>
                   <block type="variables_get" id="]6S:QS[Ir_/2U5$4AskY">
                     <field name="VAR">freq</field>
                   </block>
                 </value>
-                <value name="duration">
-                  <shadow type="math_number" id="_OMCLV1[`QedHF@w7M`%">
+                <value name="TPS">
+                  <shadow type="math_number" id="jRT$/$kW8GhPACnlP7-#">
                     <field name="NUM">40</field>
-                  </shadow>
-                </value>
-                <value name="silent">
-                  <shadow type="math_number" id="lS!,t9tJ-7s3YwN=Hq#w">
-                    <field name="NUM">0</field>
                   </shadow>
                 </value>
               </block>

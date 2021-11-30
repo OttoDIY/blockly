@@ -12,6 +12,28 @@
             <next>
               <block type="otto9_mouth" id="@p)}OZm4*Xve^/Bk3RBG">
                 <field name="otto9_mouth_choice">27</field>
+                <next>
+                  <block type="variables_set_init" id="ZLJo}G^3k8~]ZHU3i+w0">
+                    <field name="VAR">i</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="040r/oOyS!dX{e/p(By/">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set_init" id="=aou4=4:^*^O{P**tX^Q">
+                        <field name="VAR">j</field>
+                        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="jTg1=nX3+:d2~Y88ktCd">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
