@@ -10,6 +10,28 @@
         <next>
           <block type="otto9_matrix_text" id="X+`W-ymC1:fdM2i#?3g)">
             <field name="input">WASH HANDS</field>
+            <next>
+              <block type="variables_set_init" id="|jX,tmVK/r5(5Phm9d,Q">
+                <field name="VAR">i</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id=";;n47)K`GXRefn$yj:tN">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="}F]b{;|+g_MxF(@*H)x^">
+                    <field name="VAR">j</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="CPajr)m;E_X@Ns%nAM2[">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

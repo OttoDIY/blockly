@@ -39,6 +39,28 @@
             <field name="otto9_matrix_pixel27">TRUE</field>
             <field name="otto9_matrix_pixel28">FALSE</field>
             <field name="otto9_matrix_pixel29">FALSE</field>
+            <next>
+              <block type="variables_set_init" id="g@,22N{4d~X_25%dG(m2">
+                <field name="VAR">high</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="+RElAp^4puZNc@EgO@0P">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="S}:dmP#T3h]nLTqSZvsZ">
+                    <field name="VAR">time</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="ux,Gw2tmlapC0Y,4m?Ws">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

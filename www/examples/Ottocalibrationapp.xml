@@ -1,12 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_arduino_all-esp32</toolbox>
-  <block type="base_define" id="Sh.QL-_%t){TaQico6=5" x="-209" y="-577">
-    <comment pinned="true" h="274" w="717">You have carefully followed the instructions on how to build Otto and have made sure that all the servos are centralized (set at 90 degrees) before you attach the horns. You are now at the very exciting moment where you check to see how Otto moves and dances and so you upload your first simple Blockly code.
-
-:( What happened? Why did the legs and feet move out of position? Otto doesn’t look right and doesn’t move smoothly.
-
-Do not be disappointed and do not worry! This is completely normal and happens in every Otto build. This is the stage where you need to adjust the central positions of the servos using a simple process called calibration. This will only need to be done once and then the correct positions will be remembered every time you turn on your Otto.
-    </comment>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_define" id="Sh.QL-_%t){TaQico6=5" x="-227" y="-633">
     <statement name="DO">
       <block type="base_code" id="ZdTsp[rp?8t-~).GeQfC">
         <field name="TEXT">int positions[] = {90, 90, 90, 90};</field>
@@ -18,7 +12,7 @@ Do not be disappointed and do not worry! This is completely normal and happens i
       </block>
     </statement>
   </block>
-  <block type="base_setup_loop" id="pz(ZWPdl%sLWUFOfU7r*" x="-226" y="-429">
+  <block type="base_setup_loop" id="pz(ZWPdl%sLWUFOfU7r*" x="-227" y="-528">
     <statement name="DO">
       <block type="otto9_configuration" id="pS=n(/m!/U4Xu7FcXMon">
         <field name="PIN_YL">2</field>
@@ -26,30 +20,47 @@ Do not be disappointed and do not worry! This is completely normal and happens i
         <field name="PIN_RL">4</field>
         <field name="PIN_RR">5</field>
         <field name="PIN_Buzzer">13</field>
-        <comment pinned="true" h="685" w="478">To calibrate Otto, you will first need to upload this code to Otto. Once the uploading is complete, unplug the USB connection to Otto.
-
-Servo Calibration GUI
-You will now need to run the Servo Calibration software from ottodiy.com. Make sure that the USB is unplugged. Depending on your Windows platform, you will need to run either the 32- or 64- bit executable file contained in its relevant folder. Please leave the file in its folder - the program will not run if it does not have access to the data files.
-
-On start up you should see a red cross by the USB label at the top of the interface. Plug the USB into Otto and the red cross should turn into a green tick when the program has recognized that the USB connection has been made (this might take a second or two). If you forgot to unplug the USB, you will need to close the program, unplug the USB and start the program again. Then plug in the USB. You can now calibrate the servo positions so the the legs and feet are correctly aligned. The slider allows for large changes in the angle and the +/- buttons much finer control on the position of each servo.
-
-When the servos on Otto are correctly aligned, click on 'Walk Test' to see how Otto moves. If further fine adjustments are required, they should be done now and the walk test repeated. Be careful that the USB cable does not interfere with Otto's movement.
-
-When you are happy that everything is aligned, click 'Save'. A tick and properly aligned Otto will appear on the interface. Your Otto will produce a happy sound (if you have connected the buzzer) and dance.
-
-CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions have been saved to Otto and will not need to be calibrated again unless you change the Nano or any of the servos.
+        <comment pinned="false" h="207.5694580078125" w="658.0411376953125">1. Upload this code to your robot, wait until is successful
+2. Unplug the USB connection and close Otto Blockly.
+3. Download, Unzip and Run the calibration app
+4. Plug the USB again into Otto (the red cross will turn into a green tick)
+5. Now adjust the servo positions so the the legs and feet are correctly aligned in the robot on your table.
+6. When the servos on Otto are correctly aligned, click on 'Walk Test' to see how Otto moves.  If does not wlak straight, iterate step 5
+7. Once you are happy with the calibration, click 'Save'.
         </comment>
         <next>
-          <block type="variables_set" id="Uw!O)#L088CsER?K_]:|">
-            <field name="VAR">v</field>
+          <block type="variables_set_init" id="*J~l_HMy$uV_#IKsFSvz">
+            <field name="VAR">i</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
             <value name="VALUE">
-              <block type="math_number" id=",ugJE@jJV~cZ1MlRy`^~">
+              <block type="math_number" id="QW5Hlaua,i!^3-Qx`!Ow">
                 <field name="NUM">0</field>
               </block>
             </value>
             <next>
-              <block type="serial_init" id="7VfS5EcA6t[KNj[-EO:H">
-                <field name="PINBAUDIOS">9600</field>
+              <block type="variables_set_init" id="?!(r7d9:+}gKl~G#q|=#">
+                <field name="VAR">v</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="P%lv*.u}CYAVI4q#r[ks">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Uw!O)#L088CsER?K_]:|">
+                    <field name="VAR">v</field>
+                    <value name="VALUE">
+                      <block type="math_number" id=",ugJE@jJV~cZ1MlRy`^~">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_init" id="7VfS5EcA6t[KNj[-EO:H">
+                        <field name="PINBAUDIOS">9600</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -324,7 +335,7 @@ CONGRATULATIONS!! You have successfully calibrated Otto's servos. The positions 
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="2RQ1}L0X]Ed3H+6#sv?c" x="-223" y="-114">
+  <block type="procedures_defnoreturn" id="2RQ1}L0X]Ed3H+6#sv?c" x="-236" y="-50">
     <field name="NAME">setTrims</field>
     <statement name="STACK">
       <block type="otto_calibration" id="xNxLOK=Zxn$n^$,bb}CJ">

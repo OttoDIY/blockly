@@ -1,6 +1,17 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="|yz+SFabn|CzO$@L2+k(" x="-1019" y="8">
+    <statement name="DO">
+      <block type="variables_set_init" id="Oihd`.P_@gL-|+/Y^uv*">
+        <field name="VAR">i</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="#w..P:?k/IEenA1S$9Wg">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
     <statement name="LOOP">
       <block type="controls_for" id="WsbJe|11*w7sh/V-t9L}">
         <field name="VAR">i</field>
@@ -21,11 +32,7 @@
         </value>
         <statement name="DO">
           <block type="servo_move" id="?NAyTYIs9|]W_=1G#6J1">
-            <value name="PIN">
-              <shadow type="analog_pin" id="DGkQVB+6Y)4s6n%F1e]9">
-                <field name="NUM">2</field>
-              </shadow>
-            </value>
+            <field name="PIN">2</field>
             <value name="DEGREE">
               <shadow type="inout_angle_maths" id="`+6AZH+;aV#96`]DAS,Y">
                 <field name="ANGLE">90</field>

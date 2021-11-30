@@ -1,6 +1,72 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="#@+@sgW^nfuTs5A:3Y/p" x="723" y="-230">
+    <statement name="DO">
+      <block type="variables_set_init" id="3*k1~ltDF!(EYrd*R^*G">
+        <field name="VAR">Cabeza LH</field>
+        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="l}%lt$t[gx6+~L?/n3Vr">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set_init" id="PgFgZ{LnR_Axnt=qK[fv">
+            <field name="VAR">Cabeza RH</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="Qwn(A7_z8|R#$.4]+x,)">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id=".;YR9AcYW#_Eb}P5oaC*">
+                <field name="VAR">Centro</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="Kpx$6fPKy]@LpqenT@ah">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="U!6Bk_}(A[lh5g0eAA-~">
+                    <field name="VAR">Mov Cabeza</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="8U1bqxSkd5y#|h%0tA;Y">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set_init" id="*kgl|xm^Pl]Fts7PAh,h">
+                        <field name="VAR">Pausa</field>
+                        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="ieE|fuEpHwewN{DZF~Wx">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set_init" id="iN}DMiBUJdmy-?7SK`f.">
+                            <field name="VAR">Velocidad</field>
+                            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="f](-7KZUq)suJ0n7Dex$">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
     <statement name="LOOP">
       <block type="variables_set" id="aaN0zR!hoQz!=G:v.-@|">
         <field name="VAR">Velocidad</field>
@@ -80,11 +146,7 @@
                                     </value>
                                     <statement name="DO">
                                       <block type="servo_move" id="3+@Ol(Yi}^/{hEW?00gA">
-                                        <value name="PIN">
-                                          <shadow type="math_number" id="emz=LLOnzC?=XUtgp$lG">
-                                            <field name="NUM">10</field>
-                                          </shadow>
-                                        </value>
+                                        <field name="PIN">2</field>
                                         <value name="DEGREE">
                                           <shadow type="inout_angle_maths" id="bGCx=M?%q6Gsx$pY8{-h">
                                             <field name="ANGLE">90</field>
@@ -167,11 +229,7 @@
                                             </value>
                                             <statement name="DO">
                                               <block type="servo_move" id="*P2hr3!|U1}]nu/s[B.p">
-                                                <value name="PIN">
-                                                  <shadow type="math_number" id="z6W/Ca[eLG^NTEHaQn},">
-                                                    <field name="NUM">10</field>
-                                                  </shadow>
-                                                </value>
+                                                <field name="PIN">2</field>
                                                 <value name="DEGREE">
                                                   <shadow type="inout_angle_maths" id="yU.#^vueGG@6qi,wy)L3">
                                                     <field name="ANGLE">90</field>
@@ -254,11 +312,7 @@
                                                     </value>
                                                     <statement name="DO">
                                                       <block type="servo_move" id="pLQvvfUvZ(8!ez3M5AK:">
-                                                        <value name="PIN">
-                                                          <shadow type="math_number" id="/L@=t:(y({WY@4wUS%8}">
-                                                            <field name="NUM">10</field>
-                                                          </shadow>
-                                                        </value>
+                                                        <field name="PIN">2</field>
                                                         <value name="DEGREE">
                                                           <shadow type="inout_angle_maths" id="bGCx=M?%q6Gsx$pY8{-h">
                                                             <field name="ANGLE">90</field>
@@ -341,11 +395,7 @@
                                                             </value>
                                                             <statement name="DO">
                                                               <block type="servo_move" id="Eixh/FK}0J@4_edX@z:[">
-                                                                <value name="PIN">
-                                                                  <shadow type="math_number" id="40v3823I;qfe*4i3C[32">
-                                                                    <field name="NUM">10</field>
-                                                                  </shadow>
-                                                                </value>
+                                                                <field name="PIN">2</field>
                                                                 <value name="DEGREE">
                                                                   <shadow type="inout_angle_maths" id="yU.#^vueGG@6qi,wy)L3">
                                                                     <field name="ANGLE">90</field>

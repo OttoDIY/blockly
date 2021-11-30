@@ -2,7 +2,30 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="6m)}P#^08@;u~e2|;+f9" x="-8" y="-39">
     <statement name="DO">
-      <block type="otto9_eyes_init" id=")~yNWF626!ba1{+d$ua+"></block>
+      <block type="otto9_eyes_init" id=")~yNWF626!ba1{+d$ua+">
+        <next>
+          <block type="variables_set_init" id="-$lc9?s`e/$no{V%zb)#">
+            <field name="VAR">X</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="KKo-_La|TvrV+rz{2Y0M">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id="eZm9*lNYhCo1y$q@#{$5">
+                <field name="VAR">Y</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id=":v^~juY!%nQ{%lXQk/Kp">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
     </statement>
     <statement name="LOOP">
       <block type="controls_if" id="V$mZH2kd?An|[Hs9Vt[W">

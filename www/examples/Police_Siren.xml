@@ -2,17 +2,24 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="6zxeilHZv!r=xr!|jx*S" x="-1257" y="-672">
     <statement name="DO">
-      <block type="pixel_init" id="seBB+^B*uGx5qsfrtX~Q">
-        <value name="pin">
-          <shadow type="analog_pin" id="MhnpDTAneu}m,$9,UH3~">
-            <field name="NUM">10</field>
-          </shadow>
+      <block type="variables_set_init" id="#.ruBW%nlwvD$-2il#Qu">
+        <field name="VAR">i</field>
+        <field name="VARIABLE_SETTYPE_TYPE">CHARACTER</field>
+        <value name="VALUE">
+          <block type="math_number" id="m0hpd1aHMZ$PN{jqMFI7">
+            <field name="NUM">0</field>
+          </block>
         </value>
-        <value name="num">
-          <shadow type="analog_pin" id="JG2lV(@EE=`~K/o6W_OB">
-            <field name="NUM">6</field>
-          </shadow>
-        </value>
+        <next>
+          <block type="pixel_init" id="seBB+^B*uGx5qsfrtX~Q">
+            <field name="pin">2</field>
+            <value name="num">
+              <shadow type="analog_pin" id="JG2lV(@EE=`~K/o6W_OB">
+                <field name="NUM">6</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
       </block>
     </statement>
     <statement name="LOOP">
