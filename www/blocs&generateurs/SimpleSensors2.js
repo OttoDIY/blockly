@@ -1240,3 +1240,64 @@ Blockly.Arduino['joystick_button_sensor2'] = function(block) {
 
 
 
+Blockly.Blocks['SoundAmp_sensor2'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/sensor_noise.png",33,33))
+	    .appendField(Blockly.Msg.SOUND_AMP_NAME)
+        .appendField(Blockly.Msg.PIN)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_SOUND")
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
+	this.appendValueInput("SAMPLE_WINDOW", "Number")
+		.setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)
+		.appendField(Blockly.Msg.SOUND_WINDOWS);	
+	this.setOutput(true, 'Number');
+	this.setInputsInline(true);
+    this.setTooltip('Analog mic amplifier sensor.Value peak to peak');
+  }
+};
+
+Blockly.Arduino['SoundAmp_sensor2'] = function(block) {
+	var PinSound = block.getFieldValue('PIN_SOUND');
+    var Status = this.getFieldValue('OUTPUT_VALUE');
+	var SampleWindow=Blockly.Arduino.valueToCode(block, "SAMPLE_WINDOW", Blockly.Arduino.ORDER_ATOMIC);
+	var code;
+	
+   Blockly.Arduino.definitions_['measure_peakToPeak'] = 'int measureVolume() {\n'+      
+   'unsigned long startMillis= millis();  // Start of sample window \n'+
+   'unsigned int peakToPeak = 0;   // peak-to-peak level\n'+
+   'int sample;\n'+
+   'unsigned int signalMax = 0;\n'+
+   'unsigned int signalMin = 1024;\n'+
+   ' // collect data for SampleWindow mS\n'+
+   'while (millis() - startMillis < '+SampleWindow+')\n'+
+   '{\n'+
+    '  sample = analogRead('+PinSound+');\n'+
+     ' if (sample < 1024)  // toss out spurious readings\n'+
+     ' {\n'+
+     '    if (sample > signalMax)\n'+
+     '    {\n'+
+      '      signalMax = sample;  // save just the max levels\n'+
+     '    }\n'+
+      '   else if (sample < signalMin)\n'+
+     '    {\n'+
+      '      signalMin = sample;  // save just the min levels\n'+
+      '   }\n'+
+     ' }\n'+
+  ' }\n'+
+  ' peakToPeak = signalMax - signalMin;  // max - min = peak-peak amplitude\n'+
+  ' return peakToPeak;\n'+
+ '}\n';
+ 
+    if(Status=='0')
+      var code = 'map(measureVolume(),0,1023,0,100)';
+    else
+      var code = 'measureVolume()';
+   
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
