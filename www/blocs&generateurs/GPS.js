@@ -36,9 +36,9 @@ Blockly.Arduino['GPS_init_ss'] = function(block) {
  var pin_tx = this.getFieldValue('PIN_TX');
   
  Blockly.Arduino.includes_['define_softwareserial_library'] = '#include <SoftwareSerial.h>';
- Blockly.Arduino.includes_['define_gps_library'] = '#include <TinyGPS.h>';
- Blockly.Arduino.definitions_['define_GPS_variable'] = 'TinyGPS gps;\n';
- Blockly.Arduino.definitions_['define_softwareserial_gps'] = 'SoftwareSerial mySoftwareSerialgps('+pin_rx+','+pin_tx+');\n';
+ Blockly.Arduino.includes_['define_gps_library'] = '#include <TinyGPSPlus.h>';
+ Blockly.Arduino.definitions_['define_GPS_variable'] = 'TinyGPSPlus gps;\n';
+ Blockly.Arduino.definitions_['define_softwareserial_gps'] = 'SoftwareSerial mySoftwareSerialgps('+pin_tx+','+pin_rx+');\n';
  Blockly.Arduino.definitions_['gps_variables'] ='float flat,flon,falt,fc,fk,fmph,fmps,fkmph;\n'+
 'int year;\n'+ 
 'byte month, day, hour, minutes, second, hundredths,nsat;\n'+ 
@@ -69,20 +69,46 @@ Blockly.Blocks['GPS_read_save_values'] = {
 
 Blockly.Arduino['GPS_read_save_values'] = function(block) {
  		
- var code = 'while (mySoftwareSerialgps.available())\n'+
+ var code = 'while (mySoftwareSerialgps.available()>0)\n'+
 ' {\n'+ 
-'  int c = mySoftwareSerialgps.read();\n'+ 
-'  if (gps.encode(c)) \n'+
+'  if (gps.encode(mySoftwareSerialgps.read())) \n'+
 '   {\n'+
-'     gps.f_get_position(&flat, &flon, &fix_age);\n'+
-'     falt = gps.f_altitude(); // +/- altitude in meters \n'+
-'     fc = gps.f_course(); // course in degrees \n'+
-'     fk = gps.f_speed_knots(); // speed in knots \n'+
-'     fmph = gps.f_speed_mph(); // speed in miles/hr \n'+
-'     fmps = gps.f_speed_mps(); // speed in m/sec \n'+
-'     fkmph = gps.f_speed_kmph(); // speed in km/hr \n'+
-'     gps.crack_datetime(&year, &month, &day,&hour, &minutes, &second, &hundredths, &fix_age);\n'+
-'     nsat=gps.satellites();\n'+
+'	  if (gps.location.isValid()) \n'+
+'		{	\n'+
+'		  flat= gps.location.lat();\n'+
+'		  flon =gps.location.lng();\n'+
+'       }\n'+
+'	  if (gps.altitude.isValid()) \n'+
+'		{	\n'+
+'		  falt= gps.altitude.meters();\n'+
+'       }\n'+
+'	  if (gps.course.isValid()) \n'+
+'		{	\n'+
+'		  fc= gps.course.deg();\n'+
+'       }\n'+
+'	  if (gps.satellites.isValid()) \n'+
+'		{	\n'+
+'		  nsat=gps.satellites.value();\n'+
+'       }\n'+
+'	  if (gps.speed.isValid()) \n'+
+'		{	\n'+
+'		  fk=gps.speed.knots();\n'+
+'		  fmph=gps.speed.mph();\n'+
+'		  fmps= gps.speed.mps();\n'+
+'		  fkmph =gps.speed.kmph();\n'+
+'       }\n'+
+'	  if (gps.date.isValid()) \n'+
+'		{	\n'+
+'		  year=gps.date.year();\n'+
+'		  month=gps.date.month();\n'+
+'		  day=gps.date.day();\n'+
+'       }\n'+
+'	  if (gps.time.isValid()) \n'+
+'		{	\n'+
+'		  hour=gps.time.hour();\n'+
+'		  minutes=gps.time.minute();\n'+
+'		  second=gps.time.second();\n'+
+'       }\n'+
 '   }\n'+
 '  }\n';
 
