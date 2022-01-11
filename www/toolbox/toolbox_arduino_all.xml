@@ -10,7 +10,6 @@
 		<block type="base_code_entree"></block>
 		<!--<block type="base_define"></block> -->
 	</category>
-	
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
 			<field name="PIN_YL">2</field>
@@ -24,7 +23,7 @@
 		<block type="otto_dance"></block>
 		<block type="otto_do"></block>
 		<block type="otto_sound"></block>
-				<!--	<block type="otto_tone"></block>
+			<!--	<block type="otto_tone"></block>
 			<block type="otto_tonehz">
 				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
@@ -36,10 +35,10 @@
 				<value name="prop"><shadow type="math_number"><field name="NUM">1.02</field></shadow></value>
 				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
 				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+						<block type="otto9_smooth"></block>
 			</block> -->
 		<block type="otto_gesture"></block>
-				<block type="otto9_app"></block>
-		<block type="otto9_smooth"></block>
+		<block type="otto9_app"></block>
 		<block type="otto_movelegs">
 			<value name="PIN_YL"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 			<value name="PIN_YR"><shadow type="inout_angle_maths">	<field name="NUM">90</field>	</shadow></value>
@@ -51,14 +50,14 @@
 			<value name="Period"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
 			<value name="Pos"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
 		</block>
-				<block type="otto_calibration">
+		<block type="otto_calibration">
 			<value name="LL"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RL"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="LF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 		</block>
-
 		<block type="otto_eeprom"></block>
+
 		<category name="CAT_OTTO_ARMS" colour="#32D900">
 		<block type="otto_arms_init">
 			<field name="PIN_AL">6</field>
@@ -66,8 +65,8 @@
 			</block>
 		<block type="otto_arms_home"></block>
 		<block type="otto_arms"></block>
+		</category>
 
-	</category>
 	<category name="CAT_OTTO_WHEELS" colour="#2d2dd1">
 	<block type="servo_2wheels_init">
 	<field name="PINL">2</field>
@@ -83,8 +82,29 @@
 		</block>
 		</category>
 <category name="CAT_OTTO_NINJA" colour="#0A0A0A">
-<block type="otto_ninja_init"></block>
+<block type="otto_ninja_init">			
+	<field name="PIN_YL">A1</field>
+	<field name="PIN_YR">6</field>
+	<field name="PIN_RL">A0</field>
+	<field name="PIN_RR">7</field>
+	<field name="PIN_LA">2</field>
+	<field name="PIN_RA">3</field>
+	<field name="PIN_H">10</field>
+</block>
+</block>
 <block type="otto_ninja_home"></block>
+<block type="otto_ninja_calibration">
+			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="LATL"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
+			<value name="RATL"><shadow type="math_number">	<field name="NUM">180</field>	</shadow></value>
+			<value name="LATR"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
+			<value name="RATR"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
+</block>
 <block type="otto_ninja_walk"></block>
 <block type="otto_ninja_roll"></block>
 <block type="otto_ninja_setwalk"></block>
@@ -109,6 +129,26 @@
 	<block type="otto_quad_jump"></block>
 	<block type="otto_quad_scared"></block>
 </category>
+	<category name="CAT_ESCORNABOT" colour="#C39BD3">
+			<block type="escornabot_init"></block>
+			<block type="escornabot_spin"></block>
+			<block type="escornabot_distance"></block>
+			<block type="escornabot_turnspin"></block>
+			<block type="escornabot_turnangle"></block>
+			<block type="escornabot_stop"></block>
+			<block type="escornabot_beep"></block>
+			<block type="escornabot_ledon"></block>
+			<block type="escornabot_ledoff"></block>
+			<block type="escornabot_getbutton"></block>
+			<block type="escornabot_us_init"></block>
+			<block type="escornabot_getus"></block>
+			<block type="escornabot_ir_init"></block>
+			<block type="escornabot_blackLeft"></block>
+			<block type="escornabot_blackRight"></block>
+			<block type="escornabot_whiteLeft"></block>
+			<block type="escornabot_whiteRight"></block>
+			<block type="escornabot_app"></block>
+	</category>
 	</category>
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		

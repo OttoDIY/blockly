@@ -106,8 +106,7 @@ Blockly.Blocks['otto_eeprom'] = {init: function() {
 };
 
 Blockly.Arduino['otto_eeprom'] = function(block) {
-  Blockly.Arduino.setups_['otto_eeprom']='Otto.saveTrimsOnEEPROM();';
-  var code = '';
+  var code = 'Otto.saveTrimsOnEEPROM();\n';
   return code;
 };
 

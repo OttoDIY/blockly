@@ -356,19 +356,22 @@ return code;
 
 Blockly.Blocks['otto_ninja_init'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
-	this.appendDummyInput()
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT)
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
-	this.appendDummyInput()
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL")
 	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
-	this.appendDummyInput()
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR")
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
-	this.appendDummyInput()
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL")
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+  this.appendDummyInput()
+	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LA")
+	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RA")
+	.appendField('Head').setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_H");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -382,32 +385,98 @@ Blockly.Arduino['otto_ninja_init'] = function(block) {
   var PIN_YR= block.getFieldValue('PIN_YR');
   var PIN_RL= block.getFieldValue('PIN_RL');
   var PIN_RR= block.getFieldValue('PIN_RR');
+  var PIN_LA= block.getFieldValue('PIN_LA');
+  var PIN_RA= block.getFieldValue('PIN_RA');
+  var PIN_H= block.getFieldValue('PIN_H');
 	
   Blockly.Arduino.includes_['otto_lib'] = '#include <Servo.h>\n';
 
-  Blockly.Arduino.definitions_['otto_legs'] = 'int ServoLeftAnklePin   ='+ PIN_YL +'; // D6\n'
- 	  + 'int ServoRightAnklePin  ='+ PIN_YR +' ;// D4\n'
-	  + 'int ServoLeftFootPin   = '+ PIN_RL +'; // D7\n'
-    + 'int ServoRightFootPin = '+ PIN_RR +'; //D3\n'
+  Blockly.Arduino.definitions_['otto_legs'] = 
+      'const uint8_t ServoLeftLegPin ='+ PIN_YL +'; // D6 \n'
+ 	  + 'const uint8_t ServoRightLegPin='+ PIN_YR +'; // D4 \n'
+	  + 'const uint8_t ServoLeftFootPin  ='+ PIN_RL +'; // D7 \n'
+    + 'const uint8_t ServoRightFootPin ='+ PIN_RR +'; // D3 \n'
+    + 'const uint8_t ServoLeftArmPin ='+ PIN_LA +'; // D0 \n'
+    + 'const uint8_t ServoRightArmPin ='+ PIN_RA +'; // RX \n'
+    + 'const uint8_t ServoHeadPin   ='+ PIN_H +'; // TX \n'
+    + 'Servo myservoLeftLeg;\n'
     + 'Servo myservoLeftFoot;\n'
-    + 'Servo myservoLeftAnkle;\n'
     + 'Servo myservoRightFoot;\n'
-    + 'Servo myservoRightAnkle;\n'
-    + 'int LFFWRS= 20; // Left foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
-    + 'int RFFWRS= 20; // Right foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
-    + 'int LFBWRS= 20; // Left foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
-    + 'int RFBWRS= 20; // Right foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
-    + 'int LA0= 60; // Left Ankle standing Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 60\n'
-    + 'int RA0= 120;// Right Ankle standing position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 120 \n'
-    + 'int LA1= 180; // Left Ankle roll Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 170\n'
-    + 'int RA1= 0;  // Right Ankle roll position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 10\n'
-    + 'int LATL= 90;  // Left Ankle tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 90  \n'
-    + 'int RATL= 180;  // Right Ankle tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 180   \n'
-    + 'int LATR= 0;  // Left Ankle tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 0   \n'
-    + 'int RATR= 90;  // Right Ankle tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 90  \n'; 
+    + 'Servo myservoRightLeg;\n'
+    + 'Servo myservoLeftArm;\n'
+    + 'Servo myservoRightArm;\n'
+    + 'Servo myservoHead;\n'
+    ; 
   var code = '';
   return code;
 };
+
+Blockly.Blocks['otto_ninja_calibration']={init:function(){
+
+  this.appendValueInput("LA0") .setCheck("Number").appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_CALIBRATION_LEG + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("RA0") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("LATL") .setCheck("Number").appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("RATL") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("LATR") .setCheck("Number").appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("RATR") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#0A0A0A");
+    this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
+  };
+  
+  Blockly.Arduino['otto_ninja_calibration']=function(block){
+  var valuela= Blockly.Arduino.valueToCode(block, 'LA0', Blockly.Arduino.ORDER_ATOMIC);
+  var valuera= Blockly.Arduino.valueToCode(block, 'RA0', Blockly.Arduino.ORDER_ATOMIC);
+  var valuerlatl= Blockly.Arduino.valueToCode(block, 'LATL', Blockly.Arduino.ORDER_ATOMIC);
+  var valuerratl= Blockly.Arduino.valueToCode(block, 'RATL', Blockly.Arduino.ORDER_ATOMIC);
+  var valuerlatr= Blockly.Arduino.valueToCode(block, 'LATR', Blockly.Arduino.ORDER_ATOMIC);
+  var valuerratr= Blockly.Arduino.valueToCode(block, 'RATR', Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.definitions_['ninja_calibration'] = 
+ 'int LA0= 60 +'+ valuela +'; // Left Leg standing Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 60\n'
+     + 'int RA0= 120 +'+ valuera +';// Right Leg standing position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 120 \n'
+     + 'int LA1= 180; // Left Leg roll Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 170\n'
+     + 'int RA1= 0;  // Right Leg roll position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 10\n'
+     + 'int LATL= LA0 +'+ valuerlatl +';  // Left Leg tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 90  \n'
+     + 'int RATL= RA0 +'+ valuerratl +';  // Right Leg tilt left walking position,0 = Full Tilt Right   180 = Full Tilt Left    Default = 180   \n'
+     + 'int LATR= LA0 -'+ valuerlatr +';  // Left Leg tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 0   \n'
+     + 'int RATR= RA0 -'+ valuerratr +';  // Right Leg tilt right walking position,0 = Full Tilt Right   180 = Full Tilt Left     Default = 90  \n'
+      ;
+      var code = '';
+      return code;
+  };
+
+  Blockly.Blocks['otto_ninja_speed']={init:function(){
+
+    this.appendValueInput("LFFWRS") .setCheck("Number") .appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_MOVE_SPEED_TEXT+" "+ Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("RFFWRS") .setCheck("Number").appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("LFBWRS") .setCheck("Number").appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("RFBWRS") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+      this.setInputsInline(true);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour("#0A0A0A");
+      this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+      this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
+    };
+    
+    Blockly.Arduino['otto_ninja_speed']=function(block){
+    var valuellf= Blockly.Arduino.valueToCode(block, 'LFFWRS', Blockly.Arduino.ORDER_ATOMIC);
+    var valuerff= Blockly.Arduino.valueToCode(block, 'RFFWRS', Blockly.Arduino.ORDER_ATOMIC);
+    var valuelfb= Blockly.Arduino.valueToCode(block, 'LFBWRS', Blockly.Arduino.ORDER_ATOMIC);
+    var valuerfb= Blockly.Arduino.valueToCode(block, 'RFBWRS', Blockly.Arduino.ORDER_ATOMIC);
+      Blockly.Arduino.definitions_['otto_ninja_speed'] = 
+         'int LFFWRS='+ valuellf +'; // Left foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+       + 'int RFFWRS='+ valuerff +' ; // Right foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+       + 'int LFBWRS= '+ valuelfb +'; // Left foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+       + 'int RFBWRS= '+ valuerfb +'; // Right foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
+        ;
+        var code = '';
+        return code;
+    };
+
 
 Blockly.Blocks['otto_ninja_home'] = {init: function() {
   this.appendDummyInput("") .appendField("🐱‍👤 " + Blockly.Msg.OTTO9_HOME_TEXT);
@@ -421,9 +490,9 @@ Blockly.Blocks['otto_ninja_home'] = {init: function() {
 
 Blockly.Arduino['otto_ninja_home'] = function(block) {
   Blockly.Arduino.definitions_['ninja_home'] =   'void NinjaHome()\n'
-  +'{ myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);myservoRightFoot.attach(ServoRightFootPin, 544, 2400);   myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400); myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);  myservoLeftFoot.write(90); myservoRightFoot.write(90);   myservoLeftAnkle.write(60); myservoRightAnkle.write(120); \n'
+  +'{ myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);myservoRightFoot.attach(ServoRightFootPin, 544, 2400);   myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400); myservoRightLeg.attach(ServoRightLegPin, 544, 2400);  myservoLeftFoot.write(90); myservoRightFoot.write(90);   myservoLeftLeg.write(60); myservoRightLeg.write(120); \n'
   +' delay(500);\n'
-  +' myservoLeftFoot.detach();myservoRightFoot.detach();   myservoLeftAnkle.detach();myservoRightAnkle.detach();}';
+  +' myservoLeftFoot.detach();myservoRightFoot.detach();   myservoLeftLeg.detach();myservoRightLeg.detach();}';
 var code = 'NinjaHome();\n';
 return code;
 };
@@ -439,10 +508,16 @@ Blockly.Blocks['otto_ninja_setwalk']={init:function(){
 };
 
 Blockly.Arduino['otto_ninja_setwalk'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_setwalk'] =   'void NinjaSetWalk()\n'
-  +' { myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);  myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);   myservoLeftAnkle.write(LA0);myservoRightAnkle.write(RA0); \n'
-  +' delay(300);\n'
-  +' myservoLeftAnkle.detach(); myservoRightAnkle.detach();}';
+  Blockly.Arduino.definitions_['ninja_setwalk'] =   
+  'void NinjaSetWalk()\n'
+  +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);   myservoRightArm.write(90);  \n'
+  +' delay(200);\n'
+  +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LA0); myservoRightLeg.write(RA0); \n'
+  +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
+  +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+  +' myservoLeftArm.write(180);myservoRightArm.write(0); \n'
+  +' myservoLeftArm.detach();myservoRightArm.detach();}  \n'
+  ;
 var code = 'NinjaSetWalk();\n';
 return code;
 };
@@ -458,10 +533,16 @@ Blockly.Blocks['otto_ninja_setroll']={init:function(){
 };
 
 Blockly.Arduino['otto_ninja_setroll'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_setroll'] =   'void NinjaSetRoll()\n'
-  +' { myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400); myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400); myservoLeftAnkle.write(LA1);  myservoRightAnkle.write(RA1);  \n'
+  Blockly.Arduino.definitions_['ninja_setroll'] =   
+  'void NinjaSetRoll()\n'
+  +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);myservoRightArm.write(90); \n'
+  +' delay(200);\n'
+  +' myservoLeftArm.detach();myservoRightArm.detach();myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
   +' delay(300);\n'
-  +' myservoLeftAnkle.detach(); myservoRightAnkle.detach();}';
+  +' myservoLeftLeg.detach();myservoRightLeg.detach();myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+  +' myservoLeftArm.write(180);myservoRightArm.write(0);\n'
+  +' myservoLeftArm.detach();myservoRightArm.detach();}\n'
+  ;
 var code = 'NinjaSetRoll();\n';
 return code;
 };
@@ -476,11 +557,13 @@ Blockly.Blocks['otto_ninja_walkstop']={init:function(){
 };
 
 Blockly.Arduino['otto_ninja_walkstop'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_walkstop'] =   'void NinjaWalkStop()\n'
+  Blockly.Arduino.definitions_['ninja_walkstop'] =   
+  'void NinjaWalkStop()\n'
   + '{myservoLeftFoot.write(90);\n'
   +' myservoRightFoot.write(90); \n'
-  +' myservoLeftAnkle.write(LA0); \n'
-  +' myservoRightAnkle.write(RA0);}';
+  +' myservoLeftLeg.write(LA0); \n'
+  +' myservoRightLeg.write(RA0);}\n'
+  ;
 var code = 'NinjaWalkStop();\n';
 return code;
 };
@@ -495,11 +578,13 @@ Blockly.Blocks['otto_ninja_rollstop']={init:function(){
 };
 
 Blockly.Arduino['otto_ninja_rollstop'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_rollstop'] =   'void NinjaRollStop()\n'
-  + '{myservoLeftFoot.write(90);\n'
-  +' myservoRightFoot.write(90); \n'
-  +' myservoLeftFoot.detach(); \n'
-  +' myservoRightFoot.detach();}  ';
+  Blockly.Arduino.definitions_['ninja_rollstop'] =   
+  'void NinjaRollStop()\n'
+  +'{myservoLeftFoot.write(90);\n'
+  +'myservoRightFoot.write(90); \n'
+  +'myservoLeftFoot.detach(); \n'
+  +'myservoRightFoot.detach();} \n'
+  ;
 var code = 'NinjaRollStop();\n';
 return code;
 };
@@ -508,8 +593,6 @@ Blockly.Blocks['otto_ninja_walk']={init:function(){
   this.appendDummyInput()
       .appendField("🐱‍👤Walk")
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Walk")
-      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
-      .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE), "Speed");
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -519,43 +602,42 @@ Blockly.Blocks['otto_ninja_walk']={init:function(){
 
 Blockly.Arduino['otto_ninja_walk'] = function(block) {
   var Walk = block.getFieldValue('Walk');
-  var Speed = block.getFieldValue('Speed');
   Blockly.Arduino.definitions_['ninja_walk'] =   'void NinjaWalkForward()\n'
-  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  + '{myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LATR); myservoRightLeg.write(RATR);\n'
   +' delay(300);\n'
   +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
   +' delay(300);\n'
-  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL); \n'
   +' delay(300);\n'
   +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
   +' delay(300);\n'
   +' myservoLeftFoot.detach();} \n'
   + 'void NinjaWalkBackward()\n'
-  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  + '{myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LATR); myservoRightLeg.write(RATR);\n'
   +' delay(300);\n'
   +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90+RFFWRS); \n'
   +' delay(300);\n'
-  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL); \n'
   +' delay(300);\n'
   +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90-LFFWRS);  \n'
   +' delay(300);\n'
   +' myservoLeftFoot.detach();} \n'
   + 'void NinjaWalkLeft()\n'
-  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  + '{myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LATR); myservoRightLeg.write(RATR);\n'
   +' delay(300);\n'
   +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
   +' delay(100);\n'
-  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL); \n'
   +' delay(300);\n'
   +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
   +' delay(500);\n'
   +' myservoLeftFoot.detach();} \n'
   + 'void NinjaWalkRight()\n'
-  + '{myservoLeftAnkle.attach(ServoLeftAnklePin, 544, 2400);myservoRightAnkle.attach(ServoRightAnklePin, 544, 2400);myservoLeftAnkle.write(LATR); myservoRightAnkle.write(RATR);\n'
+  + '{myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LATR); myservoRightLeg.write(RATR);\n'
   +' delay(300);\n'
   +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  myservoRightFoot.write(90-RFFWRS); \n'
   +' delay(500);\n'
-  +' myservoRightFoot.detach();myservoLeftAnkle.write(LATL); myservoRightAnkle.write(RATL); \n'
+  +' myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL); \n'
   +' delay(300);\n'
   +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400); myservoLeftFoot.write(90+LFFWRS);  \n'
   +' delay(100);\n'
@@ -582,8 +664,6 @@ Blockly.Blocks['otto_ninja_roll']={init:function(){
   this.appendDummyInput()
       .appendField("🐱‍👤 Roll")
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Roll")
-      .appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT)
-      .appendField(new Blockly.FieldDropdown([["slow", "S"], ["normal", "N"], ["fast", "F"]]), "Speed");
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -593,7 +673,6 @@ Blockly.Blocks['otto_ninja_roll']={init:function(){
 
 Blockly.Arduino['otto_ninja_roll'] = function(block) {
   var Roll = block.getFieldValue('Roll');
-  var Speed = block.getFieldValue('Speed');
   Blockly.Arduino.definitions_['ninja_roll'] =   'void NinjaRollForward()\n'
   + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
   +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
@@ -632,9 +711,210 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
   return code;
   };
 
+  Blockly.Blocks['otto_ninja_wifi'] = {
+    init: function() {
+    this.setColour("#0A0A0A");
+    this.appendDummyInput()
+     .appendField(new Blockly.FieldImage("media/wifi.png",22,22)) 
+     .appendField(Blockly.Msg.WIFI_ssid)
+     .appendField(new Blockly.FieldTextInput("MyOttoNinja"), "SSID").setAlign(Blockly.ALIGN_RIGHT);	
+     this.appendDummyInput().appendField(Blockly.Msg.WIFI_password)
+     .appendField(new Blockly.FieldTextInput("12345678"), "PASSWORD").setAlign(Blockly.ALIGN_RIGHT);			
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init Wifi for Otto Ninja App');
+    this.setHelpUrl(''); 
+   }
+  };
+  
+  Blockly.Arduino['otto_ninja_wifi'] = function(block) {
+    var ssid = block.getFieldValue('SSID');  
+    var wifipassword = block.getFieldValue('PASSWORD');  
+  
+   Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+   Blockly.Arduino.definitions_['define_wifi_ninja'] = 
+   '#define REMOTEXY_WIFI_SSID "'+ssid+'"\n'+
+   '#define REMOTEXY_WIFI_PASSWORD "'+wifipassword+'"\n';
+   var code = '';
+    return code;
+  };
+
+  Blockly.Blocks['otto_ninja_app'] = {init: function() {
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/wifi.png', 22, 22, "*"))   .appendField('🐱‍👤 WiFi App code');
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#18191A");
+    this.setTooltip('Use alone with wifi, pins and calibration blocks');
+    this.setHelpUrl('https://www.ottodiy.com/ninja');
+  }
+  };
+  Blockly.Arduino['otto_ninja_app'] = function(block) {
+    Blockly.Arduino.includes_['otto_ninja_app'] = 
+     '#define REMOTEXY_MODE__ESP8266WIFI_LIB_POINT\n'
+    +'#include <RemoteXY.h>\n'
+    +'#include <SPI.h>\n'
+    +'#include <Wire.h>\n'
+    +'#include <Adafruit_GFX.h>\n'
+    +'#include "Adafruit_LEDBackpack.h"\n'
+    +'#define REMOTEXY_SERVER_PORT 6377 \n'
+    +'#pragma pack(push, 1) \n'
+    +'uint8_t RemoteXY_CONF[] ={ 255,6,0,0,0,66,0,13,8,0,5,32,3,12,41,41,1,26,31,1,3,79,16,16,12,1,31,82,240,159,166,190,0,1,3,56,39,18,12,1,31,240,159,146,191,0,1,3,79,39,17,12,1,31,240,159,166,191,0,1,3,56,16,17,12,1,31,76,240,159,166,190,0 }; \n'
+    +'struct {\n'
+    +'int8_t J_x; // =-100..100 x-coordinate joystick position  \n'
+    +'int8_t J_y; // =-100..100 y-coordinate joystick position  \n'
+    +'uint8_t button_B; // =1 if button pressed, else =0  \n'
+    +'uint8_t button_X; // =1 if button pressed, else =0  \n'
+    +'uint8_t button_Y; // =1 if button pressed, else =0  \n'
+    +'uint8_t button_A; // =1 if button pressed, else =0  \n'
+    +'uint8_t connect_flag;  // =1 if wire connected, else =0  \n'
+    +'} RemoteXY; \n'
+    +'#pragma pack(pop) \n'
+    ;
+    Blockly.Arduino.variables_['otto_ninja_app'] = 
+    'int currentmillis1 = 0;\n'
+    +'int currentmillis2 = 0; \n'
+    +'int currentmillis3 = 0;\n'
+    +'int ModeCounter = 0;\n'        
+    Blockly.Arduino.definitions_['otto_ninja_app'] = 
+    'void NinjaStop()\n'
+    +' {myservoLeftFoot.detach();\n'
+    +' myservoRightFoot.detach();  \n'
+    +' myservoLeftLeg.detach();\n'
+    +' myservoRightLeg.detach();}\n'
+    +'void NinjaSetWalk()\n'
+    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);   myservoRightArm.write(90);  \n'
+    +' delay(200);\n'
+    +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LA0); myservoRightLeg.write(RA0); \n'
+    +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
+    +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +' myservoLeftArm.write(180);myservoRightArm.write(0); \n'
+    +' myservoLeftArm.detach();myservoRightArm.detach();}  \n'
+    +'void NinjaSetRoll()\n'
+    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);myservoRightArm.write(90); \n'
+    +' delay(200);\n'
+    +' myservoLeftArm.detach();myservoRightArm.detach();myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
+    +' delay(300);\n'
+    +' myservoLeftLeg.detach();myservoRightLeg.detach();myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +' myservoLeftArm.write(180);myservoRightArm.write(0);\n'
+    +' myservoLeftArm.detach();myservoRightArm.detach();}\n'
+    +'void NinjaWalkStop()\n'
+    +'{myservoLeftFoot.write(90);\n'
+    +' myservoRightFoot.write(90); \n'
+    +' myservoLeftLeg.write(LA0); \n'
+    +' myservoRightLeg.write(RA0);}\n'
+    +'void NinjaRollStop()\n'
+    +' {myservoLeftFoot.write(90);\n'
+    +' myservoRightFoot.write(90); \n'
+    +' myservoLeftFoot.detach(); \n'
+    +' myservoRightFoot.detach();} \n'
+    +'void NinjaLeftArm(){myservoLeftArm.attach(ServoLeftArmPin, 544, 2400); myservoLeftArm.write(90);} \n'
+    +'void NinjaRightArm(){myservoRightArm.attach(ServoRightArmPin, 544, 2400); myservoRightArm.write(90);}\n'
+    +'void NinjaLeftArmDown(){myservoLeftArm.write(180);} \n'
+    +'void NinjaRightArmDown(){myservoRightArm.write(0);} \n'
+    ;
+    Blockly.Arduino.setups_['otto_ninja_app']=
+     'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
+    +'myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  \n'
+    +'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    +'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);\n'
+    +'myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    +'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +'myservoHead.attach(ServoHeadPin, 544, 2400);\n'
+    +'myservoHead.write(90);   \n'
+    +'myservoLeftArm.write(90);    \n'
+    +'myservoRightArm.write(90);     \n'
+    +'delay(300);  \n'
+    +'myservoLeftFoot.write(90);   \n'
+    +'myservoRightFoot.write(90);        \n'
+    +'myservoLeftLeg.write(60);   \n'
+    +'myservoRightLeg.write(120);     \n'
+    +'delay(300);     \n'
+    +'myservoLeftArm.write(180);\n'
+    +'myservoRightArm.write(0); \n'
+    +'delay(500);\n'
+    +'myservoLeftFoot.detach();\n'
+    +'myservoRightFoot.detach();  \n'
+    +'myservoLeftLeg.detach();\n'
+    +'myservoRightLeg.detach();\n'
+    +'myservoLeftArm.detach();\n'        
+    +'myservoRightArm.detach();\n'
+    +'myservoHead.detach();\n'
+    +'RemoteXY_Init ();\n'
+    var code = 
+    'RemoteXY_Handler (); \n'
+    +'if (RemoteXY.button_X == HIGH){NinjaSetRoll(); ModeCounter = 1;} \n'
+    +'if (RemoteXY.button_Y == HIGH){NinjaSetWalk(); ModeCounter = 0;}\n'
+    +'if (RemoteXY.button_A == HIGH){NinjaLeftArm();} \n'
+    +'if (RemoteXY.button_A == LOW) {NinjaLeftArmDown();} \n'
+    +'if (RemoteXY.button_B == HIGH){NinjaRightArm();} \n'
+    +'if (RemoteXY.button_B == LOW) { NinjaRightArmDown();}\n'
+    +'if (ModeCounter == 0) {   \n'
+    +'if ((RemoteXY.J_x >= -10)&&(RemoteXY.J_x <= 10)&&(RemoteXY.J_y >= -10)&&(RemoteXY.J_y <= 10)) { NinjaWalkStop();  } \n'
+    +'if (RemoteXY.J_y > 0)  {\n'
+    +'int lt= map(RemoteXY.J_x, 100, -100, 200, 700); \n'
+    +'int rt= map(RemoteXY.J_x, 100, -100, 700, 200); \n'
+    +'int Interval1 = 250; \n'
+    +'int Interval2 = 250 + rt; \n'
+    +'int Interval3 = 250 + rt + 250;\n'
+    +'int Interval4 = 250 + rt + 250 + lt; \n'
+    +'int Interval5 = 250 + rt + 250 + lt + 50;\n'
+    +'if(millis() > currentmillis1 + Interval5){ currentmillis1 = millis();} \n'
+    +'if(millis() - currentmillis1 <= Interval1) {   \n'
+    +'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    +'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);\n'
+    +'myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  \n'
+    +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);  \n'
+    +'myservoLeftLeg.write(LATR);  \n'
+    +'myservoRightLeg.write(RATR);} \n'
+    +'if((millis() - currentmillis1 >= Interval1)&&(millis() - currentmillis1 <= Interval2)){myservoRightFoot.write(90-RFFWRS);} \n'
+    +'if((millis() - currentmillis1 >= Interval2)&&(millis() - currentmillis1 <= Interval3)){myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL);}\n'
+    +'if((millis() - currentmillis1 >= Interval3)&&(millis() - currentmillis1 <= Interval4)){myservoLeftFoot.write(90+LFFWRS);}   \n'
+    +'if((millis() - currentmillis1 >= Interval4)&&(millis() - currentmillis1 <= Interval5)){myservoLeftFoot.detach();  }  }   \n'
+    +'if (RemoteXY.J_y < 0){ \n'
+    +'int lt= map(RemoteXY.J_x, 100, -100, 200, 700);  \n'
+    +'int rt= map(RemoteXY.J_x, 100, -100, 700, 200);  \n'
+    +'int Interval1 = 250; \n'
+    +'int Interval2 = 250 + rt; \n'
+    +'int Interval3 = 250 + rt + 250;\n'
+    +'int Interval4 = 250 + rt + 250 + lt; \n'
+    +'int Interval5 = 250 + rt + 250 + lt + 50;\n'
+    +'if(millis() > currentmillis1 + Interval5){currentmillis1 = millis();}\n'
+    +'if(millis() - currentmillis1 <= Interval1){   \n'
+    +'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    +'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);\n'
+    +'myservoRightFoot.attach(ServoRightFootPin, 544, 2400);  \n'
+    +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);  \n'
+    +'myservoLeftLeg.write(LATR);  \n'
+    +'myservoRightLeg.write(RATR);} \n'
+    +'if((millis() - currentmillis1 >= Interval1)&&(millis() - currentmillis1 <= Interval2)){myservoRightFoot.write(90+RFBWRS);}\n'
+    +'if((millis() - currentmillis1 >= Interval2)&&(millis() - currentmillis1 <= Interval3)){myservoRightFoot.detach();myservoLeftLeg.write(LATL); myservoRightLeg.write(RATL);}\n'
+    +'if((millis() - currentmillis1 >= Interval3)&&(millis() - currentmillis1 <= Interval4)){myservoLeftFoot.write(90-LFFWRS);}   \n'
+    +'if((millis() - currentmillis1 >= Interval4)&&(millis() - currentmillis1 <= Interval5)){myservoLeftFoot.detach();  }  }}   \n'
+    +'if (ModeCounter == 1){   \n'
+    +'if ((RemoteXY.J_x >= -10)&&(RemoteXY.J_x <= 10)&&(RemoteXY.J_y >= -10)&&(RemoteXY.J_y <= 10)){NinjaRollStop();} \n'
+    +' else{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);  myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
+    +'int LWS= map(RemoteXY.J_y, 100, -100, 135,    45);  \n'
+    +'int RWS= map(RemoteXY.J_y, 100, -100,  45,   135);  \n'
+    +'int LWD= map(RemoteXY.J_x, 100, -100,  45,     0);  \n'
+    +'int RWD= map(RemoteXY.J_x, 100, -100,   0,   -45); \n'
+    +'myservoLeftFoot.write(LWS+LWD); \n'
+    +'myservoRightFoot.write(RWS+RWD); }} \n'
+    +' Serial.print("  X: ");   \n'
+    +' Serial.print(RemoteXY.J_x);\n'
+    +' Serial.print("  Y: ");  \n'
+    +' Serial.print(RemoteXY.J_y);\n'
+    +' Serial.print("  MC: ");   \n'
+    +' Serial.println(ModeCounter); \n'
+    return code;
+  };
+
 Blockly.Blocks['otto9_app'] = {init: function() {
   this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/bt.png', 33, 33, "*"))   .appendField('App code');
   this.setInputsInline(false);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
   this.setColour("#32D900");
   this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
@@ -745,6 +1025,8 @@ Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
 Blockly.Blocks['otto9_smooth'] = {init: function() {
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/smooth.png', 33, 33, "*"))   .appendField('Dance smooth criminal');
     this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     this.setColour("#32D900");
     this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);

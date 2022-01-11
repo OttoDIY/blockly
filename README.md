@@ -1,19 +1,17 @@
 # Otto Blockly
 
-This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, compile and upload to any Arduino. Compatible [with any Otto DIY robot or Arduino related boards](https://www.ottodiy.com/). It is the perfect software to get you started into coding and STEM robotics.
+This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, compile and upload to any Arduino. Compatible [with any Otto DIY robot or Arduino related boards](https://www.ottodiy.com/software). It is the perfect software to get you started into coding and STEM robotics.
 
 ## [Click here to watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
 
 ## Installer
-This software can work offline by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly). 
-MAC version now on Beta!
+This software can work offline (standalone) by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly). 
+MAC version too!
+[For Linux operating systems go to this repo](https://github.com/OttoDIY/blocklyLinux). 
 
 You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases). After the software is installed in your PC, it is ready to use immediately, you do not need to import Arduino libraries or any additional swtup for the boards because it comes with a copy of the Arduino CLI, it is all in one software!, you will be ready to upload codes directly to your robot or any other Arduino project via USB.
 
 If your computer do not recognize the USB device or Otto, you have to [install the CH340 or CH341 or FTDI driver that is in the "driversUSB" folder](https://github.com/OttoDIY/blockly/tree/master/driversUSB) or [download from this link](https://sparks.gogo.co.nz/ch340.html)
-
-[For Linux operating systems go to this repo](https://github.com/OttoDIY/blocklyLinux). 
-
 
 ## How to Use
 
@@ -22,7 +20,7 @@ If your computer do not recognize the USB device or Otto, you have to [install t
 3. Select Arduino nano and the USB port where Otto is connected.
 4. Upload and yes is that easy you can even just click upload and the code will be automatically compiled!
 
-Drag , drop, mix, play and create your own codes.[Join the Otto Builder community, see all the cool stuff we are making with Otto BLockly and post your ideas!](http://builders.ottodiy.com/) 
+Drag , drop, connect, mix, play and create your own codes.[Join the Otto Builder community, see all the cool stuff we are making with Otto BLockly and post your ideas!](http://builders.ottodiy.com/) 
 
 [## Support us by buying our awesome STEM robot kits](http://store.ottodiy.com/)
 
@@ -49,6 +47,32 @@ Just make sure to keep consistency in the naming and make a record of the change
 
 Welcome to the Otto DIY development team!
 Thanks for your contribution.
+
+## How to Build by yourself
+1. Clone or download the source code.
+> git clone https://github.com/OttoDIY/blockly.git
+2. OPEN GIT or Terminal run as Administrator and cd in folder
+> cd blockly-master
+3. Requirements You'll need Node.js installed on your computer.
+> npm install -g build-tools
+> npm install -g node-gyp
+4. Install the npm
+> npm install
+5.  Install Arduino CLI
+cd compilation/arduino
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+mv bin/arduino-cli ./
+rm -rf bin
+6. Build (creates .exe and .zip)
+You can use electron-builder to pack your electron app in zip, nsis (Installer), portable (App without installation) formats.
+>cd ../../     #  ( go back to the repository’s top directory)
+> npm run compiler
+or
+> build --win --ia32
+>export PATH=$PATH:node_modules/.bin
+npm install electron-builder@22.13.1
+>build --mac --x64
+>electron-builder --mac --x64
 
 ## Attribution
 
