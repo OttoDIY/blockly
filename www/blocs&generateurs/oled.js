@@ -447,29 +447,16 @@ Blockly.Blocks['OLED_bitmap'] = {
 Blockly.Blocks['OLED_bitmap2'] = {
    init: function() {
     this.setColour("#4b009f");
-    this.appendDummyInput()
-		.appendField("🖥️")
-		.appendField(Blockly.Msg.OLED_DrawiconName)
-	this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
-	this.appendValueInput("x0")
-        .setCheck("Number")
-        .appendField(Blockly.Msg.OLED_X0);
-	this.appendValueInput("y0")
-        .setCheck("Number")
-        .appendField(Blockly.Msg.OLED_Y0);
-    this.appendValueInput("width")
-        .setCheck("Number")
-        .appendField(Blockly.Msg.OLED_width);
-	this.appendValueInput("height")
-        .setCheck("Number")
-        .appendField(Blockly.Msg.OLED_height);
-	this.appendDummyInput() 
-		.appendField("✏️")
-		.appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
-	//this.appendDummyInput()	
+    this.appendDummyInput().appendField("🖥️").appendField(Blockly.Msg.OLED_DrawiconName)
+    this.appendDummyInput().appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
+    this.appendValueInput("x0").setCheck("Number").appendField(Blockly.Msg.OLED_X0);
+    this.appendValueInput("y0").setCheck("Number").appendField(Blockly.Msg.OLED_Y0);
+    this.appendValueInput("width").setCheck("Number").appendField(Blockly.Msg.OLED_width);
+    this.appendValueInput("height").setCheck("Number").appendField(Blockly.Msg.OLED_height);
+    this.appendDummyInput() .appendField("✏️").appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+	  //this.appendDummyInput()	
     //    .appendField(Blockly.Msg.OLED_COLOR)
-	//	.appendField(new Blockly.FieldDropdown([["Black","BLACK"],["White", "WHITE"]]), "COLOR")	
+	  //	.appendField(new Blockly.FieldDropdown([["Black","BLACK"],["White", "WHITE"]]), "COLOR")	
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -479,7 +466,6 @@ Blockly.Blocks['OLED_bitmap2'] = {
 };
 
 Blockly.Arduino['OLED_bitmap2'] = function(block) {
-
   var x0 = Blockly.Arduino.valueToCode(this, 'x0', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var y0 = Blockly.Arduino.valueToCode(this, 'y0', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var width = Blockly.Arduino.valueToCode(this, 'width', Blockly.Arduino.ORDER_ATOMIC) || '0';

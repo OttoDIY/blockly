@@ -3,6 +3,8 @@ goog.provide('Blockly.Blocks.MatrizLed');
 goog.provide('Blockly.Blocks.arduino');
 goog.require('Blockly.Blocks');
 
+// Matrix 16x8
+
 Blockly.Blocks['matrix16x8_init'] = {  init: function() {
 	var card=window.localStorage.card;
 	this.setColour("#4b009f");
@@ -16,8 +18,6 @@ Blockly.Blocks['matrix16x8_init'] = {  init: function() {
 	this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 
-
-
 Blockly.Arduino['matrix16x8_init'] = function(block) {
 // var pin_scl = Blockly.Arduino.valueToCode(this, "PIN_SCL", Blockly.Arduino.ORDER_NONE);
  //var pin_sda = Blockly.Arduino.valueToCode(this, "PIN_SDA", Blockly.Arduino.ORDER_NONE);
@@ -26,13 +26,13 @@ Blockly.Arduino['matrix16x8_init'] = function(block) {
   var pin_sda = this.getFieldValue('PIN_SDA');
  
  Blockly.Arduino.includes_['define_Adafruit_GFX'] = '#include <Adafruit_GFX.h>\n';
- Blockly.Arduino.includes_['matrizled'] = '#include <TM1640.h>\n'
+ Blockly.Arduino.includes_['matrix16x8'] = '#include <TM1640.h>\n'
   +'#include <TM16xxMatrixGFX.h>\n'
   +'TM1640 module('+pin_scl+', '+pin_sda+');\n'
   +'#define MODULE_SIZECOLUMNS 16    // number of GRD lines, will be the y-height of the display \n'
   +'#define MODULE_SIZEROWS 8    // number of SEG lines, will be the x-width of the display\n'
   +'TM16xxMatrixGFX ematrix(&module, MODULE_SIZECOLUMNS, MODULE_SIZEROWS);    // TM16xx object, columns, rows';
-  Blockly.Arduino.setups_['matrizled']='ematrix.setIntensity(7); // Set brightness between 0 and 7 \n'
+  Blockly.Arduino.setups_['matrix16x8']='ematrix.setIntensity(7); // Set brightness between 0 and 7 \n'
   +' ematrix.setMirror(false, true); \n'
   +' ematrix.setRotation(0);\n';
  var code='';
@@ -49,10 +49,10 @@ Blockly.Blocks['otto9_eyes_init'] = { init: function() {
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 Blockly.Arduino['otto9_eyes_init'] = function(block) {
-Blockly.Arduino.includes_['otto9_eyes'] = '#include <Wire.h>\n'
+Blockly.Arduino.includes_['matrix16x8'] = '#include <Wire.h>\n'
 +'#include "Adafruit_LEDBackpack.h"\n'
 +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
-Blockly.Arduino.setups_['otto9_eyes']='ematrix.begin(0x70);  // pass in the address\n';
+Blockly.Arduino.setups_['matrix16x8']='ematrix.begin(0x70);  // pass in the address\n';
 var code='';
 return code; 
 };

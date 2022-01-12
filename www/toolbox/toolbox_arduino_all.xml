@@ -91,13 +91,7 @@
 	<field name="PIN_RA">3</field>
 	<field name="PIN_H">10</field>
 </block>
-</block>
-<block type="otto_ninja_home"></block>
 <block type="otto_ninja_calibration">
-			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
 			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="LATL"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
@@ -105,6 +99,15 @@
 			<value name="LATR"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RATR"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
 </block>
+<block type="otto_ninja_speed">
+			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+</block>
+<block type="otto_ninja_wifi"></block>
+<block type="otto_ninja_app"></block>
+<block type="otto_ninja_home"></block>
 <block type="otto_ninja_walk"></block>
 <block type="otto_ninja_roll"></block>
 <block type="otto_ninja_setwalk"></block>
