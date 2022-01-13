@@ -14,8 +14,11 @@ Blockly.Blocks['GFX_matrix_init'] = { init: function() {
 };
 Blockly.Arduino['GFX_matrix_init'] = function(block) {
 Blockly.Arduino.includes_['matrix16x8'] =
-'#include "HT16K33_GFX.h""\n'
-+'HT16K33_GFX matrixGXF1 = HT16K33_GFX(MATRIX_COUNT, 0x70);';
+'#include "HT16K33_GFX.h"\n'
++'#define MATRIX_COUNT 2 // // Number of simulated matrices or OLED screen (1 to 4)\n'
++'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
++'#define OLED_RESET  -1 // sharing Arduino reset pin\n'
++'HT16K33_GFX matrix = HT16K33_GFX(MATRIX_COUNT, 0x70);';
 Blockly.Arduino.variables_['matrix16x8'] = 
 'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
 +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
@@ -23,14 +26,9 @@ Blockly.Arduino.variables_['matrix16x8'] =
 +'bat[] = {B10000001,B11000011,B10111101,B10000001,B10100101,B10000001,B01011010,B00100100},\n'
 +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111};\n'
 +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
-Blockly.Arduino.definitions_['matrix16x8'] = 
-'#define MATRIX_COUNT 1 // // Number of simulated matrices or OLED screen (1 to 4)\n'
-+'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
-+'#define OLED_RESET  -1 // sharing Arduino reset pin\n'
-+'Adafruit_SH1106 display(OLED_RESET);';
 Blockly.Arduino.setups_['matrix16x8']=
- 'Wire.begin();\n';
-+'matrix.setRotation(MATRIX_ROTATION);\n';
+ 'Wire.begin();\n'
++'matrix.setRotation(MATRIX_ROTATION);\n'
 +'matrix.init();\n';
 var code='';
 return code; 
@@ -39,12 +37,8 @@ return code;
 
 Blockly.Blocks['GFX_OLED_init'] = {
   init: function() {
-  this.appendDummyInput()
-     .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("OLED 1.3'' Pins I²C")
-     this.appendDummyInput()
-     .setAlign(Blockly.ALIGN_RIGHT)
-     .appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
+  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*")).appendField("OLED 0.96'' Pins I²C")
+     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
      this.setInputsInline(true);
 	 this.setPreviousStatement(true);
 	 this.setNextStatement(true);
@@ -57,7 +51,9 @@ Blockly.Blocks['GFX_OLED_init'] = {
   var value_address = block.getFieldValue('address');
   Blockly.Arduino.includes_['OLED'] = 
   '#include <OLED_GFX.h>\n'
-  +'OLED_GFX matrixGXF2 = OLED_GFX(0x3C, OLED_12864, MATRIX_COUNT, false, false);';
+  +'#define MATRIX_COUNT 2 // // Number of simulated matrices or OLED screen (1 to 4)\n'
+  +'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
+  +'OLED_GFX matrixGXF2 = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, flase, false);';
   Blockly.Arduino.variables_['matrix16x8'] = 
   'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
   +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
@@ -65,11 +61,39 @@ Blockly.Blocks['GFX_OLED_init'] = {
   +'bat[] = {B10000001,B11000011,B10111101,B10000001,B10100101,B10000001,B01011010,B00100100},\n'
   +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111};\n'
   +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
-  Blockly.Arduino.definitions_['matrix16x8'] = 
-  '#define MATRIX_COUNT 1 // // Number of simulated matrices or OLED screen (1 to 4)\n'
+  Blockly.Arduino.setups_['matrix16x8']=
+   'Wire.begin();\n';
+  +'matrix.setRotation(MATRIX_ROTATION);\n';
+  +'matrix.init();\n';  
+  return ""
+};
+
+Blockly.Blocks['GFX_OLED_init2'] = {
+  init: function() {
+  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*")).appendField("OLED 1.3'' Pins I²C")
+     this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
+     this.setInputsInline(true);
+	 this.setPreviousStatement(true);
+	 this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+ Blockly.Arduino['GFX_OLED_init2'] = function(block) {
+  var value_address = block.getFieldValue('address');
+  Blockly.Arduino.includes_['OLED'] = 
+  '#include <OLED_GFX.h>\n'
+  +'#define MATRIX_COUNT 2 // // Number of simulated matrices or OLED screen (1 to 4)\n'
   +'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
-  +'#define OLED_RESET  -1 // sharing Arduino reset pin\n'
-  +'Adafruit_SH1106 display(OLED_RESET);';
+  +'OLED_GFX matrixGXF2 = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, true, false);';
+  Blockly.Arduino.variables_['matrix16x8'] = 
+  'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
+  +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
+  +'reindeer[] = {B01000010,B11100111,B01000010,B00000000,B00100100,B00000000,B00000000,B00011000},\n'
+  +'bat[] = {B10000001,B11000011,B10111101,B10000001,B10100101,B10000001,B01011010,B00100100},\n'
+  +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111};\n'
+  +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
   Blockly.Arduino.setups_['matrix16x8']=
    'Wire.begin();\n';
   +'matrix.setRotation(MATRIX_ROTATION);\n';
@@ -78,7 +102,7 @@ Blockly.Blocks['GFX_OLED_init'] = {
 };
 
 Blockly.Blocks['GFX_display'] = {init: function() {
-  this.appendDummyInput()  .appendField("👀 "+Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
+  this.appendDummyInput()  .appendField("🔆 "+Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -107,7 +131,7 @@ return code;
 
 Blockly.Blocks['GFX_pixel']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
-  this.appendDummyInput() .appendField("👀 . X")
+  this.appendDummyInput() .appendField("🔆 . X")
   this.appendValueInput("X")  .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
@@ -125,12 +149,12 @@ Blockly.Arduino['GFX_pixel'] = function(block) {
   if(this.getFieldValue('draw') == 'TRUE') draw= "GFX_WHITE";
   else draw = "GFX_BLACK";
   var code = 
-  'void drawPixel('+valuex+','+valuey+','+draw+');\n';
+  'matrix.drawPixel('+valuex+','+valuey+','+draw+');\n';
   return code;
 };
 
 Blockly.Blocks['GFX_line']={ init:function(){
-  this.appendDummyInput() .appendField("👀 _ X1")
+  this.appendDummyInput() .appendField("🔆 _ X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
@@ -158,7 +182,7 @@ Blockly.Arduino['GFX_line'] = function(block) {
 
 Blockly.Blocks['GFX_rectangle']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
-  this.appendDummyInput() .appendField("👀 🔲 X1")
+  this.appendDummyInput() .appendField("🔆 🔲 X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
@@ -187,7 +211,7 @@ Blockly.Arduino['GFX_rectangle'] = function(block) {
 
 Blockly.Blocks['GFX_circle']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
-  this.appendDummyInput()  .appendField("👀 ⚪ X") 
+  this.appendDummyInput()  .appendField("🔆 ⚪ X") 
   this.appendValueInput("X") .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendValueInput("R") .setCheck("Number").appendField("R");
@@ -215,7 +239,7 @@ Blockly.Arduino['GFX_circle'] = function(block) {
 Blockly.Blocks['GFX_bitmap'] = {
   init: function() {
    this.setColour("#4b009f");
-   this.appendDummyInput().appendField("🖥️").appendField(Blockly.Msg.OLED_DrawiconName)
+   this.appendDummyInput().appendField("🔆").appendField(Blockly.Msg.OLED_DrawiconName)
    this.appendDummyInput().appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
    this.appendValueInput("x0").setCheck("Number").appendField(Blockly.Msg.OLED_X0);
    this.appendValueInput("y0").setCheck("Number").appendField(Blockly.Msg.OLED_Y0);
@@ -245,7 +269,7 @@ Blockly.Arduino['GFX_bitmap'] = function(block) {
 		else draw = "GFX_BLACK";
   
   var code = 
-  'matrix.drawBitmap(('+x0+','+y0+','+IconName+','+width+','+height+',true,'+draw+',GFX_BLACK);\n';
+  'matrix.drawBitmap('+x0+','+y0+','+IconName+','+width+','+height+',true,'+draw+',GFX_BLACK);\n';
  
   return code;
 };

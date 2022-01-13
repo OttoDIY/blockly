@@ -86,6 +86,7 @@ Thanks to all these great people it has been possible to make this project:
 - [Ardublockly](https://github.com/carlosperate/ardublockly)
 - [Bodo Minea](https://github.com/BodoMinea)
 - [Takuji Kawata](https://github.com/takujikawata-pr)
+- [Nicolas Nca78](https://github.com/Nca78/Matrix_GFX)
 - [Node.js](https://nodejs.org/)
 - [Bootstrap](http://getbootstrap.com)
 - [Font Awesome](http://fontawesome.io)

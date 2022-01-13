@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_Displays,CAT_iot</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_com,CAT_Displays,CAT_AUDIO,CAT_MUVISION,CAT_iot</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice16x8,CAT_del,CAT_BUZZER,CAT_iot</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
@@ -234,49 +234,22 @@
 
     </category>
 
-	<category name="CAT_TEXT" colour="#160">
+	<category name="CAT_TEXT" colour="160">
 		<block type="text"></block>
 		<block type="text_char"></block>
 		<block type="conversion_tochar"></block>
 		<block type="conversion_toString"></block>
-		<block type="conversion_toString2">
-				<value name="Decimals"><shadow type="math_number" ><field name="NUM">5</field></shadow></value>
-		</block>
+		<block type="conversion_toString2"><value name="Decimals"><shadow type="math_number" ><field name="NUM">5</field></shadow></value></block>
 		<block type="text_join"></block>
         <block type="text_length"></block>
-        <block type="text_isEmpty"></block>
-		
-		<block type="text_append">
-			<value name="TEXT">
-				<shadow type="text"></shadow>
-			</value>
-		</block>
-		
-		<block type="text_indexOf">
-			<value name="VALUE">
-				<!-- <block type="variables_get"> -->
-					<!-- <field name="VAR" class="textVar">...</field> -->
-				<!-- </block> -->
-			</value>
-		</block>
-		<block type="text_charAt">
-			<value name="VALUE">
-<!-- 				<block type="variables_get"> -->
-<!-- 					<field name="VAR" class="textVar">...</field> -->
-<!-- 				</block> -->
-			</value>
-		</block>
-		<block type="text_getSubstring">
-			<value name="STRING">
-<!--				<block type="variables_get"> -->
-<!--					<field name="VAR" class="textVar">...</field> -->
-<!--				</block> -->
-			</value>
-		</block>
+        <block type="text_isEmpty"></block>	
+		<block type="text_append"><value name="TEXT"><shadow type="text"></shadow></value></block>
+		<block type="text_indexOf"><value name="VALUE"></value></block>
+		<block type="text_charAt"><value name="VALUE"></value></block>
+		<block type="text_getSubstring"><value name="STRING"></value></block>
 		<block type="text_changeCase"></block>
 		<block type="text_trim"></block>
     </category>
-	
 	
 	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
 
@@ -294,6 +267,17 @@
 		<block type="list_append"></block>
 		<block type="list_size"></block>
     </category>
+
+		<category name="CAT_ultrason" colour="#2a93e8">
+		<block type="ultrasonic_sensor">
+			<field name="PIN_TRIG">D3</field>
+			<field name="PIN_ECHO">D4</field>
+		</block>			
+		<block type="ultrasonic_distance"></block>
+		<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
+		<block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
+		<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>
+	</category>	
 
 	<category name="CAT_SENSORS" colour="#2a93e8">
 		 <block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
@@ -689,17 +673,41 @@
 			</block>
 		</category>	
 </category>	
-
+<category name="CAT_del"  colour="#4b009f">
+	<block type="GFX_matrix_init"></block>
+	<block type="GFX_OLED_init"></block>
+	<block type="GFX_OLED_init2"></block>
+	<block type="GFX_display"></block>
+	<block type="GFX_clear"></block>
+	<block type="GFX_pixel">
+		<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>	
+	</block>
+	<block type="GFX_line">
+	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+		<value name="Y2"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+	</block>
+	<block type="GFX_rectangle">
+	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="X2"><shadow type="math_number"><field name="NUM">7</field></shadow></value>
+		<value name="Y2"><shadow type="math_number"><field name="NUM">3</field></shadow></value>	
+	</block>
+	<block type="GFX_circle">
+		<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+		<value name="Y"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+		<value name="R"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+	</block>
+	<block type="GFX_bitmap">
+		<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
+		<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
+		<value name="width"> <shadow type="math_number"> <field name="NUM">8</field> </shadow> </value>
+		<value name="height"> <shadow type="math_number"> <field name="NUM">8</field></shadow> </value>
+	</block>
+</category>	
 <category name="CAT_Displays"  colour="#4b009f">
-<block type="GFX_matrix_init"></block>
-<block type="GFX_OLED_init"></block>
-<block type="GFX_display"></block>
-<block type="GFX_clear"></block>
-<block type="GFX_pixel"></block>
-<block type="GFX_line"></block>
-<block type="GFX_rectangle"></block>
-<block type="GFX_circle"></block>
-<block type="GFX_bitmap"></block>
 	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_init"></block>
 		<block type="OLED_init2"></block>
