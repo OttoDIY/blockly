@@ -2,44 +2,44 @@
   <toolbox>toolbox_arduino_all-esp8266</toolbox>
   <block type="base_setup_loop" id="7+9Bp`fp!u6zKOr6=Hy_" x="-578" y="57">
     <statement name="DO">
-      <block type="otto_ninja_init" id="jk(OY;/UimOKKyrVXN0~">
-        <field name="PIN_YL">D8</field>
-        <field name="PIN_YR">D7</field>
-        <field name="PIN_RL">D3</field>
-        <field name="PIN_RR">D4</field>
+      <block type="otto_ninja_init" id="1fP~}XR;~Sgw^)JNl:}N">
+        <field name="PIN_LL">D8</field>
+        <field name="PIN_RL">D4</field>
+        <field name="PIN_LF">D7</field>
+        <field name="PIN_RF">D3</field>
         <field name="PIN_LA">D0</field>
         <field name="PIN_RA">3</field>
         <field name="PIN_H">1</field>
         <next>
-          <block type="otto_ninja_calibration" id=":4(~(X_)_dDNk^d#Hv,Q">
+          <block type="otto_ninja_calibration" id="s#n`mJtT(/vOb/IO/U[D">
             <value name="LA0">
-              <shadow type="math_number" id="Ve(rcXtk_%pH*Qu?Lq)m">
+              <shadow type="math_number" id="$n!5t}q9bDMP!$:cO48,">
                 <field name="NUM">0</field>
               </shadow>
             </value>
             <value name="RA0">
-              <shadow type="math_number" id="=}QWIKn^AO[0%2jJ8dm)">
+              <shadow type="math_number" id="R4Myf3.iIS(A?o5f1?Df">
                 <field name="NUM">0</field>
               </shadow>
             </value>
             <value name="LATL">
-              <shadow type="math_number" id="1vF(n(T;E.Kb##|+U]BP">
-                <field name="NUM">90</field>
+              <shadow type="math_number" id="kLNQ2G?vvdz)HGQ,a/9e">
+                <field name="NUM">40</field>
               </shadow>
             </value>
             <value name="RATL">
-              <shadow type="math_number" id="0IY;dF1upnYmcFkhTYWQ">
-                <field name="NUM">180</field>
+              <shadow type="math_number" id="[`n-EVrrI2I|pDoNRv5F">
+                <field name="NUM">60</field>
               </shadow>
             </value>
             <value name="LATR">
-              <shadow type="math_number" id="}Fz=b$|*Fr9K#3JTa;:E">
-                <field name="NUM">0</field>
+              <shadow type="math_number" id="LEh_]b%BbU@W(p=1qxRh">
+                <field name="NUM">60</field>
               </shadow>
             </value>
             <value name="RATR">
-              <shadow type="math_number" id="?UfPcOt/SjMr%-(QeZ/%">
-                <field name="NUM">90</field>
+              <shadow type="math_number" id="%a@A#CU(3Z%o~=2.DRYe">
+                <field name="NUM">40</field>
               </shadow>
             </value>
             <next>

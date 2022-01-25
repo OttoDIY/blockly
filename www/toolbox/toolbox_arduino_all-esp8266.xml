@@ -70,10 +70,10 @@
 		
 <category name="CAT_OTTO_NINJA" colour="#0A0A0A">
 <block type="otto_ninja_init">
-	<field name="PIN_YL">D8</field>
-	<field name="PIN_YR">D7</field>
-	<field name="PIN_RL">D3</field>
-	<field name="PIN_RR">D4</field>
+	<field name="PIN_LL">D8</field>
+	<field name="PIN_LF">D7</field>
+	<field name="PIN_RL">D4</field>
+	<field name="PIN_RF">D3</field>
 	<field name="PIN_LA">D0</field>
 	<field name="PIN_RA">3</field>
 	<field name="PIN_H">1</field>
@@ -81,10 +81,10 @@
 <block type="otto_ninja_calibration">
 			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="LATL"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
-			<value name="RATL"><shadow type="math_number">	<field name="NUM">180</field>	</shadow></value>
-			<value name="LATR"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="RATR"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
+			<value name="LATL"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
+			<value name="RATL"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
+			<value name="LATR"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
+			<value name="RATR"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
 </block>
 <block type="otto_ninja_speed">
 			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
@@ -1061,8 +1061,6 @@
 			<block type="esp8266_send"></block>
 			<block type="esp8266_getArg"></block>
 			<block type="esp8266_useArg"></block>
-			
-			
 		</category>
 		
 		
@@ -1081,8 +1079,7 @@
 				<value name="value1"><shadow type="text"><field name="TEXT">Value1 or empty</field></shadow></value>
 				<value name="value2"><shadow type="text"><field name="TEXT">Value2 or empty</field></shadow></value>
 				<value name="value3"><shadow type="text"><field name="TEXT">Value3 or empty</field></shadow></value>
-			</block>
-						
+			</block>		
 		</category>
 		
 		<category name="CAT_NTP" colour="#008080">
@@ -1101,8 +1098,6 @@
 			<block type="values_OpenWeather_server"></block>
 			<block type="values_text_OpenWeather_server"></block>
 		</category>
-		
-		
 		
 		<category name="CAT_THINGSPEAK" colour="#008080">
 			<block type="thingspeak_init"></block>

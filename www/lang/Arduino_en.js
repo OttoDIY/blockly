@@ -162,7 +162,7 @@ Blockly.Msg.LKL_MODE = 'is detected on the Pin';
 // FIELDDROPDOWN
 Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
 Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]; // do not translate
-Blockly.Msg.on_off = [["on", "LOW"], ["off", "HIGH"]];
+Blockly.Msg.on_off = [["ON", "HIGH"], ["OFF", "LOW"]];
 Blockly.Msg.menublink = [["slow", "1000"], ["fast", "100"]];
 Blockly.Msg.AV_AR = [[Blockly.Msg.AV, "FORWARD"], [Blockly.Msg.AR, "BACKWARD"]]; // do not translate
 Blockly.Msg.times = [["seconds", "s"], ["milliseconds", "m"], ["microseconds", "u"]];
@@ -350,7 +350,7 @@ Blockly.Msg.tempo1 = "all";
 // LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "💡 LED on the board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";
-Blockly.Msg.blink = "💡 Blink LED on the board";
+Blockly.Msg.blink = "💡 LED on the board blink";
 Blockly.Msg.blink_tooltip = "The board LED flashes 1 or 10 times per second";
 Blockly.Msg.del = "💡 LED Pin";
 Blockly.Msg.del_tooltip = "turns on (off) the LED connected to the indicated Pin";
@@ -589,7 +589,7 @@ Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT="Right";
 Blockly.Msg.BUTTON_NAME="Button";
 Blockly.Msg.INTERNAL_BUTTON_NAME="Start button MRTduino board";
 Blockly.Msg.BUTTON_LOGIC="Logic inverse";
-Blockly.Msg.BUTTON_PRESSED="pressed";
+Blockly.Msg.BUTTON_PRESSED="Pressed";
 Blockly.Msg.BUTTON_TOUCH_NAME="Touch";
 Blockly.Msg.KNOCK_NAME="Knock";
 Blockly.Msg.KNOCK_DETECTED="detected";
@@ -1061,7 +1061,7 @@ Blockly.Msg.MAX7219_LM_PAINT="Draw this image";
 Blockly.Msg.MAX7219_LM_Row="Row";
 Blockly.Msg.MAX7219_LM_value="Value (bin or hex or dec)";
 Blockly.Msg.MAX7219_LM_Column="Column";
-Blockly.Msg.MAX7219_LM_Led="Set Led";
+Blockly.Msg.MAX7219_LM_Led="LED";
 
 
 //Thingspeak

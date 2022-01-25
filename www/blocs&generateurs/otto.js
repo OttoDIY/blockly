@@ -358,13 +358,13 @@ Blockly.Blocks['otto_ninja_init'] = {init: function() {
 	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT)
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL")
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LL")
 	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR")
-	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL")
+	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LF")
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
+	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RF");
   this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LA")
@@ -381,10 +381,10 @@ Blockly.Blocks['otto_ninja_init'] = {init: function() {
 
 Blockly.Arduino['otto_ninja_init'] = function(block) {
   
-  var PIN_YL= block.getFieldValue('PIN_YL');
-  var PIN_YR= block.getFieldValue('PIN_YR');
+  var PIN_LL= block.getFieldValue('PIN_LL');
   var PIN_RL= block.getFieldValue('PIN_RL');
-  var PIN_RR= block.getFieldValue('PIN_RR');
+  var PIN_LF= block.getFieldValue('PIN_LF');
+  var PIN_RF= block.getFieldValue('PIN_RF');
   var PIN_LA= block.getFieldValue('PIN_LA');
   var PIN_RA= block.getFieldValue('PIN_RA');
   var PIN_H= block.getFieldValue('PIN_H');
@@ -392,13 +392,13 @@ Blockly.Arduino['otto_ninja_init'] = function(block) {
   Blockly.Arduino.includes_['otto_lib'] = '#include <Servo.h>\n';
 
   Blockly.Arduino.definitions_['otto_legs'] = 
-      'const uint8_t ServoLeftLegPin ='+ PIN_YL +'; // D6 \n'
- 	  + 'const uint8_t ServoRightLegPin='+ PIN_YR +'; // D4 \n'
-	  + 'const uint8_t ServoLeftFootPin  ='+ PIN_RL +'; // D7 \n'
-    + 'const uint8_t ServoRightFootPin ='+ PIN_RR +'; // D3 \n'
-    + 'const uint8_t ServoLeftArmPin ='+ PIN_LA +'; // D0 \n'
-    + 'const uint8_t ServoRightArmPin ='+ PIN_RA +'; // RX \n'
-    + 'const uint8_t ServoHeadPin   ='+ PIN_H +'; // TX \n'
+      'const uint8_t ServoLeftLegPin ='+ PIN_LL +'; // D8 or 15 \n'
+ 	  + 'const uint8_t ServoRightLegPin='+ PIN_RL +'; // D4 or 2 \n'
+	  + 'const uint8_t ServoLeftFootPin  ='+ PIN_LF +'; // D7 or 13 \n'
+    + 'const uint8_t ServoRightFootPin ='+ PIN_RF +'; // D3 or 0 \n'
+    + 'const uint8_t ServoLeftArmPin ='+ PIN_LA +'; // D0 or 16 \n'
+    + 'const uint8_t ServoRightArmPin ='+ PIN_RA +'; // RX or 3 \n'
+    + 'const uint8_t ServoHeadPin   ='+ PIN_H +'; // TX or 1 \n'
     + 'Servo myservoLeftLeg;\n'
     + 'Servo myservoLeftFoot;\n'
     + 'Servo myservoRightFoot;\n'
@@ -510,13 +510,23 @@ Blockly.Blocks['otto_ninja_setwalk']={init:function(){
 Blockly.Arduino['otto_ninja_setwalk'] = function(block) {
   Blockly.Arduino.definitions_['ninja_setwalk'] =   
   'void NinjaSetWalk()\n'
-  +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);   myservoRightArm.write(90);  \n'
-  +' delay(200);\n'
-  +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LA0); myservoRightLeg.write(RA0); \n'
-  +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
-  +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
-  +' myservoLeftArm.write(180);myservoRightArm.write(0); \n'
-  +' myservoLeftArm.detach();myservoRightArm.detach();}  \n'
+    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    +'  myservoRightArm.attach(ServoRightArmPin, 544, 2400); \n'
+    +'  myservoLeftArm.write(90);   \n' 
+    +'  myservoRightArm.write(90);  \n'
+    +' delay(200);\n'
+    +' myservoLeftArm.detach();\n'
+    +' myservoRightArm.detach();\n'
+    +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    + 'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);\n'
+    + 'myservoLeftLeg.write(LA0);\n'
+    + 'myservoRightLeg.write(RA0); \n'
+    +' delay(300);\n'
+    +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
+    +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    + 'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +' myservoLeftArm.write(180);myservoRightArm.write(0); \n'
+    +' myservoLeftArm.detach();myservoRightArm.detach();}  \n'
   ;
 var code = 'NinjaSetWalk();\n';
 return code;
@@ -535,11 +545,19 @@ Blockly.Blocks['otto_ninja_setroll']={init:function(){
 Blockly.Arduino['otto_ninja_setroll'] = function(block) {
   Blockly.Arduino.definitions_['ninja_setroll'] =   
   'void NinjaSetRoll()\n'
-  +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);myservoRightArm.write(90); \n'
+  +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+  + 'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+  + 'myservoLeftArm.write(90);myservoRightArm.write(90); \n'
   +' delay(200);\n'
-  +' myservoLeftArm.detach();myservoRightArm.detach();myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
+  +' myservoLeftArm.detach();myservoRightArm.detach();\n'
+  + 'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+  + 'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
+  +'myservoLeftLeg.write(LA1); \n'
+  +'myservoRightLeg.write(RA1);\n'
   +' delay(300);\n'
-  +' myservoLeftLeg.detach();myservoRightLeg.detach();myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+  +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
+  +'myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+  +'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
   +' myservoLeftArm.write(180);myservoRightArm.write(0);\n'
   +' myservoLeftArm.detach();myservoRightArm.detach();}\n'
   ;
@@ -732,7 +750,8 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     var ssid = block.getFieldValue('SSID');  
     var wifipassword = block.getFieldValue('PASSWORD');  
   
-   Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+   Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n'
+   +'#define REMOTEXY_SERVER_PORT 6377 \n';
    Blockly.Arduino.definitions_['define_wifi_ninja'] = 
    '#define REMOTEXY_WIFI_SSID "'+ssid+'"\n'+
    '#define REMOTEXY_WIFI_PASSWORD "'+wifipassword+'"\n';
@@ -754,11 +773,9 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     Blockly.Arduino.includes_['otto_ninja_app'] = 
      '#define REMOTEXY_MODE__ESP8266WIFI_LIB_POINT\n'
     +'#include <RemoteXY.h>\n'
-    +'#include <SPI.h>\n'
     +'#include <Wire.h>\n'
     +'#include <Adafruit_GFX.h>\n'
     +'#include "Adafruit_LEDBackpack.h"\n'
-    +'#define REMOTEXY_SERVER_PORT 6377 \n'
     +'#pragma pack(push, 1) \n'
     +'uint8_t RemoteXY_CONF[] ={ 255,6,0,0,0,66,0,13,8,0,5,32,3,12,41,41,1,26,31,1,3,79,16,16,12,1,31,82,240,159,166,190,0,1,3,56,39,18,12,1,31,240,159,146,191,0,1,3,79,39,17,12,1,31,240,159,166,191,0,1,3,56,16,17,12,1,31,76,240,159,166,190,0 }; \n'
     +'struct {\n'
@@ -784,19 +801,37 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     +' myservoLeftLeg.detach();\n'
     +' myservoRightLeg.detach();}\n'
     +'void NinjaSetWalk()\n'
-    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);   myservoRightArm.write(90);  \n'
+    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    +'  myservoRightArm.attach(ServoRightArmPin, 544, 2400); \n'
+    +'  myservoLeftArm.write(90);   \n' 
+    +'  myservoRightArm.write(90);  \n'
     +' delay(200);\n'
-    +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);myservoLeftLeg.write(LA0); myservoRightLeg.write(RA0); \n'
+    +' myservoLeftArm.detach();\n'
+    +' myservoRightArm.detach();\n'
+    +' myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    + 'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);\n'
+    + 'myservoLeftLeg.write(LA0);\n'
+    + 'myservoRightLeg.write(RA0); \n'
+    +' delay(300);\n'
     +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
-    +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +' myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    + 'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
     +' myservoLeftArm.write(180);myservoRightArm.write(0); \n'
     +' myservoLeftArm.detach();myservoRightArm.detach();}  \n'
     +'void NinjaSetRoll()\n'
-    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);myservoLeftArm.write(90);myservoRightArm.write(90); \n'
+    +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    + 'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    + 'myservoLeftArm.write(90);myservoRightArm.write(90); \n'
     +' delay(200);\n'
-    +' myservoLeftArm.detach();myservoRightArm.detach();myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
+    +' myservoLeftArm.detach();myservoRightArm.detach();\n'
+    + 'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400);\n'
+    + 'myservoRightLeg.attach(ServoRightLegPin, 544, 2400);   \n'
+    +'myservoLeftLeg.write(LA1); \n'
+    +'myservoRightLeg.write(RA1);\n'
     +' delay(300);\n'
-    +' myservoLeftLeg.detach();myservoRightLeg.detach();myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
+    +' myservoLeftLeg.detach();myservoRightLeg.detach();\n'
+    +'myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
+    +'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
     +' myservoLeftArm.write(180);myservoRightArm.write(0);\n'
     +' myservoLeftArm.detach();myservoRightArm.detach();}\n'
     +'void NinjaWalkStop()\n'
@@ -809,8 +844,10 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     +' myservoRightFoot.write(90); \n'
     +' myservoLeftFoot.detach(); \n'
     +' myservoRightFoot.detach();} \n'
-    +'void NinjaLeftArm(){myservoLeftArm.attach(ServoLeftArmPin, 544, 2400); myservoLeftArm.write(90);} \n'
-    +'void NinjaRightArm(){myservoRightArm.attach(ServoRightArmPin, 544, 2400); myservoRightArm.write(90);}\n'
+    +'void NinjaLeftArm(){myservoLeftArm.attach(ServoLeftArmPin, 544, 2400); \n'
+      +'myservoLeftArm.write(90);} \n'
+    +'void NinjaRightArm(){myservoRightArm.attach(ServoRightArmPin, 544, 2400); \n'
+      +'myservoRightArm.write(90);}\n'
     +'void NinjaLeftArmDown(){myservoLeftArm.write(180);} \n'
     +'void NinjaRightArmDown(){myservoRightArm.write(0);} \n'
     ;

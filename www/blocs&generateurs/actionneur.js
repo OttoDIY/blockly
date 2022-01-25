@@ -551,7 +551,7 @@ Blockly.Python["LCD_Keypad_Shield_DFR_09_RAZ"]=function(block){
 Blockly.Blocks["digital_write0"]={init:function(){ 
     var card=window.localStorage.card;
     this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
-    this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
+    this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -567,7 +567,7 @@ Blockly.Arduino["digital_write0"]=function(block){
 };
 Blockly.Blocks["digital_write"]={init:function(){ 
     this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.del);
-    this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
+    this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -624,7 +624,7 @@ Blockly.Arduino['led_pwm'] = function(block) {
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
         
-        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT).appendField(new Blockly.FieldDropdown(Blockly.Msg.FIELDDROPDOWN_ONOFF), "STAT");
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT).appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#4b009f");

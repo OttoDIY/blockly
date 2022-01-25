@@ -94,10 +94,10 @@
 <block type="otto_ninja_calibration">
 			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="LATL"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
-			<value name="RATL"><shadow type="math_number">	<field name="NUM">180</field>	</shadow></value>
-			<value name="LATR"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="RATR"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
+			<value name="LATL"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
+			<value name="RATL"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
+			<value name="LATR"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
+			<value name="RATR"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
 </block>
 <block type="otto_ninja_speed">
 			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>

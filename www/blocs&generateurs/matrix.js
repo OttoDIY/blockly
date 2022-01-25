@@ -53,7 +53,7 @@ Blockly.Blocks['GFX_OLED_init'] = {
   '#include <OLED_GFX.h>\n'
   +'#define MATRIX_COUNT 2 // // Number of simulated matrices or OLED screen (1 to 4)\n'
   +'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
-  +'OLED_GFX matrixGXF2 = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, flase, false);';
+  +'OLED_GFX matrix = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, flase, false);';
   Blockly.Arduino.variables_['matrix16x8'] = 
   'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
   +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
@@ -62,8 +62,8 @@ Blockly.Blocks['GFX_OLED_init'] = {
   +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111};\n'
   +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
   Blockly.Arduino.setups_['matrix16x8']=
-   'Wire.begin();\n';
-  +'matrix.setRotation(MATRIX_ROTATION);\n';
+   'Wire.begin();\n'
+  +'matrix.setRotation(MATRIX_ROTATION);\n'
   +'matrix.init();\n';  
   return ""
 };
@@ -86,17 +86,10 @@ Blockly.Blocks['GFX_OLED_init2'] = {
   '#include <OLED_GFX.h>\n'
   +'#define MATRIX_COUNT 2 // // Number of simulated matrices or OLED screen (1 to 4)\n'
   +'#define MATRIX_ROTATION 3 // // Rotation from 0 to 3\n'
-  +'OLED_GFX matrixGXF2 = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, true, false);';
-  Blockly.Arduino.variables_['matrix16x8'] = 
-  'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
-  +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
-  +'reindeer[] = {B01000010,B11100111,B01000010,B00000000,B00100100,B00000000,B00000000,B00011000},\n'
-  +'bat[] = {B10000001,B11000011,B10111101,B10000001,B10100101,B10000001,B01011010,B00100100},\n'
-  +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111};\n'
-  +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
+  +'OLED_GFX matrix = OLED_GFX('+value_address+', OLED_12864, MATRIX_COUNT, true, false);';
   Blockly.Arduino.setups_['matrix16x8']=
-   'Wire.begin();\n';
-  +'matrix.setRotation(MATRIX_ROTATION);\n';
+   'Wire.begin();\n'
+  +'matrix.setRotation(MATRIX_ROTATION);\n'
   +'matrix.init();\n';  
   return ""
 };
@@ -130,11 +123,11 @@ return code;
 };
 
 Blockly.Blocks['GFX_pixel']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("🔆 . X")
   this.appendValueInput("X")  .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
-  this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -159,7 +152,7 @@ Blockly.Blocks['GFX_line']={ init:function(){
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
   this.appendValueInput("Y2") .setCheck("Number").appendField("Y2");
-  this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -181,13 +174,13 @@ Blockly.Arduino['GFX_line'] = function(block) {
 };
 
 Blockly.Blocks['GFX_rectangle']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("🔆 🔲 X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
   this.appendValueInput("Y2") .setCheck("Number").appendField("Y2");
-  this.appendDummyInput() .appendField("🥛").appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -210,12 +203,12 @@ Blockly.Arduino['GFX_rectangle'] = function(block) {
 };
 
 Blockly.Blocks['GFX_circle']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput()  .appendField("🔆 ⚪ X") 
   this.appendValueInput("X") .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendValueInput("R") .setCheck("Number").appendField("R");
-  this.appendDummyInput() .appendField("🥛").appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -240,12 +233,12 @@ Blockly.Blocks['GFX_bitmap'] = {
   init: function() {
    this.setColour("#4b009f");
    this.appendDummyInput().appendField("🔆").appendField(Blockly.Msg.OLED_DrawiconName)
-   this.appendDummyInput().appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
+   this.appendDummyInput().appendField(new Blockly.FieldTextInput("heart"), "NAME");	
    this.appendValueInput("x0").setCheck("Number").appendField(Blockly.Msg.OLED_X0);
    this.appendValueInput("y0").setCheck("Number").appendField(Blockly.Msg.OLED_Y0);
    this.appendValueInput("width").setCheck("Number").appendField(Blockly.Msg.OLED_width);
    this.appendValueInput("height").setCheck("Number").appendField(Blockly.Msg.OLED_height);
-   this.appendDummyInput() .appendField("✏️").appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+   this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led).appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
    //this.appendDummyInput()	
    //    .appendField(Blockly.Msg.OLED_COLOR)
    //	.appendField(new Blockly.FieldDropdown([["Black","BLACK"],["White", "WHITE"]]), "COLOR")	
@@ -264,6 +257,34 @@ Blockly.Arduino['GFX_bitmap'] = function(block) {
   var height = Blockly.Arduino.valueToCode(this, 'height', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var IconName = block.getFieldValue('NAME');
  // var Color = block.getFieldValue('COLOR');
+ Blockly.Arduino.variables_['matrix16x8'] = 
+ 'static const uint8_t PROGMEM robot[] = {B01111110,B10000001,B10100101,B10000001,B01111110,B10000001,B10000001,B10000001},\n'
+ +'mouse[] = {B01000010,B10111101,B10000001,B10100101,B10000001,B01000010,B00100100,B00011000}, \n'
+ +'reindeer[] = {B01000010,B11100111,B01000010,B00000000,B00100100,B00000000,B00000000,B00011000},\n'
+ +'bat[] = {B10000001,B11000011,B10111101,B10000001,B10100101,B10000001,B01011010,B00100100},\n'
+ +'robot2[] = {B01111110,B11110001,B11010101,B11110001,B01111110,B10001111,B10001111,B10001111},\n'
+ +'circleSmall[] = {B00000000,B00111000,B01000100,B01000100,B01000100,B00111000,B00000000,B00000000},\n'
+ +'circleBig[] = {B00000000,B00111100,B01000010,B01000010,B01000010,B01000010,B00111100,B00000000},\n'
+ +'heart[] = {B00000000,B01101100,B10010010,B10000010,B01000100,B00101000,B00010000,B00000000},\n'
+ +'halfCircle[] = {B00000000,B00000000,B11111111,B10000001,B01000010,B00111100,B00000000,B00000000},\n'
+ +'zigzag[] = {B00000000,B00000000,B00000000,B00100010,B01010100,B10001000,B00000000,B00000000},\n'
+  +'logo[] = {  B01111110,B10000001,B10111001,B10101001,B10111001,B10010001,B10111001,B10010001,B10010001,B10111001,B10010001,B10111001,B10101001,B10111001,B10000001,B01111110},\n'
+  +'happy[] = {  B00000000,B00111100,B00000010,B00000010,B00000010,B00000010,B00111100,B00000000,B00000000,B00111100,B00000010,B00000010,B00000010,B00000010,B00111100,B00000000},\n'
+  +'eyes[] = {  B00000000,B00111100,B01000010,B01001010,B01000010,B01000010,B00111100,B00000000,B00000000,B00111100,B01000010,B01001010,B01000010,B01000010,B00111100,B00000000},\n'
+  +'sad[] =  {  B00000000,B00010000,B00010000,B00010000,B00010000,B00010000,B00010000,B00000000,B00000000,B00010000,B00010000,B00010000,B00010000,B00010000,B00010000,B00000000},\n'
+  +'xx[] =  {  B00000000,B00100010,B00010100,B00001000,B00010100,B00100010,B00000000,B00000000,B00000000,B00000000,B00100010,B00010100,B00001000,B00010100,B00100010,B00000000},\n'
+  +'XX[] = {  B01000001,B00100010,B00010100,B00001000,B00010100,B00100010,B01000001,B00000000,B00000000,B01000001,B00100010,B00010100,B00001000,B00010100,B00100010,B01000001},\n'
+  +'angry[] = {  B00000000,B00011110,B00111100,B01111000,B01110000,B00100000,B00000000,B00000000,B00000000,B00000000,B00100000,B01110000,B01111000,B00111100,B00011110,B00000000},\n'
+  +'angry2[] = {  B00000000,B00000010,B00000100,B00001000,B00010000,B00100000,B00000000,B00000000,B00000000,B00000000,B00100000,B00010000,B00001000,B00000100,B00000010,B00000000},\n'
+  +'sleep[] = {  B00000000,B00100010,B00110010,B00101010,B00100110,B00100010,B00000000,B00000000,B00000000,B00000000,B00100010,B00110010,B00101010,B00100110,B00100010,B00000000},\n'
+  +'freetful[] = {  B00000000,B00100000,B00010000,B00001000,B00000100,B00000010,B00000000,B00000000,B00000000,B00000000,B00000010,B00000100,B00001000,B00010000,B00100000,B00000000},\n'
+  +'love[] = {  B00000000,B00001100,B00011110,B00111100,B00111100,B00011110,B00001100,B00000000,B00000000,B00001100,B00011110,B00111100,B00111100,B00011110,B00001100,B00000000},\n'
+  +'confused[] = {  B00000000,B01111100,B10000010,B10111010,B10101010,B10001010,B01111000,B00000000,B00000000,B01111100,B10000010,B10111010,B10101010,B10001010,B01111000,B00000000},\n'
+  +'wave[] = {  B00000000,B00100000,B00010000,B00001000,B00010000,B00100000,B00010000,B00000000,B00000000,B00100000,B00010000,B00001000,B00010000,B00100000,B00010000,B00000000},\n'
+  +'magic[] = {  B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B01111110,B11111111,B01111110,B00000000,B00000000},\n'
+  +'fail[] = {  B00000000,B00110000,B01111000,B01111000,B01111100,B00111100,B00001000,B00000000,B00000000,B00001000,B00111100,B01111100,B01111000,B01111000,B00110000,B00000000},\n'
+  +'full[] =  {   B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111,B11111111 };\n'
+ +'const static char scrollString[] PROGMEM = "I CAN SCROLL TEXT and Do SOMEThing else !";';   
   var draw = ''
 	if(this.getFieldValue('draw') == 'TRUE') draw= "GFX_WHITE";
 		else draw = "GFX_BLACK";

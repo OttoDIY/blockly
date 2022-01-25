@@ -26,13 +26,13 @@ Blockly.Arduino['matrix16x8_init'] = function(block) {
   var pin_sda = this.getFieldValue('PIN_SDA');
  
  Blockly.Arduino.includes_['define_Adafruit_GFX'] = '#include <Adafruit_GFX.h>\n';
- Blockly.Arduino.includes_['matrix16x8'] = '#include <TM1640.h>\n'
+ Blockly.Arduino.includes_['ematrix16x8'] = '#include <TM1640.h>\n'
   +'#include <TM16xxMatrixGFX.h>\n'
   +'TM1640 module('+pin_scl+', '+pin_sda+');\n'
   +'#define MODULE_SIZECOLUMNS 16    // number of GRD lines, will be the y-height of the display \n'
   +'#define MODULE_SIZEROWS 8    // number of SEG lines, will be the x-width of the display\n'
   +'TM16xxMatrixGFX ematrix(&module, MODULE_SIZECOLUMNS, MODULE_SIZEROWS);    // TM16xx object, columns, rows';
-  Blockly.Arduino.setups_['matrix16x8']='ematrix.setIntensity(7); // Set brightness between 0 and 7 \n'
+  Blockly.Arduino.setups_['ematrix16x8']='ematrix.setIntensity(7); // Set brightness between 0 and 7 \n'
   +' ematrix.setMirror(false, true); \n'
   +' ematrix.setRotation(0);\n';
  var code='';
@@ -49,10 +49,10 @@ Blockly.Blocks['otto9_eyes_init'] = { init: function() {
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 Blockly.Arduino['otto9_eyes_init'] = function(block) {
-Blockly.Arduino.includes_['matrix16x8'] = '#include <Wire.h>\n'
+Blockly.Arduino.includes_['ematrix16x8'] = '#include <Wire.h>\n'
 +'#include "Adafruit_LEDBackpack.h"\n'
 +'Adafruit_8x16matrix ematrix = Adafruit_8x16matrix();';
-Blockly.Arduino.setups_['matrix16x8']='ematrix.begin(0x70);  // pass in the address\n';
+Blockly.Arduino.setups_['ematrix16x8']='ematrix.begin(0x70);  // pass in the address\n';
 var code='';
 return code; 
 };
@@ -235,11 +235,11 @@ return code;
 
 
 Blockly.Blocks['otto9_eyesp']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("👀 . X")
   this.appendValueInput("X")  .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
-  this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -263,7 +263,7 @@ Blockly.Blocks['otto9_eyesl']={ init:function(){
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
   this.appendValueInput("Y2") .setCheck("Number").appendField("Y2");
-  this.appendDummyInput() .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -285,13 +285,13 @@ Blockly.Arduino['otto9_eyesl'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesr']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("👀 🔲 X1")
   this.appendValueInput("X1") .setCheck("Number")
   this.appendValueInput("Y1") .setCheck("Number").appendField("Y1");
   this.appendValueInput("X2") .setCheck("Number").appendField("X2");
   this.appendValueInput("Y2") .setCheck("Number").appendField("Y2");
-  this.appendDummyInput() .appendField("🥛").appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -314,12 +314,12 @@ Blockly.Arduino['otto9_eyesr'] = function(block) {
 };
 
 Blockly.Blocks['otto9_eyesc']={ init:function(){
-  Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput()  .appendField("👀 ⚪ X") 
   this.appendValueInput("X") .setCheck("Number")
   this.appendValueInput("Y") .setCheck("Number").appendField("Y");
   this.appendValueInput("R") .setCheck("Number").appendField("R");
-  this.appendDummyInput() .appendField("🥛").appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField("✏️") .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -345,7 +345,7 @@ Blockly.Blocks['otto9_eyesm'] = {
     this.appendDummyInput()
         .appendField('  ') .appendField('1') .appendField('  2').appendField('  3').appendField(' 4') .appendField(' 5')  .appendField('  6') .appendField(' 7')  .appendField(' 8')
         .appendField(' 9').appendField('10') .appendField('11') .appendField('12') .appendField('13') .appendField('14') .appendField('15') .appendField('16')
-   Blockly.FieldCheckbox.CHECK_CHAR= '▉'
+   Blockly.FieldCheckbox.CHECK_CHAR= '🔴'
     this.appendDummyInput().appendField('1 ')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel7')
         .appendField(new Blockly.FieldCheckbox("FALSE"), 'eyes_pixel15')

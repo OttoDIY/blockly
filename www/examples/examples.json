@@ -1,8 +1,7 @@
 [
     {"source_url": "servo.xml","source_text": "👶Level 1 | 🦿 Servo centering |","visible": true},
     {"source_url": "servosweep.xml","source_text": "👶Level 1 | 🦿 Servo sweep |  ","visible": true},
-    {"source_url": "Ottocalibration.xml","source_text": "👶Level 1 | 🤖 Otto basic calibration |  ","visible": true },
-    {"source_url": "Ottocalibrationapp.xml","source_text": "👶Level 1 | 🤖 Otto proper calibration with software |  ","visible": true },
+    {"source_url": "Ottocalibrationapp.xml","source_text": "👶Level 1 | 🤖 Otto calibration with software |  ","visible": true },
     {"source_url": "Ottobuzzer.xml","source_text": "👶Level 1 | 🔈 Otto sounds |   ","visible": true},
     {"source_url": "melody.xml","source_text": "👶Level 1 | 🎼 Melody |   ","visible": true},
     {"source_url": "RTTL.xml","source_text": "👶Level 1 | 🎼 Ring Tone sounds |   ","visible": true},
