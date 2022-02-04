@@ -33,7 +33,7 @@ Blockly.Arduino['ifttt_init'] = function(block) {
 
 	Blockly.Arduino.definitions_['define_IFTTT'] = '#define IFTTTKEY "'+api_key+'"\n';
 
-	Blockly.Arduino.variables_['ifttt_client'] = 'WiFiClientSecure clientIFTTT;\n';
+	//Blockly.Arduino.variables_['ifttt_client'] = 'WiFiClientSecure clientIFTTT;\n';
 
 	var code='';
 	return code;
@@ -77,9 +77,10 @@ Blockly.Arduino.codeFunctions_['send_ifttt_function'] = 'void enviar_ifttt(Strin
 '{\n'+
 ' // Cerramos cualquier conexión anterior\n'+
 ' HTTPClient http;\n'+
+' WiFiClient client;\n'+
 '\n'+
 'String servername=\"http://maker.ifttt.com/trigger/\"+evento+\"/with/key/\"+IFTTTKEY;\n'+
-'http.begin(servername);\n'+
+'http.begin(client,servername);\n'+
 '\n'+
 ' http.addHeader(\"Content-Type\",\"application/x-www-form-urlencoded\");\n'+
 '\n'+
