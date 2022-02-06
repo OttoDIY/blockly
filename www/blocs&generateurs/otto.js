@@ -682,6 +682,10 @@ Blockly.Blocks['otto_ninja_roll']={init:function(){
   this.appendDummyInput()
       .appendField("🐱‍👤 Roll")
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Roll")
+  this.appendValueInput("SPEED", 'Number')
+      .appendField("with power (1-100)%") // add Blockly message
+      .setCheck('Number')
+      .setAlign(Blockly.ALIGN_RIGHT);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -691,43 +695,56 @@ Blockly.Blocks['otto_ninja_roll']={init:function(){
 
 Blockly.Arduino['otto_ninja_roll'] = function(block) {
   var Roll = block.getFieldValue('Roll');
-  Blockly.Arduino.definitions_['ninja_roll'] =   'void NinjaRollForward()\n'
-  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
-  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
-  +' myservoLeftFoot.write(180); \n'
-  +' myservoRightFoot.write(0);}\n'
-  + 'void NinjaRollBackward()\n'
-  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
-  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
-  +' myservoLeftFoot.write(0); \n'
-  +' myservoRightFoot.write(180);}\n'
-  + 'void NinjaRollLeft()\n'
-  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
-  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
-  +' myservoLeftFoot.write(0); \n'
-  +' myservoRightFoot.write(0);}\n'
-  + 'void NinjaRollRight()\n'
-  + '{myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
-  +' myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
-  +' myservoLeftFoot.write(180); \n'
-  +' myservoRightFoot.write(180);}\n';
+  Blockly.Arduino.definitions_['ninja_roll'] = [
+    'void NinjaRollForward(int speed)',
+    '{',
+    '  myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);',
+    '  myservoRightFoot.attach(ServoRightFootPin, 544, 2400);',
+    '  myservoLeftFoot.write(90 + speed);',
+    '  myservoRightFoot.write(90 - speed);',
+    '}',
+    'void NinjaRollBackward(int speed)',
+    '{',
+    '  myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);',
+    '  myservoRightFoot.attach(ServoRightFootPin, 544, 2400);',
+    '  myservoLeftFoot.write(90 - speed);',
+    '  myservoRightFoot.write(90 + speed);',
+    '}',
+    'void NinjaRollLeft(int speed)',
+    '{',
+    '  myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);',
+    '  myservoRightFoot.attach(ServoRightFootPin, 544, 2400);',
+    '  myservoLeftFoot.write(90 - speed);',
+    '  myservoRightFoot.write(90 - speed);',
+    '}',
+    'void NinjaRollRight(int speed)',
+    '{',
+    '  myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);',
+    '  myservoRightFoot.attach(ServoRightFootPin, 544, 2400);',
+    '  myservoLeftFoot.write(90 + speed);',
+    '  myservoRightFoot.write(90 + speed);',
+    '}'
+  ].join('\n');
+
+  var speed = Blockly.Arduino.valueToCode(block, 'SPEED', Blockly.Arduino.ORDER_ATOMIC) || '100';
+  speed = 'map(' + speed + ', 0, 100, 0, 90)';
   var code = '';
   switch(Roll) {
   case 'F':
-    code = 'NinjaRollForward(); \n';
+    code = 'NinjaRollForward(' + speed + ');\n';
     break;
   case 'B':
-    code = 'NinjaRollBackward(); \n';
+    code = 'NinjaRollBackward(' + speed + ');\n';
     break;
   case 'L':
-    code = 'NinjaRollLeft(); \n';
+    code = 'NinjaRollLeft(' + speed + ');\n';
     break;
   case 'R':
-    code = 'NinjaRollRight();\n';
+    code = 'NinjaRollRight(' + speed + ');\n';
     break;
   }
   return code;
-  };
+};
 
   Blockly.Blocks['otto_ninja_wifi'] = {
     init: function() {
