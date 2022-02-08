@@ -18,7 +18,9 @@ Code.LANGUAGE_NAME = {
   'cn': '🇨🇳 汉语',
   'ja': '🇯🇵 日本語',
   'bg': 'BG Български',
-  'ar': 'Arabic'
+  'ar': 'Arabic',
+  'nl': '🇳🇱 Nederlands'
+
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {
