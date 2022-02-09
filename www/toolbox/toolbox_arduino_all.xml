@@ -100,10 +100,10 @@
 			<value name="RATR"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
 </block>
 <block type="otto_ninja_speed">
-			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
-			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">20</field>	</shadow></value>
+			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
+			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
+			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
+			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
 </block>
 <block type="otto_ninja_wifi"></block>
 <block type="otto_ninja_app"></block>
