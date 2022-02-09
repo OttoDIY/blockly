@@ -97,7 +97,13 @@
 <block type="otto_ninja_app"></block>
 <block type="otto_ninja_home"></block>
 <block type="otto_ninja_walk"></block>
-<block type="otto_ninja_roll"></block>
+<block type="otto_ninja_roll">
+	<value name="SPEED">
+		<shadow type="math_number">
+			<field name="NUM">100</field>
+		</shadow>
+	</value>
+</block>
 <block type="otto_ninja_setwalk"></block>
 <block type="otto_ninja_setroll"></block>
 <block type="otto_ninja_walkstop"></block>
