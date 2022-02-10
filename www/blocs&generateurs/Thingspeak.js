@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['thingspeak_init'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name_init)
@@ -56,7 +56,7 @@ Blockly.Arduino.setups_['setup_thingspeak'] = 'ThingSpeak.begin(client);\n';
 
 Blockly.Blocks['thingspeak_write'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)
@@ -85,7 +85,7 @@ Blockly.Arduino['thingspeak_write'] = function(block) {
 
 Blockly.Blocks['thingspeak_write_long'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)
@@ -109,7 +109,7 @@ Blockly.Arduino['thingspeak_write_long'] = function(block) {
 
 Blockly.Blocks['thingspeak_write_float'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/thingspeak.png",25,25))
         .appendField(Blockly.Msg.Thingspeak_name)

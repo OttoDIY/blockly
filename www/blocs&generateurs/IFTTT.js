@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['ifttt_init'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/ifttt.png",62,38))
        	.appendField(Blockly.Msg.IFTTT_init)
@@ -42,7 +42,7 @@ Blockly.Arduino['ifttt_init'] = function(block) {
 
 Blockly.Blocks['ifttt_send'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/ifttt.png",62,38))
         .appendField(Blockly.Msg.IFTTT_send)

@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['Init_NTP'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
        	.appendField(Blockly.Msg.NTP_NAME);
@@ -51,7 +51,7 @@ Blockly.Arduino['Init_NTP'] = function(block) {
 
 Blockly.Blocks['order_read_NTP_server'] = {
   init: function() {
-   this.setColour("#008080");
+   this.setColour("#26C6F8");
     this.appendDummyInput()
 	    .appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
         .appendField(Blockly.Msg.NTP_READ_RTC);
@@ -75,7 +75,7 @@ Blockly.Arduino['order_read_NTP_server'] = function(block) {
 
 Blockly.Blocks['values_NTP_server'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
 		.appendField(Blockly.Msg.NTP_NAME2)
@@ -113,7 +113,7 @@ Blockly.Arduino['values_NTP_server'] = function(block) {
 
 Blockly.Blocks['values_text_NTP_server'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/ntp_icon.png",25,25))
 		.appendField(Blockly.Msg.NTP_NAME2)

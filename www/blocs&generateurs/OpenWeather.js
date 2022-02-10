@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['Init_OpenWeather'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/openweather.png",25,25))
        	.appendField(Blockly.Msg.Openweather_init);
@@ -116,7 +116,7 @@ Blockly.Arduino['Init_OpenWeather'] = function(block) {
 
 Blockly.Blocks['order_read_OpenWeather_server'] = {
   init: function() {
-   this.setColour("#008080");
+   this.setColour("#26C6F8");
     this.appendDummyInput()
 	    .appendField(new Blockly.FieldImage("media/openweather.png",25,25))
         .appendField(Blockly.Msg.ReadWeather);
@@ -152,7 +152,7 @@ Blockly.Arduino['order_read_OpenWeather_server'] = function(block) {
 
 Blockly.Blocks['values_OpenWeather_server'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/openweather.png",25,25))
 		.appendField(Blockly.Msg.OW_Value)
@@ -201,7 +201,7 @@ Blockly.Arduino['values_OpenWeather_server'] = function(block) {
 
 Blockly.Blocks['values_text_OpenWeather_server'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/openweather.png",25,25))
 		.appendField(Blockly.Msg.OW_Value)

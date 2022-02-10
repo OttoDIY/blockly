@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['telegram_init'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/telegram.png",25,25))
         .appendField(Blockly.Msg.Telegram_name_init)
@@ -55,7 +55,7 @@ Blockly.Arduino['telegram_init'] = function(block) {
 
 Blockly.Blocks['telegram_loop_message'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/telegram.png",25,25))
         .appendField(Blockly.Msg.Telegram_Loop)
@@ -83,7 +83,7 @@ Blockly.Arduino['telegram_loop_message'] = function(block) {
 
 Blockly.Blocks["telegram_reception_function"]={init:function(){
 		
-        this.setColour("#008080");
+        this.setColour("#26C6F8");
 
         this.setHelpUrl(Blockly.Msg.HELPURL);
 		this.appendDummyInput()
@@ -112,7 +112,7 @@ Blockly.Arduino["telegram_reception_function"]=function(block){
 
 Blockly.Blocks['telegram_sendmessage'] = {
   init: function() {
-     this.setColour("#008080");
+     this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/telegram.png",25,25))
 		.appendField(Blockly.Msg.Telegram_name);
@@ -137,7 +137,7 @@ Blockly.Arduino['telegram_sendmessage'] = function(block) {
 
 Blockly.Blocks['telegram_message_name_received'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/telegram.png",25,25))
 		.appendField(Blockly.Msg.Telegram_name)
@@ -159,7 +159,7 @@ Blockly.Arduino['telegram_message_name_received'] = function(block) {
 
 Blockly.Blocks['telegram_message_received'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/telegram.png",25,25))
         .appendField(Blockly.Msg.Telegram_message)	

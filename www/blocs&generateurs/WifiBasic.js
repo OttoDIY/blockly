@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['wifi_init_sta'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",62,38))
         .appendField(Blockly.Msg.WIFI_sta_init)
@@ -78,7 +78,7 @@ else{
 
 Blockly.Blocks['wifi_init_ap'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",62,38))
         .appendField(Blockly.Msg.WIFI_ap_init)
@@ -142,7 +142,7 @@ else{
 
 Blockly.Blocks['wifi_init_sta_ap'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",62,38))
         .appendField(Blockly.Msg.WIFI_sta_ap_init)
@@ -225,7 +225,7 @@ var code= 'delay(2000);\n'+
 
 Blockly.Blocks['wifi_ap_staticip'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
         .appendField(Blockly.Msg.Wifi_ap_fixip)
@@ -265,7 +265,7 @@ Blockly.Arduino.variables_['define_wifi_static_ip_ap'] = 'IPAddress staticIP_ap(
 
 Blockly.Blocks['wifi_sta_staticip'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
         .appendField(Blockly.Msg.Wifi_sta_fixip)

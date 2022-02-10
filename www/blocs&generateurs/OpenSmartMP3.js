@@ -51,8 +51,7 @@ Blockly.Blocks['OpenSmartMp3_set_volumen'] = {
  init: function() {
 	this.setColour("#a600d3");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mp3.png",25,25))
-        .appendField(Blockly.Msg.MP3OS_name)
+        .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_volumen)
 	this.appendValueInput("Volumen")
 		.setCheck('Number')
@@ -76,8 +75,7 @@ Blockly.Blocks['OpenSmartMp3_operation'] = {
   init: function() {
 	this.setColour("#a600d3");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mp3.png",25,25))
-        .appendField(Blockly.Msg.MP3OS_name)
+        .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_operation)
 		.appendField(new Blockly.FieldDropdown([['Increase Volumen','0'],['Decrease Volumen','1'],['Reproduce next Song','2'],['Reproduce previous Song','3'],['Start Song','4'],['Pause Song','5'],['Stop Song','6'],['Foward','7'],['Rewind','8'],['Stop inject','9'],['Single cycle','10'],['All cycle','11']]), "MP3_OPERATION");
     this.setInputsInline(true);
@@ -123,8 +121,7 @@ Blockly.Blocks['OpenSmartMp3_playsong'] = {
   init: function() {
 	this.setColour("#a600d3");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mp3.png",25,25))
-        .appendField(Blockly.Msg.MP3OS_name)
+        .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_playsong)
 	this.appendValueInput("Song")
 		.setCheck('Number')
@@ -148,8 +145,7 @@ Blockly.Blocks['OpenSmartMp3_playsongdirectiry'] = {
   init: function() {
 	this.setColour("#a600d3");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mp3.png",25,25))
-        .appendField(Blockly.Msg.MP3OS_name)
+        .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 	this.appendValueInput("Song")
 		.appendField(Blockly.Msg.MP3OS_playsong)
 		.setCheck('Number')
@@ -177,8 +173,7 @@ Blockly.Blocks['OpenSmartMp3_injectindex'] = {
   init: function() {
 	this.setColour("#a600d3");
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/mp3.png",25,25))
-        .appendField(Blockly.Msg.MP3OS_name)
+        .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_inject)
 	this.appendValueInput("Song")
 		.setCheck('Number')

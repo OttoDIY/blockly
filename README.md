@@ -1,12 +1,12 @@
 # Otto Blockly
 
-This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, compile and upload to any Arduino. Compatible [with any Otto DIY robot or Arduino related boards](https://www.ottodiy.com/software). It is the perfect software to get you started into coding and STEM robotics.
+This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, compile and upload to multiple options of microcontrollers. Compatible [with any Otto DIY robot, Arduino oe ESP8266 and ESP32 related boards](https://www.ottodiy.com/software). It is the perfect software to get you started into coding and STEM robotics.
 
 ## [Click here to watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
 
 ## Installer
-This software can work offline (standalone) by installing it on your computer for [Windows (master branch)](https://github.com/OttoDIY/blockly). 
-MAC version too!
+This software can work offline (standalone) by installing it on your computer go to releases for [Windows and MAC](https://github.com/OttoDIY/blockly/releases). 
+
 [For Linux operating systems go to this repo](https://github.com/OttoDIY/blocklyLinux). 
 
 You can [download the latest release from here](https://github.com/OttoDIY/blockly/releases). After the software is installed in your PC, it is ready to use immediately, you do not need to import Arduino libraries or any additional swtup for the boards because it comes with a copy of the Arduino CLI, it is all in one software!, you will be ready to upload codes directly to your robot or any other Arduino project via USB.
@@ -26,7 +26,7 @@ Drag , drop, connect, mix, play and create your own codes.[Join the Otto Builder
 
 ## Help us add new Languages
 
-Leave your mark in the world by translating Blockly for the world, you are welcome to contribute with any languages you know, it will benefit you and everyone in your community.
+Leave your mark in the world by translating Blockly, you are welcome to contribute with any languages you know, it will benefit you and everyone in your community.
 
 The more people helping to translate the better, it is important to translate while understanding the context and what is the robot actually doing to be accurate.
 
@@ -34,6 +34,47 @@ The more people helping to translate the better, it is important to translate wh
 2. Rename them according to your ISO language code, for example fr is for French,so the files are renamed like this: Arduino_fr.js Blockly_fr.js and msg_fr.js  
 3. Edit the files with any code editor software like [Visual Studio Code](https://code.visualstudio.com/) translating only the english part after = in between the quotes "" in visual studio is the text in red.
 4. Then [pull a request here in github](https://github.com/OttoDIY/blockly/pulls) or just [attach the files in an new issue](https://github.com/OttoDIY/blockly/issues).
+
+## How to run project
+You willneed to have installed the node.js tools in your computer. The version must be the 12.0
+
+1. Clone or download the source code.
+> git clone https://github.com/OttoDIY/blockly.git
+2. OPEN GIT BASH as Administrator and cd in folder
+> cd blockly
+3. Install required tools.
+> npm install -g build-tools
+>npm install -g windows-build-tool 
+	(this command is not working ok. If the log is held then you must install python 2.7 before because the problem is with the python installation.)
+> npm install -g node-gyp
+4. Install required node modules.Execute following on the source code directory
+> npm install
+5. Install Arduino CLI
+get arduino-cli.exe from https://github.com/arduino/arduino-cli/releases 
+and place it under compilation/arduino
+>cd compilation/arduino
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+mv bin/arduino-cli ./
+rm -rf bin
+6. Execute following to install required tools
+>cd compilation\arduino
+>arduino-cli core update-index
+>arduino-cli core  install arduino:avr@1.8.3
+>arduino-cli core install arduino:samd@1.8.9
+>arduino-cli core install arduino:megaavr@1.8.6
+>arduino-cli core install esp8266:esp8266@2.7.4
+>arduino-cli core install esp32:esp32@1.0.4
+>arduino-cli core update-index
+7. Build (creates .exe and .zip)
+You can use electron-builder to pack your electron app in zip, nsis (Installer), portable (App without installation) formats.
+>cd ../../     #  ( go back to the repository’s top directory)
+> npm run compiler
+or
+> build --win --ia32
+>export PATH=$PATH:node_modules/.bin
+npm install electron-builder@22.13.1
+>build --mac --x64
+>electron-builder --mac --x64
 
 ## How to Contribute
 Contributing to this software is warmly welcomed. There are 5 ways you can contribute to this project:
@@ -48,35 +89,9 @@ Just make sure to keep consistency in the naming and make a record of the change
 Welcome to the Otto DIY development team!
 Thanks for your contribution.
 
-## How to Build by yourself
-1. Clone or download the source code.
-> git clone https://github.com/OttoDIY/blockly.git
-2. OPEN GIT or Terminal run as Administrator and cd in folder
-> cd blockly-master
-3. Requirements You'll need Node.js installed on your computer.
-> npm install -g build-tools
-> npm install -g node-gyp
-4. Install the npm
-> npm install
-5.  Install Arduino CLI
-cd compilation/arduino
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-mv bin/arduino-cli ./
-rm -rf bin
-6. Build (creates .exe and .zip)
-You can use electron-builder to pack your electron app in zip, nsis (Installer), portable (App without installation) formats.
->cd ../../     #  ( go back to the repository’s top directory)
-> npm run compiler
-or
-> build --win --ia32
->export PATH=$PATH:node_modules/.bin
-npm install electron-builder@22.13.1
->build --mac --x64
->electron-builder --mac --x64
-
 ## Attribution
 
-Thanks to all these great people it has been possible to make this project:
+Thanks to all these great people and open projects, it has been possible to make this software:
 
 - [Blockly](https://developers.google.com/blockly)
 - [Blockly@rduino](https://github.com/technologiescollege/Blockly-at-rduino)
@@ -84,6 +99,7 @@ Thanks to all these great people it has been possible to make this project:
 - [BlocklyDuino](https://github.com/BlocklyDuino/BlocklyDuino)
 - [Blocklyduino for MRTduino](https://logix5.com/Blockyduino-para-MRTDuino/)
 - [Ardublockly](https://github.com/carlosperate/ardublockly)
+- [Oscar Ferruz](https://github.com/logix5)
 - [Bodo Minea](https://github.com/BodoMinea)
 - [Takuji Kawata](https://github.com/takujikawata-pr)
 - [Nicolas Nca78](https://github.com/Nca78/Matrix_GFX)
@@ -106,4 +122,3 @@ Thanks to all these great people it has been possible to make this project:
 - [NSIS](https://sourceforge.net/projects/nsis)
 - [masayloBlockly](https://github.com/agomezgar/masayloBlockly)
 - [Escornabot](escornabot.com) 
-- [Masaylo](https://github.com/agomezgar/masaylo)

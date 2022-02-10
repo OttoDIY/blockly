@@ -14,7 +14,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['wifiserver_port'] = {
   init: function() {
-     this.setColour("#008080");
+     this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
 		.appendField(Blockly.Msg.WifiServer_port);
@@ -41,7 +41,7 @@ Blockly.Arduino['wifiserver_port'] = function(block) {
 
 Blockly.Blocks['wifiserver_waitconnection'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
         .appendField(Blockly.Msg.WifiServer_wait)
@@ -64,7 +64,7 @@ Blockly.Arduino['wifiserver_waitconnection'] = function(block) {
 
 Blockly.Blocks['wifiserver_answer'] = {
   init: function() {
-     this.setColour("#008080");
+     this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
 		.appendField(Blockly.Msg.WifiServer_answer);
@@ -97,7 +97,7 @@ Blockly.Arduino['wifiserver_answer'] = function(block) {
 
 Blockly.Blocks['wifiserver_stop'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
         .appendField(Blockly.Msg.WifiServer_stop)
@@ -118,7 +118,7 @@ Blockly.Arduino['wifiserver_stop'] = function(block) {
 
 Blockly.Blocks['wifiserver_flush'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
         .appendField(Blockly.Msg.WifiServer_flush)
@@ -139,7 +139,7 @@ Blockly.Arduino['wifiserver_flush'] = function(block) {
 
 Blockly.Blocks['wifiserver_ip'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
 		.appendField(Blockly.Msg.WifiServer_ip)
@@ -163,7 +163,7 @@ Blockly.Arduino['wifiserver_ip'] = function(block) {
 
 Blockly.Blocks['wifiserver_request'] = {
   init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/wifi.png",25,25))
 		.appendField(Blockly.Msg.WifiServer_request)

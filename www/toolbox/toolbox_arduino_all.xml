@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_del,CAT_BUZZER</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
 	
@@ -319,6 +319,8 @@
 		<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		<block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>
+		<block type="dht_sensor2"><field name="PinDHT">10</field></block>	
+		<block type="dht_measure"></block>	
 	</category>	
 		
 	<category name="CAT_SENSORS" colour="#2a93e8">
@@ -347,7 +349,7 @@
 				</block>	
 		</category>
 		<category name="CAT_TEMP" colour="#2a93e8">
-				<block type="dht_sensor2"></block>	
+				<block type="dht_sensor2"><field name="PinDHT">10</field></block>
 				<block type="dht_measure"></block>	
 				<block type="Analog_temperature_sensor2"></block>	
 				<block type="LM35_temperature_sensor2"></block>

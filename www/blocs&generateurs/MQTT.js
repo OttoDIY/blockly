@@ -13,7 +13,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['mqtt_init'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mqtt_image.png",62,38))
         .appendField(Blockly.Msg.MQTT_name_init)
@@ -152,7 +152,7 @@ Blockly.Arduino.setups_['setup_mqtt_setup'] = '	delay(2000);\n'+
 
 Blockly.Blocks['mqtt_loop'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
         .appendField(Blockly.Msg.MQTT_name)
@@ -174,7 +174,7 @@ Blockly.Arduino['mqtt_loop'] = function(block) {
 
 Blockly.Blocks['mqtt_subscribe_num'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
         .appendField(Blockly.Msg.MQTT_name)
@@ -243,7 +243,7 @@ else
 
 Blockly.Blocks['mqtt_subscribe_text'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
         .appendField(Blockly.Msg.MQTT_name)
@@ -312,7 +312,7 @@ else
 
 Blockly.Blocks['mqtt_publish'] = {
    init: function() {
-    this.setColour("#008080");
+    this.setColour("#26C6F8");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mqtt_image.png", 62,38 ))
         .appendField(Blockly.Msg.MQTT_name)

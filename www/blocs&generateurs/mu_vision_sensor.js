@@ -123,10 +123,8 @@ Blockly.Arduino.Vs2MuInit = function() {
 Blockly.Blocks['Vs2Setup'] = {
   init: function() {
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_SetupVS)
+        .appendField("📷 "+ Blockly.LKL_VS2_SetupVS)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ");
     this.appendStatementInput('SETUP_BLOCK');
     this.setPreviousStatement(true, null);
@@ -147,10 +145,8 @@ Blockly.Arduino.Vs2Setup = function() {
 Blockly.Blocks['Vs2Reset'] = {
   init: function() {
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_RESET);
+        .appendField("📷 "+Blockly.LKL_VS2_RESET);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
 	this.setInputsInline(true);
@@ -180,7 +176,7 @@ Blockly.Blocks['Vs2SetLEDColor'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
+		.appendField("📷 ")
     this.appendDummyInput()
         .appendField('LED')
         .appendField(new Blockly.FieldDropdown([["1", "kLed1"], ["2", "kLed2"], [Blockly.LKL_VS2_ALL, "kLedAll"]]), "LED_ID")
@@ -232,7 +228,7 @@ Blockly.Blocks['Vs2VisionBegin'] = {
     var lVs2VisionStatus = [[Blockly.LKL_VS2_ENABLE, "Begin"],[Blockly.LKL_VS2_DISABLE, "End"]];
      this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
+		.appendField("📷 ")
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVs2VisionStatus), "VisionStatus")
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
@@ -262,10 +258,8 @@ Blockly.Arduino.Vs2VisionBegin = function() {
 Blockly.Blocks['Vs2SetVisionLevel'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_VISION_TYPE)
+        .appendField("📷 "+Blockly.LKL_VS2_VISION_TYPE)
         .appendField(new Blockly.FieldDropdown(VS_VISION_TYPE), "VisionType")
         .appendField(' '+Blockly.LKL_VS2_SET_VISION_LEVEL)
         .appendField(new Blockly.FieldDropdown([[Blockly.LKL_VS2_AUTO,"kLevelDefault"],
@@ -301,10 +295,8 @@ Blockly.Arduino.Vs2SetVisionLevel = function() {
 Blockly.Blocks['Vs2SetVisionZoom'] = {
   init: function() {
     this.setColour("#0060aa");
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_SET_VISION_ZOOM)
+        .appendField("📷 "+Blockly.LKL_VS2_SET_VISION_ZOOM)
         .appendField(new Blockly.FieldDropdown([[Blockly.LKL_VS2_AUTO,"kZoomDefault"],[Blockly.LKL_VS2_LEVEL+"1", "kZoom1"],
                   [Blockly.LKL_VS2_LEVEL+"2", "kZoom2"],[Blockly.LKL_VS2_LEVEL+"3", "kZoom3"],
                   [Blockly.LKL_VS2_LEVEL+"4", "kZoom4"],[Blockly.LKL_VS2_LEVEL+"5", "kZoom5"]
@@ -333,10 +325,8 @@ Blockly.Arduino.Vs2SetVisionZoom = function() {
 Blockly.Blocks['Vs2SetColorRecognitionRegion'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_VISION_COLOR_RECOGNITION)
+        .appendField("📷 "+Blockly.LKL_VS2_VISION_COLOR_RECOGNITION)
         .appendField(Blockly.LKL_VS2_SET_RECOGNITION_REGION);
     this.appendValueInput('Width')
         .setCheck("Number")
@@ -375,10 +365,8 @@ Blockly.Arduino.Vs2SetColorRecognitionRegion = function() {
 Blockly.Blocks['Vs2SetColorBlockMinBlob'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_VISION_COLOR_DETECT)
+        .appendField("📷 "+Blockly.LKL_VS2_VISION_COLOR_DETECT)
         .appendField(Blockly.LKL_VS2_SET_MIN_RECOGNITION_SIZE);
     this.appendValueInput('Width')
         .setCheck("Number")
@@ -417,10 +405,8 @@ Blockly.Blocks['Vs2SetUARTBaud'] = {
 		var BAUD = [["9600","kBaud9600"],["19200","kBaud19200"],["38400","kBaud38400"],["57600","kBaud57600"],
     ["115200","kBaud115200"],["230400","kBaud230400"],["460800","kBaud460800"],["921600","kBaud921600"]];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-				.appendField(Blockly.LKL_VS2_SET_UART_BAUD)
+				.appendField("📷 "+Blockly.LKL_VS2_SET_UART_BAUD)
         .appendField(new Blockly.FieldDropdown(BAUD), "BAUD");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -446,10 +432,8 @@ Blockly.Arduino.Vs2SetUARTBaud = function() {
 Blockly.Blocks['Vs2SetCameraRotate'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
-        .appendField(Blockly.LKL_VS2_SET_FRAME_ROTATE)
+        .appendField("📷 "+Blockly.LKL_VS2_SET_FRAME_ROTATE)
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'FRAME_ROTATE');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -480,10 +464,8 @@ Blockly.Arduino.Vs2SetCameraRotate = function() {
 Blockly.Blocks['Vs2SetCameraHFR'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
-        .appendField(Blockly.LKL_VS2_SET_CAMERA_HFR)
+        .appendField("📷 "+Blockly.LKL_VS2_SET_CAMERA_HFR)
         .appendField(new Blockly.FieldCheckbox('TRUE'), 'CameraHFR');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -515,10 +497,8 @@ Blockly.Blocks['Vs2SetCameraWhiteBalance'] = {
     var lCameraAWB = [[Blockly.LKL_VS2_AUTO, "kAutoWhiteBalance"],[Blockly.LKL_VS2_LOCK_AWB, "kLockWhiteBalance"],
                       [Blockly.LKL_VS2_WHITE_LIGHT, "kWhiteLight"],[Blockly.LKL_VS2_YELLOW_LIGHT, "kYellowLight"]];
     this.setColour(Blockly.Blocks.VisionSensor.HUE_SetupMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput('')
-        .appendField(Blockly.LKL_VS2_SET_CAMERA_AWB)
+        .appendField("📷 "+Blockly.LKL_VS2_SET_CAMERA_AWB)
         .appendField(new Blockly.FieldDropdown(lCameraAWB), 'CameraAWB');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -544,7 +524,7 @@ Blockly.Blocks['Vs2Detected'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
+		.appendField("📷 ")
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
 				.appendField(Blockly.LKL_VS2_DETECTED)
@@ -565,7 +545,7 @@ Blockly.Blocks['Vs2DetectedRegionColor'] = {
   init: function() {
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
+		.appendField("📷 ")
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_RECOGNIZED)
@@ -605,7 +585,7 @@ Blockly.Blocks['Vs2DetectedColorDetect'] = {
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
 	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
+		.appendField("📷 ")
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_DETECTED)
@@ -636,10 +616,8 @@ Blockly.Blocks['Vs2GetColorLabel'] = {
     color.setColours(led_color).setColumns(3);
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
+        .appendField("📷 "+Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
         .appendField(Blockly.LKL_VS2_VISION_COLOR_RECOGNITION);
@@ -678,10 +656,8 @@ Blockly.Blocks['Vs2GetMessage'] = {
     var vision_type = VS_VISION_TYPE.slice();
 
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-				.appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
+				.appendField("📷 "+Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MU_OBJ")
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
         .appendField(new Blockly.FieldDropdown(vision_type), "VISION_TYPE");
@@ -779,10 +755,8 @@ Blockly.Blocks['Vs2GetCardType'] = {
                             'VISION_NUM_CARD_DETECT':this.number_card_type_
                             };
     this.setColour(Blockly.Blocks.VisionSensor.HUE_RunMode);
-	this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/camera2.png",35,25))
     this.appendDummyInput()
-        .appendField(Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
+        .appendField("📷 "+Blockly.LKL_VS2_GET_DETECTED_MESSAGE)
         .appendField(new Blockly.FieldDropdown(lVsMu), "MuObj")
         .appendField(Blockly.LKL_VS2_VISION_TYPE)
         .appendField(new Blockly.FieldDropdown(lVisionCardType), "VisionCardType")
