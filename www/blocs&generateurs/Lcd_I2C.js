@@ -9,7 +9,7 @@ Blockly.Blocks['lcdi2c_setup'] = {
    init: function() {
    this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
+		.appendField(new Blockly.FieldImage("media/LCD.png",33,33))
         .appendField(Blockly.Msg.LCD_I2C_setup);
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("0x3F"), "NAME");
@@ -46,8 +46,7 @@ Blockly.Blocks['lcdi2c_clear'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_Clear);
+        .appendField("📟"+ Blockly.Msg.LCDP_Clear);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -65,8 +64,7 @@ Blockly.Blocks['lcdi2c_home'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_Home);
+        .appendField("📟"+Blockly.Msg.LCDP_Home);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -85,8 +83,7 @@ Blockly.Blocks['lcdi2c_setcursor'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_SetCursor);
+        .appendField("📟"+Blockly.Msg.LCDP_SetCursor);
     this.appendValueInput("column")
         .setCheck("Number")
         .appendField(Blockly.Msg.LCDP_Column2);
@@ -131,8 +128,7 @@ Blockly.Blocks['lcdi2c_setcursoralone'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_SetCursor);
+        .appendField("📟"+Blockly.Msg.LCDP_SetCursor);
     this.appendValueInput("column")
         .setCheck("Number")
         .appendField(Blockly.Msg.LCDP_Column2);
@@ -172,8 +168,7 @@ Blockly.Blocks['lcdi2c_display'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_Display)
+        .appendField("📟"+Blockly.Msg.LCDP_Display)
 		.appendField(new Blockly.FieldDropdown([["Display", "1"], ["No Display", "0"]]), "OUTPUT_DISPLAY")
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -198,8 +193,7 @@ Blockly.Blocks['lcdi2c_scrollDisplay'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_scrollDisplay)
+        .appendField("📟"+Blockly.Msg.LCDP_scrollDisplay)
 		.appendField(new Blockly.FieldDropdown([["Left", "1"], ["Right", "0"]]), "OUTPUT_DISPLAY")
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -223,8 +217,7 @@ Blockly.Blocks['lcdi2c_setBacklight'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_setBcklight)
+        .appendField("📟"+Blockly.Msg.LCDP_setBcklight)
 		.appendField(new Blockly.FieldDropdown([["ON", "1"], ["OFF", "0"]]), "OUTPUT_DISPLAY")
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -248,8 +241,7 @@ Blockly.Blocks['lcdi2c_showCursor'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_showCursor)
+        .appendField("📟"+Blockly.Msg.LCDP_showCursor)
 		.appendField(new Blockly.FieldDropdown([["ON", "1"], ["OFF", "0"]]), "OUTPUT_DISPLAY")
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -274,8 +266,7 @@ Blockly.Blocks['lcdi2c_blinkCursor'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/LCD.png",53,38))
-        .appendField(Blockly.Msg.LCDP_blinkCursor)
+        .appendField("📟"+Blockly.Msg.LCDP_blinkCursor)
 		.appendField(new Blockly.FieldDropdown([["ON", "1"], ["OFF", "0"]]), "OUTPUT_DISPLAY")
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

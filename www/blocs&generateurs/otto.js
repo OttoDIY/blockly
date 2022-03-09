@@ -413,7 +413,7 @@ Blockly.Arduino['otto_ninja_init'] = function(block) {
 
 Blockly.Blocks['otto_ninja_calibration']={init:function(){
 
-  this.appendValueInput("LA0") .setCheck("Number").appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION + "LLS").setAlign(Blockly.ALIGN_RIGHT)
+  this.appendValueInput("LA0") .setCheck("Number").appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION +"°"+ " LLS").setAlign(Blockly.ALIGN_RIGHT)
   this.appendValueInput("RA0") .setCheck("Number").appendField("RLS").setAlign(Blockly.ALIGN_RIGHT)
   this.appendValueInput("LATL") .setCheck("Number").appendField("LLL").setAlign(Blockly.ALIGN_RIGHT)
   this.appendValueInput("RATL") .setCheck("Number").appendField("RLL").setAlign(Blockly.ALIGN_RIGHT)
@@ -457,15 +457,19 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
 
   Blockly.Blocks['otto_ninja_speed']={init:function(){
 
-    this.appendValueInput("LFFWRS") .setCheck("Number") .appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_MOVE_SPEED_TEXT+" "+ Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-    this.appendValueInput("RFFWRS") .setCheck("Number").appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-    this.appendValueInput("LFBWRS") .setCheck("Number").appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-    this.appendValueInput("RFBWRS") .setCheck("Number").appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("LFFWRS") .setCheck("Number") .appendField("🐱‍👤 "+ Blockly.Msg.OTTO9_CALIBRATION + Blockly.Msg.OTTO9_MOVE_SPEED_TEXT+"  FL").setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("RFFWRS") .setCheck("Number").appendField("FR") .setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("LFBWRS") .setCheck("Number").appendField("BL").setAlign(Blockly.ALIGN_RIGHT)
+    this.appendValueInput("RFBWRS") .setCheck("Number").appendField("BR").setAlign(Blockly.ALIGN_RIGHT)
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setColour("#0A0A0A");
-      this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
+      this.setTooltip("FL= Formward Left"
+      +"FR= Formward Right"
+      +"BL= Backward Left"
+      +"BR= Backward Right"
+      );
       this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
     };
     

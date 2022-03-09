@@ -66,8 +66,7 @@ Blockly.Blocks['st7735_backgroundcolor'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_FILLBACKGROUND)
 		.appendField(new Blockly.FieldDropdown([["Black","ST7735_BLACK"],["Green", "ST7735_GREEN"],["Red", "ST7735_RED"],["Blue","ST7735_BLUE"],["Cyan", "ST7735_CYAN"],["Magenta", "ST7735_MAGENTA"],["Yellow", "ST7735_YELLOW"],["White", "ST7735_WHITE"]]), "COLOR")
@@ -93,8 +92,7 @@ Blockly.Blocks['st7735_icon'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-         .appendField(Blockly.Msg.ST7735_name)
+         .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.ST7735_IconName)
         .appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
@@ -126,8 +124,7 @@ Blockly.Blocks['st7735_rotatedisplay'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_Rotate)
 		.appendField(new Blockly.FieldDropdown([["0º","0"],["90º", "1"],["180º", "2"],["270º","3"]]), "DEGREE")
@@ -152,8 +149,7 @@ Blockly.Blocks['st7735_invertdisplay'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_Invert)
 		.appendField(new Blockly.FieldDropdown([["OFF","0"],["ON", "1"]]), "INVERT_DISPLAY")
@@ -177,8 +173,7 @@ Blockly.Blocks['st7735_setcursor'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_SetCursor)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -208,8 +203,7 @@ Blockly.Blocks['st7735_settextcolor'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_TEXTCOLOR)
 		.appendField(new Blockly.FieldDropdown([["Black","ST7735_BLACK"],["Green", "ST7735_GREEN"],["Red", "ST7735_RED"],["Blue","ST7735_BLUE"],["Cyan", "ST7735_CYAN"],["Magenta", "ST7735_MAGENTA"],["Yellow", "ST7735_YELLOW"],["White", "ST7735_WHITE"]]), "COLOR")
@@ -235,8 +229,7 @@ Blockly.Blocks['st7735_settextsize'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_TEXTsize)
 		.appendField(new Blockly.FieldDropdown([["Little","1"],["Medium", "2"],["Large", "3"]]), "SIZE")
@@ -261,8 +254,7 @@ Blockly.Blocks['st7735_wraptext'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()	
         .appendField(Blockly.Msg.ST7735_TEXTwrap)
 		.appendField(new Blockly.FieldDropdown([["OFF","false"],["ON", "true"]]), "WRAPTEXT")
@@ -286,8 +278,7 @@ Blockly.Blocks['st7735_printTextln'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_PrintTextLN)
 	this.appendValueInput("text_to_print")
         .setCheck("String")
@@ -319,8 +310,7 @@ Blockly.Blocks['st7735_drawpixel'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_DrawPixel)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -354,8 +344,7 @@ Blockly.Blocks['st7735_drawline'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_Drawlinefrom)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -398,8 +387,7 @@ Blockly.Blocks['st7735_drawrectangle'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_Drawrectangle)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -449,8 +437,7 @@ Blockly.Blocks['st7735_drawroundrectangle'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_Drawroundrectangle)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -504,8 +491,7 @@ Blockly.Blocks['st7735_drawcircle'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_Drawcircle)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -551,8 +537,7 @@ Blockly.Blocks['st7735_drawtriangle'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_Drawtriangle)
 	this.appendValueInput("x0")
         .setCheck("Number")
@@ -613,8 +598,7 @@ Blockly.Blocks['st7735_properties'] = {
   init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-		.appendField(Blockly.Msg.ST7735_name)
+		.appendField("📺"+Blockly.Msg.ST7735_name)
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.ST7735_properties)
         .appendField(new Blockly.FieldDropdown([["Width", "1"], ["Height", "2"],["X cursor position", "3"],["Y cursor position", "4"],["Rotatation value", "5"]]), "Property")   
@@ -648,8 +632,7 @@ Blockly.Blocks['st7735_drawicon'] = {
    init: function() {
     this.setColour("#4b009f");
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("media/tft7735.png",35,25))
-        .appendField(Blockly.Msg.ST7735_name)
+        .appendField("📺"+Blockly.Msg.ST7735_name)
 		.appendField(Blockly.Msg.ST7735_DrawiconName)
 	this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("IconName"), "NAME");	
