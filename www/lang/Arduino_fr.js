@@ -335,6 +335,7 @@ Blockly.Msg.bargraphe_tooltip="module bargraphe composé de 10 DEL (8 vertes, 1 
 Blockly.Msg.rvb_init="DEL rvb";
 Blockly.Msg.rvb_init_tooltip="indiquer les broches PWM à connecter à la DEL RVB";
 Blockly.Msg.rvb_set="afficher la couleur";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="affiche la couleur en fonction des 3 composantes (rouge, vert, bleu)";
 Blockly.Msg.pixel1="pixel RVB";
 Blockly.Msg.pixel2="mettre à jour les pixels";
@@ -367,6 +368,7 @@ Blockly.Msg.play_helpurl="";
 Blockly.Msg.beep="émettre un bip sur la broche";
 Blockly.Msg.beep_TOOLTIP="émet un bip (à 440Hz pendant 1s) sur la broche selectionnée";
 Blockly.Msg.ARDUINO_TONE_INPUT1="émettre un son sur la broche";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2="fréquence (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3="durée (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP="émettre un son sur la broche selectionnée, à la fréquence désirée et pendant la durée souhaitée";
@@ -631,6 +633,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 
@@ -1005,6 +1008,7 @@ Blockly.Msg.TM1640_SDA="SDA Pin";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Direction";
 Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

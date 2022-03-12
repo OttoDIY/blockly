@@ -335,6 +335,7 @@ Blockly.Msg.bargraphe_tooltip = "modulo gráfico de barra é composto por 10 LED
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="indique os PWM pins para conectar ao RGB LED";
 Blockly.Msg.rvb_set="mostrar cores";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="exibir uma cor indicando um valor para os 3 componentes (vermelho, verde, azul)";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
 Blockly.Msg.pixel2 = "atualizar pixels";
@@ -367,6 +368,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "bip no pin";
 Blockly.Msg.beep_TOOLTIP = "bips (a 440Hz cada 1s) no pin selecionado";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "emite um som no pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "frequência (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "duração (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emita um som no pin selecionado, na frequência desejada e para a duração desejada";
@@ -631,6 +633,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 
@@ -1003,6 +1006,7 @@ Blockly.Msg.TM1640_SDA="SDA Pin";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Direction";
 Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

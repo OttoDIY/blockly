@@ -817,3 +817,66 @@ Blockly.Blocks["serial_input"]={init:function(){
 };
 
 /*	entrée-sortie */
+
+
+//Pins usung the mcp23008 adapter
+
+
+Blockly.Blocks["digital_mcp_write"]={init:function(){
+    var card=window.localStorage.card;
+    this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownMCPPins), "PIN");
+    this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_mcp_write"]=function(block){
+    var dropdown_pin=block.getFieldValue("PIN");
+    var dropdown_stat=block.getFieldValue("STAT");
+
+Blockly.Arduino.includes_['define_MCP_library'] = '#include <Adafruit_MCP23X08.h>';
+Blockly.Arduino.definitions_['define_MCP_variable'] = 'Adafruit_MCP23X08 mcp;\n';
+
+Blockly.Arduino.setups_['setup_mcp_init'] = 'mcp.begin_I2C();\n';
+
+    Blockly.Arduino.setups_["setup_mcp_output_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", OUTPUT);";
+    return "mcp.digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
+
+
+
+Blockly.Blocks["digital_mcp_read"]={init:function(){
+    var card=window.localStorage.card;
+        this.setColour("#00929f");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownMCPPins), "PIN");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.in_pullup).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup");
+        this.setInputsInline(true);
+        this.setOutput(true, "Boolean");
+        this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
+};
+
+
+Blockly.Arduino["digital_mcp_read"]=function(block){
+    var pull_up=block.getFieldValue('pullup') == 'TRUE';
+    var dropdown_pin=block.getFieldValue("PIN");
+
+Blockly.Arduino.includes_['define_MCP_library'] = '#include <Adafruit_MCP23X08.h>';
+Blockly.Arduino.definitions_['define_MCP_variable'] = 'Adafruit_MCP23X08 mcp;\n';
+
+Blockly.Arduino.setups_['setup_mcp_init'] = 'mcp.begin_I2C();\n';
+
+    if (pull_up) {
+
+        Blockly.Arduino.setups_["setup_mcp_input_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", INPUT_PULLUP);"
+    } else {
+
+        Blockly.Arduino.setups_["setup_mcp_input_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", INPUT);"
+    };
+
+    var code="mcp.digitalRead(" + dropdown_pin + ")";
+    return [code, Blockly.Arduino.ORDER_ATOMIC]
+};

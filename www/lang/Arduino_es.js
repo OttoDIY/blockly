@@ -391,6 +391,7 @@ Blockly.Msg.bargraphe_tooltip = "módulo de gráfico de barras compuesto por 10 
 Blockly.Msg.rvb_init = "LED RGB";
 Blockly.Msg.rvb_init_tooltip = "indica los pines PWM para conectar al LED RGB";
 Blockly.Msg.rvb_set = "mostrar color";
+Blockly.Msg.rvb_set_x="Led X de la placa.Mostrar color";
 Blockly.Msg.rvb_set_tooltip = "muestra un color que indica un valor para los tres componentes (rojo, verde, azul)";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
 Blockly.Msg.pixel2 = "actualizar píxeles";
@@ -423,6 +424,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "pitido en el pin";
 Blockly.Msg.beep_TOOLTIP = "pitidos (a 440Hz por 1s) en el pin seleccionado";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "emitir un sonido en el pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Buzzer Interno";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "frecuencia (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "duración (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emitir un sonido en el pin seleccionado, a la frecuencia deseada y durante el tiempo deseado";
@@ -687,6 +689,7 @@ Blockly.Msg.inch="pulgada";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="NTC Temperatura analógica(ºC)";
+Blockly.Msg.MRTX_BUTTON="boton MRTX-Uno presionado";
 
 //Sensor CO2
 Blockly.Msg.CCS811="Inicialización sensor CO2(CCS811)";
@@ -1013,6 +1016,7 @@ Blockly.Msg.TM1640_SDA="SDA Pin";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Dirección";
 Blockly.Msg.MOTOR_speed="Velocidad(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

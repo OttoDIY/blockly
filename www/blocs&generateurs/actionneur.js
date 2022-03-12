@@ -749,6 +749,59 @@ Blockly.Arduino["rgb_setcolor"]=function(block){
     var code = 'setColor('+red+','+green+','+blue+');\n';
     return code;
 };
+
+
+Blockly.Blocks["MRTX_led_setcolor"]={init:function(){
+	var field = new Blockly.FieldColour('#ff0000');
+	field.setColours(
+        ['#ff0000', '#ffff00', '#ff00ff',
+        '#ffffff', '#000000', '#00ff00',
+		'#00ffff', '#0000ff','#ff0000']);
+    field.setColumns(3);	
+	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set_x);
+	this.appendDummyInput() .appendField(field, 'color');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setTooltip(Blockly.Msg.rvb_set_tooltip);
+    this.setHelpUrl("https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/")}
+};
+
+Blockly.Arduino["MRTX_led_setcolor"]=function(block){
+var color= block.getFieldValue("color");
+var red, blue ,green;
+
+
+if (color[1]=='f')
+	red=1 
+else 
+	red=0;
+if (color[3]=='f')
+	green=1
+ else 
+	 green=0;
+if (color[5]=='f')
+	blue=1
+else 
+	blue=0; 
+
+Blockly.Arduino.includes_['include_MCP23X08'] = '#include <Adafruit_MCP23X08.h>';
+Blockly.Arduino.definitions_['define_MCP23X08'] = 'Adafruit_MCP23X08 mcp;\n';
+
+Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
+Blockly.Arduino.setups_['setup_mcp1_pin_g_write'] = 'mcp.pinMode(1, OUTPUT);';
+Blockly.Arduino.setups_['setup_mcp2_pin_b_write'] = 'mcp.pinMode(2, OUTPUT);';
+Blockly.Arduino.setups_['setup_mcp3_pin_r_write'] = 'mcp.pinMode(3, OUTPUT);';
+
+var code = 'mcp.digitalWrite(1, '+red+');\n  mcp.digitalWrite(2, '+green+');\n  mcp.digitalWrite(3, '+blue+');\n';
+return code;
+};
+
+
+
+
+
 //////////////
 
 Blockly.Blocks["bargraphe"]={init:function(){
@@ -797,4 +850,141 @@ Blockly.Arduino["bargraphe_allume"]=function(block){
 Blockly.Python["bargraphe_allume"]=function(block){
     var level=Blockly.Python.valueToCode(block, 'del', Blockly.Python.ORDER_ATOMI);
     return "ledbar.level(" + level + ", 0x08)"
+};
+
+ /////////////
+ /*  Audio for MRTX-Uno Board */
+/////////////
+
+Blockly.Blocks["play_x"]={init:function(){
+	this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1_X);
+    this.appendDummyInput()
+		.appendField(Blockly.Msg.play)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
+		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#a600d3");
+    this.setTooltip(Blockly.Msg.play_tooltip);
+    this.setHelpUrl(Blockly.Msg.play_helpurl)}
+};
+Blockly.Arduino["play_x"]=function(block){
+    var value_note=block.getFieldValue("note");
+    var value_tempo=block.getFieldValue("tempo");
+    Blockly.Arduino.setups_["setup_output"]="pinMode( 11, OUTPUT);";
+    return "tone(11," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
+};
+
+
+Blockly.Blocks["tone_x"]={init:function(){
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+		this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1_X);
+        this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
+        this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
+};
+Blockly.Arduino["tone_x"]=function(block){
+    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
+    var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output"]="pinMode(11, OUTPUT);";
+    return "tone(11," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
+};
+
+Blockly.Blocks["beep_x"]={init:function(){
+    this.appendDummyInput().appendField(Blockly.Msg.beep);
+    this.setColour("#a600d3");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);this.setNextStatement(true, null);
+    this.setHelpUrl(Blockly.Msg.HELPURL);this.setTooltip(Blockly.Msg.beep_TOOLTIP)}
+};
+Blockly.Arduino["beep_x"]=function(block){
+    Blockly.Arduino.setups_["setup_output"]="pinMode(11, OUTPUT);";
+    return "tone(11,440,1000);\ndelay(1000);\n"
+};
+
+
+Blockly.Blocks["notone_x"]={init:function(){
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT);
+        this.setPreviousStatement(true, null);
+        this.setInputsInline(true);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
+};
+Blockly.Arduino["notone_x"]=function(block){
+    
+    Blockly.Arduino.setups_["setup_output"]="pinMode(11, OUTPUT);";
+    return "noTone(11);\n"
+};
+
+
+//////////////
+
+
+//Pins usung the mcp23008 adapter
+
+
+Blockly.Blocks["digital_mcp_write"]={init:function(){
+    var card=window.localStorage.card;
+	this.setColour("#00929f");
+    this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownMCPPins), "PIN");
+    this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_mcp_write"]=function(block){
+    var dropdown_pin=block.getFieldValue("PIN");
+    var dropdown_stat=block.getFieldValue("STAT");
+
+Blockly.Arduino.includes_['include_MCP23X08'] = '#include <Adafruit_MCP23X08.h>';
+Blockly.Arduino.definitions_['define_MCP23X08'] = 'Adafruit_MCP23X08 mcp;\n';
+
+Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
+
+    Blockly.Arduino.setups_["setup_mcp_output_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", OUTPUT);";
+    return "mcp.digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
+
+
+
+Blockly.Blocks["digital_mcp_read"]={init:function(){
+    var card=window.localStorage.card;
+        this.setColour("#00929f");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownMCPPins), "PIN");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.in_pullup).appendField(new Blockly.FieldCheckbox("FALSE"), "pullup");
+        this.setInputsInline(true);
+        this.setOutput(true, "Boolean");
+        this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
+};
+
+
+Blockly.Arduino["digital_mcp_read"]=function(block){
+    var pull_up=block.getFieldValue('pullup') == 'TRUE';
+    var dropdown_pin=block.getFieldValue("PIN");
+
+Blockly.Arduino.includes_['include_MCP23X08'] = '#include <Adafruit_MCP23X08.h>';
+Blockly.Arduino.definitions_['define_MCP23X08'] = 'Adafruit_MCP23X08 mcp;\n';
+
+Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
+
+    if (pull_up) {
+
+        Blockly.Arduino.setups_["setup_mcp_input_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", INPUT_PULLUP);"
+    } else {
+
+        Blockly.Arduino.setups_["setup_mcp_input_" + dropdown_pin]="mcp.pinMode(" + dropdown_pin + ", INPUT);"
+    };
+
+    var code="mcp.digitalRead(" + dropdown_pin + ")";
+    return [code, Blockly.Arduino.ORDER_ATOMIC]
 };

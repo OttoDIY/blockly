@@ -236,8 +236,10 @@ BlocklyDuino.change_card = function() {
 				if (window.profile[new_card].cpu == "esp8266") 
 				  new_toolbox = "toolbox_arduino_all-esp8266"
 				else if (window.profile[new_card].cpu == "esp32") 
-				new_toolbox = "toolbox_arduino_all-esp32"
-				  
+					new_toolbox = "toolbox_arduino_all-esp32"
+				else if (window.profile[new_card].cpu == "atmega328p-x") 
+					new_toolbox = "toolbox_arduino_all-mrtx"
+					  
 				window.localStorage.toolbox = new_toolbox;
 				BlocklyDuino.workspace.clear();
 				

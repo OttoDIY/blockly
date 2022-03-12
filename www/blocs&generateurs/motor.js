@@ -829,3 +829,142 @@ Blockly.Python['m_pap_step'] = function(block) {
 	var m_step = Blockly.Python.valueToCode(block, 'step', Blockly.Python.ORDER_ASSIGNMENT);
 	return 'moteurPAP.step('+m_step+');\n';
 };
+
+/*****************************************************************
+ *
+ *  These blocks are for MRT motors for MRTX-Uno board
+ *
+ ******************************************************************/
+
+Blockly.Blocks['motor_MRTX_run'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+this.appendDummyInput()
+.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
+this.appendDummyInput()
+.appendField(Blockly.Msg.MOTOR_MRTX_Connector)
+.appendField(new Blockly.FieldDropdown([["ML1","ML1"],["MR1","MR1"],["ML2","ML2"],["MR2","MR2"]]), "MOTOR_CON");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.MOTOR_Direction)
+.appendField(new Blockly.FieldDropdown([['Forward', 'HIGH'],['Backward', 'LOW']]), "MOTOR_DIR");
+this.appendValueInput("CONTENT", 'Number')
+        .setCheck('Number')
+    .appendField(Blockly.Msg.MOTOR_speed)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Run the MRT motor forward or backward in the MRTX-UNO Board. Only for this board');
+  }
+};
+
+Blockly.Arduino['motor_MRTX_run'] = function(block) {
+  // TODO: Assemble Python into code variable.
+ 
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+  var motor_direction = this.getFieldValue('MOTOR_DIR');
+  var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
+   
+  if(motor_pin == 'ML1')
+  {
+  Blockly.Arduino.setups_['setup_output0'] = 'pinMode(6,OUTPUT);';
+  Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
+  
+  if (motor_direction=='HIGH') 
+	  motor_direction='LOW';
+  else
+	  motor_direction='HIGH';
+ 
+  var code = 'digitalWrite(7,'+motor_direction+');\n'+'analogWrite(6,'+motor_speed+');\n';
+  }
+  else
+   if(motor_pin == 'ML2')
+    {
+		
+	if (motor_direction=='HIGH') 
+	  motor_direction='LOW';
+	else
+	  motor_direction='HIGH';
+  
+  Blockly.Arduino.setups_['setup_output2'] = 'pinMode(5,OUTPUT);';
+  Blockly.Arduino.setups_['setup_output3'] = 'pinMode(12,OUTPUT);';
+ 
+  var code = 'digitalWrite(12,'+motor_direction+');\n'+'analogWrite(5,'+motor_speed+');\n';
+    }
+else
+ if(motor_pin == 'MR1')
+{
+Blockly.Arduino.setups_['setup_output4'] = 'pinMode(9,OUTPUT);';
+Blockly.Arduino.setups_['setup_output5'] = 'pinMode(13,OUTPUT);';
+ 
+var code = 'digitalWrite(13,'+motor_direction+');\n'+'analogWrite(9,'+motor_speed+');\n';
+}
+else
+if(motor_pin == 'MR2')
+{
+Blockly.Arduino.setups_['setup_output6'] = 'pinMode(A3,OUTPUT);';
+Blockly.Arduino.setups_['setup_output7'] = 'pinMode(10,OUTPUT);';
+ 
+var code = 'digitalWrite(A3,'+motor_direction+');\n'+'analogWrite(10,'+motor_speed+');\n';
+}
+else
+var code = '';
+  return code;
+};
+
+Blockly.Blocks['motor_MRTX_stop'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+this.appendDummyInput()
+.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
+this.appendDummyInput()
+.appendField(Blockly.Msg.MOTOR_MRTX_Connector)
+.appendField(new Blockly.FieldDropdown([["ML1","ML1"],["MR1","MR1"],["ML2","ML2"],["MR2","MR2"]]), "MOTOR_CON");
+this.appendDummyInput()
+.appendField(Blockly.Msg.MOTOR_Stop)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Stop the MRT motor forward or backward in the MRTX-UNO Board. Only for this board');
+  }
+};
+
+Blockly.Arduino['motor_MRTX_stop'] = function(block) {
+  // TODO: Assemble Python into code variable.
+ 
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+ 
+  if(motor_pin == 'ML1')
+  {
+  Blockly.Arduino.setups_['setup_output0'] = 'pinMode(6,OUTPUT);';
+  Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
+ 
+  var code = 'digitalWrite(7,LOW);\n'+'analogWrite(6,0);\n';
+  }
+  else
+   if(motor_pin == 'ML2')
+    {
+  Blockly.Arduino.setups_['setup_output2'] = 'pinMode(5,OUTPUT);';
+  Blockly.Arduino.setups_['setup_output3'] = 'pinMode(12,OUTPUT);';
+ 
+  var code = 'digitalWrite(12,LOW);\n'+'analogWrite(5,0);\n';
+    }
+else
+ if(motor_pin == 'MR1')
+{
+Blockly.Arduino.setups_['setup_output4'] = 'pinMode(9,OUTPUT);';
+Blockly.Arduino.setups_['setup_output5'] = 'pinMode(13,OUTPUT);';
+ 
+var code = 'digitalWrite(13,LOW);\n'+'analogWrite(9,0);\n';
+}
+else
+if(motor_pin == 'MR2')
+{
+Blockly.Arduino.setups_['setup_output6'] = 'pinMode(A3,OUTPUT);';
+Blockly.Arduino.setups_['setup_output7'] = 'pinMode(10,OUTPUT);';
+ 
+var code = 'digitalWrite(A3,LOW);\n'+'analogWrite(10,0);\n';
+}
+else
+var code = '';
+  return code;
+};

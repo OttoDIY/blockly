@@ -334,6 +334,7 @@ Blockly.Msg.bargraphe_tooltip = "Moduł (pasek) graficzny zbudowany z 10 diod LE
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="Wskazuje piny PWM na płytce arduino, do których podłączyć diodę RGB.";
 Blockly.Msg.rvb_set="Pokaż kolor.";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="Wyświetla kolor wskazując wartości składowe kolorów (czerwony, zielony, niebieski).";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
 Blockly.Msg.pixel2 = "uaktualnij piksele";
@@ -366,6 +367,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "'Pip' na pinie.";
 Blockly.Msg.beep_TOOLTIP = "'Pip' ( 440Hz przez 1s) na wybranym pinie.";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "Emituje dźwięk na pinie.";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "Częstotliwość (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "Czas trwania (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "Emituje dźwięk na wybranym pinie, dźwięk o wybranej (ustawionej )częstotliwości i przez ustawiony czas.";
@@ -630,6 +632,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 
@@ -1002,6 +1005,7 @@ Blockly.Msg.TM1640_SDA="SDA Pin";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Direction";
 Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

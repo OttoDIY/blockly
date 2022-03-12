@@ -1301,3 +1301,34 @@ Blockly.Arduino['SoundAmp_sensor2'] = function(block) {
    
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+
+//Button of the MRTX-Uno board ----------------------------------------------------------------------
+
+Blockly.Blocks['MRTX_button'] = {
+  helpUrl: '',
+  init: function() {
+	
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/joystick.png",33,33))
+	    .appendField(Blockly.Msg.MRTX_BUTTON)
+	this.setOutput(true, 'Boolean');
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['MRTX_button'] = function(block) {
+	
+  Blockly.Arduino.includes_['include_MCP23X08'] = '#include <Adafruit_MCP23X08.h>\n';  
+  Blockly.Arduino.definitions_['define_MCP23X08'] = 'Adafruit_MCP23X08 mcp;\n';
+  
+  Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();';  
+  Blockly.Arduino.setups_['mcp0_pin'] = 'pinMode(0,INPUT_PULLUP);';
+  
+  var code = '!mcp.digitalRead(0)';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+// ----------------------------------------------------------------------------------------------------------------

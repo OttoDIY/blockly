@@ -335,6 +335,7 @@ Blockly.Msg.bargraphe_tooltip = "10 LED'den oluşan (8 yeşil, 1 sarı ve 1 kır
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="RGB LED'ine bağlanacak PWM pinlerini belirtir";
 Blockly.Msg.rvb_set="rengi göster";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="üç bileşen (kırmızı, yeşil, mavi) için bir değer belirten bir renk görüntüler";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
 Blockly.Msg.pixel2 = "pikselleri güncelle";
@@ -367,6 +368,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "Pimdeki bip sesi";
 Blockly.Msg.beep_TOOLTIP = "seçilen pinte bip sesi (1 saniye boyunca 440Hz'de)";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "Pinden bir ses çıkar";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "frekans (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "süre (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "seçilen pinde istenen frekansta ve istenilen sürede bir ses çıkar";
@@ -632,6 +634,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 //CCS811
 
 Blockly.Msg.CCS811="Init CO2(CCS811) sensor";
@@ -1003,6 +1006,7 @@ Blockly.Msg.TM1640_SDA="SDA Pin";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Direction";
 Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

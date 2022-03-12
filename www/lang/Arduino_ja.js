@@ -361,6 +361,7 @@ Blockly.Msg.bargraphe_tooltip = "10個の LED から成るバーグラフ (8 こ
 Blockly.Msg.rvb_init="LED RGB ピン";
 Blockly.Msg.rvb_init_tooltip="PWM ピンに RGB LED と接続されていることを示す";
 Blockly.Msg.rvb_set="🚥 色を表示";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="3 原色（赤、緑、青）で色を表示する";
 Blockly.Msg.pixel1 = "NeoPixel";
 Blockly.Msg.pixel2 = "🌈 ピクセルを表示";
@@ -393,6 +394,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "🦗 ビープ音　オン ピン";
 Blockly.Msg.beep_TOOLTIP = "ビープ (440ヘルツで1秒) を指定されたピンに出力";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "🎼 ブザー ピン";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "🎼 周波数 (ヘルツ)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ 長さ (ミリ秒)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "指定の長さと周波数を指定されたピンに出力";
@@ -644,6 +646,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="トリガー";
 Blockly.Msg.Echo="エコー";
 Blockly.Msg.VAR_TemSens="Temperature NTC (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 Blockly.Msg.CCS811="CO₂ Pins"; 
@@ -968,6 +971,7 @@ Blockly.Msg.TM1640_SDA="CLK";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="モーター";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="方向";
 Blockly.Msg.MOTOR_speed="スピード(0-255)";
 Blockly.Msg.MOTOR_Stop="ストップ";

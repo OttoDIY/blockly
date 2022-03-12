@@ -361,6 +361,7 @@ Blockly.Msg.bargraphe_tooltip = "bargraph module composed of 10 LEDs (8 green, 1
 Blockly.Msg.rvb_init="LED RGB Pins";
 Blockly.Msg.rvb_init_tooltip="indicate the PWM Pins to connect to the RGB LED";
 Blockly.Msg.rvb_set="🚥 show color";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="displays a color indicating a value for the three components (red, green, blue)";
 Blockly.Msg.pixel1 = "NeoPixel";
 Blockly.Msg.pixel2 = "🌈 show pixels";
@@ -393,6 +394,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "🦗 beep on Pin";
 Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected Pin";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "🎼 Buzzer Pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "🎼 frequency (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "⏰ duration (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emit a sound on the selected Pin, at the desired frequency and for the desired duration";
@@ -644,6 +646,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Temperature NTC (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 Blockly.Msg.CCS811="CO₂ Pins"; 
@@ -968,6 +971,7 @@ Blockly.Msg.TM1640_SDA="CLK";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="Motor";
+Blockly.Msg.MOTOR_MRTX_Connector="MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction="Direction";
 Blockly.Msg.MOTOR_speed="Speed(0-255)";
 Blockly.Msg.MOTOR_Stop="Stop";

@@ -356,6 +356,7 @@ Blockly.Msg.bargraphe_tooltip = "il modulo BarGraph è composto da 10 LED (8 ver
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="indicare i pin PWM da connettere al LED RGB";
 Blockly.Msg.rvb_set="mostra il colore";
+Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="visualizza un colore che indica un valore per i tre componenti (rosso, verde, blu)";
 Blockly.Msg.pixel1 = "NeoPixel";
 Blockly.Msg.pixel2 = "mostra i pixel";
@@ -388,6 +389,7 @@ Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "fai un bip sul pin";
 Blockly.Msg.beep_TOOLTIP = "bip sul pin selezionato (440 Hz per 1 s)";
 Blockly.Msg.ARDUINO_TONE_INPUT1 = "emette un suono sul pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "frequenza (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "durata (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP = "emette un suono sul pin selezionato, per la frequenza e la durata assegnate";
@@ -647,6 +649,7 @@ Blockly.Msg.inch="pollici";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Eco";
 Blockly.Msg.VAR_TemSens="Sensore analogico di Temperatura NTC (ºC)";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 Blockly.Msg.CCS811="Inizializza sensore CO2(CCS811)";
