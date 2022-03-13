@@ -3,7 +3,7 @@
  "version": "1.4.6",
  "description": "Blockly and Arduino coding standalone App for Otto DIY robot",
  "author": "Otto DIY and Builder community",
- "license": "GNU General Public License v2.0",
+ "license": "GPL-2.0",
  "main": "electronApp.js",
  "keywords": [
   "blockly",
