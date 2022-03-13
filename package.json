@@ -41,7 +41,7 @@
   "asar": false,
   "directories": {
    "buildResources": "./build",
-   "output": "../dist"
+   "output": "./dist"
   },
   "nsis": {
    "installerIcon": "build/install.ico",
