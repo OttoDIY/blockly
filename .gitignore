@@ -1,5 +1,4 @@
 *.DS_Store
-/node_modules/
 /compilation/arduino/packages/
 /compilation/arduino/suppr/
 /compilation/arduino/tmp/
@@ -15,3 +14,5 @@
 /compilation/arduino/package_stm_index.json
 /compilation/arduino/package_ustepper_index.json
 /compilation/arduino/inventory.yaml
+/dist
+/node_modules/
