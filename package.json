@@ -1,5 +1,5 @@
 {
- "name": "OttoBlockly",
+ "name": "ottoblockly",
  "version": "1.4.6",
  "description": "Blockly and Arduino coding standalone App for Otto DIY robot",
  "author": "Otto DIY and Builder community",
@@ -37,7 +37,7 @@
   "publier": "build --win --ia32 -p always"
  },
  "build": {
-  "appId": "com.electron.blocklino",
+  "appId": "com.electron.ottoblockly",
   "asar": false,
   "directories": {
    "buildResources": "./build",
@@ -51,7 +51,7 @@
    "deleteAppDataOnUninstall": true,
    "allowToChangeInstallationDirectory": true,
    "runAfterFinish": true,
-   "include": "build/blocklino.nsh"
+   "include": "build/ottoblockly.nsh"
   },
   "win": {
    "target": [
