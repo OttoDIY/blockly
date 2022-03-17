@@ -68,6 +68,31 @@ Blockly.Blocks['OLED_init2'] = {
   return ""
 };
 
+Blockly.Blocks['OLED_initU'] = {
+  init: function() {
+  this.appendDummyInput()
+     .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
+     .appendField("OLED 1.3'' Pins I²C")
+    this.setInputsInline(true);
+	 this.setPreviousStatement(true);
+	 this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+ Blockly.Arduino['OLED_initU'] = function(block) {
+  Blockly.Arduino.includes_['OLED'] = '#include <Arduino.h>\n'
+  +'#include <U8g2lib.h>\n'
+  +'#include <Wire.h>';
+  Blockly.Arduino.definitions_['OLED'] = 'U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);\n'
+  ;
+  Blockly.Arduino.setups_['OLED']='Wire.begin();\n'
+  +'u8g2.begin();  \n'
+  +'u8g2.clearBuffer();\n';
+  return ""
+};
+
 Blockly.Blocks['OLED_display'] = {
   init: function() {
     this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
@@ -83,6 +108,23 @@ Blockly.Arduino['OLED_display'] = function(block) {
   var code = 'display.display();\n' ;
   return code;
 };
+
+Blockly.Blocks['OLED_displayU'] = {
+  init: function() {
+    this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+  }
+};
+Blockly.Arduino['OLED_displayU'] = function(block) {
+  var code = 'u8g2.sendBuffer(); \n' ;
+  return code;
+};
+
 Blockly.Blocks['OLED_clear'] = {
   init: function() {
     this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_raz_tooltip);
@@ -96,6 +138,22 @@ Blockly.Blocks['OLED_clear'] = {
 };
 Blockly.Arduino['OLED_clear'] = function(block) {
   var code = 'display.clearDisplay();\n' ;
+  return code;
+};
+
+Blockly.Blocks['OLED_clearU'] = {
+  init: function() {
+    this.appendDummyInput()  .appendField("🖥️ "+Blockly.Msg.LCD_raz_tooltip);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+  }
+};
+Blockly.Arduino['OLED_clearU'] = function(block) {
+  var code = 'u8g2.clearBuffer(); \n' ;
   return code;
 };
 
@@ -148,6 +206,36 @@ Blockly.Blocks['OLED_data'] = {
   +'display.setTextColor('+draw+');\n'
   +'display.setCursor('+value_x+','+value_y+');\n'
   +'display.println('+value_print+');\n';
+  return code
+};
+
+Blockly.Blocks['OLED_dataU'] = {
+  init: function() {
+    Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+  this.appendDummyInput()  .appendField("🖥️ data")
+  this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
+  this.appendValueInput("Y") .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")    .appendField("Y");
+  this.appendValueInput("print")  .setAlign(Blockly.ALIGN_RIGHT)  .appendField(Blockly.Msg.LCDP_Print);
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+
+ Blockly.Arduino['OLED_dataU'] = function(block) {
+  var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  var value_print = Blockly.Arduino.valueToCode(block, 'print', Blockly.Arduino.ORDER_ATOMIC);
+  var draw = ''
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
+  var code = 'u8g2.setFont(u8g2_font_ncenB08_tr);\n'
+  +'u8g2.setDrawColor('+draw+');\n'
+  +'u8g2.drawStr('+value_x+','+value_y+','+value_print+');\n';
   return code
 };
 
@@ -262,6 +350,33 @@ Blockly.Blocks['OLED_pixel'] = {
   return code
 };
 
+Blockly.Blocks['OLED_pixelU'] = {
+  init: function() {
+    Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+  this.appendDummyInput()  .appendField("🖥️."); 
+  this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
+  this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+
+ Blockly.Arduino['OLED_pixelU'] = function(block) {
+  var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  var draw = ''
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
+  var code = 'u8g2.setDrawColor('+draw+');\n'
+  +'u8g2.drawPixel('+value_x+', '+value_y+');\n';
+  return code
+};
+
 Blockly.Blocks['OLED_line'] = {
   init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '✅'
@@ -291,6 +406,38 @@ Blockly.Blocks['OLED_line'] = {
   var code = 'display.drawLine('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
   return code
 };
+
+Blockly.Blocks['OLED_lineU'] = {
+  init: function() {
+    Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+  this.appendDummyInput()  .appendField("🖥️_");
+  this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X1");
+  this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y1");
+  this.appendValueInput("width")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")   .appendField("X2");
+  this.appendValueInput("height")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")  .appendField("Y2");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+
+ Blockly.Arduino['OLED_lineU'] = function(block) {
+  var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
+  var value_height = Blockly.Arduino.valueToCode(block, 'height', Blockly.Arduino.ORDER_ATOMIC);
+  var draw = ''
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
+  var code = 'u8g2.setDrawColor('+draw+');\n'
+  +'u8g2.drawLine('+value_x+', '+value_y+', '+value_width+', '+value_height+');\n';
+  return code
+};
+
 Blockly.Blocks['OLED_rectangle'] = { init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput()  .appendField("🖥️🔲") ;
@@ -320,6 +467,39 @@ Blockly.Blocks['OLED_rectangle'] = { init: function() {
   if (this.getFieldValue('fill') == 'TRUE')code = 'display.fillRect('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
   else code = 'display.drawRect('+value_x+', '+value_y+', '+value_width+', '+value_height+','+draw+');\n';
   return code
+};
+
+Blockly.Blocks['OLED_rectangleU'] = { init: function() {
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+this.appendDummyInput()  .appendField("🖥️🔲") ;
+this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
+this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y");
+this.appendValueInput("width")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")   .appendField(Blockly.Msg.OLED_width);
+this.appendValueInput("height")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")  .appendField(Blockly.Msg.OLED_height);
+this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+this.setInputsInline(true);
+this.setPreviousStatement(true);
+this.setNextStatement(true);
+   this.setColour("#4b009f");
+   this.setTooltip('');
+   this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+ }
+};
+
+Blockly.Arduino['OLED_rectangleU'] = function(block) {
+var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
+var value_height = Blockly.Arduino.valueToCode(block, 'height', Blockly.Arduino.ORDER_ATOMIC);
+var draw = ''
+if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+else draw = "0";
+var code = ''
+if (this.getFieldValue('fill') == 'TRUE')code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawBox('+value_x+', '+value_y+', '+value_width+', '+value_height+');\n';
+else code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawFrame('+value_x+', '+value_y+', '+value_width+', '+value_height+');\n';
+return code
 };
 
 Blockly.Blocks['OLED_round'] = {
@@ -356,6 +536,41 @@ Blockly.Blocks['OLED_round'] = {
   return code
 };
 
+Blockly.Blocks['OLED_roundU'] = {
+  init: function() {
+    Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+  this.appendDummyInput()  .appendField("🖥️🔲");
+  this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
+  this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y");
+  this.appendValueInput("width")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")   .appendField(Blockly.Msg.OLED_width);
+  this.appendValueInput("height")  .setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number") .appendField(Blockly.Msg.OLED_height);
+  this.appendValueInput("round")  .setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number") .appendField("round");
+  this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+
+ Blockly.Arduino['OLED_roundU'] = function(block) {
+  var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
+var value_height = Blockly.Arduino.valueToCode(block, 'height', Blockly.Arduino.ORDER_ATOMIC);
+var draw = ''
+if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+else draw = "0";
+var code = ''
+if (this.getFieldValue('fill') == 'TRUE')code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawRBox('+value_x+', '+value_y+', '+value_width+', '+value_height+');\n';
+else code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawRFrame('+value_x+', '+value_y+', '+value_width+', '+value_height+');\n';
+return code
+};
+
 Blockly.Blocks['OLED_circle'] = {init: function() {
     Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput()  .appendField("🖥️⚪") ;
@@ -383,6 +598,37 @@ Blockly.Blocks['OLED_circle'] = {init: function() {
   if (this.getFieldValue('fill') == 'TRUE')code = 'display.fillCircle('+value_x+', '+value_y+', '+value_width+','+draw+');\n';
   else code = 'display.drawCircle('+value_x+', '+value_y+', '+value_width+','+draw+');\n';
   return code
+};
+
+Blockly.Blocks['OLED_circleU'] = {init: function() {
+  Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+this.appendDummyInput()  .appendField("🖥️⚪") ;
+this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X");
+this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y");
+this.appendValueInput("width")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")   .appendField("R");
+this.appendDummyInput() .appendField(Blockly.Msg.ST7735_Drawfill).appendField(new Blockly.FieldCheckbox("FALSE"), "fill") .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+this.setInputsInline(true);
+this.setPreviousStatement(true);
+this.setNextStatement(true);
+   this.setColour("#4b009f");
+   this.setTooltip('');
+   this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+ }
+};
+
+Blockly.Arduino['OLED_circleU'] = function(block) {
+var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
+var draw = ''
+if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+else draw = "0";
+var code = ''
+if (this.getFieldValue('fill') == 'TRUE')code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawDisc('+value_x+', '+value_y+', '+value_width+');\n';
+else code = 'u8g2.setDrawColor('+draw+');\n'
++'u8g2.drawCircle('+value_x+', '+value_y+', '+value_width+');\n';
+return code
 };
 
 Blockly.Blocks['OLED_triangle'] = {
@@ -420,6 +666,42 @@ Blockly.Blocks['OLED_triangle'] = {
   else code = 'display.drawTriangle('+value_x+', '+value_y+', '+value_width+', '+value_height+', '+value_round+','+value_angle+','+draw+');\n';
   return code
 };
+
+Blockly.Blocks['OLED_triangleU'] = {
+  init: function() {
+    Blockly.FieldCheckbox.CHECK_CHAR= '✅'
+  this.appendDummyInput()  .appendField("🖥️📐");
+  this.appendValueInput("X") .setAlign(Blockly.ALIGN_RIGHT) .setCheck("Number") .appendField("X0");
+  this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number")   .appendField("Y0");
+  this.appendValueInput("width")  .setAlign(Blockly.ALIGN_RIGHT)  .setCheck("Number")   .appendField("X1");
+  this.appendValueInput("height")  .setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number") .appendField("Y1");
+  this.appendValueInput("round")  .setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number") .appendField("X2");
+  this.appendValueInput("angle")  .setAlign(Blockly.ALIGN_RIGHT)   .setCheck("Number") .appendField("Y2");
+  this.appendDummyInput() .appendField(Blockly.Msg.MAX7219_LM_Led) .appendField(new Blockly.FieldCheckbox("TRUE"), "draw");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+     this.setColour("#4b009f");
+     this.setTooltip('');
+     this.setHelpUrl('https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples');
+   }
+ };
+
+ Blockly.Arduino['OLED_triangleU'] = function(block) {
+  var value_x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
+  var value_y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+  var value_width  = Blockly.Arduino.valueToCode(block, 'width', Blockly.Arduino.ORDER_ATOMIC);
+  var value_height = Blockly.Arduino.valueToCode(block, 'height', Blockly.Arduino.ORDER_ATOMIC);
+  var value_round = Blockly.Arduino.valueToCode(block, 'round', Blockly.Arduino.ORDER_ATOMIC);
+  var value_angle = Blockly.Arduino.valueToCode(block, 'angle', Blockly.Arduino.ORDER_ATOMIC);
+  var draw = ''
+  if(this.getFieldValue('draw') == 'TRUE') draw= "1";
+  else draw = "0";
+  var code  = 'u8g2.setDrawColor('+draw+');\n'
+  +'u8g2.drawTriangle('+value_x+', '+value_y+', '+value_width+', '+value_height+', '+value_round+','+value_angle+');\n';
+  return code
+};
+
 Blockly.Blocks['OLED_bitmap'] = {
   init: function() {
     this.appendDummyInput() .appendField("bitmap OLED")
@@ -481,8 +763,6 @@ Blockly.Arduino['OLED_bitmap2'] = function(block) {
   return code;
 };
 
-
-
 Blockly.Blocks['oled_icon'] = {
    init: function() {
     this.setColour("#4b009f");
@@ -503,13 +783,55 @@ Blockly.Blocks['oled_icon'] = {
 };
 
 Blockly.Arduino['oled_icon'] = function(block) {
-
    var IconName = block.getFieldValue('NAME');  
    var Var_Codes = block.getFieldValue('CODES');
-
    Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';   
    Blockly.Arduino.definitions_['define_iconvalus_'+IconName+''] = 'const unsigned char '+IconName+'[] PROGMEM= {'+Var_Codes+'};\n';
- 
   var code = '';
+  return code;
+};
+
+Blockly.Blocks['OLED_eyes'] = { init: function() {
+  this.appendDummyInput()  .appendField("👀 "+Blockly.Msg.OTTO9_EYES_TEXT) 
+   .appendField(new Blockly.FieldDropdown([["😃 happy", "Happy"], ["🙄 awake", "Awake"],["😦 sad", "Sad"], ["😡 angry", "Angry"], ["😟 worried", "Worried"],["😩 tired", "Tired"] ,["😴 sleep", "Sleep"],["😉 wink L", "Winkl"],["😉 wink R", "Winkr"]]), "oled_eyes");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#4b009f");
+  this.setTooltip(Blockly.Msg.OTTO9_EYES_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+Blockly.Arduino['OLED_eyes'] = function(block) {
+  var oled_eyes = block.getFieldValue('oled_eyes');
+  Blockly.Arduino.variables_['oledeyes'] = 
+  'int x = 34; // x eye posistion \n'
+  +'int y = 32; //y eye position\n'
+  +'int r = 22; // radius\n'
+  +'int t = 8; //thickness\n'
+  +'int x2 = 128-x; // 2nd x eye posistion \n'  ;
+  Blockly.Arduino.definitions_['oledeyes'] = 
+  'void NinjaEyesAwake()\n'
++'{ u8g2.setDrawColor(1);u8g2.drawDisc(x,y,r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.setDrawColor(1);u8g2.drawDisc(x2, y, r); u8g2.setDrawColor(0);u8g2.drawDisc(x2, y, r-t);   }\n'
++'void NinjaEyesHappy()\n'
++'{ u8g2.setDrawColor(1); u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.setDrawColor(1);u8g2.drawDisc(x+(t+r)*2, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x+(t+r)*2, y, r-t);u8g2.drawBox(x-r, y, r*2+1, r+2+1);u8g2.drawBox(x-r+(t+r)*2, y, r*2+1, r+2); }\n'
++'void NinjaEyesWorried()\n'
++'{ u8g2.setDrawColor(1); u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.drawTriangle(x-r, y-r, x+r, y-r, x-r,y+r);u8g2.setDrawColor(1);u8g2.drawDisc(x+(t+r)*2, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x+(t+r)*2, y, r-t);u8g2.drawTriangle(x+(t+r)*2-r, y-r, (x+(t+r)*2)+r, y-r, (x+(t+r)*2)+r,y+r);}\n'
++'void NinjaEyesAngry()\n'
++'{ u8g2.setDrawColor(1); u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.drawTriangle(x-r, y-r, x+r+1, y-r, x+r+1,y+r);u8g2.setDrawColor(1);u8g2.drawDisc(x+t+r*2, y, r);  u8g2.setDrawColor(0);u8g2.drawDisc(x+t+r*2, y, r-t);u8g2.drawTriangle(x+t+r*2-r, y-r, (x+t+r*2)+r, y-r, (x+t+r*2)-r,y+r);}\n'
++'void NinjaEyesSleep()\n'
++'{ u8g2.setDrawColor(1);u8g2.drawBox(x-r, y-t/2, r*2, t);u8g2.drawBox(x-r+(t+r)*2, y-t/2, r*2, t);  }\n'
++'void NinjaEyesSad()\n'
++'{ u8g2.setDrawColor(1);u8g2.drawBox(x-r, y, r*2, t);u8g2.drawBox(x-r+(t+r)*2, y, r*2, t); }\n'
++'void NinjaEyesTired()\n'
++'{ u8g2.setDrawColor(1); u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.setDrawColor(1); u8g2.drawDisc(x+(t+r)*2, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x+(t+r)*2, y, r-t);u8g2.drawBox(x-r, y-r, r*2+2, r);u8g2.drawBox(x-r+(t+r)*2, y-r, r*2+2, r);}\n'
++'void NinjaEyesWinkl()\n'
++'{ u8g2.setDrawColor(1); u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.setDrawColor(1);u8g2.drawDisc(x+(t+r)*2, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x+(t+r)*2, y, r-t);u8g2.setDrawColor(0);u8g2.drawBox(x-r+(t+r)*2, y-r, r*2+2, r); }\n'
++'void NinjaEyesWinkr()\n'
++'{ u8g2.setDrawColor(1);u8g2.drawDisc(x, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x, y, r-t);u8g2.setDrawColor(1);u8g2.drawDisc(x+(t+r)*2, y, r);u8g2.setDrawColor(0);u8g2.drawDisc(x+(t+r)*2, y, r-t);u8g2.drawBox(x-r, y-r, r*2+2, r);  }\n'
+;
+  var code = 'u8g2.clearBuffer();\n'
+  +'NinjaEyes'+oled_eyes+'();\n'
+  +'u8g2.sendBuffer(); \n';
   return code;
 };

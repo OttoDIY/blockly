@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_NEOPIXEL,CAT_del,CAT_OLED_U8G,CAT_BUZZER</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com,CAT_MUVISION,CAT_iot</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_actionneur,CAT_LED,CAT_del,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_NEOPIXEL,CAT_OLED_U8G,CAT_BUZZER</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_define"></block> 
@@ -69,46 +69,6 @@
 		</block>
 		</category>
 		
-<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
-<block type="otto_ninja_init">
-	<field name="PIN_LL">D8</field>
-	<field name="PIN_LF">D7</field>
-	<field name="PIN_RL">D4</field>
-	<field name="PIN_RF">D3</field>
-	<field name="PIN_LA">D0</field>
-	<field name="PIN_RA">3</field>
-	<field name="PIN_H">1</field>
-</block>
-<block type="otto_ninja_calibration">
-			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="LATL"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
-			<value name="RATL"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
-			<value name="LATR"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
-			<value name="RATR"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
-</block>
-<block type="otto_ninja_speed">
-			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
-			<value name="RFFWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
-			<value name="LFBWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
-			<value name="RFBWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
-</block>
-<block type="otto_ninja_wifi"></block>
-<block type="otto_ninja_app"></block>
-<block type="otto_ninja_home"></block>
-<block type="otto_ninja_walk"></block>
-<block type="otto_ninja_roll">
-	<value name="SPEED">
-		<shadow type="math_number">
-			<field name="NUM">100</field>
-		</shadow>
-	</value>
-</block>
-<block type="otto_ninja_setwalk"></block>
-<block type="otto_ninja_setroll"></block>
-<block type="otto_ninja_walkstop"></block>
-<block type="otto_ninja_rollstop"></block>
-</category>
 <category name="CAT_OTTO_QUAD" colour="#32D900">
 				<block type="otto_quad_configuration">
 			<field name="FRH">2</field>
@@ -426,9 +386,7 @@
 			<block type="rfid_stopread"></block>
 		</category>
 </category>
-
-<category name="CAT_actionneur" colour="#2d2dd1">
-		<category name="CAT_servo" colour="#2d2dd1">
+	<category name="CAT_servo" colour="#2d2dd1">
 			<block type="servo_move">
 				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
@@ -453,19 +411,9 @@
 			<block type="servo_PWM">
 				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
 			</block>
-	
-			<block type="servo_rot_continue_param">
-				<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_rot_stop">
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_2wheels">
-				<value name="PINL"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-				<value name="PINR"><shadow type="analog_pin">	<field name="NUM">3</field></shadow></value>
-			</block>
 		</category>	
+<category name="CAT_actionneur" colour="#2d2dd1">
+	
 			<block type="moteur_dc_init">
 			<value name="ENA"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
 			<value name="ENB"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
@@ -478,7 +426,8 @@
 			<value name="speed"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 			</block>
 			<block type="moteur_dc_stop"></block>	
-			<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
+		</category>
+		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
 				<block type="stepper_configuration">
 					<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
 					<field name="PIN_STEEPER1">D1</field>
@@ -489,9 +438,6 @@
 				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
 				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
 			</category>
-
-		</category>
-		
 
 	<category name="CAT_LED" colour="#4b009f">		
 		<block type="blink"></block>
@@ -627,39 +573,7 @@
 			</block>
 			</category>
 		</category>	
-<category name="CAT_del"  colour="#4b009f">
-	<block type="GFX_matrix_init"></block>
-	<block type="GFX_OLED_init"><field name="address">0x3D</field></block>
-	<block type="GFX_display"></block>
-	<block type="GFX_clear"></block>
-	<block type="GFX_pixel">
-		<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>	
-	</block>
-	<block type="GFX_line">
-	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
-		<value name="Y2"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
-	</block>
-	<block type="GFX_rectangle">
-	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		<value name="X2"><shadow type="math_number"><field name="NUM">7</field></shadow></value>
-		<value name="Y2"><shadow type="math_number"><field name="NUM">3</field></shadow></value>	
-	</block>
-	<block type="GFX_circle">
-		<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-		<value name="Y"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
-		<value name="R"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
-	</block>
-	<block type="GFX_bitmap">
-		<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
-		<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
-		<value name="width"> <shadow type="math_number"> <field name="NUM">8</field> </shadow> </value>
-		<value name="height"> <shadow type="math_number"> <field name="NUM">8</field></shadow> </value>
-	</block>
-</category>	
+
 
 <category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">
@@ -727,7 +641,39 @@
 			<value name="angle"><shadow type="math_number"><field name="NUM">60</field></shadow></value>		
 		</block>
 	</category>
-	
+	<category name="CAT_del"  colour="#4b009f">
+	<block type="GFX_matrix_init"></block>
+	<block type="GFX_OLED_init"><field name="address">0x3D</field></block>
+	<block type="GFX_display"></block>
+	<block type="GFX_clear"></block>
+	<block type="GFX_pixel">
+		<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>	
+	</block>
+	<block type="GFX_line">
+	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
+		<value name="Y2"><shadow type="math_number"><field name="NUM">5</field></shadow></value>
+	</block>
+	<block type="GFX_rectangle">
+	<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="Y1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		<value name="X2"><shadow type="math_number"><field name="NUM">7</field></shadow></value>
+		<value name="Y2"><shadow type="math_number"><field name="NUM">3</field></shadow></value>	
+	</block>
+	<block type="GFX_circle">
+		<value name="X"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+		<value name="Y"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+		<value name="R"><shadow type="math_number"><field name="NUM">3</field></shadow></value>
+	</block>
+	<block type="GFX_bitmap">
+		<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
+		<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
+		<value name="width"> <shadow type="math_number"> <field name="NUM">8</field> </shadow> </value>
+		<value name="height"> <shadow type="math_number"> <field name="NUM">8</field></shadow> </value>
+	</block>
+</category>	
 	<category name="CAT_TFT_ST7735" colour="#4b009f">
 			 <block type="st7735_init">
 			    <value name="PIN_CS"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
@@ -930,25 +876,7 @@
 		<category name="CAT_RemoteIR" colour="#0060aa">
 		 <block type="Init_generalremotecontrol">
 		 <value name="PIN_IR"><shadow type="math_number"><field name="NUM">10</field></shadow></value>  </block>
-		 <block type="IR_Remote_Key"></block>
-		 <block type="Init_remotecontrolMRT">
-		 <value name="PIN_IR"><shadow type="mrtduino_pin"></shadow></value></block>
-	     <block type="IR_RemoteMRT_Key"></block>	  
-		</category>
-			<category name="CAT_KEYBOARD" colour="#2a93e8">	
-			<block type="keyboard_function">
-				<value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
-			</block>
-			<block type="key_pressed"></block>
-			<block type="keyboard_text">
-				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow></value>
-			</block>
-			<block type="mouse_function"></block>
-			<block type="mouse_move">
-			<value name="axis_x"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="axis_y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="wheel"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
+		 <block type="IR_Remote_Key"></block>  
 		</category>
 	</category> 
 		

@@ -1,6 +1,6 @@
 {
  "name": "ottoblockly",
- "version": "1.4.6",
+ "version": "1.4.7",
  "description": "Blockly and Arduino coding standalone App for Otto DIY robot",
  "author": "Otto DIY and Builder community",
  "license": "GPL-2.0",
