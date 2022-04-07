@@ -265,7 +265,7 @@ return code;
 };
 
 Blockly.Blocks['otto_quad_hello'] = {init: function() {
-  this.appendDummyInput("") .appendField("🕷️ Hello");
+  this.appendDummyInput("") .appendField("🕷️ " + Blockly.Msg.OTTO9_QUAD_HELLO);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -279,7 +279,7 @@ return code;
 };
 
 Blockly.Blocks['otto_quad_jump'] = {init: function() {
-  this.appendDummyInput("") .appendField("🕷️ Jump");
+  this.appendDummyInput("") .appendField("🕷️ " + Blockly.Msg.OTTO9_QUAD_JUMP);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -293,7 +293,7 @@ return code;
 };
 
 Blockly.Blocks['otto_quad_scared'] = {init: function() {
-  this.appendDummyInput("") .appendField("🕷️ Scared");
+  this.appendDummyInput("") .appendField("🕷️ " + Blockly.Msg.OTTO9_QUAD_SCARED);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);

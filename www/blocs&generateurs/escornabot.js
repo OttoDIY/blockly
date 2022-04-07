@@ -323,7 +323,7 @@ return [code, Blockly.Arduino.ORDER_ATOMIC];
 //Aquí acaba la nueva librería escornabot
 // Intentando crear un botón para poner el código del escornabot
 Blockly.Blocks['escornabot_app'] = {init: function() {
-  this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/escorniPulsador.png', 48, 48, "*"))   .appendField('Escornabot autónomo');
+  this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/escorniPulsador.png', 48, 48, "*"))   .appendField(Blockly.Msg.ESCORNABOT_AUTONOM);
   this.setInputsInline(false);
   this.setColour("#C39BF2");
   this.setTooltip(Blockly.Msg.ESCORNABOT_APP_TOOLTIP);
