@@ -71,6 +71,10 @@ Blockly.Msg.CAT_iot = "☁ IoT";
 Blockly.Msg.CAT_html = "✉ HTML";
 Blockly.Msg.CAT_DFPLAYER = "♫ Audio";
 Blockly.Msg.CAT_OTTO = "🤖 Otto";
+Blockly.Msg.CAT_OTTO_ARMS = "🦾 Arme";
+Blockly.Msg.CAT_OTTO_WHEELS = "💿 Wheels";
+Blockly.Msg.CAT_OTTO_NINJA = "🐱‍👤 Ninja";
+Blockly.Msg.CAT_OTTO_QUAD = "🕷️ Spinne";
 Blockly.Msg.CAT_ESCORNABOT="🐞 Escornabot";
 Blockly.Msg.CAT_TEMP = "🌡️ Temperature"
 Blockly.Msg.CAT_LIGHT = "🌞 Licht"
@@ -553,6 +557,10 @@ Blockly.Msg.OTTO9_ARMS_TEXT = "Arme";//
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Bewege die Arme!";//
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["Hände hoch", "HANDSUP"], ["Handbewegung links", "HANDWAVE1"], ["Handbewegung rechts", "HANDWAVE2"]];//
 
+Blockly.Msg.OTTO9_QUAD_HELLO = "Hallo.";// Hello
+Blockly.Msg.OTTO9_QUAD_JUMP = "Sprung!";// Jump
+Blockly.Msg.OTTO9_QUAD_SCARED = "Erschrocken...";// SCARED
+
 /// ESP8266
 Blockly.Msg.OTTO9_YL="linkes Bein";//Left leg
 Blockly.Msg.OTTO9_YR="rechtes Bein";//Right leg
@@ -612,6 +620,7 @@ Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TEXT="Weiß auf rechter Seite erkannt";//
 Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TOOLTIP="TRUE if white detected at right side";//
 Blockly.Msg.ESCORNABOT_IRLEFT_TEXT="links";//
 Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT="rechts";//
+Blockly.Msg.ESCORNABOT_AUTONOM="Escornabot autonom";//
 
 //SIMPLE SENSORS//
 Blockly.Msg.BUTTON_NAME="Taste";//Button
