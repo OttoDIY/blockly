@@ -254,11 +254,11 @@ Blockly.Msg.LCD = "LCD Bildschirm";//LCD screen
 Blockly.Msg.LCDi2c_tooltip = "initializes the 2-line, 16-character I2C LCD with RGB backlight. \n Displayer <-> Arduino \nSDA <--------> A4 \nSCL <- -------> A5 ";
 Blockly.Msg.LCD_tooltip = "initializes the LCD, 2 lines and 16 characters, indicating the pins to connect";
 Blockly.Msg.LCD_SHIELD_PRINT_HELPURL = "https://www.arduino.cc/en/Tutorial/HelloWorld";
-Blockly.Msg.LCD_SHIELD_PRINT_TEXT = "show on LCD";
+Blockly.Msg.LCD_SHIELD_PRINT_TEXT = "zeige auf LCD";
 Blockly.Msg.LCD_SHIELD_PRINT_TEXT_tooltip = "display the text in the specified location";
-Blockly.Msg.LCD_SHIELD_PRINT_TOOLTIP = "write the text (s) on the LCD screen";
-Blockly.Msg.LCD_SHIELD_PRINT_INPUT1 = "line 1";
-Blockly.Msg.LCD_SHIELD_PRINT_INPUT2 = "line 2";
+Blockly.Msg.LCD_SHIELD_PRINT_TOOLTIP = "schreibe den Text (s) auf das LCD";
+Blockly.Msg.LCD_SHIELD_PRINT_INPUT1 = "Zeile 1";
+Blockly.Msg.LCD_SHIELD_PRINT_INPUT2 = "Zeile 2";
 Blockly.Msg.LCD_line = "Zeile";//line
 Blockly.Msg.LCD_col = "Spalte";//column
 Blockly.Msg.LCD_raz = "lösche den LCD screen";//erase the LCD screen
@@ -283,26 +283,26 @@ Blockly.Msg.END_tooltip = "Stoppe das Programm!!! Alle nachfolgenden Blöcke wer
 Blockly.Msg.code_tooltip = "Tippe hier einen Befehl ein, den es nicht als Block gibt.";//Type an instruction here that is not in blocks
 
 
-//matrix --- nicht übersetzt, da nicht in Programm sichtbar???
-Blockly.Msg.matriceLC = "put the LED, line";
-Blockly.Msg.matrice_create_aff = "Create block 'display symbol %1'";
-Blockly.Msg.matrice_create_symbole = "Create the block 'set the symbol %1'";
-Blockly.Msg.matrice = "matrix";
+//8x8 matrix 
+Blockly.Msg.matriceLC = "setze die LED, Zeile";
+Blockly.Msg.matrice_create_aff = "Erschaffe Block 'display symbol %1'";
+Blockly.Msg.matrice_create_symbole = "Erschaffe Block 'set the symbol %1'";
+Blockly.Msg.matrice = "Matrix";
 Blockly.Msg.matrice8x8_tooltip = "Initialisation of the matrix to 64 LEDs, it is necessary to indicate the pins of the arduino to which will be connected DIN, CLK, CS";
-Blockly.Msg.matrice8x8_symbole = "define the symbol";
+Blockly.Msg.matrice8x8_symbole = "bestimme das Symbol";
 Blockly.Msg.matrice8x8_symbole_tooltip = "definition of a symbol for the matrix: \n 0 turn off an LED \n 1 turn on an LED";
-Blockly.Msg.matrice8x8_efface = "erase the matrix";
-Blockly.Msg.matrice8x8_aff = "display the symbol";
+Blockly.Msg.matrice8x8_efface = "lösche die Matrix";
+Blockly.Msg.matrice8x8_aff = "zeige das Symbol";
 Blockly.Msg.matrice8x8_binaire_tooltip = "1 turns on an LED of the matrix and 0 turns it off";
 Blockly.Msg.matrice8x8_del_tooltip = "Turns on (off) an LED in the array indicating its coordinates \nCaution dialing starts at 0";
 Blockly.Msg.matrice8x8_aff_tooltip = "Display the symbol that has been previously defined";
 Blockly.Msg.matrice8x8_efface_tooltip = "Turn off all LEDs in the matrix";
 Blockly.Msg.matrice8x8_helpurl = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.matrice16x8_tooltip = "Initialization of the array to 128 LEDs. \nMatrix <-> Arduino \nSDA <--------> A4 \nSCL <--------> A5";
-Blockly.Msg.matrice16x8_symbole = "define the symbol";
+Blockly.Msg.matrice16x8_symbole = "bestimme das Symbol";
 Blockly.Msg.matrice16x8_symbole_tooltip = "definition of a symbol for the matrix: \n 0 turns off an LED \n 1 turns on an LED";
-Blockly.Msg.matrice16x8_efface = "turn off the LEDs of the matrix";
-Blockly.Msg.matrice16x8_aff = "display the symbol";
+Blockly.Msg.matrice16x8_efface = "schalte die LEDs der Matrix aus";
+Blockly.Msg.matrice16x8_aff = "zeige das Symbol";
 Blockly.Msg.matrice16x8_binaire_tooltip = "1 turns on an LED of the matrix and 0 turns it off";
 Blockly.Msg.matrice16x8_del_tooltip = "Turns on (off) an LED in the matrix indicating its coordinates \nCaution dialing starts at 0";
 Blockly.Msg.matrice16x8_aff_tooltip = "Display the symbol that has been previously defined";
@@ -467,30 +467,30 @@ Blockly.Msg.m_pap_tooltip = "Initialization of a stepping motor. \nIndicate numb
 Blockly.Msg.m_pap_step_tooltip = "activates the stepping motor by the number of steps indicated, the following instruction will only be executed once the rotation of the motor is done";//activates the stepping motor by the number of steps indicated, the following instruction will only be executed once the rotation of the motor is done
 
 // serial
-Blockly.Msg.Serial_Init = "serial port on";//serial port on
+Blockly.Msg.Serial_Init = "serieller Port an";//serial port on
 Blockly.Msg.Serial_Init_tooltip = "Set the communication rate in characters per second for serial communication";//Set the communication rate in characters per second for serial communication
-Blockly.Msg.Serial_Write = "send to serial port";//send to serial port
+Blockly.Msg.Serial_Write = "sende an seriellen Port";//send to serial port
 Blockly.Msg.Serial_write_tooltip = "Send data to the serial port";//Send data to the serial port
-Blockly.Msg.Serial_read = "data read on the serial port";//data read on the serial port
+Blockly.Msg.Serial_read = "lies Daten am seriellen Port";//data read on the serial port
 Blockly.Msg.Serial_read_tooltip = "returns the first available data byte available in the serial port, or -1 if no data is available";//returns the first available data byte available in the serial port, or -1 if no data is available
-Blockly.Msg.Serial_available = "amount of data on the serial port";//amount of data on the serial port
+Blockly.Msg.Serial_available = "Datenmenge am seriellen Port";//amount of data on the serial port
 Blockly.Msg.Serial_available_tooltip = "returns the number of bytes available in the serial port queue, or 0 if nothing is available";//returns the number of bytes available in the serial port queue, or 0 if nothing is available
-Blockly.Msg.Serial_saut = "a line break";//a line break
+Blockly.Msg.Serial_saut = "ein Zeilensprung";//a line break
 Blockly.Msg.Serial_saut_tooltip = "returns a line break on the serial monitor";//returns a line break on the serial monitor
-Blockly.Msg.Serial_space = "a separator";//a separator
+Blockly.Msg.Serial_space = "ein Trennzeichen";//a separator
 Blockly.Msg.Serial_space_tooltip = "return a space on the serial monitor";//return a space on the serial monitor
-Blockly.Msg.repl_read = "user entered command";//user entered command
+Blockly.Msg.repl_read = "vom Nutzer eingegebener Befehl";//user entered command
 
 
 // software serial
 //Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip = "Creating a new communication port using the specified pins and speed";//
-Blockly.Msg.SSERIAL_Read = "data read on the software port";//
+Blockly.Msg.SSERIAL_Read = "Daten lesen am Software Port";//data read on the software port
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";//
-Blockly.Msg.SSERIAL_Write = "send to the software port";//
+Blockly.Msg.SSERIAL_Write = "sende an Software Port";//
 Blockly.Msg.SSERIAL_Write_tooltip = "Send data to the software port";//
 Blockly.Msg.SSERIAL_Read_tooltip = "returns the first byte of incoming data available in the software port, or -1 if no data is available";//
-Blockly.Msg.SSERIAL_Available = "amount of data on the software port";//
+Blockly.Msg.SSERIAL_Available = "Datenmenge am Software Port";//
 Blockly.Msg.SSERIAL_Available_tooltip = "returns the number of available bytes in the software port queue, or 0 if nothing is available";//
 
 
@@ -505,10 +505,10 @@ Blockly.Msg.OTTO9_CALIBRATION_LEG='Bein ';//
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='Fuß ';//
 Blockly.Msg.OTTO9_CALIBRATION_ARM='Arm ';//
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='use small positive and negative values iteratively,change gradually until is completely straight (90º)';//
-Blockly.Msg.OTTO9_EEPROM_TEXT= 'save Trims on EEPROM';//
+Blockly.Msg.OTTO9_EEPROM_TEXT= 'speichere Ausrichtung auf EEPROM';//save Trims on EEPROM
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP= 'Use only after completely straight(90º) one time, delete this BLOCK after for further programming';//
 Blockly.Msg.OTTO9_MOVE_TEXT = "Bewege";//
-Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto basic movements";//
+Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto basale Bewegungen";//Otto basic movements
 Blockly.Msg.OTTO9_MOVE_CHOICE = [["↑ vorwärts", "FORWARD"], ["↓ rückwärts", "BACKWARD"], ["↺ links drehen", "LEFT"], ["↻ rechts drehen", "RIGHT"], ["bend to the left", "BENDLEFT"], ["bend to the right", "BENDRIGHT"], ["linkes Bein schütteln", "SHAKELEFT"], ["rechtes Bein schütteln", "SHAKERIGHT"], ["hoch", "springen"]];//
 Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ vorwärts", "FORWARD"], ["↓ rückwärts", "BACKWARD"], ["↺ links drehen", "LEFT"], ["↻ rechts drehen", "RIGHT"]];//
 Blockly.Msg.OTTO9_MOVE_SPEED_TEXT = "Geschwindigkeit";//
@@ -535,7 +535,7 @@ Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "Hindernis";//
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [["nah", "10"],["sehr nah", "3"],["weit", "30"]];//
 Blockly.Msg.OTTO9_GETNOISE_TEXT = "Geräusch gemessen. Pin A6";//
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP = "100 ist leise, 500 Geräusch und mehr als 1000 is laut, also adjust the sensor trimpot sensibility";//
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch. Pin A0";//
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "berühren. Pin A0";//
 Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";//
 Blockly.Msg.OTTO9_GETG_TEXT = "Lies die Beschleunigungen und Winkel";//Read the accelerations and angular velocities
 Blockly.Msg.OTTO9_GETG_TEXT2 = "Wert";//
@@ -760,28 +760,28 @@ Blockly.LKL_VS2_WARNING_MU_INIT = 'Please DON\'T forget initialize the uart1, Se
 
 
 //LED color type
-Blockly.LKL_VS2_LED_CLOSE = 'Close';//					
-Blockly.LKL_VS2_LED_RED = 'Red';//						
-Blockly.LKL_VS2_LED_GREEN = 'Green';	//				
-Blockly.LKL_VS2_LED_YELLOW = 'Yellow';//					
-Blockly.LKL_VS2_LED_BLUE = 'Blue';		//				
-Blockly.LKL_VS2_LED_PURPLE = 'Purple';	//				
-Blockly.LKL_VS2_LED_CYAN = 'Cyan';		//				
-Blockly.LKL_VS2_LED_WHITE = 'White';	//
+Blockly.LKL_VS2_LED_CLOSE = 'schließen';//					
+Blockly.LKL_VS2_LED_RED = 'rot';//						
+Blockly.LKL_VS2_LED_GREEN = 'grün';	//				
+Blockly.LKL_VS2_LED_YELLOW = 'gelb';//					
+Blockly.LKL_VS2_LED_BLUE = 'blau';		//				
+Blockly.LKL_VS2_LED_PURPLE = 'lila';	//				
+Blockly.LKL_VS2_LED_CYAN = 'cyan';		//				
+Blockly.LKL_VS2_LED_WHITE = 'weiß';	//
 				
 //Vision Zoom
 Blockly.LKL_VS2_AUTO = 'auto';	//						
 Blockly.LKL_VS2_VISION_ZOOM = 'Zoom';	//	
 			
 //Vision Level
-Blockly.LKL_VS2_LEVEL = 'level';		//				
-Blockly.LKL_VS2_HIGH_SPEED = 'highSpeed';	//			
-Blockly.LKL_VS2_NORMAL = 'normal';			//			
-Blockly.LKL_VS2_HIGH_ACCURACY = 'highAccuracy';		//	
+Blockly.LKL_VS2_LEVEL = 'Level';		//	level			
+Blockly.LKL_VS2_HIGH_SPEED = 'hohe Geschwindigkeit';	//		highSpeed	
+Blockly.LKL_VS2_NORMAL = 'ausgeglichen';			//normal			
+Blockly.LKL_VS2_HIGH_ACCURACY = 'hohe Genauigkeit';		//highAccuracy	
 
 //UART status
-Blockly.LKL_VS2_UART_OPEN = 'Open';			//			
-Blockly.LKL_VS2_UART_CLOSE = 'Close';			//		
+Blockly.LKL_VS2_UART_OPEN = 'öffnen';			//	open		
+Blockly.LKL_VS2_UART_CLOSE = 'schließen';			// close		
 
 //Vision type
 Blockly.LKL_VS2_COLOR_BLOCK = 'ColorBlock';         //    
@@ -796,17 +796,17 @@ Blockly.LKL_VS2_VISION_SHAPE_CARD = 'ShapeCard';	//
 Blockly.LKL_VS2_VISION_NUM_CARD = 'NumberCard';		//	
 
 //Card type
-Blockly.LKL_VS2_CARD_CIRCLE = 'Circle';			//		
-Blockly.LKL_VS2_CARD_TRIANGLE = 'Triangle';		//		
-Blockly.LKL_VS2_CARD_SQUARE = 'Square';			//		
-Blockly.LKL_VS2_CARD_TICK = 'Tick';				//		
-Blockly.LKL_VS2_CARD_CROSS = 'Cross';			//		
-Blockly.LKL_VS2_CARD_STRAIGHT = 'Straight';		//		
-Blockly.LKL_VS2_CARD_TURN_LEFT = 'TurnLeft';	//		
-Blockly.LKL_VS2_CARD_TURN_RIGHT = 'TurnRight';		//	
-Blockly.LKL_VS2_CARD_TURN_AROUND = 'TurnAround';	//	
-Blockly.LKL_VS2_CARD_WHISTLE = 'Whistle';			//	
-Blockly.LKL_VS2_CARD_STOP = 'Stop';					//	
+Blockly.LKL_VS2_CARD_CIRCLE = 'Kreis';			//	Circle	
+Blockly.LKL_VS2_CARD_TRIANGLE = 'Dreieck';		//	Triangle	
+Blockly.LKL_VS2_CARD_SQUARE = 'Viereck';			//	Square	
+Blockly.LKL_VS2_CARD_TICK = 'Haken';				//Tick		
+Blockly.LKL_VS2_CARD_CROSS = 'Kreuz';			//	Cross	
+Blockly.LKL_VS2_CARD_STRAIGHT = 'geradeaus';		//	Straight	
+Blockly.LKL_VS2_CARD_TURN_LEFT = 'biege links ab';	//		TurnLeft
+Blockly.LKL_VS2_CARD_TURN_RIGHT = 'biege rechts ab';		//	TurnRight
+Blockly.LKL_VS2_CARD_TURN_AROUND = 'drehe um';	//	TurnAround
+Blockly.LKL_VS2_CARD_WHISTLE = 'pfeife';			//	Whistle
+Blockly.LKL_VS2_CARD_STOP = 'Stopp';					//	
 
 //Vision state
 Blockly.LKL_VS2_STATE_VALUE_X = 'Horizontal';		//	
@@ -823,8 +823,8 @@ Blockly.LKL_VS2_TRUE = 'True';					//
 Blockly.LKL_VS2_FALSE = 'False';				//		
 
 //Enable Disable
-Blockly.LKL_VS2_ENABLE = 'enable';				//		
-Blockly.LKL_VS2_DISABLE = 'disable';			//		
+Blockly.LKL_VS2_ENABLE = 'aktivieren';				//	enable	
+Blockly.LKL_VS2_DISABLE = 'deaktivieren';			//disable		
 
 //Camera AWB
 Blockly.LKL_VS2_LOCK_AWB = 'LockAWB';			//		
@@ -833,11 +833,11 @@ Blockly.LKL_VS2_YELLOW_LIGHT = 'YellowLight';	//
 Blockly.LKL_VS2_ALL = 'All';                      //      
 
 //Other
-Blockly.LKL_VS2_COLOR = 'color';			//			
-Blockly.LKL_VS2_DEFAULT = 'default';         //           
-Blockly.LKL_VS2_LOW = 'low';                //            
-Blockly.LKL_VS2_MID = 'middle';             //            
-Blockly.LKL_VS2_HIGH = 'high';             //             
+Blockly.LKL_VS2_COLOR = 'Farbe';			//color			
+Blockly.LKL_VS2_DEFAULT = 'Standard';         // default          
+Blockly.LKL_VS2_LOW = 'niedrig';                //   low         
+Blockly.LKL_VS2_MID = 'mittel';             //      middle      
+Blockly.LKL_VS2_HIGH = 'hoch';             //   high          
 
 /*模块文本*/
 Blockly.LKL_VS2_MU = 'initialize';			//						
@@ -868,32 +868,32 @@ Blockly.LKL_VS2_SET_DETECT_COLOR = 'setDetectColor';		//
 Blockly.LKL_VS2_COORDINATE = 'coordinate';                   //       
 
 // Light sensor
-Blockly.LKL_VS2_LIGHT_SENSOR = 'light sensor';                //      
-Blockly.LKL_VS2_SET = 'set';                                //        
-Blockly.LKL_VS2_SENSITIVITY = 'sensitivity';                 //       
+Blockly.LKL_VS2_LIGHT_SENSOR = 'Lichtsensor';                //     light sensor 
+Blockly.LKL_VS2_SET = 'setze';                                //   set     
+Blockly.LKL_VS2_SENSITIVITY = 'Empfindlichkeit';                 //  sensitivity     
 Blockly.LKL_VS2_WB_CORRECTION = 'white balance correction';    //     
-Blockly.LKL_VS2_READ = 'read';                                //      
+Blockly.LKL_VS2_READ = 'lies';                                // read     
 Blockly.LKL_VS2_PROXIMITY = 'proximity detection';           //       
 Blockly.LKL_VS2_ALS = 'ambient light detection';             //       
-Blockly.LKL_VS2_GESTURE_SENSOR = 'gesture detection';        //       
-Blockly.LKL_VS2_GESTURE = 'gesture';                         //       
-Blockly.LKL_VS2_GESTURE_UP = 'upward';                       //       
-Blockly.LKL_VS2_GESTURE_DOWN = 'downward';                   //       
-Blockly.LKL_VS2_GESTURE_LEFT = 'leftward';                    //      
-Blockly.LKL_VS2_GESTURE_RIGHT = 'rightward';                  //      
-Blockly.LKL_VS2_GESTURE_LIFT_UP = 'pull';                     //      
-Blockly.LKL_VS2_GESTURE_PUSH_DOWN = 'push';                    //     
+Blockly.LKL_VS2_GESTURE_SENSOR = 'Gestenerkennung';        //  gesture detection     
+Blockly.LKL_VS2_GESTURE = 'Geste';                         //    gesture   
+Blockly.LKL_VS2_GESTURE_UP = 'hoch';                       //  upward     
+Blockly.LKL_VS2_GESTURE_DOWN = 'runter';                   //      downward 
+Blockly.LKL_VS2_GESTURE_LEFT = 'links';                    //   leftward   
+Blockly.LKL_VS2_GESTURE_RIGHT = 'rechts';                  //   rightward   
+Blockly.LKL_VS2_GESTURE_LIFT_UP = 'ziehe';                     //    pull  
+Blockly.LKL_VS2_GESTURE_PUSH_DOWN = 'drücke';                    //     push
 
 // AT WiFi
 Blockly.LKL_VS2_SSID = "ssid";                             //         
-Blockly.LKL_VS2_PASSWORD = "password";                     //         
-Blockly.LKL_VS2_WAIT_CONNECT = "connection succeeded";     //         
-Blockly.LKL_VS2_DISCONNECT = "disconnect";                 //         
-Blockly.LKL_VS2_CLIENT = "client";                         //         
-Blockly.LKL_VS2_HOT_SPOT = "hot-spot";                     //         
-Blockly.LKL_VS2_TARGET_IP = "target IP";                   //         
-Blockly.LKL_VS2_LOCAL_IP = "local IP";                      //        
-Blockly.LKL_VS2_WRITE = "write";                           //         
+Blockly.LKL_VS2_PASSWORD = "Passwort";                     //      password   
+Blockly.LKL_VS2_WAIT_CONNECT = "Verbindung erfolgreich hergestellt";     //     connection succeeded    
+Blockly.LKL_VS2_DISCONNECT = "trennen";                 //  disconnect       
+Blockly.LKL_VS2_CLIENT = "Client";                         //         
+Blockly.LKL_VS2_HOT_SPOT = "Hotspot";                     //         
+Blockly.LKL_VS2_TARGET_IP = "Ziel IP";                   //         
+Blockly.LKL_VS2_LOCAL_IP = "lokale IP";                      //        
+Blockly.LKL_VS2_WRITE = "schreibe";                           //         
 
 
 
