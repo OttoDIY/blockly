@@ -28,19 +28,13 @@ Blockly.Arduino["controls_for"]=function(block){
     var argument2 = Blockly.Arduino.valueToCode(block, "BY", Blockly.Arduino.ORDER_ASSIGNMENT);
     var branch = Blockly.Arduino.statementToCode(block, "DO");
     if (Blockly.Arduino.INFINITE_LOOP_TRAP) branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, "'" + block.id + "'") + branch;
-    return "for (" + variable0 + "=" + argument0 + " ; " + variable0 + "<=" + argument1 + " ; " + variable0 + "=" + variable0 + "+" + argument2 + ") {\n" + branch + "}\n"
+    if( argument0 < argument1){
+        return "for (" + variable0 + "=" + argument0 + " ; " + variable0 + "<=" + argument1 + " ; " + variable0 + "=" + variable0 + "+" + argument2 + ") {\n" + branch + "}\n"
+    }
+    else {
+        return "for (" + variable0 + "=" + argument0 + " ; " + variable0 + ">=" + argument1 + " ; " + variable0 + "=" + variable0 + "-" + argument2 + ") {\n" + branch + "}\n"
+    }
 };
-
-Blockly.Arduino["controls_for2"]=function(block){
-    var variable0 = Blockly.Arduino.variableDB_.getName(block.getFieldValue("VAR"), Blockly.Variables.NAME_TYPE);
-    var argument0 = Blockly.Arduino.valueToCode(block, "FROM", Blockly.Arduino.ORDER_ASSIGNMENT);
-    var argument1 = Blockly.Arduino.valueToCode(block, "TO", Blockly.Arduino.ORDER_ASSIGNMENT);
-    var argument2 = Blockly.Arduino.valueToCode(block, "BY", Blockly.Arduino.ORDER_ASSIGNMENT);
-    var branch = Blockly.Arduino.statementToCode(block, "DO");
-    if (Blockly.Arduino.INFINITE_LOOP_TRAP) branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, "'" + block.id + "'") + branch;
-    return "for (" + variable0 + "=" + argument0 + " ; " + variable0 + ">=" + argument1 + " ; " + variable0 + "=" + variable0 + "-" + argument2 + ") {\n" + branch + "}\n"
-};
-
 
 
 

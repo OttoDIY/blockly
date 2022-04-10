@@ -463,66 +463,6 @@ Blockly.Blocks["controls_for"] = {
 };
 
 
-Blockly.Blocks["controls_for2"] = {
-    init: function() {
-        this.jsonInit({
-            message0: Blockly.Msg.CONTROLS_FOR_TITLE2,
-            args0: [{
-                type: "field_variable",
-                name: "VAR",
-                variable: null
-            }, {
-                type: "input_value",
-                name: "FROM",
-                check: "Number",
-                align: "RIGHT"
-            }, {
-                type: "input_value",
-                name: "TO",
-                check: "Number",
-                align: "RIGHT"
-            }, {
-                type: "input_value",
-                name: "BY",
-                check: "Number",
-                align: "RIGHT"
-            }],
-            inputsInline: true,
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.Blocks.controls.HUE,
-            helpUrl: Blockly.Msg.HELPURL
-        });
-        this.appendStatementInput("DO");
-        var thisBlock = this;
-        this.setTooltip(function() {
-            return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace("%1", thisBlock.getFieldValue("VAR"))
-        })
-    },
-    customContextMenu: function(options) {
-        if (!this.isCollapsed()) {
-            var option = {
-                enabled: true
-            };
-            var name = this.getFieldValue("VAR");
-            option.text = Blockly.Msg.VARIABLES_SET_CREATE_GET.replace("%1", name);
-            var xmlField = goog.dom.createDom("field", null, name);
-            xmlField.setAttribute("name", "VAR");
-            var xmlBlock = goog.dom.createDom("block", null, xmlField);
-            xmlBlock.setAttribute("type", "variables_get");
-            option.callback = Blockly.ContextMenu.callbackFactory(this, xmlBlock);
-            options.push(option)
-        }
-    },
-    getVarType: function(varName) {
-        return Blockly.Types.NUMBER
-    },
-    renameVar: function(oldName, newName) {
-        if (Blockly.Names.equals(oldName, this.getFieldValue("VAR"))) this.setFieldValue(newName, "VAR")
-    }
-};
-
-
 
 
 
