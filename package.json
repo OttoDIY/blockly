@@ -33,8 +33,9 @@
  "scripts": {
   "postinstall": "electron-builder install-app-deps",
   "start": "electron .",
-  "compiler": "build --win --ia32",
-  "publier": "build --win --ia32 -p always"
+  "compiler": "electron-builder --win --ia32",
+  "compiler:mac": "electron-builder --mac",
+  "publier": "electron-builder --win --ia32 -p always"
  },
  "build": {
   "appId": "com.electron.ottoblockly",
@@ -121,8 +122,8 @@
  },
  "devDependencies": {
   "electron": "4.1.1",
-  "electron-builder": "^20.39.0",
-  "electron-installer-dmg": "^3.0.0"
+  "electron-builder": "21.2.0",
+  "electron-installer-dmg": "3.0.0"
  },
  "dependencies": {
   "ajv": "6.10.0",
