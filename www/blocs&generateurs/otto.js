@@ -51,7 +51,7 @@ Blockly.Arduino['otto9_configuration'] = function(block) {
     + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
 	
   Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
-  + 'Otto.home();\n';
+  ;
   var code = '';
   return code;
 };

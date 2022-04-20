@@ -2,7 +2,7 @@
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_OTTO_NINJA,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
 	
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
@@ -10,6 +10,7 @@
 		<block type="base_code_entree"></block>
 		<!--<block type="base_define"></block> -->
 	</category>
+	
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
 			<field name="PIN_YL">2</field>
@@ -81,7 +82,47 @@
 			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
 		</block>
 		</category>
-<!-- <category name="CAT_OTTO_NINJA" colour="#0A0A0A">
+
+<category name="CAT_OTTO_QUAD" colour="#32D900">
+				<block type="otto_quad_configuration">
+			<field name="FRH">2</field>
+			<field name="FLH">8</field>
+			<field name="FRL">3</field>
+			<field name="FLL">9</field>
+			<field name="BLH">4</field>
+			<field name="BRH">6</field>
+			<field name="BRL">5</field>
+			<field name="BLL">7</field>
+		</block>
+	<block type="otto_quad_home"></block>
+	<block type="otto_quad_move"></block>
+	<block type="otto_quad_hello"></block>
+	<block type="otto_quad_jump"></block>
+	<block type="otto_quad_scared"></block>
+</category>
+
+	<category name="CAT_ESCORNABOT" colour="#C39BD3">
+			<block type="escornabot_init"></block>
+			<block type="escornabot_spin"></block>
+			<block type="escornabot_distance"></block>
+			<block type="escornabot_turnspin"></block>
+			<block type="escornabot_turnangle"></block>
+			<block type="escornabot_stop"></block>
+			<block type="escornabot_beep"></block>
+			<block type="escornabot_ledon"></block>
+			<block type="escornabot_ledoff"></block>
+			<block type="escornabot_getbutton"></block>
+			<block type="escornabot_us_init"></block>
+			<block type="escornabot_getus"></block>
+			<block type="escornabot_ir_init"></block>
+			<block type="escornabot_blackLeft"></block>
+			<block type="escornabot_blackRight"></block>
+			<block type="escornabot_whiteLeft"></block>
+			<block type="escornabot_whiteRight"></block>
+			<block type="escornabot_app"></block>
+	</category>
+	</category>
+	<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
 <block type="otto_ninja_init">			
 	<field name="PIN_YL">A1</field>
 	<field name="PIN_YR">6</field>
@@ -94,10 +135,10 @@
 <block type="otto_ninja_calibration">
 			<value name="LA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			<value name="RA0"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
-			<value name="LATL"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
-			<value name="RATL"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
-			<value name="LATR"><shadow type="math_number">	<field name="NUM">60</field>	</shadow></value>
-			<value name="RATR"><shadow type="math_number">	<field name="NUM">40</field>	</shadow></value>
+			<value name="LATL"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
+			<value name="RATL"><shadow type="math_number">	<field name="NUM">150</field>	</shadow></value>
+			<value name="LATR"><shadow type="math_number">	<field name="NUM">30</field>	</shadow></value>
+			<value name="RATR"><shadow type="math_number">	<field name="NUM">90</field>	</shadow></value>
 </block>
 <block type="otto_ninja_speed">
 			<value name="LFFWRS"><shadow type="math_number">	<field name="NUM">12</field>	</shadow></value>
@@ -120,45 +161,7 @@
 <block type="otto_ninja_setroll"></block>
 <block type="otto_ninja_walkstop"></block>
 <block type="otto_ninja_rollstop"></block>
-</category>-->
-<category name="CAT_OTTO_QUAD" colour="#32D900">
-				<block type="otto_quad_configuration">
-			<field name="FRH">2</field>
-			<field name="FLH">8</field>
-			<field name="FRL">3</field>
-			<field name="FLL">9</field>
-			<field name="BLH">4</field>
-			<field name="BRH">6</field>
-			<field name="BRL">5</field>
-			<field name="BLL">7</field>
-		</block>
-	<block type="otto_quad_home"></block>
-	<block type="otto_quad_move"></block>
-	<block type="otto_quad_hello"></block>
-	<block type="otto_quad_jump"></block>
-	<block type="otto_quad_scared"></block>
 </category>
-	<category name="CAT_ESCORNABOT" colour="#C39BD3">
-			<block type="escornabot_init"></block>
-			<block type="escornabot_spin"></block>
-			<block type="escornabot_distance"></block>
-			<block type="escornabot_turnspin"></block>
-			<block type="escornabot_turnangle"></block>
-			<block type="escornabot_stop"></block>
-			<block type="escornabot_beep"></block>
-			<block type="escornabot_ledon"></block>
-			<block type="escornabot_ledoff"></block>
-			<block type="escornabot_getbutton"></block>
-			<block type="escornabot_us_init"></block>
-			<block type="escornabot_getus"></block>
-			<block type="escornabot_ir_init"></block>
-			<block type="escornabot_blackLeft"></block>
-			<block type="escornabot_blackRight"></block>
-			<block type="escornabot_whiteLeft"></block>
-			<block type="escornabot_whiteRight"></block>
-			<block type="escornabot_app"></block>
-	</category>
-	</category>
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 		<block type="base_delay">
