@@ -1011,18 +1011,30 @@
 			<block type="wifiserver_request"></block>
 			
 			<block type="wifiserver_answer">
-				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome to my server :-)</field></shadow></value>
+				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome :-)</field></shadow></value>
 			</block>
 			<block type="wifiserver_stop"></block>
 			<block type="wifiserver_flush"></block>
 			
-			<block type="wifiserver_port_library">
+			<block type="wifiserver_port_asyn_library">
+				<value name="server_port"><shadow type="math_number"><field name="NUM">80</field></shadow></value>
+			</block>
+			<block type="esp8266_asynsend"></block>
+			<block type="esp8266_asynsend_text">
+				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome :-)</field></shadow></value>
+			</block>
+			
+			<block type="esp8266_asyngetArg"></block>
+			<block type="esp8266_asynuseArg"></block>
+			
+		<!--	<block type="wifiserver_port_library">
 				<value name="server_port"><shadow type="math_number"><field name="NUM">80</field></shadow></value>
 			</block>
 			<block type="esp8266_handle_request"></block>
 			<block type="esp8266_send"></block>
 			<block type="esp8266_getArg"></block>
-			<block type="esp8266_useArg"></block>
+			<block type="esp8266_useArg"></block> -->
+						
 		</category>
 		
 		
