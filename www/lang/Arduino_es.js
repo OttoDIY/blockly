@@ -990,6 +990,23 @@ Blockly.Msg.RFID_CARD_READED = "Valor de la tarjeta leida";
 Blockly.Msg.RFID_CHECK_CARD = "¿Es la tarjeta leida igual a la de validación";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
+//NFC PN532
+Blockly.Msg.NFC_name = "💳 NFC ";
+Blockly.Msg.NFC_init = "NFC I2C ";
+Blockly.Msg.NFC_VALID_VAR = "Tarjeta de validación:(4bytes):";
+Blockly.Msg.NFC_VALID_VAR2 = "Tarjeta de validación:(7bytes):";
+Blockly.Msg.NFC_C1 = "Valor 1";
+Blockly.Msg.NFC_C2 = "Valor 2";
+Blockly.Msg.NFC_C3 = "Valor 3";
+Blockly.Msg.NFC_C4 = "Valor 4";
+Blockly.Msg.NFC_C5 = "Valor 5";
+Blockly.Msg.NFC_C6 = "Valor 6";
+Blockly.Msg.NFC_C7 = "Valor 7";
+Blockly.Msg.NFC_DETECTED = "¿Tarjeta RFID detectada?";
+Blockly.Msg.NFC_CARD_READED = "Valor de la tarjeta leida";
+Blockly.Msg.NFC_CHECK_CARD = "¿Es la tarjeta leida igual a la de validación";
+Blockly.Msg.NFC_CHECK_CARD2 = "?";
+
 //KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Teclado";
 Blockly.Msg.KeyPressed = "Tecla";

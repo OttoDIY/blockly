@@ -477,6 +477,16 @@
 			<block type="RFID_card_readed"></block>
 			<block type="RFID_check_card"></block>
 			<block type="rfid_stopread"></block>
+			
+			
+			<block type="nfc_init"></block>
+			<block type="nfc_validationcard"></block>
+			<block type="nfc_validationcard_2"></block>
+			<block type="nfc_detected"></block>
+			<block type="nfc_card_readed"></block>
+			<block type="nfc_check_card"></block>
+			
+			
 		</category>
 	</category>
 	<category name="CAT_servo" colour="#2d2dd1">
