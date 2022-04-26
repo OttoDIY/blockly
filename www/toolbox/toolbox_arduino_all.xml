@@ -327,8 +327,8 @@
 	</category>	
 		
 	<category name="CAT_SENSORS" colour="#2a93e8">
-		 <block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
-		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
+		 <block type="button_sensor2"></block>
+		 <block type="button_touch_sensor2"></block>
 		 <block type="potentiometer_ranger_sensor2"></block>	
 		 <block type="Joystick_axis_sensor2"></block>
 		 <block type="joystick_button_sensor2"></block>
@@ -336,9 +336,9 @@
 		 
 		 
 		<category name="CAT_VL53L0X" colour="#2a93e8">
-			<block type="ultrasonic_sensor">
-				<field name="PIN_TRIG">8</field>
-				<field name="PIN_ECHO">9</field>
+			<block type="ultrasonic_sensor"> 
+				<field name="PIN_ECHO">8</field> 
+			
 			</block>			
 			<block type="ultrasonic_distance"></block>
 			<block type="VL53L0X"></block>
@@ -346,15 +346,14 @@
 		</category>	
 				
 		<category name="CAT_SOUND" colour="#2a93e8">
-				<block type="Sound_status_sensor2"><field name="PIN_SOUND">A6</field></block>	
-				<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>	
+				<block type="Sound_status_sensor2"></block>	
+				<block type="Sound_sensor2"></block>	
 				<block type="SoundAmp_sensor2">
-					<field name="PIN_SOUND">A6</field>
 					<value name="SAMPLE_WINDOW"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
 				</block>	
 		</category>
 		<category name="CAT_TEMP" colour="#2a93e8">
-				<block type="dht_sensor2"><field name="PinDHT">10</field></block>
+				<block type="dht_sensor2"></block>
 				<block type="dht_measure"></block>	
 				<block type="Analog_temperature_sensor2"></block>	
 				<block type="LM35_temperature_sensor2"></block>
@@ -550,9 +549,7 @@
 	<category name="CAT_LED" colour="#4b009f">		
 		<block type="blink"></block>
 		<block type="inout_buildin_led"></block>
-		<block type="digital_write0">
-				<field name="PIN">10</field>
-		</block>
+		<block type="digital_write0"></block>
 		<!-- <block type="digital_write">	<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	>-->
 		<block type="digital_write2">
 		<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
