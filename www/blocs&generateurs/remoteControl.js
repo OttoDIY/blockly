@@ -109,13 +109,14 @@ Blockly.Arduino['IR_Remote_Key'] = function(block) {
 Blockly.Blocks['Init_remotecontrolMRT'] = {
   helpUrl: '',
   init: function() {
+	 var card=window.localStorage.card;
     this.setColour("#0060aa");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/genericRC.png",26,38))
 		.appendField(Blockly.Msg.MRT_IR)
-	this.appendValueInput("PIN_IR", "Number")
-		.setCheck("Number")
+	this.appendDummyInput()
 		.appendField(Blockly.Msg.PIN2)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
   	this.appendDummyInput()
         .appendField(Blockly.Msg.MRT_CHANNEL)
         .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");	
@@ -129,7 +130,8 @@ Blockly.Blocks['Init_remotecontrolMRT'] = {
 
 Blockly.Arduino['Init_remotecontrolMRT'] = function(block) {
 
-  var pin_ir = Blockly.Arduino.valueToCode(this, "PIN_IR", Blockly.Arduino.ORDER_NONE);
+  
+  var pin_ir = block.getFieldValue('PIN_IR');
   var Channel = this.getFieldValue('CHANNEL');
   
   Blockly.Arduino.definitions_['include_enableinterrupt'] = '#include <EnableInterrupt.h>\n';

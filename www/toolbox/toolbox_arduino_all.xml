@@ -314,10 +314,7 @@
     </category>
 	
 	<category name="CAT_ultrason" colour="#2a93e8">
-		<block type="ultrasonic_sensor">
-			<field name="PIN_TRIG">8</field>
-			<field name="PIN_ECHO">9</field>
-		</block>			
+		<block type="ultrasonic_sensor"></block>			
 		<block type="ultrasonic_distance"></block>
 		<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		<block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
@@ -337,8 +334,7 @@
 		 
 		<category name="CAT_VL53L0X" colour="#2a93e8">
 			<block type="ultrasonic_sensor"> 
-				<field name="PIN_ECHO">8</field> 
-			
+				<field name="PIN_ECHO">11</field>
 			</block>			
 			<block type="ultrasonic_distance"></block>
 			<block type="VL53L0X"></block>
@@ -467,7 +463,6 @@
 	
 		<category name="CAT_RFID" colour="#2a93e8">
 			<block type="rfid_init">
-				<field name="PIN_SDA">10</field>
 				<field name="PIN_RST">11</field>	  
 			</block>
 			<block type="rfid_validationcard"></block>
