@@ -968,3 +968,78 @@ else
 var code = '';
   return code;
 };
+
+
+/*****************************************************************
+ *
+ *  These blocks are for MRT motors for MRT-Node ESP32 board
+ *
+ ******************************************************************/
+
+Blockly.Blocks['motor_MRT_Node_run'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
+	this.appendDummyInput()
+	.appendField(Blockly.Msg.MOTOR_Connector)
+	.appendField(new Blockly.FieldDropdown([["ML1","MOTOR_L1"],["MR1","MOTOR_R1"],["ML2","MOTOR_L2"],["MR2","MOTOR_R2"]]), "MOTOR_CON");
+    this.appendDummyInput()
+    .appendField(Blockly.Msg.MOTOR_Direction)
+	.appendField(new Blockly.FieldDropdown([['Forward', '0'],['Backward', '1']]), "MOTOR_DIR");
+	 this.appendValueInput("CONTENT", 'Number')
+        .setCheck('Number')
+    .appendField(Blockly.Msg.MOTOR_speed)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Run the MRT motor forward or backward in the MRT Node ESP32 Board. Only for this board');
+  }
+};
+
+Blockly.Arduino['motor_MRT_Node_run'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+  var motor_direction = this.getFieldValue('MOTOR_DIR');
+  var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
+  
+  Blockly.Arduino.includes_['include_motor_mrt_node'] = '#include "MRT_esp32_Motor.h"\n';
+  
+  Blockly.Arduino.setups_['setup_motorMRT_node'] = 'DcMotor_init();';
+  
+  var code= 'setDcMotor('+motor_pin+','+motor_direction+','+motor_speed+');\n';
+	
+  return code;
+};
+
+Blockly.Blocks['motor_MRT_Node_stop'] = {
+  init: function() {
+    this.setColour("#2d2dd1");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.MOTOR_Connector)
+		.appendField(new Blockly.FieldDropdown([["ML1","MOTOR_L1"],["MR1","MOTOR_R1"],["ML2","MOTOR_L2"],["MR2","MOTOR_R2"]]), "MOTOR_CON");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.MOTOR_Stop)
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Stop the MRT motor forward or backward in the MRT Node ESP32 Board. Only for this board');
+  }
+};
+
+Blockly.Arduino['motor_MRT_Node_stop'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  
+  var motor_pin = this.getFieldValue('MOTOR_CON');
+  
+  Blockly.Arduino.includes_['include_motor_mrt_node'] = '#include "MRT_esp32_Motor.h"\n';
+  
+  Blockly.Arduino.setups_['setup_motorMRT_node'] = 'DcMotor_init();';
+  
+  var code= 'setDcMotor('+motor_pin+',0,0);\n';
+  
+  return code;
+};

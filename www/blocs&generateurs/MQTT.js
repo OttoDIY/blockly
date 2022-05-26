@@ -57,10 +57,16 @@ Blockly.Arduino['mqtt_init'] = function(block) {
    var APIKey = block.getFieldValue('APIKEY');  
    var Idclient = block.getFieldValue('IDCLIENT'); 
    var logic = this.getFieldValue('LOGIC');
+   
+    var card=window.localStorage.card;
   
-  Blockly.Arduino.includes_['include_mqtt'] = '#include "ESP8266WiFi.h"\n'+
+  if (card =="OttoESP")
+		 Blockly.Arduino.includes_['include_mqtt'] = '#include "ESP8266WiFi.h"\n'+
   '#include "PubSubClient.h"\n';
-  
+	else
+		 Blockly.Arduino.includes_['include_mqtt'] = '#include "WiFi.h"\n'+
+  '#include "PubSubClient.h"\n';
+   
   Blockly.Arduino.variables_['define_mqtt_variables'] = 'const char mqtt_wifi_ssid[]="'+ssid+'";\n'+
 'const char mqtt_wifi_pass[]="'+wifipassword+'";\n'+
 'const char mqtt_broker[]="'+server+'";\n'+

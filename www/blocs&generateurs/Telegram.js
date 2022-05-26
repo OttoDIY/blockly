@@ -34,6 +34,9 @@ Blockly.Arduino['telegram_init'] = function(block) {
 	 
  var BotToken = block.getFieldValue('BOT_TOKEN');  
  var ChatID = block.getFieldValue('CHAT_ID'); 
+ var card=window.localStorage.card;
+  
+  
  
   Blockly.Arduino.includes_['include_telegram'] = '#include <WiFiClientSecure.h>\n'+
   '#include <UniversalTelegramBot.h>\n';
@@ -41,14 +44,24 @@ Blockly.Arduino['telegram_init'] = function(block) {
   Blockly.Arduino.variables_['define_telegram'] = '#define BOT_TOKEN "'+BotToken+'"\n'+
  '#define CHAT_ID "'+ChatID+'"\n';
   
-  Blockly.Arduino.variables_['define_telegram_variables'] = 'X509List cert(TELEGRAM_CERTIFICATE_ROOT);\n'+
+  if (card =="OttoESP")
+  {
+		Blockly.Arduino.variables_['define_telegram_variables'] = 'X509List cert(TELEGRAM_CERTIFICATE_ROOT);\n'+
 	'WiFiClientSecure secured_client;\n'+
 	'UniversalTelegramBot bot(BOT_TOKEN, secured_client);\n'+
 	'int numNewMessages=0;\n';
+	
+		Blockly.Arduino.setups_['setup_telegram'] = 'secured_client.setTrustAnchors(&cert);\n';
+  }
+  else
+  {
+		Blockly.Arduino.variables_['define_telegram_variables'] = 'WiFiClientSecure secured_client;\n'+
+	'UniversalTelegramBot bot(BOT_TOKEN, secured_client);\n'+
+	'int numNewMessages=0;\n';
+	 Blockly.Arduino.setups_['setup_telegram'] = 'secured_client.setCACert(TELEGRAM_CERTIFICATE_ROOT);\n';
+  }
 
-  Blockly.Arduino.setups_['setup_telegram'] = 'secured_client.setTrustAnchors(&cert);\n';
-
-  var code='';
+   var code='';
   return code;
 };
 

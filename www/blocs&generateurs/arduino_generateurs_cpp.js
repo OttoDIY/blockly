@@ -407,5 +407,8 @@ Blockly.Arduino['eeprom_write'] = function(block) {
 Blockly.Arduino['eeprom_read'] = function(block) {
 	var adresse = Blockly.Arduino.valueToCode(block, 'adr', Blockly.Arduino.ORDER_ATOMIC);
 	Blockly.Arduino.includes_["eeprom"]='#include <EEPROM.h>';
-	return 'EEPROM.read('+adresse+')';
+	
+	var code='EEPROM.read('+adresse+')';
+	
+	return [code, Blockly.Arduino.ORDER_ATOMIC]
 };

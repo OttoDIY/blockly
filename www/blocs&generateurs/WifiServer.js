@@ -315,7 +315,7 @@ Blockly.Arduino['esp8266_handle_request'] = function(block) {
   return code;
 };
 
-//Servidor Asíncrono
+//Servidor Asíncrono -----------------------------------------------------------------------------------------------------
 
 Blockly.Blocks['wifiserver_port_asyn_library'] = {
   init: function() {
@@ -337,8 +337,13 @@ Blockly.Blocks['wifiserver_port_asyn_library'] = {
 
 Blockly.Arduino['wifiserver_port_asyn_library'] = function(block) {
   var server_port = Blockly.Arduino.valueToCode(block, 'server_port', Blockly.Arduino.ORDER_ATOMIC);
+  var card=window.localStorage.card;
   
-  Blockly.Arduino.includes_['define_ESPAsyncTCP'] = '#include<ESPAsyncTCP.h>\n';
+  if (card =="OttoESP")
+		Blockly.Arduino.includes_['define_ESPAsyncTCP'] = '#include<ESPAsyncTCP.h>\n';
+	else
+		Blockly.Arduino.includes_['define_ESPAsyncTCP'] = '#include<AsyncTCP.h>\n';
+  
   Blockly.Arduino.includes_['define_esp8266asynwebserver'] = '#include<ESPAsyncWebServer.h>\n';
   Blockly.Arduino.includes_['define_elegantOTA'] = '#include<AsyncElegantOTA.h>\n';
   

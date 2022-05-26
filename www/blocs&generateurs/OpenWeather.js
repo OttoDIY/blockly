@@ -33,11 +33,18 @@ Blockly.Blocks['Init_OpenWeather'] = {
 Blockly.Arduino['Init_OpenWeather'] = function(block) {
 	
 	var api_key = this.getFieldValue('API_KEY');
-
-	Blockly.Arduino.includes_['include_OpenWeather'] = '#include <ESP8266HTTPClient.h>\n'+
+	var card=window.localStorage.card;
+  
+  if (card =="OttoESP")
+		Blockly.Arduino.includes_['include_OpenWeather'] = '#include <ESP8266HTTPClient.h>\n'+
+  '#include <WiFiClient.h>\n'+
+  '#include <ArduinoJson.h>\n';
+	else
+		Blockly.Arduino.includes_['include_OpenWeather'] = '#include <HTTPClient.h>\n'+
   '#include <WiFiClient.h>\n'+
   '#include <ArduinoJson.h>\n';
 
+	
   Blockly.Arduino.definitions_['definition_OpenWeather'] = 'String openWeatherMapApiKey = "'+api_key+'";\n'+
 'String city;\n'+
 'String country_code;\n'+

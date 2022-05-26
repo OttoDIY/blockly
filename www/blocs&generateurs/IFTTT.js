@@ -69,10 +69,13 @@ Blockly.Arduino['ifttt_send'] = function(block) {
   var value3 = Blockly.Arduino.valueToCode(block, 'value3', Blockly.Arduino.ORDER_ATOMIC);
   var evento = Blockly.Arduino.valueToCode(block, 'evento', Blockly.Arduino.ORDER_ATOMIC); 
   
+  var card=window.localStorage.card;
   
-Blockly.Arduino.includes_['include_httpclient'] = '#include "ESP8266HTTPClient.h"\n';  
+  if (card =="OttoESP")
+		Blockly.Arduino.includes_['include_httpclient'] = '#include "ESP8266HTTPClient.h"\n';
+	else
+		Blockly.Arduino.includes_['include_httpclient'] = '#include "HTTPClient.h"\n';
   
-    
 Blockly.Arduino.codeFunctions_['send_ifttt_function'] = 'void enviar_ifttt(String evento,String valor1, String valor2, String valor3)\n'+
 '{\n'+
 ' // Cerramos cualquier conexión anterior\n'+

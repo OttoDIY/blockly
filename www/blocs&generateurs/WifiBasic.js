@@ -38,8 +38,12 @@ Blockly.Arduino['wifi_init_sta'] = function(block) {
    var ssid = block.getFieldValue('SSID');  
    var wifipassword = block.getFieldValue('PASSWORD');  
    var logic = this.getFieldValue('LOGIC');
+   var card=window.localStorage.card;
   
-  Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+    if (card =="OttoESP")
+		Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+	else
+		Blockly.Arduino.includes_['include_wifi'] = '#include "WiFi.h"\n';
   
   Blockly.Arduino.variables_['define_wifi_variables'] = 'const char wifi_ssid[]="'+ssid+'";\n'+
 'const char wifi_pass[]="'+wifipassword+'";\n';
@@ -55,7 +59,7 @@ if(logic=='TRUE')
 '	Serial.print(".");\n'+
 '	delay(500);\n'+
 '	}\n'+
-'	Serial.println("ESP8266 MAC Address:  ");\n'+
+'	Serial.println("ESP MAC Address:  ");\n'+
 '	Serial.println(WiFi.macAddress());\n'+
 '   Serial.println();\n'+
 '   Serial.print("Conectado a:\t");\n'+
@@ -103,8 +107,12 @@ Blockly.Arduino['wifi_init_ap'] = function(block) {
    var ssid = block.getFieldValue('SSID');  
    var wifipassword = block.getFieldValue('PASSWORD');  
    var logic = this.getFieldValue('LOGIC');
+   var card=window.localStorage.card;
   
-  Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+  if (card =="OttoESP")
+		Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+	else
+		Blockly.Arduino.includes_['include_wifi'] = '#include "WiFi.h"\n';
   
   Blockly.Arduino.variables_['define_wifi_variables'] = 'const char wifi_ssid[]="'+ssid+'";\n'+
 'const char wifi_pass[]="'+wifipassword+'";\n';
@@ -120,7 +128,7 @@ if(logic=='TRUE')
 '	Serial.print(".");\n'+
 '	delay(500);\n'+
 '	}\n'+
-'Serial.println("ESP8266 MAC Address:  ");\n'+
+'Serial.println("ESP MAC Address:  ");\n'+
 'Serial.println(WiFi.macAddress());\n'+
 'Serial.println();\n'+
 'Serial.print("Iniciado Access point:\t");\n'+
@@ -173,10 +181,14 @@ Blockly.Arduino['wifi_init_sta_ap'] = function(block) {
    var wifipassword = block.getFieldValue('PASSWORD');  
    var ssid2 = block.getFieldValue('SSID2');  
    var wifipassword2 = block.getFieldValue('PASSWORD2');  
+    var card=window.localStorage.card;
      
    var logic = this.getFieldValue('LOGIC');
   
-  Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+  if (card =="OttoESP")
+		Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n';
+	else
+		Blockly.Arduino.includes_['include_wifi'] = '#include "WiFi.h"\n';
   
   Blockly.Arduino.variables_['define_wifi_variables'] = 'const char wifi_ssid[]="'+ssid+'";\n'+
 'const char wifi_ssid2[]="'+ssid2+'";\n'+
@@ -197,7 +209,7 @@ if(logic=='TRUE')
 '	}\n'+
 '	WiFi.setAutoReconnect(true);\n'+
 '   Serial.println();\n'+
-'	Serial.println("ESP8266 MAC Address:  ");\n'+
+'	Serial.println("ESP MAC Address:  ");\n'+
 '	Serial.println(WiFi.macAddress());\n'+
 '   Serial.print("Conectado a:\t");\n'+
 '   Serial.println(WiFi.SSID()); \n'+
@@ -259,9 +271,6 @@ Blockly.Arduino.variables_['define_wifi_static_ip_ap'] = 'IPAddress staticIP_ap(
 
   return code;
 };
-
-
-
 
 Blockly.Blocks['wifi_sta_staticip'] = {
    init: function() {

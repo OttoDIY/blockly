@@ -71,7 +71,8 @@ Blockly.Arduino['soft_init'] = function(block) {
   var pin_tx = this.getFieldValue('PIN_TX');
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
   
-  Blockly.Arduino.includes_['define_ss'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerial('+pin_rx+','+pin_tx+');\n';
+  Blockly.Arduino.includes_['define_ss'] = '#include <SoftwareSerial.h>\n';
+  Blockly.Arduino.definitions_['define_ss_definition'] = 'SoftwareSerial mySerial('+pin_rx+','+pin_tx+');\n';
   Blockly.Arduino.setups_['setup_sserial'] = 'mySerial.begin('+dropdown_pinbaudios+');\n';
   var code = '';
   return code;
