@@ -12,14 +12,14 @@
 #include <Arduino.h>
 
 // use first channel of 16 channels (started from zero)
-#define LEDC_CHANNEL_0     0
-#define LEDC_CHANNEL_1     1
-#define LEDC_CHANNEL_2     2
-#define LEDC_CHANNEL_3     3
-#define LEDC_CHANNEL_4     4
-#define LEDC_CHANNEL_5     5
-#define LEDC_CHANNEL_6     6
-#define LEDC_CHANNEL_7     7
+#define LEDC_CHANNEL_8     8
+#define LEDC_CHANNEL_9     9
+#define LEDC_CHANNEL_10     10
+#define LEDC_CHANNEL_11     11
+#define LEDC_CHANNEL_12     12
+#define LEDC_CHANNEL_13     13
+#define LEDC_CHANNEL_14     14
+#define LEDC_CHANNEL_15     15
 
 //Motor pins
 #define MOTOR_L1_PIN1           2
@@ -38,14 +38,14 @@
 #define MOTOR_R2       4
 
 // Channels
-#define MOTOR_L1_PIN1_CHANNEL       LEDC_CHANNEL_0  
-#define MOTOR_L1_PIN2_CHANNEL       LEDC_CHANNEL_1
-#define MOTOR_R1_PIN1_CHANNEL       LEDC_CHANNEL_2
-#define MOTOR_R1_PIN2_CHANNEL       LEDC_CHANNEL_3
-#define MOTOR_L2_PIN1_CHANNEL       LEDC_CHANNEL_4
-#define MOTOR_L2_PIN2_CHANNEL       LEDC_CHANNEL_5
-#define MOTOR_R2_PIN1_CHANNEL       LEDC_CHANNEL_6
-#define MOTOR_R2_PIN2_CHANNEL       LEDC_CHANNEL_7
+#define MOTOR_L1_PIN1_CHANNEL       LEDC_CHANNEL_8  
+#define MOTOR_L1_PIN2_CHANNEL       LEDC_CHANNEL_9
+#define MOTOR_R1_PIN1_CHANNEL       LEDC_CHANNEL_10
+#define MOTOR_R1_PIN2_CHANNEL       LEDC_CHANNEL_11
+#define MOTOR_L2_PIN1_CHANNEL       LEDC_CHANNEL_12
+#define MOTOR_L2_PIN2_CHANNEL       LEDC_CHANNEL_13
+#define MOTOR_R2_PIN1_CHANNEL       LEDC_CHANNEL_14
+#define MOTOR_R2_PIN2_CHANNEL       LEDC_CHANNEL_15
 
 // use 13 bit precission for LEDC timer
 #define LEDC_TIMER  8
