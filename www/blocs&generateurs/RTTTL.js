@@ -48,9 +48,9 @@ Blockly.Arduino['RTTTL_music'] = function(block) {
   var PIN_BUZZER = block.getFieldValue('PIN_BUZZER');
   var code;
   
-  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.h>\n';
+  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
   
-  code= 'playRtttlBlockingPGM('+PIN_BUZZER+',(char*)'+melody+');\n';
+  code= 'playRtttlBlocking('+PIN_BUZZER+',(char*)'+melody+');\n';
  
  return code;
 };
@@ -83,14 +83,14 @@ Blockly.Arduino['RTTTL_music_custom'] = function(block) {
   
   var code;
   
-  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.h>\n';
+  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
   
   
  Blockly.Arduino.definitions_['Melody_'+name_melody] = 'static const char melody_'+ name_melody+'[] PROGMEM = '+rtttl_melody+';\n';
   
   
   
-  code= 'playRtttlBlockingPGM('+PIN_BUZZER+',(char*) melody_'+name_melody+');\n';
+  code= 'playRtttlBlocking('+PIN_BUZZER+',(char*) melody_'+name_melody+');\n';
  
  return code;
 };
@@ -120,9 +120,9 @@ Blockly.Arduino['RTTTL_music_x'] = function(block) {
  
   var code;
   
-  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.h>\n';
+  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
   
-  code= 'playRtttlBlockingPGM(11,(char*)'+melody+');\n';
+  code= 'playRtttlBlocking(11,(char*)'+melody+');\n';
  
  return code;
 };
@@ -154,14 +154,14 @@ Blockly.Arduino['RTTTL_music_custom_x'] = function(block) {
   
   var code;
   
-  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.h>\n';
+  Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
   
   
  Blockly.Arduino.definitions_['Melody_'+name_melody] = 'static const char melody_'+ name_melody+'[] PROGMEM = '+rtttl_melody+';\n';
   
   
   
-  code= 'playRtttlBlockingPGM(11,(char*) melody_'+name_melody+');\n';
+  code= 'playRtttlBlocking(11,(char*) melody_'+name_melody+');\n';
  
  return code;
 };

@@ -1,107 +1,112 @@
 /*
- Optimized digital functions for AVR microcontrollers
- by Watterott electronic (www.watterott.com)
- based on http://code.google.com/p/digitalwritefast
+  Optimized digital functions for AVR microcontrollers
+  by Watterott electronic (www.watterott.com)
+  based on http://code.google.com/p/digitalwritefast
  */
 
 #ifndef __digitalWriteFast_h_
 #define __digitalWriteFast_h_ 1
 
+//#define SANGUINO_PINOUT //define for Sanguino pinout
+
 // general macros/defines
-#ifndef BIT_READ
+#if !defined(BIT_READ)
 # define BIT_READ(value, bit)            ((value) &   (1UL << (bit)))
 #endif
-#ifndef BIT_SET
+#if !defined(BIT_SET)
 # define BIT_SET(value, bit)             ((value) |=  (1UL << (bit)))
 #endif
-#ifndef BIT_CLEAR
+#if !defined(BIT_CLEAR)
 # define BIT_CLEAR(value, bit)           ((value) &= ~(1UL << (bit)))
 #endif
-#ifndef BIT_WRITE
+#if !defined(BIT_WRITE)
 # define BIT_WRITE(value, bit, bitvalue) (bitvalue ? BIT_SET(value, bit) : BIT_CLEAR(value, bit))
 #endif
 
-#ifndef SWAP
-#define SWAP(x,y) do{ (x)=(x)^(y); (y)=(x)^(y); (x)=(x)^(y); }while(0)
+#if !defined(SWAP)
+# define SWAP(x,y) do{ (x)=(x)^(y); (y)=(x)^(y); (x)=(x)^(y); }while(0)
 #endif
 
-#ifndef DEC
+#if !defined(DEC)
 # define DEC (10)
 #endif
-#ifndef HEX
+#if !defined(HEX)
 # define HEX (16)
 #endif
-#ifndef OCT
+#if !defined(OCT)
 # define OCT (8)
 #endif
-#ifndef BIN
+#if !defined(BIN)
 # define BIN (2)
 #endif
 
+
 // workarounds for ARM microcontrollers
-#if (!defined(__AVR__) && !defined(ESP8266) || \
+#if (!defined(__AVR__) || \
      defined(ARDUINO_ARCH_SAM) || \
      defined(ARDUINO_ARCH_SAMD))
 
-#ifndef PROGMEM
+#if !defined(PROGMEM)
 # define PROGMEM
 #endif
-#ifndef PGM_P
+#if !defined(PGM_P)
 # define PGM_P const char *
 #endif
-#ifndef PSTR
+#if !defined(PSTR)
 # define PSTR(str) (str)
 #endif
 
-#ifndef memcpy_P
+#if !defined(memcpy_P)
 # define memcpy_P(dest, src, num) memcpy((dest), (src), (num))
 #endif
-#ifndef strcpy_P
+#if !defined(strcpy_P)
 # define strcpy_P(dst, src)       strcpy((dst), (src))
 #endif
-#ifndef strcat_P
+#if !defined(strcat_P)
 # define strcat_P(dst, src)       strcat((dst), (src))
 #endif
-#ifndef strcmp_P
+#if !defined(strcmp_P)
 # define strcmp_P(a, b)           strcmp((a), (b))
 #endif
-#ifndef strcasecmp_P
+#if !defined(strcasecmp_P)
 # define strcasecmp_P(a, b)       strcasecmp((a), (b))
 #endif
-#ifndef strncmp_P
+#if !defined(strncmp_P)
 # define strncmp_P(a, b, n)       strncmp((a), (b), (n))
 #endif
-#ifndef strncasecmp_P
+#if !defined(strncasecmp_P)
 # define strncasecmp_P(a, b, n)   strncasecmp((a), (b), (n))
 #endif
-#ifndef strstr_P
+#if !defined(strstr_P)
 # define strstr_P(a, b)           strstr((a), (b))
 #endif
-#ifndef strlen_P
+#if !defined(strlen_P)
 # define strlen_P(a)              strlen((a))
 #endif
-#ifndef sprintf_P
+#if !defined(sprintf_P)
 # define sprintf_P(s, f, ...)     sprintf((s), (f), __VA_ARGS__)
 #endif
 
-#ifndef pgm_read_byte
+#if !defined(pgm_read_byte)
 # define pgm_read_byte(addr)      (*(const unsigned char *)(addr))
 #endif
-#ifndef pgm_read_word
+#if !defined(pgm_read_word)
 # define pgm_read_word(addr)      (*(const unsigned short *)(addr))
 #endif
-#ifndef pgm_read_dword
+#if !defined(pgm_read_dword)
 # define pgm_read_dword(addr)     (*(const unsigned long *)(addr))
 #endif
 
 #endif
 
+
 // digital functions
-//#ifndef digitalPinToPortReg
+//#if !defined(digitalPinToPortReg)
 #define SPI_SW_SS_PIN   (10) //SS on Uno (for software SPI)
 #define SPI_SW_MOSI_PIN (11) //MOSI on Uno (for software SPI)
 #define SPI_SW_MISO_PIN (12) //MISO on Uno (for software SPI)
 #define SPI_SW_SCK_PIN  (13) //SCK on Uno (for software SPI)
+
 
 // --- Arduino Due and SAM3X8E based boards ---
 #if (defined(ARDUINO_SAM_DUE) || \
@@ -210,21 +215,21 @@
 
 
 // --- Arduino MightyCore standard pinout ---
-#elif defined(__AVR_ATmega1284P__) || \
-      defined(__AVR_ATmega1284P__) || \
-      defined(__AVR_ATmega644P__)  || \
-      defined(__AVR_ATmega644__)   || \
-      defined(__AVR_ATmega324PB__) || \
-      defined(__AVR_ATmega324PA__) || \
-      defined(__AVR_ATmega324P__)  || \
-      defined(__AVR_ATmega324A__)  || \
-      defined(__AVR_ATmega164P__)  || \
-      defined(__AVR_ATmega164A__)  || \
-      defined(__AVR_ATmega32__)    || \
-      defined(__AVR_ATmega16__)    || \
-      defined(__AVR_ATmega8535__)  && \
-      !defined(BOBUINO_PINOUT)     && \
-      !defined(SANGUINO_PINOUT)
+#elif (defined(__AVR_ATmega1284P__) || \
+       defined(__AVR_ATmega1284__)  || \
+       defined(__AVR_ATmega644P__)  || \
+       defined(__AVR_ATmega644A__)  || \
+       defined(__AVR_ATmega644__)   || \
+       defined(__AVR_ATmega324PB__) || \
+       defined(__AVR_ATmega324PA__) || \
+       defined(__AVR_ATmega324P__)  || \
+       defined(__AVR_ATmega324A__)  || \
+       defined(__AVR_ATmega164P__)  || \
+       defined(__AVR_ATmega164A__)  || \
+       defined(__AVR_ATmega32__)    || \
+       defined(__AVR_ATmega16__)    || \
+       defined(__AVR_ATmega8535__))  && \
+      !defined(BOBUINO_PINOUT)
 
 #define UART_RX_PIN     (8) //PD0
 #define UART_TX_PIN     (9) //PD1
@@ -241,21 +246,32 @@
 #define __digitalPinToPortReg(P) \
 (((P) >= 0 && (P) <= 7) ? &PORTB : (((P) >= 8 && (P) <= 15) ? &PORTD : (((P) >= 16 && (P) <= 23) ? &PORTC : (((P) >= 24 && (P) <= 31) ? &PORTA : &PORTE))))
 #define __digitalPinToDDRReg(P) \
-(((P) >= 0 && (P) <= 7) ? &DDRB : (((P) >= 8 && (P) <= 15) ? &DDRD : (((P) >= 8 && (P) <= 15) ? &DDRC : (((P) >= 24 && (P) <= 31) ? &DDRA : &DDRE))))
+(((P) >= 0 && (P) <= 7) ? &DDRB : (((P) >= 8 && (P) <= 15) ? &DDRD : (((P) >= 16 && (P) <= 23) ? &DDRC : (((P) >= 24 && (P) <= 31) ? &DDRA : &DDRE))))
 #define __digitalPinToPINReg(P) \
-(((P) >= 0 && (P) <= 7) ? &PINB : (((P) >= 8 && (P) <= 15) ? &PIND : (((P) >= 8 && (P) <= 15) ? &PINC : (((P) >= 24 && (P) <= 31) ? &PINA : &PINE))))
+(((P) >= 0 && (P) <= 7) ? &PINB : (((P) >= 8 && (P) <= 15) ? &PIND : (((P) >= 16 && (P) <= 23) ? &PINC : (((P) >= 24 && (P) <= 31) ? &PINA : &PINE))))
+# if defined(SANGUINO_PINOUT)
+#define __digitalPinToBit(P) \
+(((P) >= 0 && (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 15) ? (P) - 8 : (((P) >= 16 && (P) <= 23) ? (P) - 16 : (((P) >= 16 && (P) <= 23) ? (7 - ((P) - 24)) : (P) - 32))))
+# else //MightyCore Pinout
 #define __digitalPinToBit(P) \
 (((P) >= 0 && (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 15) ? (P) - 8 : (((P) >= 16 && (P) <= 23) ? (P) - 16 : (((P) >= 16 && (P) <= 23) ? (P) - 24 : (P) - 32))))
+# endif
 #else
 #define __digitalPinToPortReg(P) \
 (((P) >= 0 && (P) <= 7) ? &PORTB : (((P) >= 8 && (P) <= 15) ? &PORTD : (((P) >= 16 && (P) <= 23) ? &PORTC : &PORTA)))
 #define __digitalPinToDDRReg(P) \
-(((P) >= 0 && (P) <= 7) ? &DDRB : (((P) >= 8 && (P) <= 15) ? &DDRD : (((P) >= 8 && (P) <= 15) ? &DDRC : &DDRA)))
+(((P) >= 0 && (P) <= 7) ? &DDRB : (((P) >= 8 && (P) <= 15) ? &DDRD : (((P) >= 16 && (P) <= 23) ? &DDRC : &DDRA)))
 #define __digitalPinToPINReg(P) \
-(((P) >= 0 && (P) <= 7) ? &PINB : (((P) >= 8 && (P) <= 15) ? &PIND : (((P) >= 8 && (P) <= 15) ? &PINC : &PINA)))
+(((P) >= 0 && (P) <= 7) ? &PINB : (((P) >= 8 && (P) <= 15) ? &PIND : (((P) >= 16 && (P) <= 23) ? &PINC : &PINA)))
+# if defined(SANGUINO_PINOUT)
+#define __digitalPinToBit(P) \
+(((P) >= 0 && (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 15) ? (P) - 8 : (((P) >= 16 && (P) <= 23) ? (P) - 16 : (7 - ((P) - 24)))))
+# else //MightyCore Pinout
 #define __digitalPinToBit(P) \
 (((P) >= 0 && (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 15) ? (P) - 8 : (((P) >= 16 && (P) <= 23) ? (P) - 16 : (P) - 24)))
+# endif
 #endif
+
 
 // --- Arduino Leonardo and ATmega16U4/32U4 based boards ---
 #elif (defined(ARDUINO_AVR_LEONARDO) || \
@@ -330,7 +346,9 @@
 (((P) >= 0 && (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 13) ? (P) - 8 : (P) - 14))
 #endif
 
-#elif defined(__AVR_ATmega4809__) // Uno WiFi Rev 2, Nano Every
+
+// --- Arduino Uno WiFi Rev 2, Nano Every ---
+#elif defined(__AVR_ATmega4809__)
 
 #define UART_RX_PIN     (0) //PB0
 #define UART_TX_PIN     (1) //PB1
@@ -353,48 +371,56 @@
 (((P) == 2 || (P) == 9 || (P) == 11 || (P) == 17) ? 0 : ((P) == 7 || (P) == 10 || (P) == 12 || (P) == 16) ? 1 : ((P) == 5 || (P) == 13 || (P) == 15 || (P) == 18) ? 2 : ((P) == 9 || (P) == 14 || (P) == 19) ? 3 : ((P) == 6 || (P) == 20) ? 4 : ((P) == 3 || (P) == 21) ? 5 :  6 )
 
 
+// TinyCore
+// https://raw.githubusercontent.com/xukangmin/TinyCore/master/avr/package/package_tinycore_index.json
+// https://docs.tinycore.dev/en/latest/
+#elif  defined(__AVR_ATtiny1616__)  || defined(__AVR_ATtiny3216__) || defined(__AVR_ATtiny3217__)
+#define __digitalPinToPortReg(P) ((P) <= 5 ? &VPORTB.OUT : ((P) <= 9 ? &VPORTC.OUT : ((P) <= 16 ? &VPORTA.OUT : ((P) <= 18 ? &VPORTB.OUT : &VPORTC.OUT))))
+#define __digitalPinToDDRReg(P) ((P) <= 5 ? &VPORTB.DIR : ((P) <= 9 ? &VPORTC.DIR : ((P) <= 16 ? &VPORTA.DIR : ((P) <= 18 ? &VPORTB.DIR : &VPORTC.DIR))))
+#define __digitalPinToPINReg(P) ((P) <= 5 ? &VPORTB.IN : ((P) <= 9 ? &VPORTC.IN : ((P) <= 16 ? &VPORTA.IN : ((P) <= 18 ? &VPORTB.IN : &VPORTC.IN))))
+#define __digitalPinToBit(P) ( (P) <= 3 ? (3 - P) : ((P) <= 5 ? (P) : ((P) <= 9 ? (P - 6) : ((P) <= 16 ? ((P) - 9) : ((P) <= 18 ? ((P) - 11) : ((P) - 15))))) )
+
+
 // --- ATtinyX5 ---
 #elif defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
 // we have only PORTB
 #define __digitalPinToPortReg(P) (&PORTB)
 #define __digitalPinToDDRReg(P)  (&DDRB)
 #define __digitalPinToPINReg(P)  (&PINB)
-#define __digitalPinToBit(P) (( (P) <= 7) ? (P) : (((P) >= 8 && (P) <= 13) ? (P) - 8 : (P) - 14))
+#define __digitalPinToBit(P)     (((P) <= 7) ? (P) : (((P) >= 8 && (P) <= 13) ? (P) - 8 : (P) - 14))
 
 
 // --- ATtiny88 ---
 #elif defined(__AVR_ATtiny88__)
-#  if defined(ARDUINO_AVR_DIGISPARKPRO)
+# if defined(ARDUINO_AVR_DIGISPARKPRO)
 #define __digitalPinToPortReg(P) ((P) <= 7 ? &PORTD : ((P) <= 14 ? &PORTB : ((P) <= 18 ? &PORTA : &PORTC)))
 #define __digitalPinToDDRReg(P)  ((P) <= 7 ? &DDRD : ((P) <= 14 ? &DDRB : ((P) <= 18 ? &DDRA : &DDRC)))
 #define __digitalPinToPINReg(P)  ((P) <= 7 ? &PIND : ((P) <= 14 ? &PINB : ((P) <= 18 ? &PINA : &PINC)))
 #define __digitalPinToBit(P) ( (P) <= 7 ? (P) : ((P) <= 13 ? ((P) - 8) : ((P) == 14 ? 7 : ((P) <= 16 ? ((P) - 14) : ((P) <= 18 ? ((P) - 17) : ((P) == 25 ? 7 : ((P) - 19)))))) )
-#  else
+# else
 #define __digitalPinToPortReg(P) ((P) <= 7 ? &PORTD : ((P) <= 15 ? &PORTB : ((P) <= 22 ? &PORTC : ((P) <= 26 ? &PORTA : &PORTC))))
 #define __digitalPinToDDRReg(P) ((P) <= 7 ? &DDRD : ((P) <= 15 ? &DDRB : ((P) <= 22 ? &DDRC : ((P) <= 26 ? &DDRA : &DDRC))))
 #define __digitalPinToPINReg(P) ((P) <= 7 ? &PIND : ((P) <= 15 ? &PINB : ((P) <= 22 ? &PINC : ((P) <= 26 ? &PINA : &PINC))))
 #define __digitalPinToBit(P) ((P) <= 15 ? ((P) & 0x7) : ((P) == 16 ? (7) : ((P) <= 22 ? ((P) - 17) : ((P) == 27 ? (6) : ((P) - 23)))))
-#  endif
+# endif
 
 
 // --- ATtinyX4 + ATtinyX7 ---
 #elif  defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__) || defined(__AVR_ATtiny87__) || defined(__AVR_ATtiny167__)
-#  if defined(ARDUINO_AVR_DIGISPARKPRO)
-/// Strange enumeration of pins on Digispark board and core library
+# if defined(ARDUINO_AVR_DIGISPARKPRO) || PIN_PA7 == 5
+// Strange enumeration of pins on Digispark board and core library
 #define __digitalPinToPortReg(P) (((P) <= 4) ? &PORTB : &PORTA)
 #define __digitalPinToDDRReg(P)  (((P) <= 4) ? &DDRB : &DDRA)
 #define __digitalPinToPINReg(P)  (((P) <= 4) ? &PINB : &PINA)
 #define __digitalPinToBit(P)     (((P) <= 2) ? (P) : (((P) == 3) ? 6 : (((P) == 4) ? 3 : (((P) == 5) ? 7 : (P) - 6 ))))
-
-#  else
-//  ATtinyX4: PORTA for 0 to 7, PORTB for 8 to 11
-//  ATtinyX7: PORTA for 0 to 7, PORTB for 8 to 15
+# else
+// ATtinyX4: PORTA for 0 to 7, PORTB for 8 to 11
+// ATtinyX7: PORTA for 0 to 7, PORTB for 8 to 15
 #define __digitalPinToPortReg(P) (((P) <= 7) ? &PORTA : &PORTB)
 #define __digitalPinToDDRReg(P)  (((P) <= 7) ? &DDRA : &DDRB)
 #define __digitalPinToPINReg(P)  (((P) <= 7) ? &PINA : &PINB)
 #define __digitalPinToBit(P)     (((P) <= 7) ? (P) : (P) - 8 )
-#  endif
-
+# endif
 
 // --- Other ---
 #else
@@ -409,10 +435,11 @@
 
 
 #endif
-//#endif  //#ifndef digitalPinToPortReg
+//#endif  //#if !defined(digitalPinToPortReg)
 
-#ifndef digitalWriteFast
-#if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR))
+
+#if !defined(digitalWriteFast)
+#if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR)) && defined(__digitalPinToPortReg)
 #define digitalWriteFast(P, V) \
 if (__builtin_constant_p(P)) { \
   BIT_WRITE(*__digitalPinToPortReg(P), __digitalPinToBit(P), (V)); \
@@ -424,8 +451,9 @@ if (__builtin_constant_p(P)) { \
 #endif
 #endif
 
-#ifndef pinModeFast
-#if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR))
+
+#if !defined(pinModeFast)
+#if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR)) && defined(__digitalPinToPortReg)
 #define pinModeFast(P, V) \
 if (__builtin_constant_p(P) && __builtin_constant_p(V)) { \
   if (V == INPUT_PULLUP) {\
@@ -442,7 +470,8 @@ if (__builtin_constant_p(P) && __builtin_constant_p(V)) { \
 #endif
 #endif
 
-#ifndef digitalReadFast
+
+#if !defined(digitalReadFast)
 #if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR))
 #define digitalReadFast(P) ( (int) __digitalReadFast((P)) )
 #define __digitalReadFast(P ) \
@@ -454,7 +483,8 @@ if (__builtin_constant_p(P) && __builtin_constant_p(V)) { \
 #endif
 #endif
 
-#ifndef digitalToggleFast
+
+#if !defined(digitalToggleFast)
 #if (defined(__AVR__) || defined(ARDUINO_ARCH_AVR))
 #define digitalToggleFast(P) \
 if (__builtin_constant_p(P)) { \
@@ -466,5 +496,6 @@ if (__builtin_constant_p(P)) { \
 #define digitalToggleFast(P) digitalWrite(P, ! digitalRead(P))
 #endif
 #endif
+
 
 #endif //__digitalWriteFast_h_

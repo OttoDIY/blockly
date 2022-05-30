@@ -25,12 +25,12 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  *
  */
 
-#ifndef HCSR04_H_
-#define HCSR04_H_
+#ifndef _HCSR04_H
+#define _HCSR04_H
 
 #include <stdint.h>
 
@@ -45,15 +45,15 @@ void initUSDistancePins(uint8_t aTriggerOutPin, uint8_t aEchoInPin = 0);
 void initUSDistancePin(uint8_t aTriggerOutEchoInPin); // Using this determines one pin mode
 unsigned int getUSDistance(unsigned int aTimeoutMicros = US_DISTANCE_DEFAULT_TIMEOUT_MICROS);
 unsigned int getCentimeterFromUSMicroSeconds(unsigned int aDistanceMicros);
-unsigned int getUSDistanceAsCentiMeter(unsigned int aTimeoutMicros = US_DISTANCE_DEFAULT_TIMEOUT_MICROS);
-unsigned int getUSDistanceAsCentiMeterWithCentimeterTimeout(unsigned int aTimeoutCentimeter);
+unsigned int getUSDistanceAsCentimeter(unsigned int aTimeoutMicros = US_DISTANCE_DEFAULT_TIMEOUT_MICROS);
+unsigned int getUSDistanceAsCentimeterWithCentimeterTimeout(unsigned int aTimeoutCentimeter);
 void testUSSensor(uint16_t aSecondsToTest);
 
 #if (defined(USE_PIN_CHANGE_INTERRUPT_D0_TO_D7) | defined(USE_PIN_CHANGE_INTERRUPT_D8_TO_D13) | defined(USE_PIN_CHANGE_INTERRUPT_A0_TO_A5))
 /*
  * Non blocking version
  */
-void startUSDistanceAsCentiMeterWithCentimeterTimeoutNonBlocking(unsigned int aTimeoutCentimeter);
+void startUSDistanceAsCentimeterWithCentimeterTimeoutNonBlocking(unsigned int aTimeoutCentimeter);
 bool isUSDistanceMeasureFinished();
 extern unsigned int sUSDistanceCentimeter;
 extern volatile unsigned long sUSPulseMicros;
@@ -64,6 +64,5 @@ extern volatile unsigned long sUSPulseMicros;
 #define HCSR04_MODE_USE_2_PINS      2
 extern uint8_t sHCSR04Mode;
 
-#endif // HCSR04_H_
-
+#endif // _HCSR04_H
 #pragma once

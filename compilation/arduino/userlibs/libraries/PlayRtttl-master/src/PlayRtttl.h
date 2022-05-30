@@ -26,12 +26,12 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  *
  */
 
-#ifndef SRC_PLAYRTTTL_H_
-#define SRC_PLAYRTTTL_H_
+#ifndef _PLAY_RTTTL_H
+#define _PLAY_RTTTL_H
 
 #if defined(__SAM3X8E__)
 #error Sorry no tone library for Arduino Due
@@ -39,57 +39,18 @@
 #if defined(__AVR__)
 #include <avr/pgmspace.h>
 #endif
+#if defined(ESP32)
+#define TONE_LEDC_CHANNEL   4 // channel used for ledcWriteTone() UPDATED for OTTTO BLOCKLY
+#endif
 #include "pitches.h"
 
-#define VERSION_PLAY_RTTTL "1.4.2"
-#define VERSION_PLAY_RTTTL_MAJOR 1
-#define VERSION_PLAY_RTTTL_MINOR 4
+#define VERSION_PLAY_RTTTL "2.0.0"
+#define VERSION_PLAY_RTTTL_MAJOR 2
+#define VERSION_PLAY_RTTTL_MINOR 0
+// The change log is at the bottom of the file
 
-/*
- * Version 1.4.2 11/2020
- * - New example ReactionTimeTestGame.
- *
- * Version 1.4.1 - 9/2020
- * - Removed blocking wait for ATmega32U4 Serial in examples.
- *
- * Version 1.4.0 - 1/2020
- * - Supporting direct tone output at pin 11 for ATmega328. Can be used with interrupt blocking libraries for NeoPixel etc.
- * - Use Print * instead of Stream *.
- * - Improved non-AVR compatibility.
- * - New Christmas songs example.
- *
- * Version 1.3.0 - 10/2019
- * - Support all octaves below 8.
- * - New styles '1' to '9' in addition to RTX styles 'C', 'N', 'S'.
- *
- * Version 1.2.2 - 6/2019
- * - Porting to non AVR architectures.
- *
- * Version 1.2.1 - 5/2019
- * - Natural is the new default style.
- * - New RTTTLMelodiesSmall sample array with less entries.
- * - Parameter now order independent.
- * - Modified oneMelody example.
- *
- * Version 1.2.0 - 5/2019
- * - No Serial.print statements in this library anymore, to avoid problems with different Serial implementations.
- * - Function playRandomRtttlBlocking() + startPlayRandomRtttlFromArrayPGM() do not print name now. If needed, use new functions playRandomRtttlSampleBlockingAndPrintName() + startPlayRandomRtttlFromArrayPGMAndPrintName().
- * - Printing functions have parameter (..., Print *aSerial) to print to any serial. Call it (..., &Serial) to use standard Serial;
- * - playRandomRtttlBlocking() renamed to playRandomRtttlSampleBlocking() and bug fixing.
- *
- * Version 1.1 - 5/2019
- * - new setNumberOfLoops() and setDefaultStyle() functions.
- */
-
-#if ! defined(USE_NO_RTX_EXTENSIONS) // if defined it suppresses the next 2 defines / useful for ATtinies to shrink code up to 182 bytes
-// Even without `SUPPORT_RTX_EXTENSIONS` the default style is natural (Tone length = note length - 1/16)
-#define SUPPORT_RTX_EXTENSIONS  // needs additional 200 bytes FLASH - support loop and style
-#define SUPPORT_RTX_FORMAT      // needs additional 100 bytes FLASH - can read RTX formatted definitions
-#endif
-
-#ifdef SUPPORT_RTX_FORMAT
-#define SUPPORT_RTX_EXTENSIONS
-#endif
+//#define USE_NO_RTX_EXTENSIONS // Disables RTX format definitions `'s'` (style) and `'l'` (loop). Saves up to 332 bytes program memory
+// Even with `USE_NO_RTX_EXTENSIONS` the default style is natural (Tone length = note length - 1/16)
 
 #define DEFAULT_DURATION 4
 #define DEFAULT_OCTAVE 6
@@ -111,7 +72,7 @@
 
 void setTonePinIsInverted(bool aTonePinIsInverted);
 
-#ifdef SUPPORT_RTX_EXTENSIONS
+#if !defined(USE_NO_RTX_EXTENSIONS)
 void setNumberOfLoops(uint8_t aNumberOfLoops);
 void setDefaultStyle(uint8_t aDefaultStyleDivisorValue);
 uint8_t convertStyleCharacterToDivisorValue(char aStyleCharacter);
@@ -123,9 +84,9 @@ void printName(const char *aRTTTLArrayPtr, Print *aSerial);
 void startPlayRtttl(uint8_t aTonePin, const char *aRTTTLArrayPtr, void (*aOnComplete)()=NULL);
 void playRtttlBlocking(uint8_t aTonePin, const char *aRTTTLArrayPtr);
 
-void startPlayRandomRtttlFromArray(uint8_t aTonePin, const char* const aSongArray[], uint8_t aNumberOfEntriesInSongArray,
+void startPlayRandomRtttlFromArray(uint8_t aTonePin, const char *const aSongArray[], uint8_t aNumberOfEntriesInSongArray,
         char *aBufferPointer = NULL, uint8_t aBufferSize = 0, void (*aOnComplete)()=NULL);
-void startPlayRandomRtttlFromArrayAndPrintName(uint8_t aTonePin, const char* const aSongArray[],
+void startPlayRandomRtttlFromArrayAndPrintName(uint8_t aTonePin, const char *const aSongArray[],
         uint8_t aNumberOfEntriesInSongArray, Print *aSerial, void (*aOnComplete)()=NULL);
 
 void playRandomRtttlSampleBlocking(uint8_t aTonePin);
@@ -133,13 +94,15 @@ void playRandomRtttlSampleBlockingAndPrintName(uint8_t aTonePin, Print *aSerial)
 
 void getRtttlNamePGM(const char *aRTTTLArrayPtrPGM, char *aBuffer, uint8_t aBuffersize);
 void printNamePGM(const char *aRTTTLArrayPtrPGM, Print *aSerial);
+void printNamePGMPGM(const char *const*aRTTTLPGMArrayPtrPGM, Print *aSerial);
 
 void startPlayRtttlPGM(uint8_t aTonePin, const char *aRTTTLArrayPtrPGM, void (*aOnComplete)()=NULL);
+void startPlayRtttlPGMPGM(uint8_t aTonePin, const char *const*aRTTTLPGMArrayPtrPGM, void (*aOnComplete)()=NULL);
 void playRtttlBlockingPGM(uint8_t aTonePin, const char *aRTTTLArrayPtrPGM);
 
-void startPlayRandomRtttlFromArrayPGM(uint8_t aTonePin, const char* const aSongArrayPGM[], uint8_t aNumberOfEntriesInSongArrayPGM,
+void startPlayRandomRtttlFromArrayPGM(uint8_t aTonePin, const char *const aSongArrayPGM[], uint8_t aNumberOfEntriesInSongArrayPGM,
         char *aBufferPointer = NULL, uint8_t aBufferSize = 0, void (*aOnComplete)()=NULL);
-void startPlayRandomRtttlFromArrayPGMAndPrintName(uint8_t aTonePin, const char* const aSongArrayPGM[],
+void startPlayRandomRtttlFromArrayPGMAndPrintName(uint8_t aTonePin, const char *const aSongArrayPGM[],
         uint8_t aNumberOfEntriesInSongArrayPGM, Print *aSerial, void (*aOnComplete)()=NULL);
 
 void playRandomRtttlSampleBlockingPGM(uint8_t aTonePin);
@@ -168,7 +131,7 @@ struct playRtttlState {
     uint8_t DefaultDuration;
     uint8_t DefaultOctave;
     long TimeForWholeNoteMillis;
-#ifdef SUPPORT_RTX_EXTENSIONS
+#if !defined(USE_NO_RTX_EXTENSIONS)
     uint8_t NumberOfLoops;  // 0 means forever, 1 means we are in the last loop
     // The divisor for the formula: Tone length = note length - note length * (1 / divisor)
     // If 0 then Tone length = note length;
@@ -179,7 +142,7 @@ struct playRtttlState {
 };
 extern struct playRtttlState sPlayRtttlState;
 
-#ifdef SUPPORT_RTX_EXTENSIONS
+#if !defined(USE_NO_RTX_EXTENSIONS)
 extern uint8_t sDefaultStyleDivisorValue;
 #endif
 
@@ -188,18 +151,17 @@ extern const int Notes[] PROGMEM; // The frequencies of notes of the highest oct
 
 /*
  * RTTTL format:
- * Prefix:
- *  Name
- *  Colon
- *  d=Default duration
+ * <NameString>:<Option>:(<Option>:)<Note>,<Note>...
+ *
+ * Option:
+ *  d=Default duration of a note
  *  o=Default octave
- *  b=Beats per minutes (of quarter note)
+ *  b=Beats per minutes of a quarter note
  *  opt l=Number of loops
  *  opt s=Style - see "#define RTX_STYLE_CONTINUOUS 'C'" and following above
- *  Colon
  *
  * Note:
- *  opt duration
+ *  opt duration (1 for a whole, 4 for a quarter note, etc.)
  *  note (p = pause)
  *  opt dot to increase duration by half
  *  opt octave
@@ -255,22 +217,30 @@ static const char Smurfs[] PROGMEM
 static const char Toccata[] PROGMEM
 ="Toccata:d=4,o=5,b=160:16a4,16g4,1a4,16g4,16f4,16d4,16e4,2c#4,16p,d.4,2p,16a4,16g4,1a4,8e.4,8f.4,8c#.4,2d4";
 static const char Short[] PROGMEM = "Short:d=4,o=3,b=240,s=4:c4,8g,8g,a,g.,b,c4";
+static const char Down[] PROGMEM = "Down:d=4,o=6,b=300,s=4:c7,p,f.,p.,2c,2p,1c5";
+
+static const char IHaveADream[] PROGMEM
+        =
+        "IHaveADr:b=125,o=6,d=8:32p,4f#5,4d#.,c#,2e.,4f#5,4b.5,a#5,2b.5,4f#5,4d#.,c#,2e.,4f#5,4b.5,a#5,2b.5,d#,e,f#.,16g#,4f#,2c#.,c#,d#,e.,16f#,2d#.,d#,e,f#.,16g#,4f#,2c#.,c#,d#,e.,16f#,1d#";
+static const char MammaMia[] PROGMEM
+        =
+        "MammaMia:d=16,o=5,b=60:f6,d#6,f6,4d#6,d#6,d#6,f6,g6,f6,8d#.6,p,8f6,4d#6,8g#6,g#6,g#6,g#6,8g6,8d#.6,p,4a#6,a#6,a#6,8a#6,8f6,8g6,4g#6,8g6,8g6,g6,8g6,8d6,8d#6,4f6,8f6,4d#6,8g#6,g#6,g#6,g#6,g6,d#6,f6,8d#6";
 
 /*
  * Array of songs. Useful for random melody
  */
 //#pragma GCC diagnostic ignored "-Wunused-variable"
-static const char * const RTTTLMelodies[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, MissionImp, Flinstones, YMCA, Simpsons,
-        Indiana, TakeOnMe, Entertainer, Muppets, Looney, _20thCenFox, Bond, GoodBad, PinkPanther, A_Team, Jeopardy, Gadget, Smurfs,
-        Toccata };
+static const char *const RTTTLMelodies[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, MissionImp, Flinstones, YMCA, MammaMia,
+        Indiana, TakeOnMe, Entertainer, Muppets, IHaveADream, _20thCenFox, Bond, GoodBad, PinkPanther, A_Team, Jeopardy, Gadget,
+        Smurfs, Toccata };
 #define ARRAY_SIZE_MELODIES (sizeof(RTTTLMelodies)/sizeof(const char *)) // 21
 
-static const char * const RTTTLMelodiesSmall[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, MissionImp, Indiana, TakeOnMe,
-        Muppets, _20thCenFox, Bond, GoodBad, PinkPanther };
+static const char *const RTTTLMelodiesSmall[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, MissionImp, Indiana, TakeOnMe, Muppets,
+        _20thCenFox, Bond, GoodBad, PinkPanther };
 #define ARRAY_SIZE_MELODIES_SMALL (sizeof(RTTTLMelodiesSmall)/sizeof(const char *)) // 11
 
 // e.g. for ATtiny85
-static const char * const RTTTLMelodiesTiny[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, TakeOnMe, Muppets, GoodBad };
+static const char *const RTTTLMelodiesTiny[] PROGMEM = { StarWars, MahnaMahna, LeisureSuit, TakeOnMe, Muppets, GoodBad };
 #define ARRAY_SIZE_MELODIES_TINY (sizeof(RTTTLMelodiesTiny)/sizeof(const char *)) // 6
 
 static const char JingleBell[] PROGMEM
@@ -297,8 +267,54 @@ static const char AmazingGrace[] PROGMEM = "AmazingGrace:d=8,o=5,b=80:c,f,2f,a,g
 /*
  * Array of Christmas songs. Useful for random melody
  */
-static const char * const RTTTLChristmasMelodies[] PROGMEM = { JingleBell, Rudolph, OhDennenboom, SilentNight, WeWishYou,
+static const char *const RTTTLChristmasMelodies[] PROGMEM = { JingleBell, Rudolph, OhDennenboom, SilentNight, WeWishYou,
         WinterWonderland, LetItSnow, Frosty, LastChristmas, AllIWant, AmazingGrace };
 #define ARRAY_SIZE_CHRISTMAS_MELODIES (sizeof(RTTTLChristmasMelodies)/sizeof(const char *)) // 11
 
-#endif /* SRC_PLAYRTTTL_H_ */
+#if !defined(_PLAY_RTTTL_HPP) && !defined(SUPPRESS_HPP_WARNING)
+#warning You probably must change the line #include "PlayRttl.h" to #include "PlayRttl.hpp" in your ino file or define SUPPRESS_HPP_WARNING before the include to suppress this warning.
+#endif
+
+/*
+ * Version 2.0.0 04/2022
+ * - Renamed PlayRttl.cpp to PlayRttl.hpp.
+ * - Removed Macros SUPPORT_RTX_EXTENSIONS and SUPPORT_RTX_FORMAT.
+ *
+ * Version 1.4.2 11/2020
+ * - New example ReactionTimeTestGame.
+ *
+ * Version 1.4.1 - 9/2020
+ * - Removed blocking wait for ATmega32U4 Serial in examples.
+ *
+ * Version 1.4.0 - 1/2020
+ * - Supporting direct tone output at pin 11 for ATmega328. Can be used with interrupt blocking libraries for NeoPixel etc.
+ * - Use Print * instead of Stream *.
+ * - Improved non-AVR compatibility.
+ * - New Christmas songs example.
+ *
+ * Version 1.3.0 - 10/2019
+ * - Support all octaves below 8.
+ * - New styles '1' to '9' in addition to RTX styles 'C', 'N', 'S'.
+ *
+ * Version 1.2.2 - 6/2019
+ * - Porting to non AVR architectures.
+ *
+ * Version 1.2.1 - 5/2019
+ * - Natural is the new default style.
+ * - New RTTTLMelodiesSmall sample array with less entries.
+ * - Parameter now order independent.
+ * - Modified oneMelody example.
+ *
+ * Version 1.2.0 - 5/2019
+ * - No Serial.print statements in this library anymore, to avoid problems with different Serial implementations.
+ * - Function playRandomRtttlBlocking() + startPlayRandomRtttlFromArrayPGM() do not print name now. If needed, use new functions playRandomRtttlSampleBlockingAndPrintName() + startPlayRandomRtttlFromArrayPGMAndPrintName().
+ * - Printing functions have parameter (..., Print *aSerial) to print to any serial. Call it (..., &Serial) to use standard Serial;
+ * - playRandomRtttlBlocking() renamed to playRandomRtttlSampleBlocking() and bug fixing.
+ *
+ * Version 1.1 - 5/2019
+ * - new setNumberOfLoops() and setDefaultStyle() functions.
+ */
+
+#endif // _PLAY_RTTTL_H
+#pragma once
+

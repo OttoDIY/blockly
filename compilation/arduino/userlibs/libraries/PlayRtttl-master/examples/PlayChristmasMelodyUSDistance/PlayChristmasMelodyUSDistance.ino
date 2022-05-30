@@ -19,14 +19,16 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  */
 
 #include <Arduino.h>
 
+//#define USE_NO_RTX_EXTENSIONS // Disables RTX format definitions `'s'` (style) and `'l'` (loop). Saves up to 332 bytes program memory
+#include <PlayRtttl.hpp>
+
 #include "HCSR04.h"
 #include "BlinkLed.h"
-#include <PlayRtttl.h>
 
 #define TALKIE_FEEDBACK
 #if defined(TALKIE_FEEDBACK)
@@ -38,7 +40,7 @@
 Talkie Voice;
 
 #define USE_BUTTON_0
-#include <EasyButtonAtInt01.cpp.h>
+#include <EasyButtonAtInt01.hpp>
 EasyButton Button0AtPB6;
 #endif
 
@@ -73,8 +75,8 @@ void playRandomSongAndBlink();
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
-#if defined(__AVR_ATmega32U4__) || defined(SERIAL_USB) || defined(SERIAL_PORT_USBVIRTUAL)
-    delay(2000); // To be able to connect Serial monitor after reset and before first printout
+#if defined(__AVR_ATmega32U4__) || defined(SERIAL_PORT_USBVIRTUAL) || defined(SERIAL_USB) /*stm32duino*/|| defined(USBCON) /*STM32_stm32*/|| defined(SERIALUSB_PID) || defined(ARDUINO_attiny3217)
+    delay(4000); // To be able to connect Serial monitor after reset or power up and before first print out. Do not wait for an attached Serial Monitor!
 #endif
     // Just to know which program is running on my Arduino
     Serial.println(F("START " __FILE__ " from " __DATE__ "\r\nUsing library version " VERSION_PLAY_RTTTL));
@@ -97,7 +99,7 @@ void loop() {
     static uint8_t sInRangeCounter = 0;
     static uint16_t tRandomSeed;
 
-    unsigned int tCentimeter = getUSDistanceAsCentiMeterWithCentimeterTimeout(300);
+    unsigned int tCentimeter = getUSDistanceAsCentimeterWithCentimeterTimeout(300);
     Serial.print("Distance=");
     Serial.print(tCentimeter);
     Serial.println("cm.");
@@ -133,7 +135,7 @@ void loop() {
             // wait for distance to be out of range for NUMBER_OF_CONSECUTIVE_OUT_RANGE_READINGS consecutive readings
             uint8_t tCounter = 0;
             while (tCounter < NUMBER_OF_CONSECUTIVE_OUT_RANGE_READINGS) {
-                tCentimeter = getUSDistanceAsCentiMeter();
+                tCentimeter = getUSDistanceAsCentimeter();
                 Serial.print("Distance=");
                 Serial.print(tCentimeter);
                 Serial.print("cm.");

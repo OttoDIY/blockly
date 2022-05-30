@@ -20,7 +20,7 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  */
 #include <Arduino.h>
 
@@ -29,12 +29,12 @@
 /*
  * The simple blocking variant
  */
-void blinkLEDBlocking(uint8_t aLedPin, uint16_t aDelay, uint8_t aRepetitions) {
-    for (int i = 0; i < aRepetitions; ++i) {
+void blinkLEDBlocking(uint8_t aLedPin, uint8_t aBlinkCount, uint16_t aDelayMillis) {
+    for (int i = 0; i < aBlinkCount; ++i) {
         digitalWrite(aLedPin, HIGH);
-        delay(aDelay);
+        delay(aDelayMillis);
         digitalWrite(aLedPin, LOW);
-        delay(aDelay);
+        delay(aDelayMillis);
     }
 }
 
@@ -44,9 +44,9 @@ BlinkLed::BlinkLed(uint8_t aLedPin) {
     setOnOffTime(1000, 1000);
 }
 
-BlinkLed::BlinkLed(uint8_t aLedPin, bool aInitState, unsigned int aOnTime, unsigned int aOffTime) {
+BlinkLed::BlinkLed(uint8_t aLedPin, bool aInitState, unsigned int aOnTimeMillis, unsigned int aOffTimeMillis) {
     init(aLedPin, aInitState);
-    setOnOffTime(aOnTime, aOffTime);
+    setOnOffTime(aOnTimeMillis, aOffTimeMillis);
 }
 
 void BlinkLed::init(uint8_t aLedPin, bool aInitState) {
@@ -59,9 +59,9 @@ void BlinkLed::init(uint8_t aLedPin, bool aInitState) {
 /*
  * No count specified here, so set to BLINK_LED_FOREVER
  */
-void BlinkLed::setOnOffTime(unsigned int aOnTime, unsigned int aOffTime) {
-    onDelay = aOnTime;
-    offDelay = aOffTime;
+void BlinkLed::setOnOffTime(unsigned int aOnTimeMillis, unsigned int aOffTimeMillis) {
+    onDelayMillis = aOnTimeMillis;
+    offDelayMillis = aOffTimeMillis;
 }
 
 // must be called continuously in loop()
@@ -73,7 +73,7 @@ void BlinkLed::update() {
 
     if (state) {
         // check for on time gone to change state
-        if ((micros() - lastUpdate >= onDelay)) {
+        if ((millis() - lastUpdateMillis >= onDelayMillis)) {
             toggle();
             // count blinks
             if (numberOfBlinks > 0) {
@@ -84,14 +84,14 @@ void BlinkLed::update() {
                 }
             }
         }
-    } else if ((micros() - lastUpdate >= offDelay)) {
+    } else if ((millis() - lastUpdateMillis >= offDelayMillis)) {
         toggle();
     }
 }
 
-void BlinkLed::start(signed int aBlinkCount, unsigned int aOnTime, unsigned int aOffTime) {
-    onDelay = aOnTime;
-    offDelay = aOffTime;
+void BlinkLed::start(signed int aBlinkCount, unsigned int aOnTimeMillis, unsigned int aOffTimeMillis) {
+    onDelayMillis = aOnTimeMillis;
+    offDelayMillis = aOffTimeMillis;
     start(aBlinkCount);
 }
 
@@ -99,7 +99,7 @@ void BlinkLed::start(signed int aBlinkCount, unsigned int aOnTime, unsigned int 
  * set to 50% duty cycle
  */
 void BlinkLed::start(signed int aBlinkCount, unsigned int aPeriod) {
-    onDelay = offDelay = aPeriod / 2;
+    onDelayMillis = offDelayMillis = aPeriod / 2;
     start(aBlinkCount);
 }
 
@@ -116,7 +116,7 @@ void BlinkLed::start() {
     digitalWrite(pin, HIGH);
     state = true;
     enabled = true;
-    lastUpdate = micros();
+    lastUpdateMillis = millis();
 }
 
 /*
@@ -133,8 +133,8 @@ void BlinkLed::blink(signed int aBlinkCount, unsigned int aPeriod) {
 /*
  * No count specified here, so set to BLINK_LED_FOREVER
  */
-void BlinkLed::startWithOnOffTime(unsigned int aOnTime, unsigned int aOffTime) {
-    start(BLINK_LED_FOREVER, aOnTime, aOffTime);
+void BlinkLed::startWithOnOffTime(unsigned int aOnTimeMillis, unsigned int aOffTimeMillis) {
+    start(BLINK_LED_FOREVER, aOnTimeMillis, aOffTimeMillis);
 }
 
 /*
@@ -148,17 +148,17 @@ void BlinkLed::startWithPeriod(unsigned int aPeriod) {
  * set to 50% duty cycle
  */
 void BlinkLed::startWithFrequency(float aFrequency) {
-    offDelay = onDelay = 500.0 / aFrequency;
+    offDelayMillis = onDelayMillis = 500.0 / aFrequency;
     start(BLINK_LED_FOREVER);
 }
 
-void BlinkLed::startWithOnTime(unsigned int aOnTime) {
-    onDelay = aOnTime;
+void BlinkLed::startWithOnTime(unsigned int aOnTimeMillis) {
+    onDelayMillis = aOnTimeMillis;
     start();
 }
 
-void BlinkLed::startWithOffTime(unsigned int aOffTime) {
-    offDelay = aOffTime;
+void BlinkLed::startWithOffTime(unsigned int aOffTimeMillis) {
+    offDelayMillis = aOffTimeMillis;
     start();
 }
 
@@ -166,7 +166,7 @@ void BlinkLed::startWithOffTime(unsigned int aOffTime) {
 void BlinkLed::toggle() {
     state = !state;
     digitalWrite(pin, state);
-    lastUpdate = micros();
+    lastUpdateMillis = millis();
 }
 
 // Force ON and disable blink

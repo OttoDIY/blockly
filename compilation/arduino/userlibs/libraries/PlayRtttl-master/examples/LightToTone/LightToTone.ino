@@ -24,16 +24,17 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  *
  */
 
 #include <Arduino.h>
 
-#include <PlayRtttl.h>
+//#define USE_NO_RTX_EXTENSIONS // Disables RTX format definitions `'s'` (style) and `'l'` (loop). Saves up to 332 bytes program memory
+#include <PlayRtttl.hpp>
 
 #define USE_BUTTON_0
-#include <EasyButtonAtInt01.cpp.h>
+#include <EasyButtonAtInt01.hpp>
 
 EasyButton Button0AtPin2;
 //#define DEBUG
@@ -42,7 +43,7 @@ EasyButton Button0AtPin2;
  * Output inverted frequency signal to increase volume
  */
 //#define ENABLE_INVERTED_OUTPUT
-#ifdef ENABLE_INVERTED_OUTPUT
+#if defined(ENABLE_INVERTED_OUTPUT)
 #include "digitalWriteFast.h"
 const int INVERTED_TONE_PIN = 3;
 #endif
@@ -69,14 +70,14 @@ int readLightValue();
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
-#if defined(__AVR_ATmega32U4__) || defined(SERIAL_USB) || defined(SERIAL_PORT_USBVIRTUAL)
-    delay(2000); // To be able to connect Serial monitor after reset and before first printout
+#if defined(__AVR_ATmega32U4__) || defined(SERIAL_PORT_USBVIRTUAL) || defined(SERIAL_USB) /*stm32duino*/|| defined(USBCON) /*STM32_stm32*/|| defined(SERIALUSB_PID) || defined(ARDUINO_attiny3217)
+    delay(4000); // To be able to connect Serial monitor after reset or power up and before first print out. Do not wait for an attached Serial Monitor!
 #endif
     // Just to know which program is running on my Arduino
     Serial.println(F("START " __FILE__ " from " __DATE__ "\r\nUsing library version " VERSION_PLAY_RTTTL));
     pinMode(LDR_PIN, INPUT);
 
-#ifdef ENABLE_INVERTED_OUTPUT
+#if defined(ENABLE_INVERTED_OUTPUT)
     pinMode(INVERTED_TONE_PIN, OUTPUT);
     OCR2B = 0;
     bitWrite(TIMSK2, OCIE2B, 1);
@@ -122,7 +123,7 @@ void loop() {
          * Play pentatonic notes
          */
         uint8_t tIndex = map(tLightValue, sMinimum, sMaximum, 0, ARRAY_SIZE_NOTE_C5_TO_C7_PENTATONIC - 1);
-#ifdef DEBUG
+#if defined(DEBUG)
         Serial.print(F("Index="));
         Serial.println(tIndex);
 #endif
@@ -189,7 +190,7 @@ void maintainMinAndMax(int aLightValue) {
  */
 int readLDRValue() {
     int tLightValue = analogRead(LDR_PIN);
-#ifdef DEBUG
+#if defined(DEBUG)
     Serial.print(F("LDR raw="));
     Serial.print(tLightValue);
 #endif
@@ -203,7 +204,7 @@ int readLDRValue() {
      * Convert LDR value to be comparable to the TEMT_6000
      */
     tLightValue = (sLDRMaximum - tLightValue) + TEMT_6000_DARK_VALUE;
-#ifdef DEBUG
+#if defined(DEBUG)
     Serial.print(F(" converted="));
     Serial.print(tLightValue);
 #endif
@@ -218,7 +219,7 @@ int readLightValue() {
      */
     if (isTEMTConnected) {
         tLightValue = analogRead(TEMT_6000_PIN);
-#ifdef DEBUG
+#if defined(DEBUG)
         Serial.print(F("TEMT="));
         Serial.print(tLightValue);
         Serial.print(F(" - "));
@@ -228,7 +229,7 @@ int readLightValue() {
     } else {
         tLightValue = readLDRValue();
     }
-#ifdef DEBUG
+#if defined(DEBUG)
     Serial.println();
 #endif
 
@@ -236,7 +237,7 @@ int readLightValue() {
     return tLightValue;
 }
 
-#ifdef ENABLE_INVERTED_OUTPUT
+#if defined(ENABLE_INVERTED_OUTPUT)
 ISR(TIMER2_COMPB_vect) {
     digitalToggleFast(LED_BUILTIN);
     // set INVERTED_TONE_PIN to inverse value of TONE_PIN

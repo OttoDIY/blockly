@@ -21,16 +21,17 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/gpl.html>.
+ *  along with this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
  *
  */
 
 #include <Arduino.h>
 
-#include <PlayRtttl.h>
+//#define USE_NO_RTX_EXTENSIONS // Disables RTX format definitions `'s'` (style) and `'l'` (loop). Saves up to 332 bytes program memory
+#include <PlayRtttl.hpp>
 
 #if defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny87__) || defined(__AVR_ATtiny167__)
-#include "ATtinySerialOut.h"
+#include "ATtinySerialOut.hpp" // Available as Arduino library "ATtinySerialOut"
 #endif
 
 const int TONE_PIN = 11;
@@ -39,11 +40,12 @@ const int BUTTON_PIN = 2;
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
-#if defined(__AVR_ATmega32U4__) || defined(SERIAL_USB) || defined(SERIAL_PORT_USBVIRTUAL)
-    delay(2000); // To be able to connect Serial monitor after reset and before first printout
+#if defined(__AVR_ATmega32U4__) || defined(SERIAL_PORT_USBVIRTUAL) || defined(SERIAL_USB) /*stm32duino*/|| defined(USBCON) /*STM32_stm32*/|| defined(SERIALUSB_PID) || defined(ARDUINO_attiny3217)
+    delay(4000); // To be able to connect Serial monitor after reset or power up and before first print out. Do not wait for an attached Serial Monitor!
 #endif
     // Just to know which program is running on my Arduino
     Serial.println(F("START " __FILE__ " from " __DATE__ "\r\nUsing library version " VERSION_PLAY_RTTTL));
+    Serial.println(F("Press the button to end the current melody and start the next one"));
 
     // get "true" random
     randomSeed(analogRead(0));
@@ -51,16 +53,20 @@ void setup() {
     // enable button press detection
     pinMode(BUTTON_PIN, INPUT_PULLUP);
 
+#if !defined(USE_NO_RTX_EXTENSIONS)
     setDefaultStyle(RTTTL_STYLE_CONTINUOUS);
+#endif
 }
 
-void toggleLED() {
-    static int tCount = 0; // to enable little delays but slow blink
+/*
+ * Enable low delays for slow blink
+ */
+void toggleLED_BUILTIN_Every10thCall() {
+    static int tCount = 0;
     if (++tCount == 10) {
         tCount = 0;
         digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
     }
-    delay(10);
 }
 
 void loop() {
@@ -81,7 +87,7 @@ void loop() {
         /*
          * Blink LED
          */
-        toggleLED();
+        toggleLED_BUILTIN_Every10thCall();
         /*
          * Check if button is pressed.
          * If yes stop melody wait and start with next loop
@@ -91,6 +97,7 @@ void loop() {
             stopPlayRtttl();
             break;
         }
+        delay(10);
     }
     // wait after playing
     delay(1000);

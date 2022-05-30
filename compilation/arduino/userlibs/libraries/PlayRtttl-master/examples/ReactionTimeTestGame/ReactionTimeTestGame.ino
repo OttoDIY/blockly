@@ -1,6 +1,16 @@
 /*
  * Game to measure reaction time with 2 buttons, 3 LEDs and a buzzer
  *
+ * It supports 3 board layouts:
+ *  1. The "Simon Says" layout (default):
+ *       https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v40/circuit-2c-simon-says-game
+ *       https://dingfluence.dingfabrik.de/pages/viewpage.action?pageId=31653962
+ *  2. Arduino Multifunction Shield:
+ *       https://www.electroschematics.com/getting-started-with-the-arduino-multifunction-shield/
+ *  3. Breadboard layout for school lessons:
+ *       https://github.com/ArminJo/Arduino-Lessons-for-School#universal-breadboard-layout-for-all-lessons
+ *
+ *
  * Aufgaben:
  * 1. Warte bis ein Button gedrückt wird und gebe die Reaktionszeit aus. Schalte die LED des Spielers an und erhöhe die Punkte des Spielers.
  *      Benutze digitalRead() und z.B. "sRightPlayerScore++".
@@ -29,18 +39,17 @@
  */
 
 #include <Arduino.h>
-#include "BlinkLed.h"
-#include "PlayRtttl.h"
+#include "PlayRtttl.hpp"
 
-#define VERSION_EXAMPLE "2.0"
+#define VERSION_EXAMPLE "2.1"
 
 /*
- * Comment the next line out if you want to run this program on an Arduino Multifunction Shield
+ * Activate the next line if you want to run this program on an Arduino Multifunction Shield
  * https://www.electroschematics.com/getting-started-with-the-arduino-multifunction-shield/
  */
 //#define MULTI_FUNCTION_SHIELD
 /*
- * Comment the next line out, if you use the breadboard layout for school lessons
+ * Activate the next line, if you use the breadboard layout for school lessons
  * https://github.com/ArminJo/Arduino-Lessons-for-School#universal-breadboard-layout-for-all-lessons
  */
 //#define BREADBOARD_LAYOUT
@@ -97,8 +106,7 @@ int sLeftPlayerScore, sRightPlayerScore;
 int sLeftPlayerWins = 0, sRightPlayerWins = 0; // Count wins, to play a random song every second win.
 int tHighScore = 8000; // the minimum reaction time in millis
 
-BlinkLed RightLed(PIN_RIGHT_LED);
-BlinkLed LeftLed(PIN_LEFT_LED);
+void blinkLEDBlocking(uint8_t aLedPin, uint8_t aBlinkCount, uint16_t aDelay);
 
 // The setup function is called once at startup of the sketch
 void setup() {
@@ -108,9 +116,7 @@ void setup() {
     delay(2000); // To be able to connect Serial monitor after reset and before first printout
 #endif
     // Just to know which program is running on my Arduino
-    Serial.println(
-            F(
-                    "START " __FILE__ "\r\nVersion " VERSION_EXAMPLE " from " __DATE__));
+    Serial.println(F("START " __FILE__ "\r\nVersion " VERSION_EXAMPLE " from " __DATE__));
 
     // Enable output on the LED pins
     pinMode(PIN_RIGHT_LED, OUTPUT);
@@ -160,10 +166,10 @@ void loop() {
          * Cheating detected -> blink and decrement score
          */
         if (tRightPlayerButton == LOW) {
-            RightLed.blink(5, 50);
+            blinkLEDBlocking(PIN_RIGHT_LED, 5, 50);
             sRightPlayerScore--;
         } else {
-            LeftLed.blink(5, 50);
+            blinkLEDBlocking(PIN_LEFT_LED, 5, 50);
             sLeftPlayerScore--;
         }
         return; // start next lap
@@ -258,45 +264,47 @@ void loop() {
          *     RightLed.blink(5, 100);
          *     playRtttlBlockingPGM(PIN_BUZZER, StarWars);
          */
-        RightLed.startWithPeriod(200);
         sLeftPlayerWins++;
         if (sLeftPlayerWins == 1) {
             // Play StarWars the first win
             startPlayRtttlPGM(PIN_BUZZER, StarWars);
         } else {
-            startPlayRandomRtttlFromArrayPGMAndPrintName(PIN_BUZZER,
-                    RTTTLMelodies, ARRAY_SIZE_MELODIES, &Serial);
+            startPlayRandomRtttlFromArrayPGMAndPrintName(PIN_BUZZER, RTTTLMelodies, ARRAY_SIZE_MELODIES, &Serial);
         }
         // update both libraries to let them act simultaneously
-        // break if button is pressed after 1000 milliseconds
+        // break if button is pressed after 2000 milliseconds
+        uint32_t tLastLedChangeMillis = millis();
         uint32_t tStartCheckButtonMillis = millis();
-        while (updatePlayRtttl()
-                && ((millis() < (tStartCheckButtonMillis + 1000))
-                        || digitalRead(PIN_RIGHT_BUTTON))) {
-            RightLed.update();
+        while (updatePlayRtttl() && (((millis() - tStartCheckButtonMillis) < 2000) || digitalRead(PIN_RIGHT_BUTTON))) {
+            if (millis() - tLastLedChangeMillis > 200) {
+                tLastLedChangeMillis = millis();
+                digitalWrite(PIN_RIGHT_LED, !digitalRead(PIN_RIGHT_LED)); // toggle LED
+            }
         }
-        RightLed.stop();
+        digitalWrite(PIN_RIGHT_LED, LOW);
+        stopPlayRtttl(); // in case we left by button press
 
     } else if (sLeftPlayerScore >= POINTS_FOR_WIN) {
         sLeftPlayerScore = 0;
         sRightPlayerScore = 0;
         //Here we use the non blocking version of blink and tone, which enables them to act simultaneously.
-        LeftLed.startWithPeriod(200);
         sRightPlayerWins++;
         if (sRightPlayerWins == 1) {
             // Play MissionImpossible the first win
             startPlayRtttlPGM(PIN_BUZZER, MissionImp);
         } else {
-            startPlayRandomRtttlFromArrayPGMAndPrintName(PIN_BUZZER,
-                    RTTTLMelodies, ARRAY_SIZE_MELODIES, &Serial);
+            startPlayRandomRtttlFromArrayPGMAndPrintName(PIN_BUZZER, RTTTLMelodies, ARRAY_SIZE_MELODIES, &Serial);
         }
+        uint32_t tLastLedChangeMillis = millis();
         uint32_t tStartCheckButtonMillis = millis();
-        while (updatePlayRtttl()
-                && ((millis() < (tStartCheckButtonMillis + 1000))
-                        || digitalRead(PIN_RIGHT_BUTTON))) {
-            LeftLed.update();
+        while (updatePlayRtttl() && (((millis() - tStartCheckButtonMillis) < 2000) || digitalRead(PIN_LEFT_BUTTON))) {
+            if (millis() - tLastLedChangeMillis > 200) {
+                tLastLedChangeMillis = millis();
+                digitalWrite(PIN_LEFT_LED, !digitalRead(PIN_LEFT_LED)); // toggle LED
+            }
         }
-        LeftLed.stop();
+        digitalWrite(PIN_LEFT_LED, LOW);
+        stopPlayRtttl(); // in case we left by button press
     }
 
 #ifdef MULTI_FUNCTION_SHIELD
@@ -323,3 +331,12 @@ void loop() {
 #endif
 
 } // loop end
+
+void blinkLEDBlocking(uint8_t aLedPin, uint8_t aBlinkCount, uint16_t aDelay) {
+    for (int i = 0; i < aBlinkCount; ++i) {
+        digitalWrite(aLedPin, HIGH);
+        delay(aDelay);
+        digitalWrite(aLedPin, LOW);
+        delay(aDelay);
+    }
+}

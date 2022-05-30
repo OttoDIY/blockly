@@ -427,24 +427,24 @@
 <category name="CAT_servo" colour="#2d2dd1">
 			<block type="servo_move">
 				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+				<field name="PIN">13</field>
 				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			</block>
 			<block type="servo_movemicros">
 				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
 			</block>
 			<block type="servo_read_degrees">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
 			</block>
 			<block type="servo_detach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
 			</block>
 			<block type="servo_attach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
 			</block>
 			<block type="servo_attached">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
 			</block>
 			<block type="servo_PWM">
 				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
@@ -663,10 +663,22 @@
 
 <category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">
-		<block type="OLED_initU"></block>
+		<block type="OLED_init"></block>
+		<block type="OLED_init2"></block>
+		<block type="oled_icon"></block>
 		<block type="OLED_eyes"></block>
-			<block type="OLED_displayU"></block>
-			<block type="OLED_clearU"></block>
+		<block type="OLED_displayU"></block>
+		<block type="OLED_clearU"></block>
+		<block type="OLED_rotate"></block>
+		<block type="OLED_invert"></block>
+		<block type="OLED_scroll"></block>
+				
+		<block type="OLED_bitmap2">
+			<value name="x0"> <shadow type="math_number"> <field name="NUM">0</field></shadow></value>
+			<value name="y0"> <shadow type="math_number"><field name="NUM">0</field></shadow> </value>
+			<value name="width"> <shadow type="math_number"> <field name="NUM">128</field> </shadow> </value>
+			<value name="height"> <shadow type="math_number"> <field name="NUM">64</field></shadow> </value>
+		</block>
 		<block type="OLED_dataU">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
@@ -676,7 +688,13 @@
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>	
 		</block>
-				<block type="OLED_circleU">
+		<block type="OLED_symbol">
+			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="height"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			<value name="print"><shadow type="math_number"><field name="NUM"> 3</field></shadow></value>
+		</block>
+		<block type="OLED_circleU">
 			<value name="X"><shadow type="math_number"><field name="NUM">32</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">32</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">30</field></shadow></value>
@@ -692,6 +710,13 @@
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
 			<value name="height"><shadow type="math_number"><field name="NUM">30</field></shadow></value>	
+		</block>
+		<block type="OLED_round">
+			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="width"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
+			<value name="height"><shadow type="math_number"><field name="NUM">30</field></shadow></value>	
+			<value name="round"><shadow type="math_number"><field name="NUM">10</field></shadow></value>	
 		</block>
 		<block type="OLED_triangleU">
 			<value name="X"><shadow type="math_number"><field name="NUM">30</field></shadow></value>
