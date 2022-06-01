@@ -125,6 +125,30 @@
 	<block type="otto_quad_jump"></block>
 	<block type="otto_quad_scared"></block>
 </category>
+<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
+			<block type="otto9_matrix_init">
+						<field name="PIN_CLK">23</field>
+       					<field name="PIN_CS">25</field>
+       					<field name="PIN_DIN">26</field>
+			</block>
+			<block type="otto9_mouth"></block>
+			<block type="otto9_clear"></block>
+			<block type="otto9_matrix_brightness">
+				<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
+			</block>
+			<block type="otto9_matrix_text"></block>
+			<block type="otto9_mouth#">
+				<value name="mouth"><shadow type="math_number">	<field name="NUM">10</field></shadow></value>
+			</block>
+			<block type="otto9_matrix"></block>
+			<block type="otto9_matrixp">
+				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+				<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow>	</value>
+			</block>
+			<block type="otto9_matrix8x8"></block>
+		</category>
+
+
 </category>
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
@@ -484,44 +508,21 @@
 	<category name="CAT_LED" colour="#4b009f">		
 	<!--	<block type="blink"></block>
 		<block type="inout_buildin_led"></block> -->
-		<block type="digital_write0"></block>
-		<block type="digital_write">
-		<value name="PIN"><shadow type="analog_pin"><field name="NUM">OUT1</field></shadow></value>
-		</block> 	
-		<block type="digital_write2"> 
-		<value name="PIN"><shadow type="analog_pin"><field name="NUM">OUT1</field></shadow></value>
-		<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+		<block type="digital_write0"><field name="PIN">23</field></block>
+	<!--	<block type="digital_write">
+		<value name="PIN"><shadow type="analog_pin"><field name="NUM">23</field></shadow></value>
+		</block> 	-->
+		<block type="digital_write3"> 
+			<field name="PIN">23</field>
+			<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>	
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 	
-	<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
-				<block type="otto9_matrix_init">
-						<field name="PIN_CLK">OUT1</field>
-       					<field name="PIN_CS">OUT2</field>
-       					<field name="PIN_DIN">OUT3</field>
-			</block>
-			<block type="otto9_mouth"></block>
-			<block type="otto9_clear"></block>
-			<block type="otto9_matrix_brightness">
-				<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
-			</block>
-			<block type="otto9_matrix_text"></block>
-			<block type="otto9_mouth#">
-				<value name="mouth"><shadow type="math_number">	<field name="NUM">10</field></shadow></value>
-			</block>
-			<block type="otto9_matrix"></block>
-			<block type="otto9_matrixp">
-				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-				<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow>	</value>
-			</block>
-			<block type="otto9_matrix8x8"></block>
-		</category>
-
 		<category name="CAT_MAX7219" colour="#4b009f">	
 			<block type="Init_MAX7219_ledmatrix">
-			<field name="PIN_CLK">OUT1</field>
-       		<field name="PIN_CS">OUT2</field>
-       		<field name="PIN_DAT">OUT3</field>
+			<field name="PIN_CLK">23</field>
+       		<field name="PIN_CS">25</field>
+       		<field name="PIN_DAT">26</field>
 			</block>
 					
 			<block type="MAX7219_ledmatrix_brightness">
@@ -587,8 +588,8 @@
 				<value name="X2"><shadow type="math_number"><field name="NUM">8</field></shadow></value>
 				<value name="Y2"><shadow type="math_number">	<field name="NUM">8</field>	</shadow></value></block>
 			<block type="matrix16x8_init">
-				<field name="PIN_SCL">A4</field>
-		   		<field name="PIN_SDA">A5</field>
+				<field name="PIN_SCL">23</field>
+		   		<field name="PIN_SDA">25</field>
 			</block>
 		</category>
 	
@@ -667,8 +668,8 @@
 		<block type="OLED_init2"></block>
 		<block type="oled_icon"></block>
 		<block type="OLED_eyes"></block>
-		<block type="OLED_displayU"></block>
-		<block type="OLED_clearU"></block>
+		<block type="OLED_display"></block>
+		<block type="OLED_clear"></block>
 		<block type="OLED_rotate"></block>
 		<block type="OLED_invert"></block>
 		<block type="OLED_scroll"></block>
@@ -679,12 +680,13 @@
 			<value name="width"> <shadow type="math_number"> <field name="NUM">128</field> </shadow> </value>
 			<value name="height"> <shadow type="math_number"> <field name="NUM">64</field></shadow> </value>
 		</block>
-		<block type="OLED_dataU">
+		<block type="OLED_data">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+			<value name="height"> <shadow type="math_number"> <field name="NUM">1</field></shadow> </value>
 			<value name="print"><shadow type="text"><field name="TEXT">Hello Otto</field></shadow></value>
 		</block>
-		<block type="OLED_pixelU">
+		<block type="OLED_pixel">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>	
 		</block>
@@ -694,18 +696,18 @@
 			<value name="height"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			<value name="print"><shadow type="math_number"><field name="NUM"> 3</field></shadow></value>
 		</block>
-		<block type="OLED_circleU">
+		<block type="OLED_circle">
 			<value name="X"><shadow type="math_number"><field name="NUM">32</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">32</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">30</field></shadow></value>
 		</block>
-		<block type="OLED_lineU">
+		<block type="OLED_line">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">90</field></shadow></value>
 			<value name="height"><shadow type="math_number"><field name="NUM">50</field></shadow></value>	
 		</block>
-		<block type="OLED_rectangleU">
+		<block type="OLED_rectangle">
 			<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">70</field></shadow></value>
@@ -718,7 +720,7 @@
 			<value name="height"><shadow type="math_number"><field name="NUM">30</field></shadow></value>	
 			<value name="round"><shadow type="math_number"><field name="NUM">10</field></shadow></value>	
 		</block>
-		<block type="OLED_triangleU">
+		<block type="OLED_triangle">
 			<value name="X"><shadow type="math_number"><field name="NUM">30</field></shadow></value>
 			<value name="Y"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
 			<value name="width"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
@@ -855,9 +857,9 @@
 	
 <category name="CAT_AUDIO" colour="#a600d3">
 		<category name="CAT_BUZZER" colour="#a600d3">
-			<block type="RTTTL_music">  <field name="PIN_BUZZER">13</field></block>
+			<block type="RTTTL_music">  <field name="PIN_BUZZER">23</field></block>
 			<block type="RTTTL_music_custom">
-			<field name="PIN_BUZZER">13</field>
+			<field name="PIN_BUZZER">23</field>
 			<value name="rtttl_melody"><shadow type="text"><field name="TEXT">text</field></shadow></value>
 			</block>
 						<block type="play">
@@ -965,8 +967,8 @@
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block> -->
 			<block type="soft_init">
-				<field name="PIN_TX">D2</field>
-				<field name="PIN_RX">D3</field>
+				<field name="PIN_TX">4</field>
+				<field name="PIN_RX">5</field>
 			</block>
 			<block type="soft_available"></block>  
             <block type="soft_read"></block>
@@ -984,9 +986,10 @@
 		</category>
 		
 	    <category name="CAT_bluetooth" colour="#0060aa">
-			<block type="soft_bt_init"><field name="PIN_TX">D2</field>
+			<!--<block type="soft_bt_init"><field name="PIN_TX">D2</field>
 			<field name="PIN_RX">D3</field>
-			</block>
+			</block> -->
+			<block type="esp32_bt_init"><value name="BT_NAME"><shadow type="text"><field name="TEXT">ESP32 MRTX NODE</field></shadow></value></block>  
 			<block type="soft_bt_available"></block>  
             <block type="soft_bt_read"></block>
 			<block type="soft_bt_read_string"></block>

@@ -785,7 +785,11 @@ Blockly.Blocks['oled_icon'] = {
 Blockly.Arduino['oled_icon'] = function(block) {
    var IconName = block.getFieldValue('NAME');  
    var Var_Codes = block.getFieldValue('CODES');
-   Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';   
+     var card=window.localStorage.card;
+  
+  if (card !="MRTnode")
+	Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';
+	   
    Blockly.Arduino.definitions_['define_iconvalus_'+IconName+''] = 'const unsigned char '+IconName+'[] PROGMEM= {'+Var_Codes+'};\n';
   var code = '';
   return code;

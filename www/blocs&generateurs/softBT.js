@@ -84,21 +84,27 @@ Blockly.Blocks['esp32_bt_init'] = {
   init: function() {
     this.setColour("#0060aa");
 	this.appendDummyInput()
-	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
-  .appendField(Blockly.Msg.ESP32Bluetooth)
-  this.appendDummyInput()
-  .appendField(Blockly.Msg.Name)
-  this.appendValueInput("BT_NAME", "String");
-  this.setInputsInline(true);
+		.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
+		.appendField(Blockly.Msg.ESP32Bluetooth)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.Name)
+	this.appendValueInput("BT_NAME")
+        .setCheck(null)
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('A call to SoftwareSerial(rxPin, txPin) creates a new SoftwareSerial object');
   }
 };
 
+
+
 Blockly.Arduino['esp32_bt_init'] = function(block) {
   
-  var btName = this.getFieldValue("BT_NAME") || "OTTO_ESP32";
+  //var btName = this.getFieldValue("BT_NAME") || "OTTO_ESP32";
+  
+   var btName = Blockly.Arduino.valueToCode(block, 'BT_NAME', Blockly.Arduino.ORDER_ATOMIC);
+  
   Blockly.Arduino.includes_['define_ssBT'] = '#include "BluetoothSerial.h"\nBluetoothSerial mySerialBT;\n';
   Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+btName+');\n';
   var code = '';

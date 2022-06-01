@@ -605,6 +605,26 @@ Blockly.Arduino["digital_write2"]=function(block){
     Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
     return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
 };
+
+Blockly.Blocks["digital_write3"]={init:function(){
+    var card=window.localStorage.card;
+    this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+    this.appendValueInput("STAT", "Boolean").appendField(Blockly.Msg._AT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_write3"]=function(block){
+    var dropdown_pin=block.getFieldValue("PIN");
+	var dropdown_stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+    return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
+
+
 Blockly.Blocks['led_pwm']={init:function() {
 	var card=window.localStorage.card;
     this.appendDummyInput().appendField(Blockly.Msg.del+" (PWM)").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "PWM");
@@ -621,6 +641,13 @@ Blockly.Arduino['led_pwm'] = function(block) {
   var code="analogWrite("+droppinpwm+", " + stat + ");//on a scale of 0 - 255\n"; 
   return code;
 };
+
+
+
+
+
+
+
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
         
