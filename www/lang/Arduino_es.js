@@ -689,7 +689,7 @@ Blockly.Msg.inch="pulgada";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="NTC Temperatura analógica(ºC)";
-Blockly.Msg.MRTX_BUTTON="boton MRTX-Uno presionado";
+Blockly.Msg.MRTX_BUTTON="boton Start MRTNode presionado";
 
 //Sensor CO2
 Blockly.Msg.CCS811="Inicialización sensor CO2(CCS811)";

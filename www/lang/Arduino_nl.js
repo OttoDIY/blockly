@@ -646,7 +646,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="Schakelaar";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Temperatuur NTC (ºC)";
-Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
+Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
 
 //CCS811
 Blockly.Msg.CCS811="CO₂ Pins"; 

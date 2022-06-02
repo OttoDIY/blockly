@@ -299,11 +299,12 @@
 	</category>	-->
 
 	<category name="CAT_SENSORS" colour="#2a93e8">
-		 <block type="button_sensor2"><field name="PIN_BUTTON">IN1</field></block>
-		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">IN1</field></block>
-		 <block type="potentiometer_ranger_sensor2"></block>	
-		 <block type="Joystick_axis_sensor2"></block>
-		 <block type="joystick_button_sensor2"></block>
+		 <block type="button_sensor2"><field name="PIN_BUTTON">33</field></block>
+		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">33</field></block>
+		 <block type="MRTNode_button"></block>
+		 <block type="potentiometer_ranger_sensor2"><field name="PIN_POTENTIOMETER">33</field></block>	
+		 <block type="Joystick_axis_sensor2"><field name="PIN_JOYSTICK">33</field></block>
+		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK">33</field></block>
 
 	<category name="CAT_VL53L0X" colour="#2a93e8">
 			<block type="ultrasonic_sensor">
@@ -496,10 +497,10 @@
 		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
 				<block type="stepper_configuration">
 					<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
-					<field name="PIN_STEEPER1">33</field>
-					<field name="PIN_STEEPER2">34</field>
-					<field name="PIN_STEEPER3">35</field>
-					<field name="PIN_STEEPER4">36</field>
+					<field name="PIN_STEEPER1">23</field>
+					<field name="PIN_STEEPER2">25</field>
+					<field name="PIN_STEEPER3">26</field>
+					<field name="PIN_STEEPER4">27</field>
 				</block>
 				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
 				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>

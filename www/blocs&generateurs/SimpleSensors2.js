@@ -248,6 +248,10 @@ Blockly.Blocks['Analog_temperature_sensor2'] = {
 Blockly.Arduino['Analog_temperature_sensor2'] = function(block) {
   
     var dropdown_pin = block.getFieldValue('PIN');
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
   
     //Blockly.Arduino.definitions_['include_math'] = '#include <math.h>\n';
 	//Blockly.Arduino.setups_['setup_Analog_Temp'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
@@ -285,6 +289,10 @@ Blockly.Blocks['LM35_temperature_sensor2'] = {
 Blockly.Arduino['LM35_temperature_sensor2'] = function(block) {
   var dropdown_pin = block.getFieldValue('PIN');
   //Blockly.Arduino.setups_['setup_LM35_Temp'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
+  var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
         
   var code = '((analogRead('+dropdown_pin+')*500)/1024)';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -314,6 +322,12 @@ Blockly.Arduino['potentiometer_ranger_sensor2'] = function(block) {
     var PinPotentiometer = block.getFieldValue('PIN_POTENTIOMETER');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinPotentiometer+'),0,1023,0,100)';
@@ -349,6 +363,12 @@ Blockly.Arduino['LDR_sensor2'] = function(block) {
 	var PinLDR = block.getFieldValue('PIN_LDR');
 	var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+		
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinLDR+'),0,1023,0,100)';
@@ -414,6 +434,12 @@ Blockly.Arduino['IR_sensor2'] = function(block) {
 	var PinIR = block.getFieldValue('PIN_IR');
 	var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinIR+'),0,1023,0,100)';
@@ -478,6 +504,12 @@ Blockly.Arduino['Flame_sensor2'] = function(block) {
 	var PinFlame = block.getFieldValue('PIN_FLAME');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinFlame+'),0,1023,0,100)';
@@ -537,6 +569,12 @@ Blockly.Arduino['Sound_sensor2'] = function(block) {
 	var PinSound = block.getFieldValue('PIN_SOUND');
   var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinSound+'),0,1023,0,100)';
@@ -753,6 +791,12 @@ Blockly.Arduino['Gas_sensor2'] = function(block) {
     var PinGas = block.getFieldValue('PIN_GAS');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinGas+'),0,1023,0,100)';
@@ -815,6 +859,11 @@ Blockly.Arduino['Alcohol_sensor2'] = function(block) {
 	var PinAlcohol = block.getFieldValue('PIN_ALCOHOL');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinAlcohol+'),0,1023,0,100)';
@@ -876,6 +925,12 @@ Blockly.Arduino['Air_sensor2'] = function(block) {
 	var PinAir = block.getFieldValue('PIN_AIR');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinAir+'),0,1023,0,100)';
@@ -941,6 +996,12 @@ Blockly.Arduino['Vibration_sensor2'] = function(block) {
 	var PinVibration = block.getFieldValue('PIN_VIBRATION');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinVibration+'),0,1023,0,100)';
@@ -1063,6 +1124,12 @@ Blockly.Arduino['Vapor_sensor2'] = function(block) {
 	var PinVapor = block.getFieldValue('PIN_VAPOR');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinVapor+'),0,1023,0,100)';
@@ -1098,6 +1165,11 @@ Blockly.Arduino['AmbientLight_sensor2'] = function(block) {
 	var PinAlight = block.getFieldValue('PIN_ALIGHT');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinAlight+'),0,1023,0,100)';
@@ -1131,6 +1203,12 @@ Blockly.Arduino['Water_sensor2'] = function(block) {
 	var PinWater = block.getFieldValue('PIN_WATER');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinWater+'),0,1023,0,100)';
@@ -1166,6 +1244,12 @@ Blockly.Arduino['Moisture_sensor2'] = function(block) {
 	var PinMoisture = block.getFieldValue('PIN_MOISTURE');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinMoisture+'),0,1023,0,100)';
@@ -1202,6 +1286,12 @@ Blockly.Arduino['Joystick_axis_sensor2'] = function(block) {
 	var PinJoystick = block.getFieldValue('PIN_JOYSTICK');
     var Status = this.getFieldValue('OUTPUT_VALUE');
 	var code;
+	
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
       var code = 'map(analogRead('+PinJoystick+'),0,1023,0,100)';
@@ -1268,6 +1358,11 @@ Blockly.Arduino['SoundAmp_sensor2'] = function(block) {
 	var SampleWindow=Blockly.Arduino.valueToCode(block, "SAMPLE_WINDOW", Blockly.Arduino.ORDER_ATOMIC);
 	var code;
 	
+	var card=window.localStorage.card;
+	
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+	
    Blockly.Arduino.definitions_['measure_peakToPeak'] = 'int measureVolume() {\n'+      
    'unsigned long startMillis= millis();  // Start of sample window \n'+
    'unsigned int peakToPeak = 0;   // peak-to-peak level\n'+
@@ -1328,6 +1423,34 @@ Blockly.Arduino['MRTX_button'] = function(block) {
   Blockly.Arduino.setups_['mcp0_pin'] = 'pinMode(0,INPUT_PULLUP);';
   
   var code = '!mcp.digitalRead(0)';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+//Button of the MRTNode board ----------------------------------------------------------------------
+
+Blockly.Blocks['MRTNode_button'] = {
+  helpUrl: '',
+  init: function() {
+	
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/joystick.png",33,33))
+	    .appendField(Blockly.Msg.MRTX_BUTTON)
+	this.setOutput(true, 'Boolean');
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['MRTNode_button'] = function(block) {
+	
+   
+  Blockly.Arduino.setups_['buttonNode_pin'] = 'pinMode(0,INPUT_PULLUP);';
+  
+  var code = '!digitalRead(0)';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
