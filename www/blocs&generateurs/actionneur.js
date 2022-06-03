@@ -642,12 +642,6 @@ Blockly.Arduino['led_pwm'] = function(block) {
   return code;
 };
 
-
-
-
-
-
-
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
         
@@ -1014,4 +1008,87 @@ Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
 
     var code="mcp.digitalRead(" + dropdown_pin + ")";
     return [code, Blockly.Arduino.ORDER_ATOMIC]
+};
+
+
+
+ /////////////
+ /*  audio buzzer for esp32 */
+/////////////
+
+Blockly.Blocks["play_esp32"]={init:function(){
+	var card=window.localStorage.card;
+    //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+	 this.appendDummyInput()
+	    .appendField(Blockly.Msg.ARDUINO_TONE_INPUT1)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
+    this.appendDummyInput()
+		.appendField(Blockly.Msg.play)
+        .appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
+		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#a600d3");
+    this.setTooltip(Blockly.Msg.play_tooltip);
+    this.setHelpUrl(Blockly.Msg.play_helpurl)}
+};
+Blockly.Arduino["play_esp32"]=function(block){
+    //var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+	var value_pin = block.getFieldValue('PIN_BUZZER');
+    var value_note=block.getFieldValue("note");
+    var value_tempo=block.getFieldValue("tempo");
+	
+    Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
+	
+    return "ledcWriteTone(4," + value_note + ");\n delay(" + value_tempo + ");\n"
+};
+
+
+Blockly.Blocks["tone_esp32"]={init:function(){
+		var card=window.localStorage.card;
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+       //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+	    this.appendDummyInput()
+	    .appendField(Blockly.Msg.ARDUINO_TONE_INPUT1)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
+        this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
+        this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
+};
+Blockly.Arduino["tone_esp32"]=function(block){
+	var value_pin = block.getFieldValue('PIN_BUZZER');
+    //var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
+    var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
+    	
+	Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
+	
+    return "ledcWriteTone(4," + value_num + ");\n delay(" + value_tps + ");\n"
+};
+
+//////////////
+
+Blockly.Blocks["notone_esp32"]={init:function(){
+    	var card=window.localStorage.card;
+        this.setColour("#a600d3");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+       //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+	   this.appendDummyInput()
+	    .appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
+		this.setPreviousStatement(true, null);
+        this.setInputsInline(true);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
+};
+Blockly.Arduino["notone_esp32"]=function(block){
+    var value_pin = block.getFieldValue('PIN_BUZZER');
+		
+    Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
+	return "ledcWriteTone(4,0);\n"
 };
