@@ -317,31 +317,32 @@
 	</category>		
 		
 		<category name="CAT_SOUND" colour="#2a93e8">
-		 <block type="Sound_sensor2"></block>	
-		 <block type="Sound_status_sensor2"></block>	
+		 <block type="Sound_sensor2"><field name="PIN_SOUND">33</field></block>	
+		 <block type="Sound_status_sensor2"><field name="PIN_SOUND">33</field></block>	
 		 <block type="SoundAmp_sensor2">
+			<field name="PIN_SOUND">33</field>
 			<value name="SAMPLE_WINDOW"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
 		 </block>	
 		 
 		</category>
 
 			<category name="CAT_TEMP" colour="#2a93e8">
-		 <block type="dht_sensor2"></block>	
+		 <block type="dht_sensor2"><field name="PIN_DHT">33</field></block>	
 		 <block type="dht_measure"></block>	
- 		 <block type="Analog_temperature_sensor2"></block>	
-		 <block type="LM35_temperature_sensor2"></block>
-		 <block type="Flame_sensor2"></block>	
-		 <block type="Flame_status_sensor2"></block>	
+ 		 <block type="Analog_temperature_sensor2"><field name="PIN">33</field></block>	
+		 <block type="LM35_temperature_sensor2"><field name="PIN">33</field></block>
+		 <block type="Flame_sensor2"><field name="PIN_FLAME">33</field></block>	
+		 <block type="Flame_status_sensor2"><field name="PIN_FLAME">33</field></block>	
 	</category>
 	
 		<category name="CAT_LIGHT" colour="#2a93e8">
-			<block type="LDR_sensor2"></block>
-		 	<block type="LDR_status_sensor2"></block>
-			<block type="AmbientLight_sensor2"></block>
-		 	<block type="IR_sensor2"></block>
-		 	<block type="IR_status_sensor2"></block>
-		 	<block type="pir_sensor2"></block>
-		 	<block type="photointerrupter_sensor2"></block>
+			<block type="LDR_sensor2"><field name="PIN_LDR">33</field></block>
+		 	<block type="LDR_status_sensor2"><field name="PIN_LDR">33</field></block>
+			<block type="AmbientLight_sensor2"><field name="PIN_ALIGHT">33</field></block>
+		 	<block type="IR_sensor2"><field name="PIN_IR">33</field></block>
+		 	<block type="IR_status_sensor2"><field name="PIN_IR">33</field></block>
+		 	<block type="pir_sensor2"><field name="PIN_PIR">33</field></block>
+		 	<block type="photointerrupter_sensor2"><field name="PIN_BUTTON">33</field></block>
 		</category>
 		
 		<category name="CAT_APDS9960" colour="#2a93e8">
@@ -364,19 +365,19 @@
 	</category>
 
 		<category name="CAT_MAGNET" colour="#2a93e8">
-			<block type="hall_sensor2"></block>
+			<block type="hall_sensor2"><field name="PIN_HALL">33</field></block>
 		</category>
 		
 		<category name="CAT_VIBRATE" colour="#2a93e8">
-			<block type="Vibration_sensor2"></block>	
-			<block type="tilt_sensor2"></block>
-			<block type="knock_sensor2"></block>
+			<block type="Vibration_sensor2"><field name="PIN_VIBRATION">33</field></block>	
+			<block type="tilt_sensor2"><field name="PIN_BUTTON">33</field></block>
+			<block type="knock_sensor2"><field name="PIN_BUTTON">33</field></block>
 		</category>
 
 	<category name="CAT_WATER" colour="#2a93e8">
-		<block type="Water_sensor2"></block>
-		 <block type="Moisture_sensor2"></block>	
-		 <block type="Vapor_sensor2"></block>
+		<block type="Water_sensor2"><field name="PIN_WATER">33</field></block>
+		 <block type="Moisture_sensor2"><field name="PIN_MOISTURE">33</field></block>	
+		 <block type="Vapor_sensor2"><field name="PIN_VAPOR">33</field></block>
 		 </category>
 
 	<category name="CAT_CCS811" colour="#2a93e8">
@@ -384,14 +385,14 @@
 		<block type="CCS811_available"></block>
 		<block type="CCS811_readed"></block>
 		<block type="CCS811_values"></block>
-		<block type="Air_sensor2"></block>	
-		<block type="Air_status_sensor2"></block>
+		<block type="Air_sensor2"><field name="PIN_AIR">33</field></block>	
+		<block type="Air_status_sensor2"><field name="PIN_AIR">33</field></block>
 	</category>	
 		<category name="CAT_GAS" colour="#2a93e8">
-		 <block type="Gas_sensor2"></block>	
-		 <block type="Gas_status_sensor2"></block>
-		 <block type="Alcohol_sensor2"></block>	
-		 <block type="Alcohol_status_sensor2"></block>
+		 <block type="Gas_sensor2"><field name="PIN_GAS">33</field></block>	
+		 <block type="Gas_status_sensor2"><field name="PIN_GAS">33</field></block>
+		 <block type="Alcohol_sensor2"><field name="PIN_ALCOHOL">33</field></block>	
+		 <block type="Alcohol_status_sensor2"><field name="PIN_ALCOHOL">33</field></block>
 	</category>	
 	<category name="CAT_BME280" colour="#2a93e8">
 		<block type="BME280"></block>
@@ -412,7 +413,7 @@
 			  <block type="values_text_ds3231"></block>	
 		</category>		
 	
-	<category name="CAT_RFID" colour="#2a93e8">
+<!--	<category name="CAT_RFID" colour="#2a93e8">
 		 <block type="rfid_init">
 		    <field name="PIN_SDA">D5</field>
 			<field name="PIN_RST">D4</field>	  
@@ -423,11 +424,11 @@
 		<block type="RFID_card_readed"></block>
 		<block type="RFID_check_card"></block>
 		<block type="rfid_stopread"></block>
-	</category>
+	</category> -->
 	
 	
 		<category name="CAT_HMC5883" colour="#2a93e8"> 
-	<block type="Init_Compass_HMC5883"></block>
+		<block type="Init_Compass_HMC5883"></block>
 		<block type="order_to_read_HMC5883_values"></block>
 		<block type="HMC5883_values"></block>
 	</category>	
@@ -457,19 +458,19 @@
 			</block>
 			<block type="servo_movemicros">
 				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
+				<field name="PIN">13</field>
 			</block>
 			<block type="servo_read_degrees">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
+				<field name="PIN">13</field>
 			</block>
 			<block type="servo_detach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
+				<field name="PIN">13</field>
 			</block>
 			<block type="servo_attach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
+				<field name="PIN">13</field>
 			</block>
 			<block type="servo_attached">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">13</field></shadow></value>
+				<field name="PIN">13</field>
 			</block>
 			<block type="servo_PWM">
 				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
@@ -519,7 +520,7 @@
 		</block>	
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 	
-		<category name="CAT_MAX7219" colour="#4b009f">	
+	<!--	<category name="CAT_MAX7219" colour="#4b009f">	
 			<block type="Init_MAX7219_ledmatrix">
 			<field name="PIN_CLK">23</field>
        		<field name="PIN_CS">25</field>
@@ -550,7 +551,7 @@
 			
 			<block type="MAX7219_ledmatrix_draw"></block>
 			<block type="MAX7219_animation"></block>
-		</category>	
+		</category>	 -->
 	
 	<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 			<block type="otto9_eyes_init"></block>
@@ -652,7 +653,7 @@
 		</block>
 		<block type="MatrixLED_WS2812B_CLEAN"></block>
 	</category>	
-		<category name="CAT_BARGRAPH" colour="#4b009f">
+	<!--	<category name="CAT_BARGRAPH" colour="#4b009f">
 			<block type="bargraphe">
 			<field name="clk">D0</field>
        		<field name="data">D1</field>
@@ -660,7 +661,7 @@
 			<block type="bargraphe_allume">
 			<value name="del"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 			</block>
-		</category>	
+		</category>	-->
 </category>	
 
 <category name="CAT_Displays"  colour="#4b009f">
@@ -769,9 +770,9 @@
 
 	<category name="CAT_TFT_ST7735" colour="#4b009f">
 			 <block type="st7735_init">
-			   	<field name="PIN_CS">D1</field>
-				<field name="PIN_DC">D2</field>
-				<field name="PIN_RST">D3</field>					
+			   	<field name="PIN_CS">23</field>
+				<field name="PIN_DC">25</field>
+				<field name="PIN_RST">26</field>					
 			 </block>
 			 <block type="st7735_icon"></block>
 			<block type="st7735_backgroundcolor"></block>
@@ -1015,7 +1016,7 @@
 		</category>
 	</category> 
 		
-	<category name="CAT_iot" colour="#154360">
+	<category name="CAT_iot" colour="#26C6F8">
 		<category name="CAT_wifi" colour="#26C6F8">
 		<block type="wifi_init_sta"></block>
 		<block type="wifi_sta_staticip"></block>
@@ -1075,7 +1076,7 @@
 			<block type="mqtt_publish"></block>
 		</category>
 		
-		<category name="CAT_IFTTT" colour="#A3E8FD">
+		<category name="CAT_IFTTT" colour="#26C6F8">
 			<block type="ifttt_init"></block>
 			<block type="ifttt_send">
 				<value name="evento"><shadow type="text"><field name="TEXT">Event name </field></shadow></value>
