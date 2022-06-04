@@ -1092,3 +1092,23 @@ Blockly.Arduino["notone_esp32"]=function(block){
     Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
 	return "ledcWriteTone(4,0);\n"
 };
+
+Blockly.Blocks['led_pwm_esp32']={init:function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput().appendField(Blockly.Msg.del+" (PWM)").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "PWM");
+    this.appendValueInput("STAT", "Number").appendField(Blockly.Msg._AT);
+    this.setInputsInline(true);
+	this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");}
+};
+Blockly.Arduino['led_pwm_esp32'] = function(block) {
+  var droppinpwm = block.getFieldValue('PWM');
+  var stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
+  
+  Blockly.Arduino.setups_["setup_led_esp32_"+ droppinpwm]="ledcSetup(7,5000,8);\nledcAttachPin("+droppinpwm+",7);\n"; 
+  
+  var code="ledcWrite(7," + stat + ");\n"; 
+  
+  return code;
+};

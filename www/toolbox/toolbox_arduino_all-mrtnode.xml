@@ -10,7 +10,8 @@
 		<block type="base_code"></block>
 		<block type="base_code_entree"></block>
 	</category>
-	<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
+	
+<!--<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
 <block type="otto_ninja_init">
 	<field name="PIN_LL">D8</field>
 	<field name="PIN_LF">D7</field>
@@ -49,8 +50,8 @@
 <block type="otto_ninja_setroll"></block>
 <block type="otto_ninja_walkstop"></block>
 <block type="otto_ninja_rollstop"></block>
-</category>
-	<category name="CAT_OTTO" colour="#32D900">
+</category> -->
+<!--	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto9_configuration">
 			<field name="PIN_YL">0</field>
 			<field name="PIN_YR">2</field>
@@ -149,7 +150,7 @@
 		</category>
 
 
-</category>
+</category> -->
 
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">		
 		<block type="base_delay">
@@ -165,37 +166,37 @@
 	</category>
 	<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="inout_digital_write">
-			<field name="PIN">10</field>
+			<field name="PIN">23</field>
 			<value name="STAT"><shadow type="inout_onoff">	<field name="NUM">1</field>	</shadow></value>
 		</block>
-		<block type="inout_digital_write2">
+	<!--	<block type="inout_digital_write2">
 			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
 			<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
-		</block>	
+		</block> -->	
 		<block type="inout_digital_read">
-			<field name="PIN">10</field>
+			<field name="PIN">33</field>
 		</block>
-		<block type="inout_digital_read2">
+	<!--	<block type="inout_digital_read2">
 			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-		</block>
+		</block> -->
 		<block type="inout_analog_write">
-			<field name="pin">3</field>
-			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+			<field name="broche">23</field>
+			<value name="NUM"><shadow type="math_number"><field name="NUM">255</field>	</shadow></value>
 		</block>
-		<block type="inout_analog_write2">
+	<!--	<block type="inout_analog_write2">
 			<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
 			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
-		</block>
-		<block type="inout_analog_read"></block>
-		<block type="inout_analog_read2">		
+		</block> -->
+		<block type="inout_analog_read"><field name="broche">33</field></block>
+	<!--	<block type="inout_analog_read2">		
 			<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value>
-		</block>
-		<block type="toggle"></block>
-		<block type="toggle2">
+		</block> -->
+		<block type="toggle"><field name="PIN">23</field></block>
+	<!--	<block type="toggle2">
 			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">10</field>	</shadow></value>
-		</block>
-		<block type="inout_attachInterrupt_esp8266"></block>
-		<block type="inout_detachInterrupt"></block>
+		</block> -->
+		<block type="inout_attachInterrupt_esp8266"><field name="PIN">33</field></block>
+		<block type="inout_detachInterrupt"><field name="PIN">33</field></block>
 				
 	</category>	
 
@@ -412,22 +413,27 @@
 			  <block type="values_ds3231"></block>
 			  <block type="values_text_ds3231"></block>	
 		</category>		
-	
-<!--	<category name="CAT_RFID" colour="#2a93e8">
-		 <block type="rfid_init">
+		
+		<category name="CAT_RFID" colour="#2a93e8">
+			<block type="nfc_init"></block>
+			<block type="nfc_validationcard"></block>
+			<block type="nfc_validationcard_2"></block>
+			<block type="nfc_detected"></block>
+			<block type="nfc_card_readed"></block>
+			<block type="nfc_check_card"></block>
+	<!--	<block type="rfid_init">
 		    <field name="PIN_SDA">D5</field>
 			<field name="PIN_RST">D4</field>	  
-		</block>
-		<block type="rfid_validationcard"></block>
-		<block type="RFID_detected"></block>
-		<block type="RFID_readed"></block>
-		<block type="RFID_card_readed"></block>
-		<block type="RFID_check_card"></block>
-		<block type="rfid_stopread"></block>
-	</category> -->
-	
-	
-		<category name="CAT_HMC5883" colour="#2a93e8"> 
+			</block>
+			<block type="rfid_validationcard"></block>
+			<block type="RFID_detected"></block>
+			<block type="RFID_readed"></block>
+			<block type="RFID_card_readed"></block>
+			<block type="RFID_check_card"></block>
+			<block type="rfid_stopread"></block>
+	 -->
+		</category>
+	<category name="CAT_HMC5883" colour="#2a93e8"> 
 		<block type="Init_Compass_HMC5883"></block>
 		<block type="order_to_read_HMC5883_values"></block>
 		<block type="HMC5883_values"></block>
@@ -518,7 +524,10 @@
 			<field name="PIN">23</field>
 			<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 		</block>	
-		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
+		<block type="led_pwm_esp32">
+			<field name="PWM">23</field>
+			<value name="STAT"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+		</block>
 	
 	<!--	<category name="CAT_MAX7219" colour="#4b009f">	
 			<block type="Init_MAX7219_ledmatrix">

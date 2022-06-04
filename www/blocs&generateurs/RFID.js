@@ -245,7 +245,7 @@ Blockly.Blocks['nfc_init'] = {
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip('NFC PN532 using I2 pins. Important: you must configure the swith in the component to I2C configuration. In the board you need to use the I2C pins');
+    this.setTooltip('NFC PN532 using I2 pins.ESP32 and ESP8266 doesn´t work Ok using I2C, you need to reset a lot of time to detect. Important too: you must configure the swith in the component to I2C configuration. In the board you need to use the I2C pins');
     this.setHelpUrl('');
   }
 };
