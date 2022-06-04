@@ -754,7 +754,7 @@ Blockly.Python['rgb_set'] = function(block) {
 }
 
 Blockly.Blocks["rgb_setcolor"]={init:function(){
-	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set);
+	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set).appendField(Blockly.Msg.rvb_cathode);
 	this.appendDummyInput().appendField(new Blockly.FieldColour("#ff0000"), "color");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -1112,3 +1112,49 @@ Blockly.Arduino['led_pwm_esp32'] = function(block) {
   
   return code;
 };
+
+
+//////////////RGB for ESP32
+Blockly.Blocks['rgb_init_esp32']={init:function() {
+	var card=window.localStorage.card;
+    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/rgb.png', 33, 33, "*")) .appendField(Blockly.Msg.rvb_init);
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("R").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "rouge");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT)  .appendField("G").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "vert");
+    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("B").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "bleu");
+    this.setInputsInline(true);
+	this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#4b009f");
+    this.setTooltip(Blockly.Msg.rvb_init_tooltip);
+    this.setHelpUrl('http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ReferenceMaxi')}
+};
+Blockly.Arduino['rgb_init_esp32'] = function(block) {
+  var value_rouge = block.getFieldValue('rouge');
+  var value_vert = block.getFieldValue('vert');
+  var value_bleu = block.getFieldValue('bleu');
+  Blockly.Arduino.variables_['rvb_'+value_rouge] = '#define redPin '+value_rouge+'\n#define greenPin '+value_vert+'\n#define bluePin '+value_bleu+'\n';
+  Blockly.Arduino.userFunctions_['rvb_'+value_rouge] = 'void setColor(int redValue, int greenValue, int blueValue) {\n ledcWrite(5,greenValue);\n ledcWrite(6,redValue);\n  ledcWrite(7,blueValue);\n}';
+  Blockly.Arduino.setups_['rvb_esp32'+value_rouge]='ledcSetup(5,5000,8);\nledcAttachPin(greenPin,5);\nledcSetup(6,5000,8);\nledcAttachPin(redPin,6);\nledcSetup(7,5000,8);\nledcAttachPin(bluePin,7);\n';
+  return '';
+};
+
+
+  Blockly.Blocks["rgb_setcolor_anode"]={init:function(){
+	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set).appendField(Blockly.Msg.rvb_anode);
+	this.appendDummyInput().appendField(new Blockly.FieldColour("#ff0000"), "color");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#4b009f");
+    this.setTooltip(Blockly.Msg.rvb_set_tooltip);
+    this.setHelpUrl("https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/")}
+};
+Blockly.Arduino["rgb_setcolor_anode"]=function(block){
+	var color=block.getFieldValue("color");
+	var colorR=color[1] + color[2], colorG=color[3] + color[4], colorB=color[5] + color[6];
+    var red=255-parseInt(colorR,16), green=255-parseInt(colorG,16), blue=255-parseInt(colorB,16);
+    var code = 'setColor('+red+','+green+','+blue+');\n';
+    return code;
+};
+
+  
