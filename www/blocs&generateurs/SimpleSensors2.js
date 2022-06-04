@@ -1455,3 +1455,28 @@ Blockly.Arduino['MRTNode_button'] = function(block) {
 };
 
 // ----------------------------------------------------------------------------------------------------------------
+
+Blockly.Blocks['touch_internal_esp32'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+	    .appendField(new Blockly.FieldImage("media/finger.png",33,33))
+	    .appendField(Blockly.Msg.TOUCH)
+        .appendField(Blockly.Msg.PIN)
+		.appendField(new Blockly.FieldDropdown(profile[card].touch), "PIN_TOUCH")
+	this.setInputsInline(true);
+    this.setOutput(true, "Number");
+    this.setTooltip('some pins in ESP32 are capacitives. In this board these pins can be used');
+  }
+};
+
+Blockly.Arduino['touch_internal_esp32'] = function(block) {
+    var PinTouch = block.getFieldValue('PIN_TOUCH');
+   	var code;
+
+    var code = 'touchRead('+PinTouch+')';
+   
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

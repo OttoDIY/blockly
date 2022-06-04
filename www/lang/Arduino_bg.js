@@ -647,6 +647,7 @@ Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Temperature NTC (ºC)";
 Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
+Blockly.Msg.TOUCH="Touch";
 
 //CCS811
 Blockly.Msg.CCS811="CO₂ Pins"; 

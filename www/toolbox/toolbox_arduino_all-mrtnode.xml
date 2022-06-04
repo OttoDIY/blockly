@@ -303,6 +303,7 @@
 		 <block type="button_sensor2"><field name="PIN_BUTTON">33</field></block>
 		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">33</field></block>
 		 <block type="MRTNode_button"></block>
+		 <block type="touch_internal_esp32"><field name="PIN_TOUCH">T9</field></block>
 		 <block type="potentiometer_ranger_sensor2"><field name="PIN_POTENTIOMETER">33</field></block>	
 		 <block type="Joystick_axis_sensor2"><field name="PIN_JOYSTICK">33</field></block>
 		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK">33</field></block>
@@ -562,6 +563,26 @@
 			<block type="MAX7219_animation"></block>
 		</category>	 -->
 	
+	
+	
+
+	<category name="CAT_LEDRGB" colour="#4b009f">
+		<block type="rgb_init_esp32">
+			<field name="rouge">23</field>
+			<field name="vert">25</field>
+			<field name="bleu">26</field>		
+		</block>
+		
+		<block type="rgb_set">
+			<value name="r"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="v"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="b"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		
+		<block type="rgb_setcolor"></block> 
+		<block type="rgb_setcolor_anode"></block> 
+	</category>	
+	
 	<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
 			<block type="otto9_eyes_init"></block>
 			<block type="otto9_eyes_face"></block>
@@ -603,26 +624,6 @@
 		   		<field name="PIN_SDA">25</field>
 			</block>
 		</category>
-	
-
-			<category name="CAT_LEDRGB" colour="#4b009f">
-		<block type="rgb_init_esp32">
-			<field name="rouge">23</field>
-			<field name="vert">25</field>
-			<field name="bleu">26</field>		
-		</block>
-		
-		<block type="rgb_set">
-			<value name="r"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="v"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			<value name="b"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		</block>
-		
-		<block type="rgb_setcolor"></block> 
-		<block type="rgb_setcolor_anode"></block> 
-		
-		
-	</category>	
 	
 	<category name="CAT_NEOPIXEL" colour="#4b009f">	
 			<block type="pixel_init">

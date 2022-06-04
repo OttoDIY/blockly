@@ -652,6 +652,7 @@ Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Eco";
 Blockly.Msg.VAR_TemSens="Sensore analogico di Temperatura NTC (ºC)";
 Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
+Blockly.Msg.TOUCH="Touch";
 
 //CCS811
 Blockly.Msg.CCS811="Inizializza sensore CO2(CCS811)";
