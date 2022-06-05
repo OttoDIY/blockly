@@ -312,6 +312,17 @@
 		 <block type="potentiometer_ranger_sensor2"><field name="PIN_POTENTIOMETER">33</field></block>	
 		 <block type="Joystick_axis_sensor2"><field name="PIN_JOYSTICK">33</field></block>
 		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK">33</field></block>
+		 <block type="Init_RotaryEncoderInterrupt">
+			 <field name="PINDT">33</field>
+			 <field name="PINCLK">34</field>
+		 </block>
+		<block type="RotaryEncoder_Write">
+			<value name="Writecounter"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+		</block>
+		<block type="RotaryEncoder_Read"></block>
+		<block type="rotaryencoder_button_sensor"> <field name="PIN_RE_BUTTON">35</field></block>
+
+
 
 	<category name="CAT_VL53L0X" colour="#2a93e8">
 			<block type="ultrasonic_sensor">

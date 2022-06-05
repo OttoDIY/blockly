@@ -1250,3 +1250,14 @@ Blockly.Msg.CONV_tobyte="バイト型にキャスト ";
 Blockly.Msg.CONV_toint="Int型にキャスト ";
 Blockly.Msg.CONV_tounsigendint="unsigned Int型にキャスト ";
 Blockly.Msg.CONV_tofloat="Float型にキャスト ";
+
+//Encoder
+Blockly.Msg.RotaryEncoderInit="Init Rotary Encoder";
+Blockly.Msg.RotaryEncoderNumber="Rotary Encoder";
+Blockly.Msg.RE_withoutInterrupt="without interrupts";
+Blockly.Msg.RE_PINDT="Pin DT";
+Blockly.Msg.RE_PINCLK="Pin CLK";
+Blockly.Msg.RE_READ="Read Value";
+Blockly.Msg.RE_WRITE="Write Value";
+Blockly.Msg.RE_Button="Button";
+Blockly.Msg.RE_Pressed="pressed?";

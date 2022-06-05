@@ -1281,4 +1281,15 @@ Blockly.Msg.CONV_toint="Casting a Int ";
 Blockly.Msg.CONV_tounsigendint="Casting a unsigned Int ";
 Blockly.Msg.CONV_tofloat="Casting a Float ";
 
+//Encoder
+Blockly.Msg.RotaryEncoderInit="Init Rotary Encoder";
+Blockly.Msg.RotaryEncoderNumber="Rotary Encoder";
+Blockly.Msg.RE_withoutInterrupt="without interrupts";
+Blockly.Msg.RE_PINDT="Pin DT";
+Blockly.Msg.RE_PINCLK="Pin CLK";
+Blockly.Msg.RE_READ="Read Value";
+Blockly.Msg.RE_WRITE="Write Value";
+Blockly.Msg.RE_Button="Button";
+Blockly.Msg.RE_Pressed="pressed?";
+
 
