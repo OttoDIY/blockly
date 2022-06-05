@@ -367,6 +367,16 @@ Blockly.Arduino["inout_analog_write"]=function(block){
     var code="analogWrite(" + dropdown_pin + ", " + value_num + ");\n";
     return code
 };
+Blockly.Arduino["inout_analog_write_esp32"]=function(block){
+    var dropdown_pin=block.getFieldValue("broche");
+    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
+		
+    Blockly.Arduino.setups_["setup_pwm_esp32_"+ dropdown_pin]="ledcSetup(7,5000,8);\nledcAttachPin("+dropdown_pin+",7);\n"; 
+  
+	var code="ledcWrite(7," + value_num + ");\n"; 
+    return code
+};
+
 Blockly.Arduino["inout_analog_write2"]=function(block){
     var pin =Blockly.Arduino.valueToCode(block, "pin", Blockly.Arduino.ORDER_ATOMIC);
     var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);

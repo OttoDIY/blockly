@@ -1181,7 +1181,7 @@ Blockly.Msg.sunset = "Atardecer EPOC";
 Blockly.Msg.ESP_yield=" Función Yield ";
 Blockly.Msg.ESP_deepsleep="DeepSleep ";
 Blockly.Msg.ESP_timesleep="Segundos";
-Blockly.Msg.ESP_restart="Restart ESP8266";
+Blockly.Msg.ESP_restart="Restart ESP8266/ESP32";
 
 //Wifi Server
 Blockly.Msg.WifiServer_wait="Esperar conexiones de clientes"

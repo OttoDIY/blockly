@@ -1480,3 +1480,25 @@ Blockly.Arduino['touch_internal_esp32'] = function(block) {
    
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Blocks['hall_sensor_esp32'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#2a93e8");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/hall.png",33,33))
+		.appendField("ESP32 Internal")
+	    .appendField(Blockly.Msg.HALL_NAME)
+	this.setOutput(true, 'Number');
+   	this.appendDummyInput()
+	this.setInputsInline(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['hall_sensor_esp32'] = function(block) {
+    
+  var code = 'hallRead()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
