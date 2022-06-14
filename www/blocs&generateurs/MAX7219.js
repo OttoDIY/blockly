@@ -1163,3 +1163,323 @@ if (type_matrix=="16"){
 }
 return ""
 };
+
+
+
+
+
+/// MAX7219 independent for ESP32
+
+Blockly.Blocks['Init_MAX7219_ledmatrix_esp32'] = { init: function() {
+  var card=window.localStorage.card;
+  this.setColour("#4b009f");
+	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/matrix8x8.png",33,33))
+	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_Number)	.appendField(new Blockly.FieldDropdown([['1', '1'], ['2', '2'],['3', '3'],['4', '4']]), "NumberDisplays")
+	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_NAME)
+	this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_CLK).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CLK");
+	this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_CS).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
+	this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_DAT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DAT");
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init the MAX7219 library to use the 8X8 LED matrix'); }
+};
+
+Blockly.Arduino['Init_MAX7219_ledmatrix_esp32'] = function(block) {
+  var pin_clk = this.getFieldValue('PIN_CLK');
+  var pin_cs = this.getFieldValue('PIN_CS');
+  var pin_dat = this.getFieldValue('PIN_DAT');
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  Blockly.Arduino.includes_['include_LedController'] = '#include <LedController.hpp>\n';
+  Blockly.Arduino.definitions_['init_Ledcontroller_LM'] = 'LedController<'+numberDisplays+',1> lc = LedController<'+numberDisplays+',1>();\n';
+   
+  Blockly.Arduino.setups_['setup_Ledcontroller_LM'] = ' lc.init('+pin_dat+','+pin_clk+','+pin_cs+');\n';
+   
+  var code='';
+  return code;
+};
+
+Blockly.Blocks['MAX7219_ledmatrix_brightness_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+	this.appendValueInput("BRIGHTNESS")
+		.setCheck("Number")
+        .appendField(Blockly.Msg.MAX7219_LM_Brightness)
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Config the brigthness of the leds');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_brightness_esp32'] = function(block) {
+  var brightness = Blockly.Arduino.valueToCode(this, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
+ 
+     	 	 
+  var code='lc.setIntensity('+brightness+');\n';
+  
+  return code;
+};
+
+Blockly.Blocks['MAX7219_ledmatrix_clear_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+		.appendField(Blockly.Msg.MAX7219_LM_Number)
+		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
+		.appendField(Blockly.Msg.MAX7219_LM_CLEAR)
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Clear the display');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_clear_esp32'] = function(block) {
+  
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 	 	 
+  var code='lc.clearSegment('+numberDisplays+');\n';
+  return code;
+};
+
+
+Blockly.Blocks['MAX7219_ledmatrix_draw_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+		.appendField(Blockly.Msg.MAX7219_LM_Number)
+		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
+		.appendField(Blockly.Msg.MAX7219_LM_PAINT);
+    Blockly.FieldCheckbox.CHECK_CHAR= '🔴'
+    this.appendDummyInput()
+        .appendField('  ')
+        .appendField('0')
+        .appendField('  1')
+        .appendField(' 2')
+        .appendField('  3')
+        .appendField(' 4')
+        .appendField('  5')
+        .appendField(' 6')
+        .appendField('  7');
+    this.appendDummyInput()
+        .appendField('0 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel0')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel1')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel2')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel3')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel4')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel5')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel6')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel7');
+    this.appendDummyInput()
+        .appendField('1 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel8')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel9')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel10')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel11')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel12')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel13')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel14')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel15');
+    this.appendDummyInput()
+        .appendField('2 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel16')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel17')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel18')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel19')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel20')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel21')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel22')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel23');
+    this.appendDummyInput()
+        .appendField('3 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel24')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel25')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel26')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel27')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel28')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel29')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel30')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel31');
+    this.appendDummyInput()
+        .appendField('4 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel32')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel33')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel34')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel35')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel36')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel37')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel38')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel39');
+    this.appendDummyInput()
+        .appendField('5 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel40')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel41')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel42')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel43')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel44')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel45')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel46')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel47');
+    this.appendDummyInput()
+        .appendField('6 ')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel48')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel49')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel50')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel51')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel52')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel53')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel54')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel55');
+    this.appendDummyInput()
+        .appendField('7 ')
+		.appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel56')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel57')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel58')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel59')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel60')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel61')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel62')
+        .appendField(new Blockly.FieldCheckbox("FALSE"), 'Pixel63');
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Paint a image drawn in this block');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_draw_esp32'] = function(block) {
+  
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var code = '';
+  var rowcounter=0;
+  var rowvalue='B';
+  var rowline=0;
+  for (var i=0; i<64; i++) {
+	
+	if (this.getFieldValue('Pixel' + i) != "FALSE") 
+		rowvalue=rowvalue+'1';
+	else
+		rowvalue=rowvalue+'0';
+	
+	rowcounter+=1;
+	if (rowcounter==8)
+		{
+		 code+='lc.setRow('+numberDisplays+','+rowline+','+rowvalue+');';
+		 rowcounter=0;
+		 rowvalue='B';
+		 rowline=rowline+1;
+		}
+  };
+  code+='\n';
+  return code;
+};
+
+Blockly.Blocks['MAX7219_ledmatrix_row_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+		.appendField(Blockly.Msg.MAX7219_LM_Number)
+		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
+	this.appendValueInput("Row")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_Row)
+	this.appendValueInput("VALUE")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_value)	
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_row_esp32'] = function(block) {
+  
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+  var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
+     	 	 
+  var code='lc.setRow('+numberDisplays+','+row+','+value+');\n';
+  return code;
+};
+
+Blockly.Blocks['MAX7219_ledmatrix_column_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+		.appendField(Blockly.Msg.MAX7219_LM_Number)
+		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
+	this.appendValueInput("Column")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_Column)
+	this.appendValueInput("VALUE")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_value)	
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_column_esp32'] = function(block) {
+  
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
+   
+     	 	 
+  var code='lc.setColumn('+numberDisplays+',7-'+Column+','+value+');\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['MAX7219_ledmatrix_led_esp32'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#4b009f");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
+		.appendField(Blockly.Msg.MAX7219_LM_Number)
+		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
+	this.appendValueInput("Row")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_Row)
+	this.appendValueInput("Column")
+		.setCheck("Number")
+		.appendField(Blockly.Msg.MAX7219_LM_Column)
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.MAX7219_LM_Led)
+		.appendField(new Blockly.FieldDropdown([['ON', 'true'], ['OFF', 'false']]), "power")
+   	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Arduino['MAX7219_ledmatrix_led_esp32'] = function(block) {
+  
+  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+  var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
+  var value = this.getFieldValue('power');
+   
+     	 	 
+  var code='lc.setLed('+numberDisplays+','+row+',7-'+Column+','+value+');\n';
+  return code;
+};
+

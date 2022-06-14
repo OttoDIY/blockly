@@ -547,38 +547,37 @@
 			<value name="STAT"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 		</block>
 	
-	<!--	<category name="CAT_MAX7219" colour="#4b009f">	
-			<block type="Init_MAX7219_ledmatrix">
+		<category name="CAT_MAX7219" colour="#4b009f">	
+			<block type="Init_MAX7219_ledmatrix_esp32">
 			<field name="PIN_CLK">23</field>
        		<field name="PIN_CS">25</field>
        		<field name="PIN_DAT">26</field>
 			</block>
 					
-			<block type="MAX7219_ledmatrix_brightness">
+			<block type="MAX7219_ledmatrix_brightness_esp32">
 			<value name="BRIGHTNESS"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
 			</block>
 			
-			<block type="MAX7219_ledmatrix_shutdown"></block>
-			<block type="MAX7219_ledmatrix_clear"></block>
+			<block type="MAX7219_ledmatrix_clear_esp32"></block>
 			
-			<block type="MAX7219_ledmatrix_row">
+			<block type="MAX7219_ledmatrix_row_esp32">
 			<value name="Row"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>
 			
-			<block type="MAX7219_ledmatrix_column">
+			<block type="MAX7219_ledmatrix_column_esp32">
 			<value name="Column"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>
 			
-			<block type="MAX7219_ledmatrix_led">
+			<block type="MAX7219_ledmatrix_led_esp32">
 			<value name="Row"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Column"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			</block>
 			
-			<block type="MAX7219_ledmatrix_draw"></block>
-			<block type="MAX7219_animation"></block>
-		</category>	 -->
+			<block type="MAX7219_ledmatrix_draw_esp32"></block>
+			<!-- <block type="MAX7219_animation"></block>  -->
+		</category>	
 	
 	
 	
