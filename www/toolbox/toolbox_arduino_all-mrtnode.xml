@@ -2,7 +2,7 @@
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER,CAT_iot</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_KEYBOARD,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
@@ -530,6 +530,22 @@
 				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
 				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
 			</category>
+			
+		<category name="CAT_KEYBOARD" colour="#2a93e8">	
+			<block type="keyboard_function_esp32">
+				<value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
+			</block>
+			<block type="key_pressed_esp32"></block>
+			<block type="keyboard_text_esp32">
+				<value name="texttoprint"><shadow type="text"><field name="TEXT">I am a Robot</field></shadow></value>
+			</block>
+			<block type="mouse_function_esp32"></block>
+			<block type="mouse_move_esp32">
+			<value name="axis_x"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="axis_y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			<value name="wheel"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block> 
+		</category>
 		
 	<category name="CAT_LED" colour="#4b009f">		
 	<!--	<block type="blink"></block>
