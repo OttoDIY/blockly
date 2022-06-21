@@ -113,6 +113,23 @@ Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
+Blockly.Msg.CAT_TM1637="💡 DIGITS";
+
+//DISPALY 7 SEGMENT TM1637
+Blockly.Msg.TM1637_name = "TM1637 Display 7 segmentos";
+Blockly.Msg.TM1637_init = "Ini. TM1637 Display 7 segmentos";
+Blockly.Msg.TM1637_PinCLK = "Pin CLK";
+Blockly.Msg.TM1637_PinDIO = "Pin DIO";
+Blockly.Msg.M1637_Brightness = "Fijar Brillo(0-7)";
+Blockly.Msg.M1637_turnOFF_ON = "Turn";
+Blockly.Msg.M1637_Clear = "Clear";
+Blockly.Msg.M1637_number="Fijar numero";
+Blockly.Msg.M1637_Digit = "Posicion(0-3)";
+Blockly.Msg.M1637_Length = "Number of digits to set";
+Blockly.Msg.M1637_fill = "Leading zeros";
+Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
+Blockly.Msg.M1637_value="Valor";
+Blockly.Msg.M1637_arraysegment="Display segment array.";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";

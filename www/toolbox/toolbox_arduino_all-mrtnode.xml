@@ -595,7 +595,21 @@
 			<!-- <block type="MAX7219_animation"></block>  -->
 		</category>	
 	
-	
+		<category name="CAT_TM1637" colour="#4b009f">	
+			<block type="DisplayTM1637_init"><field name="PIN_CLK">23</field><field name="PIN_DIO">25</field><value name="Britghness"><shadow type="math_number"><field name="NUM">7</field></shadow></value></block>
+			<block type="DisplayTM1637_setBrightness"><value name="Brightness"><shadow type="math_number"><field name="NUM">7</field></shadow></value></block>
+			<block type="DisplayTM1637_clear"></block>
+			<block type="DisplayTM1637_set_numberall"><value name="valuenumber"><shadow type="math_number"><field name="NUM">1234</field></shadow></value>
+						<value name="Digit"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+						<value name="Length"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+			</block>
+			<block type="DisplayTM1637_setsegment"><value name="SegmentDigit"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+						<value name="SegmentValue"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+			<block type="DisplayTM1637_segments"><value name="Digit"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+						<value name="Length"><shadow type="math_number"><field name="NUM">4</field></shadow></value>
+			</block>
+		</category>
 	
 
 	<category name="CAT_LEDRGB" colour="#4b009f">
@@ -709,6 +723,9 @@
 			<value name="del"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 			</block>
 		</category>	-->
+		
+	
+	 
 </category>	
 
 <category name="CAT_Displays"  colour="#4b009f">

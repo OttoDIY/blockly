@@ -109,6 +109,23 @@ Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_STOCKAGE = "📦 Skladování";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
+Blockly.Msg.CAT_TM1637="💡 DIGITS";
+
+//DISPALY 7 SEGMENT TM1637
+Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
+Blockly.Msg.TM1637_init = "Init TM1637 Display 7 segment";
+Blockly.Msg.TM1637_PinCLK = "Pin CLK";
+Blockly.Msg.TM1637_PinDIO = "Pin DIO";
+Blockly.Msg.M1637_Brightness = "Set brightness(0-7)";
+Blockly.Msg.M1637_turnOFF_ON = "Turn";
+Blockly.Msg.M1637_Clear = "Clear";
+Blockly.Msg.M1637_number="Set number";
+Blockly.Msg.M1637_Digit = "Position(0-3)";
+Blockly.Msg.M1637_Length = "Number of digits to set";
+Blockly.Msg.M1637_fill = "Leading zeros";
+Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
+Blockly.Msg.M1637_value="Value";
+Blockly.Msg.M1637_arraysegment="Display segment array.";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="RTC Pins I²C";
