@@ -47,7 +47,7 @@ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE = "Omita el resto de este 
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING = "Advertencia: este bloque debe usarse en un bucle";
 Blockly.Msg.CONTROLS_FOREACH_TITLE = "para cada elemento %1 en la lista %2";
 Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = "Para cada elemento de una lista, asigne el valor del elemento a la variable %1, y luego ejecute las declaraciones";
-Blockly.Msg.CONTROLS_FOR_TITLE = "para %1 comprendido de %2 a %3 (<=)en pasos de %4";
+Blockly.Msg.CONTROLS_FOR_TITLE = "para %1 comprendido de %2 a %3 en pasos de %4";
 Blockly.Msg.CONTROLS_FOR_TITLE2 = "para %1 comprendido de %2 a %3 (>=)en pasos de - %4";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = "Establezca la variable %1 en valores desde el número inicial hasta el número final, incrementándolo en un paso específico, y ejecute las declaraciones especificadas";
 Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Agregar Condición";
