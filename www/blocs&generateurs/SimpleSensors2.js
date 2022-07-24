@@ -192,7 +192,24 @@ Blockly.Arduino['ultrasonic_sensor'] = function(block) {
     Blockly.Arduino.setups_['setup_output_'+PIN_TRIG] = 'pinMode('+PIN_TRIG+', OUTPUT);';
     Blockly.Arduino.setups_['setup_input_'+PIN_ECHO] = 'pinMode('+PIN_ECHO+', INPUT);';
 	
-    Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
+	
+if ((PIN_TRIG=="4") && (PIN_ECHO=="5"))
+	{
+	   Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
+        '   long duration, distance;\n'+
+        '   digitalWrite('+PIN_TRIG+',LOW);\n'+
+        '   delayMicroseconds(100);\n'+
+        '   digitalWrite('+PIN_TRIG+', HIGH);\n'+
+        '   delayMicroseconds(100);\n'+
+        '   digitalWrite('+PIN_TRIG+', LOW);\n'+
+        '   duration = pulseIn('+ PIN_ECHO +', HIGH);\n'+
+        '   distance = duration/55;\n'+
+        '   return distance;\n'+
+        '}\n';
+	}
+	else
+	{
+		Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(2);\n'+
@@ -202,7 +219,8 @@ Blockly.Arduino['ultrasonic_sensor'] = function(block) {
         '   duration = pulseIn('+ PIN_ECHO +', HIGH);\n'+
         '   distance = duration/58;\n'+
         '   return distance;\n'+
-        '}\n';
+        '}\n';		
+	}	
 		
 	 var code = '';
 	 return code;	
