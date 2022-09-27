@@ -471,7 +471,7 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
     + 'int leftSpeed = 0;\n'
     + 'void motorControl(int rightSpeed, int leftSpeed, int stepDelay) {\n'
     + 'rightServo.write(90 + rightSpeed);  leftServo.write(90 - leftSpeed);\n'
-    + 'delay(stepDelay*1000);}';
+    + 'delay(stepDelay*1000);rightServo.write(90);leftServo.write(90);}';
      Blockly.Arduino.setups_['otto9_initw']='rightServo.write(90);\n'
     +'leftServo.write(90);\n'
     +'delay(1000);\n'

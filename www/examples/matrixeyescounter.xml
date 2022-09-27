@@ -1,0 +1,133 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="Yep!f$#$,9z]C}@!H8xa" x="-53" y="85">
+    <statement name="DO">
+      <block type="otto9_eyes_init" id="IdU0tf=x@v3![OjIKKnr">
+        <next>
+          <block type="variables_set_init" id="g@,22N{4d~X_25%dG(m2">
+            <field name="VAR">high</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="+RElAp^4puZNc@EgO@0P">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id="S}:dmP#T3h]nLTqSZvsZ">
+                <field name="VAR">time</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="ux,Gw2tmlapC0Y,4m?Ws">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="otto9_eyes_face" id="1x=0KG!R{JMha(?2=1pd">
+                    <field name="otto9_eyes_choice">logo_bmp</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto9_eyes#" id=";QwSIqfl^];fnOU.fIqw">
+        <value name="eyes">
+          <shadow type="math_number" id="J2Yy1A{o$Y#w(Q;L1=X|">
+            <field name="NUM">3</field>
+          </shadow>
+          <block type="variables_get" id="PXQqNgyA~eurR;:M{Yj1">
+            <field name="VAR">time</field>
+          </block>
+        </value>
+        <next>
+          <block type="otto9_eyesp" id="|(8x{bN60Y1kA*5pnTLT">
+            <field name="draw">TRUE</field>
+            <value name="X">
+              <shadow type="math_number" id="h]~LLB6;.W^MbJo@H(M!">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="variables_get" id="tYiT5u[9IDk)#Cwb:??T">
+                <field name="VAR">high</field>
+              </block>
+            </value>
+            <value name="Y">
+              <shadow type="math_number" id="z0jN|y,V$6c@t]WOwU=l">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="math_change" id=")F3GpExh:nI]fa:M|39M">
+                <field name="VAR">high</field>
+                <value name="DELTA">
+                  <block type="math_number" id="0`]P#E5w+MO%?3=%Tbq$">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="math_change" id="Izl,;s:M*B)3mArn+SB/">
+                    <field name="VAR">time</field>
+                    <value name="DELTA">
+                      <block type="math_number" id="K{7hR9(?lsAf``n@zqGa">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="base_delay" id="Ha|F;BUoF7hK~!S$-d~G">
+                        <field name="unite">m</field>
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id="K`qmM|4@El=La3Bs8sPp">
+                            <field name="NUM">200</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="otto9_eyes_clear" id="D%MD9Z9ws8m=80Q9G3i)">
+                            <next>
+                              <block type="controls_if" id="QX8AQlBy:w9^0~EY!QCW">
+                                <value name="IF0">
+                                  <block type="logic_compare" id="NgTbVlZEM1bRdJaJC8U2">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="?Ch.*-POxG@aJK]M4L[~">
+                                        <field name="VAR">high</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="t6V5#_{QZr.00T$a{*kC">
+                                        <field name="NUM">8</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="otto9_eyes_clear" id="9_Va{t3RfPkR~EN5vGa-">
+                                    <next>
+                                      <block type="variables_set" id="qLJlEf?}m~h:qRcp_Xt;">
+                                        <field name="VAR">high</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="_tH;]E1WZxg`Q=KYmS?:">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
