@@ -1,10 +1,43 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_arduino_all</toolbox>
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
   <block type="base_setup_loop" id="pu:*bK|G8SG~Z%q8h(p?" x="-2905" y="-1495">
     <statement name="DO">
       <block type="OLED_init" id="Ot[Jc)6-SURFds%WE/1w">
         <field name="height">64</field>
         <field name="address">0x3C</field>
+        <next>
+          <block type="variables_set_init" id="_C#=w@Jl#9v{UVkdVZLU">
+            <field name="VAR">i</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="?vGdG_H|[xJN:_P~H}7T">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id="b^by6sk0$v.;LC%jk(?`">
+                <field name="VAR">x</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="U;$nobcZ[p*{8`JlcM|H">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="qt@i|vpw)-r:Ij-lQ:f%">
+                    <field name="VAR">y</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="BsU7@sTG^*{qIK(fOQ4h">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
     <statement name="LOOP">

@@ -1,0 +1,443 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="apsNy$l`RWBysIuNW1{F" x="428" y="150">
+    <statement name="DO">
+      <block type="otto9_configuration" id="jAuH301_Q4@a8^(JRnd!">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <next>
+          <block type="variables_set_init" id="|r-@IsC^yvU$-ib/XI/?">
+            <field name="VAR">counter</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id=";27uwyIAR}.B9RUJ(duJ">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="otto9_eyes_init" id="ws)sMIpG{B#f%6oe``Vh">
+                <next>
+                  <block type="controls_repeat_ext" id="h,+/H;E61MDmtAubzODH">
+                    <value name="TIMES">
+                      <shadow type="math_number" id="oLjHHU$[B)AdgbS%E_s^">
+                        <field name="NUM">100</field>
+                      </shadow>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_if" id="Rm+Q0m5L9nvj.vT@BY,q">
+                        <mutation elseif="2" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_operation" id="q+m0,V?hbq[U^8RB-bO)">
+                            <field name="OP">and</field>
+                            <value name="A">
+                              <block type="math_number_property" id="k2*7N,_%XmR2UMmIBF6W">
+                                <mutation divisor_input="true"></mutation>
+                                <field name="PROPERTY">DIVISIBLE_BY</field>
+                                <value name="NUMBER_TO_CHECK">
+                                  <block type="variables_get" id="_wzv514;rWB.[VUfe#,_">
+                                    <field name="VAR">counter</field>
+                                  </block>
+                                </value>
+                                <value name="DIVISOR">
+                                  <block type="math_number" id="Mq=v+/w|tJJ6wl_2N7#+">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number_property" id="ay[oZOmor+q_xqy(t#AZ">
+                                <mutation divisor_input="true"></mutation>
+                                <field name="PROPERTY">DIVISIBLE_BY</field>
+                                <value name="NUMBER_TO_CHECK">
+                                  <block type="variables_get" id="P/,F[O0iSaWs|w6pn78+">
+                                    <field name="VAR">counter</field>
+                                  </block>
+                                </value>
+                                <value name="DIVISOR">
+                                  <block type="math_number" id="S;/ie@caM@]Mn*p~/+6Q">
+                                    <field name="NUM">5</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="beep" id="V!p0Xbu^|8r0%^qx4Rve">
+                            <value name="PIN">
+                              <shadow type="analog_pin" id="2~X[W5abr[G_8#+B0kDn">
+                                <field name="NUM">13</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="otto9_eyes_text" id="%Er)]_Bc-q+qX5Gv^V-y">
+                                <field name="input">FizzBuzz</field>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="math_number_property" id="jEtzr=;8Q#p~OG0mk?TC">
+                            <mutation divisor_input="true"></mutation>
+                            <field name="PROPERTY">DIVISIBLE_BY</field>
+                            <value name="NUMBER_TO_CHECK">
+                              <block type="variables_get" id="wYEr?xgKS:UjD}dgC3$_">
+                                <field name="VAR">counter</field>
+                              </block>
+                            </value>
+                            <value name="DIVISOR">
+                              <block type="math_number" id="zz(;v0Gp=1;D2[%^dr@P">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="otto9_eyesm" id="wp}?Xl^c:]H+k_7,|d.]">
+                            <field name="eyes_pixel7">TRUE</field>
+                            <field name="eyes_pixel15">TRUE</field>
+                            <field name="eyes_pixel23">TRUE</field>
+                            <field name="eyes_pixel31">TRUE</field>
+                            <field name="eyes_pixel39">FALSE</field>
+                            <field name="eyes_pixel47">TRUE</field>
+                            <field name="eyes_pixel55">FALSE</field>
+                            <field name="eyes_pixel63">FALSE</field>
+                            <field name="eyes_pixel71">FALSE</field>
+                            <field name="eyes_pixel79">FALSE</field>
+                            <field name="eyes_pixel87">FALSE</field>
+                            <field name="eyes_pixel95">FALSE</field>
+                            <field name="eyes_pixel103">FALSE</field>
+                            <field name="eyes_pixel111">FALSE</field>
+                            <field name="eyes_pixel119">FALSE</field>
+                            <field name="eyes_pixel127">FALSE</field>
+                            <field name="eyes_pixel6">TRUE</field>
+                            <field name="eyes_pixel14">FALSE</field>
+                            <field name="eyes_pixel22">FALSE</field>
+                            <field name="eyes_pixel30">FALSE</field>
+                            <field name="eyes_pixel38">FALSE</field>
+                            <field name="eyes_pixel46">FALSE</field>
+                            <field name="eyes_pixel54">FALSE</field>
+                            <field name="eyes_pixel62">TRUE</field>
+                            <field name="eyes_pixel70">TRUE</field>
+                            <field name="eyes_pixel78">TRUE</field>
+                            <field name="eyes_pixel86">TRUE</field>
+                            <field name="eyes_pixel94">FALSE</field>
+                            <field name="eyes_pixel102">TRUE</field>
+                            <field name="eyes_pixel110">TRUE</field>
+                            <field name="eyes_pixel118">TRUE</field>
+                            <field name="eyes_pixel126">TRUE</field>
+                            <field name="eyes_pixel5">TRUE</field>
+                            <field name="eyes_pixel13">TRUE</field>
+                            <field name="eyes_pixel21">TRUE</field>
+                            <field name="eyes_pixel29">FALSE</field>
+                            <field name="eyes_pixel37">FALSE</field>
+                            <field name="eyes_pixel45">TRUE</field>
+                            <field name="eyes_pixel53">FALSE</field>
+                            <field name="eyes_pixel61">FALSE</field>
+                            <field name="eyes_pixel69">FALSE</field>
+                            <field name="eyes_pixel77">TRUE</field>
+                            <field name="eyes_pixel85">FALSE</field>
+                            <field name="eyes_pixel93">FALSE</field>
+                            <field name="eyes_pixel101">FALSE</field>
+                            <field name="eyes_pixel109">FALSE</field>
+                            <field name="eyes_pixel117">TRUE</field>
+                            <field name="eyes_pixel125">FALSE</field>
+                            <field name="eyes_pixel4">TRUE</field>
+                            <field name="eyes_pixel12">FALSE</field>
+                            <field name="eyes_pixel20">FALSE</field>
+                            <field name="eyes_pixel28">FALSE</field>
+                            <field name="eyes_pixel36">FALSE</field>
+                            <field name="eyes_pixel44">TRUE</field>
+                            <field name="eyes_pixel52">FALSE</field>
+                            <field name="eyes_pixel60">FALSE</field>
+                            <field name="eyes_pixel68">TRUE</field>
+                            <field name="eyes_pixel76">FALSE</field>
+                            <field name="eyes_pixel84">FALSE</field>
+                            <field name="eyes_pixel92">FALSE</field>
+                            <field name="eyes_pixel100">FALSE</field>
+                            <field name="eyes_pixel108">TRUE</field>
+                            <field name="eyes_pixel116">FALSE</field>
+                            <field name="eyes_pixel124">FALSE</field>
+                            <field name="eyes_pixel3">TRUE</field>
+                            <field name="eyes_pixel11">FALSE</field>
+                            <field name="eyes_pixel19">FALSE</field>
+                            <field name="eyes_pixel27">FALSE</field>
+                            <field name="eyes_pixel35">FALSE</field>
+                            <field name="eyes_pixel43">TRUE</field>
+                            <field name="eyes_pixel51">FALSE</field>
+                            <field name="eyes_pixel59">TRUE</field>
+                            <field name="eyes_pixel67">TRUE</field>
+                            <field name="eyes_pixel75">TRUE</field>
+                            <field name="eyes_pixel83">TRUE</field>
+                            <field name="eyes_pixel91">FALSE</field>
+                            <field name="eyes_pixel99">TRUE</field>
+                            <field name="eyes_pixel107">TRUE</field>
+                            <field name="eyes_pixel115">TRUE</field>
+                            <field name="eyes_pixel123">TRUE</field>
+                            <field name="eyes_pixel2">FALSE</field>
+                            <field name="eyes_pixel10">FALSE</field>
+                            <field name="eyes_pixel18">FALSE</field>
+                            <field name="eyes_pixel26">FALSE</field>
+                            <field name="eyes_pixel34">FALSE</field>
+                            <field name="eyes_pixel42">FALSE</field>
+                            <field name="eyes_pixel50">FALSE</field>
+                            <field name="eyes_pixel58">FALSE</field>
+                            <field name="eyes_pixel66">FALSE</field>
+                            <field name="eyes_pixel74">FALSE</field>
+                            <field name="eyes_pixel82">FALSE</field>
+                            <field name="eyes_pixel90">FALSE</field>
+                            <field name="eyes_pixel98">FALSE</field>
+                            <field name="eyes_pixel106">FALSE</field>
+                            <field name="eyes_pixel114">FALSE</field>
+                            <field name="eyes_pixel122">FALSE</field>
+                            <field name="eyes_pixel1">FALSE</field>
+                            <field name="eyes_pixel9">FALSE</field>
+                            <field name="eyes_pixel17">FALSE</field>
+                            <field name="eyes_pixel25">FALSE</field>
+                            <field name="eyes_pixel33">FALSE</field>
+                            <field name="eyes_pixel41">FALSE</field>
+                            <field name="eyes_pixel49">FALSE</field>
+                            <field name="eyes_pixel57">FALSE</field>
+                            <field name="eyes_pixel65">FALSE</field>
+                            <field name="eyes_pixel73">FALSE</field>
+                            <field name="eyes_pixel81">FALSE</field>
+                            <field name="eyes_pixel89">FALSE</field>
+                            <field name="eyes_pixel97">FALSE</field>
+                            <field name="eyes_pixel105">FALSE</field>
+                            <field name="eyes_pixel113">FALSE</field>
+                            <field name="eyes_pixel121">FALSE</field>
+                            <field name="eyes_pixel0">FALSE</field>
+                            <field name="eyes_pixel8">FALSE</field>
+                            <field name="eyes_pixel16">FALSE</field>
+                            <field name="eyes_pixel24">FALSE</field>
+                            <field name="eyes_pixel32">FALSE</field>
+                            <field name="eyes_pixel40">FALSE</field>
+                            <field name="eyes_pixel48">FALSE</field>
+                            <field name="eyes_pixel56">FALSE</field>
+                            <field name="eyes_pixel64">FALSE</field>
+                            <field name="eyes_pixel72">FALSE</field>
+                            <field name="eyes_pixel80">FALSE</field>
+                            <field name="eyes_pixel88">FALSE</field>
+                            <field name="eyes_pixel96">FALSE</field>
+                            <field name="eyes_pixel104">FALSE</field>
+                            <field name="eyes_pixel112">FALSE</field>
+                            <field name="eyes_pixel120">FALSE</field>
+                            <next>
+                              <block type="otto_move" id="Uc/9!a.+H=V3;DLj,Dol">
+                                <field name="otto_move_sens">SHAKELEFT</field>
+                                <field name="otto_move_speed">1000</field>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF2">
+                          <block type="math_number_property" id="*ABu~ojU^#_B;[rm]R1m">
+                            <mutation divisor_input="true"></mutation>
+                            <field name="PROPERTY">DIVISIBLE_BY</field>
+                            <value name="NUMBER_TO_CHECK">
+                              <block type="variables_get" id=":W7!u}R/6evQC83:wR:^">
+                                <field name="VAR">counter</field>
+                              </block>
+                            </value>
+                            <value name="DIVISOR">
+                              <block type="math_number" id="+jfWDJc:TKekSE,qWgu6">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO2">
+                          <block type="otto9_eyesm" id="pD[CR_k?a_rV*ahmZB,j">
+                            <field name="eyes_pixel7">TRUE</field>
+                            <field name="eyes_pixel15">FALSE</field>
+                            <field name="eyes_pixel23">FALSE</field>
+                            <field name="eyes_pixel31">FALSE</field>
+                            <field name="eyes_pixel39">FALSE</field>
+                            <field name="eyes_pixel47">FALSE</field>
+                            <field name="eyes_pixel55">FALSE</field>
+                            <field name="eyes_pixel63">FALSE</field>
+                            <field name="eyes_pixel71">FALSE</field>
+                            <field name="eyes_pixel79">FALSE</field>
+                            <field name="eyes_pixel87">FALSE</field>
+                            <field name="eyes_pixel95">FALSE</field>
+                            <field name="eyes_pixel103">FALSE</field>
+                            <field name="eyes_pixel111">FALSE</field>
+                            <field name="eyes_pixel119">FALSE</field>
+                            <field name="eyes_pixel127">FALSE</field>
+                            <field name="eyes_pixel6">TRUE</field>
+                            <field name="eyes_pixel14">FALSE</field>
+                            <field name="eyes_pixel22">FALSE</field>
+                            <field name="eyes_pixel30">FALSE</field>
+                            <field name="eyes_pixel38">FALSE</field>
+                            <field name="eyes_pixel46">FALSE</field>
+                            <field name="eyes_pixel54">FALSE</field>
+                            <field name="eyes_pixel62">FALSE</field>
+                            <field name="eyes_pixel70">TRUE</field>
+                            <field name="eyes_pixel78">TRUE</field>
+                            <field name="eyes_pixel86">TRUE</field>
+                            <field name="eyes_pixel94">FALSE</field>
+                            <field name="eyes_pixel102">TRUE</field>
+                            <field name="eyes_pixel110">TRUE</field>
+                            <field name="eyes_pixel118">TRUE</field>
+                            <field name="eyes_pixel126">TRUE</field>
+                            <field name="eyes_pixel5">TRUE</field>
+                            <field name="eyes_pixel13">TRUE</field>
+                            <field name="eyes_pixel21">TRUE</field>
+                            <field name="eyes_pixel29">FALSE</field>
+                            <field name="eyes_pixel37">TRUE</field>
+                            <field name="eyes_pixel45">FALSE</field>
+                            <field name="eyes_pixel53">TRUE</field>
+                            <field name="eyes_pixel61">FALSE</field>
+                            <field name="eyes_pixel69">FALSE</field>
+                            <field name="eyes_pixel77">TRUE</field>
+                            <field name="eyes_pixel85">FALSE</field>
+                            <field name="eyes_pixel93">FALSE</field>
+                            <field name="eyes_pixel101">FALSE</field>
+                            <field name="eyes_pixel109">FALSE</field>
+                            <field name="eyes_pixel117">TRUE</field>
+                            <field name="eyes_pixel125">FALSE</field>
+                            <field name="eyes_pixel4">TRUE</field>
+                            <field name="eyes_pixel12">FALSE</field>
+                            <field name="eyes_pixel20">TRUE</field>
+                            <field name="eyes_pixel28">FALSE</field>
+                            <field name="eyes_pixel36">TRUE</field>
+                            <field name="eyes_pixel44">FALSE</field>
+                            <field name="eyes_pixel52">TRUE</field>
+                            <field name="eyes_pixel60">FALSE</field>
+                            <field name="eyes_pixel68">TRUE</field>
+                            <field name="eyes_pixel76">FALSE</field>
+                            <field name="eyes_pixel84">FALSE</field>
+                            <field name="eyes_pixel92">FALSE</field>
+                            <field name="eyes_pixel100">FALSE</field>
+                            <field name="eyes_pixel108">TRUE</field>
+                            <field name="eyes_pixel116">FALSE</field>
+                            <field name="eyes_pixel124">FALSE</field>
+                            <field name="eyes_pixel3">TRUE</field>
+                            <field name="eyes_pixel11">TRUE</field>
+                            <field name="eyes_pixel19">TRUE</field>
+                            <field name="eyes_pixel27">FALSE</field>
+                            <field name="eyes_pixel35">TRUE</field>
+                            <field name="eyes_pixel43">TRUE</field>
+                            <field name="eyes_pixel51">TRUE</field>
+                            <field name="eyes_pixel59">FALSE</field>
+                            <field name="eyes_pixel67">TRUE</field>
+                            <field name="eyes_pixel75">TRUE</field>
+                            <field name="eyes_pixel83">TRUE</field>
+                            <field name="eyes_pixel91">FALSE</field>
+                            <field name="eyes_pixel99">TRUE</field>
+                            <field name="eyes_pixel107">TRUE</field>
+                            <field name="eyes_pixel115">TRUE</field>
+                            <field name="eyes_pixel123">TRUE</field>
+                            <field name="eyes_pixel2">FALSE</field>
+                            <field name="eyes_pixel10">FALSE</field>
+                            <field name="eyes_pixel18">FALSE</field>
+                            <field name="eyes_pixel26">FALSE</field>
+                            <field name="eyes_pixel34">FALSE</field>
+                            <field name="eyes_pixel42">FALSE</field>
+                            <field name="eyes_pixel50">FALSE</field>
+                            <field name="eyes_pixel58">FALSE</field>
+                            <field name="eyes_pixel66">FALSE</field>
+                            <field name="eyes_pixel74">FALSE</field>
+                            <field name="eyes_pixel82">FALSE</field>
+                            <field name="eyes_pixel90">FALSE</field>
+                            <field name="eyes_pixel98">FALSE</field>
+                            <field name="eyes_pixel106">FALSE</field>
+                            <field name="eyes_pixel114">FALSE</field>
+                            <field name="eyes_pixel122">FALSE</field>
+                            <field name="eyes_pixel1">FALSE</field>
+                            <field name="eyes_pixel9">FALSE</field>
+                            <field name="eyes_pixel17">FALSE</field>
+                            <field name="eyes_pixel25">FALSE</field>
+                            <field name="eyes_pixel33">FALSE</field>
+                            <field name="eyes_pixel41">FALSE</field>
+                            <field name="eyes_pixel49">FALSE</field>
+                            <field name="eyes_pixel57">FALSE</field>
+                            <field name="eyes_pixel65">FALSE</field>
+                            <field name="eyes_pixel73">FALSE</field>
+                            <field name="eyes_pixel81">FALSE</field>
+                            <field name="eyes_pixel89">FALSE</field>
+                            <field name="eyes_pixel97">FALSE</field>
+                            <field name="eyes_pixel105">FALSE</field>
+                            <field name="eyes_pixel113">FALSE</field>
+                            <field name="eyes_pixel121">FALSE</field>
+                            <field name="eyes_pixel0">FALSE</field>
+                            <field name="eyes_pixel8">FALSE</field>
+                            <field name="eyes_pixel16">FALSE</field>
+                            <field name="eyes_pixel24">FALSE</field>
+                            <field name="eyes_pixel32">FALSE</field>
+                            <field name="eyes_pixel40">FALSE</field>
+                            <field name="eyes_pixel48">FALSE</field>
+                            <field name="eyes_pixel56">FALSE</field>
+                            <field name="eyes_pixel64">FALSE</field>
+                            <field name="eyes_pixel72">FALSE</field>
+                            <field name="eyes_pixel80">FALSE</field>
+                            <field name="eyes_pixel88">FALSE</field>
+                            <field name="eyes_pixel96">FALSE</field>
+                            <field name="eyes_pixel104">FALSE</field>
+                            <field name="eyes_pixel112">FALSE</field>
+                            <field name="eyes_pixel120">FALSE</field>
+                            <next>
+                              <block type="otto_move" id="v+Qqt9PPwk(8wg![a^^K">
+                                <field name="otto_move_sens">SHAKERIGHT</field>
+                                <field name="otto_move_speed">1000</field>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="otto9_eyes#" id="1*e)UeBvRhVRfj4srmpA">
+                            <value name="eyes">
+                              <shadow type="math_number" id="rg$q`hcuPbXoi;y.+E,l">
+                                <field name="NUM">3</field>
+                              </shadow>
+                              <block type="variables_get" id=":C1=!ujr1Ihkj;vqy0|y">
+                                <field name="VAR">counter</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="base_delay" id="jw|rftUagD|w;`Q1LC}a">
+                                <field name="unite">s</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id=":M%;k07Q]BVZLG6do@1U">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="otto9_eyes_clear" id="d;Q%+61dG}o::R1N(QR8">
+                            <next>
+                              <block type="math_change" id="Down5MhuE|J;$s^BtOqS">
+                                <field name="VAR">counter</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="+sAvS;M+SH5HC$~v#^`)">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="otto9_eyes_face" id="6iS)t]XNlxfaJ%`://xl">
+                        <field name="otto9_eyes_choice">happy_bmp</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

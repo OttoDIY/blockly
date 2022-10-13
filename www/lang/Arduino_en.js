@@ -179,7 +179,7 @@ Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT = "Disable the previously specifie
 Blockly.Msg.LKL_MODE = 'is detected on the Pin';
 // FIELDDROPDOWN
 Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
-Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]; // do not translate
+Blockly.Msg.tempo = [["\u266B beamed notes", "125"], ["\u266A eight note", "250"], ["\u2669 quarter note", "500"], ["\uD834\uDD5E half note", "1000"], ["\uD834\uDD5D whole otte", "2000"]]; // do not translate
 Blockly.Msg.on_off = [["ON", "HIGH"], ["OFF", "LOW"]];
 Blockly.Msg.menublink = [["slow", "1000"], ["fast", "100"]];
 Blockly.Msg.AV_AR = [[Blockly.Msg.AV, "FORWARD"], [Blockly.Msg.AR, "BACKWARD"]]; // do not translate

@@ -22,7 +22,7 @@ Blockly.Arduino["play"]=function(block){
     var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
-    Blockly.Arduino.setups_["setup_output"]="pinMode( "+value_pin+" , OUTPUT);";
+    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode( "+value_pin+" , OUTPUT);";
     return "tone(  "+value_pin+"," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
 };
 Blockly.Python["play"]=function(block){
