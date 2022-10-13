@@ -1,0 +1,426 @@
+#########################################
+# Syntax Coloring Map Firebase-ESP-Client
+#########################################
+
+#########################################
+# Classes (KEYWORD1)
+#########################################
+
+Firebase    KEYWORD1
+FirebaseData    KEYWORD1
+FirebaseStream  KEYWORD1
+MultiPathStream KEYWORD1
+QueryFilter KEYWORD1
+QueueManager    KEYWORD1
+QueueInfo   KEYWORD1
+FCM KEYWORD1
+RTDB    KEYWORD1
+Storage KEYWORD1
+FirebaseJson    KEYWORD1
+FirebaseJsonArray   KEYWORD1
+FirebaseJsonData    KEYWORD1
+FirebaseConfig  KEYWORD1
+FirebaseAuth    KEYWORD1
+Functions   KEYWORD1
+FunctionsConfig KEYWORD1
+PolicyBuilder   KEYWORD1
+Binding KEYWORD1
+AuditLogConfig  KEYWORD1
+AuditConfig KEYWORD1
+UploadOptions   KEYWORD1
+RequestProperties   KEYWORD1
+UploadStatusInfo    KEYWORD1
+ProgressCallback    KEYWORD1
+StorageGetOptions   KEYWORD1
+DeleteOptions   KEYWORD1
+ListOptions KEYWORD1
+FunctionsOperationCallback  KEYWORD1
+FunctionsOperationStatusInfo    KEYWORD1
+
+###############################################
+# Methods and Functions for Firebase (KEYWORD2)
+###############################################
+
+begin   KEYWORD2
+setIdToken  KEYWORD2
+setAccessToken    KEYWORD2
+isTokenExpired  KEYWORD2
+refreshToken    KEYWORD2
+reset   KEYWORD2
+deleteUser  KEYWORD2
+reconnectWiFi   KEYWORD2
+setFloatDigits  KEYWORD2
+setDoubleDigits KEYWORD2
+setReadTimeout  KEYWORD2
+setwriteSizeLimit   KEYWORD2
+getShallowData  KEYWORD2
+enableClassicRequest    KEYWORD2
+setPriority KEYWORD2
+getPriority KEYWORD2
+getRules    KEYWORD2
+setRules    KEYWORD2
+setReadWriteRules   KEYWORD2
+pathExist   KEYWORD2
+getETag KEYWORD2
+enableClassicRequest    KEYWORD2
+pushInt KEYWORD2
+pushFloat   KEYWORD2
+pushDouble  KEYWORD2
+pushBool    KEYWORD2
+pushString  KEYWORD2
+pushJSON    KEYWORD2
+pushBlob    KEYWORD2
+pushFile    KEYWORD2
+pushTimestamp   KEYWORD2
+setInt  KEYWORD2
+setFloat    KEYWORD2
+setDouble   KEYWORD2
+setBool KEYWORD2
+setString   KEYWORD2
+setJSON KEYWORD2
+setBlob KEYWORD2
+setFile KEYWORD2
+setTimestamp    KEYWORD2
+updateNode  KEYWORD2
+updateNodeSilent    KEYWORD2
+setExternalClient   KEYWORD2
+setExternalClientCallbacks  KEYWORD2
+setNetworkStatus    KEYWORD2
+getFreeHeap KEYWORD2
+getCurrentTime  KEYWORD2
+
+set KEYWORD2
+push    KEYWORD2
+setAsync    KEYWORD2
+pushAsync   KEYWORD2
+pushIntAsync    KEYWORD2
+pushFloatAsync  KEYWORD2
+pushDoubleAsync KEYWORD2
+pushBoolAsync   KEYWORD2
+pushStringAsync KEYWORD2
+pushJSONAsync   KEYWORD2
+pushBlobAsync   KEYWORD2
+pushFileAsync   KEYWORD2
+pushTimestampAsync  KEYWORD2
+setIntAsync KEYWORD2
+setFloatAsync   KEYWORD2
+setDoubleAsync  KEYWORD2
+setBoolAsync    KEYWORD2
+setStringAsync  KEYWORD2
+setJSONAsync    KEYWORD2
+setBlobAsync    KEYWORD2
+setFileAsync    KEYWORD2
+setTimestampAsync   KEYWORD2
+updateNodeAsync KEYWORD2
+updateNodeSilentAsync   KEYWORD2
+setPriorityAsync    KEYWORD2
+
+
+getInt  KEYWORD2
+getFloat    KEYWORD2
+getDouble   KEYWORD2
+getBool KEYWORD2
+getString   KEYWORD2
+getJSON KEYWORD2
+getBlob KEYWORD2
+getFile KEYWORD2
+deleteNode  KEYWORD2
+deleteNodesByTimestamp  KEYWORD2
+beginStream KEYWORD2
+beginMultiPathStream    KEYWORD2
+readStream  KEYWORD2
+endStream   KEYWORD2
+setStreamCallback   KEYWORD2
+setMultiPathStreamCallback  KEYWORD2
+removeStreamCallback    KEYWORD2
+removeMultiPathStreamCallback   KEYWORD2
+beginAutoRunErrorQueue  KEYWORD2
+endAutoRunErrorQueue    KEYWORD2
+clearErrorQueue KEYWORD2
+backup  KEYWORD2
+restore KEYWORD2
+sdBegin KEYWORD2
+sdMMCBegin  KEYWORD2
+setSystemTime   KEYWORD2
+setMaxRetry KEYWORD2
+setMaxErrorQueue    KEYWORD2
+saveErrorQueue  KEYWORD2
+deleteStorageFile   KEYWORD2
+restoreErrorQueue   KEYWORD2
+errorQueueCount KEYWORD2
+isErrorQueueFull    KEYWORD2
+processErrorQueue   KEYWORD2
+getErrorQueueID KEYWORD2
+isErrorQueueExisted KEYWORD2
+errorToString   KEYWORD2
+sendMessage KEYWORD2
+broadcastMessage    KEYWORD2
+sendTopic   KEYWORD2
+setStreamTaskStackSize  KEYWORD2
+allowMultipleRequests    KEYWORD2
+authTokenInfo   KEYWORD2
+tokenReady  KEYWORD2
+signUp  KEYWORD2
+sendEmailVerification   KEYWORD2
+sendResetPassword   KEYWORD2
+exportDocuments KEYWORD2
+importDocuments KEYWORD2
+createDocument  KEYWORD2
+patchDocument   KEYWORD2
+commitDocument  KEYWORD2
+beginTransaction    KEYWORD2
+rollback    KEYWORD2
+commitDocumentAsync KEYWORD2
+getDocument KEYWORD2
+deleteDocument  KEYWORD2
+listDocuments   KEYWORD2
+listCollectionIds   KEYWORD2
+callFunction    KEYWORD2
+createFunction  KEYWORD2
+patchFunction   KEYWORD2
+setIamPolicy    KEYWORD2
+getIamPolicy    KEYWORD2
+getFunction KEYWORD2
+deleteFunction  KEYWORD2
+generateDownloadUrl KEYWORD2
+generateUploadUrl   KEYWORD2
+listFunctions   KEYWORD2
+listOperations  KEYWORD2
+setName KEYWORD2
+setDescription  KEYWORD2
+setEntryPoint   KEYWORD2
+setRuntime  KEYWORD2
+setTimeout  KEYWORD2
+setAvailableMemoryMb    KEYWORD2
+setMaxInstances KEYWORD2
+setSource   KEYWORD2
+addLabel    KEYWORD2
+clearLabels KEYWORD2
+addEnvironmentVariable  KEYWORD2
+clearEnvironmentVariables   KEYWORD2
+addBuildEnvironmentVariable KEYWORD2
+clearBuildEnvironmentVariables  KEYWORD2
+setNetwork  KEYWORD2
+setVpcConnector KEYWORD2
+setVpcConnectorEgressSettings   KEYWORD2
+setIngressSettings  KEYWORD2
+setEventTrigger KEYWORD2
+setIamPolicy    KEYWORD2
+getTriggerUrl   KEYWORD2
+setLogType  KEYWORD2
+addexemptedMembers  KEYWORD2
+clearexemptedMembers    KEYWORD2
+setService  KEYWORD2
+addAuditLogConfig   KEYWORD2
+clearAuditLogConfigs    KEYWORD2
+addMember   KEYWORD2
+setRole KEYWORD2
+setCondition    KEYWORD2
+clearMembers    KEYWORD2
+addAuditConfig  KEYWORD2
+clearAuditConfigs   KEYWORD2
+addBinding  KEYWORD2
+setVersion  KEYWORD2
+setETag KEYWORD2
+clearBindings   KEYWORD2
+runQuery    KEYWORD2
+setDeviceTime   KEYWORD2
+setQueryIndex   KEYWORD2
+removeQueryIndex    
+authenticated   KEYWORD2
+ready   KEYWORD2
+getToken    KEYWORD2
+getRefreshToken KEYWORD2
+
+upload  KEYWORD2
+download    KEYWORD2
+downloadOTA KEYWORD2
+getMetadata KEYWORD2
+deleteFile  KEYWORD2
+listFiles   KEYWORD2
+
+#############################################
+# Methods for Firebase Data object (KEYWORD2)
+#############################################
+
+pauseFirebase   KEYWORD2
+isPause KEYWORD2
+getWiFiClient   KEYWORD2
+dataType    KEYWORD2
+eventType   KEYWORD2
+ETag    KEYWORD2
+streamPath  KEYWORD2
+dataPath    KEYWORD2
+errorReason KEYWORD2
+intData KEYWORD2
+floatData   KEYWORD2
+doubleData  KEYWORD2
+boolData    KEYWORD2
+stringData  KEYWORD2
+jsonObjectPtr   KEYWORD2
+jsonObject  KEYWORD2
+jsonArrayPtr    KEYWORD2
+jsonArray   KEYWORD2
+jsonString  KEYWORD2
+blobData    KEYWORD2
+pushName    KEYWORD2
+isStream    KEYWORD2
+httpConnected   KEYWORD2
+streamTimeout   KEYWORD2
+dataAvailable   KEYWORD2
+streamAvailable KEYWORD2
+mismatchDataType    KEYWORD2
+httpCode    KEYWORD2
+getBackupFilename   KEYWORD2
+getBackupFileSize   KEYWORD2
+clear   KEYWORD2
+fileTransferError   KEYWORD2
+payload KEYWORD2
+dataTypeEnum    KEYWORD2
+queryFilter KEYWORD2
+empty   KEYWORD2
+stopWiFiClient  KEYWORD2
+fileStream  KEYWORD2
+setResponseSize KEYWORD2
+bufferOverflow  KEYWORD2
+payloadLength   KEYWORD2
+maxPayloadLength    KEYWORD2
+setCert KEYWORD2
+
+########################################################
+# Methods for Firebase Cloud Messaging Object (KEYWORD2)
+########################################################
+setServerKey    KEYWORD2
+subscribeTopic  KEYWORD2
+unsubscribeTopic    KEYWORD2
+send    KEYWORD2
+regisAPNsTokens KEYWORD2
+appInstanceInfo KEYWORD2
+
+
+####################################
+# Methods for QueryFilter (KEYWORD2)
+####################################
+
+orderBy KEYWORD2
+limitToFirst    KEYWORD2
+limitToLast KEYWORD2
+startAt KEYWORD2
+endAt   KEYWORD2
+equalTo KEYWORD2
+
+################################
+# Methods for QueInfo (KEYWORD2)
+################################
+
+totalQueues KEYWORD2
+currentQueueID  KEYWORD2
+isQueueFull KEYWORD2
+dataType    KEYWORD2
+firebaseMethod  KEYWORD2
+dataPath    EYWORD2
+
+#######################################
+# Struct (KEYWORD3)
+#######################################
+
+FirebaseDataType    KEYWORD3
+FirebaseMethod  KEYWORD3
+QueueStorageType    KEYWORD3
+QueueItem   KEYWORD3
+token_info_t    KEYWORD3
+TokenInfo   KEYWORD3
+fb_json_last_error_t    KEYWORD3
+Firesense_Config    KEYWORD3
+FireSense_Channel   KEYWORD3
+Firesense_Channel_Type  KEYWORD3
+FireSense_Condition KEYWORD3
+FireSense_Data_Type KEYWORD3
+fb_esp_firestore_document_write_field_transforms_t  KEYWORD3
+fb_esp_firestore_document_write_document_transform_t    KEYWORD3
+fb_esp_firestore_document_precondition_t    KEYWORD3
+fb_esp_firestore_document_write_t   KEYWORD3
+TransactionOptions  KEYWORD3
+SPI_ETH_Module  KEYWORD3
+
+#######################################
+# FirebaseJson Struct (KEYWORD3)
+#######################################
+
+SearchCriteria  KEYWORD3
+
+
+###########################################################
+# Methods for FirebaseJSON and FirebaseJsonArray (KEYWORD2)
+###########################################################
+
+clear   KEYWORD2
+setJsonData KEYWORD2
+setJsonArrayData    KEYWORD2
+add KEYWORD2
+toString    KEYWORD2
+get KEYWORD2
+parse   KEYWORD2
+iteratorBegin   KEYWORD2
+iteratorEnd KEYWORD2
+iteratorGet KEYWORD2
+set KEYWORD2
+remove  KEYWORD2
+size    KEYWORD2
+stringValue KEYWORD2
+intValue    KEYWORD2
+floatValue  KEYWORD2
+doubleValue KEYWORD2
+boolValue   KEYWORD2
+type    KEYWORD2
+typeNum KEYWORD2
+success KEYWORD2
+getArray    KEYWORD2
+getJson KEYWORD2
+to  KEYWORD2
+readFrom    KEYWORD2
+setFloatDigits  KEYWORD2
+setDoubleDigits KEYWORD2
+payloadLen  KEYWORD2
+search  KEYWORD2
+serializedBufferLength  KEYWORD2
+responseCode    KEYWORD2
+errorPosition   KEYWORD2
+getPath KEYWORD2
+isMember    KEYWORD2
+
+#########################################
+# Methods for FireSense addons (KEYWORD2)
+#########################################
+
+loadConfig  KEYWORD2
+backupConfig    KEYWORD2
+restoreConfig   KEYWORD2
+enableController    KEYWORD2
+addChannel  KEYWORD2
+addCondition    KEYWORD2
+addCallbackFunction KEYWORD2
+clearAllCallbackFunctions   KEYWORD2
+addUserValue    KEYWORD2
+clearAllUserValues  KEYWORD2
+getDeviceId KEYWORD2
+
+######################################
+# Constants (LITERAL1)
+#######################################
+JSON_UNDEFINED  LITERAL1
+JSON_OBJECT LITERAL1
+JSON_ARRAY  LITERAL1
+JSON_STRING LITERAL1
+JSON_INT    LITERAL1
+JSON_FLOAT  LITERAL1
+JSON_DOUBLE LITERAL1
+JSON_BOOL   LITERAL1
+JSON_NULL   LITERAL1
+Output  LITERAL1
+Input   LITERAL1
+Value   LITERAL1
+Byte    LITERAL1
+Boolean LITERAL1
+Integer LITERAL1
+Float   LITERAL1

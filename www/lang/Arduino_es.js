@@ -114,6 +114,7 @@ Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
 Blockly.Msg.CAT_TM1637="💡 DIGITS";
+Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segmentos";
@@ -1156,6 +1157,20 @@ Blockly.Msg.Thingspeak_Write= "Escribir valor";
 Blockly.Msg.Thingspeak_field = "en el campo";
 Blockly.Msg.Thingspeak_ReadLong= "Leer como long del campo";
 Blockly.Msg.Thingspeak_ReadFloat= "Leer como float del campo";
+
+//Firebase
+Blockly.Msg.Firebase_name_init = "Configuracion de Firebase.";
+Blockly.Msg.firebase_name = "Firebase.";
+Blockly.Msg.Firebase_url = "URL";
+Blockly.Msg.Firebase_api = "Api key";
+Blockly.Msg.Firebase_start = " Inicialización en Setup";
+Blockly.Msg.Firebase_type = " Almacenar ";
+Blockly.Msg.Firebase_read = " Leer ";
+Blockly.Msg.Firebase_Node = "en el nodo"
+Blockly.Msg.Firebase_Value= "con valor";
+Blockly.Msg.Firebase_String_Node="Almacenar string en el nodo";
+Blockly.Msg.Firebase_Read_String_Node="Leer string en el nodo";
+Blockly.Msg.firebase_delete = "Borrar nodo";
 
 //Telegram
 Blockly.Msg.Telegram_name_init = "Configuracion Telegram chat.";
