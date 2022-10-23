@@ -1070,12 +1070,23 @@
 		</category>
 
 		<category name="CAT_RemoteIR" colour="#0060aa">
-		 <block type="Init_generalremotecontrol">
-			<field name="PIN_IR">33</field></block>
-		 <block type="IR_Remote_Key"></block>
-		 <block type="Init_remotecontrolMRTNode">
-			<field name="PIN_IR">33</field></block>
-	     <block type="IR_RemoteMRT_Key_Node"></block>	 
+			 <block type="Init_generalremotecontrol">
+				<field name="PIN_IR">33</field></block>
+			 <block type="IR_Remote_Key"></block>
+			 
+			<!-- <block type="Init_remotecontrolMRTNode">
+				<field name="PIN_IR">33</field></block>
+			 <block type="IR_RemoteMRT_Key_Node"></block>	--> 
+		 
+		 
+		    <block type="Init_remotecontrolMRTNodeIL">
+				<field name="PIN_IR">33</field></block>
+			<block type="Attend_remotecontrolMRTNodeIL"></block>
+			<block type="IR_RemoteMRT_Key_NodeIL"></block>	
+		 
+		 
+		 
+		 
 		</category>
 	</category> 
 		

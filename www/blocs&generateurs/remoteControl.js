@@ -481,4 +481,91 @@ Blockly.Arduino['IR_RemoteMRT_Key_Node'] = function(block) {
 
 
 
+//Remote control MRTxNode for ESP32 using the library
 
+Blockly.Blocks['Init_remotecontrolMRTNodeIL'] = {
+  helpUrl: '',
+  init: function() {
+	 var card=window.localStorage.card;
+    this.setColour("#0060aa");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/genericRC.png",26,38))
+		.appendField(Blockly.Msg.MRT_IR)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.PIN2)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
+  	this.appendDummyInput()
+        .appendField(Blockly.Msg.MRT_CHANNEL)
+        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");	
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('My robot Time Remote Control inicialization. Select the channel and the pin.');
+  }
+};
+
+
+Blockly.Arduino['Init_remotecontrolMRTNodeIL'] = function(block) {
+
+  
+  var pin_ir = block.getFieldValue('PIN_IR');
+  var Channel = this.getFieldValue('CHANNEL');
+  
+ Blockly.Arduino.includes_['include_IR_library'] = '#include<MRT_Friends_esp32_IRremote.h>\n';
+  
+ Blockly.Arduino.variables_['variables_IR'] = 'IRrecv irrecv1('+pin_ir+');\n'+
+'int remote_button;\n'+
+'int recommon_flag;\n';
+
+
+ var code = 'irrecv1.enableIRIn();\n'+
+ 'recommon_flag = 1;\n';
+  return code;
+};
+
+Blockly.Blocks['IR_RemoteMRT_Key_NodeIL'] = {
+  helpUrl: '',
+  init: function() {
+    this.setColour("#0060aa");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/remotecontrol.png",65,38))
+	    .appendField(Blockly.Msg.MRT_KEY)
+		.appendField(new Blockly.FieldDropdown([["UP", "44"], ["DOWN", "62"],["LEFT", "63"],["RIGHT", "61"],["UP and LEFT", "54"],["UP and RIGHT", "60"],["DOWN and LEFT", "51"],["DOWN and RIGHT", "57"],["F1", "50"],["F2", "35"],["F3", "52"],["F4", "37"],["F5", "38"],["F6", "55"],["OFF", "53"]]), "KEY")
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.MRT_PRESSED)
+    this.setOutput(true, 'Boolean');
+	this.setInputsInline(true);
+    this.setTooltip('Check if the MRT remote control ir key is pressed');
+  }
+};
+
+Blockly.Arduino['IR_RemoteMRT_Key_NodeIL'] = function(block) {
+  var key_detected = this.getFieldValue('KEY');
+    
+  var code = '(irrecv1.mrtRemoteStateCheck(remote_button,'+key_detected+'))';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+Blockly.Blocks['Attend_remotecontrolMRTNodeIL'] = {
+  helpUrl: '',
+  init: function() {
+	this.setColour("#0060aa");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/genericRC.png",26,38))
+		.appendField(Blockly.Msg.ATTEND_MRT_IR)
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Loop. Attend the key pressed in the remote control by IR');
+  }
+};
+
+
+Blockly.Arduino['Attend_remotecontrolMRTNodeIL'] = function(block) {
+
+  
+ var code = 'remote_button = irrecv1.mrtRemoteLoop();\n';
+ 
+  return code;
+};

@@ -253,7 +253,7 @@ Blockly.Arduino["millis"]=function(block){
             var code="millis()";
             break;
         case "s":
-            code="1000*millis()";
+            code="millis()/1000";
             break
 	}
     return [code, Blockly.Arduino.ORDER_ATOMIC]

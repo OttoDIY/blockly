@@ -706,6 +706,7 @@ Blockly.Msg.MRT_CHANNEL="Channel";
 Blockly.Msg.MRT_KEY="Key MRT";
 Blockly.Msg.MRT_PRESSED="Pressed?";
 Blockly.Msg.PIN2="Interrupt PIN";
+Blockly.Msg.ATTEND_MRT_IR="Attend Remote Control MRT";
 
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
