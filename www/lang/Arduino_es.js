@@ -71,7 +71,7 @@ Blockly.Msg.CAT_RFID="💳 RFID";
 Blockly.Msg.CAT_KEYBOARD="🖱️Ratón y ⌨️Teclas";
 Blockly.Msg.CAT_CCS811 = "⛅ CO2";
 Blockly.Msg.CAT_GAS = "⛽ Gas"
-Blockly.Msg.CAT_RTC_DS3231 = "⏲️ Reloj TiempoReal";
+Blockly.Msg.CAT_RTC_DS3231 = "⏲️ Reloj Tiempo Real";
 Blockly.Msg.CAT_TIME_GENERAL = "General";
 Blockly.Msg.CAT_BME280 = "🗜️ Presión";
 Blockly.Msg.CAT_VL53L0X = "📏 Distancia";
