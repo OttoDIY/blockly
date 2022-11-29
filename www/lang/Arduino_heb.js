@@ -106,6 +106,7 @@ Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
 Blockly.Msg.CAT_TM1637="💡 DIGITS";
 Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
+Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";

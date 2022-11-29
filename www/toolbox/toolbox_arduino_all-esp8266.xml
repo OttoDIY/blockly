@@ -1045,6 +1045,24 @@
 						
 		</category>
 		
+		<category name="CAT_ESPNOW" colour="#26C6F8">
+		
+			<block type="espnow_init_esp8266">
+					<value name="id_node"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="espnow_esp8266_reception_function"></block>
+			<block type="espnow_sendmessage_all"></block>
+			<block type="espnow_sendmessage_mac"></block>
+			<block type="espnow_paramInt_fill"></block>
+			<block type="espnow_paramFloat_fill"></block>
+			<block type="espnow_paramText_fill"></block>
+			<block type="espnow_paramNode_refund"></block>
+			<block type="espnow_paramInt_refund"></block>
+			<block type="espnow_paramFloat_refund"></block>
+			<block type="espnow_paramText_refund"></block>
+		
+		</category>
+		
 		
 		<category name="CAT_MQTT" colour="#26C6F8">
 			<block type="mqtt_init"></block>

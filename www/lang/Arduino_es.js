@@ -115,6 +115,7 @@ Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
 Blockly.Msg.CAT_TM1637="💡 DIGITS";
 Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
+Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segmentos";
@@ -1324,5 +1325,18 @@ Blockly.Msg.RE_READ="Read Value";
 Blockly.Msg.RE_WRITE="Write Value";
 Blockly.Msg.RE_Button="Button";
 Blockly.Msg.RE_Pressed="pressed?";
+
+//ESP-NOW
+Blockly.Msg.ESPNOW_init = "Inicialización del protocolo. Nodo";
+Blockly.Msg.ESPNOW_msg_received = "Cuando se recibe un mensaje";
+Blockly.Msg.ESPNOW_send_all = "Enviar a todos los nodos.";
+Blockly.Msg.ESPNOW_send_mac = "Enviar al nodo con MAC: ";
+Blockly.Msg.ESPNOW_fill_int = "Rellenar el parametro Int a:";
+Blockly.Msg.ESPNOW_fill_float = "Rellenar el parametro Float a:";
+Blockly.Msg.ESPNOW_fill_text = "Rellenar el parametro de Texto a:";
+Blockly.Msg.ESPNOW_read_node = "Id del Nodo recibido";
+Blockly.Msg.ESPNOW_read_param_int = "Parametro Int recibido";
+Blockly.Msg.ESPNOW_read_param_float = "Parametro Float recibido";
+Blockly.Msg.ESPNOW_read_param_text = "Parametro Texto recibido";
 
 

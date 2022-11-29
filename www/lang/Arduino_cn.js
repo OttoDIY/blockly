@@ -1292,3 +1292,16 @@ Blockly.Msg.RE_READ="Read Value";
 Blockly.Msg.RE_WRITE="Write Value";
 Blockly.Msg.RE_Button="Button";
 Blockly.Msg.RE_Pressed="pressed?";
+
+//ESP-NOW
+Blockly.Msg.ESPNOW_init = "Init the protocol. Node";
+Blockly.Msg.ESPNOW_msg_received = "When a message is received";
+Blockly.Msg.ESPNOW_send_all = "Send the message to all nodes.";
+Blockly.Msg.ESPNOW_send_mac = "Send the message to the mac: ";
+Blockly.Msg.ESPNOW_fill_int = "Fill the Int param of the struct to:";
+Blockly.Msg.ESPNOW_fill_float = "Fill the Float param of the struct to:";
+Blockly.Msg.ESPNOW_fill_text = "Fill the Text param of the struct to:";
+Blockly.Msg.ESPNOW_read_node = "Id node received";
+Blockly.Msg.ESPNOW_read_param_int = "Param Int received";
+Blockly.Msg.ESPNOW_read_param_float = "Param Float received";
+Blockly.Msg.ESPNOW_read_param_text = "Param Text received";
