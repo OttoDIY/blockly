@@ -51,7 +51,9 @@ Blockly.Arduino['wifi_init_sta'] = function(block) {
   
 if(logic=='TRUE')
 {
- var code= 'Serial.begin(115200);\n'+
+	
+
+Blockly.Arduino.setups_["Wifi_station_mode"] = 'Serial.begin(115200);\n'+
 '	delay(2000);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
 '	Serial.println("Conectando");\n'+
@@ -69,13 +71,14 @@ if(logic=='TRUE')
 
 }
 else{
- var code= 'delay(2000);\n'+
+ Blockly.Arduino.setups_["Wifi_station_mode"] = 'delay(2000);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
 '	while (WiFi.status() != WL_CONNECTED){\n'+
 '	delay(500);\n'+
 '	}\n';
 }
 
+  var code='';
   return code;
 };
 
@@ -120,7 +123,7 @@ Blockly.Arduino['wifi_init_ap'] = function(block) {
   
 if(logic=='TRUE')
 {
- var code= 'Serial.begin(115200);\n'+
+Blockly.Arduino.setups_["Wifi_action_point_mode"] = 'Serial.begin(115200);\n'+
 'delay(2000);\n'+
 'WiFi.mode(WIFI_AP);\n'+
 'Serial.println("Conectando como modo punto de acceso");\n'+
@@ -138,13 +141,14 @@ if(logic=='TRUE')
 
 }
 else{
- var code= 'delay(2000);\n'+
+Blockly.Arduino.setups_["Wifi_action_point_mode"] = 'delay(2000);\n'+
 '   WiFi.mode(WIFI_AP);\n'+
 '	while (!WiFi.softAP(wifi_ssid,wifi_pass)){\n'+
 '	delay(500);\n'+
 '	}\n';
 }
-
+  
+  var code='';
   return code;
 };
 
@@ -197,7 +201,7 @@ Blockly.Arduino['wifi_init_sta_ap'] = function(block) {
  
 if(logic=='TRUE')
 {
- var code= 'Serial.begin(115200);\n'+
+Blockly.Arduino.setups_["Wifi_ap_sta_mode"] = 'Serial.begin(115200);\n'+
 '	delay(2000);\n'+
 '   WiFi.mode(WIFI_AP_STA);\n'+
 '	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
@@ -221,7 +225,7 @@ if(logic=='TRUE')
 '	Serial.println(WiFi.softAPIP());\n';
 }
 else{
-var code= 'delay(2000);\n'+
+Blockly.Arduino.setups_["Wifi_ap_sta_mode"] = 'delay(2000);\n'+
 '   WiFi.mode(WIFI_AP_STA);\n'+
 '	WiFi.softAP(wifi_ssid2,wifi_pass2);\n'+
 '	WiFi.begin(wifi_ssid,wifi_pass);\n'+
@@ -231,7 +235,7 @@ var code= 'delay(2000);\n'+
 '	WiFi.setAutoReconnect(true);\n';
 }
 
-
+  var code='';
   return code;
 };
 
