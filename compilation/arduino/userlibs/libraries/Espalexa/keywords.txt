@@ -1,0 +1,11 @@
+#######################################
+# Syntax Coloring Map For Espalexa
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Espalexa	KEYWORD1
+EspalexaDevice	KEYWORD1
+EspalexaDeviceType	KEYWORD1

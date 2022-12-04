@@ -1305,3 +1305,10 @@ Blockly.Msg.ESPNOW_read_node = "Id node received";
 Blockly.Msg.ESPNOW_read_param_int = "Param Int received";
 Blockly.Msg.ESPNOW_read_param_float = "Param Float received";
 Blockly.Msg.ESPNOW_read_param_text = "Param Text received";
+
+//ALEXA
+Blockly.Msg.Alexa_init = "Alexa.Device number:";
+Blockly.Msg.Alexa_init2 = "Name:";
+Blockly.Msg.Alexa_cb = "When a Alexa message is received from device:";
+Blockly.Msg.Alexa_Loop = "Manage the Alexa connection.Loop";
+Blockly.Msg.Alexa_Param = "Get parameter";

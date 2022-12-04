@@ -1238,6 +1238,15 @@
 			<block type="telegram_message_name_received"></block>
 		</category>
 		
+		<category name="CAT_ALEXA" colour="#26C6F8">
+		
+			<block type="Alexa_init_esp"> </block>
+			<block type="Alexa_reception_function"></block>
+			<block type="Alexa_loop"></block>
+			<block type="Alexa_param"></block>
+					
+		</category>
+		
 		<category name="CAT_html" colour="#26C6F8">
 		
 			<block type="esp8266_html"></block>

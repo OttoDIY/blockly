@@ -114,6 +114,7 @@ Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
 Blockly.Msg.CAT_TM1637="💡 DIGITS";
 Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
+Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
@@ -1309,3 +1310,10 @@ Blockly.Msg.ESPNOW_read_node = "Id node received";
 Blockly.Msg.ESPNOW_read_param_int = "Param Int received";
 Blockly.Msg.ESPNOW_read_param_float = "Param Float received";
 Blockly.Msg.ESPNOW_read_param_text = "Param Text received";
+
+//ALEXA
+Blockly.Msg.Alexa_init = "Alexa.Device number:";
+Blockly.Msg.Alexa_init2 = "Name:";
+Blockly.Msg.Alexa_cb = "When a Alexa message is received from device:";
+Blockly.Msg.Alexa_Loop = "Manage the Alexa connection.Loop";
+Blockly.Msg.Alexa_Param = "Get parameter";
