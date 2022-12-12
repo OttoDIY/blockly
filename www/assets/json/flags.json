@@ -1,0 +1,1002 @@
+[
+  {
+    "name": "Afghanistan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/af.svg"
+  },
+  {
+    "name": "Aland Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ax.svg"
+  },
+  {
+    "name": "Albania",
+    "image": "/node_modules/flag-icon-css/flags/1x1/al.svg"
+  },
+  {
+    "name": "Algeria",
+    "image": "/node_modules/flag-icon-css/flags/1x1/dz.svg"
+  },
+  {
+    "name": "American Samoa",
+    "image": "/node_modules/flag-icon-css/flags/1x1/as.svg"
+  },
+  {
+    "name": "Andorra",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ad.svg"
+  },
+  {
+    "name": "Angola",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ao.svg"
+  },
+  {
+    "name": "Anguilla",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ai.svg"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ag.svg"
+  },
+  {
+    "name": "Argentina",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ar.svg"
+  },
+  {
+    "name": "Armenia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/am.svg"
+  },
+  {
+    "name": "Aruba",
+    "image": "/node_modules/flag-icon-css/flags/1x1/aw.svg"
+  },
+  {
+    "name": "Australia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/au.svg"
+  },
+  {
+    "name": "Austria",
+    "image": "/node_modules/flag-icon-css/flags/1x1/at.svg"
+  },
+  {
+    "name": "Azerbaijan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/az.svg"
+  },
+  {
+    "name": "Bahamas",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bs.svg"
+  },
+  {
+    "name": "Bahrain",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bh.svg"
+  },
+  {
+    "name": "Bangladesh",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bd.svg"
+  },
+  {
+    "name": "Barbados",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bb.svg"
+  },
+  {
+    "name": "Belarus",
+    "image": "/node_modules/flag-icon-css/flags/1x1/by.svg"
+  },
+  {
+    "name": "Belgium",
+    "image": "/node_modules/flag-icon-css/flags/1x1/be.svg"
+  },
+  {
+    "name": "Belize",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bz.svg"
+  },
+  {
+    "name": "Benin",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bj.svg"
+  },
+  {
+    "name": "Bermuda",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bm.svg"
+  },
+  {
+    "name": "Bhutan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bt.svg"
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bo.svg"
+  },
+  {
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bq.svg"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ba.svg"
+  },
+  {
+    "name": "Botswana",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bw.svg"
+  },
+  {
+    "name": "Brazil",
+    "image": "/node_modules/flag-icon-css/flags/1x1/br.svg"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "image": "/node_modules/flag-icon-css/flags/1x1/io.svg"
+  },
+  {
+    "name": "Brunei Darussalam",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bn.svg"
+  },
+  {
+    "name": "Bulgaria",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bg.svg"
+  },
+  {
+    "name": "Burkina Faso",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bf.svg"
+  },
+  {
+    "name": "Burundi",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bi.svg"
+  },
+  {
+    "name": "Cabo Verde",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cv.svg"
+  },
+  {
+    "name": "Cambodia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kh.svg"
+  },
+  {
+    "name": "Cameroon",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cm.svg"
+  },
+  {
+    "name": "Canada",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ca.svg"
+  },
+  {
+    "name": "Cayman Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ky.svg"
+  },
+  {
+    "name": "Central African Republic",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cf.svg"
+  },
+  {
+    "name": "Chad",
+    "image": "/node_modules/flag-icon-css/flags/1x1/td.svg"
+  },
+  {
+    "name": "Chile",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cl.svg"
+  },
+  {
+    "name": "China",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cn.svg"
+  },
+  {
+    "name": "Christmas Island",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cx.svg"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cc.svg"
+  },
+  {
+    "name": "Colombia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/co.svg"
+  },
+  {
+    "name": "Comoros",
+    "image": "/node_modules/flag-icon-css/flags/1x1/km.svg"
+  },
+  {
+    "name": "Cook Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ck.svg"
+  },
+  {
+    "name": "Costa Rica",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cr.svg"
+  },
+  {
+    "name": "Croatia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/hr.svg"
+  },
+  {
+    "name": "Cuba",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cu.svg"
+  },
+  {
+    "name": "Curaçao",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cw.svg"
+  },
+  {
+    "name": "Cyprus",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cy.svg"
+  },
+  {
+    "name": "Czech Republic",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cz.svg"
+  },
+  {
+    "name": "Côte d&apos;Ivoire",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ci.svg"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cd.svg"
+  },
+  {
+    "name": "Denmark",
+    "image": "/node_modules/flag-icon-css/flags/1x1/dk.svg"
+  },
+  {
+    "name": "Djibouti",
+    "image": "/node_modules/flag-icon-css/flags/1x1/dj.svg"
+  },
+  {
+    "name": "Dominica",
+    "image": "/node_modules/flag-icon-css/flags/1x1/dm.svg"
+  },
+  {
+    "name": "Dominican Republic",
+    "image": "/node_modules/flag-icon-css/flags/1x1/do.svg"
+  },
+  {
+    "name": "Ecuador",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ec.svg"
+  },
+  {
+    "name": "Egypt",
+    "image": "/node_modules/flag-icon-css/flags/1x1/eg.svg"
+  },
+  {
+    "name": "El Salvador",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sv.svg"
+  },
+  {
+    "name": "England",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gb-eng.svg"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gq.svg"
+  },
+  {
+    "name": "Eritrea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/er.svg"
+  },
+  {
+    "name": "Estonia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ee.svg"
+  },
+  {
+    "name": "Ethiopia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/et.svg"
+  },
+  {
+    "name": "Falkland Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fk.svg"
+  },
+  {
+    "name": "Faroe Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fo.svg"
+  },
+  {
+    "name": "Federated States of Micronesia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fm.svg"
+  },
+  {
+    "name": "Fiji",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fj.svg"
+  },
+  {
+    "name": "Finland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fi.svg"
+  },
+  {
+    "name": "France",
+    "image": "/node_modules/flag-icon-css/flags/1x1/fr.svg"
+  },
+  {
+    "name": "French Guiana",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gf.svg"
+  },
+  {
+    "name": "French Polynesia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pf.svg"
+  },
+  {
+    "name": "French Southern Territories",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tf.svg"
+  },
+  {
+    "name": "Gabon",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ga.svg"
+  },
+  {
+    "name": "Gambia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gm.svg"
+  },
+  {
+    "name": "Georgia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ge.svg"
+  },
+  {
+    "name": "Germany",
+    "image": "/node_modules/flag-icon-css/flags/1x1/de.svg"
+  },
+  {
+    "name": "Ghana",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gh.svg"
+  },
+  {
+    "name": "Gibraltar",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gi.svg"
+  },
+  {
+    "name": "Greece",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gr.svg"
+  },
+  {
+    "name": "Greenland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gl.svg"
+  },
+  {
+    "name": "Grenada",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gd.svg"
+  },
+  {
+    "name": "Guadeloupe",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gp.svg"
+  },
+  {
+    "name": "Guam",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gu.svg"
+  },
+  {
+    "name": "Guatemala",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gt.svg"
+  },
+  {
+    "name": "Guernsey",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gg.svg"
+  },
+  {
+    "name": "Guinea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gn.svg"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gw.svg"
+  },
+  {
+    "name": "Guyana",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gy.svg"
+  },
+  {
+    "name": "Haiti",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ht.svg"
+  },
+  {
+    "name": "Holy See",
+    "image": "/node_modules/flag-icon-css/flags/1x1/va.svg"
+  },
+  {
+    "name": "Honduras",
+    "image": "/node_modules/flag-icon-css/flags/1x1/hn.svg"
+  },
+  {
+    "name": "Hong Kong",
+    "image": "/node_modules/flag-icon-css/flags/1x1/hk.svg"
+  },
+  {
+    "name": "Hungary",
+    "image": "/node_modules/flag-icon-css/flags/1x1/hu.svg"
+  },
+  {
+    "name": "Iceland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/is.svg"
+  },
+  {
+    "name": "India",
+    "image": "/node_modules/flag-icon-css/flags/1x1/in.svg"
+  },
+  {
+    "name": "Indonesia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/id.svg"
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ir.svg"
+  },
+  {
+    "name": "Iraq",
+    "image": "/node_modules/flag-icon-css/flags/1x1/iq.svg"
+  },
+  {
+    "name": "Ireland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ie.svg"
+  },
+  {
+    "name": "Isle of Man",
+    "image": "/node_modules/flag-icon-css/flags/1x1/im.svg"
+  },
+  {
+    "name": "Israel",
+    "image": "/node_modules/flag-icon-css/flags/1x1/il.svg"
+  },
+  {
+    "name": "Italy",
+    "image": "/node_modules/flag-icon-css/flags/1x1/it.svg"
+  },
+  {
+    "name": "Jamaica",
+    "image": "/node_modules/flag-icon-css/flags/1x1/jm.svg"
+  },
+  {
+    "name": "Japan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/jp.svg"
+  },
+  {
+    "name": "Jersey",
+    "image": "/node_modules/flag-icon-css/flags/1x1/je.svg"
+  },
+  {
+    "name": "Jordan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/jo.svg"
+  },
+  {
+    "name": "Kazakhstan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kz.svg"
+  },
+  {
+    "name": "Kenya",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ke.svg"
+  },
+  {
+    "name": "Kiribati",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ki.svg"
+  },
+  {
+    "name": "Kuwait",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kw.svg"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kg.svg"
+  },
+  {
+    "name": "Laos",
+    "image": "/node_modules/flag-icon-css/flags/1x1/la.svg"
+  },
+  {
+    "name": "Latvia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lv.svg"
+  },
+  {
+    "name": "Lebanon",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lb.svg"
+  },
+  {
+    "name": "Lesotho",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ls.svg"
+  },
+  {
+    "name": "Liberia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lr.svg"
+  },
+  {
+    "name": "Libya",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ly.svg"
+  },
+  {
+    "name": "Liechtenstein",
+    "image": "/node_modules/flag-icon-css/flags/1x1/li.svg"
+  },
+  {
+    "name": "Lithuania",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lt.svg"
+  },
+  {
+    "name": "Luxembourg",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lu.svg"
+  },
+  {
+    "name": "Macau",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mo.svg"
+  },
+  {
+    "name": "Madagascar",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mg.svg"
+  },
+  {
+    "name": "Malawi",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mw.svg"
+  },
+  {
+    "name": "Malaysia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/my.svg"
+  },
+  {
+    "name": "Maldives",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mv.svg"
+  },
+  {
+    "name": "Mali",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ml.svg"
+  },
+  {
+    "name": "Malta",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mt.svg"
+  },
+  {
+    "name": "Marshall Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mh.svg"
+  },
+  {
+    "name": "Martinique",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mq.svg"
+  },
+  {
+    "name": "Mauritania",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mr.svg"
+  },
+  {
+    "name": "Mauritius",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mu.svg"
+  },
+  {
+    "name": "Mayotte",
+    "image": "/node_modules/flag-icon-css/flags/1x1/yt.svg"
+  },
+  {
+    "name": "Mexico",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mx.svg"
+  },
+  {
+    "name": "Moldova",
+    "image": "/node_modules/flag-icon-css/flags/1x1/md.svg"
+  },
+  {
+    "name": "Monaco",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mc.svg"
+  },
+  {
+    "name": "Mongolia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mn.svg"
+  },
+  {
+    "name": "Montenegro",
+    "image": "/node_modules/flag-icon-css/flags/1x1/me.svg"
+  },
+  {
+    "name": "Montserrat",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ms.svg"
+  },
+  {
+    "name": "Morocco",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ma.svg"
+  },
+  {
+    "name": "Mozambique",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mz.svg"
+  },
+  {
+    "name": "Myanmar",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mm.svg"
+  },
+  {
+    "name": "Namibia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/na.svg"
+  },
+  {
+    "name": "Nauru",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nr.svg"
+  },
+  {
+    "name": "Nepal",
+    "image": "/node_modules/flag-icon-css/flags/1x1/np.svg"
+  },
+  {
+    "name": "Netherlands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nl.svg"
+  },
+  {
+    "name": "New Caledonia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nc.svg"
+  },
+  {
+    "name": "New Zealand",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nz.svg"
+  },
+  {
+    "name": "Nicaragua",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ni.svg"
+  },
+  {
+    "name": "Niger",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ne.svg"
+  },
+  {
+    "name": "Nigeria",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ng.svg"
+  },
+  {
+    "name": "Niue",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nu.svg"
+  },
+  {
+    "name": "Norfolk Island",
+    "image": "/node_modules/flag-icon-css/flags/1x1/nf.svg"
+  },
+  {
+    "name": "North Korea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kp.svg"
+  },
+  {
+    "name": "North Macedonia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mk.svg"
+  },
+  {
+    "name": "Northern Ireland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gb-nir.svg"
+  },
+  {
+    "name": "Northern Markna Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mp.svg"
+  },
+  {
+    "name": "Norway",
+    "image": "/node_modules/flag-icon-css/flags/1x1/no.svg"
+  },
+  {
+    "name": "Oman",
+    "image": "/node_modules/flag-icon-css/flags/1x1/om.svg"
+  },
+  {
+    "name": "Pakistan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pk.svg"
+  },
+  {
+    "name": "Palau",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pw.svg"
+  },
+  {
+    "name": "Panama",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pa.svg"
+  },
+  {
+    "name": "Papua New Guinea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pg.svg"
+  },
+  {
+    "name": "Paraguay",
+    "image": "/node_modules/flag-icon-css/flags/1x1/py.svg"
+  },
+  {
+    "name": "Peru",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pe.svg"
+  },
+  {
+    "name": "Philippines",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ph.svg"
+  },
+  {
+    "name": "Pitcairn",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pn.svg"
+  },
+  {
+    "name": "Poland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pl.svg"
+  },
+  {
+    "name": "Portugal",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pt.svg"
+  },
+  {
+    "name": "Puerto Rico",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pr.svg"
+  },
+  {
+    "name": "Qatar",
+    "image": "/node_modules/flag-icon-css/flags/1x1/qa.svg"
+  },
+  {
+    "name": "Republic of the Congo",
+    "image": "/node_modules/flag-icon-css/flags/1x1/cg.svg"
+  },
+  {
+    "name": "Romania",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ro.svg"
+  },
+  {
+    "name": "Russia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ru.svg"
+  },
+  {
+    "name": "Rwanda",
+    "image": "/node_modules/flag-icon-css/flags/1x1/rw.svg"
+  },
+  {
+    "name": "Réunion",
+    "image": "/node_modules/flag-icon-css/flags/1x1/re.svg"
+  },
+  {
+    "name": "Saint Barthélemy",
+    "image": "/node_modules/flag-icon-css/flags/1x1/bl.svg"
+  },
+  {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sh.svg"
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kn.svg"
+  },
+  {
+    "name": "Saint Lucia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lc.svg"
+  },
+  {
+    "name": "Saint Martin",
+    "image": "/node_modules/flag-icon-css/flags/1x1/mf.svg"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "image": "/node_modules/flag-icon-css/flags/1x1/pm.svg"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "image": "/node_modules/flag-icon-css/flags/1x1/vc.svg"
+  },
+  {
+    "name": "Samoa",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ws.svg"
+  },
+  {
+    "name": "San Marino",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sm.svg"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "image": "/node_modules/flag-icon-css/flags/1x1/st.svg"
+  },
+  {
+    "name": "Saudi Arabia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sa.svg"
+  },
+  {
+    "name": "Scotland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gb-sct.svg"
+  },
+  {
+    "name": "Senegal",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sn.svg"
+  },
+  {
+    "name": "Serbia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/rs.svg"
+  },
+  {
+    "name": "Seychelles",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sc.svg"
+  },
+  {
+    "name": "Sierra Leone",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sl.svg"
+  },
+  {
+    "name": "Singapore",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sg.svg"
+  },
+  {
+    "name": "Sint Maarten",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sx.svg"
+  },
+  {
+    "name": "Slovakia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sk.svg"
+  },
+  {
+    "name": "Slovenia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/si.svg"
+  },
+  {
+    "name": "Solomon Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sb.svg"
+  },
+  {
+    "name": "Somalia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/so.svg"
+  },
+  {
+    "name": "South Africa",
+    "image": "/node_modules/flag-icon-css/flags/1x1/za.svg"
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gs.svg"
+  },
+  {
+    "name": "South Korea",
+    "image": "/node_modules/flag-icon-css/flags/1x1/kr.svg"
+  },
+  {
+    "name": "South Sudan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ss.svg"
+  },
+  {
+    "name": "Spain",
+    "image": "/node_modules/flag-icon-css/flags/1x1/es.svg"
+  },
+  {
+    "name": "Sri Lanka",
+    "image": "/node_modules/flag-icon-css/flags/1x1/lk.svg"
+  },
+  {
+    "name": "State of Palestine",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ps.svg"
+  },
+  {
+    "name": "Sudan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sd.svg"
+  },
+  {
+    "name": "Suriname",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sr.svg"
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sj.svg"
+  },
+  {
+    "name": "Swaziland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sz.svg"
+  },
+  {
+    "name": "Sweden",
+    "image": "/node_modules/flag-icon-css/flags/1x1/se.svg"
+  },
+  {
+    "name": "Switzerland",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ch.svg"
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "image": "/node_modules/flag-icon-css/flags/1x1/sy.svg"
+  },
+  {
+    "name": "Taiwan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tw.svg"
+  },
+  {
+    "name": "Tajikistan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tj.svg"
+  },
+  {
+    "name": "Tanzania",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tz.svg"
+  },
+  {
+    "name": "Thailand",
+    "image": "/node_modules/flag-icon-css/flags/1x1/th.svg"
+  },
+  {
+    "name": "Timor-Leste",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tl.svg"
+  },
+  {
+    "name": "Togo",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tg.svg"
+  },
+  {
+    "name": "Tokelau",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tk.svg"
+  },
+  {
+    "name": "Tonga",
+    "image": "/node_modules/flag-icon-css/flags/1x1/to.svg"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tt.svg"
+  },
+  {
+    "name": "Tunisia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tn.svg"
+  },
+  {
+    "name": "Turkey",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tr.svg"
+  },
+  {
+    "name": "Turkmenistan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tm.svg"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tc.svg"
+  },
+  {
+    "name": "Tuvalu",
+    "image": "/node_modules/flag-icon-css/flags/1x1/tv.svg"
+  },
+  {
+    "name": "Uganda",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ug.svg"
+  },
+  {
+    "name": "Ukraine",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ua.svg"
+  },
+  {
+    "name": "United Arab Emirates",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ae.svg"
+  },
+  {
+    "name": "United Kingdom",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gb.svg"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "image": "/node_modules/flag-icon-css/flags/1x1/um.svg"
+  },
+  {
+    "name": "United States of America",
+    "image": "/node_modules/flag-icon-css/flags/1x1/us.svg"
+  },
+  {
+    "name": "Uruguay",
+    "image": "/node_modules/flag-icon-css/flags/1x1/uy.svg"
+  },
+  {
+    "name": "Uzbekistan",
+    "image": "/node_modules/flag-icon-css/flags/1x1/uz.svg"
+  },
+  {
+    "name": "Vanuatu",
+    "image": "/node_modules/flag-icon-css/flags/1x1/vu.svg"
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ve.svg"
+  },
+  {
+    "name": "Vietnam",
+    "image": "/node_modules/flag-icon-css/flags/1x1/vn.svg"
+  },
+  {
+    "name": "Virgin Islands (British)",
+    "image": "/node_modules/flag-icon-css/flags/1x1/vg.svg"
+  },
+  {
+    "name": "Virgin Islands (U.S.)",
+    "image": "/node_modules/flag-icon-css/flags/1x1/vi.svg"
+  },
+  {
+    "name": "Wales",
+    "image": "/node_modules/flag-icon-css/flags/1x1/gb-wls.svg"
+  },
+  {
+    "name": "Wallis and Futuna",
+    "image": "/node_modules/flag-icon-css/flags/1x1/wf.svg"
+  },
+  {
+    "name": "Western Sahara",
+    "image": "/node_modules/flag-icon-css/flags/1x1/eh.svg"
+  },
+  {
+    "name": "Yemen",
+    "image": "/node_modules/flag-icon-css/flags/1x1/ye.svg"
+  },
+  {
+    "name": "Zambia",
+    "image": "/node_modules/flag-icon-css/flags/1x1/zm.svg"
+  },
+  {
+    "name": "Zimbabwe",
+    "image": "/node_modules/flag-icon-css/flags/1x1/zw.svg"
+  }
+]

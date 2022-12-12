@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
 	<parametre id="defaultCategories">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_FUNCTIONS,CAT_VARIABLES</parametre>
-    <category name="CAT_ARDUINO" colour="#2d2d64">
+	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
 	</category>
 	<category name="CAT_OTTO" colour="#32D900">
@@ -15,83 +15,141 @@
 		<block type="otto9_smooth"></block>
 	</category>
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">
-			<block type="base_delay">
-					<value name="DELAY_TIME">
+		<block type="base_delay">
+			<value name="DELAY_TIME">
 				<shadow type="math_number">
 					<field name="NUM">1</field>
 				</shadow>
-			</value></block>
+			</value>
+		</block>
 	</category>
-			<category name="CAT_ARDUINO_IN" colour="#00929f">
+	<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="inout_digital_write">
-		<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-		<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
-		</block>	
+			<value name="PIN">
+				<shadow type='analog_pin'>
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+			<value name="STAT">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="inout_onoff"></block>
 		<block type="digital_read">
-				<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-				</block>
+			<value name="PIN">
+				<shadow type='analog_pin'>
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="inout_analog_write">
-		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">255</field>
+				</shadow>
+			</value>
 		</block>
 		<block type="inout_analog_write2">
-		<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
-		<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
+			<value name="pin">
+				<shadow type="math_number">
+					<field name="NUM">3</field>
+				</shadow>
+			</value>
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">255</field>
+				</shadow>
+			</value>
 		</block>
 		<block type="inout_analog_read"></block>
-		<block type="inout_analog_read2">		<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value></block>
+		<block type="inout_analog_read2">
+			<value name="pin">
+				<shadow type='analog_pin'>
+					<field name="NUM">A0</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="toggle">
-				<value name="PIN"><shadow type="math_number">	<field name="NUM">10</field>	</shadow></value>
-				</block>
+			<value name="PIN">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="inout_attachInterrupt"></block>
 		<block type="inout_detachInterrupt"></block>
 		<block type="mrtduino_pin"></block>
-	</category>	
+	</category>
 	<category name="CAT_LOGIC" colour="#ffb400">
 		<block type="controls_if"></block>
 		<block type="controls_repeat_ext">
-		<value name="TIMES">
+			<value name="TIMES">
 				<shadow type="math_number">
 					<field name="NUM">2</field>
 				</shadow>
 			</value>
 		</block>
 	</category>
-    <category name="CAT_MATH" colour="#008000">
-        <block type="math_number"></block>
+	<category name="CAT_MATH" colour="#008000">
+		<block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
-        <block type="logic_compare">
-				<value name="B">
+		<block type="logic_compare">
+			<value name="B">
 				<shadow type="math_number">
 					<field name="NUM">10</field>
 				</shadow>
 			</value>
-			</block>
-    </category>
-
+		</block>
+	</category>
 	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
-
 	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
-	
 	<category name="CAT_ARDUINO_COMM_SERIAL" colour="#0060aa">
-			<block type="serial_init">
-			<value name="PIN_TX"><shadow type="math_number"><field name="NUM">12</field></shadow></value>
-			<value name="PIN_RX"><shadow type="math_number"><field name="NUM">11</field></shadow></value>
-			</block>
-			<block type="serial_available"></block>  
-            <block type="serial_read"></block>
-			<block type="serial_read_string"></block>
-			<block type="serial_read_number"></block>
-			<block type="serial_printfor" x="13" y="38"><field name="TYPE">DEC</field>
-			<value name="CONTENT"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
-			<block type="serial_print">
-			<value name="CONTENT"><shadow type="text"><field name="TEXT">text</field></shadow></value>
-			</block>
-            <block type="serial_println">
-			<value name="CONTENT"><shadow type="text"><field name="TEXT">text</field></shadow></value>
-			</block>
-            <block type="serial_write" x="38" y="38"><value name="CONTENT"><shadow type="text"><field name="TEXT">A</field></shadow></value>
-			</block>
-		</category>
+		<block type="serial_init">
+			<value name="PIN_TX">
+				<shadow type="math_number">
+					<field name="NUM">12</field>
+				</shadow>
+			</value>
+			<value name="PIN_RX">
+				<shadow type="math_number">
+					<field name="NUM">11</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="serial_available"></block>
+		<block type="serial_read"></block>
+		<block type="serial_read_string"></block>
+		<block type="serial_read_number"></block>
+		<block type="serial_printfor" x="13" y="38">
+			<field name="TYPE">DEC</field>
+			<value name="CONTENT">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="serial_print">
+			<value name="CONTENT">
+				<shadow type="text">
+					<field name="TEXT">text</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="serial_println">
+			<value name="CONTENT">
+				<shadow type="text">
+					<field name="TEXT">text</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="serial_write" x="38" y="38">
+			<value name="CONTENT">
+				<shadow type="text">
+					<field name="TEXT">A</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
 </toolbox>

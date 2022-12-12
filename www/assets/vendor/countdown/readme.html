@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<title>Countdown.js</title>
+
+	<link href="test/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1><a href="/">Countdown.js</a></h1>
+<div style="float:right"><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://countdownjs.org" data-text="Countdown.js: A simple JavaScript API for producing an accurate, intuitive description of the timespan between dates" data-count="none"></a></div>
+
+<p>A simple JavaScript API for producing an accurate, intuitive description of the timespan between two Date instances.</p>
+
+<hr />
+
+<h2>The Motivation</h2>
+
+<p>While seemingly a trivial problem, the human descriptions for a span of time tend to be fuzzier than a computer naturally computes.
+More specifically, months are an inherently messed up unit of time.
+For instance, when a human says "in 1 month" how long do they mean? Banks often interpret this as <em>thirty days</em> but that is only correct one third of the time.
+People casually talk about a month being <em>four weeks long</em> but there is only one month in a year which is four weeks long and it is only that long about three quarters of the time.
+Even intuitively defining these terms can be problematic. For instance, what is the date one month after January 31st, 2001?
+JavaScript will happily call this March 3rd, 2001. Humans will typically debate either February 28th, 2001 or March 1st, 2001.
+It seems there isn't a "right" answer, per se.</p>
+
+<h2>The Algorithm</h2>
+
+<p><em>Countdown.js</em> emphasizes producing intuitively correct description of timespans which are consistent as time goes on.
+To do this, <em>Countdown.js</em> uses the concept of "today's date next month" to mean "a month from now".
+As the days go by, <em>Countdown.js</em> produces consecutively increasing or decreasing counts without inconsistent jumps.
+The range of accuracy is only limited by the underlying system clock.</p>
+
+<p><em>Countdown.js</em> approaches finding the difference between two times like an elementary school subtraction problem.
+Each unit acts like a base-10 place where any overflow is carried to the next highest unit, and any underflow is borrowed from the next highest unit.
+In base-10 subtraction, every column is worth 10 times the previous column.
+With time, it is a little more complex since the conversions between the units of time are not the same and months are an inconsistent number of days.
+Internally, <em>Countdown.js</em> maintains the concept of a "reference month" which determines how many days a given month or year represents.
+In the final step of the algorithm, <em>Countdown.js</em> then prunes the set of time units down to only those requested, forcing larger units down to smaller.</p>
+
+<div id="v2.4.0-timezone" class="breaking-change">
+<h3>Time Zones &amp; Daylight Savings Time</h3>
+
+<p>As of v2.4, <em>Countdown.js</em> performs all calculations with respect to the <strong>viewer's local time zone</strong>.
+Earlier versions performed difference calculations in UTC, which is generally the correct way to do math on time.
+In this situation, however, an issue with using UTC happens when either of the two dates being worked with is within one time zone offset of a month boundary.
+If the UTC interpretation of that instant in time is in a different month than that of the local time zone, then the viewer's perception is that the calculated time span is incorrect.
+This is the heart of the problem that <em>Countdown.js</em> attempts to solve: talking about spans of time can be ambiguous.
+Nearly all bugs reported for <em>Countdown.js</em> have been because the viewer expects something different due to their particular time zone.</p>
+
+<p>JavaScript (<a href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.7">ECMA-262</a>) only works with dates as UTC or the local time zone, not arbitrary time zones.
+By design, all JS Date objects represent an instant in time (milliseconds since midnight Jan 1, 1970 <strong>in UTC</strong>) interpreted as the user's local time.
+Since most humans think about local time not UTC, it the most makes sense to perform this time span algorithm in reference to local time.</p>
+
+<p>Daylight Savings Time further complicates things, creating hours which get repeated and hours which cannot exist.
+<em>Countdown.js</em> effectively ignores these edge cases and talks about time preferring human intuition about time over surprise exactness.
+Example: A viewer asks for the description from noon the day before a daylight savings begins to noon the day after.
+A computer would answer "23 hours" whereas a human would confidently answer "1 day" even after being reminded to "Spring Forward".
+The computer is technically more accurate but this is not the value that humans actually expect or desire.
+Humans pretend that time is simple and makes sense. Unfortunately, humans made time far more complex than it needed to be with time zones and daylight savings.
+UTC simplifies time but at the cost of being inconsistent with human experience.</p>
+</div>
+
+<hr />
+
+<h2>The API</h2>
+
+<p>A simple but flexible API is the goal of <em>Countdown.js</em>. There is one global function with a set of static constants:</p>
+
+<pre><code>var timespan = countdown(start|callback, end|callback, units, max, digits);</code></pre>
+
+<p>The parameters are a starting Date, ending Date, an optional set of units, an optional maximum number of units, and an optional maximum number of decimal places on the smallest unit. <code>units</code> defaults to <code>countdown.DEFAULTS</code>, <code>max</code> defaults to <code>NaN</code> (all specified units), <code>digits</code> defaults to <code>0</code>.</p>
+
+<pre><code>countdown.ALL =
+    countdown.MILLENNIA |
+    countdown.CENTURIES |
+    countdown.DECADES |
+    countdown.YEARS |
+    countdown.MONTHS |
+    countdown.WEEKS |
+    countdown.DAYS |
+    countdown.HOURS |
+    countdown.MINUTES |
+    countdown.SECONDS |
+    countdown.MILLISECONDS;
+
+countdown.DEFAULTS =
+    countdown.YEARS |
+    countdown.MONTHS |
+    countdown.DAYS |
+    countdown.HOURS |
+    countdown.MINUTES |
+    countdown.SECONDS;</code></pre>
+
+<p>This allows a very minimal call to accept the defaults and get the time since/until a single date. For example:</p>
+
+<pre><code>countdown( new Date(2000, 0, 1) ).toString();</code></pre>
+
+<p>This will produce a human readable description like:</p>
+
+<pre><code>11 years, 8 months, 4 days, 10 hours, 12 minutes and 43 seconds</code></pre>
+
+<h3>The <code>start</code> / <code>end</code> arguments</h3>
+
+<p>The parameters <code>start</code> and <code>end</code> can be one of several values:</p>
+
+<ol>
+	<li><code>null</code> which indicates "now".</li>
+	<li>a JavaScript <code>Date</code> object.</li>
+	<li>a <code>number</code> specifying the number of milliseconds since midnight Jan 1, 1970 UTC (i.e., the "UNIX epoch").</li>
+	<li>a callback <code>function</code> accepting one timespan argument.</li>
+</ol>
+
+<div id="v2.4.0-dates" class="breaking-change">
+<p>To reference a specific instant in time, either use a <code>number</code> offset from the epoch, or a JavaScript <code>Date</code> object instantiated with the specific offset from the epoch.
+In JavaScript, if a <code>Date</code> object is instantiated using year/month/date/etc values, then those values are interpreted in reference to the browser's local time zone and daylight savings settings.</p>
+</div>
+
+<p>If <code>start</code> and <code>end</code> are both specified, then repeated calls to <code>countdown(&hellip;)</code> will always return the same result.
+If one date argument is left <code>null</code> while the other is provided, then repeated calls will count up if the provided date is in the past, and it will count down if the provided date is in the future.
+For example,</p>
+
+<pre><code>var daysSinceLastWorkplaceAccident = countdown(507314280000, null, countdown.DAYS);</code></pre>
+
+<p>If a callback function is supplied, then an interval timer will be started with a frequency based upon the smallest unit (e.g., if <code>countdown.SECONDS</code> is the smallest unit, the callback will be invoked once per second). Rather than returning a Timespan object, the timer's ID will be returned to allow canceling by passing into <code>window.clearInterval(id)</code>. For example, to show a timer since the page first loaded:</p>
+
+<pre><code>var timerId =
+  countdown(
+    new Date(),
+    function(ts) {
+      document.getElementById('pageTimer').innerHTML = ts.toHTML("strong");
+    },
+    countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+
+// later on this timer may be stopped
+window.clearInterval(timerId);</code></pre>
+
+<h3>The <code>units</code> argument</h3>
+
+<p>The static units constants can be combined using <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators">standard bitwise operators</a>. For example, to explicitly include "months or days" use bitwise-OR:</p>
+
+<pre><code>countdown.MONTHS | countdown.DAYS</code></pre>
+
+<p>To explicitly exclude units like "not weeks and not milliseconds" combine bitwise-NOT and bitwise-AND:</p>
+
+<pre><code>~countdown.WEEKS &amp; ~countdown.MILLISECONDS</code></pre>
+
+<p><a href="http://en.wikipedia.org/wiki/De_Morgan's_laws">Equivalently</a>, to specify everything but "not weeks or milliseconds" wrap bitwise-NOT around bitwise-OR:</p>
+
+<pre><code>~(countdown.WEEKS | countdown.MILLISECONDS)</code></pre>
+
+<h3>The <code>max</code> argument</h3>
+
+<p>The next optional argument <code>max</code> specifies a maximum number of unit labels to display. This allows specifying which units are interesting but only displaying the <code>max</code> most significant units.</p>
+
+<pre><code>countdown(start, end, units).toString() =&gt; "5 years, 1 month, 19 days, 12 hours and 17 minutes"</code></pre>
+
+<p>Specifying <code>max</code> as <code>2</code> ensures that only the two most significant units are displayed <strong>(note the rounding of the least significant unit)</strong>:</p>
+
+<pre><code>countdown(start, end, units, 2).toString() =&gt; "5 years and 2 months"</code></pre>
+
+<p>Negative or zero values of <code>max</code> are ignored.</p>
+
+<div id="v2.3.0-max" class="breaking-change">
+
+<h4>Breaking change in v2.3.0!</h4>
+
+<p>Previously, the <code>max</code> number of unit labels argument used to be specified when formatting in <code>timespan.toString(&hellip;)</code> and <code>timespan.toHTML(&hellip;)</code>. v2.3.0 moves it to <code>countdown(&hellip;)</code>, which improves efficiency as well as enabling fractional units (<a href="#v2.3.0-digits">see below</a>).</p>
+
+</div>
+
+<h3>The <code>digits</code> argument</h3>
+
+<p>The final optional argument <code>digits</code> allows fractional values on the smallest unit.</p>
+
+<pre><code>countdown(start, end, units, max).toString() =&gt; "5 years and 2 months"</code></pre>
+
+<p>Specifying <code>digits</code> as <code>2</code> allows up to 2 digits beyond the decimal point to be displayed <strong>(note the rounding of the least significant unit)</strong>:</p>
+
+<pre><code>countdown(start, end, units, max, 2).toString() =&gt; "5 years and 1.65 months"</code></pre>
+
+<p><code>digits</code> must be between <code>0</code> and <code>20</code>, inclusive.</p>
+
+<div id="v2.3.0-digits" class="breaking-change">
+
+<h4>Rounding</h4>
+
+<p>With the calculations of fractional units in v2.3.0, the smallest displayed unit now properly rounds. Previously, the equivalent of <code>"1.99 years"</code> would be truncated to <code>"1 year"</code>, as of v2.3.0 it will display as <code>"2 years"</code>.</p>
+<p>Typically, this is the intended interpretation but there are a few circumstances where people expect the truncated behavior. For example, people often talk about their age as the lowest possible interpretation. e.g., they claim "39-years-old" right up until the morning of their 40th birthday (some people do even for years after!). In these cases, after calling <code>countdown(start,end,units,max,20)</code> with the largest possible number of <code>digits</code>, you might want to set <code>ts.years = Math.floor(ts.years)</code> before calling <code>ts.toString()</code>. The vain might want you to set <code>ts.years = Math.min(ts.years, 39)</code>!</p>
+
+</div>
+
+<h3>Timespan result</h3>
+
+<p>The return value is a Timespan object which always contains the following fields:</p>
+
+<ul>
+	<li><code>Date start</code>: the starting date object used for the calculation</li>
+	<li><code>Date end</code>: the ending date object used for the calculation</li>
+	<li><code>Number units</code>: the units specified</li>
+	<li><code>Number value</code>: total milliseconds difference (i.e., <code>end</code> - <code>start</code>). If <code>end &lt; start</code> then <code>value</code> will be negative.</li>
+</ul>
+
+<p>Typically the <code>end</code> occurs after <code>start</code>, but if the arguments were reversed, the only difference is <code>Timespan.value</code> will be negative. The sign of <code>value</code> can be used to determine if the event occurs in the future or in the past.</p>
+
+<p>The following time unit fields are only present if their corresponding units were requested:</p>
+
+<ul>
+	<li><code>Number millennia</code></li>
+	<li><code>Number centuries</code></li>
+	<li><code>Number decades</code></li>
+	<li><code>Number years</code></li>
+	<li><code>Number months</code></li>
+	<li><code>Number days</code></li>
+	<li><code>Number hours</code></li>
+	<li><code>Number minutes</code></li>
+	<li><code>Number seconds</code></li>
+	<li><code>Number milliseconds</code></li>
+</ul>
+
+<p>Finally, Timespan has two formatting methods each with some optional parameters. If the difference between <code>start</code> and <code>end</code> is less than the requested granularity of units, then <code>toString(&hellip;)</code> and <code>toHTML(&hellip;)</code> will return the empty label (defaults to an empty string).</p>
+
+<ul>
+
+<li><code>String toString(emptyLabel)</code>: formats the Timespan object as an English sentence. e.g., using the same input:
+
+<pre><code>ts.toString() =&gt; "5 years, 1 month, 19 days, 12 hours and 17 minutes"</code></pre></li>
+
+<li><code>String toHTML(tagName, emptyLabel)</code>: formats the Timespan object as an English sentence, with the specified HTML tag wrapped around each unit. If no tag name is provided, "<code>span</code>" is used. e.g., using the same input:
+
+<pre><code>ts.toHTML() =&gt; "&lt;span&gt;5 years&lt;/span&gt;, &lt;span&gt;1 month&lt;/span&gt;, &lt;span&gt;19 days&lt;/span&gt;, &lt;span&gt;12 hours&lt;/span&gt; and &lt;span&gt;17 minutes&lt;/span&gt;"
+
+ts.toHTML("em") =&gt; "&lt;em&gt;5 years&lt;/em&gt;, &lt;em&gt;1 month&lt;/em&gt;, &lt;em&gt;19 days&lt;/em&gt;, &lt;em&gt;12 hours&lt;/em&gt; and &lt;em&gt;17 minutes&lt;/em&gt;"</code></pre></li>
+
+</ul>
+
+<h3>Localization</h3>
+
+<p>Very basic localization is supported via the static <code>setLabels</code> and <code>resetLabels</code> methods. These change the functionality for all timespans on the page.</p>
+
+<pre><code>countdown.resetLabels();
+
+countdown.setLabels(singular, plural, last, delim, empty, formatter);
+</code></pre>
+
+<p>The arguments:<br>
+<ul>
+	<li><code>singular</code> is a pipe (<code>'|'</code>) delimited ascending list of singular unit name overrides
+	<li><code>plural</code> is a pipe (<code>'|'</code>) delimited ascending list of plural unit name overrides
+	<li><code>last</code> is a delimiter before the last unit (default: <code>' and '</code>)
+	<li><code>delim</code> is a delimiter to use between all other units (default: <code>', '</code>)
+	<li><code>empty</code> is a label to use when all units are zero (default: <code>''</code>)
+	<li><code>formatter</code> is a function which takes a <code>number</code> and returns a <code>string</code> (default uses <code>Number.toString()</code>),<br>
+	allowing customization of the way numbers are formatted, e.g., commas every 3 digits or some unique style that is specific to your locale.
+</ul>
+Note that the spacing is part of the labels.</p>
+
+<p>The following examples would translate the output into Brazilian Portuguese and French, respectively:</p>
+
+<pre><code>countdown.setLabels(
+	' milissegundo| segundo| minuto| hora| dia| semana| mês| ano| década| século| milênio',
+	' milissegundos| segundos| minutos| horas| dias| semanas| meses| anos| décadas| séculos| milênios',
+	' e ',
+	' + ',
+	'agora');
+
+countdown.setLabels(
+	' milliseconde| seconde| minute| heure| jour| semaine| mois| année| décennie| siècle| millénaire',
+	' millisecondes| secondes| minutes| heures| jours| semaines| mois| années| décennies| siècles| millénaires',
+	' et ',
+	', ',
+	'maintenant');
+</code></pre>
+
+<p>If you only wanted to override some of the labels just leave the other pipe-delimited places empty. Similarly, leave off any of the delimiter arguments which do not need overriding.</p>
+
+<pre><code>countdown.setLabels(
+	'||| hr| d',
+	'ms| sec|||| wks|| yrs',
+	', and finally ');
+
+ts.toString() =&gt; "1 millennium, 2 centuries, 5 yrs, 1 month, 7 wks, 19 days, 1 hr, 2 minutes, 17 sec, and finally 1 millisecond"
+</code></pre>
+
+<p>If you only wanted to override the empty label:</p>
+
+<pre><code>countdown.setLabels(
+		null,
+		null,
+		null,
+		null,
+		'Now.');
+
+ts.toString() =&gt; "Now."
+</code></pre>
+
+<p>The following would be effectively the same as calling <code>countdown.resetLabels()</code>:</p>
+
+<pre><code>countdown.setLabels(
+	' millisecond| second| minute| hour| day| week| month| year| decade| century| millennium',
+	' milliseconds| seconds| minutes| hours| days| weeks| months| years| decades| centuries| millennia',
+	' and ',
+	', ',
+	'',
+	function(n){ return n.toString(); });
+</code></pre>
+
+<h2>License</h2>
+
+<p>Distributed under the terms of <a href="https://raw.githubusercontent.com/mckamey/countdownjs/master/LICENSE.txt">The MIT license</a>.</p>
+
+<footer>
+	<div style="float:left"><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://countdownjs.org" data-text="Countdown.js: A simple JavaScript API for producing an accurate, intuitive description of the timespan between dates"></a></div>
+	Copyright &copy; 2006-2014 <a href="http://mck.me">Stephen M. McKamey</a>
+</footer>
+<script src="/ga.js" type="text/javascript" defer></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript" defer="defer"></script>
+
+</body>
+</html>

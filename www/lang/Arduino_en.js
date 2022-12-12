@@ -111,26 +111,6 @@ Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
-Blockly.Msg.CAT_TM1637="💡 DIGITS";
-Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
-Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
-Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
-
-//DISPALY 7 SEGMENT TM1637
-Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
-Blockly.Msg.TM1637_init = "Init TM1637 Display 7 segment";
-Blockly.Msg.TM1637_PinCLK = "Pin CLK";
-Blockly.Msg.TM1637_PinDIO = "Pin DIO";
-Blockly.Msg.M1637_Brightness = "Set brightness(0-7)";
-Blockly.Msg.M1637_turnOFF_ON = "Turn";
-Blockly.Msg.M1637_Clear = "Clear";
-Blockly.Msg.M1637_number="Set number";
-Blockly.Msg.M1637_Digit = "Position(0-3)";
-Blockly.Msg.M1637_Length = "Number of digits to set";
-Blockly.Msg.M1637_fill = "Leading zeros";
-Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
-Blockly.Msg.M1637_value="Value";
-Blockly.Msg.M1637_arraysegment="Display segment array.";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="RTC Pins I²C";
@@ -181,7 +161,7 @@ Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT = "Disable the previously specifie
 Blockly.Msg.LKL_MODE = 'is detected on the Pin';
 // FIELDDROPDOWN
 Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
-Blockly.Msg.tempo = [["\u266B beamed notes", "125"], ["\u266A eight note", "250"], ["\u2669 quarter note", "500"], ["\uD834\uDD5E half note", "1000"], ["\uD834\uDD5D whole otte", "2000"]]; // do not translate
+Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]; // do not translate
 Blockly.Msg.on_off = [["ON", "HIGH"], ["OFF", "LOW"]];
 Blockly.Msg.menublink = [["slow", "1000"], ["fast", "100"]];
 Blockly.Msg.AV_AR = [[Blockly.Msg.AV, "FORWARD"], [Blockly.Msg.AR, "BACKWARD"]]; // do not translate
@@ -200,7 +180,7 @@ Blockly.Msg.LKL_DROPDOWN = [['rising edge', 'RISING'], ['falling edge', 'FALLING
 Blockly.Msg.irq = [['rising edge', 'Pin.IRQ_RISING'], ['falling edge', 'Pin.IRQ_FALLING'], ['HIGH state', 'Pin.IRQ_HIGH_LEVEL'], ["LOW state "," Pin.IRQ_LOW_LEVEL "]];
 Blockly.Msg.menudht = [["💧humidity", "h"], ["🌡️temperature", "t"]];
 Blockly.Msg.couleur = [["blue", "blue"], ["yellow", "yellow"], ["red", "red"], ["green", "green"]];
-Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"]];
+Blockly.Msg.sens = [["forward", "a"], ["turn right", "d"], ["turn left", "g"], ["back", "h"]];
 //sensor
 Blockly.Msg.VL53L0X="Laser Pins I²C";
 Blockly.Msg.VL53L0X_tooltip="initialize VL53L0X sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
@@ -381,8 +361,6 @@ Blockly.Msg.bargraphe_tooltip = "bargraph module composed of 10 LEDs (8 green, 1
 Blockly.Msg.rvb_init="LED RGB Pins";
 Blockly.Msg.rvb_init_tooltip="indicate the PWM Pins to connect to the RGB LED";
 Blockly.Msg.rvb_set="🚥 show color";
-Blockly.Msg.rvb_anode="common anode";
-Blockly.Msg.rvb_cathode="common cathode";
 Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="displays a color indicating a value for the three components (red, green, blue)";
 Blockly.Msg.pixel1 = "NeoPixel";
@@ -668,8 +646,7 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Temperature NTC (ºC)";
-Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
-Blockly.Msg.TOUCH="Touch";
+Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
 
 //CCS811
 Blockly.Msg.CCS811="CO₂ Pins"; 
@@ -720,7 +697,6 @@ Blockly.Msg.MRT_CHANNEL="Channel";
 Blockly.Msg.MRT_KEY="Key MRT";
 Blockly.Msg.MRT_PRESSED="Pressed?";
 Blockly.Msg.PIN2="Interrupt Pin";
-Blockly.Msg.ATTEND_MRT_IR="Attend Remote Control MRT";
 
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
@@ -969,23 +945,6 @@ Blockly.Msg.RFID_CARD_READED = "Read Value";
 Blockly.Msg.RFID_CHECK_CARD = "Is card Read = Validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
-//NFC PN532
-Blockly.Msg.NFC_name = "💳 NFC ";
-Blockly.Msg.NFC_init = "NFC I2C ";
-Blockly.Msg.NFC_VALID_VAR = "Validation card(4bytes):";
-Blockly.Msg.NFC_VALID_VAR2 = "Validation card(7bytes):";
-Blockly.Msg.NFC_C1 = "Value1";
-Blockly.Msg.NFC_C2 = "Value2";
-Blockly.Msg.NFC_C3 = "Value3";
-Blockly.Msg.NFC_C4 = "Value4";
-Blockly.Msg.NFC_C5 = "Value5";
-Blockly.Msg.NFC_C6 = "Value6";
-Blockly.Msg.NFC_C7 = "Value7";
-Blockly.Msg.NFC_DETECTED = "card detected?";
-Blockly.Msg.NFC_CARD_READED = "Read Value";
-Blockly.Msg.NFC_CHECK_CARD = "Is card Read = Validation card";
-Blockly.Msg.NFC_CHECK_CARD2 = "?";
-
 //KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Keyboard";
 Blockly.Msg.KeyPressed = "Key";
@@ -1120,21 +1079,6 @@ Blockly.Msg.Thingspeak_field = "in field";
 Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
 Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
 
-
-//Firebase
-Blockly.Msg.Firebase_name_init = "Configuration Firebase.";
-Blockly.Msg.firebase_name = "Firebase.";
-Blockly.Msg.Firebase_url = "URL";
-Blockly.Msg.Firebase_api = "Api key";
-Blockly.Msg.Firebase_start = " Initialization in Setup";
-Blockly.Msg.Firebase_type = " Store ";
-Blockly.Msg.Firebase_read = " Read ";
-Blockly.Msg.Firebase_Node = "in node"
-Blockly.Msg.Firebase_Value= "value";
-Blockly.Msg.Firebase_String_Node="Store a text in node";
-Blockly.Msg.Firebase_Read_String_Node="Read the text in node";
-Blockly.Msg.firebase_delete = "Delete node";
-
 //Telegram
 Blockly.Msg.Telegram_name_init = "Configuration Telegram chat.";
 Blockly.Msg.Telegram_name = "Telegram.";
@@ -1188,25 +1132,23 @@ Blockly.Msg.WFL_ACCURACY="Accuracy";
 Blockly.Msg.ESP_yield=" Yield function";
 Blockly.Msg.ESP_deepsleep="DeepSleep ";
 Blockly.Msg.ESP_timesleep="Seconds";
-Blockly.Msg.ESP_restart="Restart ESP8266/ESP32";
+Blockly.Msg.ESP_restart="Restart ESP8266";
 
 //Wifi Server
 Blockly.Msg.WifiServer_wait="Wait connections of clients"
 Blockly.Msg.WifiServer_port="Wifi server begin in port"
-Blockly.Msg.WifiServer_ESP8266webserver_port="Wifi AsynWebServer begin in port"
+Blockly.Msg.WifiServer_ESP8266webserver_port="Wifi ESP8266WebServer begin in port"
 Blockly.Msg.WifiServer_answer="Wifi server answer:"
 Blockly.Msg.WifiServer_stop="Stop the connected client to the our server"
 Blockly.Msg.WifiServer_flush="Flush the connected client to the our server"
 Blockly.Msg.WifiServer_ip="IP of the connected customer"
 Blockly.Msg.WifiServer_request="Request of the connected customer"
-Blockly.Msg.WifiServer_ESP8266webserver_parameter="AsynWebServer Read the parameter: "
-Blockly.Msg.WifiServer_ESP8266webserver_parameter2="AsynWebServer Parameter: "
+Blockly.Msg.WifiServer_ESP8266webserver_parameter="ESP8266WebServer Read the parameter: "
+Blockly.Msg.WifiServer_ESP8266webserver_parameter2="ESP8266WebServer Parameter: "
 Blockly.Msg.WifiServer_esp8266_send_html_URL = "When a client with this URL (empty for root):";
 Blockly.Msg.WifiServer_esp8266_send_html_HTML_page="is connected then show this HTML page: ";
 Blockly.Msg.WifiServer_esp8266_send_html_execute="(optional) and do: ";
 Blockly.Msg.WifiServer_esp8266_manage_requets="Manage client request";
-Blockly.Msg.WifiServer_esp8266_send_text="is connected then show this text: ";
-Blockly.Msg.WifiServer_ESP8266webserver_OTA="OTA is enabled";
 
 Blockly.Msg.Wifi_ap_fixip="Access point mode.Static IP"
 Blockly.Msg.Wifi_sta_fixip="Station mode.Static IP"
@@ -1286,34 +1228,3 @@ Blockly.Msg.CONV_tobyte="Casting to Byte ";
 Blockly.Msg.CONV_toint="Casting to Int ";
 Blockly.Msg.CONV_tounsigendint="Casting to unsigned Int ";
 Blockly.Msg.CONV_tofloat="Casting to Float ";
-
-//Encoder
-Blockly.Msg.RotaryEncoderInit="Init Rotary Encoder";
-Blockly.Msg.RotaryEncoderNumber="Rotary Encoder";
-Blockly.Msg.RE_withoutInterrupt="without interrupts";
-Blockly.Msg.RE_PINDT="Pin DT";
-Blockly.Msg.RE_PINCLK="Pin CLK";
-Blockly.Msg.RE_READ="Read Value";
-Blockly.Msg.RE_WRITE="Write Value";
-Blockly.Msg.RE_Button="Button";
-Blockly.Msg.RE_Pressed="pressed?";
-
-//ESP-NOW
-Blockly.Msg.ESPNOW_init = "Init the protocol. Node";
-Blockly.Msg.ESPNOW_msg_received = "When a message is received";
-Blockly.Msg.ESPNOW_send_all = "Send the message to all nodes.";
-Blockly.Msg.ESPNOW_send_mac = "Send the message to the mac: ";
-Blockly.Msg.ESPNOW_fill_int = "Fill the Int param of the struct to:";
-Blockly.Msg.ESPNOW_fill_float = "Fill the Float param of the struct to:";
-Blockly.Msg.ESPNOW_fill_text = "Fill the Text param of the struct to:";
-Blockly.Msg.ESPNOW_read_node = "Id node received";
-Blockly.Msg.ESPNOW_read_param_int = "Param Int received";
-Blockly.Msg.ESPNOW_read_param_float = "Param Float received";
-Blockly.Msg.ESPNOW_read_param_text = "Param Text received";
-
-//ALEXA
-Blockly.Msg.Alexa_init = "Alexa.Device number:";
-Blockly.Msg.Alexa_init2 = "Name:";
-Blockly.Msg.Alexa_cb = "When a Alexa message is received from device:";
-Blockly.Msg.Alexa_Loop = "Manage the Alexa connection.Loop";
-Blockly.Msg.Alexa_Param = "Get parameter";
