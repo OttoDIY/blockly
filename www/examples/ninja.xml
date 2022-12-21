@@ -1,0 +1,148 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="7+9Bp`fp!u6zKOr6=Hy_" x="-578" y="57">
+    <statement name="DO">
+      <block type="otto_ninja_init" id="1fP~}XR;~Sgw^)JNl:}N">
+        <field name="PIN_LL">D8</field>
+        <field name="PIN_RL">D4</field>
+        <field name="PIN_LF">D7</field>
+        <field name="PIN_RF">D3</field>
+        <field name="PIN_LA">D0</field>
+        <field name="PIN_RA">3</field>
+        <field name="PIN_H">1</field>
+        <next>
+          <block type="otto_ninja_calibration" id="s#n`mJtT(/vOb/IO/U[D">
+            <value name="LA0">
+              <shadow type="math_number" id="$n!5t}q9bDMP!$:cO48,">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="RA0">
+              <shadow type="math_number" id="R4Myf3.iIS(A?o5f1?Df">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="LATL">
+              <shadow type="math_number" id="kLNQ2G?vvdz)HGQ,a/9e">
+                <field name="NUM">40</field>
+              </shadow>
+            </value>
+            <value name="RATL">
+              <shadow type="math_number" id="[`n-EVrrI2I|pDoNRv5F">
+                <field name="NUM">60</field>
+              </shadow>
+            </value>
+            <value name="LATR">
+              <shadow type="math_number" id="LEh_]b%BbU@W(p=1qxRh">
+                <field name="NUM">60</field>
+              </shadow>
+            </value>
+            <value name="RATR">
+              <shadow type="math_number" id="%a@A#CU(3Z%o~=2.DRYe">
+                <field name="NUM">40</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="otto_ninja_speed" id="4$BBWzyoeO71-Vf*wOn7">
+                <value name="LFFWRS">
+                  <shadow type="math_number" id="(BMP_](%[Az75;WGL+V^">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+                <value name="RFFWRS">
+                  <shadow type="math_number" id="Ez=27#r|3o(hL@As,4#4">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+                <value name="LFBWRS">
+                  <shadow type="math_number" id="i@c`BgNkA$jN;UQ~z%t@">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+                <value name="RFBWRS">
+                  <shadow type="math_number" id="HzRpX[kC:_#W}wPFHA:X">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_ninja_home" id="X,;yjHWuD46o}hZ-r;bZ">
+        <next>
+          <block type="otto_ninja_setwalk" id="n*2he;6~:Z*g@cQ:sJMl">
+            <next>
+              <block type="controls_repeat_ext" id="WMv+cq?Wf_}^/yR/~/+!">
+                <value name="TIMES">
+                  <shadow type="math_number" id="2sqVHzNKm}/x,DCC=Wo-">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="otto_ninja_walk" id="+/ln=$4q_B.Vo|OF$ZI3">
+                    <field name="Walk">F</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="otto_ninja_walkstop" id="8W_n(N2`viF,;}uNH~9g">
+                    <next>
+                      <block type="otto_ninja_setroll" id="Jo`Ggofa}F-HB[xvMx*g">
+                        <next>
+                          <block type="base_delay" id="?^Iqh}p7NolbSFNtBgEc">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="vfp[a:D9Q6C/i{49aIlZ">
+                                <field name="NUM">300</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="otto_ninja_roll" id="epkSno=.w3ogv;T:`f,v">
+                                <field name="Roll">F</field>
+                                <value name="SPEED">
+                                  <shadow type="math_number" id="fake_id_speed">
+                                    <field name="NUM">100</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="base_delay" id="3bzF1ZyfN:R4EC_OpIeN">
+                                    <field name="unite">s</field>
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="FgLa_?Q_fSh%r9XcR|XT">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="otto_ninja_rollstop" id=")-eNmO{R-!$B3P[$Sz^h">
+                                        <next>
+                                          <block type="base_delay" id="!,m):Ycgly)fk5!YupbZ">
+                                            <field name="unite">m</field>
+                                            <value name="DELAY_TIME">
+                                              <shadow type="math_number" id="gkkji!1[:{;#LTgpYB,7">
+                                                <field name="NUM">300</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

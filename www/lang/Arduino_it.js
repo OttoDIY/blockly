@@ -356,6 +356,8 @@ Blockly.Msg.bargraphe_tooltip = "il modulo BarGraph è composto da 10 LED (8 ver
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="indicare i pin PWM da connettere al LED RGB";
 Blockly.Msg.rvb_set="mostra il colore";
+Blockly.Msg.rvb_anode="common anode";
+Blockly.Msg.rvb_cathode="common cathode";
 Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="visualizza un colore che indica un valore per i tre componenti (rosso, verde, blu)";
 Blockly.Msg.pixel1 = "NeoPixel";
@@ -649,7 +651,8 @@ Blockly.Msg.inch="pollici";
 Blockly.Msg.TRIG="Trigger";
 Blockly.Msg.Echo="Eco";
 Blockly.Msg.VAR_TemSens="Sensore analogico di Temperatura NTC (ºC)";
-Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
+Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
+Blockly.Msg.TOUCH="Touch";
 
 //CCS811
 Blockly.Msg.CCS811="Inizializza sensore CO2(CCS811)";
@@ -930,6 +933,23 @@ Blockly.Msg.RFID_READED = "La carta RFID è stata letta?";
 Blockly.Msg.RFID_CARD_READED = "Valore della carta letta";
 Blockly.Msg.RFID_CHECK_CARD = "La lettura della carta RFID è uguale a quella di convalida";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+
+//NFC PN532
+Blockly.Msg.NFC_name = "💳 NFC ";
+Blockly.Msg.NFC_init = "NFC I2C ";
+Blockly.Msg.NFC_VALID_VAR = "Validation card(4bytes):";
+Blockly.Msg.NFC_VALID_VAR2 = "Validation card(7bytes):";
+Blockly.Msg.NFC_C1 = "Value1";
+Blockly.Msg.NFC_C2 = "Value2";
+Blockly.Msg.NFC_C3 = "Value3";
+Blockly.Msg.NFC_C4 = "Value4";
+Blockly.Msg.NFC_C5 = "Value5";
+Blockly.Msg.NFC_C6 = "Value6";
+Blockly.Msg.NFC_C7 = "Value4";
+Blockly.Msg.NFC_DETECTED = "card detected?";
+Blockly.Msg.NFC_CARD_READED = "Read Value";
+Blockly.Msg.NFC_CHECK_CARD = "Is card Read = Validation card";
+Blockly.Msg.NFC_CHECK_CARD2 = "?";
 
 //KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Tastiera";

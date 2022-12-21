@@ -1,0 +1,165 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="q~[LTgx7FuUsu0~FMR4W" x="-357" y="-3">
+    <statement name="DO">
+      <block type="serial_init" id="(=],sS=1KdlnUDK|l%j/">
+        <field name="PINBAUDIOS">115200</field>
+        <next>
+          <block type="variables_set_init" id="(f@OAPbJgSpE}b=/C%zf">
+            <field name="VAR">Valor_int</field>
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VALUE">
+              <block type="math_number" id="uV(2}l4(;ZdULI*^$[lA">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set_init" id="x+b8t$9lW74^j@Fv},+h">
+                <field name="VAR">valor_float</field>
+                <field name="VARIABLE_SETTYPE_TYPE">DECIMAL</field>
+                <value name="VALUE">
+                  <block type="math_number" id="A3K.`HRBP#IiDt_C1xwu">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="MshqR}lUgC0-~VPxvyA/">
+                    <field name="VAR">contador</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="hcND2c1AA_Mu$|p9f(_(">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="wifi_init_sta" id="r%_*e[dP0hI+N.,1[JME">
+                        <field name="LOGIC">FALSE</field>
+                        <field name="SSID">tu red</field>
+                        <field name="PASSWORD">tu passwrod</field>
+                        <next>
+                          <block type="thingspeak_init" id="wysB-w#/Q8sg]3/o{P?j">
+                            <field name="CHANNEL">numero de tu canal</field>
+                            <field name="API_WRITE_KEY">api de escritura</field>
+                            <field name="API_READ_KEY">api de lectura</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="thingspeak_write" id="wvjg7Qk?Y)XBx_%]Tkgc">
+        <field name="FIELD">1</field>
+        <comment pinned="true" h="80" w="160">Estoy enviando un contador al campo 1</comment>
+        <value name="variable">
+          <shadow type="math_number" id="q1E{nsY}Uyfe^bEc*}tZ">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="!;lefy$A{*^2A-c4WsfL">
+            <field name="VAR">contador</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="S)f8uHndr2+%$#|K~:xE">
+            <field name="VAR">valor_float</field>
+            <value name="VALUE">
+              <block type="thingspeak_write_float" id="1/7gS4dtgChr/C5~*L)?">
+                <field name="FIELD">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="DgaRX2^YN0=Yr6O5,T5h">
+                <value name="CONTENT">
+                  <shadow type="text" id="Jp,2tJ?0hOYUu?MATy7J">
+                    <field name="TEXT">text</field>
+                  </shadow>
+                  <block type="text_join" id="(Z7/o)bRd`_,ZrY.R%*3">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="x%CyWL5|mJa?C:rfc9ld">
+                        <field name="TEXT">El valor leido en float es:  </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id="yKu44bR.lD^ku`uZ~yYU">
+                        <field name="VAR">valor_float</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="6v*8e5O|o8KX}4~2)r1r">
+                    <field name="VAR">Valor_int</field>
+                    <value name="VALUE">
+                      <block type="thingspeak_write_long" id="YmD?8[g)s4ZeubS*P~Ex">
+                        <field name="FIELD">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="!+IbwL85#*Q?ME%oeZc9">
+                        <value name="CONTENT">
+                          <shadow type="text" id="Jp,2tJ?0hOYUu?MATy7J">
+                            <field name="TEXT">text</field>
+                          </shadow>
+                          <block type="text_join" id="rDntsYol`H]=|5nMuziI">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="z3*+366,;?gxTHvF!p(t">
+                                <field name="TEXT">El valor leido en entero es:  </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id="N]_MfXFiXfM)|33llAa(">
+                                <field name="VAR">Valor_int</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="base_delay" id="e}i#/}iTN4d]D9;D:0BI">
+                            <field name="unite">s</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="H_4o#7r:r-cE$xc,`EYJ">
+                                <field name="NUM">20</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="eft(QBBm1Yh]|4|*4`9O">
+                                <field name="VAR">contador</field>
+                                <value name="VALUE">
+                                  <block type="math_arithmetic" id="U[|_`CUwFTNuW0}HVZ=u">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="RrPbluTgT7;*zrns;xyu">
+                                        <field name="VAR">contador</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="$LDpgB?i3~YP%QzvZ5O+">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

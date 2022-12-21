@@ -1,0 +1,79 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="sYpp.M_hPV=wn]G[Y!?e" x="-172" y="110">
+    <statement name="DO">
+      <block type="otto9_configuration" id=")Isv0^^Pknf/2{$?NcS-">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <next>
+          <block type="otto_sound" id="bV!T}Ry7_TrQz}u|fwsW">
+            <field name="otto_sound">S_connection</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_sound" id="Q$eJKk{FA1OApb%rNw{W">
+        <field name="otto_sound">S_superHappy</field>
+        <next>
+          <block type="otto_sound" id="(z?}^0SjcWN-28pF=1@a">
+            <field name="otto_sound">S_happy</field>
+            <next>
+              <block type="otto_sound" id="B4=!mK;|;!;Th!vbBmLv">
+                <field name="otto_sound">S_happy_short</field>
+                <next>
+                  <block type="otto_sound" id="qwzPeW#eiC.7a`Qk)o+O">
+                    <field name="otto_sound">S_sad</field>
+                    <next>
+                      <block type="otto_sound" id="ErtOMF_l1ciih(=~6jqk">
+                        <field name="otto_sound">S_confused</field>
+                        <next>
+                          <block type="otto_sound" id=";*9k7[6)a=*]VfcuFN/H">
+                            <field name="otto_sound">S_cuddly</field>
+                            <next>
+                              <block type="otto_sound" id="FPBX;GiLt-C:x+q$7x/.">
+                                <field name="otto_sound">S_OhOoh</field>
+                                <next>
+                                  <block type="otto_sound" id="#-g^uVv7Y_-WJP+y~`{H">
+                                    <field name="otto_sound">S_surprise</field>
+                                    <next>
+                                      <block type="otto_sound" id="dLicbMy1y:D/RW8e,f[w">
+                                        <field name="otto_sound">S_buttonPushed</field>
+                                        <next>
+                                          <block type="otto_sound" id="|i=7yg^pfNfg.IT78m5P">
+                                            <field name="otto_sound">S_fart1</field>
+                                            <next>
+                                              <block type="otto_sound" id="#dTWt,cMGf+x?-lfXWxv">
+                                                <field name="otto_sound">S_sleeping</field>
+                                                <next>
+                                                  <block type="otto_sound" id="l04u29#K*lj4x/),bp:@">
+                                                    <field name="otto_sound">S_disconnection</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

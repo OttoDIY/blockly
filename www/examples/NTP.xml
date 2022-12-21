@@ -1,0 +1,156 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="q~[LTgx7FuUsu0~FMR4W" x="-4" y="48">
+    <statement name="DO">
+      <block type="serial_init" id="(=],sS=1KdlnUDK|l%j/">
+        <field name="PINBAUDIOS">115200</field>
+        <next>
+          <block type="wifi_init_sta" id="r%_*e[dP0hI+N.,1[JME">
+            <field name="LOGIC">FALSE</field>
+            <field name="SSID">xxxxxxxxx</field>
+            <field name="PASSWORD">xxxxxxxxxxxxx</field>
+            <next>
+              <block type="Init_NTP" id="(WYBT%0i1./b(LWc$30U">
+                <field name="GMT">2</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="order_read_NTP_server" id="8+X,JdLV)I+]s3A{Pf_K">
+        <next>
+          <block type="serial_println" id="9O=wW1ca[MSqcH+G,Ygg">
+            <value name="CONTENT">
+              <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                <field name="TEXT">text</field>
+              </shadow>
+              <block type="values_NTP_server" id="dA_5s{hc+l{iSF][{%qS">
+                <field name="OUTPUT_VALUE">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="=@#F^PesEhT@N-Jb[cSv">
+                <value name="CONTENT">
+                  <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                    <field name="TEXT">text</field>
+                  </shadow>
+                  <block type="values_NTP_server" id="k!UrH:hGy=:~l2nnPTYb">
+                    <field name="OUTPUT_VALUE">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_println" id="@RvRSxe0x2iVfOAc:%wN">
+                    <value name="CONTENT">
+                      <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                        <field name="TEXT">text</field>
+                      </shadow>
+                      <block type="values_NTP_server" id="(3%Pk!JdHfE#Ub#-jYz?">
+                        <field name="OUTPUT_VALUE">2</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="pHS:78k-*g+q0wAzZ.@d">
+                        <value name="CONTENT">
+                          <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                            <field name="TEXT">text</field>
+                          </shadow>
+                          <block type="values_NTP_server" id="DuQQr~kKl7{S#R7!LNcL">
+                            <field name="OUTPUT_VALUE">3</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_println" id="q6FXMnrn:4mLtT9rgJW)">
+                            <value name="CONTENT">
+                              <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                <field name="TEXT">text</field>
+                              </shadow>
+                              <block type="values_NTP_server" id=";$D|;[(gzoL=Q.9bt}n3">
+                                <field name="OUTPUT_VALUE">4</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="jryP$rVg%#lpuf?9oX~U">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                    <field name="TEXT">text</field>
+                                  </shadow>
+                                  <block type="values_NTP_server" id="ShUWULxu:b9XIAY(@A)U">
+                                    <field name="OUTPUT_VALUE">5</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id=":e^%Lj2O_vM^#2:7MD?i">
+                                    <value name="CONTENT">
+                                      <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                        <field name="TEXT">text</field>
+                                      </shadow>
+                                      <block type="values_NTP_server" id="hZ)AH~Ms[;|;ZMJbHixE">
+                                        <field name="OUTPUT_VALUE">6</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_println" id="g;CfuK`)beB1FrkfzQR#">
+                                        <value name="CONTENT">
+                                          <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                            <field name="TEXT">text</field>
+                                          </shadow>
+                                          <block type="values_text_NTP_server" id="9k(c!RF(rEPxS5x9cY[$">
+                                            <field name="OUTPUT_VALUE">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="serial_println" id="1i39cc+X)p=Pw6EP$|g2">
+                                            <value name="CONTENT">
+                                              <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                                <field name="TEXT">text</field>
+                                              </shadow>
+                                              <block type="values_text_NTP_server" id="5Tb5tu9cK+`v+?..Vb=%">
+                                                <field name="OUTPUT_VALUE">1</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="serial_println" id="`7yy~S?P?Rnt+gi^eF3y">
+                                                <value name="CONTENT">
+                                                  <shadow type="text" id="!,h?vVODha5CIAbErH0q">
+                                                    <field name="TEXT">text</field>
+                                                  </shadow>
+                                                  <block type="values_text_NTP_server" id="jAV[(%(JTPuXyM8/o=EL">
+                                                    <field name="OUTPUT_VALUE">2</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="base_delay" id="^2GdZWQp*.o@FbS0aaRD">
+                                                    <field name="unite">s</field>
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="Gjir/5hkV0r@qNP8Qk8m">
+                                                        <field name="NUM">5</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

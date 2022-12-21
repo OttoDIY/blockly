@@ -1,0 +1,21 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id=".~st,jZ4bTq`x#VS,}*}" x="52" y="76">
+    <statement name="DO">
+      <block type="otto9_configuration" id="1PF3]w+U(p}|2P.EZl2]">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <comment pinned="true" h="66" w="503">Here is where your robot is configured, the servo pins connections and buzzer</comment>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_move" id="essyGn9tAO)B7;*f+y4i">
+        <field name="otto_move_sens">FORWARD</field>
+        <field name="otto_move_speed">1000</field>
+      </block>
+    </statement>
+  </block>
+</xml>

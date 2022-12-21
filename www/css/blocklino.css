@@ -1,0 +1,252 @@
+@CHARSET "UTF-8";
+
+::-webkit-scrollbar { width: 0px; }
+
+html,body {
+	height: 100%
+}
+body {
+	background-color: #2d2d64;
+    font-family: 'Poppins', sans-serif;
+	margin: 0
+}
+
+#div_var {
+    position: absolute;
+	text-align: center;
+    top: 45px;
+	margin: 10px
+}
+#divfenetre {
+	background-color: #fff;
+    position: absolute;
+    top: 45px;
+    bottom: 0px;
+    width: 100%
+}
+#divBody {
+    position: absolute;
+    top: 65px;
+    bottom: 0px;
+    width: 100%
+}
+#title-bar {
+    -webkit-app-region: drag;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	vertical-align: middle;
+	background-color: #2d2d64;
+	padding: none;
+	margin: 0px
+}
+#title-bar-repl {
+    -webkit-app-region: drag;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	vertical-align: middle;
+	background-color: #b8b8b8;
+	padding: none;
+	margin: 0px
+}
+#toptitle {
+    -webkit-app-region: drag;
+	height: 30px;
+	text-align: center;
+	line-height: 20px;
+	vertical-align: middle;
+	background-color: #2d2d64;
+	padding: none;
+	margin: 0px
+}
+#title {
+	position: fixed;
+	font-weight: bold;
+	top: 0px;
+	left: 6px;
+	color:white
+}
+#title-bar-btns {
+	-webkit-app-region: no-drag;
+	position: fixed;
+	right: 0px
+}
+#fenetre_term{
+	width: 630px;
+	height: 415px;
+	border: 1px solid #ccc;
+	padding:0px 5px 5px 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	overflow: auto
+}
+#fenetre_repl{
+	width: 630px;
+	height: 415px;
+	color:white;
+	background-color: #b8b8b8;
+	border: 1px solid #ccc;
+	padding:0px 5px 5px 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	overflow: auto
+}
+#header {
+    position: absolute;
+    top: 25px;
+	background: #2d2d64;
+	height: 40px;
+    width: 100%
+}
+.arduino_card_mini_picture_div {
+	position:absolute;
+	top:20px;
+	right:45px;
+	width:250px;
+	height:600px
+}
+.div_close_modal {
+	padding-right: 10px;	
+	float: right;
+	bottom: 10px;
+	position: absolute;
+	text-align: center
+}
+.modal-body-config-global_left {
+    position: relative
+}
+#content_factory{
+	height: 100%;
+	width: 100%;
+	padding-right: 5px
+}
+#content_blocks{
+	height: 100%;
+	width: 100%
+}
+#blockly_l{
+	background-color: #fff;
+	float:left;
+	height:100%;
+	width:55%
+}
+#blockly_r{
+	float:right;
+	height:100%;
+	width:45%
+}
+#btn_all {
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	z-index: 10
+}
+#btn_group {
+	position: absolute;
+	right: 5px;
+	top: 2px;
+	z-index: 10
+}
+#toggle {
+	width: 25%;
+	position: absolute;
+	z-index: 1;
+	right: 15px;
+	top: 0px;
+	bottom: 20px;
+	opacity: 0.9
+}
+#content_code {
+	font-size: 16px;
+    position: absolute;
+	border: 1px solid #727272;
+    top: 0px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px
+}
+#toggle pre {
+	height: 100%
+}
+#serial-checboxes {
+    margin-left: 20px
+}
+#modal-body-config {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3
+}
+#select_all {
+	margin-left: 15px
+}
+#span_select_all {
+	font-weight: bold
+} 
+.blocklySvg {
+	border-top: none !important;
+	background-color: #A9B9C9;
+}
+.blocklyScrollbarHandle {
+    fill: #FF5700
+}
+.blocklyToolboxDiv {
+	background-color: #f2f2f2  !important;
+	
+	font-weight: bold;
+	margin-left: 5px;
+	width: 210px;
+	opacity: 0.7 
+}
+.blocklyFlyoutBackground {
+	fill: #e6e6e6 !important
+}
+.blocklyTreeRoot {
+	padding: 0 !important
+}
+.blocklyToolboxDiv .blocklyTreeRoot [role="treeitem"] {
+	position: relative
+}
+.blocklyToolboxDiv .blocklyTreeRoot [role="treeitem"].blocklyTreeRow {
+	line-height: normal !important;
+	padding: 6px 50px 6px 12px !important
+}
+.blocklyTreeRow {
+	height: 30px !important;
+	line-height: 30px !important
+}
+.blocklyTreeSeparator {
+	background: none repeat scroll 0 0 #e9f9f9 !important;
+	border-bottom: none !important;
+	height: 10px !important
+}
+.colors_category {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 8px
+}
+.loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../media/ajax-loading.gif) center no-repeat #2d2d64
+}
+.vignette {
+    max-width: 80px;
+    max-height: 80px
+}
+.blocklyScrollbarKnob {
+  fill: #2d2d64 !important;
+  fill-opacity: 0.7 !important
+}
+.blocklyScrollbarBackground {
+  stroke-width: 0px !important;
+  fill: none !important
+}

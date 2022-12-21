@@ -1,0 +1,96 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="wlYNgo3l-_1`]jZ}67|7" x="389" y="98">
+    <statement name="DO">
+      <block type="otto9_configuration" id="y@H!+#yG0SDmM5!~6?wV">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <next>
+          <block type="ultrasonic_sensor" id="Foj||r)(6Ru|Nd3Ei+J4">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="leqG!vuHYv$(uIF8rq?!">
+        <value name="IF0">
+          <block type="button_touch_sensor2" id="`%Jsi/O/,JVkEKm,ShVe">
+            <field name="PIN_BUTTON">A0</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="otto_do" id="0}5?C|@1gzo63.[Q,=vh">
+            <field name="otto_do_movement">updown</field>
+            <field name="otto_move_speed">1000</field>
+            <field name="otto_dance_size">25</field>
+            <next>
+              <block type="otto_sound" id="Wd(Hn9[n8YthQb0fHTOO">
+                <field name="otto_sound">S_superHappy</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="k]uQm(f+udZM?Gm;N$x#">
+            <value name="IF0">
+              <block type="Sound_status_sensor2" id="k0!nA;FZchbCTXNZu`jm">
+                <field name="PIN_SOUND">A6</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="otto_gesture" id="pDF;89WLraEiLuJNyFn2">
+                <field name="otto_gesture">OttoSleeping</field>
+                <next>
+                  <block type="otto_sound" id="zD*j,K@Eemg]z/zm!`*w">
+                    <field name="otto_sound">S_sleeping</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="POb6$D;YdKe*x5-0]Nc%">
+                <value name="IF0">
+                  <block type="logic_compare" id="/Hm^+/gX%4DrMFxXpxIU">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="ultrasonic_distance" id="+q_2@6sGKeC`JhA%Ead.">
+                        <field name="US_NUMBER">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id=",[eAqM*7%1NHHQnWBZzD">
+                        <field name="NUM">15</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="otto_move" id="9qno8!A;$=`L-exF~NPW">
+                    <field name="otto_move_sens">BACKWARD</field>
+                    <field name="otto_move_speed">1000</field>
+                    <next>
+                      <block type="RTTTL_music" id="yjv35Wngj.KK^Ub)Zm+7">
+                        <field name="PIN_BUZZER">13</field>
+                        <field name="MELODY">StarWars</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="otto_home" id="5yeM$T/;_{6v/d4mu=#$"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

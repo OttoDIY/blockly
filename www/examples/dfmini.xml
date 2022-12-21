@@ -1,0 +1,175 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="n!YmQ#j4Ih$j(rN-Rm/+" x="206" y="-196">
+    <statement name="DO">
+      <block type="lp2i_mp3_init" id="56RjF}HfX6hB;_wo!/td">
+        <field name="PIN_TX">11</field>
+        <field name="PIN_RX">12</field>
+        <field name="play">FALSE</field>
+        <value name="Volume">
+          <shadow type="math_number" id="Gws;ueC}zRjo!~WKOt{P">
+            <field name="NUM">27</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="OLED_init" id="A0oJ!tsY:!bX$/SmytQs">
+            <field name="height">64</field>
+            <field name="address">0x3C</field>
+            <next>
+              <block type="variables_set_init" id="pW86B%8L-S.E2SnsejQJ">
+                <field name="VAR">i</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id="WLg3,Yb}3{=xTq:bd6Rk">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="^MVRoapp.wcuC[cGp2Of">
+                    <field name="VAR">x</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="hC.ghMnqdalDU}B*@~uR">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_for" id=".$yn$~EG#EZ5+6-/f|P(">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <shadow type="math_number" id="u`Y6mYe+?[:{!WOl+;66">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="U+SSjBPj,EBBE)s*C8VV">
+            <field name="NUM">6</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id=")ewZQv:=3@{Btas|a2?H">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="procedures_callnoreturn" id=",+XAnlb5LYiXccu~HyR?">
+            <mutation name="playtrack">
+              <arg name="x"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="variables_get" id="dMOdk,7vA8NHUiuVR(8]">
+                <field name="VAR">i</field>
+              </block>
+            </value>
+            <next>
+              <block type="base_delay" id="bShol5[q^362GLz5aUKH">
+                <field name="unite">s</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="y--g3iI#%6ND?$J:DUoP">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="base_delay" id="B0f~dw$NLK:~6g~$-XrW">
+            <field name="unite">s</field>
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="=-ms[)CE{mn^~z}z{@G:">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="YSP|cTO@QA$dDNZ_[Q*G" x="203" y="266">
+    <mutation>
+      <arg name="x" vartype="SHORT_NUMBER"></arg>
+    </mutation>
+    <field name="NAME">playtrack</field>
+    <statement name="STACK">
+      <block type="lp2i_mp3_play_track" id=".#e:khhN,#,djjs_}R[i">
+        <value name="num">
+          <shadow type="math_number" id="ydNS{;WnV(;G!r=47xSE">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="/K6MaC^1,(QlGS/Q*`N$">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+        <next>
+          <block type="OLED_clear" id="?)q1dQkVWFuwMLkD[lt@">
+            <next>
+              <block type="OLED_data" id="jDJ~UsI)~[D`_-ypDTL_">
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="PyDG;$DyLZa?p8v)^?_.">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="TB,ff4:1$ju/J{lraWhe">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="FOLsPwi2FgJjiP}=VG[8">
+                    <field name="NUM">2</field>
+                  </shadow>
+                </value>
+                <value name="print">
+                  <shadow type="text" id=":a~(f7$MNHe~sj)F8r(O">
+                    <field name="TEXT">Track</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_data" id="AjSYTNQ!)1$RqZ,}%*KO">
+                    <field name="draw">TRUE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="b;EGp`a#NzAp=`Z`w~#:">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="%jevLmc}q|qw7_lwgZ;f">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="zoEKeFUZQ(CVKnmcAN2]">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <value name="print">
+                      <shadow type="text" id="$_*D;q2t~mtG~0C|D9.I">
+                        <field name="TEXT">Track</field>
+                      </shadow>
+                      <block type="variables_get" id="_hOq7+p2iPH%zeIiK_38">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="OLED_display" id="cPB$B{I^L;Di.C(9ml.H"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

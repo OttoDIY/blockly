@@ -1,0 +1,856 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="Yep!f$#$,9z]C}@!H8xa" x="-567" y="-67">
+    <statement name="DO">
+      <block type="st7735_init" id="N*Y11v#yNWha#)tzl`f,">
+        <field name="WRAP">INITR_MINI160x80</field>
+        <value name="PIN_CS">
+          <shadow type="analog_pin" id="]AL(M@z,]bzB_II*c1p_">
+            <field name="NUM">A1</field>
+          </shadow>
+          <block type="mrtduino_pin" id="V!@n:r00s8Wl@M`ZaKPm">
+            <field name="MRTPIN">21</field>
+          </block>
+        </value>
+        <value name="PIN_DC">
+          <shadow type="analog_pin" id="}Ml~A}/|n66XwI)ofw^X">
+            <field name="NUM">A2</field>
+          </shadow>
+          <block type="mrtduino_pin" id="IcUa0e._]?b|+%qGAk.*">
+            <field name="MRTPIN">20</field>
+          </block>
+        </value>
+        <value name="PIN_RST">
+          <shadow type="analog_pin" id="Ae]JFhZ(ngzJOHv+(5*S">
+            <field name="NUM">A3</field>
+          </shadow>
+          <block type="mrtduino_pin" id=":XY|rea#N`UV@Kh20W9v">
+            <field name="MRTPIN">19</field>
+          </block>
+        </value>
+        <next>
+          <block type="st7735_rotatedisplay" id="s6B8B31qMr~5ZH)p[jI5">
+            <field name="DEGREE">1</field>
+            <next>
+              <block type="st7735_icon" id="r5:ibqH[Uc6aYDIWc)M_">
+                <field name="NAME">Frame1</field>
+                <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0xff, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0x00, 0x00, 0x00,    0x00, 0xfe, 0x00, 0x00, 0x00, 0x00, 0x1e, 0x00, 0x00, 0x00, 0x01, 0x83, 0x80, 0x00, 0x00, 0x00,    0x07, 0x00, 0x00, 0x00, 0x03, 0x00, 0xc0, 0x00, 0x00, 0x00, 0x01, 0xc0, 0x00, 0x00, 0x03, 0x0c,    0x40, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xe1, 0x0c, 0x60, 0x00, 0x00, 0x00, 0x00, 0xf0,    0x00, 0x1f, 0xff, 0x80, 0x20, 0x00, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x01, 0xf9, 0xe0, 0x20, 0x00,    0x00, 0x00, 0x03, 0xc0, 0x00, 0x00, 0xcc, 0x78, 0x60, 0x00, 0x00, 0x03, 0xe7, 0x80, 0x00, 0x00,    0x64, 0x1f, 0xc0, 0x00, 0x00, 0x0e, 0xff, 0x00, 0x00, 0x00, 0x66, 0x00, 0x00, 0x00, 0x00, 0x1c,    0x0e, 0x00, 0x00, 0x00, 0x33, 0xf0, 0x00, 0x00, 0x00, 0x30, 0xf8, 0x00, 0x00, 0x00, 0x18, 0x1f,    0xf0, 0x00, 0x00, 0x7f, 0xf0, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0xfc, 0x00, 0x00,    0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00,    0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0e, 0x00, 0x00, 0x00, 0x00, 0x00,    0x01, 0x86, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xcc, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                <next>
+                  <block type="st7735_icon" id="v`K4.9_$Z,^)O!XaOcH?">
+                    <field name="NAME">Frame2</field>
+                    <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x70, 0xf8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0e, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0x00, 0x00, 0x00,    0x03, 0x80, 0x00, 0x00, 0x0f, 0xf0, 0x00, 0x00, 0x00, 0x00, 0x01, 0xc0, 0x00, 0x00, 0x08, 0x18,    0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x00, 0x00, 0x18, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe,    0x00, 0x00, 0x18, 0x66, 0x00, 0x00, 0x00, 0x00, 0x00, 0xdf, 0xf8, 0x00, 0x08, 0x66, 0x00, 0x00,    0x00, 0x00, 0x01, 0xb8, 0xff, 0xff, 0xfc, 0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0xb0, 0x01, 0xfe,    0x06, 0x02, 0x00, 0x00, 0x00, 0x00, 0x03, 0x60, 0x00, 0x32, 0x03, 0x86, 0x00, 0x00, 0x00, 0x03,    0xff, 0xc0, 0x00, 0x33, 0x80, 0xfc, 0x00, 0x00, 0x00, 0x07, 0x07, 0x80, 0x00, 0x10, 0xe0, 0x01,    0x00, 0x00, 0x00, 0x7f, 0xff, 0x00, 0x00, 0x10, 0x38, 0x03, 0x00, 0x00, 0x00, 0x7f, 0xfe, 0x00,    0x00, 0x18, 0x0f, 0x86, 0x00, 0x00, 0x00, 0xc8, 0x00, 0x00, 0x00, 0x08, 0x00, 0xfc, 0x00, 0x00,    0x01, 0x80, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x0c,    0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x01, 0x8c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0x00, 0x00, 0x00</field>
+                    <next>
+                      <block type="st7735_icon" id="F`+n|X4@/?GY1~f.CLb=">
+                        <field name="NAME">Frame3</field>
+                        <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0f, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x0e, 0x00, 0x00, 0x07, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x80, 0x00, 0x0c, 0x30,    0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xc0, 0x00, 0x10, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02,    0xf0, 0x00, 0x10, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xbe, 0x00, 0x18, 0x66, 0x00, 0x00,    0x00, 0x00, 0x00, 0x07, 0x87, 0xc0, 0x08, 0x62, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0xff,    0xfc, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x1f, 0x06, 0x02, 0x00, 0x00, 0x00, 0x00,    0x00, 0x0e, 0x00, 0x09, 0x03, 0x86, 0x00, 0x00, 0x00, 0x00, 0x3f, 0xfe, 0x00, 0x09, 0x00, 0xfc,    0x00, 0x00, 0x00, 0x00, 0x6f, 0xfc, 0x00, 0x19, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x58, 0x00,    0x00, 0x10, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x00, 0x00, 0x10, 0x80, 0x00, 0x00, 0x00,    0x00, 0x00, 0xc0, 0x00, 0x00, 0x30, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x01, 0x80, 0x00, 0x00, 0x20,    0x70, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x1c, 0x60, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x60, 0x07, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x6e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00, 0x00</field>
+                        <next>
+                          <block type="st7735_icon" id="m62zPWPdR[T[!9lDVCME">
+                            <field name="NAME">Frame4</field>
+                            <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x01, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x0e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0x07, 0xe0,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x0c, 0x38, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x3f, 0x00, 0x18, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0f, 0xe0, 0x10, 0x66, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x0c, 0x3e, 0x10, 0x62, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x07,    0xf0, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0e, 0x00, 0xd8, 0x02, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x0a, 0x03, 0xce, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x06, 0x83, 0x84,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7e, 0x0d, 0x80, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01,    0xcc, 0x39, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xf8, 0x61, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x0f, 0x80, 0xc3, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x09, 0x03, 0x82,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x0c, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x02, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x60, 0x01, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x78, 0x00, 0xe0, 0x00, 0x00, 0x00</field>
+                            <next>
+                              <block type="st7735_icon" id="bUUZXoqWrOMw@X[Nd)_2">
+                                <field name="NAME">Frame5</field>
+                                <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x03, 0xf8,    0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0xff, 0x0c, 0x06, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00,    0x03, 0x83, 0xc8, 0x03, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x06, 0x00, 0xf8, 0x19, 0x00, 0x00,    0x00, 0x00, 0x01, 0xc0, 0x0c, 0x00, 0xd8, 0x19, 0x80, 0x00, 0x00, 0x00, 0x00, 0x70, 0x18, 0x00,    0x88, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x1f, 0xf8, 0x00, 0x8e, 0x00, 0x80, 0x00, 0x00, 0x00,    0x00, 0x00, 0x1c, 0x01, 0x83, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0f, 0x01, 0x00, 0xfc,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0xc7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x02, 0x5e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x56, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x01, 0x76, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xe4,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x8c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x03, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x08, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x0c, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                                <next>
+                                  <block type="st7735_icon" id="CE9e:o.@b#Z)RGhtfe;c">
+                                    <field name="NAME">Frame6</field>
+                                    <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x61, 0xc0,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x01, 0x00, 0x30, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x19, 0x81, 0xc0,    0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x1f, 0x00, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06,    0x00, 0x7e, 0x06, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0xd2, 0x06, 0x20, 0x00, 0x00,    0x00, 0x10, 0x00, 0x08, 0x01, 0x92, 0x00, 0x60, 0x00, 0x00, 0x00, 0x10, 0x00, 0x08, 0x01, 0x33,    0x00, 0xc0, 0x00, 0x00, 0x00, 0x18, 0x00, 0x18, 0x03, 0x61, 0xe3, 0x00, 0x00, 0x00, 0x00, 0x0c,    0x00, 0x10, 0x03, 0xc0, 0x3c, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x1f, 0x86, 0xc0, 0x00, 0x00,    0x00, 0x00, 0x00, 0x03, 0x00, 0x7c, 0xfe, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xc1, 0xc7,    0xe5, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7f, 0x80, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x1b, 0x99, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3e, 0xf3,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x37, 0xc6, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0xdb, 0xec, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf0, 0xb8, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03,    0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                                    <next>
+                                      <block type="st7735_icon" id="^3]Ynu5^RVt;t}hj].jf">
+                                        <field name="NAME">Frame7</field>
+                                        <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f,    0xe0, 0x7f, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x79, 0x80, 0x40, 0x00, 0x00, 0x00,    0x00, 0x00, 0x01, 0xc0, 0x1d, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x3f, 0x03,    0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x67, 0x03, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00,    0x0c, 0x00, 0xc5, 0x80, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x01, 0x84, 0xc0, 0x60, 0x00,    0x00, 0x00, 0x00, 0x00, 0x18, 0x03, 0x04, 0x7f, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x02,    0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0xc0, 0x00, 0x30, 0x01, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00,    0x70, 0x00, 0xf0, 0x01, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1f, 0x0f, 0xfc, 0x01, 0x8c, 0x00,    0x00, 0x00, 0x00, 0x00, 0x01, 0xf8, 0x3e, 0x00, 0x88, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x37, 0x00, 0x98, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x21, 0x03, 0x10, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x21, 0x86, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0xc0,    0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x43, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x13, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0e, 0x32, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                                        <next>
+                                          <block type="st7735_icon" id="Wam)C0DlUL5cT0pZh|N0">
+                                            <field name="NAME">Frame8</field>
+                                            <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0xf0, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x08, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x06, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x62, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0xff, 0xf0, 0x61, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xe3, 0x30, 0x03, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x1f, 0x04, 0x18, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x18, 0x1f,    0xfc, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xc0, 0x60, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x0f, 0x00, 0xc0, 0x01, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0xe0, 0x00, 0x80, 0x00,    0x00, 0x00, 0x03, 0xff, 0xf8, 0x00, 0x38, 0x01, 0x80, 0x00, 0x00, 0x00, 0x1e, 0x00, 0xf0, 0x00,    0x1e, 0x01, 0x00, 0x00, 0x00, 0x00, 0x78, 0x01, 0xf0, 0x00, 0x03, 0xc3, 0x00, 0x00, 0x00, 0x00,    0xc0, 0x03, 0x30, 0x00, 0x00, 0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x30, 0x00, 0x01, 0x02,    0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x20, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18,    0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0xe0, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80, 0x20, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x0c, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x00, 0x20, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,    0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3f, 0x00, 0x3f, 0x80, 0x00, 0x00, 0x00, 0x00</field>
+                                            <next>
+                                              <block type="st7735_icon" id="9=*adN}cCjg}:Q6FkY+.">
+                                                <field name="NAME">Frame9</field>
+                                                <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0f, 0xf0, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x10, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x32, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x7f, 0xff, 0xf8, 0x32, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0xe0, 0x03, 0x88,    0x02, 0x00, 0x00, 0x01, 0xff, 0x00, 0x3e, 0x00, 0x02, 0xc4, 0x02, 0x00, 0x00, 0x0f, 0x01, 0xf8,    0xe0, 0x00, 0x06, 0x62, 0x02, 0x00, 0x00, 0x00, 0x00, 0x1f, 0xc0, 0x00, 0x04, 0x39, 0xfc, 0x00,    0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0c, 0x0e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1e, 0x00, 0x00,    0x07, 0xc1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3c, 0x00, 0x00, 0x00, 0x78, 0x80, 0x00, 0x00, 0x00,    0x00, 0x6c, 0x00, 0x00, 0x00, 0x0f, 0x80, 0x00, 0x00, 0x00, 0x00, 0xc8, 0x00, 0x00, 0x00, 0x01,    0x40, 0x00, 0x00, 0x00, 0x03, 0x98, 0x00, 0x00, 0x00, 0x01, 0x40, 0x00, 0x00, 0x00, 0x0e, 0x30,    0x00, 0x00, 0x00, 0x01, 0x60, 0x00, 0x00, 0x00, 0xf8, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x01, 0x81, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                                                <next>
+                                                  <block type="st7735_icon" id="rv}9/^2/hbQIx1[diIKy">
+                                                    <field name="NAME">Frame10</field>
+                                                    <field name="CODES">0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xe0, 0x00, 0x00, 0x7f, 0xc0, 0x00, 0x00, 0x00,    0x00, 0x0c, 0x18, 0x00, 0x00, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x08, 0x04, 0x00, 0x00, 0x00,    0x1e, 0x00, 0x1f, 0xff, 0xf0, 0x10, 0x62, 0x00, 0x00, 0x00, 0x03, 0xc1, 0xf8, 0x00, 0x1f, 0xf8,    0x62, 0x00, 0x00, 0x00, 0x00, 0x7f, 0x00, 0x00, 0x01, 0xd8, 0x02, 0x00, 0x00, 0x00, 0x00, 0x78,    0x00, 0x00, 0x00, 0xc4, 0x02, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x00, 0x00, 0x00, 0x63, 0x84, 0x00,    0x00, 0x00, 0x01, 0xc0, 0x00, 0x00, 0x00, 0x70, 0xf8, 0x00, 0x00, 0x03, 0xff, 0x80, 0x00, 0x00,    0x00, 0x0c, 0xc0, 0x00, 0x00, 0x1c, 0x06, 0x00, 0x00, 0x00, 0x00, 0x06, 0x3e, 0x00, 0x00, 0x30,    0x1c, 0x00, 0x00, 0x00, 0x00, 0x03, 0x01, 0x80, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00, 0x00, 0x01,    0x80, 0x40, 0x00, 0x03, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x40, 0x00, 0x0e, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1c, 0x00,    0x03, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00</field>
+                                                    <next>
+                                                      <block type="st7735_backgroundcolor" id="fk]ob)rg.)3Hdp044N.H">
+                                                        <field name="COLOR">ST7735_BLACK</field>
+                                                        <next>
+                                                          <block type="variables_set_init" id="H-x4j|r9B6h-nI*VJ9bY">
+                                                            <field name="VAR">tiempo_delay</field>
+                                                            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                                                            <value name="VALUE">
+                                                              <block type="math_number" id="LQ9ZrZZynk]G*GDJ9!N6">
+                                                                <field name="NUM">50</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set_init" id=",,]NJ+wZ|saNCQ@K*@(c">
+                                                                <field name="VAR">cont</field>
+                                                                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                                                                <value name="VALUE">
+                                                                  <block type="math_number" id="/tTOpM[+~|i2==cQ/$#v">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_for" id="F6by@mWKA8jz{B;~9|:o">
+        <field name="VAR">cont</field>
+        <value name="FROM">
+          <block type="math_number" id="_ziqla6*tKxzzY5HXJJ]">
+            <field name="NUM">-80</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number" id="he6mnAFdNZ4s`eb4O*op">
+            <field name="NUM">180</field>
+          </block>
+        </value>
+        <value name="BY">
+          <block type="math_number" id="b_e+2y7TqKtK010f6~q`">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="st7735_drawicon" id="I51E4=}ls9Lk=?^,+}03">
+            <field name="NAME">Frame1</field>
+            <field name="COLOR">ST7735_WHITE</field>
+            <value name="x0">
+              <shadow type="math_number" id="ue^?fwF4v0H(XPFGAMAa">
+                <field name="NUM">30</field>
+              </shadow>
+              <block type="variables_get" id="T]I`r20n-z`f-RXY0Zho">
+                <field name="VAR">cont</field>
+              </block>
+            </value>
+            <value name="y0">
+              <shadow type="math_number" id=")QV[_gO~-w!^ut%Zd%Y2">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="width">
+              <shadow type="math_number" id="O4F7(rS}}|%fcOz/tnyX">
+                <field name="NUM">80</field>
+              </shadow>
+            </value>
+            <value name="height">
+              <shadow type="math_number" id="]#Ct?A:4p%v)_hNl?oBA">
+                <field name="NUM">32</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="base_delay" id="_d-w|=Q^%@%Edol=cZ-5">
+                <field name="unite">m</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="c*i:;feYb?_Pi1fCGrn/">
+                    <field name="VAR">tiempo_delay</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="st7735_drawicon" id="}~n^T}2OL=hR`f=G;PX@">
+                    <field name="NAME">Frame1</field>
+                    <field name="COLOR">ST7735_BLACK</field>
+                    <value name="x0">
+                      <shadow type="math_number" id=";P|L(`mF#o}$+#qOk=Q8">
+                        <field name="NUM">30</field>
+                      </shadow>
+                      <block type="variables_get" id="|Y!nU4rf?^i?2n;Qo!A{">
+                        <field name="VAR">cont</field>
+                      </block>
+                    </value>
+                    <value name="y0">
+                      <shadow type="math_number" id="lg,)qYR]Ip_`Xl?cj@#/">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="width">
+                      <shadow type="math_number" id="Sa,FDmgj|:ay:LSSc1M-">
+                        <field name="NUM">80</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="/j3yo2RD}FY(!*N)%tQI">
+                        <field name="NUM">32</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="st7735_drawicon" id="}0Yp,C{Z@HUym/T:bx!I">
+                        <field name="NAME">Frame2</field>
+                        <field name="COLOR">ST7735_WHITE</field>
+                        <value name="x0">
+                          <shadow type="math_number" id=";S3Zwkj~~6r%wkF27/hB">
+                            <field name="NUM">30</field>
+                          </shadow>
+                          <block type="variables_get" id="qdS,3nEcJq!PK,8Zt{z8">
+                            <field name="VAR">cont</field>
+                          </block>
+                        </value>
+                        <value name="y0">
+                          <shadow type="math_number" id="kkSY.1!R5w;J}OrIeK##">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="width">
+                          <shadow type="math_number" id="I!/3U*D$4z?RtFAm?duA">
+                            <field name="NUM">80</field>
+                          </shadow>
+                        </value>
+                        <value name="height">
+                          <shadow type="math_number" id="FhF}Zh)_MP(^*3jC=OQ%">
+                            <field name="NUM">32</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="base_delay" id="cR/=$.W8~X8T10ersUU8">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="hsyvviiS26z%}Ru)},+S">
+                                <field name="VAR">tiempo_delay</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="st7735_drawicon" id="s9RjQtsb#nrIGdRl`sy?">
+                                <field name="NAME">Frame2</field>
+                                <field name="COLOR">ST7735_BLACK</field>
+                                <value name="x0">
+                                  <shadow type="math_number" id="~%ui(qA#iKIa,aYW9b2{">
+                                    <field name="NUM">30</field>
+                                  </shadow>
+                                  <block type="variables_get" id="|aDcr~XDXK!B/Vfb:gG(">
+                                    <field name="VAR">cont</field>
+                                  </block>
+                                </value>
+                                <value name="y0">
+                                  <shadow type="math_number" id="?%F9TrZTg1CBNLpA!~k$">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="width">
+                                  <shadow type="math_number" id="+*xG)I8?W0%Su-$vbi$!">
+                                    <field name="NUM">80</field>
+                                  </shadow>
+                                </value>
+                                <value name="height">
+                                  <shadow type="math_number" id="$#t8_(v69D|Ia%{R}s,y">
+                                    <field name="NUM">32</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="st7735_drawicon" id="`n,%s80[Oqb4-*0Mn#BM">
+                                    <field name="NAME">Frame3</field>
+                                    <field name="COLOR">ST7735_WHITE</field>
+                                    <value name="x0">
+                                      <shadow type="math_number" id="CosT].euP1OmI[2rUP^^">
+                                        <field name="NUM">30</field>
+                                      </shadow>
+                                      <block type="variables_get" id="fb56a]nw@y-R9gWo7T.2">
+                                        <field name="VAR">cont</field>
+                                      </block>
+                                    </value>
+                                    <value name="y0">
+                                      <shadow type="math_number" id="5dO7GZXK@COvObE)trfR">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="width">
+                                      <shadow type="math_number" id="TsUhLm#1qk@ZpQ1pAhMD">
+                                        <field name="NUM">80</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="height">
+                                      <shadow type="math_number" id="b}P=(xkyH.Sh@Y^6|rIQ">
+                                        <field name="NUM">32</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="base_delay" id="wIlV=97~+/mJg/9*s#?B">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="xM;rTT=7TE;+axEgGY!$">
+                                            <field name="VAR">tiempo_delay</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="st7735_drawicon" id="}Fx9I*_y3rk%S^2[P02u">
+                                            <field name="NAME">Frame3</field>
+                                            <field name="COLOR">ST7735_BLACK</field>
+                                            <value name="x0">
+                                              <shadow type="math_number" id="I;F~|Y4|`$1z.s`W1OHQ">
+                                                <field name="NUM">30</field>
+                                              </shadow>
+                                              <block type="variables_get" id="s[|{T^G;E:a7,*4($/~K">
+                                                <field name="VAR">cont</field>
+                                              </block>
+                                            </value>
+                                            <value name="y0">
+                                              <shadow type="math_number" id="^siW%67QGL{*2-*W~v~-">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="width">
+                                              <shadow type="math_number" id="r@]-aEXR2KuFpkO3d~:Y">
+                                                <field name="NUM">80</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="height">
+                                              <shadow type="math_number" id=".eKWuU#Lsj.ox!;~De2_">
+                                                <field name="NUM">32</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="st7735_drawicon" id="r65_+d%kq%#R6_OUn$`3">
+                                                <field name="NAME">Frame4</field>
+                                                <field name="COLOR">ST7735_WHITE</field>
+                                                <value name="x0">
+                                                  <shadow type="math_number" id="+fCQzp[bdC`NQ9P?00`a">
+                                                    <field name="NUM">30</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="{OjR+_^^kx3IcE6GI.L[">
+                                                    <field name="VAR">cont</field>
+                                                  </block>
+                                                </value>
+                                                <value name="y0">
+                                                  <shadow type="math_number" id="^iU0d71#J35H3`7*L^B{">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="width">
+                                                  <shadow type="math_number" id="o}9ji~MLG0FP5a8CC9J~">
+                                                    <field name="NUM">80</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="height">
+                                                  <shadow type="math_number" id="U?,O/z$ZED%lEDld:fk+">
+                                                    <field name="NUM">32</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="base_delay" id="/srl.*-ZWbH0-H?(^^,o">
+                                                    <field name="unite">m</field>
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                      <block type="variables_get" id="Cej(opbd6gbd6.sD4r?v">
+                                                        <field name="VAR">tiempo_delay</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="st7735_drawicon" id="_(K$heYaQOb%1].Q|A`b">
+                                                        <field name="NAME">Frame4</field>
+                                                        <field name="COLOR">ST7735_BLACK</field>
+                                                        <value name="x0">
+                                                          <shadow type="math_number" id="RgRdSm:(31V3K*o=KyVE">
+                                                            <field name="NUM">30</field>
+                                                          </shadow>
+                                                          <block type="variables_get" id="]6dq,[.0iQ@?LUU}Sp!2">
+                                                            <field name="VAR">cont</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="y0">
+                                                          <shadow type="math_number" id=",bpWnT6`zycc.tf_lfbr">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="width">
+                                                          <shadow type="math_number" id="0c((^!RinTL5S*iR(~.S">
+                                                            <field name="NUM">80</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="height">
+                                                          <shadow type="math_number" id=".Gv|)t$GaZgZvQGvY[~P">
+                                                            <field name="NUM">32</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="st7735_drawicon" id="|1m[Ay7Q2iM8}oSk.b9$">
+                                                            <field name="NAME">Frame5</field>
+                                                            <field name="COLOR">ST7735_WHITE</field>
+                                                            <value name="x0">
+                                                              <shadow type="math_number" id="HM/0};zy$T3C78]p{u02">
+                                                                <field name="NUM">30</field>
+                                                              </shadow>
+                                                              <block type="variables_get" id="t-n]A67QOr_8Qlz:gT=r">
+                                                                <field name="VAR">cont</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="y0">
+                                                              <shadow type="math_number" id="=f!]Cr]xL0nD{_E/.o[}">
+                                                                <field name="NUM">0</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="width">
+                                                              <shadow type="math_number" id="25$3@baq;E*qj_2pm6`^">
+                                                                <field name="NUM">80</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="height">
+                                                              <shadow type="math_number" id="C`Fi@`/F+S)JrFlzS#G#">
+                                                                <field name="NUM">32</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="base_delay" id="ra1?w9:1pQh$Nn%@A?|q">
+                                                                <field name="unite">m</field>
+                                                                <value name="DELAY_TIME">
+                                                                  <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                    <field name="NUM">1</field>
+                                                                  </shadow>
+                                                                  <block type="variables_get" id="(QeaVRg|n+[3|T%lZ+;e">
+                                                                    <field name="VAR">tiempo_delay</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="st7735_drawicon" id="yvvt2X%dx^TnXr*Aa@KP">
+                                                                    <field name="NAME">Frame5</field>
+                                                                    <field name="COLOR">ST7735_BLACK</field>
+                                                                    <value name="x0">
+                                                                      <shadow type="math_number" id="O1{}$o*ZHHF]K[*rRS7S">
+                                                                        <field name="NUM">30</field>
+                                                                      </shadow>
+                                                                      <block type="variables_get" id="!}^)K[;3oVQV1sMl.ziL">
+                                                                        <field name="VAR">cont</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="y0">
+                                                                      <shadow type="math_number" id="MFt}|*^wR`#wo~R1HCIx">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="width">
+                                                                      <shadow type="math_number" id="~-qd?K-?~3)?4Oo?x`kO">
+                                                                        <field name="NUM">80</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="height">
+                                                                      <shadow type="math_number" id="[`cw-;j0Jc(NznageKcq">
+                                                                        <field name="NUM">32</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="st7735_drawicon" id="+qt7)UoEi0H}Mwz}2owt">
+                                                                        <field name="NAME">Frame6</field>
+                                                                        <field name="COLOR">ST7735_WHITE</field>
+                                                                        <value name="x0">
+                                                                          <shadow type="math_number" id="dIDF@%BoI45UR./?%aq~">
+                                                                            <field name="NUM">30</field>
+                                                                          </shadow>
+                                                                          <block type="variables_get" id=".*sBTS~n=y^%cp)/!#l#">
+                                                                            <field name="VAR">cont</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="y0">
+                                                                          <shadow type="math_number" id="d)LV~=?Y32|a;TNCY6YF">
+                                                                            <field name="NUM">0</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="width">
+                                                                          <shadow type="math_number" id="-e~zt8X$?`ZeS6QpcX{z">
+                                                                            <field name="NUM">80</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="height">
+                                                                          <shadow type="math_number" id="gZ@-u$8SoM`j-[9W7]FT">
+                                                                            <field name="NUM">32</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="base_delay" id="UBFhSt2(@;}=q8_6#rs9">
+                                                                            <field name="unite">m</field>
+                                                                            <value name="DELAY_TIME">
+                                                                              <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                                <field name="NUM">1</field>
+                                                                              </shadow>
+                                                                              <block type="variables_get" id="42.4=y]tf2*t%~d_YH|i">
+                                                                                <field name="VAR">tiempo_delay</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="st7735_drawicon" id="QRS_bvr(znbwBgvd;gM:">
+                                                                                <field name="NAME">Frame6</field>
+                                                                                <field name="COLOR">ST7735_BLACK</field>
+                                                                                <value name="x0">
+                                                                                  <shadow type="math_number" id="J|WTtz)Db2n7z3syC]o^">
+                                                                                    <field name="NUM">30</field>
+                                                                                  </shadow>
+                                                                                  <block type="variables_get" id="-(1=kbBOQ?F%wznAo5l2">
+                                                                                    <field name="VAR">cont</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="y0">
+                                                                                  <shadow type="math_number" id=",k2dLm=@=XD0m4odKlM+">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="width">
+                                                                                  <shadow type="math_number" id="Ov^MGo{vH6l`8qB1AN@)">
+                                                                                    <field name="NUM">80</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="height">
+                                                                                  <shadow type="math_number" id="lJg|Sd8u-q4=pq{4WFmi">
+                                                                                    <field name="NUM">32</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="st7735_drawicon" id="C_K={TLM1*~QVzo(cZ5l">
+                                                                                    <field name="NAME">Frame7</field>
+                                                                                    <field name="COLOR">ST7735_WHITE</field>
+                                                                                    <value name="x0">
+                                                                                      <shadow type="math_number" id="0F:{Gg#UN{HWC4lRNdOF">
+                                                                                        <field name="NUM">30</field>
+                                                                                      </shadow>
+                                                                                      <block type="variables_get" id="+Y0gc$V#%{LcMz_[?8M.">
+                                                                                        <field name="VAR">cont</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="y0">
+                                                                                      <shadow type="math_number" id="5%HS9HZ4^]lh5Tj+L]69">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="width">
+                                                                                      <shadow type="math_number" id="db$Z2zrCl7{%?xs{jT.A">
+                                                                                        <field name="NUM">80</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="height">
+                                                                                      <shadow type="math_number" id="+fab:JI7pqfsd:qtIF?d">
+                                                                                        <field name="NUM">32</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="base_delay" id="^0aS%1Rulmi(#o_GnyGi">
+                                                                                        <field name="unite">m</field>
+                                                                                        <value name="DELAY_TIME">
+                                                                                          <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                                            <field name="NUM">1</field>
+                                                                                          </shadow>
+                                                                                          <block type="variables_get" id="Z-0gi%Qa=?=_esGhL/Am">
+                                                                                            <field name="VAR">tiempo_delay</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="st7735_drawicon" id="fbDSiX|@3CotlO98[.lF">
+                                                                                            <field name="NAME">Frame7</field>
+                                                                                            <field name="COLOR">ST7735_BLACK</field>
+                                                                                            <value name="x0">
+                                                                                              <shadow type="math_number" id="0d3Jm$aD#5OwKnV?xoR]">
+                                                                                                <field name="NUM">30</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="7b/p?YCE~rT|/gw)sUot">
+                                                                                                <field name="VAR">cont</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="y0">
+                                                                                              <shadow type="math_number" id="]dU%(lPLgDV:ay-J@4LN">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="width">
+                                                                                              <shadow type="math_number" id="HnB])2MhndCqM/sxYk:N">
+                                                                                                <field name="NUM">80</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="height">
+                                                                                              <shadow type="math_number" id="M{$l^v:j^Y(Na)`ZM$|:">
+                                                                                                <field name="NUM">32</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="st7735_drawicon" id="R%F#pcb=Q,v_wXLz$]e_">
+                                                                                                <field name="NAME">Frame8</field>
+                                                                                                <field name="COLOR">ST7735_WHITE</field>
+                                                                                                <value name="x0">
+                                                                                                  <shadow type="math_number" id="/vdJ.=My65rZqW_6Bdpb">
+                                                                                                    <field name="NUM">30</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="9yf~(e-5q=Lo-M-).l.s">
+                                                                                                    <field name="VAR">cont</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="y0">
+                                                                                                  <shadow type="math_number" id="fVzoeh:0p,klRoe-8h8I">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="width">
+                                                                                                  <shadow type="math_number" id="(_s/HLZp`.-2d9uI/X,X">
+                                                                                                    <field name="NUM">80</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="height">
+                                                                                                  <shadow type="math_number" id="k||8FB)(DJ[F4S[L$(p4">
+                                                                                                    <field name="NUM">32</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                  <block type="base_delay" id="A9]YuXQS-Nt{O8De|B#9">
+                                                                                                    <field name="unite">m</field>
+                                                                                                    <value name="DELAY_TIME">
+                                                                                                      <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                                                        <field name="NUM">1</field>
+                                                                                                      </shadow>
+                                                                                                      <block type="variables_get" id="r97}L*d?`lRW|RAu}LJw">
+                                                                                                        <field name="VAR">tiempo_delay</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                    <next>
+                                                                                                      <block type="st7735_drawicon" id="#:%J1pR^^Eh+oZCRI;UK">
+                                                                                                        <field name="NAME">Frame8</field>
+                                                                                                        <field name="COLOR">ST7735_BLACK</field>
+                                                                                                        <value name="x0">
+                                                                                                          <shadow type="math_number" id="#`yKostYG4f%T?4CC-eL">
+                                                                                                            <field name="NUM">30</field>
+                                                                                                          </shadow>
+                                                                                                          <block type="variables_get" id="f]kvUMK_Ps}~ji-M7!rW">
+                                                                                                            <field name="VAR">cont</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <value name="y0">
+                                                                                                          <shadow type="math_number" id="~.r16~pqpeQ#g|){|hUb">
+                                                                                                            <field name="NUM">0</field>
+                                                                                                          </shadow>
+                                                                                                        </value>
+                                                                                                        <value name="width">
+                                                                                                          <shadow type="math_number" id="(T2G,HI17(7SA[Ig$Zs:">
+                                                                                                            <field name="NUM">80</field>
+                                                                                                          </shadow>
+                                                                                                        </value>
+                                                                                                        <value name="height">
+                                                                                                          <shadow type="math_number" id="DeVRHv+a1q@#(gp.PY$@">
+                                                                                                            <field name="NUM">32</field>
+                                                                                                          </shadow>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                          <block type="st7735_drawicon" id="9e3a~(~D/0-yh5wvN#:g">
+                                                                                                            <field name="NAME">Frame9</field>
+                                                                                                            <field name="COLOR">ST7735_WHITE</field>
+                                                                                                            <value name="x0">
+                                                                                                              <shadow type="math_number" id="vUeYkxOQG9,vF-tyvu,v">
+                                                                                                                <field name="NUM">30</field>
+                                                                                                              </shadow>
+                                                                                                              <block type="variables_get" id="e+@(X#9+MKCs`yb8eJ7e">
+                                                                                                                <field name="VAR">cont</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <value name="y0">
+                                                                                                              <shadow type="math_number" id="|7[qvCvrRHFciCu8+9Y[">
+                                                                                                                <field name="NUM">0</field>
+                                                                                                              </shadow>
+                                                                                                            </value>
+                                                                                                            <value name="width">
+                                                                                                              <shadow type="math_number" id="L+]l)e;X0{Wq3|WM|[9j">
+                                                                                                                <field name="NUM">80</field>
+                                                                                                              </shadow>
+                                                                                                            </value>
+                                                                                                            <value name="height">
+                                                                                                              <shadow type="math_number" id="p69P^~4`pIU(@o]0^%d!">
+                                                                                                                <field name="NUM">32</field>
+                                                                                                              </shadow>
+                                                                                                            </value>
+                                                                                                            <next>
+                                                                                                              <block type="base_delay" id="NyFoq;Zd;b=k~MNdgQnw">
+                                                                                                                <field name="unite">m</field>
+                                                                                                                <value name="DELAY_TIME">
+                                                                                                                  <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                                                                    <field name="NUM">1</field>
+                                                                                                                  </shadow>
+                                                                                                                  <block type="variables_get" id="sK;c8HFl47b`EEOq)Khe">
+                                                                                                                    <field name="VAR">tiempo_delay</field>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                  <block type="st7735_drawicon" id="nQNZpZBL%@L~A[a^I%qf">
+                                                                                                                    <field name="NAME">Frame9</field>
+                                                                                                                    <field name="COLOR">ST7735_BLACK</field>
+                                                                                                                    <value name="x0">
+                                                                                                                      <shadow type="math_number" id="$.7K/F03O5u[HGr3g.~s">
+                                                                                                                        <field name="NUM">30</field>
+                                                                                                                      </shadow>
+                                                                                                                      <block type="variables_get" id=";t^S@bz9IgEfas`YwY|W">
+                                                                                                                        <field name="VAR">cont</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <value name="y0">
+                                                                                                                      <shadow type="math_number" id="5}~RfS(S^ql;:#j$8oG#">
+                                                                                                                        <field name="NUM">0</field>
+                                                                                                                      </shadow>
+                                                                                                                    </value>
+                                                                                                                    <value name="width">
+                                                                                                                      <shadow type="math_number" id="28PYHiw5~5s[LsIG7,}t">
+                                                                                                                        <field name="NUM">80</field>
+                                                                                                                      </shadow>
+                                                                                                                    </value>
+                                                                                                                    <value name="height">
+                                                                                                                      <shadow type="math_number" id="-p({hA-~YcWH2z2HG|jl">
+                                                                                                                        <field name="NUM">32</field>
+                                                                                                                      </shadow>
+                                                                                                                    </value>
+                                                                                                                    <next>
+                                                                                                                      <block type="st7735_drawicon" id="cWREW`B`iRU3xMYq^oZ_">
+                                                                                                                        <field name="NAME">Frame10</field>
+                                                                                                                        <field name="COLOR">ST7735_WHITE</field>
+                                                                                                                        <value name="x0">
+                                                                                                                          <shadow type="math_number" id="m89{,Yq/M0cvJMg$aU^.">
+                                                                                                                            <field name="NUM">30</field>
+                                                                                                                          </shadow>
+                                                                                                                          <block type="variables_get" id="J+OYo.65|/f*cXigSe-]">
+                                                                                                                            <field name="VAR">cont</field>
+                                                                                                                          </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="y0">
+                                                                                                                          <shadow type="math_number" id="wm_pqg:Ij(17;]vt(mT$">
+                                                                                                                            <field name="NUM">0</field>
+                                                                                                                          </shadow>
+                                                                                                                        </value>
+                                                                                                                        <value name="width">
+                                                                                                                          <shadow type="math_number" id="#wv9s.^5id8@h6Ogc*E2">
+                                                                                                                            <field name="NUM">80</field>
+                                                                                                                          </shadow>
+                                                                                                                        </value>
+                                                                                                                        <value name="height">
+                                                                                                                          <shadow type="math_number" id="CjE3{)CnEwK)]I]9ehwa">
+                                                                                                                            <field name="NUM">32</field>
+                                                                                                                          </shadow>
+                                                                                                                        </value>
+                                                                                                                        <next>
+                                                                                                                          <block type="base_delay" id="G!_cTV6Nf8q5S+q^QpW~">
+                                                                                                                            <field name="unite">m</field>
+                                                                                                                            <value name="DELAY_TIME">
+                                                                                                                              <shadow type="math_number" id="FTa/Ns3y.{GXJ]M~2^8x">
+                                                                                                                                <field name="NUM">1</field>
+                                                                                                                              </shadow>
+                                                                                                                              <block type="variables_get" id="uDDX8$0K3/BssRNJ5{k{">
+                                                                                                                                <field name="VAR">tiempo_delay</field>
+                                                                                                                              </block>
+                                                                                                                            </value>
+                                                                                                                            <next>
+                                                                                                                              <block type="st7735_drawicon" id="h`GmcN~w8=:%af1zG9rr">
+                                                                                                                                <field name="NAME">Frame10</field>
+                                                                                                                                <field name="COLOR">ST7735_BLACK</field>
+                                                                                                                                <value name="x0">
+                                                                                                                                  <shadow type="math_number" id="%QRNg?]B0%r?xEOyBafd">
+                                                                                                                                    <field name="NUM">30</field>
+                                                                                                                                  </shadow>
+                                                                                                                                  <block type="variables_get" id="-CnjT+-fHiLVcI!Z$c$H">
+                                                                                                                                    <field name="VAR">cont</field>
+                                                                                                                                  </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="y0">
+                                                                                                                                  <shadow type="math_number" id="c3l$Z-2=$Vref5sfB$Pc">
+                                                                                                                                    <field name="NUM">0</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="width">
+                                                                                                                                  <shadow type="math_number" id="/Yc.nf%8V1#C4R:=4w}4">
+                                                                                                                                    <field name="NUM">80</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="height">
+                                                                                                                                  <shadow type="math_number" id="OHUUYLhi)4`91+S}o$D;">
+                                                                                                                                    <field name="NUM">32</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                              </block>
+                                                                                                                            </next>
+                                                                                                                          </block>
+                                                                                                                        </next>
+                                                                                                                      </block>
+                                                                                                                    </next>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

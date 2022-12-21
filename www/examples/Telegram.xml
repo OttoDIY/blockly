@@ -1,0 +1,128 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="Razs%4d*to_y/]NfZI6_" x="-617" y="28">
+    <statement name="DO">
+      <block type="telegram_init" id="T|)T/EQQQu($zX5`*4s[">
+        <field name="BOT_TOKEN">El token del bot creado</field>
+        <field name="CHAT_ID">Tu usuario @myidbot en Telegram</field>
+        <next>
+          <block type="wifi_init_sta" id="U}:E?B`kHK.i+t/^NX9w">
+            <field name="LOGIC">FALSE</field>
+            <field name="SSID">tu red</field>
+            <field name="PASSWORD">tu password</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="telegram_loop_message" id="C/jh_Sdin[b%-q)6%Bf5"></block>
+    </statement>
+  </block>
+  <block type="telegram_reception_function" id="$/t~}51p(0P8,-Cn:D.N" x="-215" y="241">
+    <statement name="DO">
+      <block type="controls_if" id="dG0Y?s1b;-)H[?44TE)#">
+        <value name="IF0">
+          <block type="logic_compare" id="fC0J:|02ZX@O~7It+i([">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="telegram_message_received" id="pj2%GA89{_SRzZB:~!W["></block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="rJ2b`fS{D^=bO.^8m2H`">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="text" id="(;f?}_s@MEW}KQB-~Lw}">
+                <field name="TEXT">Hola</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="telegram_sendmessage" id="3|2CeUA;=tO~!%?lG@bF">
+            <value name="texttosend">
+              <block type="text_join" id="eMOrdy$P|Df}z7GIDgmg">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="G.bIVc5Q?wIeyz~ILKKe">
+                    <field name="TEXT">Hola </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="telegram_message_name_received" id="|yu+J!o,b@[O@U:Nrm19"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="#wRq{wvK[ciEXzIT^$jX">
+            <value name="IF0">
+              <block type="logic_compare" id="+;Mm623o=O{@~GEbKviJ">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="telegram_message_received" id="/^cNLkWz*Sb)Nr*tZ650"></block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="Z,;Vv|XxCfjnmGL*3l.~">
+                    <field name="NUM">10</field>
+                  </shadow>
+                  <block type="text" id="[2%=USFMbyha^n3ieoQd">
+                    <field name="TEXT">/led_on</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="inout_buildin_led" id="BeSCv?x21]5$9=WiSQ5l">
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="telegram_sendmessage" id="t2z/9bqz=!X0+Dj2Szqm">
+                    <value name="texttosend">
+                      <block type="text" id="pE-04Z%o8kw3~`||E[5s">
+                        <field name="TEXT">Enciendo el LED de la placa</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="Gid1o:6Cr*wF~h-xsyWr">
+                <value name="IF0">
+                  <block type="logic_compare" id="?ERZ`vveM.eitt(raUEw">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="telegram_message_received" id="d/(NoIB4jD4[=e|15[Wx"></block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="Z,;Vv|XxCfjnmGL*3l.~">
+                        <field name="NUM">10</field>
+                      </shadow>
+                      <block type="text" id="C$!oH{)R4vwoCR0Y:T.?">
+                        <field name="TEXT">/led_off</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="inout_buildin_led" id="~gv-T[pQzicoE^qMZ6Z7">
+                    <field name="STAT">HIGH</field>
+                    <next>
+                      <block type="telegram_sendmessage" id="~]Di)fx5*:(1l0Bt3{:)">
+                        <value name="texttosend">
+                          <block type="text" id="3D7D/_U)rh6X`cYyHTZL">
+                            <field name="TEXT">Apago el led de la placa</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,50 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="Q)pa6%kQX/l;F0=Y5$B6" x="-271" y="140">
+    <statement name="DO">
+      <block type="otto9_configuration" id="@42-xV+AdobI.37wV^bH">
+        <field name="PIN_YL">2</field>
+        <field name="PIN_YR">3</field>
+        <field name="PIN_RL">4</field>
+        <field name="PIN_RR">5</field>
+        <field name="PIN_Buzzer">13</field>
+        <next>
+          <block type="otto_calibration" id="G92V8A`M%L}$@4u^j$47">
+            <comment pinned="true" h="137.50001525878906" w="598.3332824707031">Change the legs and feet values gradually with small values and increments(+1 or - 1 degrees)
+
+Iteratively you have to check/upload the code multiple times, until Otto legs and feet looks completely straight.
+            </comment>
+            <value name="LL">
+              <shadow type="math_number" id=";T#luT4Mof4cWswisF`,">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="RL">
+              <shadow type="math_number" id="L`7A2J2$ozF80m}oaz!(">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="LF">
+              <shadow type="math_number" id="wtl^k|ttITo9IJDFxH-c">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="RF">
+              <shadow type="math_number" id="S2QzANg[6E-!LFf8!;MC">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="otto_eeprom" id="f{K/Er,?W:^pleg?GJ#-" disabled="true">
+                <comment pinned="true" h="74.4444580078125" w="391.25">Right click Activate this block when you are ready to save the calibration</comment>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto_home" id="U#LBN0+8[{b`sH0k@Fcn"></block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,70 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="06zEsew^U=VIeKbo+rO!" x="-640" y="10">
+    <statement name="DO">
+      <block type="wifi_init_sta" id="`?NS]:HuH|nfFiG,~$7E">
+        <field name="LOGIC">TRUE</field>
+        <field name="SSID">tu wifi</field>
+        <field name="PASSWORD">password de wifi</field>
+        <next>
+          <block type="ifttt_init" id="FFiELG$N4kPKGMOe,rB=">
+            <field name="API_KEY">El api key de webhook de tus applets</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="ifttt_send" id="PdaDq|(Yyobg!HHj@NY1">
+        <value name="evento">
+          <block type="text" id="~:Q2k)o$`WKKh]Vub:a.">
+            <field name="TEXT">Nombre Evento</field>
+          </block>
+        </value>
+        <value name="value1">
+          <block type="text_join" id="%^4_Gp!~@_Aiey%N-MT%">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="+rQAI;_]uk093d%jfzVf">
+                <field name="TEXT">Este es el valor numerico</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="math_number" id="@{9Eb/GIIgu9gl/:NK`[">
+                <field name="NUM">100.12</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="value2">
+          <block type="text" id="[[m00PJ#J9*NLo.Jn4,1">
+            <field name="TEXT">valor texto </field>
+          </block>
+        </value>
+        <value name="value3">
+          <block type="text" id="jsyP$,($t@l/Ph,rUN(X">
+            <field name="TEXT">Otro texto</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext" id="yC$Vs(v.2RRR#0_hR(m1">
+            <value name="TIMES">
+              <shadow type="math_number" id="RdnBC;,lRqpm.pX~Y1Bq">
+                <field name="NUM">6</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="base_delay" id="^$B`=Q%UPlLuh530?y$]">
+                <field name="unite">s</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="!RZzUSSv_4kO~48e0Pi~">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

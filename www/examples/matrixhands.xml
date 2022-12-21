@@ -1,0 +1,316 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="IHiBj]IRq5c5_#FSz)(g" x="-344" y="-136">
+    <statement name="DO">
+      <block type="otto9_matrix_init" id="nNa`*Ls`{;XI]a7Zit+K">
+        <field name="PIN_CLK">A1</field>
+        <field name="PIN_CS">A2</field>
+        <field name="PIN_DIN">A3</field>
+        <field name="Orientation">0</field>
+        <next>
+          <block type="otto9_matrix_text" id="X+`W-ymC1:fdM2i#?3g)">
+            <field name="input">WASH HANDS</field>
+            <next>
+              <block type="variables_set_init" id="|jX,tmVK/r5(5Phm9d,Q">
+                <field name="VAR">i</field>
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VALUE">
+                  <block type="math_number" id=";;n47)K`GXRefn$yj:tN">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set_init" id="}F]b{;|+g_MxF(@*H)x^">
+                    <field name="VAR">j</field>
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="CPajr)m;E_X@Ns%nAM2[">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="otto9_matrix8x8" id="ap`)-!s?Woi7=iO@l!-@">
+        <field name="Pixel0">TRUE</field>
+        <field name="Pixel8">TRUE</field>
+        <field name="Pixel16">TRUE</field>
+        <field name="Pixel24">TRUE</field>
+        <field name="Pixel32">TRUE</field>
+        <field name="Pixel40">TRUE</field>
+        <field name="Pixel48">TRUE</field>
+        <field name="Pixel56">FALSE</field>
+        <field name="Pixel1">TRUE</field>
+        <field name="Pixel9">FALSE</field>
+        <field name="Pixel17">FALSE</field>
+        <field name="Pixel25">FALSE</field>
+        <field name="Pixel33">TRUE</field>
+        <field name="Pixel41">TRUE</field>
+        <field name="Pixel49">TRUE</field>
+        <field name="Pixel57">FALSE</field>
+        <field name="Pixel2">TRUE</field>
+        <field name="Pixel10">FALSE</field>
+        <field name="Pixel18">FALSE</field>
+        <field name="Pixel26">FALSE</field>
+        <field name="Pixel34">FALSE</field>
+        <field name="Pixel42">TRUE</field>
+        <field name="Pixel50">FALSE</field>
+        <field name="Pixel58">FALSE</field>
+        <field name="Pixel3">TRUE</field>
+        <field name="Pixel11">FALSE</field>
+        <field name="Pixel19">FALSE</field>
+        <field name="Pixel27">FALSE</field>
+        <field name="Pixel35">FALSE</field>
+        <field name="Pixel43">FALSE</field>
+        <field name="Pixel51">FALSE</field>
+        <field name="Pixel59">FALSE</field>
+        <field name="Pixel4">TRUE</field>
+        <field name="Pixel12">FALSE</field>
+        <field name="Pixel20">FALSE</field>
+        <field name="Pixel28">FALSE</field>
+        <field name="Pixel36">FALSE</field>
+        <field name="Pixel44">TRUE</field>
+        <field name="Pixel52">FALSE</field>
+        <field name="Pixel60">FALSE</field>
+        <field name="Pixel5">TRUE</field>
+        <field name="Pixel13">FALSE</field>
+        <field name="Pixel21">FALSE</field>
+        <field name="Pixel29">FALSE</field>
+        <field name="Pixel37">FALSE</field>
+        <field name="Pixel45">FALSE</field>
+        <field name="Pixel53">FALSE</field>
+        <field name="Pixel61">FALSE</field>
+        <field name="Pixel6">TRUE</field>
+        <field name="Pixel14">FALSE</field>
+        <field name="Pixel22">FALSE</field>
+        <field name="Pixel30">FALSE</field>
+        <field name="Pixel38">FALSE</field>
+        <field name="Pixel46">TRUE</field>
+        <field name="Pixel54">FALSE</field>
+        <field name="Pixel62">FALSE</field>
+        <field name="Pixel7">TRUE</field>
+        <field name="Pixel15">FALSE</field>
+        <field name="Pixel23">FALSE</field>
+        <field name="Pixel31">FALSE</field>
+        <field name="Pixel39">FALSE</field>
+        <field name="Pixel47">TRUE</field>
+        <field name="Pixel55">FALSE</field>
+        <field name="Pixel63">FALSE</field>
+        <next>
+          <block type="controls_if" id="cmR~C#+!RY8hxBcQPhQw">
+            <value name="IF0">
+              <block type="logic_compare" id="G7,67|b`Kfl]A=nH(vf(">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="ultrasonic_ranger_sensor" id=":h`Q`E7w(UTU/U0jso5L">
+                    <value name="PIN_TRIG">
+                      <shadow type="analog_pin" id="#i`[%iCK^BB^HQG.ldj|">
+                        <field name="NUM">8</field>
+                      </shadow>
+                    </value>
+                    <value name="PIN_ECHO">
+                      <shadow type="analog_pin" id="SMtSXF]H=n?H{2zU}jBL">
+                        <field name="NUM">9</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="-6Ea}1~nw?y!^/eRu~-g">
+                    <field name="NUM">15</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="otto9_matrix8x8" id="~K:S]9ox{XX-Do#^#7}p">
+                <field name="Pixel0">TRUE</field>
+                <field name="Pixel8">TRUE</field>
+                <field name="Pixel16">TRUE</field>
+                <field name="Pixel24">TRUE</field>
+                <field name="Pixel32">TRUE</field>
+                <field name="Pixel40">TRUE</field>
+                <field name="Pixel48">TRUE</field>
+                <field name="Pixel56">TRUE</field>
+                <field name="Pixel1">TRUE</field>
+                <field name="Pixel9">TRUE</field>
+                <field name="Pixel17">TRUE</field>
+                <field name="Pixel25">TRUE</field>
+                <field name="Pixel33">TRUE</field>
+                <field name="Pixel41">TRUE</field>
+                <field name="Pixel49">TRUE</field>
+                <field name="Pixel57">TRUE</field>
+                <field name="Pixel2">TRUE</field>
+                <field name="Pixel10">TRUE</field>
+                <field name="Pixel18">TRUE</field>
+                <field name="Pixel26">TRUE</field>
+                <field name="Pixel34">TRUE</field>
+                <field name="Pixel42">TRUE</field>
+                <field name="Pixel50">TRUE</field>
+                <field name="Pixel58">TRUE</field>
+                <field name="Pixel3">TRUE</field>
+                <field name="Pixel11">TRUE</field>
+                <field name="Pixel19">TRUE</field>
+                <field name="Pixel27">TRUE</field>
+                <field name="Pixel35">TRUE</field>
+                <field name="Pixel43">TRUE</field>
+                <field name="Pixel51">TRUE</field>
+                <field name="Pixel59">TRUE</field>
+                <field name="Pixel4">TRUE</field>
+                <field name="Pixel12">TRUE</field>
+                <field name="Pixel20">TRUE</field>
+                <field name="Pixel28">TRUE</field>
+                <field name="Pixel36">TRUE</field>
+                <field name="Pixel44">TRUE</field>
+                <field name="Pixel52">TRUE</field>
+                <field name="Pixel60">TRUE</field>
+                <field name="Pixel5">TRUE</field>
+                <field name="Pixel13">TRUE</field>
+                <field name="Pixel21">TRUE</field>
+                <field name="Pixel29">TRUE</field>
+                <field name="Pixel37">TRUE</field>
+                <field name="Pixel45">TRUE</field>
+                <field name="Pixel53">TRUE</field>
+                <field name="Pixel61">TRUE</field>
+                <field name="Pixel6">TRUE</field>
+                <field name="Pixel14">TRUE</field>
+                <field name="Pixel22">TRUE</field>
+                <field name="Pixel30">TRUE</field>
+                <field name="Pixel38">TRUE</field>
+                <field name="Pixel46">TRUE</field>
+                <field name="Pixel54">TRUE</field>
+                <field name="Pixel62">TRUE</field>
+                <field name="Pixel7">TRUE</field>
+                <field name="Pixel15">TRUE</field>
+                <field name="Pixel23">TRUE</field>
+                <field name="Pixel31">TRUE</field>
+                <field name="Pixel39">TRUE</field>
+                <field name="Pixel47">TRUE</field>
+                <field name="Pixel55">TRUE</field>
+                <field name="Pixel63">TRUE</field>
+                <next>
+                  <block type="controls_for" id="/9XX#f.es;hD]O.s8nh{">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="89h_xE(hw)%lJs|dwd;L">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="X0G@Mqly]Z.K!hJA!M0_">
+                        <field name="NUM">7</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="kqa82W72uIMC8Q)kQg`s">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_for" id="j[_xGk$D;9+Xt)U+;yT*">
+                        <field name="VAR">j</field>
+                        <value name="FROM">
+                          <block type="math_number" id="?vH9_Td~V:[utjNsCcYD">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="M*F0{_~AR,PZ_G0_w5?O">
+                            <field name="NUM">7</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id="=wJJK3trO,]Cd^:9i`b|">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="otto9_matrixp" id="QpJ-#wP]JN{g)2C.90~h">
+                            <field name="draw">FALSE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="@^2[lA3/Oy*Y4B.;5^`q">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get" id="(B[[,0K:!7taso6]RD7n">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="Imta}_pqXp1:ybg+C,.h">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get" id="g|9lK1)imDQj.q,)*Q;,">
+                                <field name="VAR">j</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="base_delay" id="$1/BCtt!vBsn)WKMh#bZ">
+                                <field name="unite">m</field>
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id="OQNOB6`BjZNFQiO%cc$I">
+                                    <field name="NUM">500</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="otto9_mouth" id=":8,Mb4s.PY2~9Mnn;}`.">
+                        <field name="otto9_mouth_choice">heart</field>
+                        <next>
+                          <block type="base_delay" id="C-0E6:?H]_N/dX:GxT6g">
+                            <field name="unite">m</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="FLY4Vgi1emxLDkj8CM;e">
+                                <field name="NUM">500</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="play" id="Srq`U8s3vpols3rybgo6">
+                                <field name="note">261</field>
+                                <field name="tempo">125</field>
+                                <value name="PIN">
+                                  <shadow type="analog_pin" id="GAv@48AZ5EVM7HN}(cx2">
+                                    <field name="NUM">13</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="otto9_mouth" id="#Y1)mLb_]]1r?{dV4F*g">
+                                    <field name="otto9_mouth_choice">happyOpen</field>
+                                    <next>
+                                      <block type="base_delay" id="]hys8Xd?AfGfv-;h3Js2">
+                                        <field name="unite">m</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="N+E8GKo)C+=1E/!m_WU^">
+                                            <field name="NUM">500</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

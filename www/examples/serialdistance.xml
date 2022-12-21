@@ -1,0 +1,56 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="5z;VHZm0^aG5L!uH9jd#" x="-61" y="107">
+    <statement name="DO">
+      <block type="serial_init" id="=n;5RsGh~kc6O`Sob1a6">
+        <field name="PINBAUDIOS">9600</field>
+        <next>
+          <block type="ultrasonic_sensor" id="^2_qL+d*q}:P[G$CpN2`">
+            <field name="US_NUMBER">1</field>
+            <field name="PIN_TRIG">8</field>
+            <field name="PIN_ECHO">9</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="serial_print" id="*p,J5gA%qN5eNaA|1w$m">
+        <value name="CONTENT">
+          <shadow type="text" id="4@S!lvG7`NR1Qc:_r$7q">
+            <field name="TEXT">Ultrasonic sensor reading:</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="serial_print" id="#aQK6U,/yu7wboD3ii~%">
+            <value name="CONTENT">
+              <shadow type="text" id="8E7%8t(oH=%==yi-Rd6=">
+                <field name="TEXT">text</field>
+              </shadow>
+              <block type="ultrasonic_distance" id="g[PTweiJhrG2lI0*kCmU">
+                <field name="US_NUMBER">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="89Pc{W]aad]!mFZQVuJR">
+                <value name="CONTENT">
+                  <shadow type="text" id="O[,0*eJ]/eD.]$tsFGLS">
+                    <field name="TEXT">cm</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_println" id="O#0K6}DSPrMXPd0,5Rm9">
+                    <value name="CONTENT">
+                      <shadow type="text" id=")Wg1OnvKg?S-O~G7w]8C">
+                        <field name="TEXT"></field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

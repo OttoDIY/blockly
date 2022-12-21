@@ -1,0 +1,62 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="9H-z:BT}adJ`gSVnoQR." x="169" y="141">
+    <statement name="DO">
+      <block type="variables_set_init" id="qxiVl:A$GAbNf708JO2N">
+        <field name="VAR">codigo</field>
+        <field name="VARIABLE_SETTYPE_TYPE">LARGE_NUMBER</field>
+        <value name="VALUE">
+          <block type="math_number" id="dBTw~r}rGiUF60UKyWA.">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_init" id="G.6*b1DcQ8h;n46?/,A7">
+            <field name="PINBAUDIOS">115200</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="VxJ[|/%6E]P4F0.km:dN">
+        <field name="VAR">codigo</field>
+        <value name="VALUE">
+          <block type="Init_generalremotecontrol" id="UYd_4[@g5toIR{R;teo{">
+            <field name="PIN_IR">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="qnm:|adD^QIVl2@DH}S-">
+            <value name="IF0">
+              <block type="logic_compare" id="V4pEP24h;s/r9C|g9oE4">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="dD[R3?TKrO)0qla%E`s;">
+                    <field name="VAR">codigo</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="YTx6%%U+hoR8bR/t8Zc=">
+                    <field name="NUM">10</field>
+                  </shadow>
+                  <block type="IR_Remote_Key" id=":4|LC7MB{N7p@Np3pc%B">
+                    <field name="KEY">0x00FF629D</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="serial_println" id="E$uZn?0Mv~#(ylXV@9Y@">
+                <value name="CONTENT">
+                  <shadow type="text" id="@$j)Z:Vkw{G^!)/YqJoU">
+                    <field name="TEXT">Tecla de arriba pulsada</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
