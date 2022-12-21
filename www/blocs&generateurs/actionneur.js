@@ -22,7 +22,7 @@ Blockly.Arduino["play"]=function(block){
     var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode( "+value_pin+" , OUTPUT);";
+    Blockly.Arduino.setups_["setup_output"]="pinMode( "+value_pin+" , OUTPUT);";
     return "tone(  "+value_pin+"," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
 };
 Blockly.Python["play"]=function(block){
@@ -605,26 +605,6 @@ Blockly.Arduino["digital_write2"]=function(block){
     Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
     return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
 };
-
-Blockly.Blocks["digital_write3"]={init:function(){
-    var card=window.localStorage.card;
-    this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
-    this.appendValueInput("STAT", "Boolean").appendField(Blockly.Msg._AT);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("#4b009f");
-    this.setHelpUrl(Blockly.Msg.HELPURL);
-    this.setTooltip(Blockly.Msg.del_tooltip)}
-};
-Blockly.Arduino["digital_write3"]=function(block){
-    var dropdown_pin=block.getFieldValue("PIN");
-	var dropdown_stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
-    return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
-};
-
-
 Blockly.Blocks['led_pwm']={init:function() {
 	var card=window.localStorage.card;
     this.appendDummyInput().appendField(Blockly.Msg.del+" (PWM)").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "PWM");
@@ -641,7 +621,6 @@ Blockly.Arduino['led_pwm'] = function(block) {
   var code="analogWrite("+droppinpwm+", " + stat + ");//on a scale of 0 - 255\n"; 
   return code;
 };
-
 //////////////
 Blockly.Blocks["inout_buildin_led"]={init:function(){
         
@@ -754,7 +733,7 @@ Blockly.Python['rgb_set'] = function(block) {
 }
 
 Blockly.Blocks["rgb_setcolor"]={init:function(){
-	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set).appendField(Blockly.Msg.rvb_cathode);
+	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set);
 	this.appendDummyInput().appendField(new Blockly.FieldColour("#ff0000"), "color");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -1009,152 +988,3 @@ Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
     var code="mcp.digitalRead(" + dropdown_pin + ")";
     return [code, Blockly.Arduino.ORDER_ATOMIC]
 };
-
-
-
- /////////////
- /*  audio buzzer for esp32 */
-/////////////
-
-Blockly.Blocks["play_esp32"]={init:function(){
-	var card=window.localStorage.card;
-    //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-	 this.appendDummyInput()
-	    .appendField(Blockly.Msg.ARDUINO_TONE_INPUT1)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
-    this.appendDummyInput()
-		.appendField(Blockly.Msg.play)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
-		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("#a600d3");
-    this.setTooltip(Blockly.Msg.play_tooltip);
-    this.setHelpUrl(Blockly.Msg.play_helpurl)}
-};
-Blockly.Arduino["play_esp32"]=function(block){
-    //var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-	var value_pin = block.getFieldValue('PIN_BUZZER');
-    var value_note=block.getFieldValue("note");
-    var value_tempo=block.getFieldValue("tempo");
-	
-    Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
-	
-    return "ledcWriteTone(4," + value_note + ");\n delay(" + value_tempo + ");\n"
-};
-
-
-Blockly.Blocks["tone_esp32"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#a600d3");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-       //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-	    this.appendDummyInput()
-	    .appendField(Blockly.Msg.ARDUINO_TONE_INPUT1)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
-        this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
-        this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
-};
-Blockly.Arduino["tone_esp32"]=function(block){
-	var value_pin = block.getFieldValue('PIN_BUZZER');
-    //var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-    var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
-    var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
-    	
-	Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
-	
-    return "ledcWriteTone(4," + value_num + ");\n delay(" + value_tps + ");\n"
-};
-
-//////////////
-
-Blockly.Blocks["notone_esp32"]={init:function(){
-    	var card=window.localStorage.card;
-        this.setColour("#a600d3");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-       //this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-	   this.appendDummyInput()
-	    .appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_BUZZER");
-		this.setPreviousStatement(true, null);
-        this.setInputsInline(true);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
-};
-Blockly.Arduino["notone_esp32"]=function(block){
-    var value_pin = block.getFieldValue('PIN_BUZZER');
-		
-    Blockly.Arduino.setups_["setup_tone_esp32"]="ledcSetup(4,5000,8);\nledcAttachPin("+value_pin+",4);\n";
-	return "ledcWriteTone(4,0);\n"
-};
-
-Blockly.Blocks['led_pwm_esp32']={init:function() {
-	var card=window.localStorage.card;
-    this.appendDummyInput().appendField(Blockly.Msg.del+" (PWM)").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "PWM");
-    this.appendValueInput("STAT", "Number").appendField(Blockly.Msg._AT);
-    this.setInputsInline(true);
-	this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#4b009f");}
-};
-Blockly.Arduino['led_pwm_esp32'] = function(block) {
-  var droppinpwm = block.getFieldValue('PWM');
-  var stat=Blockly.Arduino.valueToCode(block, "STAT", Blockly.Arduino.ORDER_ATOMIC);
-  
-  Blockly.Arduino.setups_["setup_led_esp32_"+ droppinpwm]="ledcSetup(7,5000,8);\nledcAttachPin("+droppinpwm+",7);\n"; 
-  
-  var code="ledcWrite(7," + stat + ");\n"; 
-  
-  return code;
-};
-
-
-//////////////RGB for ESP32
-Blockly.Blocks['rgb_init_esp32']={init:function() {
-	var card=window.localStorage.card;
-    this.appendDummyInput() .appendField(new Blockly.FieldImage('media/rgb.png', 33, 33, "*")) .appendField(Blockly.Msg.rvb_init);
-    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("R").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "rouge");
-    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT)  .appendField("G").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "vert");
-    this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField("B").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "bleu");
-    this.setInputsInline(true);
-	this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#4b009f");
-    this.setTooltip(Blockly.Msg.rvb_init_tooltip);
-    this.setHelpUrl('http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ReferenceMaxi')}
-};
-Blockly.Arduino['rgb_init_esp32'] = function(block) {
-  var value_rouge = block.getFieldValue('rouge');
-  var value_vert = block.getFieldValue('vert');
-  var value_bleu = block.getFieldValue('bleu');
-  Blockly.Arduino.variables_['rvb_'+value_rouge] = '#define redPin '+value_rouge+'\n#define greenPin '+value_vert+'\n#define bluePin '+value_bleu+'\n';
-  Blockly.Arduino.userFunctions_['rvb_'+value_rouge] = 'void setColor(int redValue, int greenValue, int blueValue) {\n ledcWrite(5,greenValue);\n ledcWrite(6,redValue);\n  ledcWrite(7,blueValue);\n}';
-  Blockly.Arduino.setups_['rvb_esp32'+value_rouge]='ledcSetup(5,5000,8);\nledcAttachPin(greenPin,5);\nledcSetup(6,5000,8);\nledcAttachPin(redPin,6);\nledcSetup(7,5000,8);\nledcAttachPin(bluePin,7);\n';
-  return '';
-};
-
-
-  Blockly.Blocks["rgb_setcolor_anode"]={init:function(){
-	this.appendDummyInput()  .appendField(Blockly.Msg.rvb_set).appendField(Blockly.Msg.rvb_anode);
-	this.appendDummyInput().appendField(new Blockly.FieldColour("#ff0000"), "color");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("#4b009f");
-    this.setTooltip(Blockly.Msg.rvb_set_tooltip);
-    this.setHelpUrl("https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/")}
-};
-Blockly.Arduino["rgb_setcolor_anode"]=function(block){
-	var color=block.getFieldValue("color");
-	var colorR=color[1] + color[2], colorG=color[3] + color[4], colorB=color[5] + color[6];
-    var red=255-parseInt(colorR,16), green=255-parseInt(colorG,16), blue=255-parseInt(colorB,16);
-    var code = 'setColor('+red+','+green+','+blue+');\n';
-    return code;
-};
-
-  

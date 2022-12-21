@@ -74,23 +74,6 @@ Blockly.Blocks["inout_analog_write"]={init:function(){
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
 };
-
-Blockly.Blocks["inout_analog_write_esp32"]={init:function(){
-		var card=window.localStorage.card;
-        this.setColour("#00929f");
-        this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "broche");
-        this.appendValueInput("NUM", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT).setCheck("Number");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
-};
-
-
-
-
-
 Blockly.Blocks["inout_analog_write2"]={init:function(){
     this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1).setCheck("Number");
     this.appendValueInput("NUM", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT).setCheck("Number");

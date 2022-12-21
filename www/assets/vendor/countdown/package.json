@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      "countdown@2.6.0",
+      "/Users/jahaganiev/Documents/work/hs/themes/unify"
+    ]
+  ],
+  "_from": "countdown@2.6.0",
+  "_id": "countdown@2.6.0",
+  "_inBundle": false,
+  "_integrity": "sha1-Z3+446nUzE52QVkBuiU7UYrzQXc=",
+  "_location": "/countdown",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "countdown@2.6.0",
+    "name": "countdown",
+    "escapedName": "countdown",
+    "rawSpec": "2.6.0",
+    "saveSpec": null,
+    "fetchSpec": "2.6.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/countdown/-/countdown-2.6.0.tgz",
+  "_spec": "2.6.0",
+  "_where": "/Users/jahaganiev/Documents/work/hs/themes/unify",
+  "author": {
+    "name": "Stephen McKamey",
+    "url": "http://mck.me"
+  },
+  "bugs": {
+    "url": "https://github.com/mckamey/countdownjs/issues"
+  },
+  "description": "A simple JavaScript API for producing an accurate, intuitive description of the timespan between two Date instances.",
+  "files": [
+    "countdown.js",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "homepage": "http://countdownjs.org",
+  "keywords": [
+    "countdown",
+    "timer",
+    "clock",
+    "date",
+    "time",
+    "timespan",
+    "year",
+    "month",
+    "week",
+    "day",
+    "hour",
+    "minute",
+    "second"
+  ],
+  "license": "MIT",
+  "main": "countdown.js",
+  "name": "countdown",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckamey/countdownjs.git"
+  },
+  "version": "2.6.0"
+}

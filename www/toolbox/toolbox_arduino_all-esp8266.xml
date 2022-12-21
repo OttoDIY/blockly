@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER,CAT_iot</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO_NINJA,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
     
 	<category name="CAT_ARDUINO" colour="#2d2d64">
@@ -404,14 +404,6 @@
 		<block type="RFID_card_readed"></block>
 		<block type="RFID_check_card"></block>
 		<block type="rfid_stopread"></block>
-		
-		<block type="nfc_init"></block>
-		<block type="nfc_validationcard"></block>
-		<block type="nfc_validationcard_2"></block>
-		<block type="nfc_detected"></block>
-		<block type="nfc_card_readed"></block>
-		<block type="nfc_check_card"></block>
-			
 	</category>
 	
 	
@@ -1019,48 +1011,18 @@
 			<block type="wifiserver_request"></block>
 			
 			<block type="wifiserver_answer">
-				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome :-)</field></shadow></value>
+				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome to my server :-)</field></shadow></value>
 			</block>
 			<block type="wifiserver_stop"></block>
 			<block type="wifiserver_flush"></block>
 			
-			<block type="wifiserver_port_asyn_library">
-				<value name="server_port"><shadow type="math_number"><field name="NUM">80</field></shadow></value>
-			</block>
-			<block type="esp8266_asynsend"></block>
-			<block type="esp8266_asynsend_text">
-				<value name="server_answer"><shadow type="text"><field name="TEXT">Welcome :-)</field></shadow></value>
-			</block>
-			
-			<block type="esp8266_asyngetArg"></block>
-			<block type="esp8266_asynuseArg"></block>
-			
-		<!--	<block type="wifiserver_port_library">
+			<block type="wifiserver_port_library">
 				<value name="server_port"><shadow type="math_number"><field name="NUM">80</field></shadow></value>
 			</block>
 			<block type="esp8266_handle_request"></block>
 			<block type="esp8266_send"></block>
 			<block type="esp8266_getArg"></block>
-			<block type="esp8266_useArg"></block> -->
-						
-		</category>
-		
-		<category name="CAT_ESPNOW" colour="#26C6F8">
-		
-			<block type="espnow_init_esp8266">
-					<value name="id_node"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-			</block>
-			<block type="espnow_esp8266_reception_function"></block>
-			<block type="espnow_sendmessage_all"></block>
-			<block type="espnow_sendmessage_mac"></block>
-			<block type="espnow_paramInt_fill"></block>
-			<block type="espnow_paramFloat_fill"></block>
-			<block type="espnow_paramText_fill"></block>
-			<block type="espnow_paramNode_refund"></block>
-			<block type="espnow_paramInt_refund"></block>
-			<block type="espnow_paramFloat_refund"></block>
-			<block type="espnow_paramText_refund"></block>
-		
+			<block type="esp8266_useArg"></block>
 		</category>
 		
 		
@@ -1109,29 +1071,6 @@
 			
 		</category>
 		
-		<category name="CAT_FIREBASE" colour="#26C6F8">
-			<block type="firebase_init"></block>
-			<block type="firebase_start"></block>
-			<block type="firebase_write_num">
-				<value name="node"><shadow type="text"><field name="TEXT">/Path/name</field></shadow></value>
-				<value name="value"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-			</block>
-			<block type="firebase_write_text">
-				<value name="node"><shadow type="text"><field name="TEXT">/Path/name</field></shadow></value>
-				<value name="value"><shadow type="text"><field name="TEXT">Texto</field></shadow></value>
-			</block>
-			<block type="firebase_read_num">
-				<value name="node"><shadow type="text"><field name="TEXT">/Path/name</field></shadow></value>
-			</block>
-			<block type="firebase_read_text">
-				<value name="node"><shadow type="text"><field name="TEXT">/Path/name</field></shadow></value>
-			</block>
-			<block type="firebase_delete_node">
-				<value name="node"><shadow type="text"><field name="TEXT">/Path/name</field></shadow></value>
-			</block>
-					
-		</category>
-		
 		<category name="CAT_TELEGRAM" colour="#26C6F8">
 			<block type="telegram_init"></block>
 			<block type="telegram_loop_message"></block>
@@ -1141,15 +1080,6 @@
 			</block>
 			<block type="telegram_message_received"></block>
 			<block type="telegram_message_name_received"></block>
-		</category>
-		
-		<category name="CAT_ALEXA" colour="#26C6F8">
-		
-			<block type="Alexa_init_esp"> </block>
-			<block type="Alexa_reception_function"></block>
-			<block type="Alexa_loop"></block>
-			<block type="Alexa_param"></block>
-					
 		</category>
 		
 		<category name="CAT_html" colour="#26C6F8">

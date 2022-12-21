@@ -1,0 +1,105 @@
+{
+  "_args": [
+    [
+      "bootstrap-icons@1.8.1",
+      "/Users/jahaganiev/Documents/work/hs/themes/unify"
+    ]
+  ],
+  "_from": "bootstrap-icons@1.8.1",
+  "_id": "bootstrap-icons@1.8.1",
+  "_inBundle": false,
+  "_integrity": "sha512-IXUqislddPJfwq6H+2nTkHyr9epO9h6u1AG0OZCx616w+TgzeoCjfmI3qJMQqt1J586gN2IxzB4M99Ip4sTZ1w==",
+  "_location": "/bootstrap-icons",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "bootstrap-icons@1.8.1",
+    "name": "bootstrap-icons",
+    "escapedName": "bootstrap-icons",
+    "rawSpec": "1.8.1",
+    "saveSpec": null,
+    "fetchSpec": "1.8.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.8.1.tgz",
+  "_spec": "1.8.1",
+  "_where": "/Users/jahaganiev/Documents/work/hs/themes/unify",
+  "author": {
+    "name": "mdo"
+  },
+  "bugs": {
+    "url": "https://github.com/twbs/icons/issues"
+  },
+  "description": "Official open source SVG icon library for Bootstrap",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cheerio": "^1.0.0-rc.10",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.8.0",
+    "fantasticon": "^1.2.3",
+    "find-unused-sass-variables": "^4.0.1",
+    "hugo-bin": "^0.80.1",
+    "linkinator": "^3.0.3",
+    "lockfile-lint": "^4.6.2",
+    "npm-run-all": "^4.1.5",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "purgecss": "^4.1.3",
+    "stylelint": "^14.2.0",
+    "stylelint-config-twbs-bootstrap": "^3.0.1",
+    "svg-sprite": "^1.5.3",
+    "svgo": "^2.8.0",
+    "vnu-jar": "21.10.12"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "icons/*.svg",
+    "bootstrap-icons.svg",
+    "font",
+    "!.DS_Store"
+  ],
+  "homepage": "https://icons.getbootstrap.com/",
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "keywords": [
+    "bootstrap",
+    "icons"
+  ],
+  "license": "MIT",
+  "name": "bootstrap-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twbs/icons.git"
+  },
+  "sass": "font/bootstrap-icons.scss",
+  "scripts": {
+    "docs-build": "hugo --cleanDestinationDir",
+    "docs-purge": "npm run docs-build && purgecss --css docs/static/assets/css/bootstrap.min.css --content \"_site/**/*.html\" \"_site/assets/js/**/*.js\" --keyframes --output docs/static/assets/css/",
+    "docs-serve": "hugo server --port 4000 --disableFastRender",
+    "icons": "npm-run-all icons-main --aggregate-output --parallel icons-sprite icons-font",
+    "icons-font": "fantasticon",
+    "icons-main": "node build/build-svgs.js",
+    "icons-sprite": "svg-sprite --config svg-sprite.json --log=info icons/*.svg",
+    "icons-zip": "cross-env-shell \"rm -rf bootstrap-icons-$npm_package_version && cp -r icons/ bootstrap-icons-$npm_package_version && cp bootstrap-icons.svg bootstrap-icons-$npm_package_version && cp -r font/ bootstrap-icons-$npm_package_version && zip -r9 bootstrap-icons-$npm_package_version.zip bootstrap-icons-$npm_package_version && rm -rf bootstrap-icons-$npm_package_version\"",
+    "netlify": "cross-env-shell HUGO_BASEURL=$DEPLOY_PRIME_URL npm-run-all icons docs-purge docs-build",
+    "pages": "node build/build-pages.js",
+    "release": "npm-run-all icons docs-build icons-zip",
+    "start": "npm run docs-serve",
+    "test": "npm-run-all docs-build --parallel --aggregate-output --continue-on-error test:*",
+    "test:eslint": "eslint --cache --cache-location node_modules/.cache/.eslintcache --report-unused-disable-directives .",
+    "test:fusv": "fusv docs/assets/scss/",
+    "test:linkinator": "linkinator _site --recurse --silent --skip \"^(?!http://localhost)\"",
+    "test:lockfile-lint": "lockfile-lint --allowed-hosts npm --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
+    "test:stylelint": "stylelint docs/assets/scss/ --cache --cache-location node_modules/.cache/.stylelintcache --rd",
+    "test:vnu": "node build/vnu-jar.js"
+  },
+  "style": "font/bootstrap-icons.css",
+  "version": "1.8.1"
+}
