@@ -1,0 +1,569 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp32</toolbox>
+  <block type="base_setup_loop" id="G5?gf.r`Pmja39C,]R9u" x="-1587" y="-833">
+    <statement name="DO">
+      <block type="dht_sensor2" id="?}|}snZYn(rJ#~S1B@_6">
+        <mutation matrix="null"></mutation>
+        <field name="DHT_NUMBER">1</field>
+        <field name="OUTPUT_TYPE">0</field>
+        <field name="PIN_DHT">32</field>
+        <next>
+          <block type="OLED_init" id=";T6bcF@Jj/;y$[!3P6Hf">
+            <field name="height">64</field>
+            <field name="address">0x3D</field>
+            <next>
+              <block type="pixel_init" id="r;4h)J#+gVC%U,]wO_Ra">
+                <field name="pin">18</field>
+                <value name="num">
+                  <shadow type="analog_pin" id="BV@$Q9}xEBb!V5%jjGTJ">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="otto9_configuration" id="oBrte=@YC`#Iv$V32.g(">
+                    <field name="PIN_YL">23</field>
+                    <field name="PIN_YR">26</field>
+                    <field name="PIN_RL">25</field>
+                    <field name="PIN_RR">5</field>
+                    <field name="PIN_Buzzer">27</field>
+                    <next>
+                      <block type="ultrasonic_sensor" id=":}0Hi/*WQuqH-xA1`C:2">
+                        <field name="US_NUMBER">1</field>
+                        <field name="PIN_TRIG">8</field>
+                        <field name="PIN_ECHO">9</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="z6*B=Ks/T5@35#hAcIK.">
+        <mutation elseif="2"></mutation>
+        <value name="IF0">
+          <block type="button_sensor2" id="*A~~}w[8k|/`4`$:c)07">
+            <field name="PIN_BUTTON">12</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="pixel_clear" id="5M}YC]*ey.3H|@~9NELi">
+            <next>
+              <block type="pixel_rgb" id="ub%U8Yup[RF()Xb%G}][">
+                <value name="pin">
+                  <shadow type="analog_pin" id="`Xw2]0-@OapmZ7)Abf2y">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="R">
+                  <shadow type="math_number" id="MnKukC0P1si%ne,g%r2X">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="G">
+                  <shadow type="math_number" id="icmd6x6GzGVO,v6oj1Ns">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="6L*~ARhKGcsyioN9c]Iu">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="pixel_fill" id="BU]C;t/rL$7)8TD+APY)" disabled="true">
+                    <field name="color">#33ff33</field>
+                    <next>
+                      <block type="pixel_show" id="9$(jzH%?/cNs`!3F6b+D">
+                        <next>
+                          <block type="base_delay" id="vD,vGURu)O#xDS4rqnF(">
+                            <field name="unite">s</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="k8!DexhH?oo[1sQ)#r44">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="pixel_clear" id="{sXZ_eDOi.DG6~,%7*[P">
+                                <next>
+                                  <block type="pixel_fill" id="ebhP3~ZOx0`4hj$@2lVv" disabled="true">
+                                    <field name="color">#00cccc</field>
+                                    <next>
+                                      <block type="pixel_rgb" id="Kt:YvZhbH?B2k`i!@a!G">
+                                        <value name="pin">
+                                          <shadow type="analog_pin" id="IgYt{:lv+W`X:+Dp3^y@">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="R">
+                                          <shadow type="math_number" id="bC;V,{0B83!30-KO1BN8">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="G">
+                                          <shadow type="math_number" id="t`JL`diYlkTuIJVAeU]c">
+                                            <field name="NUM">50</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="{M%xc|k*H]CQ@|B[X8JW">
+                                            <field name="NUM">100</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="pixel_show" id="aIPN+Hko,S/1@_]7N}~4">
+                                            <next>
+                                              <block type="base_delay" id="2q[}U6SYn;#FraMKCW;|">
+                                                <field name="unite">s</field>
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="LPIJ^F(,HT#R1j8p?+8!">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="otto_do" id="SE.a#D92Gfu??+OP~CjS">
+                                                    <field name="otto_do_movement">swing</field>
+                                                    <field name="otto_move_speed">1000</field>
+                                                    <field name="otto_dance_size">25</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="button_sensor2" id="tNSFP5nr/AsJY_Z)Dc,%">
+            <field name="PIN_BUTTON">14</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="OLED_clear" id="_q+tfZx!xY[|En2UK8Gs">
+            <next>
+              <block type="OLED_data" id="rBBq`,-A@NYXvJc1rDOw">
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="l%5_GtV(5!j}[h$z`CdU">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="!9aHu0v)]@;DKeK81:io">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="height">
+                  <shadow type="math_number" id="U#A;T,%(lUx?9Q@MA.R!">
+                    <field name="NUM">1.8</field>
+                  </shadow>
+                </value>
+                <value name="print">
+                  <shadow type="text" id="]S}_2x!va2O9f|-LcLf,">
+                    <field name="TEXT">Temperature: </field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_data" id="WN^IsGQw=lqkRSVs_{!W">
+                    <field name="draw">TRUE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="MSm~o|^mtX?#%09*n=Ki">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id="P|sg![2PeTXG;5n$TtaK">
+                        <field name="NUM">18</field>
+                      </shadow>
+                    </value>
+                    <value name="height">
+                      <shadow type="math_number" id="bvyrdArXm0i(L3l%IV3o">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <value name="print">
+                      <shadow type="text" id="1[,)f!ly5cN9iz.OK_.#">
+                        <field name="TEXT">Temperatura: </field>
+                      </shadow>
+                      <block type="dht_measure" id="=q8@l*ImQj^ltFWO2/U_">
+                        <mutation matrix="null"></mutation>
+                        <field name="DHT_NUMBER">1</field>
+                        <field name="OUTPUT_TYPE">0</field>
+                        <field name="OUTPUT_VALUE">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="OLED_data" id="acugCxjz[4+zGHL~H!VY">
+                        <field name="draw">TRUE</field>
+                        <value name="X">
+                          <shadow type="math_number" id="HZ--)s.5Gm5V*}CcDMn_">
+                            <field name="NUM">64</field>
+                          </shadow>
+                        </value>
+                        <value name="Y">
+                          <shadow type="math_number" id="p9w/OWGYNi?jj$pZGT8/">
+                            <field name="NUM">18</field>
+                          </shadow>
+                        </value>
+                        <value name="height">
+                          <shadow type="math_number" id="%z_#sS`O=c)5/cp!7$Pq">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                        <value name="print">
+                          <shadow type="text" id="1[,)f!ly5cN9iz.OK_.#">
+                            <field name="TEXT">Temperatura: </field>
+                          </shadow>
+                          <block type="ultrasonic_distance" id="gawj3NOy^Hc[#g,(Q],U">
+                            <field name="US_NUMBER">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="OLED_data" id="dJ.ol8O_h5d*l94Sl|[o">
+                            <field name="draw">TRUE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="#Y|iXS)pccfX+?3o)W=p">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="9.Cd?(y:)Kyeg3%*LaDb">
+                                <field name="NUM">38</field>
+                              </shadow>
+                            </value>
+                            <value name="height">
+                              <shadow type="math_number" id="P5`^Bb1D~S`!W!j(3c^N">
+                                <field name="NUM">1.8</field>
+                              </shadow>
+                            </value>
+                            <value name="print">
+                              <shadow type="text" id="@CT1S8j[u*dOjf_F}V#!">
+                                <field name="TEXT">Humidity: </field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="OLED_data" id="sy|{j.z#8t)k?Q8(f!rc">
+                                <field name="draw">TRUE</field>
+                                <value name="X">
+                                  <shadow type="math_number" id="Zr,MJ/,nb0UmzkRnpOUN">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="Y">
+                                  <shadow type="math_number" id="]Hzl|O]SxGTDWR=Y.vgh">
+                                    <field name="NUM">48</field>
+                                  </shadow>
+                                </value>
+                                <value name="height">
+                                  <shadow type="math_number" id="s^EIckIB.z,wn|e:kKzr">
+                                    <field name="NUM">2</field>
+                                  </shadow>
+                                </value>
+                                <value name="print">
+                                  <shadow type="text" id="]S}_2x!va2O9f|-LcLf,">
+                                    <field name="TEXT">Hello Otto</field>
+                                  </shadow>
+                                  <block type="dht_measure" id="I~?FR7ZPbH]IfuNm#p$m">
+                                    <mutation matrix="null"></mutation>
+                                    <field name="DHT_NUMBER">1</field>
+                                    <field name="OUTPUT_TYPE">0</field>
+                                    <field name="OUTPUT_VALUE">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="OLED_display" id="b4;^JF,SEB)~jzn%K:ro">
+                                    <next>
+                                      <block type="base_delay" id="{%pxL8c}#3w7e$JQBVQX">
+                                        <field name="unite">s</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="aEx.oyAdaqsV6XobYW,K">
+                                            <field name="NUM">8</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="button_sensor2" id="?Yku9^QF{gj8q*;6mziq">
+            <field name="PIN_BUTTON">13</field>
+            <field name="LOGIC">FALSE</field>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="otto_move" id="xKGi#4y5mv|}]MqMVw@|">
+            <field name="otto_move_sens">FORWARD</field>
+            <field name="otto_move_speed">1000</field>
+            <next>
+              <block type="otto_dance" id="4x)An)@yV+k7T_62vw3h">
+                <field name="otto_dance_movement">moonwalkerLEFT</field>
+                <field name="otto_move_speed">1000</field>
+                <field name="otto_dance_size">25</field>
+                <next>
+                  <block type="otto_move" id="*Z`[Y@3|c,_2DMdj:aDW">
+                    <field name="otto_move_sens">SHAKELEFT</field>
+                    <field name="otto_move_speed">1000</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="OLED_clear" id="]y}v/==?X?`qyWpniXIO">
+            <next>
+              <block type="OLED_circle" id="249q};znXlG8DO7`AI$A">
+                <field name="fill">TRUE</field>
+                <field name="draw">TRUE</field>
+                <value name="X">
+                  <shadow type="math_number" id="No!$|oN%4u[+SsPiM}!0">
+                    <field name="NUM">30</field>
+                  </shadow>
+                  <block type="math_map" id="QK!d@ECQ|6qu)d9rq8Ov">
+                    <value name="pin">
+                      <block type="potentiometer_ranger_sensor2" id="[7gmob*5iekMhxI4?|0k">
+                        <field name="PIN_POTENTIOMETER">33</field>
+                        <field name="OUTPUT_VALUE">1</field>
+                      </block>
+                    </value>
+                    <value name="A1">
+                      <shadow type="math_number" id="mHbq5vDPZrAdd~W7(1bL">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="A2">
+                      <shadow type="math_number" id="|%nMi}AN@$A-U{0;}lA?">
+                        <field name="NUM">1023</field>
+                      </shadow>
+                    </value>
+                    <value name="B1">
+                      <shadow type="math_number" id="NJ+`Jx*##-3NbsGpF.~o">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="B2">
+                      <shadow type="math_number" id="Q!sZz0(_?KBh([qpzX#,">
+                        <field name="NUM">64</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="Y">
+                  <shadow type="math_number" id="!N3Eug$!|_6;^L,Xw3r0">
+                    <field name="NUM">32</field>
+                  </shadow>
+                </value>
+                <value name="width">
+                  <shadow type="math_number" id="!*t+_e5G9J(7=[%4XC_f">
+                    <field name="NUM">24</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="OLED_circle" id="-WiCnGk5qqugwE7BV3Is">
+                    <field name="fill">TRUE</field>
+                    <field name="draw">FALSE</field>
+                    <value name="X">
+                      <shadow type="math_number" id="3kc,KA_67d]1z4IViP);">
+                        <field name="NUM">30</field>
+                      </shadow>
+                      <block type="math_map" id="f,g;s(%Ig4_)/4$#mSn{">
+                        <value name="pin">
+                          <block type="potentiometer_ranger_sensor2" id="Yva|m=,lbSHw:S|r7u+=">
+                            <field name="PIN_POTENTIOMETER">33</field>
+                            <field name="OUTPUT_VALUE">1</field>
+                          </block>
+                        </value>
+                        <value name="A1">
+                          <shadow type="math_number" id="*b=*jatMI_#[EL$JZo:^">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="A2">
+                          <shadow type="math_number" id="^H5Z|~zNl``XDyF:ka_f">
+                            <field name="NUM">1023</field>
+                          </shadow>
+                        </value>
+                        <value name="B1">
+                          <shadow type="math_number" id="3j.%];x_M$lz`U9yy!^e">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="B2">
+                          <shadow type="math_number" id="QN7jbq|^{}:KTucV0Bzu">
+                            <field name="NUM">64</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="Y">
+                      <shadow type="math_number" id=")55/Kb#8VenodSwBPiZi">
+                        <field name="NUM">32</field>
+                      </shadow>
+                    </value>
+                    <value name="width">
+                      <shadow type="math_number" id="JLW0EjTS)w^?B3n{S7Lv">
+                        <field name="NUM">16</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="OLED_circle" id="rQw/TQ*-sCy6`|X{DoHZ">
+                        <field name="fill">TRUE</field>
+                        <field name="draw">TRUE</field>
+                        <value name="X">
+                          <shadow type="math_number" id="No!$|oN%4u[+SsPiM}!0">
+                            <field name="NUM">90</field>
+                          </shadow>
+                          <block type="math_arithmetic" id="#gb:i^PxZr9(ihqnd`{a">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_map" id="W(_:Iz~YO685q^-0m/jJ">
+                                <value name="pin">
+                                  <block type="potentiometer_ranger_sensor2" id=";xS;f~jI=`L(%8fBe+^}">
+                                    <field name="PIN_POTENTIOMETER">33</field>
+                                    <field name="OUTPUT_VALUE">1</field>
+                                  </block>
+                                </value>
+                                <value name="A1">
+                                  <shadow type="math_number" id="D=_rXZf/4Cfxj/m1!GD-">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="A2">
+                                  <shadow type="math_number" id="AAY+L%K%AQB1S*OTu|yH">
+                                    <field name="NUM">1023</field>
+                                  </shadow>
+                                </value>
+                                <value name="B1">
+                                  <shadow type="math_number" id="4=o]IM+zAWw7eh}F+$G*">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="B2">
+                                  <shadow type="math_number" id="1?11]hJ}jk`$w(H(C;!Y">
+                                    <field name="NUM">64</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="HMkYXS:EVCM)~C2GmP6m">
+                                <field name="NUM">60</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="Y">
+                          <shadow type="math_number" id="?b!em,ASH{3r6d{wu8)6">
+                            <field name="NUM">32</field>
+                          </shadow>
+                        </value>
+                        <value name="width">
+                          <shadow type="math_number" id="KmdgSeJ!NUXekMz8~7d0">
+                            <field name="NUM">24</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="OLED_circle" id="0I7PPKKxKN@BLKV*,v9d">
+                            <field name="fill">TRUE</field>
+                            <field name="draw">FALSE</field>
+                            <value name="X">
+                              <shadow type="math_number" id="3kc,KA_67d]1z4IViP);">
+                                <field name="NUM">90</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="ttW@6pM`_GaV~i6q:WNn">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="math_map" id="+%fxL)kEDHweA*}?1lyj">
+                                    <value name="pin">
+                                      <block type="potentiometer_ranger_sensor2" id="SJ.0-J}{OV3r^6x-iizO">
+                                        <field name="PIN_POTENTIOMETER">33</field>
+                                        <field name="OUTPUT_VALUE">1</field>
+                                      </block>
+                                    </value>
+                                    <value name="A1">
+                                      <shadow type="math_number" id="|M_vJ%mkBo7elqxV;~Wv">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="A2">
+                                      <shadow type="math_number" id="mPfkj^J2lKf@*ojde1$~">
+                                        <field name="NUM">1023</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="B1">
+                                      <shadow type="math_number" id="~i=CY,FyO${Y7s5%4xu4">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="B2">
+                                      <shadow type="math_number" id="^U)ozo,,Zuh?HW.{R/Nu">
+                                        <field name="NUM">64</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="HdK}Lk_(`4zwy~rf2X4[">
+                                    <field name="NUM">60</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <shadow type="math_number" id="M21rp_v-2)5PCWp!z3Td">
+                                <field name="NUM">32</field>
+                              </shadow>
+                            </value>
+                            <value name="width">
+                              <shadow type="math_number" id="I%s][c~o/gxBlPRlzhjy">
+                                <field name="NUM">16</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="OLED_display" id="/$$K$[j1g8M$ay{Z5*Un"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

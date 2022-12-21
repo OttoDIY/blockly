@@ -1,0 +1,394 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="Razs%4d*to_y/]NfZI6_" x="-703" y="31">
+    <statement name="DO">
+      <block type="serial_init" id="w~B%_Au_1d.2vAKvetaZ">
+        <field name="PINBAUDIOS">115200</field>
+        <next>
+          <block type="wifi_init_sta" id="`_SwbkR2czxG5?gjNQYz">
+            <field name="LOGIC">FALSE</field>
+            <field name="SSID">tu wifi</field>
+            <field name="PASSWORD">tu password</field>
+            <next>
+              <block type="Init_OpenWeather" id="R%=:I8BY[i*R}!/zu]MY">
+                <field name="API_KEY">clave de OpenWeatherMap</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="tempo_sans_delay" id="@H{]opf]~3BA|+7*T@rf">
+        <field name="unite">s</field>
+        <value name="DELAY_TIME">
+          <shadow type="math_number" id="iG_oi:zdL.x=aK%^#7Uh">
+            <field name="NUM">20</field>
+          </shadow>
+        </value>
+        <statement name="branche">
+          <block type="order_read_OpenWeather_server" id="Errd9d}DzHI{fm=s]Hi-">
+            <value name="city">
+              <block type="text" id="gh=yj,ARc$g`uqyf}gb(">
+                <field name="TEXT">Madrid</field>
+              </block>
+            </value>
+            <value name="countrycode">
+              <block type="text" id=",]S|iqrvC6#*=K$]zyS]">
+                <field name="TEXT">ES</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="pV`Qdwv6gUEM|b[l_`k.">
+                <value name="CONTENT">
+                  <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                    <field name="TEXT">text</field>
+                  </shadow>
+                  <block type="text_join" id="KM0DNGPw|,%+{=7vNll;">
+                    <mutation items="10"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="jQ9JT1k6Ji?GNN/wc_SN">
+                        <field name="TEXT">El tiempo de hoy: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="values_text_OpenWeather_server" id="-^m^[TTAficY}[%2%~$]">
+                        <field name="OUTPUT_VALUE">1</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="zGSp?voN*0h/|O!N9F.a">
+                        <field name="TEXT"> descripción: </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="values_text_OpenWeather_server" id="z/*kv;}u}X`gGpELEt-`">
+                        <field name="OUTPUT_VALUE">0</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="=!L]]Qh$^;H+M4z!wKv!">
+                        <field name="TEXT">en </field>
+                      </block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="values_text_OpenWeather_server" id="WIGkkm}CA4FLpv?R@qs(">
+                        <field name="OUTPUT_VALUE">4</field>
+                      </block>
+                    </value>
+                    <value name="ADD6">
+                      <block type="text" id="t*MU%IuRFO]5$EO3*x.d">
+                        <field name="TEXT">  código del país: </field>
+                      </block>
+                    </value>
+                    <value name="ADD7">
+                      <block type="values_text_OpenWeather_server" id="y(^9)-URr!Yw)u=j^D`(">
+                        <field name="OUTPUT_VALUE">3</field>
+                      </block>
+                    </value>
+                    <value name="ADD8">
+                      <block type="text" id="oH6hgRof8@Z;T89s6g~g">
+                        <field name="TEXT">  y el Icono del tiempo:  </field>
+                      </block>
+                    </value>
+                    <value name="ADD9">
+                      <block type="values_text_OpenWeather_server" id="JDR/pY[siW;1bGC|F)T5">
+                        <field name="OUTPUT_VALUE">2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_println" id="^:Z@43pBP^l(^.l3ayX!">
+                    <value name="CONTENT">
+                      <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                        <field name="TEXT">text</field>
+                      </shadow>
+                      <block type="text_join" id="[.@rp/;mwGHBP(Lp?scg">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="1PY,RLNdNM?^0SWC|;rv">
+                            <field name="TEXT">La temperatura actual es: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="values_OpenWeather_server" id="A~N}SbWWf+v^:D%PccRE">
+                            <field name="OUTPUT_VALUE">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="yv/^2Wrv6;{`}o0LeN*g">
+                        <value name="CONTENT">
+                          <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                            <field name="TEXT">text</field>
+                          </shadow>
+                          <block type="text_join" id="jA5kD7iW,ihvK%SP`S#@">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="]=-jYp4ld+TG4.RKoKmz">
+                                <field name="TEXT">La sensación térmica es: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="values_OpenWeather_server" id="PL/L~HiVEfoL@P}bJcjW">
+                                <field name="OUTPUT_VALUE">5</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_println" id="3^X(k%|+ICxfVT4rPH6N">
+                            <value name="CONTENT">
+                              <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                <field name="TEXT">text</field>
+                              </shadow>
+                              <block type="text_join" id="y:]9i8XuQogo[AKn)^df">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="x9N/*s@7)Fz?O)G9Xt@8">
+                                    <field name="TEXT">La humedad actual es: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="values_OpenWeather_server" id="8ht2GV!}vY:g0`#:gtDR">
+                                    <field name="OUTPUT_VALUE">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="G,Y$_1Vt_p^[Kc+JwL4I">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                    <field name="TEXT">text</field>
+                                  </shadow>
+                                  <block type="text_join" id=":N7Gw:eK$:4_Gug6wHD|">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="eM?DWc%02TiHLa^H|C7[">
+                                        <field name="TEXT">La presion actual es: </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="values_OpenWeather_server" id="jw)i?r$I-;n_c)JTitez">
+                                        <field name="OUTPUT_VALUE">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id="`p0}(0d1gsWlT.y1iu|_">
+                                    <value name="CONTENT">
+                                      <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                        <field name="TEXT">text</field>
+                                      </shadow>
+                                      <block type="text_join" id="pyXI4g|TVjB8ytWNM-uj">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="Vs8cjezK]ky,`d%0`7ca">
+                                            <field name="TEXT">La temperatura min de hoy es: </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="values_OpenWeather_server" id="@SP@mcy@1!:oyir3A-?I">
+                                            <field name="OUTPUT_VALUE">4</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_println" id="o!DE(K8oA;$Acv0fB{9R">
+                                        <value name="CONTENT">
+                                          <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                            <field name="TEXT">text</field>
+                                          </shadow>
+                                          <block type="text_join" id="@KuQW468q,{7.qqb`:[~">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="lsi55e^2?m^NqTfG7?W[">
+                                                <field name="TEXT">La temperatura max de hoy es: </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="values_OpenWeather_server" id="}5y[*d@6Ns;uEwD/m)bX">
+                                                <field name="OUTPUT_VALUE">3</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="serial_println" id="e+]eJG5ZW.|[j4%Tn@M*">
+                                            <value name="CONTENT">
+                                              <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                <field name="TEXT">text</field>
+                                              </shadow>
+                                              <block type="text_join" id="`n9#D;5g0JNai}K,;#Lu">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="p~D(75ogw[v#ZwbBe%{9">
+                                                    <field name="TEXT">El % de nubes de hoy es: </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="values_OpenWeather_server" id="?|we?wDYm5*xL5O9b-1F">
+                                                    <field name="OUTPUT_VALUE">6</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="serial_println" id="3bPs~Kej4pob.S_:}etH">
+                                                <value name="CONTENT">
+                                                  <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                    <field name="TEXT">text</field>
+                                                  </shadow>
+                                                  <block type="text_join" id="qE5:zf#48[YEz#Y}+ndR">
+                                                    <mutation items="2"></mutation>
+                                                    <value name="ADD0">
+                                                      <block type="text" id="ZAzI:V$~P7BGSF+Ey96,">
+                                                        <field name="TEXT">Hoy el % de visibilidad es: </field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="ADD1">
+                                                      <block type="values_OpenWeather_server" id="/N;#[@b~V93iBb-c[F2W">
+                                                        <field name="OUTPUT_VALUE">10</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="serial_println" id="SF^TAg5Xlx$:FbXf-nqG">
+                                                    <value name="CONTENT">
+                                                      <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                        <field name="TEXT">text</field>
+                                                      </shadow>
+                                                      <block type="text_join" id="MX5.(1_du2XXo6Q`+=_}">
+                                                        <mutation items="2"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="text" id="*F}9aK@//}W1iq;h|iUh">
+                                                            <field name="TEXT">La velocidad del viento es: </field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                          <block type="values_OpenWeather_server" id="ZEm5xc-4jA8XXx%!xe;t">
+                                                            <field name="OUTPUT_VALUE">7</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="serial_println" id="mFlI8(E|bY%=)0-;;.OW">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                            <field name="TEXT">text</field>
+                                                          </shadow>
+                                                          <block type="text_join" id="Vj%c.KyDs{XZg+}_:dYM">
+                                                            <mutation items="2"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="text" id="Kn8l1`t]OXr481;;_4{P">
+                                                                <field name="TEXT">El  ángulo del viento es: </field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD1">
+                                                              <block type="values_OpenWeather_server" id="q)*?r||iDb7-;-oaQlSu">
+                                                                <field name="OUTPUT_VALUE">8</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="serial_println" id="lz(|(F%F}:MZLH/6A9h=">
+                                                            <value name="CONTENT">
+                                                              <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                                <field name="TEXT">text</field>
+                                                              </shadow>
+                                                              <block type="text_join" id="ch}z8W`dQnH]qQaP^LJw">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="text" id="(SIx?u`5c-A[c,IG,cY,">
+                                                                    <field name="TEXT">El id del icono de tiempo de hoy es: </field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                  <block type="values_OpenWeather_server" id="p$]C.Io,Q,#;@5M|LMpn">
+                                                                    <field name="OUTPUT_VALUE">9</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="serial_println" id="5IV`Av?jN)rhCbdsFR,(">
+                                                                <value name="CONTENT">
+                                                                  <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                                    <field name="TEXT">text</field>
+                                                                  </shadow>
+                                                                  <block type="text_join" id="^%gqA)+}~esWIOQOcv,}">
+                                                                    <mutation items="2"></mutation>
+                                                                    <value name="ADD0">
+                                                                      <block type="text" id="b[vvn(S;Tmk^iXfbjp6U">
+                                                                        <field name="TEXT">EPOC Amanecer: </field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="ADD1">
+                                                                      <block type="values_OpenWeather_server" id="~.j3_3q-;:`!_^hF]@H^">
+                                                                        <field name="OUTPUT_VALUE">11</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="serial_println" id="Nx+,J@cb]#Q!{r)V6`dd">
+                                                                    <value name="CONTENT">
+                                                                      <shadow type="text" id="P~tm1=*L$z|7Y;?V#]W[">
+                                                                        <field name="TEXT">text</field>
+                                                                      </shadow>
+                                                                      <block type="text_join" id="m8T@7Povm#A(6~{.FLr,">
+                                                                        <mutation items="2"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="text" id="s#%B(^Haqyn$,@%jN~|`">
+                                                                            <field name="TEXT">EPOC Atardecer</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="values_OpenWeather_server" id="r+5=E2+T.X:DnPpnq$UJ">
+                                                                            <field name="OUTPUT_VALUE">12</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

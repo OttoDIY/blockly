@@ -1,0 +1,88 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="v0o#zCz}vG:LcI--;W_n" x="-4779" y="24">
+    <statement name="DO">
+      <block type="serial_init" id="FP6JJ^oKIU$|lwX$~Gu2">
+        <field name="PINBAUDIOS">115200</field>
+        <next>
+          <block type="Vs2Setup" id="c97m[j#PwzcjBmJ?3z6]">
+            <field name="MU_OBJ">0</field>
+            <statement name="SETUP_BLOCK">
+              <block type="Vs2MuInit" id="EvftEk!)ikE/E4f%LH7z">
+                <field name="MU_OBJ">0</field>
+                <field name="SERIAL">Wire</field>
+                <next>
+                  <block type="Vs2VisionBegin" id="3~g.cC5%s$`8#!H#HK*l">
+                    <field name="VisionStatus">Begin</field>
+                    <field name="VisionType">VISION_NUM_CARD_DETECT</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="-A$:wX0!t|*K9oq/6d^8">
+        <value name="IF0">
+          <block type="Vs2Detected" id=")6=up(iyDE}`)n/ST?57">
+            <field name="MU_OBJ">0</field>
+            <field name="VISION_TYPE">VISION_NUM_CARD_DETECT</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="[8CQuy$5Wv6+_;V^p6w:">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="Vs2GetCardType" id="sQf]1WT0$t-/IJ!89_QP">
+                <field name="MuObj">0</field>
+                <field name="VisionCardType">VISION_NUM_CARD_DETECT</field>
+                <field name="CardType">1</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="serial_println" id="`2{KUzbRGmrUk`TR;S!f">
+                <value name="CONTENT">
+                  <shadow type="text" id="fa4$E^g8.B^nKv!$SA/z">
+                    <field name="TEXT">Card one</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="controls_if" id="Q)|XyV1%Xun}=Qc|tM7K">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="Vs2GetCardType" id="d3S}=x/Ax#t]Uq)46xCr">
+                    <field name="MuObj">0</field>
+                    <field name="VisionCardType">VISION_NUM_CARD_DETECT</field>
+                    <field name="CardType">2</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="serial_println" id="7RHQ(kT[]!8(2O|;UwN@">
+                    <value name="CONTENT">
+                      <shadow type="text" id="5POzb?{Qpq[T6EW9Txq9">
+                        <field name="TEXT">Card two</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="serial_println" id="kmJkbkEA`e#|Z1y3EF1{">
+                    <value name="CONTENT">
+                      <shadow type="text" id="wAk|DAUO{[x%PXZ7s!_=">
+                        <field name="TEXT">It is not  the card one or two</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

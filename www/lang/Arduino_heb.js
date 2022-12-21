@@ -104,6 +104,26 @@ Blockly.Msg.CAT_THINGSPEAK = "🌐 Thingspeak";
 Blockly.Msg.CAT_TELEGRAM = "🌐 Telegram";
 Blockly.Msg.CAT_OPENWEATHER="🌐 OpenWeather";
 Blockly.Msg.CAT_WIFISERVER="🌐 WiFi server";
+Blockly.Msg.CAT_TM1637="💡 DIGITS";
+Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
+Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
+Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
+
+//DISPALY 7 SEGMENT TM1637
+Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
+Blockly.Msg.TM1637_init = "Init TM1637 Display 7 segment";
+Blockly.Msg.TM1637_PinCLK = "Pin CLK";
+Blockly.Msg.TM1637_PinDIO = "Pin DIO";
+Blockly.Msg.M1637_Brightness = "Set brightness(0-7)";
+Blockly.Msg.M1637_turnOFF_ON = "Turn";
+Blockly.Msg.M1637_Clear = "Clear";
+Blockly.Msg.M1637_number="Set number";
+Blockly.Msg.M1637_Digit = "Position(0-3)";
+Blockly.Msg.M1637_Length = "Number of digits to set";
+Blockly.Msg.M1637_fill = "Leading zeros";
+Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
+Blockly.Msg.M1637_value="Value";
+Blockly.Msg.M1637_arraysegment="Display segment array.";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Init RTC DS3231.I2C pins";
@@ -334,6 +354,8 @@ Blockly.Msg.bargraphe_tooltip = "bargraph module composed of 10 LEDs (8 green, 1
 Blockly.Msg.rvb_init="LED RGB";
 Blockly.Msg.rvb_init_tooltip="indicate the PWM pins to connect to the RGB LED";
 Blockly.Msg.rvb_set="show color";
+Blockly.Msg.rvb_anode="common anode";
+Blockly.Msg.rvb_cathode="common cathode";
 Blockly.Msg.rvb_set_x="X Led on the board.Show color";
 Blockly.Msg.rvb_set_tooltip="displays a color indicating a value for the three components (red, green, blue)";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
@@ -632,7 +654,8 @@ Blockly.Msg.inch="inch";
 Blockly.Msg.TRIG="TRIG Trigger";
 Blockly.Msg.Echo="Echo";
 Blockly.Msg.VAR_TemSens="Analog NTC Temperature (ºC)";
-Blockly.Msg.MRTX_BUTTON="MRTX-Uno button pressed?";
+Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
+Blockly.Msg.TOUCH="Touch";
 
 //CCS811
 
@@ -685,6 +708,7 @@ Blockly.Msg.MRT_CHANNEL="Channel";
 Blockly.Msg.MRT_KEY="Key MRT";
 Blockly.Msg.MRT_PRESSED="Pressed?";
 Blockly.Msg.PIN2="Interrupt PIN";
+Blockly.Msg.ATTEND_MRT_IR="Attend Remote Control MRT";
 
 //OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
@@ -979,6 +1003,23 @@ Blockly.Msg.RFID_CARD_READED = "Value of the read card";
 Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
+//NFC PN532
+Blockly.Msg.NFC_name = "💳 NFC ";
+Blockly.Msg.NFC_init = "NFC I2C ";
+Blockly.Msg.NFC_VALID_VAR = "Validation card(4bytes):";
+Blockly.Msg.NFC_VALID_VAR2 = "Validation card(7bytes):";
+Blockly.Msg.NFC_C1 = "Value1";
+Blockly.Msg.NFC_C2 = "Value2";
+Blockly.Msg.NFC_C3 = "Value3";
+Blockly.Msg.NFC_C4 = "Value4";
+Blockly.Msg.NFC_C5 = "Value5";
+Blockly.Msg.NFC_C6 = "Value6";
+Blockly.Msg.NFC_C7 = "Value4";
+Blockly.Msg.NFC_DETECTED = "card detected?";
+Blockly.Msg.NFC_CARD_READED = "Read Value";
+Blockly.Msg.NFC_CHECK_CARD = "Is card Read = Validation card";
+Blockly.Msg.NFC_CHECK_CARD2 = "?";
+
 //KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Keyboard";
 Blockly.Msg.KeyPressed = "Key";
@@ -1108,6 +1149,20 @@ Blockly.Msg.Thingspeak_Write= "Write value";
 Blockly.Msg.Thingspeak_field = "in field";
 Blockly.Msg.Thingspeak_ReadLong= "Read as long the field";
 Blockly.Msg.Thingspeak_ReadFloat= "Read as float the field";
+
+//Firebase
+Blockly.Msg.Firebase_name_init = "Configuration Firebase.";
+Blockly.Msg.firebase_name = "Firebase.";
+Blockly.Msg.Firebase_url = "URL";
+Blockly.Msg.Firebase_api = "Api key";
+Blockly.Msg.Firebase_start = " Initialization in Setup";
+Blockly.Msg.Firebase_type = " Store ";
+Blockly.Msg.Firebase_read = " Read ";
+Blockly.Msg.Firebase_Node = "in node"
+Blockly.Msg.Firebase_Value= "value";
+Blockly.Msg.Firebase_String_Node="Store a text in node";
+Blockly.Msg.Firebase_Read_String_Node="Read the text in node";
+Blockly.Msg.firebase_delete = "Delete node";
 
 //Telegram
 Blockly.Msg.Telegram_name_init = "Configuration Telegram chat.";
