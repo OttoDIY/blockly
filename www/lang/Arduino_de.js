@@ -112,9 +112,9 @@ Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
 
-//DISPALY 7 SEGMENT TM1637
-Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
-Blockly.Msg.TM1637_init = "Initialisiere TM1637 Display 7 segment";
+//DISPLAY 7 SEGMENT TM1637
+Blockly.Msg.TM1637_name = "TM1637 Display 7 sSegment.";
+Blockly.Msg.TM1637_init = "Initialisiere TM1637 Display 7 sSegment";
 Blockly.Msg.TM1637_PinCLK = "Pin CLK";
 Blockly.Msg.TM1637_PinDIO = "Pin DIO";
 Blockly.Msg.M1637_Brightness = "Setze Helligkeit(0-7)";
@@ -124,9 +124,9 @@ Blockly.Msg.M1637_number = "Setze Nummer";
 Blockly.Msg.M1637_Digit = "Position(0-3)";
 Blockly.Msg.M1637_Length = "Nummer der zu setztenden Ziffern";
 Blockly.Msg.M1637_fill = "Vorangestellte Nullen";
-Blockly.Msg.M1637_digitsegment = "Set segment array digit(0-3)";
+Blockly.Msg.M1637_digitsegment = "Setze Segment Array Stelle(0-3)";
 Blockly.Msg.M1637_value = "Wert";
-Blockly.Msg.M1637_arraysegment = "Display segment array.";
+Blockly.Msg.M1637_arraysegment = "Display Segment Array.";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME = "Initialisiere RTC DS3231.I2C Pins";
@@ -138,11 +138,11 @@ Blockly.Msg.RTCDS3231_HOUR = "Stunde";
 Blockly.Msg.RTCDS3231_MINUTE = "Minute";
 Blockly.Msg.RTCDS3231_SECOND = "Sekunde";
 Blockly.Msg.RTCDS3231_DOFWEEK = "Wochentag";
-Blockly.Msg.RTCDS3231_READ_RTC = "RTC DS3231.Read the date and time";
+Blockly.Msg.RTCDS3231_READ_RTC = "RTC DS3231.Lese Datum und Zeit aus";
 Blockly.Msg.RTCDS3231_VALUES = "Wert";
 Blockly.Msg.RTCDS3231_Name2 = "RTC DS3231.";
-Blockly.Msg.RTCDS3231_TEXT_DOFWEEK = "Wochentag in string";
-Blockly.Msg.RTCDS3231_TEXT_MONTH = "Monat in string ";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK = "Wochentag in Text";
+Blockly.Msg.RTCDS3231_TEXT_MONTH = "Monat in Text ";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip =
@@ -425,19 +425,20 @@ Blockly.Msg.lcd_symbole_tooltip =
 Blockly.Msg.loop = "∞ Loop";
 Blockly.Msg.init = "⚙️ Setup";
 Blockly.Msg.base_setup_loop =
-  "The initialization function: \nIt is used to initialize the variables, the direction of the pins ... \nIt is executed only once \nThe loop function: \nThis is the main part of the program, all the blocks placed here will run in loop and indefinitely (several thousand times per second) ";
+  "Die setup-Funktion: \nWird genutzt, um die Variablen zu initialisieren und die Nutzung der Pins ... \nSie wird nur einmal ausgeführt \nDie loop-Funktion: \nDas ist der Hauptteil des Programms, alle hier platzierten Blöcke laufen wiederholt und undefiniert (mehrere tausend Mal pro Sekunde) ";
 Blockly.Msg.loop_tooltip =
-  "all blocks placed here will run in a loop and indefinitely (several thousand times per second)";
+  "alle hier platzierten Blöcke laufen wiederholt und undefiniert (mehrere tausend Mal pro Sekunde)";
 Blockly.Msg.begin_tooltip =
-  "this block is used to define the order in which the program should execute";
+  "dieser Block wird genutzt, um die Reihenfolge für den Programmablauf zu definieren";
 Blockly.Msg.begin = "🏁 START";
-Blockly.Msg.def = "⚙️ Declaration";
+Blockly.Msg.def = "⚙️ Deklaration";
 Blockly.Msg.def_tooltip =
-  "all the blocks placed here will only be executed once, this is where the different sensors or actuators are configured";
+  "alle hier platzierten Blöcke laufen einmal. Hier werden alle Sensoren und Aktuatoren konfiguriert";
 Blockly.Msg.END = "🏁 ENDE";
 Blockly.Msg.END_tooltip =
-  "Stop the program, blocks placed afterwards will be ignored";
-Blockly.Msg.code_tooltip = "Type an instruction here that is not in blocks";
+  "Stoppt das Programm, danach platzierte Blöcke werden ignoriert";
+Blockly.Msg.code_tooltip =
+  "Schreibe eine Anweisung, die nicht als Block verfügbar ist";
 //matrix
 Blockly.Msg.matriceLC = "put the LED, line";
 Blockly.Msg.matrice_create_aff = "Create block 'display symbol %1'";
