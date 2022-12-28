@@ -767,7 +767,9 @@ BlocklyDuino.cardPicture_change = function() {
 BlocklyDuino.saveino = function() {
     var code = $('#pre_previewArduino').text();
 	var datenow = Date.now();
-	var filename = "arduino"+datenow+".ino";
+	var projectname = document.getElementById("title-project-name").value;
+	var projectname = document.getElementById("title-project-name").value;
+	var filename = projectname+".ino";
  	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
 	element.setAttribute('download', filename);
@@ -779,7 +781,9 @@ BlocklyDuino.saveino = function() {
 BlocklyDuino.savepy = function() {
     var code = $('#pre_previewArduino').text();
 	var datenow = Date.now();
-	var filename = "python"+datenow+".py";
+	var projectname = document.getElementById("title-project-name").value;
+	var projectname = document.getElementById("title-project-name").value;
+		var filename = projectname+".py";
  	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
 	element.setAttribute('download', filename);
@@ -808,7 +812,9 @@ BlocklyDuino.saveXmlFile = function () {
 		}
 		var data = Blockly.Xml.domToPrettyText(xml);
 		var datenow = Date.now();
-		var filename = "blocklino"+datenow+".bloc";
+		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
+		var projectname = document.getElementById("title-project-name").value;
+		var filename = projectname+".bloc";
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/bloc;charset=utf-8,' + encodeURIComponent(data));
 		element.setAttribute('download', filename);
@@ -819,7 +825,9 @@ BlocklyDuino.saveXmlFile = function () {
 	} else if (window.localStorage.prog=="arduino"){
 		var code = editor.getValue();
 		var datenow = Date.now();
-		var filename = "arduino"+datenow+".ino";
+		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
+		var projectname = document.getElementById("title-project-name").value;
+		var filename = projectname+".ino";
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
 		element.setAttribute('download', filename);
@@ -830,7 +838,9 @@ BlocklyDuino.saveXmlFile = function () {
 	} else {
 		var code = editor.getValue();
 		var datenow = Date.now();
-		var filename = "python"+datenow+".py";
+		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
+		var projectname = document.getElementById("title-project-name").value;
+		var filename = projectname+".py";
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:py/ino;charset=utf-8,' + encodeURIComponent(code));
 		element.setAttribute('download', filename);
