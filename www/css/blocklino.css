@@ -26,13 +26,13 @@ body {
 }
 #divBody {
     position: absolute;
-    top: 65px;
+    top: 78px;
     bottom: 0px;
     width: 100%
 }
 #title-bar {
     -webkit-app-region: drag;
-	height: 40px;
+	height: 80px;
 	text-align: center;
 	line-height: 40px;
 	vertical-align: middle;
@@ -68,15 +68,17 @@ body {
 	color:white
 }
 #title-project-name {
-	margin-left: 10px;
-    border-radius: 5px;
-	color: black;
-	font-weight: 500;
+	margin-left: 0px;
+  border-radius: 5px;
+	color: #2d2d64;
+	font-weight: bold;
+	height: 42px;
 }
 #title-bar-btns {
 	-webkit-app-region: no-drag;
 	position: fixed;
 	right: 0px
+
 }
 #fenetre_term{
 	width: 630px;
@@ -115,7 +117,7 @@ body {
 	height:600px
 }
 .div_close_modal {
-	padding-right: 10px;	
+	padding-right: 10px;
 	float: right;
 	bottom: 10px;
 	position: absolute;
@@ -149,12 +151,14 @@ body {
 	left: 5px;
 	top: 2px;
 	z-index: 10
+
 }
 #btn_group {
 	position: absolute;
 	right: 5px;
 	top: 2px;
 	z-index: 10
+
 }
 #toggle {
 	width: 25%;
@@ -166,9 +170,9 @@ body {
 	opacity: 0.9
 }
 #content_code {
-	font-size: 16px;
+	font-size: 18px;
     position: absolute;
-	border: 1px solid #727272;
+	border: 1px solid #fff;
     top: 0px;
     right: 5px;
     bottom: 5px;
@@ -190,7 +194,7 @@ body {
 }
 #span_select_all {
 	font-weight: bold
-} 
+}
 .blocklySvg {
 	border-top: none !important;
 	background-color: #A9B9C9;
@@ -200,11 +204,11 @@ body {
 }
 .blocklyToolboxDiv {
 	background-color: #f2f2f2  !important;
-	
+
 	font-weight: bold;
 	margin-left: 5px;
 	width: 210px;
-	opacity: 0.7 
+	opacity: 0.7
 }
 .blocklyFlyoutBackground {
 	fill: #e6e6e6 !important
