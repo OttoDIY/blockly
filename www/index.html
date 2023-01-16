@@ -87,8 +87,11 @@
 	<div class="loading"></div>
 	<div id="toptitle">
 		<div id="title">
-            <span><img src="media/icon.png"/><span id="span_blocklino"></span></span>
-		</div>
+            <span><img src="media/icon.png"><span id="span_blocklino"> Otto Blockly</span></span>
+            <input id="title-project-name" type="text" placeholder="Project name"/>
+		<button id="btn_saveXML" class="btn btn-arduino-rect" title="💾 Save">
+					<span class="fa fa-floppy-o fa-lg fa-fw"></span>
+				</button></div>
         <div id="title-bar-btns">
 			<button id="btn_min" type="button" class="btn btn-minmax"><span class="fa fa-minimize fa-lg"></span></button>
 			<button id="btn_max" type="button" class="btn btn-minmax"><span class="fa fa-maximize fa-lg"></span></button>
@@ -137,9 +140,6 @@
 					<span class="fa fa-folder-open fa-lg fa-fw"></span>
 				</button>
 				<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
-				<button id="btn_saveXML" class="btn btn-arduino-rect">
-					<span class="fa fa-floppy-o fa-lg fa-fw"></span>
-				</button>
 				<button id="btn_print" class="btn btn-arduino-rect">
 					<span class="fa fa-camera"> </span>
 				</button>

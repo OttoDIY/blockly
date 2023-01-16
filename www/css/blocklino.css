@@ -67,6 +67,12 @@ body {
 	left: 6px;
 	color:white
 }
+#title-project-name {
+	margin-left: 10px;
+    border-radius: 5px;
+	color: black;
+	font-weight: 500;
+}
 #title-bar-btns {
 	-webkit-app-region: no-drag;
 	position: fixed;
