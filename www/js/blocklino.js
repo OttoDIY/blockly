@@ -115,6 +115,7 @@ BlocklyDuino.load = function(event) {
 	var reader = new FileReader();
 	reader.onloadend = function(event) {
 		var target = event.target;
+		document.getElementById('title-project-name').value = files[0].name.substring(0, files[0].name.indexOf('.'));
 		if (target.readyState == 2) {
 			if (files[0].name.endsWith("ino")) {
 				$('#codeORblock').bootstrapToggle("off");
