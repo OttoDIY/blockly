@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<link rel="icon" type="image/png" href="media/icon.png" />
+	<link rel="icon" type="image/ico" href="media/app.ico" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Otto Blockly </title>
 	<!-- JavaScript -->
@@ -61,12 +61,15 @@
 	<script type="text/javascript" src="blocs&generateurs/matrix.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/MQTT.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/Thingspeak.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/Firebase.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/Telegram.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/OpenWeather.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/IFTTT.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/NTP.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/WifiBasic.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/WifiServer.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/EspNow.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/Alexa.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/text.js"></script>
 	<script type="text/javascript" src="js/typing.js"></script>
 	<script type="text/javascript" src="lang/code.js"></script>
@@ -84,7 +87,7 @@
 	<div class="loading"></div>
 	<div id="toptitle">
 		<div id="title">
-            <span><img src="media/icon.png"/>
+						<div class="img"><a href=https://www.ottodiy.com/><img src="media/icon.png" class="img-fluid" alt="Logo"></a></div>
 						<!--	<span id="span_blocklino"></span>-->
 					</span>
 		</div>
@@ -100,9 +103,9 @@
 				<li role="presentation" class="active"><a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab"></a></li>
 				<li role="presentation"><a href="#content_code" aria-controls="content_code" role="tab" data-toggle="tab"></a></li>
 			</ul>
-				<span id="labelToolboxDefinition" style="color:white;font-size:4" > </span>
+				<span id="labelToolboxDefinition" style="color:white;font-weight: bold" > </span>
 				<div id="btn_group1"  class="btn-group" >
-				<button id="btn_level1" class="btn btn-arduino-rect" style="color:white;font-size:40" >1
+				<button id="btn_level1" class="btn btn-arduino-rect" >1
 				   <!-- <img src='./media/level1.png' >
 					 <span class="fa fa-reddit fa-lg fa-fw"></span> -->
 				</button>
@@ -113,7 +116,7 @@
 					<!--<span class="fa fa-graduation fa-lg fa-fw"></span>-->
 				</button>
 				</div>
-			 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();"   style="height: 42px; border-radius: 5px;" ></select>
+			 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();"   style="height: 42px; border-radius: 5px; font-weight: bold" ></select>
 			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
 					<span class="fa fa-cog fa-lg fa-fw"></span>
 		</button> -->
@@ -146,10 +149,10 @@
 				</button>
 
 
-				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: -6px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-microchip" > </span>
 				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;" id="boards" onchange="BlocklyDuino.change_card();">
+				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
 					<optgroup label="C / C++">
 						<option value="nanooptiboot">♾ Arduino Nano</option>
 						<option value="nano" >♾ Arduino Nano Old </option>
@@ -171,10 +174,10 @@
 
 					</optgroup>
 				</select>
-				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: -6px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
 					<span class="fa fa-usb"></span>
 				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;" id="portserie" onchange="BlocklyDuino.save_com();"></select>
+				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
 
 				<button id="btn_verify" class="btn btn-arduino" data-toggle="modal" data-target="#message">
 					<span class="fa fa-check fa-1_5x"> </span>
