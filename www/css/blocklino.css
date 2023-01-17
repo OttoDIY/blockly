@@ -204,12 +204,21 @@ body {
 }
 .blocklyToolboxDiv {
 	background-color: #f2f2f2  !important;
-
 	font-weight: bold;
-	margin-left: 5px;
-	width: 210px;
-	opacity: 0.7
+	margin-left: 0px;
+	width: 220px;
+	opacity: 1
 }
+
+.blocklyTreeLabel {
+	cursor: default;
+font-family: 'Poppins', sans-serif;
+font-size: 18px;
+font-weight: bold;
+padding: 0 3px;
+vertical-align: middle;
+}
+
 .blocklyFlyoutBackground {
 	fill: #e6e6e6 !important
 }
@@ -224,7 +233,7 @@ body {
 	padding: 6px 50px 6px 12px !important
 }
 .blocklyTreeRow {
-	height: 30px !important;
+	height: 34px !important;
 	line-height: 30px !important
 }
 .blocklyTreeSeparator {
