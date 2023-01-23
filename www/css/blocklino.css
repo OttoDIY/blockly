@@ -1,6 +1,16 @@
 @CHARSET "UTF-8";
 
-::-webkit-scrollbar { width: 0px; }
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(45, 45, 100, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
 
 html,body {
 	height: 100%
