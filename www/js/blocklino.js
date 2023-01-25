@@ -778,7 +778,6 @@ BlocklyDuino.saveino = function() {
     var code = $('#pre_previewArduino').text();
 	var datenow = Date.now();
 	var projectname = document.getElementById("title-project-name").value;
-	var projectname = document.getElementById("title-project-name").value;
 	var filename = projectname+".ino";
  	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
@@ -792,8 +791,7 @@ BlocklyDuino.savepy = function() {
     var code = $('#pre_previewArduino').text();
 	var datenow = Date.now();
 	var projectname = document.getElementById("title-project-name").value;
-	var projectname = document.getElementById("title-project-name").value;
-		var filename = projectname+".py";
+	var filename = projectname+".py";
  	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/ino;charset=utf-8,' + encodeURIComponent(code));
 	element.setAttribute('download', filename);
