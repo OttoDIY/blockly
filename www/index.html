@@ -85,120 +85,126 @@
 </head>
 <body onload="BlocklyDuino.init()">
 	<div class="loading"></div>
-	<div id="toptitle">
-		<div id="title">
-						<div class="img"><a href=https://www.ottodiy.com/><img src="media/icon.png" class="img-fluid" alt="Logo"></a></div>
-						<!--	<span id="span_blocklino"></span>-->
-					</span>
+
+	<div id="header-container">
+		<div id="toptitle">
+			<div id="title">
+							<div class="img"><a href=https://www.ottodiy.com/><img src="media/icon.png" class="img-fluid" alt="Logo"></a></div>
+							<!--	<span id="span_blocklino"></span>-->
+						</span>
+			</div>
+			<select id="languageMenu" onchange="BlocklyDuino.changelanguage();" style="border-radius: 5px;font-weight: bold"></select>
+			<div id="title-bar-btns">
+				<button id="btn_min" type="button" class="btn btn-minmax"><span class="fa fa-minimize fa-lg"></span></button>
+				<button id="btn_max" type="button" class="btn btn-minmax"><span class="fa fa-maximize fa-lg"></span></button>
+				<button id="btn_quit" type="button" class="btn btn-quit"><span class="fa fa-times fa-1_75x"></span></button>
+			</div>
 		</div>
-        <div id="title-bar-btns">
-			<button id="btn_min" type="button" class="btn btn-minmax"><span class="fa fa-minimize fa-lg"></span></button>
-			<button id="btn_max" type="button" class="btn btn-minmax"><span class="fa fa-maximize fa-lg"></span></button>
-			<button id="btn_quit" type="button" class="btn btn-quit"><span class="fa fa-times fa-1_75x"></span></button>
-        </div>
+		<div id="header" style="display:flex; position:static; height: auto;">
+			<div id="btn_all" style="position: static;padding: 10px;">
+				<ul class="nav nav-tabs" role="tablist" style="display: none;">
+					<li role="presentation" class="active"><a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab"></a></li>
+					<li role="presentation"><a href="#content_code" aria-controls="content_code" role="tab" data-toggle="tab"></a></li>
+				</ul>
+					<span id="labelToolboxDefinition" style="color:white;font-weight: bold" > </span>
+					<div id="btn_group1"  class="btn-group" >
+					<button id="btn_level1" class="btn btn-arduino-rect" >1
+					<!-- <img src='./media/level1.png' >
+						<span class="fa fa-reddit fa-lg fa-fw"></span> -->
+					</button>
+					<button id="btn_level2" class="btn btn-arduino-rect" >2
+						<!--<span class="fa fa-user fa-lg fa-fw"></span>-->
+					</button>
+					<button id="btn_level3" class="btn btn-arduino-rect" >3
+						<!--<span class="fa fa-graduation fa-lg fa-fw"></span>-->
+					</button>
+					</div>
+				
+				<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
+						<span class="fa fa-cog fa-lg fa-fw"></span>
+			</button> -->
+
+					<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
+						<span class="fa fa-graduation"></span>
+					</button>
+				<!--	<span id="exampleModalLabel" style="color:white;font-size:4" > </span> -->
+				<input id="title-project-name" type="text" placeholder="Project name"/>
+			<button id="btn_saveXML" class="btn btn-arduino-rect" >
+						<span class="fa fa-floppy-o fa-lg fa-fw"></span>
+					</button>
+					<button id="btn_new" class="btn btn-arduino-rect">
+						<span class="fa fa-file"></span>
+					</button>
+					<button id="btn_fakeload" class="btn btn-arduino-rect">
+						<span class="fa fa-folder-open"></span>
+					</button>
+					<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
+
+					<button id="btn_print" class="btn btn-arduino-rect">
+						<span class="fa fa-camera"> </span>
+					</button>
+
+					<button id="btn_undo" class="btn btn-arduino-rect">
+						<span class="fa fa-undo"> </span>
+					</button>
+					<button id="btn_redo" class="btn btn-arduino-rect">
+						<span class="fa fa-repeat"> </span>
+					</button>
+
+					<div style="display: inline-block;">
+						<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+							<span class="fa fa-microchip" > </span>
+						</button>
+						<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
+							<optgroup label="C / C++">
+								<option value="nanooptiboot">♾ Arduino Nano</option>
+								<option value="nano" >♾ Arduino Nano Old </option>
+								<option value="OttoESP" >🐱‍👤 Otto Ninja / ESP8266</option>
+								<option value="Ottoky" >🌐 Ottoky / ESP32</option>
+								<option value="MRTnode" >MRTnode / ESP32</option>
+								<option value="mrtduino" >MRTduino</option>
+								<option value="uno_bt" >ZUM BT-328</option>
+								<option value="wemosD1miniPro" >WeMos D1 mini</option>
+								<option value="uno" >♾ Arduino Uno</option>
+								<option value="nona4809">♾ Arduino Nano Every</option>
+								<option value="leonardo" >♾ Arduino Léonardo</option>
+								<option value="micro" >♾ Arduino Micro</option>
+								<option value="mega" >♾ Arduino Méga</option>
+								<option value="mkrwifi1010" >♾ Arduino MKR WiFi</option>
+								<!--<option value="mini" >Arduino Mini</option>
+								<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
+								<option value="yun" >Arduino Yun</option> -->
+
+							</optgroup>
+						</select>
+					</div>
+					<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+						<span class="fa fa-usb"></span>
+					</button>
+					<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
+
+					<button id="btn_verify" class="btn btn-arduino" data-toggle="modal" data-target="#message">
+						<span class="fa fa-check fa-1_5x"> </span>
+					</button>
+					<button id="btn_flash" class='btn btn-arduino' data-toggle="modal" data-target="#message">
+						<span class="fa fa-arrow-right fa-1_5x"> </span>
+					</button>
+					<span id="survol" style="color:#fff"></span>
+
+					<div id="btn_group" class="btn-group" role="group" style="position: static;">
+						<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question"></span> </button>
+									<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
+									<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
+						<button id="btn_term" class="btn btn-arduino-rect"><span class="fa fa-search"></span></button>
+						<button id="btn_preview" class="btn btn-arduino-rect"><span class="fa fa-code "> </span>	</button>
+						<button id="btn_search" class='btn btn-arduino-rect'><span class="fa fa-binoculars"> </span></button>
+						<input id="codeORblock" checked data-size="small" data-toggle="toggle" data-on="<span class='fa fa-puzzle  fa-2x' ></span>" data-off="<span class='fa fa-code fa-2x'></span>" data-style="ios" data-onstyle="default" data-offstyle="default" type="checkbox">
+		
+					</div>
+			</div>
+		</div>
 	</div>
-	<div id="header">
-		<div id="btn_all" >
-			<ul class="nav nav-tabs" role="tablist" style="display: none;">
-				<li role="presentation" class="active"><a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab"></a></li>
-				<li role="presentation"><a href="#content_code" aria-controls="content_code" role="tab" data-toggle="tab"></a></li>
-			</ul>
-				<span id="labelToolboxDefinition" style="color:white;font-weight: bold" > </span>
-				<div id="btn_group1"  class="btn-group" >
-				<button id="btn_level1" class="btn btn-arduino-rect" >1
-				   <!-- <img src='./media/level1.png' >
-					 <span class="fa fa-reddit fa-lg fa-fw"></span> -->
-				</button>
-				<button id="btn_level2" class="btn btn-arduino-rect" >2
-					<!--<span class="fa fa-user fa-lg fa-fw"></span>-->
-				</button>
-				<button id="btn_level3" class="btn btn-arduino-rect" >3
-					<!--<span class="fa fa-graduation fa-lg fa-fw"></span>-->
-				</button>
-				</div>
-			 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();"   style="height: 42px; border-radius: 5px; font-weight: bold" ></select>
-			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
-					<span class="fa fa-cog fa-lg fa-fw"></span>
-		</button> -->
-
-				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
-					<span class="fa fa-graduation"></span>
-				</button>
-			<!--	<span id="exampleModalLabel" style="color:white;font-size:4" > </span> -->
-			<input id="title-project-name" type="text" placeholder="Project name" value=""/>
-		<button id="btn_saveXML" class="btn btn-arduino-rect" >
-					<span class="fa fa-floppy-o fa-lg fa-fw"></span>
-				</button>
-				<button id="btn_new" class="btn btn-arduino-rect">
-					<span class="fa fa-file"></span>
-				</button>
-				<button id="btn_fakeload" class="btn btn-arduino-rect">
-					<span class="fa fa-folder-open"></span>
-				</button>
-				<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
-
-				<button id="btn_print" class="btn btn-arduino-rect">
-					<span class="fa fa-camera"> </span>
-				</button>
-
-				<button id="btn_undo" class="btn btn-arduino-rect">
-					<span class="fa fa-undo"> </span>
-				</button>
-				<button id="btn_redo" class="btn btn-arduino-rect">
-					<span class="fa fa-repeat"> </span>
-				</button>
-
-
-				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-microchip" > </span>
-				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
-					<optgroup label="C / C++">
-						<option value="nanooptiboot">♾ Arduino Nano</option>
-						<option value="nano" >♾ Arduino Nano Old </option>
-						<option value="OttoESP" >🐱‍👤 Otto Ninja / ESP8266</option>
-						<option value="Ottoky" >🌐 Ottoky / ESP32</option>
-						<option value="MRTnode" >MRTnode / ESP32</option>
-						<option value="mrtduino" >MRTduino</option>
-						<option value="uno_bt" >ZUM BT-328</option>
-						<option value="wemosD1miniPro" >WeMos D1 mini</option>
-						<option value="uno" >♾ Arduino Uno</option>
-						<option value="nona4809">♾ Arduino Nano Every</option>
-						<option value="leonardo" >♾ Arduino Léonardo</option>
-						<option value="micro" >♾ Arduino Micro</option>
-						<option value="mega" >♾ Arduino Méga</option>
-						<option value="mkrwifi1010" >♾ Arduino MKR WiFi</option>
-						<!--<option value="mini" >Arduino Mini</option>
-						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
-						<option value="yun" >Arduino Yun</option> -->
-
-					</optgroup>
-				</select>
-				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-usb"></span>
-				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
-
-				<button id="btn_verify" class="btn btn-arduino" data-toggle="modal" data-target="#message">
-					<span class="fa fa-check fa-1_5x"> </span>
-				</button>
-				<button id="btn_flash" class='btn btn-arduino' data-toggle="modal" data-target="#message">
-					<span class="fa fa-arrow-right fa-1_5x"> </span>
-				</button>
-				<span id="survol" style="color:#fff"></span>
-		</div>
-		<div id="btn_group" class="btn-group" role="group">
-			<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question"></span> </button>
-						<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
-						<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
-			<button id="btn_term" class="btn btn-arduino-rect"><span class="fa fa-search"></span></button>
-			<button id="btn_preview" class="btn btn-arduino-rect"><span class="fa fa-code "> </span>	</button>
-			<button id="btn_search" class='btn btn-arduino-rect'><span class="fa fa-binoculars"> </span></button>
-			<input id="codeORblock" checked data-size="small" data-toggle="toggle" data-on="<span class='fa fa-puzzle  fa-2x' ></span>" data-off="<span class='fa fa-code fa-2x'></span>" data-style="ios" data-onstyle="default" data-offstyle="default" type="checkbox">
-
-		</div>
-	</div>
-	<div id="divBody" class="tab-content">
+	<div id="divBody" class="tab-content" >
 		<div role="tabpanel" id="content_blocks" class="tab-pane fade in active" style="position: relative;">
 			<div id="toggle" class="modal-content" style="display: none;">
 				<pre id="pre_previewArduino"></pre>
