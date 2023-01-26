@@ -776,7 +776,6 @@ BlocklyDuino.cardPicture_change = function() {
 };
 BlocklyDuino.saveino = function() {
     var code = $('#pre_previewArduino').text();
-	var datenow = Date.now();
 	var projectname = document.getElementById("title-project-name").value;
 	var filename = projectname+".ino";
  	var element = document.createElement('a');
@@ -789,7 +788,6 @@ BlocklyDuino.saveino = function() {
 };
 BlocklyDuino.savepy = function() {
     var code = $('#pre_previewArduino').text();
-	var datenow = Date.now();
 	var projectname = document.getElementById("title-project-name").value;
 	var filename = projectname+".py";
  	var element = document.createElement('a');
@@ -819,7 +817,6 @@ BlocklyDuino.saveXmlFile = function () {
 			}
 		}
 		var data = Blockly.Xml.domToPrettyText(xml);
-		var datenow = Date.now();
 		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
 		var projectname = document.getElementById("title-project-name").value;
 		var filename = projectname+".bloc";
@@ -832,7 +829,6 @@ BlocklyDuino.saveXmlFile = function () {
 		document.body.removeChild(element)
 	} else if (window.localStorage.prog=="arduino"){
 		var code = editor.getValue();
-		var datenow = Date.now();
 		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
 		var projectname = document.getElementById("title-project-name").value;
 		var filename = projectname+".ino";
@@ -845,7 +841,6 @@ BlocklyDuino.saveXmlFile = function () {
 		document.body.removeChild(element);
 	} else {
 		var code = editor.getValue();
-		var datenow = Date.now();
 		document.getElementById("title-project-name").value === '' ? document.getElementById("title-project-name").value = "Ottocode" : null;
 		var projectname = document.getElementById("title-project-name").value;
 		var filename = projectname+".py";

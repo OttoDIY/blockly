@@ -86,14 +86,14 @@
 <body onload="BlocklyDuino.init()">
 	<div class="loading"></div>
 
-	<div id="header-container" style="display: flex;flex-direction: column; flex-wrap: wrap; height: auto; background-color: #2d2d64; padding: 0 0 20px 0;">
+	<div id="header-container">
 		<div id="toptitle">
 			<div id="title">
 							<div class="img"><a href=https://www.ottodiy.com/><img src="media/icon.png" class="img-fluid" alt="Logo"></a></div>
 							<!--	<span id="span_blocklino"></span>-->
 						</span>
 			</div>
-			<select id="languageMenu" onchange="BlocklyDuino.changelanguage();" style="position: fixed;left: 160px;border-radius: 5px;font-weight: bold"></select>
+			<select id="languageMenu" onchange="BlocklyDuino.changelanguage();" style="border-radius: 5px;font-weight: bold"></select>
 			<div id="title-bar-btns">
 				<button id="btn_min" type="button" class="btn btn-minmax"><span class="fa fa-minimize fa-lg"></span></button>
 				<button id="btn_max" type="button" class="btn btn-minmax"><span class="fa fa-maximize fa-lg"></span></button>
@@ -204,7 +204,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="divBody" class="tab-content" style="position: sticky; top:0; height: 80%;">
+	<div id="divBody" class="tab-content" >
 		<div role="tabpanel" id="content_blocks" class="tab-pane fade in active" style="position: relative;">
 			<div id="toggle" class="modal-content" style="display: none;">
 				<pre id="pre_previewArduino"></pre>
