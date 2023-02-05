@@ -47,10 +47,15 @@ Blockly.Arduino['RTTTL_music'] = function(block) {
   var melody = this.getFieldValue('MELODY');
   var PIN_BUZZER = block.getFieldValue('PIN_BUZZER');
   var code;
+  var card=window.localStorage.card;
   
   Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
   
-  code= 'playRtttlBlocking('+PIN_BUZZER+',(char*)'+melody+');\n';
+  
+  if (card =="MRTnode")
+	code= 'playRtttlBlocking('+PIN_BUZZER+',(char*)'+melody+');\n';
+  else
+	code= 'playRtttlBlockingPGM('+PIN_BUZZER+',(char*)'+melody+');\n';
  
  return code;
 };
@@ -78,9 +83,8 @@ Blockly.Arduino['RTTTL_music_custom'] = function(block) {
  
   var PIN_BUZZER = block.getFieldValue('PIN_BUZZER');
   var rtttl_melody = Blockly.Arduino.valueToCode(block, 'rtttl_melody', Blockly.Arduino.ORDER_ATOMIC);
-  
-  var name_melody= rtttl_melody.slice(1,4);
-  
+   var name_melody= rtttl_melody.slice(1,4);
+  var card=window.localStorage.card;
   var code;
   
   Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
@@ -88,10 +92,11 @@ Blockly.Arduino['RTTTL_music_custom'] = function(block) {
   
  Blockly.Arduino.definitions_['Melody_'+name_melody] = 'static const char melody_'+ name_melody+'[] PROGMEM = '+rtttl_melody+';\n';
   
+  if (card =="MRTnode")
+	code= 'playRtttlBlocking('+PIN_BUZZER+',(char*) melody_'+name_melody+');\n';
+  else
+	 code= 'playRtttlBlockingPGM('+PIN_BUZZER+',(char*) melody_'+name_melody+');\n';
   
-  
-  code= 'playRtttlBlocking('+PIN_BUZZER+',(char*) melody_'+name_melody+');\n';
- 
  return code;
 };
 

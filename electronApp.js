@@ -10,7 +10,7 @@ var promptAnswer
 autoUpdater.autoDownload = false
 autoUpdater.logger = null
 function createWindow () {
-	mainWindow = new BrowserWindow({width: 1240, height: 700, icon: 'www/media/icon.png', frame: false, movable: true})
+	mainWindow = new BrowserWindow({width: 1240, height: 700, icon: 'www/media/app.ico', frame: false, movable: true})
 	if (process.platform == 'win32' && process.argv.length >= 2) {
 		mainWindow.loadURL("file://" + path.join(__dirname, '../../www/index.html?url='+process.argv[1]))
 	} else {
