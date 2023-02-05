@@ -1,7 +1,7 @@
 "use strict";
 goog.provide("Blockly.Msg.de");
 goog.require("Blockly.Msg");
-// Electron window
+//!Electron window
 Blockly.Msg.com1 = "⚠️ Wähle USB-Port aus";
 Blockly.Msg.com2 = "⚠️ Wähle bitte USB ";
 Blockly.Msg.check = "Überprüfe...";
@@ -17,7 +17,7 @@ Blockly.Msg.no = "nein";
 Blockly.Msg.uptodate = "✅ Version ist aktuell!";
 Blockly.Msg.download =
   "Download fertig, die Anwendung wird installiert und neu gestartet ...";
-// common to all blocks
+//!common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "an Pin";
 Blockly.Msg._AT = "an";
@@ -32,7 +32,7 @@ Blockly.Msg.direction = "Richtung";
 Blockly.Msg.vitesse = "Geschwindigkeit ";
 Blockly.Msg.values = "[0-90]";
 Blockly.Msg.Name = "Name";
-// categories (menu)
+//!categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "💾 Speicher";
 Blockly.Msg.CAT_numerique = "🔛 Digital";
 Blockly.Msg.CAT_analogique = "〰️ Analog";
@@ -112,23 +112,23 @@ Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
 
-//DISPLAY 7 SEGMENT TM1637
-Blockly.Msg.TM1637_name = "TM1637 Display 7 sSegment.";
-Blockly.Msg.TM1637_init = "Initialisiere TM1637 Display 7 sSegment";
+//!DISPLAY 7 SEGMENT TM1637
+Blockly.Msg.TM1637_name = "TM1637 Display 7 Segment.";
+Blockly.Msg.TM1637_init = "Initialisiere TM1637 Display 7 Segment";
 Blockly.Msg.TM1637_PinCLK = "Pin CLK";
 Blockly.Msg.TM1637_PinDIO = "Pin DIO";
-Blockly.Msg.M1637_Brightness = "Setze Helligkeit(0-7)";
+Blockly.Msg.M1637_Brightness = "Setze Helligkeit (0-7)";
 Blockly.Msg.M1637_turnOFF_ON = "Schalte";
 Blockly.Msg.M1637_Clear = "Leere";
 Blockly.Msg.M1637_number = "Setze Nummer";
-Blockly.Msg.M1637_Digit = "Position(0-3)";
-Blockly.Msg.M1637_Length = "Nummer der zu setztenden Ziffern";
+Blockly.Msg.M1637_Digit = "Position (0-3)";
+Blockly.Msg.M1637_Length = "Nummer der zu setzenden Ziffern";
 Blockly.Msg.M1637_fill = "Vorangestellte Nullen";
-Blockly.Msg.M1637_digitsegment = "Setze Segment Array Stelle(0-3)";
+Blockly.Msg.M1637_digitsegment = "Setze Segment Array Stelle (0-3)";
 Blockly.Msg.M1637_value = "Wert";
 Blockly.Msg.M1637_arraysegment = "Display Segment Array.";
 
-//RTC DS3231
+//!RTC DS3231
 Blockly.Msg.RTCDS3231_NAME = "Initialisiere RTC DS3231.I2C Pins";
 Blockly.Msg.RTCDS3231_RTC = "Setze DateTime DS3231";
 Blockly.Msg.RTCDS3231_DAY = "Tag";
@@ -138,11 +138,11 @@ Blockly.Msg.RTCDS3231_HOUR = "Stunde";
 Blockly.Msg.RTCDS3231_MINUTE = "Minute";
 Blockly.Msg.RTCDS3231_SECOND = "Sekunde";
 Blockly.Msg.RTCDS3231_DOFWEEK = "Wochentag";
-Blockly.Msg.RTCDS3231_READ_RTC = "RTC DS3231.Lese Datum und Zeit aus";
+Blockly.Msg.RTCDS3231_READ_RTC = "Lese Datum und Zeit aus";
 Blockly.Msg.RTCDS3231_VALUES = "Wert";
 Blockly.Msg.RTCDS3231_Name2 = "RTC DS3231.";
-Blockly.Msg.RTCDS3231_TEXT_DOFWEEK = "Wochentag in Text";
-Blockly.Msg.RTCDS3231_TEXT_MONTH = "Monat in Text ";
+Blockly.Msg.RTCDS3231_TEXT_DOFWEEK = "Wochentag als Text";
+Blockly.Msg.RTCDS3231_TEXT_MONTH = "Monat als Text";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip =
@@ -169,20 +169,20 @@ Blockly.Msg.esp8266_html_tooltip = "";
 Blockly.Msg.esp8266_send_html_tooltip = "";
 Blockly.Msg.esp8266_send_html = "send HTML page";
 Blockly.Msg.esp8266_start_tooltip = "";
-Blockly.Msg.esp8266_start = "start server";
+Blockly.Msg.esp8266_start = "Starte Server";
 Blockly.Msg.esp8266_request_tooltip = "";
 Blockly.Msg.esp8266_request = "if in the query we find";
 Blockly.Msg.esp8266_request_container = "we find";
-Blockly.Msg.esp8266_html_webpage = "Name of the HTML page:";
-//INTERRUPTION
-Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = "Interrupt: when a";
-Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "disable interrupt on pin";
+Blockly.Msg.esp8266_html_webpage = "Name der HTML Seite:";
+//!INTERRUPTION
+Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = "Unterbrechung: wenn";
+Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "deaktiviere Unterbrechung an Pin";
 Blockly.Msg.LKL_TOOLTIP_INOUT_ATTACHINTERRUPT =
-  "Specifies an action to take when an external interrupt (4 possible modes) occurs on pin 2 or 3";
+  "Legt eine auszuführende Aktion fest, wenn eine externe Unterbrechung (4 mögliche Modi) an Pin 2 oder 3 auftritt";
 Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT =
-  "Disable the previously specified external interrupt";
-Blockly.Msg.LKL_MODE = "is erkannt on the pin";
-// FIELDDROPDOWN
+  "Deaktiviere die vorher festgelegte externe Unterbrechung";
+Blockly.Msg.LKL_MODE = "ist erkannt an Pin";
+//FIELDDROPDOWN
 Blockly.Msg.note = [
   ["DO \u2083", "261"],
   ["RE \u2083", "293"],
@@ -319,45 +319,46 @@ Blockly.Msg.sens = [
   ["turn right", "d"],
   ["turn left", "g"],
 ];
-//sensor
-Blockly.Msg.VL53L0X = "Laser distance sensor";
+//TODO:sensor
+Blockly.Msg.VL53L0X = "Laser Distanz Sensor";
 Blockly.Msg.VL53L0X_tooltip =
   "initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
-Blockly.Msg.VL53L0X_distance = "distance measured by laser";
+Blockly.Msg.VL53L0X_distance = "Distanz von Laser gemessen";
 Blockly.Msg.VL53L0X_distance_tooltip =
-  "VL530X :\nreturn Distance measured by laser in mm";
+  "VL530X :\ngebe Distanz, die vom Laser gemessen wurde, in mm an";
 Blockly.Msg.bme280 = "Atmospheric pressure sensor";
 Blockly.Msg.bme280_tooltip =
   "initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.bme280_pressure = "atmospheric pressure";
 Blockly.Msg.bme280_pressure_tooltip =
   "BME280 :\nreturn atmospheric pressure in hPa";
-Blockly.Msg.inter = "switch is";
+Blockly.Msg.inter = "Schalter ist";
 Blockly.Msg.inter_tooltip =
   "returns true (false) if the switch is (is not) at the indicated position";
-Blockly.Msg.mc005 = "presence erkannt on the pin";
+Blockly.Msg.mc005 = "Anwesenheit erkannt am Pin";
 Blockly.Msg.mc005_tooltip =
-  "MC005:\nreturns true (false) if a presence is (is not) erkannt";
-Blockly.Msg.bp = "button pressed on the pin";
+  "MC005:\nGibt wahr zurück (falsch), falls (keine) Präsenz erkannt";
+Blockly.Msg.bp = "Knopf gedrückt am Pin";
 Blockly.Msg.bp_tooltip =
-  "returns true (false) if a pushbutton is (is not) pressed";
+  "Gibt wahr zurück (falsch), falls ein Knopf (nicht) gedrückt wird";
 Blockly.Msg.dht11_tooltip =
-  "DHT11 :\nreturns the humidity of the air (from 20 to 80%) or \n the temperature (from 2 to 50�C)";
+  "DHT11 :\nGibt Luftfeuchtigkeit (von 20 bis 80%) oder \n die Temperatur (von 2 bis 50°C) zurück";
 Blockly.Msg.dht22_tooltip =
-  "DHT22: \nreturns the humidity of the air (from 0 to 100%) or \n the temperature (from -40 to 80 � C)";
-Blockly.Msg.suiveur_ligne = "black line erkannt on the pin";
+  "DHT22: \nGibt Luftfeuchtigkeit (von 0 bis 100%) oder \n die Temperatur (von -40 bis 80 °C)";
+Blockly.Msg.suiveur_ligne = "schwarze Linie erkannt an Pin";
 Blockly.Msg.suiveur_ligne_tooltip =
-  "CAP227: \nreturns true (false) if a black line is (is not) erkannt";
-Blockly.Msg.light = "brightness on the pin";
+  "CAP227: \nGibt wahr zurück (falsch), falls eine schwarze Linie (nicht) erkannt wird";
+Blockly.Msg.light = "Helligkeit am Pin";
 Blockly.Msg.light_tooltip =
-  "returns a Wert depending on the brightness \n0: darkness \n255: full light";
-Blockly.Msg.hum = "soil moisture on the pin";
-Blockly.Msg.hum_tooltip = "CAP 615: \nreturns soil moisture from 0 to 100%";
+  "Gibt einen Wert, abhängig von der Helligkeit, zurück \n0: Dunkelheit \n255: Volles Licht";
+Blockly.Msg.hum = "Bodenfeuchtigkeit an Pin";
+Blockly.Msg.hum_tooltip =
+  "CAP 615: \nGibt Bodenfeuchtigkeit von 0 bis 100% zurück";
 Blockly.Msg.light_tooltip =
-  "returns a Wert depending on the brightness \n0: darkness \n255: full light";
-Blockly.Msg.grove_ldr = "brightness on the pin";
+  "Gibt einen Wert abhängig von der Helligkeit zurück \n0: Dunkelheit \n255: Volles Licht";
+Blockly.Msg.grove_ldr = "Helligkeit an Pin";
 Blockly.Msg.grove_ldr_tooltip =
-  "returns the measured brightness \n0: no light \n100: very intense light";
+  "Gibt die gemessene Helligkeit zurück \n0: kein Licht \n100: sehr intensives Licht";
 Blockly.Msg.potar = "cursor position on the pin";
 Blockly.Msg.potar_tooltip =
   "returns a Wert based on the cursor position \n0: cursor left \n255: cursor right";
