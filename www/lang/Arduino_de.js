@@ -146,13 +146,13 @@ Blockly.Msg.RTCDS3231_TEXT_MONTH = "Monat als Text";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip =
-  "initialization of the wifi module and connection with the indicated parameters";
+  "Initialisierung des Wifi Moduls and Verbindung mit angegebenen Parametern";
 Blockly.Msg.esp8266_1 = "Esp 8266";
 Blockly.Msg.esp8266_2 = "SSID";
-Blockly.Msg.esp8266_3 = "key";
+Blockly.Msg.esp8266_3 = "Passwort";
 Blockly.Msg.esp8266_4 = "IP";
-Blockly.Msg.esp8266_5 = "gateway";
-Blockly.Msg.esp8266_6 = "mask";
+Blockly.Msg.esp8266_5 = "Gateway";
+Blockly.Msg.esp8266_6 = "Maske";
 Blockly.Msg.esp8266_7 = [
   ["client", "client"],
   ["server", "server"],
@@ -162,12 +162,12 @@ Blockly.Msg.esp8266_9 = [
   ["dynamic", "dynamic"],
   ["static", "static"],
 ];
-Blockly.Msg.esp8266_10 = "address";
+Blockly.Msg.esp8266_10 = "Adresse";
 Blockly.Msg.esp8266_recept_tooltip = "reception";
 Blockly.Msg.esp8266_url = "https://github.com/OttoDIY/esp";
 Blockly.Msg.esp8266_html_tooltip = "";
 Blockly.Msg.esp8266_send_html_tooltip = "";
-Blockly.Msg.esp8266_send_html = "send HTML page";
+Blockly.Msg.esp8266_send_html = "sende HTML-Seite";
 Blockly.Msg.esp8266_start_tooltip = "";
 Blockly.Msg.esp8266_start = "Starte Server";
 Blockly.Msg.esp8266_request_tooltip = "";
@@ -306,7 +306,7 @@ Blockly.Msg.irq = [
 ];
 Blockly.Msg.menudht = [
   ["humidity", "h"],
-  ["temperature", "t"],
+  ["Temperatur", "t"],
 ];
 Blockly.Msg.couleur = [
   ["blue", "blue"],
@@ -319,36 +319,36 @@ Blockly.Msg.sens = [
   ["turn right", "d"],
   ["turn left", "g"],
 ];
-//TODO:sensor
+//sensor
 Blockly.Msg.VL53L0X = "Laser Distanz Sensor";
 Blockly.Msg.VL53L0X_tooltip =
-  "initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
+  "initialisiere Sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
 Blockly.Msg.VL53L0X_distance = "Distanz von Laser gemessen";
 Blockly.Msg.VL53L0X_distance_tooltip =
   "VL530X :\ngebe Distanz, die vom Laser gemessen wurde, in mm an";
-Blockly.Msg.bme280 = "Atmospheric pressure sensor";
+Blockly.Msg.bme280 = "Luftdrucksensor";
 Blockly.Msg.bme280_tooltip =
-  "initialize sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
-Blockly.Msg.bme280_pressure = "atmospheric pressure";
+  "initialisiere Sensor.\nSensor <--> Arduino\nSDA <--------> A4\nSCL <--------> A5";
+Blockly.Msg.bme280_pressure = "Luftdruck";
 Blockly.Msg.bme280_pressure_tooltip =
-  "BME280 :\nreturn atmospheric pressure in hPa";
+  "BME280 :\ngibt Luftdruck in hPa zurück";
 Blockly.Msg.inter = "Schalter ist";
 Blockly.Msg.inter_tooltip =
-  "returns true (false) if the switch is (is not) at the indicated position";
+  "Gibt wahr (falsch) zurück, falls der Schalter (nicht) an der festgelegten Position steht";
 Blockly.Msg.mc005 = "Anwesenheit erkannt am Pin";
 Blockly.Msg.mc005_tooltip =
-  "MC005:\nGibt wahr zurück (falsch), falls (keine) Präsenz erkannt";
-Blockly.Msg.bp = "Knopf gedrückt am Pin";
+  "MC005:\nGibt wahr (falsch) zurück, falls (keine) Präsenz erkannt";
+Blockly.Msg.bp = "Knopf gedrückt an Pin";
 Blockly.Msg.bp_tooltip =
-  "Gibt wahr zurück (falsch), falls ein Knopf (nicht) gedrückt wird";
+  "Gibt wahr (falsch) zurück, falls ein Knopf (nicht) gedrückt wird";
 Blockly.Msg.dht11_tooltip =
   "DHT11 :\nGibt Luftfeuchtigkeit (von 20 bis 80%) oder \n die Temperatur (von 2 bis 50°C) zurück";
 Blockly.Msg.dht22_tooltip =
   "DHT22: \nGibt Luftfeuchtigkeit (von 0 bis 100%) oder \n die Temperatur (von -40 bis 80 °C)";
 Blockly.Msg.suiveur_ligne = "schwarze Linie erkannt an Pin";
 Blockly.Msg.suiveur_ligne_tooltip =
-  "CAP227: \nGibt wahr zurück (falsch), falls eine schwarze Linie (nicht) erkannt wird";
-Blockly.Msg.light = "Helligkeit am Pin";
+  "CAP227: \nGibt wahr (falsch) zurück, falls eine schwarze Linie (nicht) erkannt wird";
+Blockly.Msg.light = "Helligkeit an Pin";
 Blockly.Msg.light_tooltip =
   "Gibt einen Wert, abhängig von der Helligkeit, zurück \n0: Dunkelheit \n255: Volles Licht";
 Blockly.Msg.hum = "Bodenfeuchtigkeit an Pin";
@@ -359,74 +359,74 @@ Blockly.Msg.light_tooltip =
 Blockly.Msg.grove_ldr = "Helligkeit an Pin";
 Blockly.Msg.grove_ldr_tooltip =
   "Gibt die gemessene Helligkeit zurück \n0: kein Licht \n100: sehr intensives Licht";
-Blockly.Msg.potar = "cursor position on the pin";
+Blockly.Msg.potar = "Zeigerposition an Pin";
 Blockly.Msg.potar_tooltip =
-  "returns a Wert based on the cursor position \n0: cursor left \n255: cursor right";
-Blockly.Msg.lm35 = "temperature on the pin";
+  "Gibt einen Wert basierend auf der Zeigerposition zurück\n0: Zeiger links \n255: Zeiger rechts";
+Blockly.Msg.lm35 = "Temperatur an Pin";
 Blockly.Msg.lm35_tooltip =
-  "LM35: \nreturns the measured temperature in degrees celcius (from 0 to 80 �)";
-Blockly.Msg.ultrason_1 = "distance < limit";
+  "LM35: \nGibt die gemessene Temperatur in Gradcelsius (von 0 bis 80 °C) zurück";
+Blockly.Msg.ultrason_1 = "Distanz < Limit";
 Blockly.Msg.ultrason_2 =
-  "returns a High state if the measured distance is less than the limit";
+  "Gibt einen High Wert zurück, falls die gemessene Distanz kleiner als das Limit ist";
 Blockly.Msg.ultrason_distance1 = "gemessene Distanz von Ultraschall";
 Blockly.Msg.ultrason_tooltip =
-  "HC-SR04: \nUltraschallsensor, der es erlaubt Dinstanzen (von 3 cm bis 4 m) zu messen \nGib die Pins des Arduinos an, welche mit TRIG und ECHO verbunden sind";
+  "HC-SR04: \nUltraschallsensor, der es erlaubt Distanzen (von 3 cm bis 4 m) zu messen \nGib die Pins des Arduinos an, welche mit TRIG und ECHO verbunden sind";
 Blockly.Msg.ultrason = "Ultraschall Pins";
 Blockly.Msg.ultrason_distance2 =
-  "HC-SR04: \nreturns the distance measured in cm by the ultrasonic detector";
+  "HC-SR04: \gibt die vom Ultraschallsensor gemessene Distanz in cm zurück";
 Blockly.Msg.ultrason_helpurl = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
 Blockly.Msg.pir = "Bewegung erkannt ";
 Blockly.Msg.feu = "Flamme erkannt ";
 Blockly.Msg.presence = "Hindernis erkannt ";
 Blockly.Msg.appui = "Berührung ";
 Blockly.Msg.pir_tooltip =
-  "HC-SR501: \nreturns true (false) if a presence is (is not) erkannt";
+  "HC-SR501: \nGibt wahr (falsch) zurück, falls Präsenz (nicht) erkannt";
 Blockly.Msg.feu_tooltip =
-  "CAP168: \nreturns true (false) if a flame is (is not) erkannt";
+  "CAP168: \nGibt wahr (falsch) zurück, falls eine Flamme (nicht) erkannt";
 Blockly.Msg.presence_tooltip =
-  "CAP711: \nreturns true (false) if a contact has (did not) take place";
+  "CAP711: \nGibt wahr (falsch) zurück, falls a contact has (did not) take place"; //TODO
 Blockly.Msg.appui_tooltip =
-  "CAP831: \nreturns true (false) if a support is (is not) erkannt";
-// bluetooth
-Blockly.Msg.bluetooth1 = "if the data received by bluetooth";
+  "CAP831: \nGibt wahr (falsch) zurück, falls a support is (is not) erkannt"; //TODO
+//!bluetooth
+Blockly.Msg.bluetooth1 = "Falls die Daten über Bluetooth empfangen wurden";
 Blockly.Msg.bluetooth1_tooltip =
-  "bluetooth data reception \nconnecting module HC-06 to pins 0 and 1 \net cross Rx and Tx pins";
-Blockly.Msg.bluetooth2 = "send by bluetooth";
+  "Bluetooth Datenempfang \nverbinde Modul HC-06 mit Pin 0 und 1 \net kreuze Rx und Tx Pins";
+Blockly.Msg.bluetooth2 = "über Bluetooth gesendet";
 Blockly.Msg.bluetooth2_tooltip =
-  "sends data via bluetooth \nconnecting module HC-06 to pins 0 and 1 \net cross pins Rx and Tx";
+  "sendet Daten über Bluetooth \nverbinde Modul HC-06 mit Pin 0 und 1 \net kreuze Rx und Tx Pins";
 Blockly.Msg.bluetooth_init_tooltip = "";
 Blockly.Msg.bluetooth_helpurl =
   "https://wikifactory.com/+OttoDIY/otto-diy-plus"; // do not translate
-//LCD screen
-Blockly.Msg.lcd_fond = "bottom";
-Blockly.Msg.LCD = "LCD screen";
+//!LCD screen
+Blockly.Msg.lcd_fond = "Boden";
+Blockly.Msg.LCD = "LCD Display";
 Blockly.Msg.LCDi2c_tooltip =
-  "initializes the 2-line, 16-character I2C LCD with RGB backlight. \n Displayer <-> Arduino \nSDA <--------> A4 \nSCL <- -------> A5 ";
+  "initialisiere das 2-Zeilen, 16-Zeichen I2C LCD mit RGB Hintergrundbeleuchtung. \n Displayer <-> Arduino \nSDA <--------> A4 \nSCL <- -------> A5 ";
 Blockly.Msg.LCD_tooltip =
-  "initializes the LCD, 2 lines and 16 characters, indicating the pins to connect";
+  "initialisiere das LCD, 2 Zeilen und 16 Zeichen, gibt Pins zum Verbinden an";
 Blockly.Msg.LCD_SHIELD_PRINT_HELPURL =
   "https://www.arduino.cc/en/Tutorial/HelloWorld";
-Blockly.Msg.LCD_SHIELD_PRINT_TEXT = "show on LCD";
+Blockly.Msg.LCD_SHIELD_PRINT_TEXT = "zeige auf LCD";
 Blockly.Msg.LCD_SHIELD_PRINT_TEXT_tooltip =
-  "display the text in the specified location";
-Blockly.Msg.LCD_SHIELD_PRINT_TOOLTIP = "write the text (s) on the LCD screen";
-Blockly.Msg.LCD_SHIELD_PRINT_INPUT1 = "line 1";
-Blockly.Msg.LCD_SHIELD_PRINT_INPUT2 = "line 2";
-Blockly.Msg.LCD_line = "line";
-Blockly.Msg.LCD_col = "column";
-Blockly.Msg.LCD_raz = "erase the LCD screen";
-Blockly.Msg.LCD_raz_tooltip = "clear screen";
-Blockly.Msg.lcd_aff_symbole = "display the symbol";
+  "zeige den Text an der angegebenen Stelle";
+Blockly.Msg.LCD_SHIELD_PRINT_TOOLTIP = "schreibe den Text auf dem LCD Display";
+Blockly.Msg.LCD_SHIELD_PRINT_INPUT1 = "Zeile 1";
+Blockly.Msg.LCD_SHIELD_PRINT_INPUT2 = "Zeile 2";
+Blockly.Msg.LCD_line = "Zeile";
+Blockly.Msg.LCD_col = "Spalte";
+Blockly.Msg.LCD_raz = "lösche den Displayinhalt";
+Blockly.Msg.LCD_raz_tooltip = "lösche Display";
+Blockly.Msg.lcd_aff_symbole = "zeige das Symbol";
 Blockly.Msg.lcd_aff_symbole_tooltip =
-  "show the symbol that has been defined before";
-Blockly.Msg.lcd_symbole = "define the symbol";
+  "zeige das Symbol, das vorher definiert wurde";
+Blockly.Msg.lcd_symbole = "definiere das Symbol";
 Blockly.Msg.lcd_symbole_tooltip =
-  "definition of a character for the LCD: \n 0 turns off a pixel \n 1 lights a pixel";
-// structure
-Blockly.Msg.loop = "∞ Loop";
+  "Definition eines Zeichens für das LCD: \n 0 verdunkelt ein Pixel \n 1 erhellt ein Pixel";
+//!structure
+Blockly.Msg.loop = "∞ Schleife";
 Blockly.Msg.init = "⚙️ Setup";
 Blockly.Msg.base_setup_loop =
-  "Die setup-Funktion: \nWird genutzt, um die Variablen zu initialisieren und die Nutzung der Pins ... \nSie wird nur einmal ausgeführt \nDie loop-Funktion: \nDas ist der Hauptteil des Programms, alle hier platzierten Blöcke laufen wiederholt und undefiniert (mehrere tausend Mal pro Sekunde) ";
+  "Die Setup-Funktion: \nWird genutzt, um die Variablen zu initialisieren und die Nutzung der Pins ... \nSie wird nur einmal ausgeführt \nDie Schleifen-Funktion: \nDas ist der Hauptteil des Programms, alle hier platzierten Blöcke laufen wiederholt und undefiniert (mehrere tausend Mal pro Sekunde) ";
 Blockly.Msg.loop_tooltip =
   "alle hier platzierten Blöcke laufen wiederholt und undefiniert (mehrere tausend Mal pro Sekunde)";
 Blockly.Msg.begin_tooltip =
@@ -984,7 +984,7 @@ Blockly.Msg.PERCENT = "Prozent(0-100)%";
 Blockly.Msg.VALUE = "Wert(0-1023)";
 Blockly.Msg.PHOTO_NAME = "Photo Interrupter";
 Blockly.Msg.PHOTO_DETECTED = "erkannt?";
-Blockly.Msg.VAR_LM35 = "LM35 Temperature (ºC)";
+Blockly.Msg.VAR_LM35 = "LM35 Temperatur (ºC)";
 Blockly.Msg.LDR_NAME = "Photocell (LDR or CDS) ";
 Blockly.Msg.LDR_DETECTED = "erkannt?";
 Blockly.Msg.IR_NAME = "Infrared";
@@ -1000,7 +1000,7 @@ Blockly.Msg.DHT_Type = "Type";
 Blockly.Msg.DHT_Type11 = "DHT11";
 Blockly.Msg.DHT_Type21 = "DHT21";
 Blockly.Msg.DHT_Type22 = "DHT22";
-Blockly.Msg.DHT_Temp = "Temperature ºC";
+Blockly.Msg.DHT_Temp = "Temperatur ºC";
 Blockly.Msg.DHT_Humi = "Humidity";
 Blockly.Msg.DHT_Head = "Heat Index ºC";
 Blockly.Msg.GAS_NAME = "Gas CO (MQ-7)";
@@ -1027,7 +1027,7 @@ Blockly.Msg.cm = "cm";
 Blockly.Msg.inch = "inch";
 Blockly.Msg.TRIG = "TRIG Trigger";
 Blockly.Msg.Echo = "Echo";
-Blockly.Msg.VAR_TemSens = "Analog NTC Temperature (ºC)";
+Blockly.Msg.VAR_TemSens = "Analog NTC Temperatur (ºC)";
 Blockly.Msg.MRTX_BUTTON = "MRTNode start button pressed?";
 Blockly.Msg.TOUCH = "Touch";
 
@@ -1563,12 +1563,12 @@ Blockly.Msg.Country = "Country";
 Blockly.Msg.Icon = "Icon";
 Blockly.Msg.Weather = "Weather";
 Blockly.Msg.Description = "Description";
-Blockly.Msg.OW_Temperature = "Temperature ºC";
-Blockly.Msg.Temp_max = "Temperature Max ºC";
-Blockly.Msg.Temp_min = "Temperature Min ºC";
+Blockly.Msg.OW_Temperatur = "Temperatur ºC";
+Blockly.Msg.Temp_max = "Temperatur Max ºC";
+Blockly.Msg.Temp_min = "Temperatur Min ºC";
 Blockly.Msg.Humidity = "Humedad";
 Blockly.Msg.Preassure = "Preassure";
-Blockly.Msg.Feels_like = "Feels like Temperature ºC";
+Blockly.Msg.Feels_like = "Feels like Temperatur ºC";
 Blockly.Msg.Cloud = "Cloud %";
 Blockly.Msg.Visibility = "Visibility %";
 Blockly.Msg.wind_speed = "Wind Speed";
