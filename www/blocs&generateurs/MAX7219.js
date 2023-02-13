@@ -7,7 +7,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['otto9_matrix_init'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
   var card=window.localStorage.card;
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
 this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png',33,33)) .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.Msg.OTTO_HOME_TEXT )
 this.appendDummyInput()	.appendField("CLK").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CLK");
 this.appendDummyInput()	.appendField("CS").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
@@ -23,7 +23,7 @@ Blockly.Arduino['otto9_matrix_init'] = function(block) {
   var pin_cs = this.getFieldValue('PIN_CS');
   var pin_dat = this.getFieldValue('PIN_DIN');
 
-  var Orientation = this.getFieldValue('Orientation'); 
+  var Orientation = this.getFieldValue('Orientation');
   Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
 	+ 'Otto Otto;';
   Blockly.Arduino.variables_['otto9_matrix'] = 'const char data[] = "VARIABLE#";\n'
@@ -78,7 +78,7 @@ Blockly.Blocks['otto9_matrix'] = { init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -108,11 +108,11 @@ Blockly.Python['otto9_matrix'] = function(block) {
     var code = 'Otto.putMouth(' + matrix +', false)\n';
     return code;
 };
-											  
+
 Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
   this.appendDummyInput().appendField('  ').appendField(' 0').appendField(' 1').appendField(' 2').appendField('  3').appendField('  4').appendField(' 5').appendField(' 6').appendField(' 7');
   Blockly.FieldCheckbox.CHECK_CHAR= '🔴'
-  this.appendDummyInput().appendField('0 ') 
+  this.appendDummyInput().appendField('0 ')
     .appendField(new Blockly.FieldCheckbox("TRUE"), 'Pixel0')
     .appendField(new Blockly.FieldCheckbox("TRUE"), 'Pixel8')
     .appendField(new Blockly.FieldCheckbox("TRUE"), 'Pixel16')
@@ -187,7 +187,7 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
  this.setInputsInline(false);
  this.setPreviousStatement(true, null);
  this.setNextStatement(true, null);
- this.setColour("#4b009f");
+ this.setColour("#B655F5");
  this.setTooltip('');
  this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
 },
@@ -198,10 +198,10 @@ for (var i=0; i<64; i++) {
 
  if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
      var on = this.getFieldValue('Pixel' + i)== "TRUE"? "1" : "0";
-     var row= i +1 
+     var row= i +1
      {if  (i >= 0 && i <= 7)row=0}{if  (i >= 8 && i < 16)row=1}{if  (i >= 16 && i < 24)row=2}{if  (i >= 24 && i < 32)row=3}
      {if  (i >= 32 && i < 40)row=4}{if  (i >= 40 && i < 48)row=5}{if  (i >= 48 && i < 56)row=6}{if  (i >= 56 && i < 64)row=7}
-     var col= i  
+     var col= i
      {if  (i > 1 && i <= 7)col=i}{if  (i >= 8 && i < 16)col=i-8}{if  (i >= 16 && i < 24)col=i-16}{if  (i >= 24 && i < 32)col=i-24}
      {if  (i >= 32 && i < 40)col=i-32}{if  (i >= 40 && i < 48)col=i-40}{if  (i >= 48 && i < 56)col=i-48}{if  (i >= 56 && i < 64)col=i-56}
      code += ' Otto.setLed('+row+','+col+',' + on + ');'
@@ -234,7 +234,7 @@ Blockly.Blocks['otto9_mouth'] = {  init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -254,14 +254,14 @@ Blockly.Arduino['otto9_mouth'] = function(block) {
     var code = 'Otto.putMouth(mouths.' + dropdown_otto9_mouth_choice.toUpperCase() + ')\n';
     return code;
 };
-							 
+
 Blockly.Blocks['otto9_mouth#']={ init:function(){
   this.appendDummyInput()
   this.appendValueInput("mouth") .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT);
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -286,7 +286,7 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
         + 'delay(50)\n';
     return code;
 };
-											 
+
 Blockly.Blocks['otto9_matrixp']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("👄 . X");
@@ -296,7 +296,7 @@ Blockly.Blocks['otto9_matrixp']={ init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -321,14 +321,14 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
     var code = 'Otto.setLed('+valuex+','+valuey+',1)\n';
     return code;
 };
-						   
+
 
 Blockly.Blocks['otto9_matrix_text'] = { init: function() {
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MATRIXTEXT_TEXT).appendField(new Blockly.FieldTextInput('I AM OTTO'), 'input');
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -349,13 +349,13 @@ Blockly.Arduino['otto9_matrix_text'] = function(block) {
     + 'Otto.writeText('+ '"' + text_input +'"' +',100) # limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.9 characters \n';
     return code;
 };
-						   
+
 Blockly.Blocks["otto9_matrix_brightness"]={init:function(){
     this.appendValueInput("brightness").setCheck("Number") .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.LKL_VS2_BRIGHTNESS );
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
     this.setHelpUrl('https://xantorohara.github.io/led-matrix-editor/')}
 };
@@ -371,13 +371,13 @@ Blockly.Arduino["otto9_matrix_brightness"]=function(block){
     Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     return "Otto.matrixIntensity(" + brightness + ") #the brightness of the display. (0 to 15)\n"
-};							
+};
 Blockly.Blocks['otto9_clear'] = { init: function() {
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_CLEAR_TEXT);
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.OTTO9_CLEAR_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -400,7 +400,7 @@ Blockly.Arduino['otto9_clear'] = function(block) {
 
 Blockly.Blocks['Init_MAX7219_ledmatrix'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl', init: function() {
   var card=window.localStorage.card;
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/matrix8x8.png",33,33))
   this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_Number)	.appendField(new Blockly.FieldDropdown([['1', '1'], ['2', '2'],['3', '3'],['4', '4']]), "NumberDisplays")
 	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_NAME)
@@ -417,7 +417,7 @@ Blockly.Arduino['Init_MAX7219_ledmatrix'] = function(block) {
   var pin_clk = this.getFieldValue('PIN_CLK');
   var pin_cs = this.getFieldValue('PIN_CS');
   var pin_dat = this.getFieldValue('PIN_DAT');
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   Blockly.Arduino.includes_['include_LedControl'] = '#include <LedControl.h>\n';
   Blockly.Arduino.definitions_['init_Ledcontrol_LM'] = 'LedControl lclm=LedControl('+pin_dat+','+pin_clk+','+pin_cs+','+numberDisplays+');\n';
   var code='';
@@ -425,7 +425,7 @@ Blockly.Arduino['Init_MAX7219_ledmatrix'] = function(block) {
 };
 
 Blockly.Blocks['MAX7219_ledmatrix_shutdown'] = {helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
-     this.setColour("#4b009f");
+     this.setColour("#B655F5");
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
 		.appendField(new Blockly.FieldDropdown([['1', '0'], ['2', '1'],['3', '2'],['4', '3']]), "NumberDisplays")
@@ -441,9 +441,9 @@ Blockly.Blocks['MAX7219_ledmatrix_shutdown'] = {helpUrl: 'https://playground.ard
 
 Blockly.Arduino['MAX7219_ledmatrix_shutdown'] = function(block) {
 
-  var power = this.getFieldValue('power'); 
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-     	 	 
+  var power = this.getFieldValue('power');
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+
   var code='lclm.shutdown('+numberDisplays+','+power+');\n';
   return code;
 };
@@ -451,7 +451,7 @@ Blockly.Arduino['MAX7219_ledmatrix_shutdown'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_brightness'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -468,8 +468,8 @@ Blockly.Blocks['MAX7219_ledmatrix_brightness'] = {
 
 Blockly.Arduino['MAX7219_ledmatrix_brightness'] = function(block) {
   var brightness = Blockly.Arduino.valueToCode(this, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-     	 	 
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+
   var code='lclm.setIntensity('+numberDisplays+','+brightness+');\n';
   return code;
 };
@@ -477,7 +477,7 @@ Blockly.Arduino['MAX7219_ledmatrix_brightness'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_clear'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -491,8 +491,8 @@ Blockly.Blocks['MAX7219_ledmatrix_clear'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_clear'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 	 	 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var code='lclm.clearDisplay('+numberDisplays+');\n';
   return code;
 };
@@ -501,7 +501,7 @@ Blockly.Arduino['MAX7219_ledmatrix_clear'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_draw'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -606,19 +606,19 @@ Blockly.Blocks['MAX7219_ledmatrix_draw'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_draw'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var code = '';
   var rowcounter=0;
   var rowvalue='B';
   var rowline=0;
   for (var i=0; i<64; i++) {
-	
-	if (this.getFieldValue('Pixel' + i) != "FALSE") 
+
+	if (this.getFieldValue('Pixel' + i) != "FALSE")
 		rowvalue=rowvalue+'1';
 	else
 		rowvalue=rowvalue+'0';
-	
+
 	rowcounter+=1;
 	if (rowcounter==8)
 		{
@@ -635,7 +635,7 @@ Blockly.Arduino['MAX7219_ledmatrix_draw'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_row'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -645,7 +645,7 @@ Blockly.Blocks['MAX7219_ledmatrix_row'] = {
 		.appendField(Blockly.Msg.MAX7219_LM_Row)
 	this.appendValueInput("VALUE")
 		.setCheck("Number")
-		.appendField(Blockly.Msg.MAX7219_LM_value)	
+		.appendField(Blockly.Msg.MAX7219_LM_value)
    	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -654,11 +654,11 @@ Blockly.Blocks['MAX7219_ledmatrix_row'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_row'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
-     	 	 
+
   var code='lclm.setRow('+numberDisplays+','+row+','+value+');\n';
   return code;
 };
@@ -666,7 +666,7 @@ Blockly.Arduino['MAX7219_ledmatrix_row'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_column'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -676,7 +676,7 @@ Blockly.Blocks['MAX7219_ledmatrix_column'] = {
 		.appendField(Blockly.Msg.MAX7219_LM_Column)
 	this.appendValueInput("VALUE")
 		.setCheck("Number")
-		.appendField(Blockly.Msg.MAX7219_LM_value)	
+		.appendField(Blockly.Msg.MAX7219_LM_value)
    	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -685,12 +685,12 @@ Blockly.Blocks['MAX7219_ledmatrix_column'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_column'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
-   
-     	 	 
+
+
   var code='lclm.setColumn('+numberDisplays+','+Column+','+value+');\n';
   return code;
 };
@@ -700,7 +700,7 @@ Blockly.Arduino['MAX7219_ledmatrix_column'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_led'] = {
   helpUrl: 'https://playground.arduino.cc/Main/LedControl',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -722,20 +722,20 @@ Blockly.Blocks['MAX7219_ledmatrix_led'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_led'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = this.getFieldValue('power');
-   
-     	 	 
+
+
   var code='lclm.setLed('+numberDisplays+','+row+','+Column+','+value+');\n';
   return code;
 };
 
 Blockly.Blocks['MAX7219_animation'] = {
     init: function() {
-		 this.setColour("#4b009f");
+		 this.setColour("#B655F5");
 	     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -755,7 +755,7 @@ Blockly.Blocks['MAX7219_animation'] = {
   };
    Blockly.Arduino['MAX7219_animation'] = function(block) {
     var bitmap = block.getFieldValue('bitmap');
-	var numberDisplays = this.getFieldValue('NumberDisplays'); 
+	var numberDisplays = this.getFieldValue('NumberDisplays');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
     Blockly.Arduino.variables_['matrix_animation'] = 'int ii = 0;';
     Blockly.Arduino.definitions_['matrix_animation'] ='const uint64_t IMAGES[] = {'+ bitmap +'};\n'
@@ -783,7 +783,7 @@ Blockly.Blocks["matrice8x8_symbole"]={init:function(){
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_symbole_tooltip);
 this.contextMenuMsg_=Blockly.Msg.matrice_create_aff},
 contextMenuType_:"matrice8x8_aff",
@@ -825,7 +825,7 @@ Blockly.Blocks["matrice8x8_init"]={init:function(){
       this.appendValueInput("CS").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("CS");
       this.appendValueInput("DIN").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("DIN");
       this.setInputsInline(true);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.matrice8x8_tooltip);
       this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -858,7 +858,7 @@ Blockly.Blocks["matrice8x8_init_2"]={init:function(){
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
       this.setInputsInline(true);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.matrice8x8_tooltip);
       this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -870,7 +870,7 @@ Blockly.Arduino["matrice8x8_init_2"]=function(block){
   var cs = Blockly.Arduino.valueToCode(this, "CS", Blockly.Arduino.ORDER_NONE);
   var clk = Blockly.Arduino.valueToCode(this, "CLK", Blockly.Arduino.ORDER_NONE);
   var din = Blockly.Arduino.valueToCode(this, "DIN", Blockly.Arduino.ORDER_NONE);
- 
+
   Blockly.Arduino.includes_["matrice8x8init"]='#include <LedControl.h>';
   Blockly.Arduino.definitions_["matrice8x8init"]="LedControl lc=LedControl(" + din + "," + clk + "," + cs + ",1);";
   Blockly.Arduino.codeFunctions_["matrice8x8init"]="void afficher(byte s[]) {\n  for (int i=0; i<8; i++) {\n    lc.setRow(0,i,s[i]);\n  };\n}";
@@ -883,7 +883,7 @@ Blockly.Blocks["matrice8x8_efface"]={init:function(){
   this.appendDummyInput().appendField(Blockly.Msg.matrice8x8_efface);
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_efface_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -895,11 +895,11 @@ Blockly.Python["matrice8x8_efface"]=function(block){
 };
 
 Blockly.Blocks["matrice8x8_brightness"]={init:function(){
-  this.appendValueInput("brightness").setCheck("Number").appendField(Blockly.Msg.matrice+" intensity");   
-  this.setInputsInline(true); 
+  this.appendValueInput("brightness").setCheck("Number").appendField(Blockly.Msg.matrice+" intensity");
+  this.setInputsInline(true);
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -912,7 +912,7 @@ Blockly.Blocks["matrice8x8_aff"]={init:function(){
   this.appendDummyInput().appendField(Blockly.Msg.matrice8x8_aff).appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_GET_ITEM), "VAR");
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_aff_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)
 this.contextMenuMsg_=Blockly.Msg.matrice_create_symbole},
@@ -936,7 +936,7 @@ this.appendValueInput("Y").setAlign(Blockly.ALIGN_RIGHT).appendField("Y");
   this.appendDummyInput() .appendField(new Blockly.FieldCheckbox("TRUE"), "STATE");
 this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -958,7 +958,7 @@ this.appendValueInput("row").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.M
   this.appendDummyInput() .appendField(new Blockly.FieldCheckbox("TRUE"), "STATE");
 this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -973,7 +973,7 @@ this.appendValueInput("row").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.M
   this.appendDummyInput() .appendField(new Blockly.FieldCheckbox("TRUE"), "STATE");
 this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl)}
 };
@@ -994,7 +994,7 @@ Blockly.Blocks['matrice8x8_animation'] = {
       this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
      this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl);
   }
@@ -1028,7 +1028,7 @@ this.appendDummyInput("m161").setAlign(Blockly.ALIGN_RIGHT).appendField(new Bloc
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
   this.setHelpUrl(Blockly.Msg.matrice16x8_helpurl);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice16x8_symbole_tooltip);
 this.contextMenuMsg_=Blockly.Msg.matrice_create_aff},
 contextMenuType_:"matrice16x8_aff",
@@ -1100,7 +1100,7 @@ Blockly.Blocks["matrice_init"]={init:function(){
   this.appendDummyInput().appendField(Blockly.Msg.matrice)
   .appendField(new Blockly.FieldDropdown([["8x8","8"],["16x8","16"]],function(option){this.sourceBlock_.updateShape(option)}), "matrix");
 this.setInputsInline(false);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setTooltip(Blockly.Msg.matrice16x8_tooltip);
   this.setHelpUrl(Blockly.Msg.matrice16x8_helpurl)},
   updateShape:function(option){
@@ -1172,7 +1172,7 @@ return ""
 
 Blockly.Blocks['Init_MAX7219_ledmatrix_esp32'] = { init: function() {
   var card=window.localStorage.card;
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/matrix8x8.png",33,33))
 	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_Number)	.appendField(new Blockly.FieldDropdown([['1', '1'], ['2', '2'],['3', '3'],['4', '4']]), "NumberDisplays")
 	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_NAME)
@@ -1189,12 +1189,12 @@ Blockly.Arduino['Init_MAX7219_ledmatrix_esp32'] = function(block) {
   var pin_clk = this.getFieldValue('PIN_CLK');
   var pin_cs = this.getFieldValue('PIN_CS');
   var pin_dat = this.getFieldValue('PIN_DAT');
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   Blockly.Arduino.includes_['include_LedController'] = '#include <LedController.hpp>\n';
   Blockly.Arduino.definitions_['init_Ledcontroller_LM'] = 'LedController<'+numberDisplays+',1> lc = LedController<'+numberDisplays+',1>();\n';
-   
+
   Blockly.Arduino.setups_['setup_Ledcontroller_LM'] = ' lc.init('+pin_dat+','+pin_clk+','+pin_cs+');\n';
-   
+
   var code='';
   return code;
 };
@@ -1202,7 +1202,7 @@ Blockly.Arduino['Init_MAX7219_ledmatrix_esp32'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_brightness_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 	this.appendValueInput("BRIGHTNESS")
@@ -1217,17 +1217,17 @@ Blockly.Blocks['MAX7219_ledmatrix_brightness_esp32'] = {
 
 Blockly.Arduino['MAX7219_ledmatrix_brightness_esp32'] = function(block) {
   var brightness = Blockly.Arduino.valueToCode(this, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
- 
-     	 	 
+
+
   var code='lc.setIntensity('+brightness+');\n';
-  
+
   return code;
 };
 
 Blockly.Blocks['MAX7219_ledmatrix_clear_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -1241,8 +1241,8 @@ Blockly.Blocks['MAX7219_ledmatrix_clear_esp32'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_clear_esp32'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 	 	 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var code='lc.clearSegment('+numberDisplays+');\n';
   return code;
 };
@@ -1251,7 +1251,7 @@ Blockly.Arduino['MAX7219_ledmatrix_clear_esp32'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_draw_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -1356,19 +1356,19 @@ Blockly.Blocks['MAX7219_ledmatrix_draw_esp32'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_draw_esp32'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var code = '';
   var rowcounter=0;
   var rowvalue='B';
   var rowline=0;
   for (var i=0; i<64; i++) {
-	
-	if (this.getFieldValue('Pixel' + i) != "FALSE") 
+
+	if (this.getFieldValue('Pixel' + i) != "FALSE")
 		rowvalue=rowvalue+'1';
 	else
 		rowvalue=rowvalue+'0';
-	
+
 	rowcounter+=1;
 	if (rowcounter==8)
 		{
@@ -1385,7 +1385,7 @@ Blockly.Arduino['MAX7219_ledmatrix_draw_esp32'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_row_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -1395,7 +1395,7 @@ Blockly.Blocks['MAX7219_ledmatrix_row_esp32'] = {
 		.appendField(Blockly.Msg.MAX7219_LM_Row)
 	this.appendValueInput("VALUE")
 		.setCheck("Number")
-		.appendField(Blockly.Msg.MAX7219_LM_value)	
+		.appendField(Blockly.Msg.MAX7219_LM_value)
    	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -1404,11 +1404,11 @@ Blockly.Blocks['MAX7219_ledmatrix_row_esp32'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_row_esp32'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
-     	 	 
+
   var code='lc.setRow('+numberDisplays+','+row+','+value+');\n';
   return code;
 };
@@ -1416,7 +1416,7 @@ Blockly.Arduino['MAX7219_ledmatrix_row_esp32'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_column_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -1426,7 +1426,7 @@ Blockly.Blocks['MAX7219_ledmatrix_column_esp32'] = {
 		.appendField(Blockly.Msg.MAX7219_LM_Column)
 	this.appendValueInput("VALUE")
 		.setCheck("Number")
-		.appendField(Blockly.Msg.MAX7219_LM_value)	
+		.appendField(Blockly.Msg.MAX7219_LM_value)
    	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -1435,12 +1435,12 @@ Blockly.Blocks['MAX7219_ledmatrix_column_esp32'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_column_esp32'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
   var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '0';
-   
-     	 	 
+
+
   var code='lc.setColumn('+numberDisplays+',7-'+Column+','+value+');\n';
   return code;
 };
@@ -1450,7 +1450,7 @@ Blockly.Arduino['MAX7219_ledmatrix_column_esp32'] = function(block) {
 Blockly.Blocks['MAX7219_ledmatrix_led_esp32'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/matrix8x8.png",22,22))
 		.appendField(Blockly.Msg.MAX7219_LM_Number)
@@ -1472,14 +1472,13 @@ Blockly.Blocks['MAX7219_ledmatrix_led_esp32'] = {
 };
 
 Blockly.Arduino['MAX7219_ledmatrix_led_esp32'] = function(block) {
-  
-  var numberDisplays = this.getFieldValue('NumberDisplays'); 
-  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0'; 
+
+  var numberDisplays = this.getFieldValue('NumberDisplays');
+  var row = Blockly.Arduino.valueToCode(this, 'Row', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var Column = Blockly.Arduino.valueToCode(this, 'Column', Blockly.Arduino.ORDER_ATOMIC) || '0';
   var value = this.getFieldValue('power');
-   
-     	 	 
+
+
   var code='lc.setLed('+numberDisplays+','+row+',7-'+Column+','+value+');\n';
   return code;
 };
-

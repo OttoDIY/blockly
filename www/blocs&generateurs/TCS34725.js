@@ -12,7 +12,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['init_tcs34725'] = {
    init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/TCS34725.png",33,33))
         .appendField(Blockly.Msg.TCS34725_name_init)
@@ -28,17 +28,17 @@ Blockly.Blocks['init_tcs34725'] = {
 };
 
 Blockly.Arduino['init_tcs34725'] = function(block) {
-	
-	
- var Gain = block.getFieldValue('Gain');  	
-	
-	
+
+
+ var Gain = block.getFieldValue('Gain');
+
+
  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>\n';
  Blockly.Arduino.definitions_['define_adafruit_tcs34725'] = '#include "Adafruit_TCS34725.h"\n';
  Blockly.Arduino.definitions_['define_colorconverter'] = '#include "ColorConverterLib.h"\n';
- 
+
  Blockly.Arduino.definitions_['define_tcs34725'] = 'Adafruit_TCS34725 tcs34725 = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS,'+Gain+');\n';
-  
+
  Blockly.Arduino.definitions_['define_tcs34725_variables'] = 'double  tcs34725_r=0;\n'+
 'double  tcs34725_g=0;\n'+
 'double  tcs34725_b=0;\n'+
@@ -68,7 +68,7 @@ Blockly.Arduino.definitions_['define_tcs34725_capturecolor'] = 'void fnc_tcs3472
 '	tcs34725_s=tcs34725_s*100;\n'+
 '	tcs34725_v=tcs34725_v*100;\n'+
 '}\n';
-  
+
   Blockly.Arduino.setups_['setup_tcs34725'] = 'tcs34725.begin();\n';
 
   var code='';
@@ -77,7 +77,7 @@ Blockly.Arduino.definitions_['define_tcs34725_capturecolor'] = 'void fnc_tcs3472
 
 Blockly.Blocks['read_tcs34725'] = {
    init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/color.png",15,15))
         .appendField(Blockly.Msg.TCS34725_name)
@@ -91,7 +91,7 @@ Blockly.Blocks['read_tcs34725'] = {
 };
 
 Blockly.Arduino['read_tcs34725'] = function(block) {
-	
+
   var code='fnc_tcs34725_capturecolor();\n';
   return code;
 };
@@ -100,7 +100,7 @@ Blockly.Arduino['read_tcs34725'] = function(block) {
 Blockly.Blocks['tcs34725_values'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	 this.appendDummyInput()
    .appendField(new Blockly.FieldImage("media/color.png",15,15))
 		.appendField(Blockly.Msg.TCS34725_name)
@@ -114,8 +114,8 @@ Blockly.Blocks['tcs34725_values'] = {
 };
 
 Blockly.Arduino['tcs34725_values'] = function(block) {
-  
-  var typeValue = this.getFieldValue("TypeValue"); 
+
+  var typeValue = this.getFieldValue("TypeValue");
 
  if (typeValue==0)
 	var code = 'tcs34725_r';
@@ -139,9 +139,9 @@ Blockly.Arduino['tcs34725_values'] = function(block) {
 										var code = 'tcs_red';
 										else if (typeValue==11)
 											var code = 'tcs_green';
-											else 
+											else
 												var code = 'tcs_blue';
-   
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -149,7 +149,7 @@ Blockly.Arduino['tcs34725_values'] = function(block) {
 Blockly.Blocks['tcs34725_color'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	 this.appendDummyInput()
    .appendField(new Blockly.FieldImage("media/color.png",15,15))
 		.appendField(Blockly.Msg.TCS34725_name)
@@ -164,7 +164,7 @@ Blockly.Blocks['tcs34725_color'] = {
 };
 
 Blockly.Arduino['tcs34725_color'] = function(block) {
-	
+
 Blockly.Arduino.definitions_['define_tcs34725_iscolor'] = 'bool fnc_tcs34725_iscolor(int _color)\n'+
 '{\n'+
 '	if(tcs34725_h > 330 || tcs34725_h < 20){ if(_color==2) return true; } //red\n'+
@@ -176,10 +176,10 @@ Blockly.Arduino.definitions_['define_tcs34725_iscolor'] = 'bool fnc_tcs34725_isc
 ' 	else if(tcs34725_h < 330){ if(_color==8) return true; } //violet\n'+
 '	return false;\n'+
 '}\n';
-	 
-  var typeColor = this.getFieldValue('TypeColor');  
-  
-  
+
+  var typeColor = this.getFieldValue('TypeColor');
+
+
   if (typeColor==0)
 	var code = 'fnc_tcs34725_iscolor(2)';
 	else if (typeColor==1)
@@ -194,11 +194,9 @@ Blockly.Arduino.definitions_['define_tcs34725_iscolor'] = 'bool fnc_tcs34725_isc
 						var code = 'fnc_tcs34725_iscolor(7)';
 						else if (typeColor==6)
 							var code = 'fnc_tcs34725_iscolor(8)';
-							else 
+							else
 								var code = 'fnc_tcs34725_iscolor(2)';
-  
- 
+
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-
-

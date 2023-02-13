@@ -12,7 +12,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['OpenSmartMp3_init_ss'] = {
   init: function() {
 	 var card=window.localStorage.card;
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/opensmart.png",43,38))
         .appendField(Blockly.Msg.MP3OS_init)
@@ -30,26 +30,26 @@ Blockly.Blocks['OpenSmartMp3_init_ss'] = {
 
 
 Blockly.Arduino['OpenSmartMp3_init_ss'] = function(block) {
-	
+
  //var pin_rx = Blockly.Arduino.valueToCode(this, "PIN_RX", Blockly.Arduino.ORDER_NONE);
  //var pin_tx = Blockly.Arduino.valueToCode(this, "PIN_TX", Blockly.Arduino.ORDER_NONE);
  var pin_rx = this.getFieldValue('PIN_RX');
  var pin_tx = this.getFieldValue('PIN_TX');
 
- Blockly.Arduino.includes_['define_softwareserial'] = '#include <SoftwareSerial.h>\n'; 
+ Blockly.Arduino.includes_['define_softwareserial'] = '#include <SoftwareSerial.h>\n';
  Blockly.Arduino.includes_['define_osmp3_library'] = '#include <RedMP3.h>\n';
  Blockly.Arduino.definitions_['setup_osmp3'] = ' MP3 mp3('+pin_rx+','+pin_tx+');\n';
- 
+
  Blockly.Arduino.setups_['init_osmp3'] = ' delay(500);//Requires 500ms to wait for the MP3 module to initialize \n';
-   
+
  var code='';
  return code;
-   
+
 };
 
 Blockly.Blocks['OpenSmartMp3_set_volumen'] = {
  init: function() {
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
         .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_volumen)
@@ -63,17 +63,17 @@ Blockly.Blocks['OpenSmartMp3_set_volumen'] = {
 };
 
 Blockly.Arduino['OpenSmartMp3_set_volumen'] = function(block) {
- 		
- var volumen = Blockly.Arduino.valueToCode(this, 'Volumen', Blockly.Arduino.ORDER_ATOMIC); 	
+
+ var volumen = Blockly.Arduino.valueToCode(this, 'Volumen', Blockly.Arduino.ORDER_ATOMIC);
  var code = 'mp3.setVolume('+volumen+');\ndelay(50);\n';
-  
- 
+
+
   return code;
 };
 
 Blockly.Blocks['OpenSmartMp3_operation'] = {
   init: function() {
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
         .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_operation)
@@ -87,39 +87,39 @@ Blockly.Blocks['OpenSmartMp3_operation'] = {
 
 
 Blockly.Arduino['OpenSmartMp3_operation'] = function(block) {
- 		
- var mp3_operation = this.getFieldValue('MP3_OPERATION'); 	
- 
- if (mp3_operation==0) 
+
+ var mp3_operation = this.getFieldValue('MP3_OPERATION');
+
+ if (mp3_operation==0)
     var code = 'mp3.volumeUp();\ndelay(50);\n';
-	else if (mp3_operation==1) 
+	else if (mp3_operation==1)
 		var code = 'mp3.volumeDown();\ndelay(50);\n';
-		else if (mp3_operation==2) 
+		else if (mp3_operation==2)
 			 var code = 'mp3.nextSong();\ndelay(50);\n';
-			 else if (mp3_operation==3) 
+			 else if (mp3_operation==3)
 				  var code = 'mp3.previousSong();\ndelay(50);\n';
-				  else if (mp3_operation==4) 
+				  else if (mp3_operation==4)
 						var code = 'mp3.play();\ndelay(50);\n';
-						else if (mp3_operation==5) 
+						else if (mp3_operation==5)
 							var code = 'mp3.pause();\ndelay(50);\n';
-							else if (mp3_operation==6) 
+							else if (mp3_operation==6)
 								var code = 'mp3.stopPlay();\ndelay(50);\n';
-								else if (mp3_operation==7) 
+								else if (mp3_operation==7)
 									var code = 'mp3.forward();\ndelay(50);\n';
-									else if (mp3_operation==8) 
+									else if (mp3_operation==8)
 										var code = 'mp3.rewind();\ndelay(50);\n';
-										else if (mp3_operation==9) 
+										else if (mp3_operation==9)
 											var code = 'mp3.stopInject();\ndelay(50);\n';
-											else if (mp3_operation==10) 
-												var code = 'mp3.singleCycle();\ndelay(50);\n';						
-													else 
+											else if (mp3_operation==10)
+												var code = 'mp3.singleCycle();\ndelay(50);\n';
+													else
 													var code = 'mp3.allCycle();\ndelay(50);\n';
     return code;
 };
 
 Blockly.Blocks['OpenSmartMp3_playsong'] = {
   init: function() {
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
         .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_playsong)
@@ -133,17 +133,17 @@ Blockly.Blocks['OpenSmartMp3_playsong'] = {
 };
 
 Blockly.Arduino['OpenSmartMp3_playsong'] = function(block) {
- 		
- var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC); 	
-  
+
+ var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC);
+
   var code = 'mp3.playWithIndex('+song+');\ndelay(50);\n';
- 
+
   return code;
 };
 
 Blockly.Blocks['OpenSmartMp3_playsongdirectiry'] = {
   init: function() {
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
         .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 	this.appendValueInput("Song")
@@ -151,7 +151,7 @@ Blockly.Blocks['OpenSmartMp3_playsongdirectiry'] = {
 		.setCheck('Number')
 	this.appendValueInput("Directory")
 		.appendField(Blockly.Msg.MP3OS_playsongdirectory)
-		.setCheck('Number')	
+		.setCheck('Number')
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -160,18 +160,18 @@ Blockly.Blocks['OpenSmartMp3_playsongdirectiry'] = {
 };
 
 Blockly.Arduino['OpenSmartMp3_playsongdirectiry'] = function(block) {
- 		
- var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC); 
- var directory = Blockly.Arduino.valueToCode(this, 'Directory', Blockly.Arduino.ORDER_ATOMIC); 
-  
+
+ var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC);
+ var directory = Blockly.Arduino.valueToCode(this, 'Directory', Blockly.Arduino.ORDER_ATOMIC);
+
   var code = 'mp3.playWithFileName('+directory+','+song+');\ndelay(50);\n';
- 
+
   return code;
 };
 
 Blockly.Blocks['OpenSmartMp3_injectindex'] = {
   init: function() {
-	this.setColour("#a600d3");
+	this.setColour("#FF63BB");
 	this.appendDummyInput()
         .appendField("🎧 "+ Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_inject)
@@ -185,10 +185,10 @@ Blockly.Blocks['OpenSmartMp3_injectindex'] = {
 };
 
 Blockly.Arduino['OpenSmartMp3_injectindex'] = function(block) {
- 		
- var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC); 	
-  
+
+ var song = Blockly.Arduino.valueToCode(this, 'Song', Blockly.Arduino.ORDER_ATOMIC);
+
   var code = 'mp3.injectWithIndex('+song+');\ndelay(50);\n';
- 
+
   return code;
 };

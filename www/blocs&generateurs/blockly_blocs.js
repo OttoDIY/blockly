@@ -8,11 +8,11 @@ goog.provide("Blockly.Blocks.variables");
 goog.provide("Blockly.Blocks.texts");
 goog.provide("Blockly.Blocks.tab");
 
-Blockly.Blocks.controls.HUE = "#ffb400";
-Blockly.Blocks.math.HUE = "#008000";
-Blockly.Blocks.procedures.HUE = "#FF0000";
-Blockly.Blocks.texts.HUE = "#FD6C9E";
-Blockly.Blocks.variables.HUE = "#ff5700";
+Blockly.Blocks.controls.HUE = "#FFBD3B";
+Blockly.Blocks.math.HUE = "#00D072";
+Blockly.Blocks.procedures.HUE = "#FF876B";
+Blockly.Blocks.texts.HUE = "#ff8c1a";
+Blockly.Blocks.variables.HUE = "#FF8900";
 Blockly.Blocks.tab.HUE = "#ff5700";
 
 // controle
@@ -2066,7 +2066,7 @@ Blockly.Blocks["procedures_ifreturn"] = {
 Blockly.Blocks['mrtduino_pin'] = {
   /**
    * Block for MRTduino board
- 
+
    */
   init: function() {
     this.setHelpUrl('https://www.logix5.com/roboticaeducativa/mrtduino-board/');

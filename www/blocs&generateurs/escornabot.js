@@ -13,7 +13,7 @@ Blockly.Blocks['escornabot_init'] = {init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.ESCORNABOT_INIT_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);  }
 };
@@ -36,7 +36,7 @@ Blockly.Blocks['escornabot_spin']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_SPIN_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -59,7 +59,7 @@ Blockly.Blocks['escornabot_distance']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_DISTANCE_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -82,7 +82,7 @@ Blockly.Blocks['escornabot_turnspin']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_TURNSPIN_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -105,7 +105,7 @@ Blockly.Blocks['escornabot_turnangle']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_TURNANGLE_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -127,7 +127,7 @@ Blockly.Blocks['escornabot_stop']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_STOP_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -148,7 +148,7 @@ Blockly.Blocks['escornabot_beep']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_BEEP_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -167,7 +167,7 @@ Blockly.Blocks['escornabot_ledon']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_LEDON_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -189,7 +189,7 @@ Blockly.Blocks['escornabot_ledoff']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#C39BD3");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.ESCORNABOT_LEDOFF_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.ESCORNABOT_URL);}
 };
@@ -263,7 +263,7 @@ this.setColour("#C39BF2");
 Blockly.Arduino['escornabot_ir_init']=function(block){
   var izquierda = block.getFieldValue('Izquierda');
   var derecha = block.getFieldValue('Derecha');
-  
+
   Blockly.Arduino.setups_['escornabot_ir_init']='mirobot.infrared('+izquierda+','+derecha+');';
   var code = '//calibrated\n';
   return code;

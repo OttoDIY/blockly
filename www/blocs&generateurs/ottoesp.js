@@ -28,18 +28,18 @@ Blockly.Blocks['otto_configuration'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_configuration'] = function(block) {
-  
+
   var PIN_YL= block.getFieldValue('PIN_YL');
   var PIN_YR= block.getFieldValue('PIN_YR');
   var PIN_RL= block.getFieldValue('PIN_RL');
   var PIN_RR= block.getFieldValue('PIN_RR');
   var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
-	
+
   Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
 	+ 'Otto Otto;';
 
@@ -47,8 +47,8 @@ Blockly.Arduino['otto_configuration'] = function(block) {
  	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
 	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
     + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
-    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
-	
+    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n';
+
   Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
   + 'Otto.home();\n';
   var code = '';
@@ -60,13 +60,13 @@ Blockly.Blocks['otto_home'] = {init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_home'] = function(block) {
-  
+
   var code = 'Otto.home();\n';
   return code;
 };
@@ -80,7 +80,7 @@ this.appendValueInput("RF") .setCheck("Number").appendField(Blockly.Msg.right).s
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -120,7 +120,7 @@ this.appendValueInput("TEMPO") .setCheck("Number").appendField(Blockly.Msg.OTTO9
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
@@ -131,7 +131,7 @@ var PIN_RL= Blockly.Arduino.valueToCode(block, 'PIN_RL', Blockly.Arduino.ORDER_A
 var PIN_RR= Blockly.Arduino.valueToCode(block, 'PIN_RR', Blockly.Arduino.ORDER_ATOMIC);
 var TEMPO= Blockly.Arduino.valueToCode(block, 'TEMPO', Blockly.Arduino.ORDER_ATOMIC);
 
-Blockly.Arduino.definitions_['otto_movelegs'] = ' void Otto_moveLegs(int T, int posLegL, int posLegR, int posFootL, int posFootR) {   int posLegs[]={ posLegL,posLegR,posFootL,posFootR };   Otto._moveServos(T,posLegs); }'; 
+Blockly.Arduino.definitions_['otto_movelegs'] = ' void Otto_moveLegs(int T, int posLegL, int posLegR, int posFootL, int posFootR) {   int posLegs[]={ posLegL,posLegR,posFootL,posFootR };   Otto._moveServos(T,posLegs); }';
 
 Blockly.Arduino.setups_['otto_movelegs']='Otto_moveLegs('+200+','+90+','+90+','+90+','+90+');';
 
@@ -146,10 +146,10 @@ Blockly.Blocks['otto_moveservos'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
   };
-  
+
   Blockly.Arduino['otto_moveservos'] = function(block) {
   var Period= Blockly.Arduino.valueToCode(block, 'Period', Blockly.Arduino.ORDER_ATOMIC);
   var Pos= Blockly.Arduino.valueToCode(block, 'Pos', Blockly.Arduino.ORDER_ATOMIC);
@@ -164,7 +164,7 @@ Blockly.Blocks['otto_move'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -172,7 +172,7 @@ Blockly.Blocks['otto_move'] = {init: function() {
 Blockly.Arduino['otto_move'] = function(block) {
   var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
   var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
-  
+
   var code = '';
   switch(dropdown_otto_move_sens) {
 	case 'FORWARD':
@@ -205,7 +205,7 @@ Blockly.Arduino['otto_move'] = function(block) {
   }
   return code;
 };
-		
+
 Blockly.Blocks['otto_dance'] = {
   init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_moonwalk.png', 22, 22, "*")).appendField(Blockly.Msg.OTTO9_DANCE_TEXT)
@@ -218,7 +218,7 @@ Blockly.Blocks['otto_dance'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
 };
@@ -227,7 +227,7 @@ Blockly.Arduino['otto_dance'] = function(block) {
   var dropdown_otto_dance_movement = block.getFieldValue('otto_dance_movement');
   var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
   var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-    
+
   var code = '';
   switch(dropdown_otto_dance_movement) {
     case 'moonwalkerLEFT':
@@ -251,7 +251,7 @@ Blockly.Arduino['otto_dance'] = function(block) {
     }
   return code;
 };
-	
+
 Blockly.Blocks['otto_do'] = {init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage('media/otto_do.png', 22, 22, "*"))
@@ -263,7 +263,7 @@ Blockly.Blocks['otto_do'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_DO_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
@@ -272,7 +272,7 @@ Blockly.Arduino['otto_do'] = function(block) {
   var dropdown_otto_do_movement = block.getFieldValue('otto_do_movement');
   var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
   var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
-  
+
   var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ');\n';
   return code;
 };
@@ -282,14 +282,14 @@ Blockly.Blocks['otto_gesture'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_GESTURE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
 };
 
 Blockly.Arduino['otto_gesture'] = function(block) {
   var dropdown_otto_gesture = block.getFieldValue('otto_gesture');
-  
+
   var code = 'Otto.playGesture(' + dropdown_otto_gesture + ');\n';
   return code;
 };
@@ -299,14 +299,14 @@ Blockly.Blocks['otto_sound'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#a600d3");
+    this.setColour("#FF63BB");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL); }
 };
 
 Blockly.Arduino['otto_sound'] = function(block) {
   var dropdown_otto_sound = block.getFieldValue('otto_sound');
-  
+
   var code = 'Otto.sing(' + dropdown_otto_sound + ');\n';
   return code;
 };
@@ -319,7 +319,7 @@ Blockly.Blocks['otto_tone'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#a600d3");
+    this.setColour("#FF63BB");
     this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -328,9 +328,9 @@ Blockly.Blocks['otto_tone'] = {init: function() {
 Blockly.Arduino['otto_tone'] = function(block) {
   var dropdown_otto_note = block.getFieldValue('otto_note');
   var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-  
+
   var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
-return code;				
+return code;
 };
 
 Blockly.Blocks['otto_tonehz'] = {init: function() {
@@ -341,7 +341,7 @@ Blockly.Blocks['otto_tonehz'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#a600d3");
+  this.setColour("#FF63BB");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -353,7 +353,7 @@ Blockly.Arduino['otto_tonehz'] = function(block) {
   var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
 
 var code = "Otto._tone( " + Hz1 + "," + duration + "," + silent + "); //(float noteFrequency, long noteDuration, int silentDuration)\n";
-return code;				
+return code;
 };
 
 Blockly.Blocks['otto_bendtone'] = {init: function() {
@@ -366,7 +366,7 @@ Blockly.Blocks['otto_bendtone'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#a600d3");
+  this.setColour("#FF63BB");
   this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -380,9 +380,9 @@ Blockly.Arduino['otto_bendtone'] = function(block) {
   var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
 
   var code = "Otto.bendTones( " + Hz1 + "," + Hz2 + "," + prop + "," + duration + "," + silent + "); // (float initFrequency, float finalFrequency, float prop, long noteDuration, int silentDuration) \n";
-  return code;				
+  return code;
 };
-											
+
 Blockly.Blocks['otto_getsensor'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_noise.png', 22, 22, "*")).appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
     this.setInputsInline(true);
@@ -395,8 +395,7 @@ Blockly.Blocks['otto_getsensor'] = {init: function() {
 
 Blockly.Arduino['otto_getsensor'] = function(block) {
   Blockly.Arduino.variables_['otto_sensor'] = 'bool estado = false;';
-  
+
   var code = 'Otto.getSensor()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
-

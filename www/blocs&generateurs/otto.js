@@ -1,60 +1,12 @@
 'use strict';
 
-goog.provide('Blockly.Blocks.otto_');
+goog.provide('Blockly.Blocks.otto');
 goog.provide('Blockly.Blocks.arduino');
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 goog.require('Blockly.FieldInstance');
 goog.provide('Blockly.Arduino.otto');
 goog.require('Blockly.Arduino');
-
-Blockly.Blocks['otto9_configuration'] = {init: function() {
-	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YR");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_CALIBRATION_FOOT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RR");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_BUZZER).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_Buzzer");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#32D900");
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
-};
-
-Blockly.Arduino['otto9_configuration'] = function(block) {
-  
-  var PIN_YL= block.getFieldValue('PIN_YL');
-  var PIN_YR= block.getFieldValue('PIN_YR');
-  var PIN_RL= block.getFieldValue('PIN_RL');
-  var PIN_RR= block.getFieldValue('PIN_RR');
-  var PIN_Buzzer= block.getFieldValue('PIN_Buzzer');
-	
-  Blockly.Arduino.includes_['otto_lib'] = '#include <Otto.h>\n'
-	+ 'Otto Otto;';
-
-  Blockly.Arduino.definitions_['otto_legs'] = '#define LeftLeg '+ PIN_YL +' // left leg pin, servo[0]\n'
- 	+ '#define RightLeg '+ PIN_YR +' // right leg pin, servo[1]\n'
-	+ '#define LeftFoot '+ PIN_RL +' // left foot pin, servo[2]\n'
-    + '#define RightFoot '+ PIN_RR +' // right foot pin, servo[3]\n'
-    + '#define Buzzer '+ PIN_Buzzer +' //buzzer pin \n'; 
-	
-  Blockly.Arduino.setups_['otto_init']='Otto.init(LeftLeg, RightLeg, LeftFoot, RightFoot, true, Buzzer);\n'
-  ;
-  var code = '';
-  return code;
-};
 
 Blockly.Blocks['otto_i2cConfig'] = {init: function() {
   var card=window.localStorage.card;
@@ -69,21 +21,21 @@ Blockly.Blocks['otto_i2cConfig'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_i2cConfig'] = function(block) {
   var PIN_SDA= block.getFieldValue('PIN_SDA');
   var PIN_SCL= block.getFieldValue('PIN_SCL');
-	
+
   Blockly.Arduino.includes_['otto_i2cConfig_lib'] = '#include <Wire.h>\n';
 
   Blockly.Arduino.definitions_['otto_i2cConfig_def'] = '#define PIN_SDA '+ PIN_SDA +'\n'
 	+ '#define PIN_SCL '+ PIN_SCL +'\n';
-	
+
   Blockly.Arduino.setups_['otto_i2cConfig_begin']='Wire.begin(PIN_SDA, PIN_SCL);';
-  
+
   var code = '';
   return code;
 };
@@ -100,15 +52,15 @@ Blockly.Blocks['otto_arms_init'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_arms_init'] = function(block) {
-  
+
   var PIN_AL= block.getFieldValue('PIN_AL');
   var PIN_AR= block.getFieldValue('PIN_AR');
-	
+
     Blockly.Arduino.includes_['otto_arms'] = '#include <Servo.h>\n'
     + 'Servo AL, AR;';
     Blockly.Arduino.variables_['otto_arms'] = 'int adj[]={ 0, 0,};\n'
@@ -127,14 +79,14 @@ Blockly.Arduino['otto_arms_init'] = function(block) {
   var code = '';
   return code;
 };
-								
+
 Blockly.Blocks['otto_arms'] = { init: function() {
-    this.appendDummyInput() 
+    this.appendDummyInput()
     .appendField(Blockly.Msg.CAT_OTTO_ARMS) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_ARMS_CHOICE), "otto_arms_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_ARMS_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -172,7 +124,7 @@ Blockly.Blocks['otto_arms_home'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
@@ -214,12 +166,12 @@ Blockly.Blocks['otto_quad_configuration'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_quad_configuration'] = function(block) {
-  
+
   var FRH= block.getFieldValue('FRH');
   var FLH= block.getFieldValue('FLH');
   var FRL= block.getFieldValue('FRL');
@@ -228,7 +180,7 @@ Blockly.Arduino['otto_quad_configuration'] = function(block) {
   var BRH= block.getFieldValue('BRH');
   var BRL= block.getFieldValue('BRL');
   var BLL= block.getFieldValue('BLL');
-	
+
   Blockly.Arduino.includes_['otto_lib'] = '#include <Quad.h>\n'
 	+ 'Quad Quad;';
 
@@ -242,7 +194,7 @@ Blockly.Arduino['otto_quad_configuration'] = function(block) {
   + '#define BLL '+ BLL +' // BACK_LEFT_LEG pin, servo[7]\n'
   + 'void pause(int period) { long timeout = millis() + period;  do   {  Quad.refresh(); } \n'
   + ' while (millis() <= timeout); }';
-	
+
   Blockly.Arduino.setups_['otto_init']='Quad.init(FRH, FLH, FRL, FLL, BLH, BRH, BRL, BLL);\n'
   + 'Quad.home();\n';
   var code = '';
@@ -254,7 +206,7 @@ Blockly.Blocks['otto_quad_home'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
@@ -269,7 +221,7 @@ Blockly.Blocks['otto_quad_hello'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
@@ -283,7 +235,7 @@ Blockly.Blocks['otto_quad_jump'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
@@ -297,7 +249,7 @@ Blockly.Blocks['otto_quad_scared'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
@@ -312,7 +264,7 @@ Blockly.Blocks['otto_quad_move'] = {init: function() {
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
@@ -375,12 +327,12 @@ Blockly.Blocks['otto_ninja_init'] = {init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#0A0A0A");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
 
 Blockly.Arduino['otto_ninja_init'] = function(block) {
-  
+
   var PIN_LL= block.getFieldValue('PIN_LL');
   var PIN_RL= block.getFieldValue('PIN_RL');
   var PIN_LF= block.getFieldValue('PIN_LF');
@@ -388,10 +340,10 @@ Blockly.Arduino['otto_ninja_init'] = function(block) {
   var PIN_LA= block.getFieldValue('PIN_LA');
   var PIN_RA= block.getFieldValue('PIN_RA');
   var PIN_H= block.getFieldValue('PIN_H');
-	
+
   Blockly.Arduino.includes_['otto_lib'] = '#include <Servo.h>\n';
 
-  Blockly.Arduino.definitions_['otto_legs'] = 
+  Blockly.Arduino.definitions_['otto_legs'] =
       'const uint8_t ServoLeftLegPin ='+ PIN_LL +'; // D8 or 15 \n'
  	  + 'const uint8_t ServoRightLegPin='+ PIN_RL +'; // D4 or 2 \n'
 	  + 'const uint8_t ServoLeftFootPin  ='+ PIN_LF +'; // D7 or 13 \n'
@@ -406,7 +358,7 @@ Blockly.Arduino['otto_ninja_init'] = function(block) {
     + 'Servo myservoLeftArm;\n'
     + 'Servo myservoRightArm;\n'
     + 'Servo myservoHead;\n'
-    ; 
+    ;
   var code = '';
   return code;
 };
@@ -422,7 +374,7 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#0A0A0A");
+    this.setColour("#4759F5");
     this.setTooltip("Ninja Leg servo calibration.            "
     +"LLS: Left Leg standing position (0 default += adjust tilt left -= adjust tilt right)"
     +"RLS: Right Leg standing position (0 default += adjust tilt left -= adjust tilt right)"
@@ -433,7 +385,7 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
     );
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
   };
-  
+
   Blockly.Arduino['otto_ninja_calibration']=function(block){
   var valuela= Blockly.Arduino.valueToCode(block, 'LA0', Blockly.Arduino.ORDER_ATOMIC);
   var valuera= Blockly.Arduino.valueToCode(block, 'RA0', Blockly.Arduino.ORDER_ATOMIC);
@@ -441,7 +393,7 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
   var valuerratl= Blockly.Arduino.valueToCode(block, 'RATL', Blockly.Arduino.ORDER_ATOMIC);
   var valuerlatr= Blockly.Arduino.valueToCode(block, 'LATR', Blockly.Arduino.ORDER_ATOMIC);
   var valuerratr= Blockly.Arduino.valueToCode(block, 'RATR', Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.definitions_['ninja_calibration'] = 
+    Blockly.Arduino.definitions_['ninja_calibration'] =
  'int LA0= 60 +'+ valuela +'; // Left Leg standing Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 60\n'
      + 'int RA0= 120 +'+ valuera +';// Right Leg standing position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 120 \n'
      + 'int LA1= 180; // Left Leg roll Position; 0 = Full Tilt Right   180 = Full Tilt Left    Default = 170\n'
@@ -464,7 +416,7 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      this.setColour("#0A0A0A");
+      this.setColour("#4759F5");
       this.setTooltip("FL= Formward Left"
       +"FR= Formward Right"
       +"BL= Backward Left"
@@ -472,13 +424,13 @@ Blockly.Blocks['otto_ninja_calibration']={init:function(){
       );
       this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
     };
-    
+
     Blockly.Arduino['otto_ninja_speed']=function(block){
     var valuellf= Blockly.Arduino.valueToCode(block, 'LFFWRS', Blockly.Arduino.ORDER_ATOMIC);
     var valuerff= Blockly.Arduino.valueToCode(block, 'RFFWRS', Blockly.Arduino.ORDER_ATOMIC);
     var valuelfb= Blockly.Arduino.valueToCode(block, 'LFBWRS', Blockly.Arduino.ORDER_ATOMIC);
     var valuerfb= Blockly.Arduino.valueToCode(block, 'RFBWRS', Blockly.Arduino.ORDER_ATOMIC);
-      Blockly.Arduino.definitions_['otto_ninja_speed'] = 
+      Blockly.Arduino.definitions_['otto_ninja_speed'] =
          'int LFFWRS='+ valuellf +'; // Left foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
        + 'int RFFWRS='+ valuerff +' ; // Right foot forward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
        + 'int LFBWRS= '+ valuelfb +'; // Left foot Backward walking rotation Speed; 0 = Slowest  90 = Fastest    Default = 20\n'
@@ -494,7 +446,7 @@ Blockly.Blocks['otto_ninja_home'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#0A0A0A");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
 };
@@ -503,7 +455,7 @@ Blockly.Arduino['otto_ninja_home'] = function(block) {
   Blockly.Arduino.definitions_['ninja_home'] =   'void NinjaHome()\n'
   +'{ \n'
   +'myservoLeftFoot.attach(ServoLeftFootPin, 544, 2400);\n'
-  +'myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n' 
+  +'myservoRightFoot.attach(ServoRightFootPin, 544, 2400); \n'
   +'myservoLeftLeg.attach(ServoLeftLegPin, 544, 2400); \n'
   +'myservoRightLeg.attach(ServoRightLegPin, 544, 2400); \n'
   +'myservoHead.attach(ServoHeadPin, 544, 2400); \n'
@@ -532,17 +484,17 @@ Blockly.Blocks['otto_ninja_setwalk']={init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#000000");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
 Blockly.Arduino['otto_ninja_setwalk'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_setwalk'] =   
+  Blockly.Arduino.definitions_['ninja_setwalk'] =
   'void NinjaSetWalk()\n'
     +' {\n'
     +'myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
     +'  myservoRightArm.attach(ServoRightArmPin, 544, 2400); \n'
-    +'  myservoLeftArm.write(90);   \n' 
+    +'  myservoLeftArm.write(90);   \n'
     +'  myservoRightArm.write(90);  \n'
     +' delay(200);\n'
     +' myservoLeftArm.detach();\n'
@@ -573,12 +525,12 @@ Blockly.Blocks['otto_ninja_setroll']={init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#0A0A0A");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
 Blockly.Arduino['otto_ninja_setroll'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_setroll'] =   
+  Blockly.Arduino.definitions_['ninja_setroll'] =
   'void NinjaSetRoll()\n'
   +' {myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
   + 'myservoRightArm.attach(ServoRightArmPin, 544, 2400);\n'
@@ -606,12 +558,12 @@ Blockly.Blocks['otto_ninja_walkstop']={init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#0A0A0A");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
 Blockly.Arduino['otto_ninja_walkstop'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_walkstop'] =   
+  Blockly.Arduino.definitions_['ninja_walkstop'] =
   'void NinjaWalkStop()\n'
   + '{myservoLeftFoot.write(90);\n'
   +' myservoRightFoot.write(90); \n'
@@ -627,12 +579,12 @@ Blockly.Blocks['otto_ninja_rollstop']={init:function(){
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#0A0A0A");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
 Blockly.Arduino['otto_ninja_rollstop'] = function(block) {
-  Blockly.Arduino.definitions_['ninja_rollstop'] =   
+  Blockly.Arduino.definitions_['ninja_rollstop'] =
   'void NinjaRollStop()\n'
   +'{myservoLeftFoot.write(90);\n'
   +'myservoRightFoot.write(90); \n'
@@ -650,7 +602,7 @@ Blockly.Blocks['otto_ninja_walk']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#0A0A0A");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
@@ -769,7 +721,7 @@ Blockly.Blocks['otto_ninja_roll']={init:function(){
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#18191A");
+  this.setColour("#4759F5");
   this.setHelpUrl('https://www.ottodiy.com/ninja')}
 };
 
@@ -828,28 +780,28 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
 
   Blockly.Blocks['otto_ninja_wifi'] = {
     init: function() {
-    this.setColour("#0A0A0A");
+    this.setColour("#4759F5");
     this.appendDummyInput()
-     .appendField(new Blockly.FieldImage("media/wifi.png",22,22)) 
+     .appendField(new Blockly.FieldImage("media/wifi.png",22,22))
      .appendField(Blockly.Msg.WIFI_ssid)
-     .appendField(new Blockly.FieldTextInput("MyOttoNinja"), "SSID").setAlign(Blockly.ALIGN_RIGHT);	
+     .appendField(new Blockly.FieldTextInput("MyOttoNinja"), "SSID").setAlign(Blockly.ALIGN_RIGHT);
      this.appendDummyInput().appendField(Blockly.Msg.WIFI_password)
-     .appendField(new Blockly.FieldTextInput("12345678"), "PASSWORD").setAlign(Blockly.ALIGN_RIGHT);			
+     .appendField(new Blockly.FieldTextInput("12345678"), "PASSWORD").setAlign(Blockly.ALIGN_RIGHT);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('Init Wifi for Otto Ninja App');
-    this.setHelpUrl(''); 
+    this.setHelpUrl('');
    }
   };
-  
+
   Blockly.Arduino['otto_ninja_wifi'] = function(block) {
-    var ssid = block.getFieldValue('SSID');  
-    var wifipassword = block.getFieldValue('PASSWORD');  
-  
+    var ssid = block.getFieldValue('SSID');
+    var wifipassword = block.getFieldValue('PASSWORD');
+
    Blockly.Arduino.includes_['include_wifi'] = '#include "ESP8266WiFi.h"\n'
    +'#define REMOTEXY_SERVER_PORT 6377 \n';
-   Blockly.Arduino.definitions_['define_wifi_ninja'] = 
+   Blockly.Arduino.definitions_['define_wifi_ninja'] =
    '#define REMOTEXY_WIFI_SSID "'+ssid+'"\n'+
    '#define REMOTEXY_WIFI_PASSWORD "'+wifipassword+'"\n';
    var code = '';
@@ -861,13 +813,13 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#18191A");
+    this.setColour("#4759F5");
     this.setTooltip('Use alone with wifi, pins and calibration blocks');
     this.setHelpUrl('https://www.ottodiy.com/ninja');
   }
   };
   Blockly.Arduino['otto_ninja_app'] = function(block) {
-    Blockly.Arduino.includes_['otto_ninja_app'] = 
+    Blockly.Arduino.includes_['otto_ninja_app'] =
      '#define REMOTEXY_MODE__ESP8266WIFI_LIB_POINT\n'
     +'#include <RemoteXY.h>\n'
     +'#include <Wire.h>\n'
@@ -886,12 +838,12 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     +'} RemoteXY; \n'
     +'#pragma pack(pop) \n'
     ;
-    Blockly.Arduino.variables_['otto_ninja_app'] = 
+    Blockly.Arduino.variables_['otto_ninja_app'] =
     'int currentmillis1 = 0;\n'
     +'int currentmillis2 = 0; \n'
     +'int currentmillis3 = 0;\n'
-    +'int ModeCounter = 0;\n'        
-    Blockly.Arduino.definitions_['otto_ninja_app'] = 
+    +'int ModeCounter = 0;\n'
+    Blockly.Arduino.definitions_['otto_ninja_app'] =
     'void NinjaStop()\n'
     +' {\n'
     +'myservoLeftFoot.detach();\n'
@@ -903,7 +855,7 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     +' {\n'
     +'myservoLeftArm.attach(ServoLeftArmPin, 544, 2400);\n'
     +'  myservoRightArm.attach(ServoRightArmPin, 544, 2400); \n'
-    +'  myservoLeftArm.write(90);   \n' 
+    +'  myservoLeftArm.write(90);   \n'
     +'  myservoRightArm.write(90);  \n'
     +' delay(200);\n'
     +' myservoLeftArm.detach();\n'
@@ -1003,11 +955,11 @@ Blockly.Arduino['otto_ninja_roll'] = function(block) {
     +'myservoRightFoot.detach();  \n'
     +'myservoLeftLeg.detach();\n'
     +'myservoRightLeg.detach();\n'
-    +'myservoLeftArm.detach();\n'        
+    +'myservoLeftArm.detach();\n'
     +'myservoRightArm.detach();\n'
     +'myservoHead.detach();\n'
     +'RemoteXY_Init ();\n'
-    var code = 
+    var code =
     'RemoteXY_Handler (); \n'
     +'if (RemoteXY.button_X == HIGH){NinjaSetRoll(); ModeCounter = 1;} \n'
     +'if (RemoteXY.button_Y == HIGH){NinjaSetWalk(); ModeCounter = 0;}\n'
@@ -1080,7 +1032,7 @@ Blockly.Blocks['otto9_app'] = {init: function() {
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
-  this.setColour("#32D900");
+  this.setColour("#4759F5");
   this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
 }
@@ -1097,10 +1049,10 @@ Blockly.Arduino['otto9_app'] = function(block) {
   Blockly.Arduino.variables_['otto9_var'] = 'const char programID[] = "Otto Bluetooth App Firmware";\n'
   +'const char name_fac = \'$\'; \n'
   +'const char name_fir = \'#\';\n'
-  +'int T = 1000;  \n'          
-  +'int moveId = 0; \n'        
- +'int moveSize = 15;\n'      
- + 'volatile bool buttonPushed=false; \n' 
+  +'int T = 1000;  \n'
+  +'int moveId = 0; \n'
+ +'int moveSize = 15;\n'
+ + 'volatile bool buttonPushed=false; \n'
  +'unsigned long previousMillis = 0;\n'
  + 'int randomDance = 0;\n'
  + 'int randomSteps = 0;\n'
@@ -1182,7 +1134,7 @@ Blockly.Arduino.definitions_['otto9_legs'] = '#define N_SERVOS 4\n'
     +'Otto.home();\n'
     +'Otto.sing(S_happy_short);   // sing every 5 seconds so we know OTTO is still working\n'
     +'delay(5000);}\n'
-  
+
   var code = 'SCmd.readSerial();     if (Otto.getRestState()==false){ move(moveId); }  \n'
   return code;
 };
@@ -1192,7 +1144,7 @@ Blockly.Blocks['otto9_smooth'] = {init: function() {
     this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#32D900");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
@@ -1227,7 +1179,7 @@ Blockly.Arduino['otto9_smooth'] = function(block) {
 	+ '#define PIN_YR 3 // right leg, servo[1]\n'
 	+ '#define PIN_RL 4 // left foot, servo[2]\n'
   + '#define PIN_RR 5 // right foot, servo[3]\n'
-  + '#define INTERVALTIME 10.0\n' 
+  + '#define INTERVALTIME 10.0\n'
   + 'Oscillator servo[N_SERVOS];';
   Blockly.Arduino.setups_['otto9_init']='  servo[0].attach(PIN_RR);\n'
   + 'servo[1].attach(PIN_RL);\n'

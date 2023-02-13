@@ -22,13 +22,13 @@
  * @fileoverview Colour blocks for Blockly.
  * @author fraser@google.com (Neil Fraser)
  */
- 
+
  /***************************************************************
  *
  *  This module was created by Oscar Ferruz. oferruz@logix5.com
  *
  ****************************************************************/
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.HMC5883');
@@ -38,7 +38,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['Init_Compass_HMC5883'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/hmc5883.png",33,33))
 		.appendField(Blockly.Msg.HMC5883)
@@ -52,16 +52,16 @@ Blockly.Blocks['Init_Compass_HMC5883'] = {
 };
 
 Blockly.Arduino['Init_Compass_HMC5883'] = function(block) {
-   
+
   Blockly.Arduino.includes_['include_Wire'] = '#include <Wire.h>';
   Blockly.Arduino.includes_['include_Adafruit_Sensor'] = '#include <Adafruit_Sensor.h>';
   Blockly.Arduino.includes_['include_Adafruit_HMC5883_U'] = '#include <Adafruit_HMC5883_U.h>';
-  
+
   Blockly.Arduino.definitions_['init_HMC5883'] = 'Adafruit_HMC5883_Unified mag = Adafruit_HMC5883_Unified(12345);\n';
   Blockly.Arduino.definitions_['init_var1_HMC5883'] = 'sensors_event_t eventmag;\n';
-    
+
   Blockly.Arduino.setups_['setup_HMC5883'] = 'mag.begin();\n';
-  	 	 
+
   var code='';
   return code;
 };
@@ -69,7 +69,7 @@ Blockly.Arduino['Init_Compass_HMC5883'] = function(block) {
 Blockly.Blocks['order_to_read_HMC5883_values'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
         .appendField(Blockly.Msg.HMC5883_read)
 	this.setInputsInline(true);
@@ -82,16 +82,16 @@ Blockly.Blocks['order_to_read_HMC5883_values'] = {
 
 
 Blockly.Arduino['order_to_read_HMC5883_values'] = function(block) {
-   
+
   var code = 'mag.getEvent(&eventmag);\n'
-   
+
   return code;
 };
 
 Blockly.Blocks['HMC5883_values'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField("🧭")
 		.appendField(new Blockly.FieldDropdown([['magnetic vector.X','0'],['magnetic vector.Y','1'],['magnetic vector.Z','2'],['Heading ºdegree','3']]), "TypeMag")
@@ -103,10 +103,10 @@ Blockly.Blocks['HMC5883_values'] = {
 };
 
 Blockly.Arduino['HMC5883_values'] = function(block) {
-  
+
   var typeMag = this.getFieldValue('TypeMag');
   var code;
- 
+
   switch (typeMag) {
     case '0':
       code = 'eventmag.magnetic.x';
@@ -125,5 +125,5 @@ Blockly.Arduino['HMC5883_values'] = function(block) {
 			break;
   }
 return [code, Blockly.Arduino.ORDER_ATOMIC];
- 
+
 };

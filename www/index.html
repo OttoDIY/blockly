@@ -23,17 +23,16 @@
 	<script type="text/javascript" src="blocs&generateurs/arduino_generateurs_python.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_cpp.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/blockly_generateurs_python.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/actionneur.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/audio.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/analogdigital.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/RTTTL.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/capteur.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/SimpleSensors.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/SimpleSensors2.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/sensors.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/softBT.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/SerialUSB.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/SoftwareSerial.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/OpenSmartMP3.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/ST7735.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/MatrizLed.js"></script>
+	<script type="text/javascript" src="blocs&generateurs/matrix.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/MAX7219.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/TCS34725.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/HMC5883.js"></script>
@@ -58,7 +57,6 @@
 	<script type="text/javascript" src="blocs&generateurs/motor.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/escornabot.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/neopixel.js"></script>
-	<script type="text/javascript" src="blocs&generateurs/matrix.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/MQTT.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/Thingspeak.js"></script>
 	<script type="text/javascript" src="blocs&generateurs/Firebase.js"></script>
@@ -106,21 +104,16 @@
 				<span id="labelToolboxDefinition" style="color:white;font-weight: bold" > </span>
 				<div id="btn_group1"  class="btn-group" >
 				<button id="btn_level1" class="btn btn-arduino-rect" >1
-				   <!-- <img src='./media/level1.png' >
-					 <span class="fa fa-reddit fa-lg fa-fw"></span> -->
 				</button>
 				<button id="btn_level2" class="btn btn-arduino-rect" >2
-					<!--<span class="fa fa-user fa-lg fa-fw"></span>-->
 				</button>
 				<button id="btn_level3" class="btn btn-arduino-rect" >3
-					<!--<span class="fa fa-graduation fa-lg fa-fw"></span>-->
 				</button>
 				</div>
 			 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();"   style="height: 42px; border-radius: 5px; font-weight: bold" ></select>
 			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
 					<span class="fa fa-cog fa-lg fa-fw"></span>
 		</button> -->
-
 				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
 					<span class="fa fa-graduation"></span>
 				</button>
@@ -136,11 +129,7 @@
 					<span class="fa fa-folder-open"></span>
 				</button>
 				<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
-
-				<button id="btn_print" class="btn btn-arduino-rect">
-					<span class="fa fa-camera"> </span>
-				</button>
-
+<!--	<button id="btn_print" class="btn btn-arduino-rect">		<span class="fa fa-camera"> </span></button>-->
 				<button id="btn_undo" class="btn btn-arduino-rect">
 					<span class="fa fa-undo"> </span>
 				</button>
@@ -148,12 +137,9 @@
 					<span class="fa fa-repeat"> </span>
 				</button>
 
-
-				<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-microchip" > </span>
-				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
-					<optgroup label="C / C++">
+			<!--	<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+					<span class="fa fa-microchip" > </span>				</button>-->
+				<select style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
 						<option value="nanooptiboot">♾ Arduino Nano</option>
 						<option value="nano" >♾ Arduino Nano Old </option>
 						<option value="OttoESP" >🐱‍👤 Otto Ninja / ESP8266</option>
@@ -171,14 +157,10 @@
 						<!--<option value="mini" >Arduino Mini</option>
 						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
 						<option value="yun" >Arduino Yun</option> -->
-
-					</optgroup>
 				</select>
-				<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-usb"></span>
-				</button>
-				<select style="margin-left: -6px; height: 42px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 0px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
-
+			<!--	<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+					<span class="fa fa-usb"></span>		</button> -->
+				<select style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
 				<button id="btn_verify" class="btn btn-arduino" data-toggle="modal" data-target="#message">
 					<span class="fa fa-check fa-1_5x"> </span>
 				</button>
@@ -188,7 +170,7 @@
 				<span id="survol" style="color:#fff"></span>
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
-			<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question"></span> </button>
+			<!--	<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question"></span> </button> -->
 						<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
 						<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
 			<button id="btn_term" class="btn btn-arduino-rect"><span class="fa fa-search"></span></button>

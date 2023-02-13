@@ -12,7 +12,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['APDS9960_init'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/APDS9960.png",33,33))
         .appendField(Blockly.Msg.APDS9960_init)
@@ -25,12 +25,12 @@ Blockly.Blocks['APDS9960_init'] = {
 };
 
 Blockly.Arduino['APDS9960_init'] = function(block) {
-	
+
  Blockly.Arduino.includes_['define_adafruit_APDS9960'] = '#include <Adafruit_APDS9960.h>';
  Blockly.Arduino.definitions_['define_adafruit_APDS9960_variable'] = 'Adafruit_APDS9960 apds;\n';
- 
+
  Blockly.Arduino.setups_['setup_sparkfun_APDS9960'] = 'apds.begin();\n';
-   
+
   var code='';
   return code;
 
@@ -39,7 +39,7 @@ Blockly.Arduino['APDS9960_init'] = function(block) {
 Blockly.Blocks['APDS9960_gesture_init'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
         .appendField(Blockly.Msg.APDS9960_name_gesture)
 		.appendField(Blockly.Msg.APDS9960_detection)
@@ -52,9 +52,9 @@ Blockly.Blocks['APDS9960_gesture_init'] = {
 };
 
 Blockly.Arduino['APDS9960_gesture_init'] = function(block) {
-	
-	
- var enable = this.getFieldValue('ENABLE'); 
+
+
+ var enable = this.getFieldValue('ENABLE');
 
   if(enable==1)
    var code='apds.enableProximity(true);\n'+'apds.enableGesture(true);\n';
@@ -70,7 +70,7 @@ Blockly.Arduino['APDS9960_gesture_init'] = function(block) {
 Blockly.Blocks['APDS9960_color_init'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/color.png",15,15))
         .appendField(Blockly.Msg.APDS9960_name_color)
@@ -84,10 +84,10 @@ Blockly.Blocks['APDS9960_color_init'] = {
 };
 
 Blockly.Arduino['APDS9960_color_init'] = function(block) {
-	
-	
- var enable = this.getFieldValue('ENABLE'); 
- 
+
+
+ var enable = this.getFieldValue('ENABLE');
+
  Blockly.Arduino.definitions_['define_APDS9960_color_variables'] = 'uint16_t r_apds;\nuint16_t g_apds;\nuint16_t b_apds;\nuint16_t c_apds;\n';
 
   if(enable==1)
@@ -103,7 +103,7 @@ Blockly.Arduino['APDS9960_color_init'] = function(block) {
 Blockly.Blocks['APDS9960_gesture_gain'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
         .appendField(Blockly.Msg.APDS9960_name_gesture)
 		.appendField(Blockly.Msg.APDS9960_gesture_gain)
@@ -118,9 +118,9 @@ Blockly.Blocks['APDS9960_gesture_gain'] = {
 
 
 Blockly.Arduino['APDS9960_gesture_gain'] = function(block) {
-	
-	
-  var gain = this.getFieldValue('GAIN'); 
+
+
+  var gain = this.getFieldValue('GAIN');
 
   var code='apds.setGestureGain('+gain+');\n';
 
@@ -131,9 +131,9 @@ Blockly.Arduino['APDS9960_gesture_gain'] = function(block) {
 Blockly.Blocks['APDS9960_gesture_detected'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
-        .appendField(Blockly.Msg.APDS9960_name_gesture)		
+        .appendField(Blockly.Msg.APDS9960_name_gesture)
 		.appendField(Blockly.Msg.APDS9960_gesture_detected)
     this.setInputsInline(true);
 	this.setOutput(true, 'Boolean');
@@ -142,9 +142,9 @@ Blockly.Blocks['APDS9960_gesture_detected'] = {
 };
 
 Blockly.Arduino['APDS9960_gesture_detected'] = function(block) {
- 		
+
    var code = 'apds.gestureValid()';
- 
+
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -152,10 +152,10 @@ Blockly.Arduino['APDS9960_gesture_detected'] = function(block) {
 Blockly.Blocks['APDS9960_color_detected'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/color.png",15,15))
-        .appendField(Blockly.Msg.APDS9960_name_color)		
+        .appendField(Blockly.Msg.APDS9960_name_color)
 		.appendField(Blockly.Msg.APDS9960_gesture_detected)
     this.setInputsInline(true);
 	this.setOutput(true, 'Boolean');
@@ -164,9 +164,9 @@ Blockly.Blocks['APDS9960_color_detected'] = {
 };
 
 Blockly.Arduino['APDS9960_color_detected'] = function(block) {
- 		
+
    var code = 'apds.colorDataReady()';
- 
+
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -175,9 +175,9 @@ Blockly.Arduino['APDS9960_color_detected'] = function(block) {
 Blockly.Blocks['APDS9960_readgesture'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
-        .appendField(Blockly.Msg.APDS9960_name_gesture)		
+        .appendField(Blockly.Msg.APDS9960_name_gesture)
 		.appendField(Blockly.Msg.APDS9960_readgesture)
     this.setInputsInline(true);
 	this.setOutput(true, 'Number');
@@ -186,9 +186,9 @@ Blockly.Blocks['APDS9960_readgesture'] = {
 };
 
 Blockly.Arduino['APDS9960_readgesture'] = function(block) {
- 		
+
    var code = 'apds.readGesture()';
- 
+
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -196,7 +196,7 @@ Blockly.Arduino['APDS9960_readgesture'] = function(block) {
 Blockly.Blocks['APDS9960_gesture'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 	    .appendField(Blockly.Msg.APDS9960_name_gesture)
         .appendField(new Blockly.FieldDropdown([['Dir Up','APDS9960_UP'],['Dir Down','APDS9960_DOWN'],['Dir Left','APDS9960_LEFT'],['Dir Right','APDS9960_RIGHT']]), "DIRECTION");
@@ -209,9 +209,9 @@ Blockly.Blocks['APDS9960_gesture'] = {
 Blockly.Arduino['APDS9960_gesture'] = function(block) {
   var direction = this.getFieldValue('DIRECTION');
   var code;
-  
+
  code= ''+direction+'';
- 
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -219,7 +219,7 @@ Blockly.Arduino['APDS9960_gesture'] = function(block) {
 Blockly.Blocks['APDS9960_read_colors'] = {
   helpUrl: '',
   init: function() {
-	this.setColour("#2a93e8");
+	this.setColour("#54BCF7");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/color.png",15,15))
         .appendField(Blockly.Msg.APDS9960_name_color)
@@ -232,8 +232,8 @@ Blockly.Blocks['APDS9960_read_colors'] = {
 };
 
 Blockly.Arduino['APDS9960_read_colors'] = function(block) {
-	
-	
+
+
   var code=' apds.getColorData(&r_apds, &g_apds, &b_apds, &c_apds);\n';
 
   return code;
@@ -243,7 +243,7 @@ Blockly.Arduino['APDS9960_read_colors'] = function(block) {
 Blockly.Blocks['APDS9960_color'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/color.png",15,15))
 	    .appendField(Blockly.Msg.APDS9960_name_color)
@@ -256,11 +256,11 @@ Blockly.Blocks['APDS9960_color'] = {
 };
 
 Blockly.Arduino['APDS9960_color'] = function(block) {
-	
-	
- var color = this.getFieldValue('color'); 
- 
- 
+
+
+ var color = this.getFieldValue('color');
+
+
   if(color ==0)
    var code='r_apds';
   else  if(color ==1)
@@ -269,7 +269,7 @@ Blockly.Arduino['APDS9960_color'] = function(block) {
 		 var code='b_apds';
 		else
 	      var code='c_apds';
-	  
+
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 
 };
