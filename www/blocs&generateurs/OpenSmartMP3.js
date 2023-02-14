@@ -15,7 +15,7 @@ Blockly.Blocks['OpenSmartMp3_init_ss'] = {
 	this.setColour("#FF63BB");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/opensmart.png",43,38))
-        .appendField(Blockly.Msg.MP3OS_init)
+        .appendField(Blockly.Msg.MP3OS_name)
 		.appendField(Blockly.Msg.MP3OS_TX)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
    this.appendDummyInput()

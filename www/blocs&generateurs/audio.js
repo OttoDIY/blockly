@@ -6,10 +6,9 @@ goog.require("Blockly.Blocks");
 /////////////
 
 Blockly.Blocks["play"]={init:function(){
-    this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-    this.appendDummyInput()
-		.appendField(Blockly.Msg.play)
-        .appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
+  var card=window.localStorage.card;
+  this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+    this.appendDummyInput().appendField(Blockly.Msg.play).appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
 		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -19,14 +18,14 @@ Blockly.Blocks["play"]={init:function(){
     this.setHelpUrl(Blockly.Msg.play_helpurl)}
 };
 Blockly.Arduino["play"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
     Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode( "+value_pin+" , OUTPUT);";
     return "tone(  "+value_pin+"," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
 };
 Blockly.Python["play"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
 	Blockly.Python.imports_["pin"]="from machine import Pin";
@@ -36,9 +35,10 @@ Blockly.Python["play"]=function(block){
 };
 //////////////
 Blockly.Blocks["tone"]={init:function(){
+  var card=window.localStorage.card;
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
         this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
         this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
         this.setInputsInline(true);
@@ -47,14 +47,14 @@ Blockly.Blocks["tone"]={init:function(){
         this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
 };
 Blockly.Arduino["tone"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
     var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
     Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "tone(" + value_pin + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
 };
 Blockly.Python["tone"]=function(block){
-    var dropdown_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     var value_num=Blockly.Python.valueToCode(block, "NUM", Blockly.Python.ORDER_ATOMIC);
     var value_tps=Blockly.Python.valueToCode(block, "TPS", Blockly.Python.ORDER_ATOMIC);
 	Blockly.Python.imports_["pin"]="from machine import Pin";
@@ -64,39 +64,41 @@ Blockly.Python["tone"]=function(block){
 };
 //////////////
 Blockly.Blocks["beep"]={init:function(){
-    this.appendValueInput("PIN", "Number").appendField(Blockly.Msg.beep);
+  var card=window.localStorage.card;
+  this.appendDummyInput().appendField(Blockly.Msg.beep).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
     this.setColour("#FF63BB");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);this.setNextStatement(true, null);
     this.setHelpUrl(Blockly.Msg.HELPURL);this.setTooltip(Blockly.Msg.beep_TOOLTIP)}
 };
 Blockly.Arduino["beep"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
 };
 Blockly.Python["beep"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "tone(" + value_pin + ",440,1000);\ndelay(1000);\n"
 };
 //////////////
 Blockly.Blocks["notone"]={init:function(){
+  var card=window.localStorage.card;
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendValueInput("PIN", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT);
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
         this.setPreviousStatement(true, null);
         this.setInputsInline(true);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
 };
 Blockly.Arduino["notone"]=function(block){
-    var value_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "noTone(" + value_pin + ");\n"
 };
 Blockly.Python["notone"]=function(block){
-    var value_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+    var value_pin=block.getFieldValue("PIN");
     Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "noTone(" + value_pin + ");\n"
 };

@@ -140,7 +140,7 @@ Blockly.Blocks['otto_quad_configuration'] = {init: function() {
 	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_quad.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
-	.appendField("Front R Hip").setAlign(Blockly.ALIGN_RIGHT)
+	.appendField("front R hip").setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FRH");
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.left) .setAlign(Blockly.ALIGN_RIGHT)
@@ -152,7 +152,7 @@ Blockly.Blocks['otto_quad_configuration'] = {init: function() {
 	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FLL");
 	this.appendDummyInput()
-	.appendField("Back R Hip").setAlign(Blockly.ALIGN_RIGHT)
+	.appendField("back R hip").setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BRH");
   this.appendDummyInput()
 	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
@@ -480,7 +480,7 @@ return code;
 
 Blockly.Blocks['otto_ninja_setwalk']={init:function(){
   this.appendDummyInput()
-      .appendField("🐱‍👤 Walk mode");
+      .appendField("🐱‍👤 walk mode");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -521,7 +521,7 @@ return code;
 
 Blockly.Blocks['otto_ninja_setroll']={init:function(){
   this.appendDummyInput()
-      .appendField("🐱‍👤 Roll mode");
+      .appendField("🐱‍👤 roll mode");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -554,7 +554,7 @@ return code;
 };
 
 Blockly.Blocks['otto_ninja_walkstop']={init:function(){
-  this.appendDummyInput() .appendField("🐱‍👤 Walk 🛑 Stop");
+  this.appendDummyInput() .appendField("🐱‍👤 walk 🛑 stop");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -575,7 +575,7 @@ return code;
 };
 
 Blockly.Blocks['otto_ninja_rollstop']={init:function(){
-  this.appendDummyInput() .appendField("🐱‍👤 Roll 🛑 Stop");
+  this.appendDummyInput() .appendField("🐱‍👤 roll 🛑 stop");
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
@@ -597,7 +597,7 @@ return code;
 
 Blockly.Blocks['otto_ninja_walk']={init:function(){
   this.appendDummyInput()
-      .appendField("🐱‍👤Walk")
+      .appendField("🐱‍👤walk")
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Walk")
   this.setInputsInline(false);
   this.setPreviousStatement(true);
@@ -712,7 +712,7 @@ Blockly.Arduino['otto_ninja_walk'] = function(block) {
 
 Blockly.Blocks['otto_ninja_roll']={init:function(){
   this.appendDummyInput()
-      .appendField("🐱‍👤 Roll")
+      .appendField("🐱‍👤 roll")
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.AV, "F"], [Blockly.Msg.AR , "B"], [Blockly.Msg.right, "R"], [Blockly.Msg.left, "L"]]), "Roll")
   this.appendValueInput("SPEED", 'Number')
       .appendField("with power (1-100)%") // add Blockly message

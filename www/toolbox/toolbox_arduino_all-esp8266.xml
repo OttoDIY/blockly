@@ -8,9 +8,9 @@
 			<block type="base_setup_loop"></block>
 			<block type="base_setup"></block>
 			<block type="base_loop"></block>
+			<block type="base_define"></block>
 			<block type="base_code"></block>
 			<block type="base_code_entree"></block>
-			<block type="base_define"></block>
 		</category>
 		<category name="CAT_OTTO" colour="#32D900">
 	<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
@@ -53,7 +53,7 @@
 <block type="otto_ninja_walkstop"></block>
 <block type="otto_ninja_rollstop"></block>
 </category>
-	
+
 		<category name="CAT_OTTO_LEGS" colour="#32D900">
 		<block type="otto_configuration">
 			<field name="PIN_YL">0</field>
@@ -86,6 +86,7 @@
 			<value name="RF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 			</block>
 		<block type="otto_eeprom"></block>
+		</category>
 
 				<category name="CAT_OTTO_ARMS" colour="#32D900">
 		<block type="otto_arms_init">
@@ -128,9 +129,61 @@
 	<block type="otto_quad_hello"></block>
 	<block type="otto_quad_jump"></block>
 	<block type="otto_quad_scared"></block>
+	</category>
 </category>
-</category>
+<category name="CAT_servo" colour="#2d2dd1">
+			<block type="servo_move">
+				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
+			<block type="servo_movemicros">
+				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
+				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_read_degrees">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_detach">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_attach">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_attached">
+				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
+			</block>
+			<block type="servo_PWM">
+				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
+			</block>
 
+		</category>
+	<category name="CAT_actionneur" colour="#2d2dd1">
+
+			<block type="moteur_dc_init">
+			<value name="ENA"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
+			<value name="ENB"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
+			<value name="IN1"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value>
+			<value name="IN2"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
+			<value name="IN3"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
+			<value name="IN4"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
+			</block>
+			<block type="moteur_dc">
+			<value name="speed"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+			</block>
+			<block type="moteur_dc_stop"></block>
+		</category>
+		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
+				<block type="stepper_configuration">
+					<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
+					<field name="PIN_STEEPER1">D1</field>
+					<field name="PIN_STEEPER2">D2</field>
+					<field name="PIN_STEEPER3">D3</field>
+					<field name="PIN_STEEPER4">D4</field>
+				</block>
+				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
+				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
+			</category>
 	<category name="CAT_ARDUINO_TIME" colour="#00929f">
 		<block type="base_delay">
 			<value name="DELAY_TIME"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
@@ -435,68 +488,16 @@
 	</category>
 
 </category>
-<category name="CAT_servo" colour="#2d2dd1">
-			<block type="servo_move">
-				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-				<value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-			</block>
-			<block type="servo_movemicros">
-				<value name="DEGREE"><shadow type="math_number"><field name="NUM">1500</field></shadow></value>
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_read_degrees">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_detach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_attach">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_attached">
-				<value name="PIN"><shadow type="analog_pin">	<field name="NUM">2</field></shadow></value>
-			</block>
-			<block type="servo_PWM">
-				<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
-			</block>
 
-		</category>
-	<category name="CAT_actionneur" colour="#2d2dd1">
-
-			<block type="moteur_dc_init">
-			<value name="ENA"><shadow type="analog_pin"><field name="NUM">11</field></shadow></value>
-			<value name="ENB"><shadow type="analog_pin"><field name="NUM">5</field></shadow></value>
-			<value name="IN1"><shadow type="analog_pin"><field name="NUM">A0</field></shadow></value>
-			<value name="IN2"><shadow type="analog_pin"><field name="NUM">A1</field></shadow></value>
-			<value name="IN3"><shadow type="analog_pin"><field name="NUM">A2</field></shadow></value>
-			<value name="IN4"><shadow type="analog_pin"><field name="NUM">A3</field></shadow></value>
-			</block>
-			<block type="moteur_dc">
-			<value name="speed"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-			</block>
-			<block type="moteur_dc_stop"></block>
-		</category>
-		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
-				<block type="stepper_configuration">
-					<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
-					<field name="PIN_STEEPER1">D1</field>
-					<field name="PIN_STEEPER2">D2</field>
-					<field name="PIN_STEEPER3">D3</field>
-					<field name="PIN_STEEPER4">D4</field>
-				</block>
-				<block type="stepper_speed"><value name="STEPPER_SPEED"><shadow type="math_number"><field name="NUM">20</field></shadow></value></block>
-				<block type="stepper_steps"><value name="STEPPER_STEP"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>  </block>
-			</category>
-
+<category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_LED" colour="#4b009f">
 		<block type="blink"></block>
 		<block type="buildin_led"></block>
 		<block type="led_digital"></block>
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
-
+</category>
 		<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
-				<block type="matrix_init">
+				<block type="mouth_init">
 						<field name="PIN_CLK">D1</field>
        					<field name="PIN_CS">D2</field>
        					<field name="PIN_DIN">D3</field>
@@ -546,7 +547,6 @@
 			<value name="Row"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			<value name="Column"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 			</block>
-
 			<block type="MAX7219_ledmatrix_draw"></block>
 			<block type="MAX7219_animation"></block>
 		</category>
@@ -592,7 +592,6 @@
 		   		<field name="PIN_SDA">A5</field>
 			</block>
 		</category>
-
 
 			<category name="CAT_LEDRGB" colour="#4b009f">
 		<block type="rgb_init">
@@ -650,19 +649,7 @@
 		<value name="brightness"><shadow type="math_number"><field name="NUM">127</field></shadow></value>
 		</block>
 		<block type="MatrixLED_WS2812B_CLEAN"></block>
-	</category>
-		<category name="CAT_BARGRAPH" colour="#4b009f">
-			<block type="bargraphe">
-			<field name="clk">D0</field>
-       		<field name="data">D1</field>
-			</block>
-			<block type="bargraphe_allume">
-			<value name="del"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
-			</block>
-		</category>
 </category>
-
-<category name="CAT_Displays"  colour="#4b009f">
 	<category name="CAT_OLED_U8G" colour="#4b009f">
 		<block type="OLED_initU"></block>
 		<block type="OLED_eyes"></block>
@@ -823,6 +810,15 @@
                 <block type="lcdi2c_scrollDisplay"></block>
 				<block type="lcdi2c_showCursor"></block>
 				<block type="lcdi2c_blinkCursor"></block>
+	</category>
+	<category name="CAT_BARGRAPH" colour="#4b009f">
+		<block type="bargraphe">
+		<field name="clk">D0</field>
+				<field name="data">D1</field>
+		</block>
+		<block type="bargraphe_allume">
+		<value name="del"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+		</block>
 	</category>
 </category>
 

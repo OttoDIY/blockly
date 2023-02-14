@@ -9,7 +9,7 @@ Blockly.Blocks['OLED_init'] = {
   init: function() {
   this.appendDummyInput()
      .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("OLED 0.96'' Pins I²C")
+     .appendField("OLED 0.96'' I²C")
      this.appendDummyInput()
      .setAlign(Blockly.ALIGN_RIGHT)
      .appendField(Blockly.Msg.OLED_height)
@@ -42,7 +42,7 @@ Blockly.Blocks['OLED_init2'] = {
   init: function() {
   this.appendDummyInput()
      .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("OLED 1.3'' Pins I²C")
+     .appendField("OLED 1.3'' I²C")
      this.appendDummyInput()
      .setAlign(Blockly.ALIGN_RIGHT)
      .appendField(new Blockly.FieldDropdown([["0x3C", "0x3C"], ["0x3D", "0x3D"], ["0x7A", "0x7A"], ["0x7B", "0x7B"]]), "address");
@@ -72,7 +72,7 @@ Blockly.Blocks['OLED_initU'] = {
   init: function() {
   this.appendDummyInput()
      .appendField(new Blockly.FieldImage('media/oled.png', 33, 33, "*"))
-     .appendField("OLED 1.3'' Pins I²C")
+     .appendField("OLED 1.3'' I²C")
     this.setInputsInline(true);
 	 this.setPreviousStatement(true);
 	 this.setNextStatement(true);

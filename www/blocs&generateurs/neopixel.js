@@ -35,7 +35,6 @@ Blockly.Python["pixel_init"]=function(block){
     return ""
 };
 
-
 //////////////
 Blockly.Blocks["pixel_setcolor"]={init:function(){
 	this.appendValueInput("pin", "Number").appendField(Blockly.Msg.pixel6);
@@ -166,42 +165,21 @@ Blockly.Arduino["pixel_setbrightness"]=function(block){
 };
 Blockly.Python["pixel_setbrightness"]=function(){return""};
 
-
-Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
-      this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
-      this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
-      this.setInputsInline(true);
-      this.setColour("#B655F5");
-      this.setTooltip('');
-      this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
-    }
-  };
-  Blockly.Arduino.MatrixLED_WS2812B_init = function() {
-    var pin_ledrgb = Blockly.Arduino.valueToCode(this, 'Pin_Matrix_init', Blockly.Arduino.ORDER_ATOMIC);
-    var numpixels = 64;
-    Blockly.Arduino.includes_['includes_Matrix_ledRGB_WS2812B'] = '#include <Adafruit_NeoPixel.h>';
-    Blockly.Arduino.definitions_['define_Matrix_ledRGB_WS2812B NeoMatrix'] = 'Adafruit_NeoPixel NeoMatrix = Adafruit_NeoPixel(' + numpixels + ', '+ pin_ledrgb +', NEO_GRB + NEO_KHZ800);';
-
-    Blockly.Arduino.setups_['setup_Matrix_ledRGB_WS2812B NeoMatrix '] = 'pinMode('+pin_ledrgb+', OUTPUT);\n'
-    + 'NeoMatrix.begin();';
-    return '';
-  };
-
   Blockly.Blocks["MatrixLED_WS2812B_init_2"] = {  init: function() {
+    var card=window.localStorage.card;
       this.appendDummyInput()
       .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
-      this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+      .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
       this.setInputsInline(true);
 	  this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour("#B655F5");
-      this.setTooltip('');
+      this.setTooltip(Blockly.Msg.pixel1_tooltip);
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     }
   };
   Blockly.Arduino.MatrixLED_WS2812B_init_2 = function() {
-    var pin_ledrgb = Blockly.Arduino.valueToCode(this, 'Pin_Matrix_init', Blockly.Arduino.ORDER_ATOMIC);
+    var pin_ledrgb = this.getFieldValue('pin');
     var numpixels = 64;
     Blockly.Arduino.includes_['includes_Matrix_ledRGB_WS2812B'] = '#include <Adafruit_NeoPixel.h>';
     Blockly.Arduino.definitions_['define_Matrix_ledRGB_WS2812B NeoMatrix'] = 'Adafruit_NeoPixel NeoMatrix = Adafruit_NeoPixel(' + numpixels + ', '+ pin_ledrgb +', NEO_GRB + NEO_KHZ800);';
@@ -210,7 +188,6 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
     + 'NeoMatrix.begin();';
     return '';
   };
-
 
   Blockly.Blocks["MatrixLED_WS2812B_setPixelColor"] = { init: function() {
       this.appendDummyInput() .appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice)
