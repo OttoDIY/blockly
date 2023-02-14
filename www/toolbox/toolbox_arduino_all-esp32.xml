@@ -4,12 +4,14 @@
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
 
-	<category name="CAT_ARDUINO" colour="#2d2d64">
-		<block type="base_define"></block>
-		<block type="base_setup_loop"></block>
-		<block type="base_code"></block>
-		<block type="base_code_entree"></block>
-	</category>
+		<category name="CAT_ARDUINO" colour="#2d2d64">
+			<block type="base_setup_loop"></block>
+			<block type="base_setup"></block>
+			<block type="base_loop"></block>
+			<block type="base_code"></block>
+			<block type="base_code_entree"></block>
+			<block type="base_define"></block>
+		</category>
 
 	<category name="CAT_OTTO" colour="#32D900">
 		<block type="otto_configuration">
@@ -436,9 +438,9 @@
 
 	<category name="CAT_LED" colour="#4b009f">
 		<block type="blink"></block>
-		<block type="inout_buildin_led"></block>
-		<block type="digital_write0">	</block>
-<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
+		<block type="buildin_led"></block>
+		<block type="led_digital"></block>
+		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 
 	<category name="CAT_LEDRGB" colour="#4b009f">
 		<block type="rgb_init">
@@ -551,7 +553,7 @@
 				<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
 				<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 			</block>
-			<block type="oeyesl">
+			<block type="eyesl">
 				<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 				<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 				<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>

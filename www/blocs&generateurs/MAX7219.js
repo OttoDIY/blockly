@@ -5,7 +5,7 @@ goog.require('Blockly.Blocks');
 
 // Matrix 8x8 Max7219 dependant on Otto main Libraries
 
-Blockly.Blocks['otto9_matrix_init'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
+Blockly.Blocks['mouth_init'] = { helpUrl: 'https://playground.arduino.cc/Main/LedControl',init: function() {
   var card=window.localStorage.card;
   this.setColour("#B655F5");
 this.appendDummyInput() .appendField(new Blockly.FieldImage('media/matrix.png',33,33)) .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.Msg.OTTO_HOME_TEXT )
@@ -18,7 +18,7 @@ this.appendDummyInput()	.appendField(Blockly.Msg.ST7735_Rotate).appendField(new 
   this.setNextStatement(true, null);
   this.setTooltip('Init the library Aand define the pins to use the led matrix');}
 };
-Blockly.Arduino['otto9_matrix_init'] = function(block) {
+Blockly.Arduino['mouth_init'] = function(block) {
   var pin_clk = this.getFieldValue('PIN_CLK');
   var pin_cs = this.getFieldValue('PIN_CS');
   var pin_dat = this.getFieldValue('PIN_DIN');
@@ -37,7 +37,7 @@ Blockly.Arduino['otto9_matrix_init'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['otto9_matrix'] = { init: function() {
+Blockly.Blocks['mouth_matrix5x6'] = { init: function() {
     this.appendDummyInput() .appendField('  ') .appendField('1') .appendField('  2').appendField('  3') .appendField(' 4') .appendField(' 5') .appendField('  6')
    Blockly.FieldCheckbox.CHECK_CHAR= '🔴'
     this.appendDummyInput().appendField('1 ')
@@ -83,7 +83,7 @@ Blockly.Blocks['otto9_matrix'] = { init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_matrix'] = function(block) {
+Blockly.Arduino['mouth_matrix5x6'] = function(block) {
   var code = 'matrix = 0b';
   for (var i=0; i<30; i++) {
   if (this.getFieldValue('otto9_matrix_pixel' + i) == 'TRUE')
@@ -95,7 +95,7 @@ Blockly.Arduino['otto9_matrix'] = function(block) {
   return code;
 };
 
-Blockly.Python['otto9_matrix'] = function(block) {
+Blockly.Python['mouth_matrix5x6'] = function(block) {
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
@@ -109,7 +109,7 @@ Blockly.Python['otto9_matrix'] = function(block) {
     return code;
 };
 
-Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
+Blockly.Blocks["mouth_matrix8x8"] = {  init: function() {
   this.appendDummyInput().appendField('  ').appendField(' 0').appendField(' 1').appendField(' 2').appendField('  3').appendField('  4').appendField(' 5').appendField(' 6').appendField(' 7');
   Blockly.FieldCheckbox.CHECK_CHAR= '🔴'
   this.appendDummyInput().appendField('0 ')
@@ -192,7 +192,7 @@ Blockly.Blocks["otto9_matrix8x8"] = {  init: function() {
  this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
 },
 };
-Blockly.Arduino.otto9_matrix8x8 = function() {
+Blockly.Arduino['mouth_matrix8x8'] = function(block) {
 var code = '';
 for (var i=0; i<64; i++) {
 
@@ -211,7 +211,7 @@ for (var i=0; i<8; i++) {if (this.getFieldValue('eyes_pixel' + i) == 'TRUE')row 
 return code;
 };
 
-	Blockly.Python['otto9_matrix8x8'] = function() {
+	Blockly.Python['mouth_matrix8x8'] = function() {
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
     Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
@@ -229,7 +229,7 @@ return code;
 };
 
 
-Blockly.Blocks['otto9_mouth'] = {  init: function() {
+Blockly.Blocks['mouth_face'] = {  init: function() {
     this.appendDummyInput()  .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOUTH_CHOICE), "otto9_mouth_choice");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -239,13 +239,13 @@ Blockly.Blocks['otto9_mouth'] = {  init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_mouth'] = function(block) {
+Blockly.Arduino['mouth_face'] = function(block) {
   var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
   var code = 'Otto.putMouth(' + dropdown_otto9_mouth_choice + ');\n';
   return code;
 };
 
-	Blockly.Python['otto9_mouth'] = function(block) {
+	Blockly.Python['mouth_face'] = function(block) {
     var dropdown_otto9_mouth_choice = block.getFieldValue('otto9_mouth_choice');
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
@@ -255,7 +255,7 @@ Blockly.Arduino['otto9_mouth'] = function(block) {
     return code;
 };
 
-Blockly.Blocks['otto9_mouth#']={ init:function(){
+Blockly.Blocks['mouth#']={ init:function(){
   this.appendDummyInput()
   this.appendValueInput("mouth") .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT);
   this.setInputsInline(true);
@@ -267,7 +267,7 @@ Blockly.Blocks['otto9_mouth#']={ init:function(){
 }
 };
 
-Blockly.Arduino['otto9_mouth#'] = function(block) {
+Blockly.Arduino['mouth#'] = function(block) {
   var valuemouth = Blockly.Arduino.valueToCode(block, 'mouth', Blockly.Arduino.ORDER_ATOMIC);
   var code = 'itoa('+valuemouth+', data, 10);// convert integer into a string so we can display this on the matrix\n'
   + 'Otto.clearMouth();\n'
@@ -275,7 +275,7 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
   + 'delay(50);';
   return code;
 };
-	Blockly.Python['otto9_mouth#'] = function(block) {
+	Blockly.Python['mouth#'] = function(block) {
     var valuemouth = Blockly.Python.valueToCode(block, 'mouth', Blockly.Python.ORDER_ATOMIC);
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
@@ -287,7 +287,7 @@ Blockly.Arduino['otto9_mouth#'] = function(block) {
     return code;
 };
 
-Blockly.Blocks['otto9_matrixp']={ init:function(){
+Blockly.Blocks['mouthp']={ init:function(){
   Blockly.FieldCheckbox.CHECK_CHAR= '✅'
   this.appendDummyInput() .appendField("👄 . X");
   this.appendValueInput("X") .setCheck("Number");
@@ -301,7 +301,7 @@ Blockly.Blocks['otto9_matrixp']={ init:function(){
   this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);}
 };
 
-Blockly.Arduino['otto9_matrixp'] = function(block) {
+Blockly.Arduino['mouthp'] = function(block) {
   var valuex = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_ATOMIC);
   var valuey = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_ATOMIC);
   var draw = ''
@@ -311,7 +311,7 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
   return code;
 };
 
-	Blockly.Python['otto9_matrixp'] = function(block) {
+	Blockly.Python['mouthp'] = function(block) {
     var valuex = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_ATOMIC);
     var valuey = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
     Blockly.Python.definitions_['import_otto9']='import otto9';
@@ -323,7 +323,7 @@ Blockly.Arduino['otto9_matrixp'] = function(block) {
 };
 
 
-Blockly.Blocks['otto9_matrix_text'] = { init: function() {
+Blockly.Blocks['mouth_text'] = { init: function() {
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_MATRIXTEXT_TEXT).appendField(new Blockly.FieldTextInput('I AM OTTO'), 'input');
     this.setInputsInline(true);
     this.setPreviousStatement(true);
@@ -333,13 +333,13 @@ Blockly.Blocks['otto9_matrix_text'] = { init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_matrix_text'] = function(block) {
+Blockly.Arduino['mouth_text'] = function(block) {
   var text_input = block.getFieldValue('input');
   var code = 'Otto.writeText ( '+ '"' + text_input +'"' +',80); // limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.9 characters \n';
   return code;
 };
 
-	Blockly.Python['otto9_matrix_text'] = function(block) {
+	Blockly.Python['mouth_text'] = function(block) {
     var text_input = block.getFieldValue('input');
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
@@ -350,7 +350,7 @@ Blockly.Arduino['otto9_matrix_text'] = function(block) {
     return code;
 };
 
-Blockly.Blocks["otto9_matrix_brightness"]={init:function(){
+Blockly.Blocks["mouth_brightness"]={init:function(){
     this.appendValueInput("brightness").setCheck("Number") .appendField("👄 "+Blockly.Msg.OTTO9_MOUTH_TEXT+" "+Blockly.LKL_VS2_BRIGHTNESS );
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -359,12 +359,12 @@ Blockly.Blocks["otto9_matrix_brightness"]={init:function(){
     this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
     this.setHelpUrl('https://xantorohara.github.io/led-matrix-editor/')}
 };
-Blockly.Arduino["otto9_matrix_brightness"]=function(block){
+Blockly.Arduino["mouth_brightness"]=function(block){
 	var brightness=Blockly.Arduino.valueToCode(block, "brightness");
     return "Otto.matrixIntensity(" + brightness + ");//the brightness of the LED matrix use values from 0 to 15 only\n"
 };
 
-	Blockly.Python["otto9_matrix_brightness"]=function(block){
+	Blockly.Python["mouth_brightness"]=function(block){
     var brightness=Blockly.Python.valueToCode(block, "brightness");
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
@@ -372,7 +372,7 @@ Blockly.Arduino["otto9_matrix_brightness"]=function(block){
     Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
     return "Otto.matrixIntensity(" + brightness + ") #the brightness of the display. (0 to 15)\n"
 };
-Blockly.Blocks['otto9_clear'] = { init: function() {
+Blockly.Blocks['mouth_clear'] = { init: function() {
     this.appendDummyInput() .appendField(Blockly.Msg.OTTO9_CLEAR_TEXT);
     this.setInputsInline(false);
     this.setPreviousStatement(true);
@@ -382,12 +382,12 @@ Blockly.Blocks['otto9_clear'] = { init: function() {
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
 };
-Blockly.Arduino['otto9_clear'] = function(block) {
+Blockly.Arduino['mouth_clear'] = function(block) {
   var code = 'Otto.clearMouth();\n';
   return code;
 };
 
-	Blockly.Python['otto9_clear'] = function(block) {
+	Blockly.Python['mouth_clear'] = function(block) {
     Blockly.Python.definitions_['import_otto9']='import otto9';
     Blockly.Python.definitions_['import_mouths']='import mouths';
     Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';

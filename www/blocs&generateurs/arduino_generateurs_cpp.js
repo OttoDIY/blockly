@@ -204,6 +204,15 @@ Blockly.Arduino["base_setup_loop"]=function(block){
     Blockly.Arduino.setups_[setup_key]=code;
     return [loop, Blockly.Arduino.ORDER_ATOMIC]
 };
+Blockly.Arduino["base_setup"]=function(block){
+    var branch=Blockly.Arduino.statementToCode(block, "DO");
+
+    if (Blockly.Arduino.INFINITE_LOOP_TRAP) branch=Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, "'" + block.id + "'") + branch;
+    var code=branch;
+    var setup_key=Blockly.Arduino.variableDB_.getDistinctName("base_setup", Blockly.Variables.NAME_TYPE);
+    Blockly.Arduino.setups_[setup_key]=code;
+    return ""
+};
 Blockly.Arduino["base_loop"]=function(block){
     function statementToCodeNoTab(block, name) {
         var targetBlock=block.getInputTargetBlock(name);
@@ -370,10 +379,10 @@ Blockly.Arduino["inout_analog_write"]=function(block){
 Blockly.Arduino["inout_analog_write_esp32"]=function(block){
     var dropdown_pin=block.getFieldValue("broche");
     var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
-		
-    Blockly.Arduino.setups_["setup_pwm_esp32_"+ dropdown_pin]="ledcSetup(7,5000,8);\nledcAttachPin("+dropdown_pin+",7);\n"; 
-  
-	var code="ledcWrite(7," + value_num + ");\n"; 
+
+    Blockly.Arduino.setups_["setup_pwm_esp32_"+ dropdown_pin]="ledcSetup(7,5000,8);\nledcAttachPin("+dropdown_pin+",7);\n";
+
+	var code="ledcWrite(7," + value_num + ");\n";
     return code
 };
 
@@ -417,8 +426,8 @@ Blockly.Arduino['eeprom_write'] = function(block) {
 Blockly.Arduino['eeprom_read'] = function(block) {
 	var adresse = Blockly.Arduino.valueToCode(block, 'adr', Blockly.Arduino.ORDER_ATOMIC);
 	Blockly.Arduino.includes_["eeprom"]='#include <EEPROM.h>';
-	
+
 	var code='EEPROM.read('+adresse+')';
-	
+
 	return [code, Blockly.Arduino.ORDER_ATOMIC]
 };

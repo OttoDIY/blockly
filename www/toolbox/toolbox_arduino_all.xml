@@ -2,16 +2,19 @@
 <toolbox>
 	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason,CAT_servo,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_OTTO_NINJA,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_LED,CAT_Displays,CAT_AUDIO,CAT_com,CAT_KEYBOARD,CAT_MUVISION,CAT_STOCKAGE</parametre>
 
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
+		<block type="base_setup"></block>
+		<block type="base_loop"></block>
 		<block type="base_code"></block>
 		<block type="base_code_entree"></block>
-		<!--<block type="base_define"></block> -->
+		<block type="base_define"></block>
 	</category>
 
 	<category name="CAT_OTTO" colour="#32D900">
+			<category name="CAT_OTTO_LEGS" colour="#32D900">
 		<block type="otto_configuration">
 			<field name="PIN_YL">2</field>
 			<field name="PIN_YR">3</field>
@@ -24,7 +27,7 @@
 		<block type="otto_dance"></block>
 		<block type="otto_do"></block>
 		<block type="otto_sound"></block>
-			<!--	<block type="otto_tone"></block>
+		<block type="otto_tone"></block>
 			<block type="otto_tonehz">
 				<value name="Hz1"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
 				<value name="duration"><shadow type="math_number">	<field name="NUM">261</field>	</shadow></value>
@@ -37,7 +40,7 @@
 				<value name="duration"><shadow type="math_number">	<field name="NUM">18</field>	</shadow></value>
 				<value name="silent"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 						<block type="otto9_smooth"></block>
-			</block> -->
+			</block>
 		<block type="otto_gesture"></block>
 		<block type="otto9_app"></block>
 		<block type="otto_movelegs">
@@ -58,7 +61,7 @@
 			<value name="RF"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 		</block>
 		<block type="otto_eeprom"></block>
-
+	</category>
 		<category name="CAT_OTTO_ARMS" colour="#32D900">
 		<block type="otto_arms_init">
 			<field name="PIN_AL">6</field>
@@ -121,7 +124,7 @@
 			<block type="escornabot_whiteRight"></block>
 			<block type="escornabot_app"></block>
 	</category>
-	</category>
+
 	<category name="CAT_OTTO_NINJA" colour="#0A0A0A">
 <block type="otto_ninja_init">
 	<field name="PIN_YL">A1</field>
@@ -175,38 +178,21 @@
 		<block type="inout_pulsein"><value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
 		</block>
 	</category>
-
+	</category>
 	<category name="CAT_ARDUINO_IN" colour="#00929f">
 		<block type="inout_digital_write">
 			<field name="PIN">10</field>
 			<value name="STAT"><shadow type="inout_onoff">	<field name="NUM">1</field>	</shadow></value>
 		</block>
-		<block type="inout_digital_write2">
-			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
-			<value name="STAT"><shadow type="math_number">	<field name="NUM">1</field>	</shadow></value>
-		</block>
 		<block type="inout_digital_read">
 			<field name="PIN">10</field>
-		</block>
-		<block type="inout_digital_read2">
-			<value name="PIN"><shadow type='analog_pin'>	<field name="NUM">10</field>	</shadow></value>
 		</block>
 		<block type="inout_analog_write">
 			<field name="pin">3</field>
 			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
 		</block>
-		<block type="inout_analog_write2">
-			<value name="pin"><shadow type="math_number">	<field name="NUM">3</field>	</shadow></value>
-			<value name="NUM"><shadow type="math_number">	<field name="NUM">255</field>	</shadow></value>
-		</block>
 		<block type="inout_analog_read"></block>
-		<block type="inout_analog_read2">
-			<value name="pin"><shadow type='analog_pin'>	<field name="NUM">A0</field>	</shadow></value>
-		</block>
 		<block type="toggle"></block>
-		<block type="toggle2">
-			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">10</field>	</shadow></value>
-		</block>
 		<block type="inout_attachInterrupt"></block>
 		<block type="inout_detachInterrupt"></block>
 		<block type="mrtduino_pin"></block>
@@ -551,36 +537,31 @@
 
 	<category name="CAT_LED" colour="#4b009f">
 		<block type="blink"></block>
-		<block type="inout_buildin_led"></block>
-		<block type="digital_write0"></block>
-		<!-- <block type="digital_write">	<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	>-->
-		<block type="digital_write2">
-		<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value>
-		<value name="STAT"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
-		</block>
+		<block type="buildin_led"></block>
+		<block type="led_digital"></block>
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 
 		<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
-				<block type="otto9_matrix_init">
+				<block type="matrix_init">
 						<field name="PIN_CLK">A1</field>
        					<field name="PIN_CS">A2</field>
        					<field name="PIN_DIN">A3</field>
 			</block>
-			<block type="otto9_mouth"></block>
-			<block type="otto9_clear"></block>
-			<block type="otto9_matrix_brightness">
+			<block type="mouth_face"></block>
+			<block type="mouth_clear"></block>
+			<block type="mouth_brightness">
 				<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
 			</block>
-			<block type="otto9_matrix_text"></block>
-			<block type="otto9_mouth#">
+			<block type="mouth_text"></block>
+			<block type="mouth#">
 				<value name="mouth"><shadow type="math_number">	<field name="NUM">10</field></shadow></value>
 			</block>
-			<block type="otto9_matrix"></block>
-			<block type="otto9_matrixp">
+			<block type="mouth_matrix5x6"></block>
+			<block type="mouthp">
 				<value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 				<value name="Y"><shadow type="math_number">	<field name="NUM">0</field>	</shadow>	</value>
 			</block>
-			<block type="otto9_matrix8x8"></block>
+			<block type="mouth_matrix8x8"></block>
 		</category>
 		<category name="CAT_MAX7219" colour="#4b009f">
 
@@ -640,7 +621,7 @@
 							<value name="Y"><shadow type="math_number">	<field name="NUM">4</field>	</shadow></value>
 							<value name="R"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
 						</block>
-						<block type="oeyesl">
+						<block type="eyesl">
 							<value name="X1"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 							<value name="Y1"><shadow type="math_number">	<field name="NUM">0</field>	</shadow></value>
 							<value name="X2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>

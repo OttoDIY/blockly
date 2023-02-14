@@ -87,10 +87,6 @@ Blockly.Blocks["inout_analog_write_esp32"]={init:function(){
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP)}
 };
 
-
-
-
-
 Blockly.Blocks["inout_analog_write2"]={init:function(){
     this.appendValueInput("pin", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1).setCheck("Number");
     this.appendValueInput("NUM", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg._AT).setCheck("Number");
@@ -197,6 +193,24 @@ Blockly.Blocks["base_setup_loop"]={
 		var blocks = [];
 		for (var blockID in BlocklyDuino.workspace.blockDB_) {
 			if (BlocklyDuino.workspace.blockDB_[blockID].type == "base_setup_loop"||BlocklyDuino.workspace.blockDB_[blockID].type == "base_loop") {
+				blocks.push(BlocklyDuino.workspace.blockDB_[blockID]);
+			}
+		}
+		if(blocks.length>1) BlocklyDuino.workspace.undo(false)}
+};
+Blockly.Blocks["base_setup"]={
+	init:function(){
+		var prog = window.localStorage.prog;
+		if (prog == "python")  this.setNextStatement(true, null);
+        this.setColour("#2d2d64");
+        this.setHelpUrl(Blockly.Msg.HELPURL);
+        this.appendDummyInput().appendField(Blockly.Msg.init);
+        this.appendStatementInput("DO");
+        this.setTooltip(Blockly.Msg.def_tooltip)},
+	onchange:function(){
+		var blocks = [];
+		for (var blockID in BlocklyDuino.workspace.blockDB_) {
+			if (BlocklyDuino.workspace.blockDB_[blockID].type == "base_setup") {
 				blocks.push(BlocklyDuino.workspace.blockDB_[blockID]);
 			}
 		}
