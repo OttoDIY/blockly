@@ -440,60 +440,60 @@ Blockly.Msg.END_tooltip =
   "Stoppt das Programm, danach platzierte Blöcke werden ignoriert";
 Blockly.Msg.code_tooltip =
   "Schreibe eine Anweisung, die nicht als Block verfügbar ist";
-//matrix
-Blockly.Msg.matriceLC = "put the LED, line";
-Blockly.Msg.matrice_create_aff = "Create block 'display symbol %1'";
-Blockly.Msg.matrice_create_symbole = "Create the block 'set the symbol %1'";
-Blockly.Msg.matrice = "matrix";
+//!matrix
+Blockly.Msg.matriceLC = "setze LED, Zeile";
+Blockly.Msg.matrice_create_aff = "Erstelle den Block 'zeige Symbol %1'";
+Blockly.Msg.matrice_create_symbole = "Erstelle den Block 'setze das Symbol %1'";
+Blockly.Msg.matrice = "Matrix";
 Blockly.Msg.matrice8x8_tooltip =
-  "Initialisation of the matrix to 64 LEDs, it is necessary to indicate the pins of the arduino to which will be connected DIN, CLK, CS";
-Blockly.Msg.matrice8x8_symbole = "define the symbol";
+  "Initialisierung der Matrix mit 64 LEDs, die Pins für DIN, CLK, CS sind notwendig";
+Blockly.Msg.matrice8x8_symbole = "definiere das Symbol";
 Blockly.Msg.matrice8x8_symbole_tooltip =
-  "definition of a symbol for the matrix: \n 0 turn off an LED \n 1 turn on an LED";
-Blockly.Msg.matrice8x8_efface = "erase the matrix";
-Blockly.Msg.matrice8x8_aff = "display the symbol";
+  "Definition eines Symbols für die Matrix: \n 0 schalte LED aus \n 1 schalte LED an";
+Blockly.Msg.matrice8x8_efface = "lösche die Matrix";
+Blockly.Msg.matrice8x8_aff = "zeige das Symbol";
 Blockly.Msg.matrice8x8_binaire_tooltip =
-  "1 turns on an LED of the matrix and 0 turns it off";
+  "1 schaltet eine LED der Matrix an und 0 schaltet eine LED aus";
 Blockly.Msg.matrice8x8_del_tooltip =
-  "Turns on (off) an LED in the array indicating its coordinates \nCaution dialing starts at 0";
+  "Schaltet eine LED im Array anhand der Koordinaten ein (aus) \nVorsicht: Wahl beginnt mit 0";
 Blockly.Msg.matrice8x8_aff_tooltip =
-  "Display the symbol that has been previously defined";
-Blockly.Msg.matrice8x8_efface_tooltip = "Turn off all LEDs in the matrix";
-Blockly.Msg.matrice8x8_helpurl = "https://wikifactory.com/+OttoDIY/humanoid";
+  "Zeige das Symbol, das vorher definiert wurde";
+Blockly.Msg.matrice8x8_efface_tooltip = "Schalte alle LEDs in der Matrix aus";
+Blockly.Msg.matrice8x8_helpurl = "https://wikifactory.com/+OttoDIY/humanoid"; // do not translate
 Blockly.Msg.matrice16x8_tooltip =
-  "Initialization of the array to 128 LEDs. \nMatrix <-> Arduino \nSDA <--------> A4 \nSCL <--------> A5";
-Blockly.Msg.matrice16x8_symbole = "define the symbol";
+  "Initialisierung der Matrix mit 128 LEDs. \nMatrix <-> Arduino \nSDA <--------> A4 \nSCL <--------> A5";
+Blockly.Msg.matrice16x8_symbole = "definiere das Symbol";
 Blockly.Msg.matrice16x8_symbole_tooltip =
-  "definition of a symbol for the matrix: \n 0 turns off an LED \n 1 turns on an LED";
-Blockly.Msg.matrice16x8_efface = "turn off the LEDs of the matrix";
-Blockly.Msg.matrice16x8_aff = "display the symbol";
+  "Definition eines Symbols für die Matrix: \n 0 schalte LED aus \n 1 schalte LED an";
+Blockly.Msg.matrice16x8_efface = "schalte die LEDs der Matrix aus";
+Blockly.Msg.matrice16x8_aff = "zeige das Symbol";
 Blockly.Msg.matrice16x8_binaire_tooltip =
-  "1 turns on an LED of the matrix and 0 turns it off";
+  "1 schaltet eine LED der Matrix ein und 0 schaltet eine LED aus";
 Blockly.Msg.matrice16x8_del_tooltip =
-  "Turns on (off) an LED in the matrix indicating its coordinates \nCaution dialing starts at 0";
+  "Schaltet eine LED im Array anhand der Koordinaten ein (aus) \nVorsicht: Wahl beginnt mit 0";
 Blockly.Msg.matrice16x8_aff_tooltip =
-  "Display the symbol that has been previously defined";
-Blockly.Msg.matrice16x8_efface_tooltip = "Turn off all LEDs in the matrix";
+  "Zeige das Symbol, das vorher definiert wurde";
+Blockly.Msg.matrice16x8_efface_tooltip = "Schalte alle LEDs in der Matrix aus";
 Blockly.Msg.matrice16x8_helpurl = "";
-//time
-Blockly.Msg.millis = "time elapsed in";
-Blockly.Msg.millis_start = "start a timekeeping in";
+//!time
+Blockly.Msg.millis = "verstrichene Zeit";
+Blockly.Msg.millis_start = "starte eine Zeitmessung in ";
 Blockly.Msg.millis_tooltip = "";
 Blockly.Msg.millis_start_tooltip = "";
 Blockly.Msg.ARDUINO_INOUT_Pulsein =
-  "returns the duration in microseconds of a UP or DOWN pulse applied to a pin.If the parameter Wert is HIGH, the block waits for the pin to go HIGH, starts then the timing, waits for the pin to go back to the LOW level and then stop the timing ";
+  "gibt die Dauer eines HIGH/LOW Signals an einem Pin in Mikrosekunden aus. Falls der Parameter Wert HIGH ist, dann wartet der Block auf HIGH am Pin und startet dann die Zeit. Wartet darauf, dass der Pin auf LOW zurückgeht und stoppt dann die Zeit.";
 Blockly.Msg.ARDUINO_BASE_DELAY = "⏲ warte";
 Blockly.Msg.ARDUINO_BASE_DELAY_TOOLTIP =
-  "Specify the wait time in seconds, milliseconds or microseconds. \nThe program does nothing else during this time";
-Blockly.Msg.millis1 = "duration in";
-Blockly.Msg.millis2 = "from the beginning";
+  "Gebe die Wartezeit in Sekunden, Millisekunden oder Mikrosekunden an. \nDas Programm macht nichts anderes während dieser Zeit";
+Blockly.Msg.millis1 = "Dauer in";
+Blockly.Msg.millis2 = "vom Beginn";
 Blockly.Msg.ARDUINO_SINCE_PROGRAM_STARTED_TOOLTIP =
-  "returns the duration in milliseconds, seconds or microseconds since the program started";
-Blockly.Msg.ARDUINO_PULSEIN = "state duration";
-Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink";
+  "gibt die aktuelle Programmlaufzeit in Mikrosekunden, Millisekunden oder Sekunden zurück";
+Blockly.Msg.ARDUINO_PULSEIN = "Zustandsdauer";
+Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink"; // do not translate
 Blockly.Msg.tempo_tooltip =
-  "This block checks if the indicated time has arrived, if it is the case then it executes the blocks placed inside .. Unlike the block 'to wait' this one is not blocking.";
-Blockly.Msg.tempo1 = "all";
+  "Dieser Block überprüft, ob die angegebene Zeit erreicht wurde. Falls das der Fall ist, dann werden die Blöcke darin ausgeführt. Anders als der Block 'warte' blockiert dieser nicht.";
+Blockly.Msg.tempo1 = "alle";
 //OLED
 Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
 Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
