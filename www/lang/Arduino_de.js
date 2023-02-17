@@ -494,121 +494,121 @@ Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink"; // do no
 Blockly.Msg.tempo_tooltip =
   "Dieser Block überprüft, ob die angegebene Zeit erreicht wurde. Falls das der Fall ist, dann werden die Blöcke darin ausgeführt. Anders als der Block 'warte' blockiert dieser nicht.";
 Blockly.Msg.tempo1 = "alle";
-//OLED
-Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C display";
-Blockly.Msg.lp2i_u8g_draw_string_Text = "text to display =";
-Blockly.Msg.lp2i_u8g_draw_string_X = "raw x (127 max) =";
-Blockly.Msg.lp2i_u8g_draw_string_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I2C display";
-Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "texts to display :";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "line 1 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "line 2 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "line 3 =";
-Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "line 4 =";
-Blockly.Msg.lp2i_u8g_print = "OLED I2C display";
-Blockly.Msg.lp2i_u8g_print_N = "Number to display =";
-Blockly.Msg.lp2i_u8g_print_X = "raw x (127 max) =";
-Blockly.Msg.lp2i_u8g_print_Y = "line y (63 max) =";
-Blockly.Msg.lp2i_u8g_4draw_print = "OLED I2C display";
-Blockly.Msg.lp2i_u8g_4draw_print_to_display = "to display :";
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "line 1 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Number 1 (at end) =";
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line2 = "line 2 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N2 = "Number 2 (at end) =";
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "line 3 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Number 3 (at end) =";
-Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "line 4 =";
-Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Number 4 (at end) =";
+//!OLED
+Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C Display";
+Blockly.Msg.lp2i_u8g_draw_string_Text = "gezeigter Text:";
+Blockly.Msg.lp2i_u8g_draw_string_X = "Spalte x (127 max) =";
+Blockly.Msg.lp2i_u8g_draw_string_Y = "Zeile y (63 max) =";
+Blockly.Msg.lp2i_u8g_draw_4strings = "OLED I2C Display";
+Blockly.Msg.lp2i_u8g_draw_4strings_texts_to_display = "gezeigter Text:";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line1 = "Zeile 1 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line2 = "Zeile 2 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line3 = "Zeile 3 =";
+Blockly.Msg.lp2i_u8g_draw_4strings_Text_line4 = "Zeile 4 =";
+Blockly.Msg.lp2i_u8g_print = "OLED I2C Display";
+Blockly.Msg.lp2i_u8g_print_N = "gezeigte Nummer:";
+Blockly.Msg.lp2i_u8g_print_X = "Spalte x (127 max) =";
+Blockly.Msg.lp2i_u8g_print_Y = "Zeile y (63 max) =";
+Blockly.Msg.lp2i_u8g_4draw_print = "OLED I2C Display";
+Blockly.Msg.lp2i_u8g_4draw_print_to_display = "anzuzeigen:";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line1 = "Zeile 1 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N1 = "Nummer 1 (am Ende) =";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line2 = "Zeile 2 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N2 = "Nummer 2 (am Ende) =";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line3 = "Zeile 3 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Nummer 3 (am Ende) =";
+Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "Zeile 4 =";
+Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Nummer 4 (am Ende) =";
 
-// LED
+//!LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "die LED auf dem Board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP =
   "Schaltet die LED auf dem Arduino board an oder aus";
-Blockly.Msg.blink = "blink the board LED";
+Blockly.Msg.blink = "Board-LED blinkt";
 Blockly.Msg.blink_tooltip = "Die Board LED blinkt 1 oder 10 mal pro Sekunde";
 Blockly.Msg.del = "die LED an Pin";
 Blockly.Msg.del_tooltip =
-  "turns on (off) the LED connected to the indicated pin";
-Blockly.Msg.bargraphe = "bargraph";
-Blockly.Msg.bargraphe_allume = "turn on LEDs to";
+  "schaltet die LED am angegebenen Pin an (aus)";
+Blockly.Msg.bargraphe = "Säule";
+Blockly.Msg.bargraphe_allume = "schalte LEDs biszu ... an";
 Blockly.Msg.bargraphe_allume_tooltip =
-  "0 lights no LEDs \n2,5 lights up the first 2 LEDs and the 3rd half turns on \n10 turns on all LEDs";
+  "0 keine LED ist an \n2,5 die ersten 2 LEDs sind voll an und die Dritte halb \n10 alle LEDs sind an";
 Blockly.Msg.bargraphe_tooltip =
-  "bargraph module composed of 10 LEDs (8 green, 1 yellow and 1 red), it is necessary to indicate the pins of the arduino on which will be connected DCKI and DI";
+  "Säulenmodulbestehend aus 10 LEDs (8 grün, 1 gelb und 1 rot), die Pinnummern für DCKI and DI werden benötigt";
 Blockly.Msg.rvb_init = "LED RGB";
 Blockly.Msg.rvb_init_tooltip =
-  "indicate the PWM pins to connect to the RGB LED";
-Blockly.Msg.rvb_set = "show color";
-Blockly.Msg.rvb_anode = "common anode";
-Blockly.Msg.rvb_cathode = "common cathode";
-Blockly.Msg.rvb_set_x = "X Led on the board.Show color";
+  "gebe die PWM Pins für die RGB LED an";
+Blockly.Msg.rvb_set = "zeige Farbe";
+Blockly.Msg.rvb_anode = "übliche Anode";
+Blockly.Msg.rvb_cathode = "übliche Kathode";
+Blockly.Msg.rvb_set_x = "X Led auf dem Board. Zeige Farbe";
 Blockly.Msg.rvb_set_tooltip =
-  "displays a color indicating a Wert for the three components (red, green, blue)";
+  "zeige eine Farbe, gebe einen Wert für die drei Komponenten (rot, grün, blau) an";
 Blockly.Msg.pixel1 = "RGB NeoPixel";
-Blockly.Msg.pixel2 = "update pixels";
-Blockly.Msg.pixel3 = "with color";
-Blockly.Msg.pixel4 = "number";
-Blockly.Msg.pixel5 = "set pixel brightness to";
-Blockly.Msg.pixel6 = "set the pixel";
+Blockly.Msg.pixel2 = "aktualisiere die Pixel";
+Blockly.Msg.pixel3 = "mit Farbe";
+Blockly.Msg.pixel4 = "Nummer";
+Blockly.Msg.pixel5 = "setze Pixelhelligkeit auf";
+Blockly.Msg.pixel6 = "setze das Pixel";
 Blockly.Msg.pixel1_tooltip =
-  "neopixel RGB module indicate the pin to be connected and the number of pixels";
-Blockly.Msg.pixel2_tooltip = "show changes made";
-Blockly.Msg.pixel5_tooltip = "adjusts pixel brightness (from 0 to 255)";
+  "Neopixel RGB Modul gebe den verwendeten Pin und die Anzahl der Pixel an";
+Blockly.Msg.pixel2_tooltip = "zeige die Änderungen";
+Blockly.Msg.pixel5_tooltip = "stellt die Pixelhelligkeit (von 0 bis 255) ein";
 Blockly.Msg.pixel3_tooltip =
-  "choose the pixel to light and its color  nCaution the numbering starts at 0";
-// output
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "put the DIGITAL pin";
+  "wähle den anzuschaltenden Pixel und seine Farbe \nVorsicht: die Nummerierung beginnt bei 0";
+//!output
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "lege den DIGITAL-Pin fest";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP =
-  "write a 0 or 1 logical state to a specific output";
-Blockly.Msg.toggle = "toggle the state of the pin";
+  "schreibe 0 oder 1 als logischen Zustand an einen ausgewählten Ausgang";
+Blockly.Msg.toggle = "schalte den Zustand des Pins um";
 Blockly.Msg.toggle_tooltip =
-  "Toggle: \n write a logical state 0 if before there was a state 1 (and vice versa) on the specified output";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "put the PWM pin";
+  "Umschalten: \n schreibe einen logischen Zustand 0, falls davor ein Zustand 1 war (und andersherum) am ausgewählten Ausgang";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "lege den PWM-Pin fest";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP =
-  "send a Wert between 0 and 255 on a specific output";
-// input
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL pin state";
+  "sende einen Wert zwischen 0 und 255 an einen ausgewählten Ausgang";
+//!input
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL-Pin Zustand";
 Blockly.Msg.in_pullup = "Pull-Up";
 Blockly.Msg.in_pullup_tooltip =
-  "returns the logical state (0 or 1) of the indicated pin \nreturns 1 (high state) by default if pull-up enabled";
+  "gibt den logischen Zustand (0 oder 1) des ausgewählten Pins zurück \ngibt normalerweise 1 (high Zustand) zurück, falls Pull-Up ist aktiviert";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP =
-  "read logical state 0 or 1 of the digital pin";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG pin Wert";
+  "lese den logischen Zustand 0 oder 1 von dem ausgewählten digitalen Pin";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG-Pin Wert";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP =
-  "returns a Wert between 0 and 1023";
-// audio
+  "gibt einen Wert zwischen 0 und 1023 zurück";
+//!audio
 Blockly.Msg.play = "spiele";
 Blockly.Msg.play_tooltip = "spiele die Note";
 Blockly.Msg.play_helpurl = "";
 Blockly.Msg.beep = "piepe an dem Pin";
-Blockly.Msg.beep_TOOLTIP = "beeps (at 440Hz for 1s) on the selected pin";
-Blockly.Msg.ARDUINO_TONE_INPUT1 = "emit a sound on the pin";
-Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Internal Buzzer";
+Blockly.Msg.beep_TOOLTIP = "piept (auf 440Hz für 1s) am ausgewählten Pin";
+Blockly.Msg.ARDUINO_TONE_INPUT1 = "gebe einen Sound an dem Pin aus";
+Blockly.Msg.ARDUINO_TONE_INPUT1_X = "🎼 Interner Summer";
 Blockly.Msg.ARDUINO_TONE_INPUT2 = "Frequenz (Hz)";
 Blockly.Msg.ARDUINO_TONE_INPUT3 = "Dauer (ms)";
 Blockly.Msg.ARDUINO_TONE_TOOLTIP =
-  "emit a sound on the selected pin, at the desired frequency and for the desired duration";
-Blockly.Msg.ARDUINO_NOTONE_INPUT = "stop the sound on the pin";
-Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stop the sound on the selected pin";
-Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Play blocking RTTTL ";
+  "gebe einen Sound an dem ausgewählten Pin aus, auf der gewünschten Frequenz und für die gewünschte Dauer";
+Blockly.Msg.ARDUINO_NOTONE_INPUT = "stoppe den Sound am Pin";
+Blockly.Msg.ARDUINO_NOTONE_TOOLTIP = "stoppe den sound an dem ausgewählten Pin";
+Blockly.Msg.ARDUINO_RTTTL_BLOCK = "Spiele RTTTL gesperrt ab";
 Blockly.Msg.lp2i_mp3_helpurl =
-  "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299";
-Blockly.Msg.lp2i_mp3_Volume = "Volume [0-48]";
+  "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299"; // do not translate
+Blockly.Msg.lp2i_mp3_Volume = "Lautstärke [0-48]";
 Blockly.Msg.lp2i_mp3_autoplay = "AutoPlay";
 Blockly.Msg.lp2i_mp3 = "MP3 player";
 Blockly.Msg.lp2i_mp3_tooltip =
-  "DFPlayer Mini mp3: \ninitialization of the module, volume and operating mode \nModule MP3 <-> Arduino \nRx (2) <------------- -> Tx (1) ";
+  "DFPlayer Mini mp3: \nInitialisierung des Moduls, der Lautstärke und der Betriebsart \nModule MP3 <-> Arduino \nRx (2) <------------- -> Tx (1) ";
 Blockly.Msg.lp2i_mp3_play = "spiele die mp3 Datei ab";
-Blockly.Msg.lp2i_mp3_play_track_tooltip = "play the specified song";
-Blockly.Msg.lp2i_mp3_play_tooltip = "plays the current song";
-Blockly.Msg.lp2i_mp3_pause = "pause mp3 file";
-Blockly.Msg.lp2i_mp3_pause_tooltip = "stop the current song";
-Blockly.Msg.lp2i_mp3_prev = "read the previous mp3 file";
-Blockly.Msg.lp2i_mp3_prev_tooltip = "play the previous track";
-Blockly.Msg.lp2i_mp3_vol = "setze das Volume auf";
+Blockly.Msg.lp2i_mp3_play_track_tooltip = "spiele das ausgewählte Lied ab";
+Blockly.Msg.lp2i_mp3_play_tooltip = "spielt das aktuelle Lied ab";
+Blockly.Msg.lp2i_mp3_pause = "pausiere mp3 Datei";
+Blockly.Msg.lp2i_mp3_pause_tooltip = "stoppe das aktuelle Lied";
+Blockly.Msg.lp2i_mp3_prev = "lese die vorherige mp3 Datei";
+Blockly.Msg.lp2i_mp3_prev_tooltip = "spiele das vorherige Lied";
+Blockly.Msg.lp2i_mp3_vol = "setze die Lautstärke auf";
 Blockly.Msg.lp2i_mp3_vol_tooltip =
-  "set the volume to the specified Wert [0-48]";
-Blockly.Msg.lp2i_mp3_next = "read the following mp3 file";
+  "setze die Lautstärke auf den ausgewählten Wert [0-48]";
+Blockly.Msg.lp2i_mp3_next = "lese die nächste mp3 Datei";
 Blockly.Msg.lp2i_mp3_next_tooltip = "spielt das nächste Lied";
 // servomotor
 Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1 = "rotiere";
