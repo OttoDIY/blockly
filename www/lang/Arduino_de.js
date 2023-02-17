@@ -610,53 +610,53 @@ Blockly.Msg.lp2i_mp3_vol_tooltip =
   "setze die Lautstärke auf den ausgewählten Wert [0-48]";
 Blockly.Msg.lp2i_mp3_next = "lese die nächste mp3 Datei";
 Blockly.Msg.lp2i_mp3_next_tooltip = "spielt das nächste Lied";
-// servomotor
+//!servomotor
 Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1 = "rotiere";
 Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE = "Grad [0°-180°]";
 Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP =
   "mögliche Rotation zwischen 0° und 180°";
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT = "Drehung";
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP =
-  "Spin the servo connected to the specified pin, at the indicated speed and in the selected direction";
-//engine
+  "Drehe den Servo am ausgewählten Pin, mit der angegebenen Geschwindigkeit und in die ausgewählte Richtung";
+//!engine
 Blockly.Msg.mot_tooltip =
-  "Shield motor controller L293D: \n activates both motors (M1 and M2) to advance or turn, the speed can be set between 0 and 90";
-Blockly.Msg.mot_stop = "stop";
+  "Shield Motorsteuerung L293D: \n aktiviert beide Motoren (M1 und M2) auf Vorlauf oder Drehung, die Geschwindigkeit kann zwischen 0 und 90 eingestellt werden";
+Blockly.Msg.mot_stop = "stoppe";
 Blockly.Msg.mot_stop_tooltip =
-  "L293D Motor Controller Shield: \nstop the two motors (M1 and M2)";
-Blockly.Msg.moteur = "activate the engine";
-Blockly.Msg.moteurstop = "stop the engine";
+  "L293D Motorsteuerung Shield: \nstoppe die zwei Motoren (M1 und M2)";
+Blockly.Msg.moteur = "aktiviert den Motor";
+Blockly.Msg.moteurstop = "stoppt den Motor";
 Blockly.Msg.moteur_tooltip =
-  "starts the DC motor connected to the specified pin, at the indicated speed \nspeed = 0 -> motor stop";
+  "startet den DC Motor am ausgewählten Pin mit der angegebenen Geschwindigkeit \nGeschwindigkeit = 0 -> Motor stoppt";
 Blockly.Msg.moteurdagu_tooltiprs040 =
-  "RS 040 board: \n activates one of the 2 outputs to drive DC motors, the speed can be set between 0 and 90";
+  "RS 040 Board: \n aktiviert einen der beiden Ausgänge einen DC Motor zu steuern, die Geschwindigkeit kann zwischen 0 und 90 eingestellt werden";
 Blockly.Msg.moteurdagu_tooltiprs040stop =
-  "RS 040 board: \nstop one of the 2 motors";
+  "RS 040 Board: \nstoppe einen der beiden Motoren";
 Blockly.Msg.moteurdagu_tooltiprs027 =
-  "RS 027 board: \n operates one of the 2 outputs to drive DC motors, the speed can be set between 0 and 90";
+  "RS 027 Board: \n betreibt einen der beiden Ausgänge einen, um einen DC Motor zu steuern, die Geschwindigkeit kann zwischen 0 und 90 eingestellt werden";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR1 = "v1 - DC Motor";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR2 = "v2 - DC Motor";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_DIRECTION = "direction";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_DIRECTION = "Richtung";
 Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_VITESSE =
   Blockly.Msg.vitesse + "[0-255]";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_AVANT = "forward";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_ARRIERE = "backward";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_STOP = "stop";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP1 = "v1 - Stepper Motor";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP2 = "v2 - stepper motor";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_CONNECT = "pin";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_PPT = "not per turn";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_RPM = "speed (RPM)";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_NB_PAS = "number of steps";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTORDC1 = "DC 1 engine";
-Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTORDC2 = "DC 2 engine";
-Blockly.Msg.m_pap = "step-by-step engine";
-Blockly.Msg.m_pap_step = "step";
-Blockly.Msg.m_pap_step1 = "move forward";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_AVANT = "vorwärts";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_ARRIERE = "rückwärts";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_STOP = "stoppe";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP1 = "v1 - Schrittmotor";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_PAP2 = "v2 - Schrittmotor";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_CONNECT = "Pin";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_PPT = "nicht pro Umdrehung";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_RPM = "Geschwindigkeit (1/min)";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTOR_NB_PAS = "Anzahl der Schritte";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTORDC1 = "DC 1 Motor";
+Blockly.Msg.ADAFRUIT_MOTORSHIELD_MOTORDC2 = "DC 2 Motor";
+Blockly.Msg.m_pap = "Schritt-für-Schritt Motor";
+Blockly.Msg.m_pap_step = "Schritt";
+Blockly.Msg.m_pap_step1 = "drehe vorwärts";
 Blockly.Msg.m_pap_tooltip =
-  "Initialization of a stepping motor. \nIndicate number of steps, speed in rpm and pins to connect";
+  "Initialisierung eines Schrittmotors. \nGebe die Anzahl der Schritte, die Geschwindigkeit in 1/min und die Anschlusspins an";
 Blockly.Msg.m_pap_step_tooltip =
-  "activates the stepping motor by the number of steps indicated, the following instruction will only be executed once the rotation of the motor is done";
+  "aktiviert den Schrittmotor mit der angegebenen Anzahl der Schritte, die folgende Anweisung wird erst mit abgeschlossener Drehung des Motors ausgeführt";
 // serial
 Blockly.Msg.Serial_Init = "serial port on";
 Blockly.Msg.Serial_Init_tooltip =
