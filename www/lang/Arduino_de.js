@@ -657,37 +657,35 @@ Blockly.Msg.m_pap_tooltip =
   "Initialisierung eines Schrittmotors. \nGebe die Anzahl der Schritte, die Geschwindigkeit in 1/min und die Anschlusspins an";
 Blockly.Msg.m_pap_step_tooltip =
   "aktiviert den Schrittmotor mit der angegebenen Anzahl der Schritte, die folgende Anweisung wird erst mit abgeschlossener Drehung des Motors ausgeführt";
-// serial
-Blockly.Msg.Serial_Init = "serial port on";
+//!serial
+Blockly.Msg.Serial_Init = "serielle Schnittstelle an";
 Blockly.Msg.Serial_Init_tooltip =
-  "Set the communication rate in characters per second for serial communication";
-Blockly.Msg.Serial_Write = "send to serial port";
-Blockly.Msg.Serial_write_tooltip = "Send data to the serial port";
-Blockly.Msg.Serial_read = "data read on the serial port";
+  "Setze die Kommunikationsrate in Zeichen pro Sekunde für die serielle Kommunikation";
+Blockly.Msg.Serial_Write = "sende an serielle Schnittstelle";
+Blockly.Msg.Serial_write_tooltip = "sendet Daten an serielle Schnittstelle";
+Blockly.Msg.Serial_read = "lese Daten von der seriellen Schnittstelle";
 Blockly.Msg.Serial_read_tooltip =
-  "returns the first available data byte available in the serial port, or -1 if no data is available";
-Blockly.Msg.Serial_available = "amount of data on the serial port";
+  "gibt den ersten verfügbaren Datenbyte von der seriellen Schnittstelle zurück, oder -1, wenn keine Daten verfügbar sind";
+Blockly.Msg.Serial_available = "Datenmenge an der seriellen Schnittstelle";
 Blockly.Msg.Serial_available_tooltip =
-  "returns the number of bytes available in the serial port queue, or 0 if nothing is available";
-Blockly.Msg.Serial_saut = "a line break";
-Blockly.Msg.Serial_saut_tooltip = "returns a line break on the serial monitor";
-Blockly.Msg.Serial_space = "a separator";
-Blockly.Msg.Serial_space_tooltip = "return a space on the serial monitor";
-Blockly.Msg.repl_read = "user entered command";
-// software serial
+  "gibt die Anzahl der verfügbaren Bytes in der Warteschlange des seriellen Anschlusses zurück, oder 0, wenn nichts verfügbar ist";
+Blockly.Msg.Serial_saut = "ein Zeilenumbruch";
+Blockly.Msg.Serial_saut_tooltip = "gibt einen Zeilenumbruch auf dem seriellen Monitor aus";
+Blockly.Msg.Serial_space = "ein Trennzeichen";
+Blockly.Msg.Serial_space_tooltip = "gibt ein Leerzeichen auf dem seriellen Monitor aus";
+Blockly.Msg.repl_read = "vom Benutzer eingegebener Befehl";
+//!software serial
 //Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip =
-  "Creating a new communication port using the specified pins and speed";
-Blockly.Msg.SSERIAL_Read = "data read on the software port";
+  "Erstellen eines neuen Kommunikationsports mit den angegebenen Pins und der angegebenen Geschwindigkeit";
+Blockly.Msg.SSERIAL_Read = "Daten, die an der Softwareschnittstelle gelesen werden";
 Blockly.Msg.SSERIAL_Read_tooltip =
-  "returns the first byte of incoming data available in the software port, or -1 if no data is available";
-Blockly.Msg.SSERIAL_Write = "send to the software port";
-Blockly.Msg.SSERIAL_Write_tooltip = "Send data to the software port";
-Blockly.Msg.SSERIAL_Read_tooltip =
-  "returns the first byte of incoming data available in the software port, or -1 if no data is available";
-Blockly.Msg.SSERIAL_Available = "amount of data on the software port";
+  "gibt den ersten verfügbaren Datenbyte von der Softwareschnittstelle zurück, oder -1, wenn keine Daten verfügbar sind";
+Blockly.Msg.SSERIAL_Write = "sende an die Softwareschnittstelle";
+Blockly.Msg.SSERIAL_Write_tooltip = "sendet Daten an die Softwareschnittstelle";
+Blockly.Msg.SSERIAL_Available = "Datenmenge an der Softwareschnittstelle";
 Blockly.Msg.SSERIAL_Available_tooltip =
-  "returns the number of available bytes in the software port queue, or 0 if nothing is available";
+  "gibt die Anzahl der verfügbaren Bytes in der Warteschlange der Softwareschnittstelle zurück, oder 0, wenn nichts verfügbar ist";
 ////////////////////////////OTTO DIY Robot/////////////////////
 Blockly.Msg.OTTO9_HOME_TEXT = "Start";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto geht in die Startposition";
