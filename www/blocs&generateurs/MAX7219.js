@@ -402,8 +402,8 @@ Blockly.Blocks['Init_MAX7219_ledmatrix'] = { helpUrl: 'https://playground.arduin
   var card=window.localStorage.card;
   this.setColour("#B655F5");
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage("media/matrix8x8.png",33,33))
-  .appendField(Blockly.Msg.MAX7219_LM_Number)	.appendField(new Blockly.FieldDropdown([['1', '1'], ['2', '2'],['3', '3'],['4', '4']]), "NumberDisplays")
-	this.appendDummyInput().appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.MAX7219_LM_NAME)
+  .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.MAX7219_LM_Number)	.appendField(new Blockly.FieldDropdown([['1', '1'], ['2', '2'],['3', '3'],['4', '4']]), "NumberDisplays")
+	this.appendDummyInput().appendField(Blockly.Msg.MAX7219_LM_NAME)
 this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_CLK).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CLK");
 this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_CS).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
 this.appendDummyInput()	.appendField(Blockly.Msg.MAX7219_LM_DAT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DAT");

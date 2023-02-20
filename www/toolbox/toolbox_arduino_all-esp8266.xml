@@ -493,6 +493,7 @@
 	<category name="CAT_LED" colour="#B655F5">
 		<block type="blink"></block>
 		<block type="buildin_led"></block>
+		<block type="led_digital_init"></block>
 		<block type="led_digital"></block>
 		<block type="led_pwm"><value name="STAT"><shadow type="math_number"><field name="NUM">128</field></shadow></value></block>
 </category>

@@ -421,6 +421,18 @@ Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.OTTO9_CALIBRATION='校準 ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='腿 ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='腳 ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM='手臂 ';
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='用很小的增加或减小數值,逐漸改變到完全垂直 (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= '保存 Trims 到 EEPROM';
@@ -471,7 +483,7 @@ Blockly.Msg.OTTO9_ARMS_TEXT = "arms";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";

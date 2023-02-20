@@ -482,6 +482,18 @@ Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.OTTO9_CALIBRATION='calibrar ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='perna ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='pé ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM='braço ';
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='use pequenos valores positivos e negativos interativamente, mude gradualmente até ficar completamente reto (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'salvar Trims no EEPROM';
@@ -727,7 +739,7 @@ Blockly.Msg.MP3OS_inject="Inject track number";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -879,7 +891,7 @@ Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Read as number";
 Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Read String";
 Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
 
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";
@@ -894,7 +906,7 @@ Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Read as number";
 Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Read String";
 Blockly.Msg.SSERIAL_Readlf="until line feed";
 
-// SERIAL 
+// SERIAL
 Blockly.Msg.SERIAL_Init="Init Serial ";
 Blockly.Msg.SERIAL_TX="Pin TX#";
 Blockly.Msg.SERIAL_RX="Pin RX#";
@@ -1295,7 +1307,7 @@ Blockly.Msg.TEXT_TRIM = "trim spaces from ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed from one or both ends.";
 
 //Conversions
-Blockly.Msg.CONV_tochar="Casting to char "; 
+Blockly.Msg.CONV_tochar="Casting to char ";
 Blockly.Msg.CONV_toString="Convert to String ";
 Blockly.Msg.CONV_decimal="Number of decimals";
 Blockly.Msg.CONV_tobyte="Casting to Byte ";

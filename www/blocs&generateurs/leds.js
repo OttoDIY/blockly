@@ -1,6 +1,22 @@
+Blockly.Blocks["led_digital_init"]={init:function(){
+  var card=window.localStorage.card;
+  this.appendDummyInput().appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.del+Blockly.Msg.CAT_numerique).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true, null);
+  this.setNextStatement(true, null);
+  this.setColour("#B655F5");
+  this.setHelpUrl(Blockly.Msg.HELPURL);
+  this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["led_digital_init"]=function(block){
+  var dropdown_pin=block.getFieldValue("PIN");
+    Blockly.Arduino.definitions_['ledPin' + dropdown_pin] = "const int ledPin =  " + dropdown_pin + "";
+  Blockly.Arduino.setups_["ledPin" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+};
+
 Blockly.Blocks["led_digital"]={init:function(){
   var card=window.localStorage.card;
-  this.appendDummyInput().appendField(Blockly.Msg.del).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+  this.appendDummyInput().appendField(Blockly.Msg.del+Blockly.Msg.CAT_numerique);
   this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
   this.setInputsInline(true);
   this.setPreviousStatement(true, null);
@@ -10,33 +26,8 @@ Blockly.Blocks["led_digital"]={init:function(){
   this.setTooltip(Blockly.Msg.del_tooltip)}
 };
 Blockly.Arduino["led_digital"]=function(block){
-  var dropdown_pin=block.getFieldValue("PIN");
   var dropdown_stat=block.getFieldValue("STAT");
-  Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
-  return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
-};
-Blockly.Blocks["digital_write"]={init:function(){
-  this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.del);
-  this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true, null);
-  this.setNextStatement(true, null);
-  this.setColour("#B655F5");
-  this.setHelpUrl(Blockly.Msg.HELPURL);
-  this.setTooltip(Blockly.Msg.del_tooltip)}
-};
-Blockly.Arduino["digital_write"]=function(block){
-  var dropdown_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
-  var dropdown_stat=block.getFieldValue("STAT");
-  Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
-  return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
-};
-Blockly.Python["digital_write"]=function(block){
-var dropdown_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
-  var dropdown_stat=block.getFieldValue("STAT") == "HIGH" ? "1" : "0";
-  Blockly.Python.imports_["pin"]="from machine import Pin";
-Blockly.Python.definitions_["pin_"+dropdown_pin]="BROCHE_"+dropdown_pin+" = Pin("+dropdown_pin+", Pin.OUT)";
-  return "BROCHE_"+dropdown_pin+".value("+dropdown_stat+")\n"
+  return "digitalWrite( ledPin , " + dropdown_stat + ");\n";
 };
 
 Blockly.Blocks['led_pwm']={init:function() {
@@ -231,4 +222,28 @@ Blockly.Arduino.setups_['setup_mcp3_pin_r_write'] = 'mcp.pinMode(3, OUTPUT);';
 
 var code = 'mcp.digitalWrite(1, '+red+');\n  mcp.digitalWrite(2, '+green+');\n  mcp.digitalWrite(3, '+blue+');\n';
 return code;
+};
+
+Blockly.Blocks["digital_write"]={init:function(){
+  this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.del);
+  this.appendDummyInput().appendField(" ").appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true, null);
+  this.setNextStatement(true, null);
+  this.setColour("#B655F5");
+  this.setHelpUrl(Blockly.Msg.HELPURL);
+  this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["digital_write"]=function(block){
+  var dropdown_pin=Blockly.Arduino.valueToCode(block, "PIN", Blockly.Arduino.ORDER_ATOMIC);
+  var dropdown_stat=block.getFieldValue("STAT");
+  Blockly.Arduino.setups_["setup_output_" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+  return "digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
+};
+Blockly.Python["digital_write"]=function(block){
+var dropdown_pin=Blockly.Python.valueToCode(block, "PIN", Blockly.Python.ORDER_ATOMIC);
+  var dropdown_stat=block.getFieldValue("STAT") == "HIGH" ? "1" : "0";
+  Blockly.Python.imports_["pin"]="from machine import Pin";
+Blockly.Python.definitions_["pin_"+dropdown_pin]="BROCHE_"+dropdown_pin+" = Pin("+dropdown_pin+", Pin.OUT)";
+  return "BROCHE_"+dropdown_pin+".value("+dropdown_stat+")\n"
 };
