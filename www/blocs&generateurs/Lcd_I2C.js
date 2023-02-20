@@ -10,7 +10,7 @@ Blockly.Blocks['lcdi2c_setup'] = {
    this.setColour("#B655F5");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/LCD.png",33,33))
-        .appendField(Blockly.Msg.LCD_I2C_setup);
+        .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.LCD_I2C_setup);
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("0x3F"), "NAME");
    this.appendValueInput("COLUMNS")
@@ -292,10 +292,10 @@ Blockly.Arduino['lcdi2c_blinkCursor'] = function(block) {
 
 Blockly.Blocks["bargraphe"]={init:function(){
   var card=window.localStorage.card;
-  this.appendDummyInput().appendField(new Blockly.FieldImage('media/LEDbar.png', 33, 33, "*")) .appendField(Blockly.Msg.bargraphe);
+  this.appendDummyInput().appendField(new Blockly.FieldImage('media/LEDbar.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.bargraphe);
 this.appendDummyInput()	.appendField("CLK").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "clk");
 this.appendDummyInput()	.appendField("DIN").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "data");
-this.setColour("#4b009f");
+this.setColour("#B655F5");
 this.setInputsInline(true);
 this.setPreviousStatement(true, null);
 this.setNextStatement(true, null);
@@ -324,7 +324,7 @@ Blockly.Blocks["bargraphe_allume"]={init:function(){
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setInputsInline(true);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.bargraphe_allume_tooltip);
       this.setHelpUrl("http://wiki.seeed.cc/Grove-LED_Bar/");
   }
@@ -345,7 +345,7 @@ Blockly.Blocks["lcd_i2c"]={init:function(){
       this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 33, 33, "*"))
     .appendField(Blockly.Msg.LCD+" I2C");
       this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lcd_fond).appendField(new Blockly.FieldDropdown(Blockly.Msg.couleur), "fond");
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.LCDi2c_tooltip);
       this.setHelpUrl("http://wiki.seeed.cc/Grove-LCD_RGB_Backlight/");
   }
@@ -397,7 +397,7 @@ Blockly.Blocks["lcd_i2c_2"]={init:function(){
       this.appendDummyInput().appendField(new Blockly.FieldImage('media/LCD.png', 33, 33, "*"))
     .appendField(Blockly.Msg.LCD+" I2C");
       this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lcd_fond).appendField(new Blockly.FieldDropdown(Blockly.Msg.couleur), "fond");
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.LCDi2c_tooltip);
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
@@ -452,7 +452,7 @@ Blockly.Blocks["lcd_symbole"]={init:function(){
   this.setPreviousStatement(true, null);
   this.setNextStatement(true, null);
   this.setHelpUrl(Blockly.Msg.HELPURL);
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
 this.setTooltip(Blockly.Msg.lcd_symbole_tooltip)}
 };
 Blockly.Arduino["lcd_symbole"]=function(block){
@@ -485,7 +485,7 @@ return ""
 };
 //////////////
 Blockly.Blocks["lcd_aff_symbole"]={init:function(){
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setHelpUrl(Blockly.Msg.HELPURL);
       this.appendDummyInput().appendField(Blockly.Msg.lcd_aff_symbole).appendField(new Blockly.FieldDropdown(Blockly.Msg.char_lcd),"c_char");
       this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.LCD_line).appendField(new Blockly.FieldDropdown(Blockly.Msg.ligne), "ligne");
@@ -510,7 +510,7 @@ Blockly.Blocks["lcd"]={init:function(){
       this.appendValueInput("d5").setAlign(Blockly.ALIGN_RIGHT).appendField("D5");
       this.appendValueInput("d6").setAlign(Blockly.ALIGN_RIGHT).appendField("D6");
       this.appendValueInput("d7").setAlign(Blockly.ALIGN_RIGHT).appendField("D7");
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip(Blockly.Msg.LCD_tooltip);
       this.setHelpUrl(Blockly.Msg.LCD_SHIELD_PRINT_HELPURL);
   }
@@ -541,7 +541,7 @@ Blockly.Python["lcd"]=function(block){
 };
 //////////////
 Blockly.Blocks["LCD_Keypad_Shield_DFR_09"]={init:function(){
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setHelpUrl(Blockly.Msg.LCD_SHIELD_PRINT_HELPURL);
       this.appendDummyInput().appendField(Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
       this.appendValueInput("TEXT1", "String").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.LCD_SHIELD_PRINT_INPUT1);
@@ -567,7 +567,7 @@ if (text2[0]!='"') text2 = '"' + text2 + '"';
 //////////////
 Blockly.Blocks["LCD_Keypad_Shield_DFR_09_lc"]={init:function(){
 var prog = window.localStorage.prog;
-  this.setColour("#4b009f");
+  this.setColour("#B655F5");
   this.setHelpUrl(Blockly.Msg.LCD_SHIELD_PRINT_HELPURL);
 if (prog != "python") {
       this.appendDummyInput().appendField(Blockly.Msg.LCD_SHIELD_PRINT_TEXT);
@@ -596,7 +596,7 @@ if (text4[0]!='"') text4 = '"' + text4 + '"';
 };
 //////////////
 Blockly.Blocks["LCD_Keypad_Shield_DFR_09_RAZ"]={init:function(){
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setHelpUrl(Blockly.Msg.LCD_SHIELD_PRINT_HELPURL);
       this.appendDummyInput().appendField(Blockly.Msg.LCD_raz);
       this.setPreviousStatement(true, null);

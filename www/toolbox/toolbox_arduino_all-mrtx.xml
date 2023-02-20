@@ -10,7 +10,7 @@
 		<block type="base_code_entree"></block>
 		<!--<block type="base_define"></block> -->
 	</category>
-	<category name="CAT_OTTO" colour="#32D900">
+	<category name="CAT_OTTO" colour="#4759F5">
 		<block type="otto_configuration">
 			<field name="PIN_YL">A0</field>
 			<field name="PIN_YR">A1</field>
@@ -58,7 +58,7 @@
 		</block>
 		<block type="otto_eeprom"></block>
 
-	<!--	<category name="CAT_OTTO_ARMS" colour="#32D900">
+	<!--	<category name="CAT_OTTO_ARMS" colour="#4759F5">
 		<block type="otto_arms_init">
 			<field name="PIN_AL">6</field>
 			<field name="PIN_AR">7</field>
@@ -67,7 +67,7 @@
 		<block type="otto_arms"></block>
 		</category> -->
 
-	<category name="CAT_OTTO_WHEELS" colour="#2d2dd1">
+	<category name="CAT_OTTO_WHEELS" colour="#4759F5">
 	<block type="servo_2wheels_init">
 	<field name="PINL">A0</field>
 	<field name="PINR">A1</field>
@@ -81,7 +81,7 @@
 			<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
 		</block>
 		</category>
-<!-- <category name="CAT_OTTO_NINJA" colour="#0A0A0A">
+<!-- <category name="CAT_OTTO_NINJA" colour="#4759F5">
 <block type="otto_ninja_init">
 	<field name="PIN_YL">A1</field>
 	<field name="PIN_YR">6</field>
@@ -121,7 +121,7 @@
 <block type="otto_ninja_walkstop"></block>
 <block type="otto_ninja_rollstop"></block>
 </category>
-<category name="CAT_OTTO_QUAD" colour="#32D900">
+<category name="CAT_OTTO_QUAD" colour="#4759F5">
 				<block type="otto_quad_configuration">
 			<field name="FRH">2</field>
 			<field name="FLH">8</field>
@@ -138,7 +138,7 @@
 	<block type="otto_quad_jump"></block>
 	<block type="otto_quad_scared"></block>
 </category>
-	<category name="CAT_ESCORNABOT" colour="#C39BD3">
+	<category name="CAT_ESCORNABOT" colour="#4759F5">
 			<block type="escornabot_init"></block>
 			<block type="escornabot_spin"></block>
 			<block type="escornabot_distance"></block>
@@ -217,7 +217,7 @@
 	<!--	<block type="mrtduino_pin"></block>-->
 	</category>
 
-	<category name="CAT_LOGIC" colour="#ffb400">
+	<category name="CAT_LOGIC" colour="#FFBD3B">
 		<block type="controls_if"></block>
         <block type="controls_repeat_ext">	<value name="TIMES"><shadow type="math_number"><field name="NUM">2</field></shadow></value></block>
         <block type="controls_whileUntil"></block>
@@ -233,7 +233,7 @@
         <block type="logic_null"></block>
 	</category>
 
-	<category name="CAT_MATH" colour="#008000">
+	<category name="CAT_MATH" colour="#00D072">
         <block type="math_number"></block>
 		<block type="inout_angle_maths"></block>
 		<block type="analog_pin"></block>
@@ -301,11 +301,11 @@
 		<block type="text_trim"></block>
     </category>
 
-	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF0000"></category>
+	<category name="CAT_FUNCTIONS" custom="PROCEDURE" colour="#FF6680"></category>
 
-	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#ff5700"></category>
+	<category name="CAT_VARIABLES" custom="VARIABLE" colour="#FF8900"></category>
 
-	<category name="CAT_TAB" colour="#ff5700">
+	<category name="CAT_TAB" colour="#FF8900">
 		<block type="creer_tableau"></block>
 		<block type="array_create_with"></block>
 		<block type="fixer_tableau"></block>
@@ -318,7 +318,7 @@
 		<block type="list_size"></block>
     </category>
 
-<!--	<category name="CAT_ultrason" colour="#2a93e8">
+<!--	<category name="CAT_ultrason" colour="#54BCF7">
 		<block type="ultrasonic_sensor">
 			<field name="PIN_TRIG">2</field>
 			<field name="PIN_ECHO">3</field>
@@ -331,7 +331,7 @@
 		<block type="dht_measure"></block>
 	</category>	-->
 
-	<category name="CAT_SENSORS" colour="#2a93e8">
+	<category name="CAT_SENSORS" colour="#54BCF7">
 		 <block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		 <block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
 		 <block type="MRTX_button"></block>
@@ -341,7 +341,7 @@
 
 
 
-		<category name="CAT_VL53L0X" colour="#2a93e8">
+		<category name="CAT_VL53L0X" colour="#54BCF7">
 			<block type="ultrasonic_sensor">
 				<field name="PIN_TRIG">2</field>
 				<field name="PIN_ECHO">3</field>
@@ -351,7 +351,7 @@
 			<block type="VL53L0X_distance"></block>
 		</category>
 
-		<category name="CAT_SOUND" colour="#2a93e8">
+		<category name="CAT_SOUND" colour="#54BCF7">
 				<block type="Sound_status_sensor2"><field name="PIN_SOUND">A0</field></block>
 				<block type="Sound_sensor2"><field name="PIN_SOUND">A0</field></block>
 				<block type="SoundAmp_sensor2">
@@ -359,7 +359,7 @@
 					<value name="SAMPLE_WINDOW"><shadow type="math_number"><field name="NUM">50</field></shadow></value>
 				</block>
 		</category>
-		<category name="CAT_TEMP" colour="#2a93e8">
+		<category name="CAT_TEMP" colour="#54BCF7">
 				<block type="dht_sensor2"><field name="PIN_DHT">A0</field></block>
 				<block type="dht_measure"></block>
 				<block type="Analog_temperature_sensor2"></block>
@@ -370,7 +370,7 @@
 				</block>
 		</category>
 
-		<category name="CAT_LIGHT" colour="#2a93e8">
+		<category name="CAT_LIGHT" colour="#54BCF7">
 			<block type="LDR_sensor2"></block>
 			<block type="LDR_status_sensor2">
 				<field name="PIN_LDR">A0</field>
@@ -388,14 +388,14 @@
 			</block>
 		</category>
 
-		<category name="CAT_TCS34725" colour="#2a93e8">
+		<category name="CAT_TCS34725" colour="#54BCF7">
 			<block type="init_tcs34725"></block>
 			<block type="read_tcs34725"></block>
 			<block type="tcs34725_values"></block>
 			<block type="tcs34725_color"></block>
 		</category>
 
-		<category name="CAT_APDS9960" colour="#2a93e8">
+		<category name="CAT_APDS9960" colour="#54BCF7">
 			<block type="APDS9960_init"></block>
 			<block type="APDS9960_gesture_init"></block>
 			<block type="APDS9960_gesture_gain"></block>
@@ -408,13 +408,13 @@
 			<block type="APDS9960_color"></block>
 		</category>
 
-		<category name="CAT_MAGNET" colour="#2a93e8">
+		<category name="CAT_MAGNET" colour="#54BCF7">
 			<block type="hall_sensor2">
 			 <field name="PIN_HALL">A0</field>
 			</block>
 		</category>
 
-		<category name="CAT_VIBRATE" colour="#2a93e8">
+		<category name="CAT_VIBRATE" colour="#54BCF7">
 			<block type="Vibration_sensor2"></block>
 			<block type="tilt_sensor2">
 			<field name="PIN_BUTTON">A0</field>
@@ -424,13 +424,13 @@
 			</block>
 		</category>
 
-		<category name="CAT_WATER" colour="#2a93e8">
+		<category name="CAT_WATER" colour="#54BCF7">
 			<block type="Water_sensor2"></block>
 			<block type="Moisture_sensor2"></block>
 			<block type="Vapor_sensor2"></block>
 		</category>
 
-		<category name="CAT_GAS" colour="#2a93e8">
+		<category name="CAT_GAS" colour="#54BCF7">
 			<block type="Gas_sensor2"></block>
 			<block type="Gas_status_sensor2">
 				<field name="PIN_GAS">A0</field>
@@ -441,12 +441,12 @@
 			</block>
 		</category>
 
-		<category name="CAT_BME280" colour="#2a93e8">
+		<category name="CAT_BME280" colour="#54BCF7">
 			<block type="BME280"></block>
 			<block type="BME280_pressure"></block>
 		</category>
 
-		<category name="CAT_CCS811" colour="#2a93e8">
+		<category name="CAT_CCS811" colour="#54BCF7">
 			<block type="Init_CCS811"></block>
 			<block type="CCS811_available"></block>
 			<block type="CCS811_readed"></block>
@@ -457,18 +457,18 @@
 			</block>
 		</category>
 
-		<category name="CAT_GYRO" colour="#2a93e8">
+		<category name="CAT_GYRO" colour="#54BCF7">
 			<block type="otto9_gyro"></block>
 			<block type="gyro_getg"></block>
 		</category>
 
-		<category name="CAT_HMC5883" colour="#2a93e8">
+		<category name="CAT_HMC5883" colour="#54BCF7">
 			<block type="Init_Compass_HMC5883"></block>
 			<block type="order_to_read_HMC5883_values"></block>
 			<block type="HMC5883_values"></block>
 		</category>
 
-		<category name="CAT_GPS" colour="#2a93e8">
+		<category name="CAT_GPS" colour="#54BCF7">
 			<block type="GPS_init_ss">
 				<field name="PIN_TX">2</field>
 				<field name="PIN_RX">3</field>
@@ -479,7 +479,7 @@
 			<block type="GPS_datetime"></block>
 		</category>
 
-		<category name="CAT_RTC_DS3231" colour="#2a93e8">
+		<category name="CAT_RTC_DS3231" colour="#54BCF7">
 			<block type="Init_RTC_ds3231"></block>
 			<block type="DateTime_RTC_ds3231">
 				<value name="DS3231_DAY"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
@@ -494,7 +494,7 @@
 			<block type="values_text_ds3231"></block>
 		</category>
 
-	<!--	<category name="CAT_RFID" colour="#2a93e8">
+	<!--	<category name="CAT_RFID" colour="#54BCF7">
 			<block type="rfid_init">
 				<field name="PIN_SDA">10</field>
 				<field name="PIN_RST">11</field>
@@ -508,8 +508,8 @@
 		</category> -->
 	</category>
 
-	<category name="CAT_actionneur" colour="#2d2dd1">
-		<category name="CAT_servo" colour="#2d2dd1">
+	<category name="CAT_actionneur" colour="#4759F5">
+		<category name="CAT_servo" colour="#4759F5">
 		<block type="servo_move">
 			<field name="PIN">8</field>
 			<value name="DEGREE"><shadow type="inout_angle_maths"><field name="NUM">90</field></shadow></value>
@@ -543,7 +543,7 @@
 
 			<!--<block type="moteur_action"></block>
 			<block type="moteur_stop"></block>-->
-		<category name="CAT_ARDUINO_moteur" colour="#2d2dd1">
+		<category name="CAT_ARDUINO_moteur" colour="#4759F5">
 		<block type="stepper_configuration">
 			<value name="STEP_RPM"><shadow type="math_number"><field name="NUM">4096</field></shadow></value>
 				<field name="PIN_STEEPER1">2</field>
@@ -557,7 +557,7 @@
 
 	</category>
 
-	<category name="CAT_LED" colour="#4b009f">
+	<category name="CAT_LED" colour="#B655F5">
 		<!--<block type="blink"></block>
 		<block type="inout_buildin_led"></block>
 		<block type="digital_write">	<value name="PIN"><shadow type="analog_pin"><field name="NUM">10</field></shadow></value></block>	>-->
@@ -573,7 +573,7 @@
 
 		<block type="MRTX_led_setcolor"></block>
 
-	<!--	<category name="CAT_ARDUINO_matrice8x8" colour="#4b009f">
+	<!--	<category name="CAT_ARDUINO_matrice8x8" colour="#B655F5">
 				<block type="otto9_matrix_init">
 						<field name="PIN_CLK">A0</field>
        					<field name="PIN_CS">A1</field>
@@ -595,7 +595,7 @@
 			</block>
 			<block type="otto9_matrix8x8"></block>
 		</category> -->
-		<category name="CAT_MAX7219" colour="#4b009f">
+		<category name="CAT_MAX7219" colour="#B655F5">
 
 			<block type="Init_MAX7219_ledmatrix">
 			<field name="PIN_CLK">A0</field>
@@ -628,7 +628,7 @@
 			<block type="MAX7219_ledmatrix_draw"></block>
 			<block type="MAX7219_animation"></block>
 					</category>
-		<category name="CAT_ARDUINO_matrice16x8" colour="#4b009f">
+		<category name="CAT_ARDUINO_matrice16x8" colour="#B655F5">
 			<block type="otto9_eyes_init"></block>
 			<block type="otto9_eyes_face"></block>
 			<block type="otto9_eyes_clear"></block>
@@ -670,10 +670,10 @@
 			</block>
 		</category>
 
-		<!--<category name="CAT_MAX1640" colour="#4b009f">
+		<!--<category name="CAT_MAX1640" colour="#B655F5">
 		</category> -->
 
-<!--	<category name="CAT_LEDRGB" colour="#4b009f">
+<!--	<category name="CAT_LEDRGB" colour="#B655F5">
 		<block type="rgb_init">
 			<field name="rouge">9</field>
 			<field name="vert">10</field>
@@ -688,7 +688,7 @@
 
 
 	</category>	-->
-	<category name="CAT_NEOPIXEL" colour="#4b009f">
+	<category name="CAT_NEOPIXEL" colour="#B655F5">
 			<block type="pixel_init">
 						<field name="pin">8</field>
 			<value name="num"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
@@ -714,7 +714,7 @@
 			<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 			</block>
 				</category>
-	<category name="CAT_NEOMATRIX" colour="#4b009f">
+	<category name="CAT_NEOMATRIX" colour="#B655F5">
 		<block type="MatrixLED_WS2812B_init_2">
 			<value name="Pin_Matrix_init"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
 			<value name="Number_of_Pixels"><shadow type="math_number"><field name="NUM">1</field></shadow>	</value>
@@ -732,7 +732,7 @@
 		<block type="MatrixLED_WS2812B_CLEAN"></block>
 	</category>
 
-		<category name="CAT_BARGRAPH" colour="#4b009f">
+		<category name="CAT_BARGRAPH" colour="#B655F5">
 			<block type="bargraphe">
 			<field name="clk">A0</field>
        		<field name="data">A1</field>
@@ -744,7 +744,7 @@
 	</category>
 
 <!--
-<category name="CAT_del"  colour="#4b009f">
+<category name="CAT_del"  colour="#B655F5">
 	<block type="GFX_matrix_init"></block>
 	<block type="GFX_OLED_init"></block>
 	<block type="GFX_OLED_init2"></block>
@@ -779,8 +779,8 @@
 	</block>
 </category>	-->
 
-	<category name="CAT_Displays"  colour="#4b009f">
-	<category name="CAT_OLED_U8G" colour="#4b009f">
+	<category name="CAT_Displays"  colour="#B655F5">
+	<category name="CAT_OLED_U8G" colour="#B655F5">
 		<block type="OLED_init"></block>
 		<block type="OLED_init2"></block>
 		<block type="oled_icon"></block>
@@ -845,7 +845,7 @@
 		</block>
 	</category>
 
-<!--	<category name="CAT_TFT_ST7735" colour="#4b009f">
+<!--	<category name="CAT_TFT_ST7735" colour="#B655F5">
 			 <block type="st7735_init">
 			   	<field name="PIN_CS">A1</field>
 				<field name="PIN_DC">A2</field>
@@ -909,7 +909,7 @@
 			   <block type="st7735_properties"></block>
 	</category> -->
 
-		<category name="CAT_LCDI2C" colour="#4b009f">
+		<category name="CAT_LCDI2C" colour="#B655F5">
 				<block type="lcdi2c_setup" x="38" y="138"><field name="NAME">0x3F</field>
                     <value name="COLUMNS"><shadow type="math_number"><field name="NUM">16</field></shadow></value>
                     <value name="ROWS"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
@@ -933,8 +933,8 @@
 		</category>
 	</category>
 
-<category name="CAT_AUDIO" colour="#a600d3">
-		<category name="CAT_BUZZER" colour="#a600d3">
+<category name="CAT_AUDIO" colour="#FF63BB">
+		<category name="CAT_BUZZER" colour="#FF63BB">
 			<block type="RTTTL_music_x"></block>
 			<block type="RTTTL_music_custom_x">
 			<value name="rtttl_melody"><shadow type="text"><field name="TEXT">text</field></shadow></value>
@@ -949,7 +949,7 @@
 
 		</category>
 
-		<category name="CAT_DFPLAYER" colour="#a600d3">
+		<category name="CAT_DFPLAYER" colour="#FF63BB">
 			<block type="lp2i_mp3_init">
 				<field name="PIN_TX">2</field>
 				<field name="PIN_RX">3</field>
@@ -967,7 +967,7 @@
 			<block type="lp2i_mp3_prev"></block>
 		</category>
 
-		<category name="CAT_OPENSMART" colour="#a600d3">
+		<category name="CAT_OPENSMART" colour="#FF63BB">
 			<block type="OpenSmartMp3_init_ss">
 				<field name="PIN_TX">2</field>
 				<field name="PIN_RX">3</field>
@@ -988,7 +988,7 @@
 			</block>
 		</category>
 
-		<category name="CAT_RADIO_TEA5767" colour="#a600d3">
+		<category name="CAT_RADIO_TEA5767" colour="#FF63BB">
 			<block type="RadioTEA5767_init"></block>
 		 	<block type="RadioTEA5767_activate"></block>
 			<block type="RadioTEA5767_mute"></block>
@@ -1089,7 +1089,7 @@
 	     <block type="IR_RemoteMRT_Key"></block>
 		</category>
 	</category>
-	<!--<category name="CAT_KEYBOARD" colour="#2a93e8">
+	<!--<category name="CAT_KEYBOARD" colour="#54BCF7">
 			<block type="keyboard_function">
 				<value name="SelectedKey"><shadow type="key_pressed"><field name="NUM">A</field></shadow></value>
 			</block>

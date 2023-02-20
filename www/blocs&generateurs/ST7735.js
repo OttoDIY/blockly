@@ -17,7 +17,7 @@ Blockly.Blocks['st7735_init'] = {
     this.setColour("#B655F5");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/tft7735.png",53,38))
-        .appendField(Blockly.Msg.ST7735_init)
+        .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.ST7735_init)
 		.appendField(Blockly.Msg.ST7735_init2);
 	this.appendDummyInput()
         .appendField(Blockly.Msg.ST7735_PIN_CS)

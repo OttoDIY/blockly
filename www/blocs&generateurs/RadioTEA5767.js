@@ -15,7 +15,7 @@ Blockly.Blocks['RadioTEA5767_init'] = {
 	this.setColour("#FF63BB");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/radio.png",53,38))
-        .appendField(Blockly.Msg.TEA5767_init)
+        .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.TEA5767_init)
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

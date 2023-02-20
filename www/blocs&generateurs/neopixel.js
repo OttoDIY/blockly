@@ -7,7 +7,7 @@ goog.require('Blockly.Types');
 
 Blockly.Blocks["pixel_init"]={init:function(){
     var card=window.localStorage.card;
-	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1);
+	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.pixel1);
     this.appendDummyInput()	.appendField(Blockly.Msg.pin).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
     this.setInputsInline(true);
@@ -168,7 +168,7 @@ Blockly.Python["pixel_setbrightness"]=function(){return""};
   Blockly.Blocks["MatrixLED_WS2812B_init_2"] = {  init: function() {
     var card=window.localStorage.card;
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
       this.setInputsInline(true);
 	  this.setPreviousStatement(true, null);

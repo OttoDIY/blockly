@@ -10,7 +10,7 @@ goog.provide("Blockly.Blocks.tab");
 
 Blockly.Blocks.controls.HUE = "#FFBD3B";
 Blockly.Blocks.math.HUE = "#00D072";
-Blockly.Blocks.procedures.HUE = "#FF876B";
+Blockly.Blocks.procedures.HUE = "#FF6680";
 Blockly.Blocks.texts.HUE = "#ff8c1a";
 Blockly.Blocks.variables.HUE = "#FF8900";
 Blockly.Blocks.tab.HUE = "#ff5700";

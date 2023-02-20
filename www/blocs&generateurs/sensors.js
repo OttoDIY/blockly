@@ -171,7 +171,7 @@ Blockly.Blocks['ultrasonic_sensor'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#54BCF7");
     this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
-    .appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
+    .appendField(Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
 		.appendField(Blockly.Msg.ultrasonic_ranger)
         .appendField(Blockly.Msg.TRIG)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
@@ -635,7 +635,7 @@ Blockly.Blocks['dht_sensor2'] = {init: function() {
 	  var card=window.localStorage.card;
     this.setColour("#54BCF7");
     this.appendDummyInput("DHT11").appendField(new Blockly.FieldImage("media/humidity11.png",33,33));
-    this.appendDummyInput()	.appendField("#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
+    this.appendDummyInput()	.appendField(Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "DHT_NUMBER")
     this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.DHT_Type11, "0"], [Blockly.Msg.DHT_Type21, "1"],[Blockly.Msg.DHT_Type22, "2"]],function(option){this.sourceBlock_.updateShape(option)}), "OUTPUT_TYPE");
     this.appendDummyInput()	.appendField(Blockly.Msg.PIN)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DHT")	.setAlign(Blockly.ALIGN_RIGHT)
     this.setTooltip('DHT temperature, humidity and headindex sensor.Reading temperature or humidity takes about 250 milliseconds.OLD Sensor readings may also be up to 2 seconds (its a very slow sensor)');

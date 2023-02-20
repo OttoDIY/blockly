@@ -356,11 +356,11 @@ Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT = "Disable the previously specifie
 Blockly.Msg.LKL_MODE = 'detected on PIN';
 
 ////////////OTTO DIY Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
-Blockly.Msg.OTTO9_HOME_TEXT = "home";
-Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
-Blockly.Msg.OTTO9_BUZZER="🎼 buzzer";
-Blockly.Msg.OTTO_HOME_TEXT = "⚙️";
 Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/";// do not translate
+Blockly.Msg.OTTO9_HOME_TEXT = "home";
+Blockly.Msg.OTTO_HOME_TEXT = "⚙️";
+Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
+Blockly.Msg.OTTO9_BUZZER="🎼 buzz";
 Blockly.Msg.OTTO9_CALIBRATION='calibrate ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='leg ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='foot ';
@@ -407,8 +407,19 @@ Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 happy1", "happy_bmp"],["🙂 happy2", "e
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "👀 eyes text";
 Blockly.Msg.OTTO9_EYES_CLEAR_TEXT = "👀 clear🧹";
 Blockly.Msg.OTTO9_CLEAR_TEXT = "👄 clear🧹";
-Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
-Blockly.Msg.OTTO9_ARMS_TEXT = "arm ";
+Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the matrix";
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"],["hands down", "HANDSDOWN"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 // LED

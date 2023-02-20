@@ -21,10 +21,8 @@ Blockly.Blocks['matrix16x8_init'] = {  init: function() {
 Blockly.Arduino['matrix16x8_init'] = function(block) {
 // var pin_scl = Blockly.Arduino.valueToCode(this, "PIN_SCL", Blockly.Arduino.ORDER_NONE);
  //var pin_sda = Blockly.Arduino.valueToCode(this, "PIN_SDA", Blockly.Arduino.ORDER_NONE);
-
   var pin_scl = this.getFieldValue('PIN_SCL');
   var pin_sda = this.getFieldValue('PIN_SDA');
-
  Blockly.Arduino.includes_['define_Adafruit_GFX'] = '#include <Adafruit_GFX.h>\n';
  Blockly.Arduino.includes_['ematrix16x8'] = '#include <TM1640.h>\n'
   +'#include <TM16xxMatrixGFX.h>\n'
@@ -40,7 +38,7 @@ Blockly.Arduino['matrix16x8_init'] = function(block) {
 };
 
 Blockly.Blocks['eyes_init'] = { init: function() {
-  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*")).appendField(Blockly.Msg.OTTO9_EYES_TEXT+" "+Blockly.Msg.OTTO_HOME_TEXT+" "+Blockly.Msg.APDS9960_init2);
+  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.OTTO9_EYES_TEXT+" "+Blockly.Msg.APDS9960_init2);
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);

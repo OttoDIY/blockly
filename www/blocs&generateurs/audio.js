@@ -106,7 +106,7 @@ Blockly.Python["notone"]=function(block){
 //////////////
 Blockly.Blocks["lp2i_mp3_init"]={init:function(){
     var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/dfplayer.png', 33, 33, "*")).appendField("DFMini Pins")
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/dfplayer.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + "DFMini")
     this.appendDummyInput()	.appendField(Blockly.Msg.MP3OS_TX).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TX");
     this.appendDummyInput()	.appendField(Blockly.Msg.MP3OS_RX).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RX");
     this.appendValueInput("Volume", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.lp2i_mp3_Volume);
