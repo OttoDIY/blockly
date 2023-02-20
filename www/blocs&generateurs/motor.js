@@ -482,7 +482,7 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
   };
 
 Blockly.Blocks['servo_2wheels'] = {  init: function() {
-    this.appendDummyInput().appendField("💿 "+ Blockly.Msg.OTTO_WHEELS_TEXT").setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
+    this.appendDummyInput().appendField("💿 "+ Blockly.Msg.OTTO_WHEELS_TEXT).setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");
     this.setInputsInline(true);

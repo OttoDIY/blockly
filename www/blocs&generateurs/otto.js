@@ -140,7 +140,7 @@ Blockly.Blocks['otto_quad_configuration'] = {init: function() {
 	var card=window.localStorage.card;
     this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_quad.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
 	this.appendDummyInput()
-  .appendField(Blockly.Msg.OTTO_FRONT_TEXT +Blockly.OTTO_HIP_TEXT + Blockly.Msg.left) .setAlign(Blockly.ALIGN_RIGHT)
+  .appendField(Blockly.Msg.OTTO_FRONT_TEXT +Blockly.Msg.OTTO_HIP_TEXT + Blockly.Msg.left) .setAlign(Blockly.ALIGN_RIGHT)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FLH");
 	this.appendDummyInput()
   .appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
@@ -152,7 +152,7 @@ Blockly.Blocks['otto_quad_configuration'] = {init: function() {
   .appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "FRL");
 	this.appendDummyInput()
-  .appendField(Blockly.Msg.OTTO_BACK_TEXT +Blockly.OTTO_HIP_TEXT + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+  .appendField(Blockly.Msg.OTTO_BACK_TEXT +Blockly.Msg.OTTO_HIP_TEXT + Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "BLH");
   this.appendDummyInput()
   .appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
@@ -244,7 +244,7 @@ return code;
 };
 
 Blockly.Blocks['otto_quad_scared'] = {init: function() {
-  this.appendDummyInput("") .appendField("🕷️ "Blockly.Msg.OTTO_SCARED_TEXT);
+  this.appendDummyInput("") .appendField("🕷️ "+Blockly.Msg.OTTO_SCARED_TEXT);
   this.setInputsInline(false);
   this.setPreviousStatement(true);
   this.setNextStatement(true);
