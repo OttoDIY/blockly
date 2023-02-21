@@ -285,7 +285,7 @@ Blockly.Msg.FIELDDROPDOWN_ONOFF = [
   ["turn off", Blockly.Msg.low],
 ];
 Blockly.Msg.FIELDDROPDOWN_ONOFF_matrice = [
-  ["1", "true"],
+  ["1", "WAHR"],
   ["0", "false"],
 ];
 Blockly.Msg.FIELDDROPDOWN_av_ar = [
@@ -690,9 +690,9 @@ Blockly.Msg.SSERIAL_Available_tooltip =
 Blockly.Msg.OTTO9_HOME_TEXT = "Start";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto geht in die Startposition";
 Blockly.Msg.OTTO9H_HOME_TOOLTIP =
-  "Otto goes to home position straight.Reserved pins: 2-leftleg 3-rightleg 4-leftfoot 5-rightfoot 6-leftArm 7-rightArm 8-Trigger US 9-Echo US and 13-Passive buzzer";
-Blockly.Msg.OTTO9_DIY_URL = "https://wikifactory.com/+OttoDIY/otto-diy";
-Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
+  "Otto geht sofort in Ausgangsposition. Reservierte Pins: 2-linkes Bein; 3-rechtes Bein; 4-linker Fuß; 5-rechter Fuß; 6-linker Arm; 7-rechter Arm; 8-Trigger; 9-Echo und 13-Passiver Summer";
+Blockly.Msg.OTTO9_DIY_URL = "https://wikifactory.com/+OttoDIY/otto-diy"; // do not translate
+Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid"; // do not translate
 Blockly.Msg.OTTO9_CALIBRATION = "kalibrieren ";
 Blockly.Msg.OTTO9_CALIBRATION_LEG = "Bein ";
 Blockly.Msg.OTTO9_CALIBRATION_FOOT = "Fuß ";
@@ -710,12 +710,12 @@ Blockly.Msg.OTTO_MODE_TEXT = " mode";
 Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM = "Arm ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP =
-  "use small positive and negative values iteratively,change gradually until is completely straight (90º)";
-Blockly.Msg.OTTO9_EEPROM_TEXT = "save Trims on EEPROM";
+  "mache wiederholt kleine positive oder negative Änderungen, bis alles gerade (90°) eingestellt ist";
+Blockly.Msg.OTTO9_EEPROM_TEXT = "speichere Trims auf EEPROM";
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP =
-  "Use only after completely straight(90º) one time, delete this BLOCK after for further programming";
+  "nutze diesen Block nur einmal, nachdem du alles richtig getrimmt hast (90°), lösche diesen Block danach für das weitere Programmieren";
 Blockly.Msg.OTTO9_MOVE_TEXT = "Bewege";
-Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto basic movements";
+Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto Grundbewegungen";
 Blockly.Msg.OTTO9_MOVE_CHOICE = [
   ["↑ vorwärts", "FORWARD"],
   ["↓ rückwärts", "BACKWARD"],
@@ -750,8 +750,8 @@ Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE = [
   ["sehr schnell", "90"],
 ];
 Blockly.Msg.OTTO9_DANCE_TEXT = "Tanz";
-Blockly.Msg.OTTO9_DANCE_TOOLTIP = "Otto tanz!";
-Blockly.Msg.OTTO9_DANCE_CHOICE = [
+Blockly.Msg.OTTO9_DANCE_TOOLTIP = "Otto tanzt!";
+Blockly.Msg.OTTO9_DANCE_CHOICE = [ //TODO
   ["Moonwalk ⟵", "moonwalkerLEFT"],
   ["Moonwalk ⟶", "moonwalkerRIGHT"],
   ["crossing ⟵", "crusaitoLEFT"],
@@ -765,17 +765,17 @@ Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE = [
   ["klein", "10"],
   ["groß", "40"],
 ];
-Blockly.Msg.OTTO9_DO_TEXT = "do";
-Blockly.Msg.OTTO9_DO_TOOLTIP = "Otto komplexe Bewegungen";
-Blockly.Msg.OTTO9_DO_CHOICE = [
+Blockly.Msg.OTTO9_DO_TEXT = "mache";
+Blockly.Msg.OTTO9_DO_TOOLTIP = "Otto macht komplexere Bewegungen";
+Blockly.Msg.OTTO9_DO_CHOICE = [ //TODO
   ["swing", "swing"],
   ["updown", "updown"],
-  ["tiptoeSwing", "tiptoeSwing"],
-  ["jitter", "jitter"],
+  ["ZehenspitzenSwing", "tiptoeSwing"],
+  ["Zittern", "jitter"],
   ["ascendingTurn", "ascendingTurn"],
 ];
 Blockly.Msg.OTTO9_GESTURE_TEXT = "Gesten    ";
-Blockly.Msg.OTTO9_GESTURE_TOOLTIP = "Emotional sounds combined with movements";
+Blockly.Msg.OTTO9_GESTURE_TOOLTIP = "Emotionale Geräusche kombiniert mit Bewegungen";
 Blockly.Msg.OTTO9_GESTURE_CHOICE = [
   ["😃 fröhlich1", "OttoSuperHappy"],
   ["🙂 fröhlich2", "OttoHappy"],
@@ -785,14 +785,14 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [
   ["😰 nervös", "OttoFretful"],
   ["😍 liebe", "OttoLove"],
   ["😡 wütend", "OttoAngry"],
-  ["🤩 magic", "OttoMagic"],
+  ["🤩 magisch", "OttoMagic"],
   ["😐 wave", "OttoWave"],
   [" 😎 cool", "OttoVictory"],
   ["😞 enttäuscht", "OttoFail"],
   ["💩 pupsen", "OttoFart"],
 ];
-Blockly.Msg.OTTO9_SOUND_TEXT = "Klang";
-Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Emotionale Klänge";
+Blockly.Msg.OTTO9_SOUND_TEXT = "Geräusch";
+Blockly.Msg.OTTO9_SOUND_TOOLTIP = "Emotionale Geräusche";
 Blockly.Msg.OTTO9_SOUND_CHOICE = [
   ["😃 fröhlich1", "S_superHappy"],
   ["🙂 fröhlich2", "S_happy"],
@@ -814,9 +814,9 @@ Blockly.Msg.OTTO9_SOUND_CHOICE = [
   ["💩 pupsen2", "S_fart2"],
   ["💩 pupsen3", "S_fart3"],
 ];
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "Entfernung[cm].Pin Trigger 8 Pin Echo 9";
-Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger 8 Pin Echo 9";
-Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "Ranging distance between 2cm to 400cm";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT = "Entfernung [cm]. Pin Trigger = 8; Pin Echo = 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TEXT2 = "Pin Trigger = 8; Pin Echo = 9";
+Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP = "Reichweite zwischen 2 cm und 400 cm";
 Blockly.Msg.OTTO9_GETOBSTACLE_TEXT = "Hindernis";
 Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [
   ["nah", "10"],
@@ -825,13 +825,13 @@ Blockly.Msg.OTTO9_OBSTACLE_CHOICE = [
 ];
 Blockly.Msg.OTTO9_GETNOISE_TEXT = "Geräusch gemessen. Pin A6";
 Blockly.Msg.OTTO9_GETNOISE_TOOLTIP =
-  "100 ist leise, 500 Geräusch und mehr als 1000 ist laut, also adjust the sensor trimpot sensibility";
-Blockly.Msg.OTTO9_GETTOUCH_TEXT = "touch. Pin A0";
-Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "use if conditional";
-Blockly.Msg.OTTO9_GETG_TEXT = "Read the accelerations and angular velocities";
+  "100 ist leise, 500 ist normal und mehr als 1000 ist laut, stelle die Empfindlichkeit des Sensor-Trimmpotis ein";
+Blockly.Msg.OTTO9_GETTOUCH_TEXT = "Berührung erkannt. Pin A0";
+Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP = "erkennt eine Berührung";
+Blockly.Msg.OTTO9_GETG_TEXT = "Liest die Beschleunigung und Winkelgeschwindigkeit aus";
 Blockly.Msg.OTTO9_GETG_TEXT2 = "Wert";
 Blockly.Msg.OTTO9_MOUTH_TEXT = "Mund";
-Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "Mund Emotion für die 8x8 LED matrix #0-30";
+Blockly.Msg.OTTO9_MOUTH_TOOLTIP = "Mund Emotion für die 8x8 LED Matrix";
 Blockly.Msg.OTTO9_MOUTH_CHOICE = [
   ["😃 fröhlich1", "happyOpen"],
   ["🙂 fröhlich2", "happyClosed"],
@@ -853,11 +853,11 @@ Blockly.Msg.OTTO9_MOUTH_CHOICE = [
   ["❓?", "27"],
   ["⚡ Blitz", "thunder"],
 ];
-Blockly.Msg.OTTO9_EYES_TEXT = "eyes";
+Blockly.Msg.OTTO9_EYES_TEXT = "Augen";
 Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
 Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
-Blockly.Msg.OTTO9_EYES_TOOLTIP = "eyes emotion for the 16x8 i2C LED matrix ";
-Blockly.Msg.OTTO9_EYES_CHOICE = [
+Blockly.Msg.OTTO9_EYES_TOOLTIP = "Augenemotionen für die 16x8 I2C LED Matrix ";
+Blockly.Msg.OTTO9_EYES_CHOICE = [ //TODO
   ["😃 fröhlich1", "happy_bmp"],
   ["🙂 fröhlich2", "eyes_bmp"],
   ["😦 traurig", "sad_bmp"],
@@ -876,12 +876,12 @@ Blockly.Msg.OTTO9_EYES_CHOICE = [
   ["▉", "full_bmp"],
 ];
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "Augen Text";
-Blockly.Msg.OTTO9_EYES_CLEAR_TEXT = " Augen leeren";
+Blockly.Msg.OTTO9_EYES_CLEAR_TEXT = "Augen leeren";
 Blockly.Msg.OTTO9_MATRIX_TOOLTIP =
-  "limited to CAPITALS A to Z NUMBERS 0 to 9 : ; < >  = @, max.9 characters";
+  "beschränkt auf Großbuchstaben A bis Z; Nummern 0 bis 9 und Sonderzeichen : ; < >  = @ , max. 9 Zeichen";
 Blockly.Msg.OTTO9_MATRIXTEXT_TEXT = "Mund Text";
 Blockly.Msg.OTTO9_CLEAR_TEXT = " Mund leeren";
-Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
+Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Schaltet alle LEDs der Mund Matrix 8x8 aus";
 Blockly.Msg.OTTO9_ARMS_TEXT = "Arme";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Bewege die Arme!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [
@@ -896,88 +896,88 @@ Blockly.Msg.OTTO9_YR = "rechtes Bein";
 Blockly.Msg.OTTO9_RL = "linker Fuß";
 Blockly.Msg.OTTO9_RR = "rechter Fuß";
 Blockly.Msg.OTTO9_BUZZER = "Summer";
-Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto goes to home position straight.";
-Blockly.Msg.OTTO_HOME_TEXT = "Configuration";
+Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto geht sofort in Ausgangsposition.";
+Blockly.Msg.OTTO_HOME_TEXT = "Konfiguration";
 
 ////////////ESCORNABOT Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
-Blockly.Msg.ESCORNABOT_MODE_TEXT = "Init Escornabot";
+Blockly.Msg.ESCORNABOT_MODE_TEXT = "Initialisiere Escornabot";
 Blockly.Msg.ESCORNABOT_MODE_CHOICE = [
-  ["Weak", ""],
-  ["Strong", "(2)"],
-  ["Medium", "(3)"],
+  ["Schwach", ""],
+  ["Stark", "(2)"],
+  ["Mittel", "(3)"],
 ];
 Blockly.Msg.ESCORNABOT_INIT_TOOLTIP =
-  "Mode choice: 1-> weaker but less electrical consumption, 2->Stronger, but needs more supply, 3->Intermediate mode ";
-Blockly.Msg.ESCORNABOT_URL = "https://escornabot.com/es/index";
-Blockly.Msg.ESCORNABOT_SPIN = "Spin: ";
+  "Moduswahl: 1 -> schwächer, aber weniger Stromverbrauch, 2 -> stärker, aber mehr Stromverbrauch, 3 -> Normalbetrieb";
+Blockly.Msg.ESCORNABOT_URL = "https://escornabot.com/es/index"; // do not translate
+Blockly.Msg.ESCORNABOT_SPIN = "Drehung: ";
 Blockly.Msg.ESCORNABOT_SPIN_NUMBER = "Nº: ";
 Blockly.Msg.ESCORNABOT_SPIN_TOOLTIP =
-  "Indicate spin number(admits negative Wert if reverse is wanted) and velocity";
-Blockly.Msg.ESCORNABOT_SPIN_VELOCITY_TEXT = "Velocity: ";
+  "Drehzahl (lässt negativen Wert zu, wenn Rückwärts gewünscht wird) und Geschwindigkeit angeben";
+Blockly.Msg.ESCORNABOT_SPIN_VELOCITY_TEXT = "Geschwindigkeit: ";
 Blockly.Msg.ESCORNABOT_SPIN_VELOCITY = [
-  ["Slow", "5"],
-  ["Medium", "10"],
-  ["Quick", "15"],
+  ["Langsam", "5"],
+  ["Mittel", "10"],
+  ["Schnell", "15"],
 ];
-Blockly.Msg.ESCORNABOT_DISTANCE = "Run distance: ";
+Blockly.Msg.ESCORNABOT_DISTANCE = "Laufweg: ";
 Blockly.Msg.ESCORNABOT_DISTANCE_TEXT = "cm: ";
 Blockly.Msg.ESCORNABOT_DISTANCE_TOOLTIP =
-  "Indicate distance in cm (negative values will imply reverse mode) and velocity";
-Blockly.Msg.ESCORNABOT_TURNSPIN_TEXT = "Turn by X spins: ";
+  "Abstand in cm (negative Werte bedeuten Umkehrmodus) und die Geschwindigkeit angeben";
+Blockly.Msg.ESCORNABOT_TURNSPIN_TEXT = "Turn by X spins: "; //TODO
 Blockly.Msg.ESCORNABOT_TURNSPIN_TOOLTIP =
-  "Turn clockwise/anticlockwise (depending on wether you introduce positive or negative values of spin number you desire)";
-Blockly.Msg.ESCORNABOT_TURNANGLE_TEXT = "Angle spin: ";
-Blockly.Msg.ESCORNABOT_ANGLE_NUMBER = "Angle: ";
+  "Im Uhrzeigersinn/gegen den Uhrzeigersinn drehen (je nachdem, ob positive oder negative Werte für die Drehzahl eingegeben wurden)";
+Blockly.Msg.ESCORNABOT_TURNANGLE_TEXT = "Winkeldrehung: ";
+Blockly.Msg.ESCORNABOT_ANGLE_NUMBER = "Winkel: ";
 Blockly.Msg.ESCORNABOT_TURNANGLE_TOOLTIP =
-  "Spin by angle (sign Wert means clockwise/anticlockwise)";
-Blockly.Msg.ESCORNABOT_STOP_TEXT = "Stop";
-Blockly.Msg.ESCORNABOT_STOP_TOOLTIP = "What did you think?  ";
-Blockly.Msg.ESCORNABOT_BEEP_TEXT = "Beep";
+  "Drehung um eingegebenen Winkel (positiv/negativ im Uhrzeigersinn/gegen Uhrzeigersinn)";
+Blockly.Msg.ESCORNABOT_STOP_TEXT = "Stopp";
+Blockly.Msg.ESCORNABOT_STOP_TOOLTIP = "Was denkst du? ";
+Blockly.Msg.ESCORNABOT_BEEP_TEXT = "Piep";
 Blockly.Msg.ESCORNABOT_TIME_TEXT = "ms";
-Blockly.Msg.ESCORNABOT_BEEP_TOOLTIP = "Beeps as long as the time you specify";
-Blockly.Msg.ESCORNABOT_LEDON_TEXT = "LED ON: ";
-Blockly.Msg.ESCORNABOT_LEDOFF_TEXT = "LED OFF: ";
+Blockly.Msg.ESCORNABOT_BEEP_TOOLTIP = "Piept so lange, wie eingestellt wurde";
+Blockly.Msg.ESCORNABOT_LEDON_TEXT = "LED an: ";
+Blockly.Msg.ESCORNABOT_LEDOFF_TEXT = "LED aus: ";
 Blockly.Msg.ESCORNABOT_LED_CHOICE = [
-  ["Forward", "1"],
-  ["Backward", "3"],
-  ["Left", "2"],
-  ["Right", "4"],
+  ["Vorwärts", "1"],
+  ["Rückwärts", "3"],
+  ["Links", "2"],
+  ["Rechts", "4"],
 ];
-Blockly.Msg.ESCORNABOT_LEDON_TOOLTIP = "Lights on the selected LED diode";
-Blockly.Msg.ESCORNABOT_LEDOFF_TOOLTIP = "Lights off the selected LED diode";
-Blockly.Msg.ESCORNABOT_GETBUTTON_TEXT = "Button pushed: ";
+Blockly.Msg.ESCORNABOT_LEDON_TOOLTIP = "Lässt ausgewählte LED aufleuchten";
+Blockly.Msg.ESCORNABOT_LEDOFF_TOOLTIP = "Lässt ausgewählte LED ausgehen";
+Blockly.Msg.ESCORNABOT_GETBUTTON_TEXT = "Knopf gedrückt: ";
 Blockly.Msg.ESCORNABOT_GETBUTTON_TOOLTIP =
-  "Check if the selected button is being pushed.";
+  "Überprüft, ob der ausgewählte Knopf gedrückt wird.";
 Blockly.Msg.ESCORNABOT_BUTTON_SELECTED = [
-  ["Forward", "1"],
-  ["Backward", "3"],
-  ["Left", "2"],
-  ["Right", "4"],
-  ["Center", "5"],
+  ["Vorwärts", "1"],
+  ["Rückwärts", "3"],
+  ["Links", "2"],
+  ["Rechts", "4"],
+  ["Mitte", "5"],
 ];
-Blockly.Msg.ESCORNABOT_APP_TOOLTIP = "Autonomous working";
-Blockly.Msg.ESCORNABOT_APP_URL = "www.escornabot.com";
-Blockly.Msg.ESCORNABOT_USINIT_TEXT = "Ultrasound inits";
-Blockly.Msg.ESCORNABOT_TRIGGER_TEXT = "Trigger pin";
-Blockly.Msg.ESCORNABOT_ECHO_TEXT = "Echo pin";
-Blockly.Msg.ESCORNABOT_GETUS_TEXT = "Distance";
-Blockly.Msg.ESCORNABOT_GETUS_TOOLTIP = "Distance";
-Blockly.Msg.ESCORNABOT_IRINIT_TEXT = "Inits ir";
-Blockly.Msg.ESCORNABOT_IR_TOOLTIP = "Initialize infrared sensors";
-Blockly.Msg.ESCORNABOT_GETBLACKLEFT_TEXT = "Black left erkannt";
+Blockly.Msg.ESCORNABOT_APP_TOOLTIP = "Autonomes Arbeiten";
+Blockly.Msg.ESCORNABOT_APP_URL = "www.escornabot.com"; // do not translate
+Blockly.Msg.ESCORNABOT_USINIT_TEXT = "Ultraschall initialisieren";
+Blockly.Msg.ESCORNABOT_TRIGGER_TEXT = "Trigger Pin";
+Blockly.Msg.ESCORNABOT_ECHO_TEXT = "Echo Pin";
+Blockly.Msg.ESCORNABOT_GETUS_TEXT = "Distanz";
+Blockly.Msg.ESCORNABOT_GETUS_TOOLTIP = "Gibt die gemessene Distanz zurück";
+Blockly.Msg.ESCORNABOT_IRINIT_TEXT = "IR initialisieren";
+Blockly.Msg.ESCORNABOT_IR_TOOLTIP = "initialisiert den Infrarotsensor";
+Blockly.Msg.ESCORNABOT_GETBLACKLEFT_TEXT = "Schwarz links erkannt";
 Blockly.Msg.ESCORNABOT_GETBLACKLEFT_TOOLTIP =
-  " TRUE if black erkannt at left side";
-Blockly.Msg.ESCORNABOT_GETBLACKRIGHT_TEXT = "Black right erkannt";
+  "WAHR, wenn schwarz auf der linken Seite erkannt erkannt";
+Blockly.Msg.ESCORNABOT_GETBLACKRIGHT_TEXT = "Schwarz rechts erkannt";
 Blockly.Msg.ESCORNABOT_GETBLACKRIGHT_TOOLTIP =
-  "TRUE if black erkannt at right side";
-Blockly.Msg.ESCORNABOT_GETWHITELEFT_TEXT = "White left erkannt";
+  "WAHR, wenn schwarz auf der rechten Seite erkannt";
+Blockly.Msg.ESCORNABOT_GETWHITELEFT_TEXT = "Weiß links erkannt";
 Blockly.Msg.ESCORNABOT_GETWHITELEFT_TOOLTIP =
-  "TRUE if white erkannt at left side";
-Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TEXT = "White right erkannt";
+  "WAHR, wenn weiß auf der linken Seite erkannt";
+Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TEXT = "Weiß rechts erkannt";
 Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TOOLTIP =
-  "TRUE if white erkannt at right side";
-Blockly.Msg.ESCORNABOT_IRLEFT_TEXT = "Left";
-Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT = "Right";
+  "WAHR, wenn weiß auf der rechten Seite erkannt";
+Blockly.Msg.ESCORNABOT_IRLEFT_TEXT = "Links";
+Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT = "Rechts";
 
 //SIMPLE SENSORS
 Blockly.Msg.BUTTON_NAME = "Knopf";
@@ -1173,8 +1173,8 @@ Blockly.LKL_VS2_STATE_VALUE_R_CHANNEL = "ChannelR"; //'红色通道';
 Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = "ChannelG"; //'绿色通道';
 Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = "ChannelB"; //'蓝色通道';
 Blockly.LKL_VS2_STATE_VALUE_LABEL = "Label"; //'标签';
-//True False
-Blockly.LKL_VS2_TRUE = "True"; //'是';
+//WAHR False
+Blockly.LKL_VS2_WAHR = "WAHR"; //'是';
 Blockly.LKL_VS2_FALSE = "False"; //'否';
 //Enable Disable
 Blockly.LKL_VS2_ENABLE = "enable"; //'开启';
@@ -1677,7 +1677,7 @@ Blockly.Msg.TEXT_ISEMPTY_HELPURL =
   "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";
 Blockly.Msg.TEXT_ISEMPTY_TITLE = "%1 is empty";
 Blockly.Msg.TEXT_ISEMPTY_TOOLTIP =
-  "Returns true if the provided text is empty.";
+  "Returns WAHR if the provided text is empty.";
 Blockly.Msg.TEXT_JOIN_HELPURL =
   "https://github.com/google/blockly/wiki/Text#text-creation";
 Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = "create text with";
