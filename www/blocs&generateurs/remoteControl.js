@@ -1,34 +1,9 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview Colour blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
- */
- 
  /***************************************************************
  *
  *  This module was created by Oscar Ferruz. oferruz@logix5.com
  *
  ****************************************************************/
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.RemoteControlIR');
@@ -43,12 +18,12 @@ Blockly.Blocks['Init_generalremotecontrol'] = {
     this.setColour("#0060aa");
 	this.appendDummyInput()
 	    .appendField(new Blockly.FieldImage("media/genericRC.png",57,38))
-		.appendField(Blockly.Msg.GENERAL_IR)
+		.appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.GENERAL_IR)
         .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR");	
-		
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR");
+
 	this.appendDummyInput()
-		.appendField(Blockly.Msg.GENERAL_PRESSED);	
+		.appendField(Blockly.Msg.GENERAL_PRESSED);
 	this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setTooltip('Read the key pressed by a remote control');
@@ -58,9 +33,9 @@ Blockly.Blocks['Init_generalremotecontrol'] = {
 Blockly.Arduino['Init_generalremotecontrol'] = function(block) {
 
   var pin_ir = this.getFieldValue('PIN_IR');
-   
+
   Blockly.Arduino.includes_['include_IRremote'] = '#include <IRremote.h>\n';
- 
+
   Blockly.Arduino.variables_['reception_function'] = 'IRrecv ir_rx('+pin_ir+');\n'+
 'decode_results ir_rx_results;\n'+
 '\n'+
@@ -77,10 +52,10 @@ Blockly.Arduino['Init_generalremotecontrol'] = function(block) {
 '	else \n'+
 '		return 0;\n'+
 ' }\n';
-  
-  
-  Blockly.Arduino.setups_['setup_genericRC'] = 'ir_rx.enableIRIn();\n';  
-  	 	
+
+
+  Blockly.Arduino.setups_['setup_genericRC'] = 'ir_rx.enableIRIn();\n';
+
   var code='(unsigned long)fnc_ir_rx_decode()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -101,7 +76,7 @@ Blockly.Blocks['IR_Remote_Key'] = {
 
 Blockly.Arduino['IR_Remote_Key'] = function(block) {
   var key_detected = this.getFieldValue('KEY');
-    
+
   var code = '('+key_detected+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -119,7 +94,7 @@ Blockly.Blocks['Init_remotecontrolMRT'] = {
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
   	this.appendDummyInput()
         .appendField(Blockly.Msg.MRT_CHANNEL)
-        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");	
+        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -130,10 +105,10 @@ Blockly.Blocks['Init_remotecontrolMRT'] = {
 
 Blockly.Arduino['Init_remotecontrolMRT'] = function(block) {
 
-  
+
   var pin_ir = block.getFieldValue('PIN_IR');
   var Channel = this.getFieldValue('CHANNEL');
-  
+
   Blockly.Arduino.definitions_['include_enableinterrupt'] = '#include <EnableInterrupt.h>\n';
   Blockly.Arduino.definitions_['defines_remoteMRT'] = '#define Timeout 500\n'+
 '#define Shift 8\n' +
@@ -154,7 +129,7 @@ Blockly.Arduino['Init_remotecontrolMRT'] = function(block) {
 '   Button_ID = 0x733;\n' +
 '  if (BT_ID == Button_ID) \n' +
 '    return 1;\n' +
-'  return 0;  \n' +  
+'  return 0;  \n' +
 '}\n' +
 '\n' +
 '//Configuration Remote Control\n' +
@@ -179,7 +154,7 @@ Blockly.Arduino['Init_remotecontrolMRT'] = function(block) {
 '    return;\n' +
 '    case 3:\n' +
 '    Channl_ID = 0xCC;\n' +
-'    return;  \n' +      
+'    return;  \n' +
 '    case 4:\n' +
 '    Channl_ID = 0x0C;\n' +
 '    return;\n' +
@@ -260,8 +235,8 @@ Blockly.Arduino['Init_remotecontrolMRT'] = function(block) {
 '  }\n' +
 '  impuls = !impuls;\n' +
 '}	 \n';
-	 	 
-	 
+
+
   var code = 'IRRC_setup('+pin_ir+','+Channel+');\n';
   return code;
 };
@@ -284,7 +259,7 @@ Blockly.Blocks['IR_RemoteMRT_Key'] = {
 
 Blockly.Arduino['IR_RemoteMRT_Key'] = function(block) {
   var key_detected = this.getFieldValue('KEY');
-    
+
   var code = 'RC('+key_detected+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -306,7 +281,7 @@ Blockly.Blocks['Init_remotecontrolMRTNode'] = {
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
   	this.appendDummyInput()
         .appendField(Blockly.Msg.MRT_CHANNEL)
-        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");	
+        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -317,11 +292,11 @@ Blockly.Blocks['Init_remotecontrolMRTNode'] = {
 
 Blockly.Arduino['Init_remotecontrolMRTNode'] = function(block) {
 
-  
+
   var pin_ir = block.getFieldValue('PIN_IR');
   var Channel = this.getFieldValue('CHANNEL');
-  
- 
+
+
   Blockly.Arduino.definitions_['defines_remoteMRTNode'] = '#define Timeout 500\n'+
 '#define Shift 8\n' +
 'unsigned long time1, dtime,timeout_mark;\n' +
@@ -341,7 +316,7 @@ Blockly.Arduino['Init_remotecontrolMRTNode'] = function(block) {
 '   Button_ID = 0x733;\n' +
 '  if (BT_ID == Button_ID) \n' +
 '    return 1;\n' +
-'  return 0;  \n' +  
+'  return 0;  \n' +
 '}\n' +
 '\n' +
 '//Configuration Remote Control\n' +
@@ -428,7 +403,7 @@ Blockly.Arduino['Init_remotecontrolMRTNode'] = function(block) {
 '    return;\n' +
 '    case 3:\n' +
 '    Channl_ID = 0xCC;\n' +
-'    return;  \n' +      
+'    return;  \n' +
 '    case 4:\n' +
 '    Channl_ID = 0x0C;\n' +
 '    return;\n' +
@@ -448,8 +423,8 @@ Blockly.Arduino['Init_remotecontrolMRTNode'] = function(block) {
 '  }\n' +
 '}\n' +
 '\n';
-	 
-	 
+
+
   var code = 'IRRC_setup('+pin_ir+','+Channel+');\n';
   return code;
 };
@@ -472,7 +447,7 @@ Blockly.Blocks['IR_RemoteMRT_Key_Node'] = {
 
 Blockly.Arduino['IR_RemoteMRT_Key_Node'] = function(block) {
   var key_detected = this.getFieldValue('KEY');
-    
+
   var code = 'RC('+key_detected+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -496,7 +471,7 @@ Blockly.Blocks['Init_remotecontrolMRTNodeIL'] = {
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_IR")
   	this.appendDummyInput()
         .appendField(Blockly.Msg.MRT_CHANNEL)
-        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");	
+        .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'], ]), "CHANNEL");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -507,12 +482,12 @@ Blockly.Blocks['Init_remotecontrolMRTNodeIL'] = {
 
 Blockly.Arduino['Init_remotecontrolMRTNodeIL'] = function(block) {
 
-  
+
   var pin_ir = block.getFieldValue('PIN_IR');
   var Channel = this.getFieldValue('CHANNEL');
-  
+
  Blockly.Arduino.includes_['include_IR_library'] = '#include<MRT_Friends_esp32_IRremote.h>\n';
-  
+
  Blockly.Arduino.variables_['variables_IR'] = 'IRrecv irrecv1('+pin_ir+');\n'+
 'int remote_button;\n'+
 'int recommon_flag;\n';
@@ -541,7 +516,7 @@ Blockly.Blocks['IR_RemoteMRT_Key_NodeIL'] = {
 
 Blockly.Arduino['IR_RemoteMRT_Key_NodeIL'] = function(block) {
   var key_detected = this.getFieldValue('KEY');
-    
+
   var code = '(irrecv1.mrtRemoteStateCheck(remote_button,'+key_detected+'))';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -564,8 +539,8 @@ Blockly.Blocks['Attend_remotecontrolMRTNodeIL'] = {
 
 Blockly.Arduino['Attend_remotecontrolMRTNodeIL'] = function(block) {
 
-  
+
  var code = 'remote_button = irrecv1.mrtRemoteLoop();\n';
- 
+
   return code;
 };

@@ -5,8 +5,8 @@
  * Copyright 2014 Min Hur, The New York Times Company
  * Licensed under MIT
  * ======================================================================== */
-.toggle.ios, .toggle-on.ios, .toggle-off.ios {border-radius:20px;border:1px solid #727272}
-.toggle.ios .toggle-handle {border-radius:20px;border:1px solid #727272}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {border-radius:20px;border:2px solid #fff}
+.toggle.ios .toggle-handle {border-radius:20px;border:2px solid #fff}
 .checkbox label .toggle,.checkbox-inline .toggle{margin-left:-20px;margin-right:5px}
 .toggle{position:relative;overflow:hidden}
 .toggle input[type=checkbox]{display:none}

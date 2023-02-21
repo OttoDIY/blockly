@@ -1,7 +1,7 @@
 "use strict";
 goog.provide("Blockly.Blocks.arduino");
 goog.require("Blockly.Blocks");
- 
+
   //////////////
  /*  Motor DC  */
 //////////////
@@ -18,7 +18,7 @@ Blockly.Blocks["moteur_dc_init"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.moteurdagu_tooltiprs040);
     this.setHelpUrl("https://builders.ottodiy.com/")}
 };
@@ -53,7 +53,7 @@ Blockly.Blocks["moteur_dc"]={init:function(){
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setTooltip(Blockly.Msg.moteurdagu_tooltiprs040);
         this.setHelpUrl("https://builders.ottodiy.com/")}
 };
@@ -92,12 +92,12 @@ Blockly.Python["moteur_dc"]=function(){return ""};
 //////////////
 Blockly.Blocks["moteur_dc_stop"]={init:function(){
 
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 22, 22, "*"))   
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 22, 22, "*"))
     .appendField(Blockly.Msg.moteurstop).appendField(new Blockly.FieldDropdown([[Blockly.Msg.right,"6"],[Blockly.Msg.left,"5"],[Blockly.Msg.LetR,"11"]]), "MOTEUR");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setInputsInline(true);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setTooltip(Blockly.Msg.moteurdagu_tooltiprs040stop);
         this.setHelpUrl("https://builders.ottodiy.com/")}
 };
@@ -122,7 +122,7 @@ Blockly.Blocks["moteur_action"]={init:function(){
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/L293D.png', 22, 22, "*"))
     	.appendField(new Blockly.FieldDropdown(Blockly.Msg.sens), "menu").appendField(Blockly.Msg.vitesse);
         this.setInputsInline(false);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.mot_tooltip);
@@ -170,7 +170,7 @@ Blockly.Python["moteur_action"]=function(block){
 Blockly.Blocks["moteur_stop"]={init:function(){
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/L293D.png', 22, 22, "*"))
     	.appendField(Blockly.Msg.moteurstop);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.moteurstop);
@@ -200,7 +200,7 @@ Blockly.Blocks["dcmotor_v1"]={init:function(){
     this.appendValueInput("Vitesse").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.vitesse);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setTooltip("");
     this.setHelpUrl("https://www.adafruit.com/products/81")}
 };
@@ -228,7 +228,7 @@ Blockly.Blocks["servo_move"]={init:function(){
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
 };
@@ -261,7 +261,7 @@ Blockly.Blocks["servo_move2"]={init:function(){
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
 };
@@ -284,11 +284,11 @@ Blockly.Blocks["servo_movemicros"]={init:function(){
     //this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
 	this.appendDummyInput().appendField(Blockly.Msg.pin).setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
-	this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("Microseconds");
+	this.appendValueInput("DEGREE", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField("microseconds");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
 };
@@ -303,14 +303,14 @@ return "servo_" + value_pin + ".writeMicroseconds(" + value_degree + ");\n"
 };
 Blockly.Blocks["servo_attach"]={init:function(){
 	var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 22, 22, "*")).appendField("Attach Servo");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 22, 22, "*")).appendField("attach servo");
     //this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
 	this.appendDummyInput().appendField(Blockly.Msg.pin).setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
 };
@@ -325,14 +325,14 @@ return "servo_" + value_pin + ".attach(" + value_pin + ");\n"
 
 Blockly.Blocks["servo_detach"]={init:function(){
 	var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 22, 22, "*")).appendField("Detach Servo");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/servo.png', 22, 22, "*")).appendField("detach servo");
     //this.appendValueInput("PIN", "Number").setCheck("Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
 	this.appendDummyInput().appendField(Blockly.Msg.pin).setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP)}
 };
@@ -354,7 +354,7 @@ Blockly.Blocks["servo_read_degrees"]= {
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
       this.setInputsInline(true);
       this.setOutput(true, 'Number');
-      this.setColour("#2d2dd1");
+      this.setColour("#4759F5");
       this.setHelpUrl(Blockly.Msg.HELPURL);
       this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP);
     }
@@ -378,7 +378,7 @@ Blockly.Arduino["servo_read_degrees"]=function(block){
         .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
       this.setInputsInline(true);
       this.setOutput(true);
-      this.setColour("#2d2dd1");
+      this.setColour("#4759F5");
       this.setHelpUrl(Blockly.Msg.HELPURL);
       this.setTooltip(Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP);
     }
@@ -400,7 +400,7 @@ Blockly.Blocks["servo_rot_continue_param"]={init:function(){
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setHelpUrl(Blockly.Msg.HELPURL);
         this.setTooltip(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP)}
 };
@@ -430,7 +430,7 @@ Blockly.Blocks["servo_rot_stop"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setHelpUrl(Blockly.Msg.HELPURL);
     this.setTooltip(Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP)}
 };
@@ -446,7 +446,7 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
     var card=window.localStorage.card;
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"));
     this.appendDummyInput()
-	.appendField(Blockly.Msg.pin+" "+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(Blockly.OTTO_HOME_TEXT+" "+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINL");
     this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
@@ -454,12 +454,12 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
   };
-  
+
   Blockly.Arduino['servo_2wheels_init'] = function(block) {
     var pinl= block.getFieldValue('PINL');
     var pinr= block.getFieldValue('PINR');
@@ -482,18 +482,18 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
   };
 
 Blockly.Blocks['servo_2wheels'] = {  init: function() {
-    this.appendDummyInput().appendField("💿 Wheels").setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
+    this.appendDummyInput().appendField("💿 "+ Blockly.Msg.OTTO_WHEELS_TEXT).setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_CHOICE), "otto_move_sens");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.OTTO9_MOVE_SPEED_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE), "otto_move_speed");
     this.appendDummyInput() .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.m_pap_step) .appendField(new Blockly.FieldNumber("1"), "time");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
   }
   };
-  
+
   Blockly.Arduino['servo_2wheels'] = function(block) {
     var dropdown_otto_move_sens = block.getFieldValue('otto_move_sens');
     var dropdown_otto_move_speed = block.getFieldValue('otto_move_speed');
@@ -523,7 +523,7 @@ Blockly.Blocks["servo_PWM"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
     this.setHelpUrl("PCA9685");
     this.setTooltip("https://learn.adafruit.com/16-channel-pwm-servo-driver")}
 };
@@ -544,13 +544,13 @@ Blockly.Arduino["servo_PWM"]=function(block){
 
 /*****************************************************************
  *
- *  These blocks are for MRT motors 
+ *  These blocks are for MRT motors
  *
  ******************************************************************/
 
 Blockly.Blocks['motor_run'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 	this.appendDummyInput()
@@ -571,19 +571,19 @@ Blockly.Blocks['motor_run'] = {
 
 Blockly.Arduino['motor_run'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
   var motor_direction = this.getFieldValue('MOTOR_DIR');
   var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['define_pwmsoft'] = '#include <SoftPWM.h>\n';
   Blockly.Arduino.setups_['setup_pwminit'] = 'SoftPWMBegin();';
-  
+
   if(motor_pin == 'ML1')
   {
 	   //Blockly.Arduino.setups_['setup_output'] = 'pinMode(3,OUTPUT);';
 	   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
-	   
-	//   if (motor_direction == 'STOP') 
+
+	//   if (motor_direction == 'STOP')
 	//	   var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,LOW);\n'+'SoftPWMSet(7,0);\n';
 	//   else
 	       var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,'+motor_direction+');\n'+'SoftPWMSet(7,'+motor_speed+');\n';
@@ -593,8 +593,8 @@ Blockly.Arduino['motor_run'] = function(block) {
     {
 	   //Blockly.Arduino.setups_['setup_output2'] = 'pinMode(1,OUTPUT);';
 	   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(8,OUTPUT);';
-	   
-	  // if (motor_direction == 'STOP') 
+
+	  // if (motor_direction == 'STOP')
 	//	   var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,LOW);\n'+'SoftPWMSet(8,0);\n';
 	//   else
 	       var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,'+motor_direction+');\n'+'SoftPWMSet(8,'+motor_speed+');\n';
@@ -604,8 +604,8 @@ Blockly.Arduino['motor_run'] = function(block) {
 		{
 			//Blockly.Arduino.setups_['setup_output4'] = 'pinMode(2,OUTPUT);';
 			Blockly.Arduino.setups_['setup_output5'] = 'pinMode(4,OUTPUT);';
-	   
-		//	if (motor_direction == 'STOP') 
+
+		//	if (motor_direction == 'STOP')
 		//	   var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,LOW);\n'+'SoftPWMSet(4,0);\n';
 		//	else
 			   var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,'+motor_direction+');\n'+'SoftPWMSet(4,'+motor_speed+');\n';
@@ -615,23 +615,23 @@ Blockly.Arduino['motor_run'] = function(block) {
 				{
 					//Blockly.Arduino.setups_['setup_outpu6'] = 'pinMode(0,OUTPUT);';
 					Blockly.Arduino.setups_['setup_output7'] = 'pinMode(6,OUTPUT);';
-	   
-				//	if (motor_direction == 'STOP') 
+
+				//	if (motor_direction == 'STOP')
 				//		var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,LOW);\n'+'SoftPWMSet(6,0);\n';
 				//	else
 						var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,'+motor_direction+');\n'+'SoftPWMSet(6,'+motor_speed+');\n';
 				}
 			else
 				var code = '';
- 
-  
+
+
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
 
 Blockly.Blocks['motor_stop'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 	this.appendDummyInput()
@@ -648,50 +648,50 @@ Blockly.Blocks['motor_stop'] = {
 
 Blockly.Arduino['motor_stop'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
- 
+
   Blockly.Arduino.includes_['define_pwmsoft'] = '#include <SoftPWM.h>\n';
   Blockly.Arduino.setups_['setup_pwminit'] = 'SoftPWMBegin();';
-  
+
   if(motor_pin == 'ML1')
   {
 	   //Blockly.Arduino.setups_['setup_output'] = 'pinMode(3,OUTPUT);';
 	   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
-	   
+
 	   var code = 'pinMode(3,OUTPUT);\ndigitalWrite(3,LOW);\n'+'SoftPWMSet(7,0);\n';
-	  
+
   }
   else
    if(motor_pin == 'ML2')
     {
 	   //Blockly.Arduino.setups_['setup_output2'] = 'pinMode(1,OUTPUT);';
-	   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(8,OUTPUT);'; 
+	   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(8,OUTPUT);';
 	   var code = 'pinMode(1,OUTPUT);\ndigitalWrite(1,LOW);\n'+'SoftPWMSet(8,0);\n';
-	  
+
     }
 	else
 	  if(motor_pin == 'MR1')
 		{
 			//Blockly.Arduino.setups_['setup_output4'] = 'pinMode(2,OUTPUT);';
 			Blockly.Arduino.setups_['setup_output5'] = 'pinMode(4,OUTPUT);';
-	   
+
 			var code = 'pinMode(2,OUTPUT);\ndigitalWrite(2,LOW);\n'+'SoftPWMSet(4,0);\n';
-			
+
 		}
 		else
 			if(motor_pin == 'MR2')
 				{
 					//Blockly.Arduino.setups_['setup_outpu6'] = 'pinMode(0,OUTPUT);';
 					Blockly.Arduino.setups_['setup_output7'] = 'pinMode(6,OUTPUT);';
-	   
+
 					var code = 'pinMode(0,OUTPUT);\ndigitalWrite(0,LOW);\n'+'SoftPWMSet(6,0);\n';
-					
+
 				}
 			else
 				var code = '';
-   
-  
+
+
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -705,13 +705,13 @@ Blockly.Arduino['motor_stop'] = function(block) {
 
 Blockly.Blocks['stepper_configuration'] = { init: function() {
 	var card=window.localStorage.card;
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput().appendField(new Blockly.FieldImage("media/motorstep.png",33,33)).appendField(Blockly.Msg.STEEPER_name).appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
 	this.appendValueInput("STEP_RPM", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_steprev)
-	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER1");	
-	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin2).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER2");	
-	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin3).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER3");	
-	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin4).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER4");			
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER1");
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin2).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER2");
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin3).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER3");
+	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin4).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER4");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -721,25 +721,25 @@ Blockly.Blocks['stepper_configuration'] = { init: function() {
 
 Blockly.Arduino['stepper_configuration'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var steeper_number = this.getFieldValue('STEEPER_NUMBER');
   var steeper_pin1 = this.getFieldValue('PIN_STEEPER1');
   var steeper_pin2 = this.getFieldValue('PIN_STEEPER2');
   var steeper_pin3 = this.getFieldValue('PIN_STEEPER3');
   var steeper_pin4 = this.getFieldValue('PIN_STEEPER4');
   var stepper_steprev = Blockly.Arduino.valueToCode(this, 'STEP_RPM', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   Blockly.Arduino.includes_['define_stepper'] = '#include <Stepper.h>\n';
   Blockly.Arduino.definitions_['define_stepper_'+steeper_number] = 'Stepper stepper_'+steeper_number+'('+stepper_steprev+','+steeper_pin1+','+steeper_pin2+','+steeper_pin3+','+steeper_pin4+');\n';
 
   var code = '';
-  
+
   return code;
 };
 
 Blockly.Blocks['stepper_speed'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/motorstep.png",22,22))
 	.appendField(Blockly.Msg.STEEPER2_name)
@@ -756,18 +756,18 @@ Blockly.Blocks['stepper_speed'] = {
 
 Blockly.Arduino['stepper_speed'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var steeper_number = this.getFieldValue('STEEPER_NUMBER');
   var stepper_speed = Blockly.Arduino.valueToCode(this, 'STEPPER_SPEED', Blockly.Arduino.ORDER_ATOMIC);
-   
+
   var code = 'stepper_'+steeper_number+'.setSpeed('+stepper_speed+');\n'
-   
+
   return code;
 };
 
 Blockly.Blocks['stepper_steps'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/motorstep.png",22,22))
 	.appendField(Blockly.Msg.STEEPER2_name)
@@ -784,12 +784,12 @@ Blockly.Blocks['stepper_steps'] = {
 
 Blockly.Arduino['stepper_steps'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var steeper_number = this.getFieldValue('STEEPER_NUMBER');
   var stepper_steps = Blockly.Arduino.valueToCode(this, 'STEPPER_STEP', Blockly.Arduino.ORDER_ATOMIC);
-   
+
   var code = 'stepper_'+steeper_number+'.step('+stepper_steps+');\n'
-   
+
   return code;
 };
 //////////////
@@ -802,7 +802,7 @@ Blockly.Blocks["m_pap"]={init:function(){
     this.appendValueInput("ph2", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("phase 2");
     this.appendValueInput("ph3", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("phase 3");
     this.appendValueInput("ph4", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField("phase 4");
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -839,7 +839,7 @@ Blockly.Blocks["m_pap_step"]={init:function(){
 		this.appendDummyInput().appendField(Blockly.Msg.m_pap_step);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#2d2dd1");
+        this.setColour("#4759F5");
         this.setTooltip(Blockly.Msg.m_pap_step_tooltip);
         this.setHelpUrl(Blockly.Msg.HELPURL)}
 };
@@ -860,7 +860,7 @@ Blockly.Python['m_pap_step'] = function(block) {
 
 Blockly.Blocks['motor_MRTX_run'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 this.appendDummyInput()
 .appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 this.appendDummyInput()
@@ -881,35 +881,35 @@ this.appendValueInput("CONTENT", 'Number')
 
 Blockly.Arduino['motor_MRTX_run'] = function(block) {
   // TODO: Assemble Python into code variable.
- 
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
   var motor_direction = this.getFieldValue('MOTOR_DIR');
   var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
-   
+
   if(motor_pin == 'ML1')
   {
   Blockly.Arduino.setups_['setup_output0'] = 'pinMode(6,OUTPUT);';
   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
-  
-  if (motor_direction=='HIGH') 
+
+  if (motor_direction=='HIGH')
 	  motor_direction='LOW';
   else
 	  motor_direction='HIGH';
- 
+
   var code = 'digitalWrite(7,'+motor_direction+');\n'+'analogWrite(6,'+motor_speed+');\n';
   }
   else
    if(motor_pin == 'ML2')
     {
-		
-	if (motor_direction=='HIGH') 
+
+	if (motor_direction=='HIGH')
 	  motor_direction='LOW';
 	else
 	  motor_direction='HIGH';
-  
+
   Blockly.Arduino.setups_['setup_output2'] = 'pinMode(5,OUTPUT);';
   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(12,OUTPUT);';
- 
+
   var code = 'digitalWrite(12,'+motor_direction+');\n'+'analogWrite(5,'+motor_speed+');\n';
     }
 else
@@ -917,7 +917,7 @@ else
 {
 Blockly.Arduino.setups_['setup_output4'] = 'pinMode(9,OUTPUT);';
 Blockly.Arduino.setups_['setup_output5'] = 'pinMode(13,OUTPUT);';
- 
+
 var code = 'digitalWrite(13,'+motor_direction+');\n'+'analogWrite(9,'+motor_speed+');\n';
 }
 else
@@ -925,7 +925,7 @@ if(motor_pin == 'MR2')
 {
 Blockly.Arduino.setups_['setup_output6'] = 'pinMode(A3,OUTPUT);';
 Blockly.Arduino.setups_['setup_output7'] = 'pinMode(10,OUTPUT);';
- 
+
 var code = 'digitalWrite(A3,'+motor_direction+');\n'+'analogWrite(10,'+motor_speed+');\n';
 }
 else
@@ -935,7 +935,7 @@ var code = '';
 
 Blockly.Blocks['motor_MRTX_stop'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 this.appendDummyInput()
 .appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 this.appendDummyInput()
@@ -952,14 +952,14 @@ this.appendDummyInput()
 
 Blockly.Arduino['motor_MRTX_stop'] = function(block) {
   // TODO: Assemble Python into code variable.
- 
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
- 
+
   if(motor_pin == 'ML1')
   {
   Blockly.Arduino.setups_['setup_output0'] = 'pinMode(6,OUTPUT);';
   Blockly.Arduino.setups_['setup_output1'] = 'pinMode(7,OUTPUT);';
- 
+
   var code = 'digitalWrite(7,LOW);\n'+'analogWrite(6,0);\n';
   }
   else
@@ -967,7 +967,7 @@ Blockly.Arduino['motor_MRTX_stop'] = function(block) {
     {
   Blockly.Arduino.setups_['setup_output2'] = 'pinMode(5,OUTPUT);';
   Blockly.Arduino.setups_['setup_output3'] = 'pinMode(12,OUTPUT);';
- 
+
   var code = 'digitalWrite(12,LOW);\n'+'analogWrite(5,0);\n';
     }
 else
@@ -975,7 +975,7 @@ else
 {
 Blockly.Arduino.setups_['setup_output4'] = 'pinMode(9,OUTPUT);';
 Blockly.Arduino.setups_['setup_output5'] = 'pinMode(13,OUTPUT);';
- 
+
 var code = 'digitalWrite(13,LOW);\n'+'analogWrite(9,0);\n';
 }
 else
@@ -983,7 +983,7 @@ if(motor_pin == 'MR2')
 {
 Blockly.Arduino.setups_['setup_output6'] = 'pinMode(A3,OUTPUT);';
 Blockly.Arduino.setups_['setup_output7'] = 'pinMode(10,OUTPUT);';
- 
+
 var code = 'digitalWrite(A3,LOW);\n'+'analogWrite(10,0);\n';
 }
 else
@@ -1000,7 +1000,7 @@ var code = '';
 
 Blockly.Blocks['motor_MRT_Node_run'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 	this.appendDummyInput()
@@ -1021,23 +1021,23 @@ Blockly.Blocks['motor_MRT_Node_run'] = {
 
 Blockly.Arduino['motor_MRT_Node_run'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
   var motor_direction = this.getFieldValue('MOTOR_DIR');
   var motor_speed = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   Blockly.Arduino.includes_['include_motor_mrt_node'] = '#include "MRT_esp32_Motor.h"\n';
-  
+
   Blockly.Arduino.setups_['setup_motorMRT_node'] = 'DcMotor_init();';
-  
+
   var code= 'setDcMotor('+motor_pin+','+motor_direction+','+motor_speed+');\n';
-	
+
   return code;
 };
 
 Blockly.Blocks['motor_MRT_Node_stop'] = {
   init: function() {
-    this.setColour("#2d2dd1");
+    this.setColour("#4759F5");
 	this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/MotorMRT.png",22,22))
 	this.appendDummyInput()
@@ -1054,14 +1054,14 @@ Blockly.Blocks['motor_MRT_Node_stop'] = {
 
 Blockly.Arduino['motor_MRT_Node_stop'] = function(block) {
   // TODO: Assemble Python into code variable.
-  
+
   var motor_pin = this.getFieldValue('MOTOR_CON');
-  
+
   Blockly.Arduino.includes_['include_motor_mrt_node'] = '#include "MRT_esp32_Motor.h"\n';
-  
+
   Blockly.Arduino.setups_['setup_motorMRT_node'] = 'DcMotor_init();';
-  
+
   var code= 'setDcMotor('+motor_pin+',0,0);\n';
-  
+
   return code;
 };

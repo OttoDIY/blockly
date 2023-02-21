@@ -1,34 +1,9 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview Colour blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
- */
- 
- /***************************************************************
+/***************************************************************
  *
  *  This module was created by Oscar Ferruz. oferruz@logix5.com
  *
  ****************************************************************/
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.SerialUSB');
@@ -39,8 +14,8 @@ goog.require('Blockly.Blocks');
 /**
  * Common HSV hue for all blocks in this category.
  */
- 
-  
+
+
 
 Blockly.Blocks['serial_init'] = {
   helpUrl: '',
@@ -48,7 +23,7 @@ Blockly.Blocks['serial_init'] = {
     this.setColour("#0060aa");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/serie.png", 20,25 ))
-	.appendField(Blockly.Msg.SERIAL_Init)
+	.appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.SERIAL_Init)
     this.appendDummyInput()
     .appendField(Blockly.Msg.SERIAL_BAUD)
 	.appendField(new Blockly.FieldDropdown([['1200', '1200'],['2400', '2400'],['4800', '4800'],['9600', '9600'],['19200', '19200'],['38400', '38400'],['57600', '57600'],['115200', '115200']]), "PINBAUDIOS");
@@ -60,10 +35,10 @@ Blockly.Blocks['serial_init'] = {
 };
 
 Blockly.Arduino['serial_init'] = function(block) {
-  
- 
+
+
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
-  
+
   Blockly.Arduino.setups_['setup_serial'] = 'Serial.begin('+dropdown_pinbaudios+');\n';
   var code = '';
   return code;
@@ -92,7 +67,7 @@ Blockly.Arduino['serial_printfor'] = function(block) {
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_NONE);
   //content = content.replace('(','').replace(')','');
   var type = this.getTitleValue('TYPE');
-      
+
   var code = 'Serial.print('+content+ ','+type+');\n';//ORGINAL \nSerial.print(\'\\t\');
   return code;
 };
@@ -163,12 +138,12 @@ Blockly.Blocks['serial_read_string'] = {
 Blockly.Arduino['serial_read_string'] = function(block) {
   // TODO: Assemble Python into code variable.
    var logic = this.getFieldValue('LOGIC');
-   
+
    if(logic=='TRUE')
     var code = 'Serial.readStringUntil(\'\\n\')';
   else
     var code = 'Serial.readString()';
-   
+
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -194,12 +169,12 @@ Blockly.Blocks['serial_read_number'] = {
 Blockly.Arduino['serial_read_number'] = function(block) {
   // TODO: Assemble Python into code variable.
    var logic = this.getFieldValue('LOGIC');
-   
+
    if(logic=='TRUE')
     var code = 'atof((Serial.readStringUntil(\'\\n\')).c_str())';
   else
     var code = 'Serial.parseFloat()';
-   
+
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -213,7 +188,7 @@ Blockly.Blocks['serial_println'] = {
 	.appendField(new Blockly.FieldImage("media/serie.png", 20,25 ))
     this.appendValueInput("CONTENT", "String")
         .appendField(Blockly.Msg.SERIAL_Println);
-	this.setInputsInline(true);	
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -235,7 +210,7 @@ Blockly.Blocks['serial_print'] = {
 	.appendField(new Blockly.FieldImage("media/serie.png", 20,25 ))
     this.appendValueInput("CONTENT", "String")
         .appendField(Blockly.Msg.SERIAL_Print);
-	this.setInputsInline(true);	
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -269,10 +244,7 @@ Blockly.Blocks['serial_write'] = {
 Blockly.Arduino['serial_write'] = function(block) {
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';
   //content = content.replace('(','').replace(')','');
-   
-  var code = 'Serial.write('+content+');\n';  
+
+  var code = 'Serial.write('+content+');\n';
   return code;
 };
-
-
-

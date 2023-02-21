@@ -13,7 +13,7 @@ Blockly.Blocks['encoder'] = {
      //this.appendDummyInput() .appendField("SW").appendField(new Blockly.FieldTextInput('4'), 'SW');
   this.setInputsInline(true);
   this.setOutput(true, "Number");
-     this.setColour("#2a93e8");
+     this.setColour("#54BCF7");
      this.setTooltip('');
      this.setHelpUrl('https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/');
    }
@@ -30,7 +30,7 @@ Blockly.Blocks['encoder'] = {
   Blockly.Arduino.setups_['encoder']='  pinMode(CLK,INPUT);\n'
   +'pinMode(DT,INPUT);\n'
   +'lastStateCLK = digitalRead(CLK);';
-  var code 
+  var code
   return code
 };
 
@@ -40,17 +40,17 @@ Blockly.Blocks['Init_RotaryEncoderInterrupt'] = {
   helpUrl: '',
   init: function() {
 	var card=window.localStorage.card;
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/potentiometer.png",33,33))
 		.appendField(Blockly.Msg.RotaryEncoderInit)
         .appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "RE_NUMBER")
 	this.appendDummyInput()
         .appendField(Blockly.Msg.RE_PINDT)
-        .appendField(new Blockly.FieldDropdown(profile[card].interrupt), "PINDT");	
+        .appendField(new Blockly.FieldDropdown(profile[card].interrupt), "PINDT");
 	this.appendDummyInput()
         .appendField(Blockly.Msg.RE_PINCLK)
-        .appendField(new Blockly.FieldDropdown(profile[card].interrupt), "PINCLK");	
+        .appendField(new Blockly.FieldDropdown(profile[card].interrupt), "PINCLK");
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -62,10 +62,10 @@ Blockly.Arduino['Init_RotaryEncoderInterrupt'] = function(block) {
   var number = this.getFieldValue('RE_NUMBER');
   var dropdown_pinDT = this.getFieldValue('PINDT');
   var dropdown_pinCLK = this.getFieldValue('PINCLK');
-   
+
   Blockly.Arduino.includes_['include_encoder'] = '#include <Encoder.h>';
   Blockly.Arduino.definitions_['rotaryencoder_'+number] = 'Encoder encoder_'+number+'('+dropdown_pinDT+','+dropdown_pinCLK+');\n';
-  	 	 
+
   var code='';
   return code;
 };
@@ -74,7 +74,7 @@ Blockly.Arduino['Init_RotaryEncoderInterrupt'] = function(block) {
 Blockly.Blocks['RotaryEncoder_Write'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	this.appendDummyInput()
        .appendField(new Blockly.FieldImage("media/potentiometer.png",33,33))
 		.appendField(Blockly.Msg.RotaryEncoderNumber)
@@ -82,7 +82,7 @@ Blockly.Blocks['RotaryEncoder_Write'] = {
     this.appendDummyInput()
 	    .appendField(Blockly.Msg.RE_WRITE);
 	this.appendValueInput("Writecounter")
-        .setCheck("Number");	
+        .setCheck("Number");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -94,9 +94,9 @@ Blockly.Arduino['RotaryEncoder_Write'] = function(block) {
   // TODO: Assemble Python into code variable.
   var number = this.getFieldValue('RE_NUMBER');
   var writenumber =Blockly.Arduino.valueToCode(this, 'Writecounter', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   var code = 'encoder_'+number+'.write('+writenumber+'*4);\n'
-   
+
   return code;
 };
 
@@ -104,7 +104,7 @@ Blockly.Arduino['RotaryEncoder_Write'] = function(block) {
 Blockly.Blocks['RotaryEncoder_Read'] = {
   helpUrl: '',
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/potentiometer.png",33,33))
 		.appendField(Blockly.Msg.RotaryEncoderNumber)
@@ -118,10 +118,10 @@ Blockly.Blocks['RotaryEncoder_Read'] = {
 };
 
 Blockly.Arduino['RotaryEncoder_Read'] = function(block) {
-   
-  var number = this.getFieldValue('RE_NUMBER');  
+
+  var number = this.getFieldValue('RE_NUMBER');
   var code = '(encoder_'+number+'.read()/4)';
-  
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -130,7 +130,7 @@ Blockly.Blocks['rotaryencoder_button_sensor'] = {
   helpUrl: '',
   init: function() {
 	var card=window.localStorage.card;
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
 	this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/potentiometer.png",33,33))
 		.appendField(Blockly.Msg.RotaryEncoderNumber)
@@ -151,9 +151,9 @@ Blockly.Blocks['rotaryencoder_button_sensor'] = {
 Blockly.Arduino['rotaryencoder_button_sensor'] = function(block) {
   var number = this.getFieldValue('RE_NUMBER');
   var dropdown_pin = this.getFieldValue('PIN_RE_BUTTON');
-  
+
   Blockly.Arduino.setups_['setup_re_'+number] = 'pinMode('+dropdown_pin+',INPUT_PULLUP);';
-  
+
   var code = '!digitalRead('+dropdown_pin+')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

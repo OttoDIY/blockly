@@ -41,7 +41,7 @@ Blockly.Msg.CAT_FUNCTIONS = "🔣 Functies";
 Blockly.Msg.CAT_ARDUINO = "🔄 Structuur";
 Blockly.Msg.CAT_ARDUINO_IN = "🔛 Invoer / Uitvoer";
 Blockly.Msg.CAT_ARDUINO_OUT = "↪️ Einde";
-Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ Tijd"; 
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ Tijd";
 Blockly.Msg.CAT_OTTO = "🤖 Otto";
 Blockly.Msg.CAT_OTTO_ARMS = "🦾 Armen";
 Blockly.Msg.CAT_OTTO_WHEELS = "💿 Wielen";
@@ -269,7 +269,7 @@ Blockly.Msg.SSerial_BT_Print_Format="Serial BT Print  Format";
 Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Read as number";
 Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Read String";
 Blockly.Msg.SSERIAL_BT_Readlf="until line feed";
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="Software Serial";
 Blockly.Msg.SSERIAL_TX="TX";
 Blockly.Msg.SSERIAL_RX="RX";
@@ -284,7 +284,7 @@ Blockly.Msg.SSERIAL_ReadNum="Software Serial Read as number";
 Blockly.Msg.SSERIAL_ReadString="Software Serial Read String";
 Blockly.Msg.SSERIAL_Readlf="until line feed";
 
-// SERIAL 
+// SERIAL
 Blockly.Msg.SERIAL_Init="USB Serial";
 Blockly.Msg.SERIAL_Read="Serial Read byte";
 Blockly.Msg.SERIAL_Println="Serial Print on new line";
@@ -510,13 +510,25 @@ Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/academy";// do not translat
 Blockly.Msg.OTTO9_CALIBRATION='Afstellen ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='Been ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='Voet ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='Use small positive and negative values iteratively,change gradually until is completely straight (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'Save Trims on EEPROM';
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP= 'Use only after completely straight(90º) one time, delete this BLOCK after for further programming';
 Blockly.Msg.OTTO9_MOVE_TEXT = "Beweeg";
 Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto basisbewegingen";
 Blockly.Msg.OTTO9_MOVE_CHOICE = [["↑ vooruit", "FORWARD"], ["↓ achteruit", "BACKWARD"], ["↺ draai links", "LEFT"], ["↻ draai rechts", "RIGHT"], ["buig naar links", "BENDLEFT"], ["buig naar rechts", "BENDRIGHT"], ["schud linkerbeen", "SHAKELEFT"], ["schud rechterbeen", "SHAKERIGHT"], ["op", "spring"]];
-Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ vooruit", "FORWARD"], ["↓ achteruit", "BACKWARD"], ["↺ draai links", "LEFT"], ["↻ draai rechts", "RIGHT"]]; 
+Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ vooruit", "FORWARD"], ["↓ achteruit", "BACKWARD"], ["↺ draai links", "LEFT"], ["↻ draai rechts", "RIGHT"]];
 Blockly.Msg.OTTO9_MOVE_SPEED_TEXT = "Snelheid";
 Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE = [["normaal", "1000"],["langzaam", "2000"],["heel langzaam", "3000"] , ["snel", "750"], ["heel snel", "500"], ["veel te snel", "250"]];
 Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE = [["normaal", "45"],["langzaam", "20"],["heel langzaam", "10"] , ["snel", "60"], ["heel snel", "90"]];
@@ -672,7 +684,7 @@ Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
 Blockly.Msg.TOUCH="Touch";
 
 //CCS811
-Blockly.Msg.CCS811="CO₂ Pins"; 
+Blockly.Msg.CCS811="CO₂ Pins";
 Blockly.Msg.CCS811_name="CO₂";
 Blockly.Msg.CCS811_2="I²C & WAK to GND";
 Blockly.Msg.CCS811_available="sensor beschikbaar?";
@@ -738,7 +750,7 @@ Blockly.Msg.MP3OS_inject="Inject track number";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -1278,7 +1290,7 @@ Blockly.Msg.TEXT_TRIM = "trim spaces from ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed from one or both ends.";
 
 //Conversions
-Blockly.Msg.CONV_tochar="Casting to char "; 
+Blockly.Msg.CONV_tochar="Casting to char ";
 Blockly.Msg.CONV_toString="Convert to String ";
 Blockly.Msg.CONV_decimal="Number of decimals";
 Blockly.Msg.CONV_tobyte="Casting to Byte ";

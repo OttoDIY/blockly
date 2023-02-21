@@ -2,19 +2,19 @@
 goog.provide('Blockly.Msg.fr');
 goog.require('Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "⚠️ Choisir le port" ; 
-Blockly.Msg.com2 = "⚠️ Sélectionner un port !" ; 
-Blockly.Msg.check = "Vérification " ; 
-Blockly.Msg.upload = "Téléversement " ; 
+Blockly.Msg.com1 = "⚠️ Choisir le port" ;
+Blockly.Msg.com2 = "⚠️ Sélectionner un port !" ;
+Blockly.Msg.check = "Vérification " ;
+Blockly.Msg.upload = "Téléversement " ;
 Blockly.Msg.error = "🛑 ERREUR : Blocs non connectés " ;
 Blockly.Msg.verif = "⛔ Vérifier d'abord le programme !"
-Blockly.Msg.save = "Enregistrer au format " ; 
-Blockly.Msg.update = "Mise à jour" ; 
-Blockly.Msg.new_update = "Une nouvelle version est disponible, voulez-vous la télécharger et l'installer maintenant ?" ; 
-Blockly.Msg.yes = "oui" ; 
-Blockly.Msg.no = "non" ; 
-Blockly.Msg.uptodate = "✅ Votre version est à jour." ; 
-Blockly.Msg.download = "Téléchargement terminé, l'application va s'installer puis redémarrer..." 
+Blockly.Msg.save = "Enregistrer au format " ;
+Blockly.Msg.update = "Mise à jour" ;
+Blockly.Msg.new_update = "Une nouvelle version est disponible, voulez-vous la télécharger et l'installer maintenant ?" ;
+Blockly.Msg.yes = "oui" ;
+Blockly.Msg.no = "non" ;
+Blockly.Msg.uptodate = "✅ Votre version est à jour." ;
+Blockly.Msg.download = "Téléchargement terminé, l'application va s'installer puis redémarrer..."
 // commun à tous les blocs
 Blockly.Msg.HELPURL="https://ottodiy.com"; //ne pas traduire
 Blockly.Msg.pin="sur la broche";
@@ -67,7 +67,7 @@ Blockly.Msg.CAT_TEMP = "🌡️ Temperature"
 Blockly.Msg.CAT_LIGHT = "🌞 Light"
 Blockly.Msg.CAT_WATER = "💧 Water"
 Blockly.Msg.CAT_SOUND ="🎤 Noise"
-Blockly.Msg.CAT_GAS = "⛽ Gas" 
+Blockly.Msg.CAT_GAS = "⛽ Gas"
 Blockly.Msg.CAT_OLED_U8G = "▀ OLED";
 Blockly.Msg.CAT_NEOPIXEL = "☄ Neopixel";
 Blockly.Msg.CAT_NEOMATRIX = "🌈 NeoMatrix";
@@ -482,6 +482,18 @@ Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.OTTO9_CALIBRATION='étalonner ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='jambe ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='pied ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM='bras ';
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='use small positive and negative values iteratively,change gradually until is completely straight (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'save Trims on EEPROM';
@@ -727,7 +739,7 @@ Blockly.Msg.MP3OS_inject="Inject track number";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -879,7 +891,7 @@ Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Lire un nombre";
 Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Lire un texte";
 Blockly.Msg.SSERIAL_BT_Readlf="jusqu'au saut de ligne";
 
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="Initialiser SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";
@@ -894,7 +906,7 @@ Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Lire un nombre";
 Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Lire un texte";
 Blockly.Msg.SSERIAL_Readlf="jusqu'au saut de ligne";
 
-// SERIAL 
+// SERIAL
 Blockly.Msg.SERIAL_Init="Initialiser Serial ";
 Blockly.Msg.SERIAL_TX="Pin TX#";
 Blockly.Msg.SERIAL_RX="Pin RX#";
@@ -1297,7 +1309,7 @@ Blockly.Msg.TEXT_TRIM = "trim spaces from ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "Return a copy of the text with spaces removed from one or both ends.";
 
 //Conversions
-Blockly.Msg.CONV_tochar="Casting to char "; 
+Blockly.Msg.CONV_tochar="Casting to char ";
 Blockly.Msg.CONV_toString="Convert to String ";
 Blockly.Msg.CONV_decimal="Number of decimals";
 Blockly.Msg.CONV_tobyte="Casting to Byte ";

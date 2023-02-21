@@ -1,7 +1,7 @@
 {
  "name": "ottoblockly",
- "version": "1.4.7",
- "description": "Blockly and Arduino coding standalone App for Otto DIY robot",
+ "version": "1.5.0",
+ "description": "Blockly and Arduino coding standalone software for Otto DIY robots",
  "author": "Otto DIY and Builder community",
  "license": "GPL-2.0",
  "main": "electronApp.js",
@@ -30,30 +30,41 @@
   "microbit",
   "MICROBIT"
  ],
+
  "scripts": {
-  "postinstall": "electron-builder install-app-deps",
-  "start": "electron .",
-  "compiler": "electron-builder --win --ia32",
-  "compiler:mac": "electron-builder --mac",
-  "publier": "electron-builder --win --ia32 -p always"
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "compiler": "electron-builder --win --ia32",
+    //"compiler": "build --win --x64",
+    "compiler:mac": "electron-builder --mac",
+    //"compiler:linux": "electron-builder --linux --x64",
+    "compilerlinux": "build --linux --x64",
+    "compilerlinux32": "build --linux --ia32",
+    "deb64": "electron-installer-debian --src dist/linux-unpacked --dest dist/installers/ --arch amd64 --config debconfig.json",
+    "deb32": "electron-installer-debian --src dist/linux-unpacked32 --dest dist/installers/ --arch ia32 --config debconfig.json",
+    "publier": "electron-builder --win --ia32 -p always"
+ // "rebuild": "electron-rebuild -f -w serialport"
+},
+  
+"build": {
+    "appId": "com.electron.ottoblockly",
+    "asar": false,
+    "directories": {
+        "buildResources": "./build",
+        "output": "./dist"
  },
- "build": {
-  "appId": "com.electron.ottoblockly",
-  "asar": false,
-  "directories": {
-   "buildResources": "./build",
-   "output": "./dist"
-  },
-  "nsis": {
-   "installerIcon": "build/install.ico",
-   "uninstallerIcon": "build/app.ico",
-   "oneClick": false,
-   "perMachine": true,
-   "deleteAppDataOnUninstall": true,
-   "allowToChangeInstallationDirectory": true,
-   "runAfterFinish": true,
-   "include": "build/ottoblockly.nsh"
-  },
+ 
+"nsis": {
+    "installerIcon": "build/install.ico",
+    "uninstallerIcon": "build/app.ico",
+    "oneClick": false,
+    "perMachine": true,
+    "deleteAppDataOnUninstall": true,
+    "allowToChangeInstallationDirectory": true,
+    "runAfterFinish": true,
+    "include": "build/ottoblockly.nsh"
+},
+ 
   "win": {
    "target": [
     "portable",
@@ -85,17 +96,18 @@
     "AppImage",
     "deb"
    ]
+   "icon": "build/app.ico"
   },
   "fileAssociations": {
    "ext": "bloc",
-   "name": "BLOC File",
+   "name": "BLOC file",
    "role": "Editor",
    "icon": "build/file.ico"
   },
   "extraFiles": [
    "www",
    "compilation",
-   "pilotes",
+   "driversUSB",
    "README.md",
    "LICENSE.md",
    "config.json"
@@ -124,11 +136,21 @@
   "electron": "13.6.6",
   "electron-builder": "21.2.0",
   "electron-installer-dmg": "3.0.0"
+  "electron-installer-debian": "^3.1.0",
+  //"electron-rebuild": "^2.3.5"
  },
  "dependencies": {
   "ajv": "6.12.3",
   "child_process": "1.0.2",
   "electron-updater": "4.0.6",
   "serialport": "7.1.4"
+  "child_process": "1.0.2",
+  //"decompress-zip": "^0.2.2",
+  //"extract-zip": "^2.0.1",
+  //"fs-extra": "^8.1.0",
+  //"ftp": "0.3.10",
+  //"node-gyp": "^7.1.2",
+  //"tableify": "^1.1.0"
+  //"virtual-serialport": "^4.0.0"
  }
 }

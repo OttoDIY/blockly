@@ -41,7 +41,7 @@ Blockly.Msg.CAT_FUNCTIONS = "🔣 関数";
 Blockly.Msg.CAT_ARDUINO = "🔄 基本構造";
 Blockly.Msg.CAT_ARDUINO_IN = "🔛 入力 / 出力";
 Blockly.Msg.CAT_ARDUINO_OUT = "↪️ 終了";
-Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ 時間"; 
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ 時間";
 Blockly.Msg.CAT_OTTO = "🤖 Otto";
 Blockly.Msg.CAT_OTTO_ARMS = "🦾 腕";
 Blockly.Msg.CAT_OTTO_WHEELS = "💿 車輪";
@@ -269,7 +269,7 @@ Blockly.Msg.SSerial_BT_Print_Format="シリアル BT フォーマット書き出
 Blockly.Msg.SSERIAL_BT_ReadNum="シリアル BT 数字として読む";
 Blockly.Msg.SSERIAL_BT_ReadString="シリアル BT 文字列として読む";
 Blockly.Msg.SSERIAL_BT_Readlf="改行まで";
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="ソフトウェアシリアル";
 Blockly.Msg.SSERIAL_TX="TX";
 Blockly.Msg.SSERIAL_RX="RX";
@@ -284,7 +284,7 @@ Blockly.Msg.SSERIAL_ReadNum="ソフトウェアシリアル　数字として読
 Blockly.Msg.SSERIAL_ReadString="ソフトウェアシリアル　文字列として読む";
 Blockly.Msg.SSERIAL_Readlf="改行まで";
 
-// SERIAL 
+// SERIAL
 Blockly.Msg.SERIAL_Init="USB シリアル";
 Blockly.Msg.SERIAL_Read="シリアル Read byte";
 Blockly.Msg.SERIAL_Println="シリアル 書き出し、改行";
@@ -510,13 +510,25 @@ Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/academy";// do not translat
 Blockly.Msg.OTTO9_CALIBRATION='キャリブレーション ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='足 ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='　　足首 ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='小さな正負の値を繰り返し試し、完全に直線（90º）になるまで少しずつ変化させる。';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'トリムを EEPROM に保存';
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP= '完全に直進（90°）した後にのみ使用し、その後のプログラミングではこのブロックを消します。';
 Blockly.Msg.OTTO9_MOVE_TEXT = "動く";
 Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Otto の基本動作を実行";
 Blockly.Msg.OTTO9_MOVE_CHOICE = [["↑ 前", "FORWARD"], ["↓ 後ろ", "BACKWARD"], ["↺ 左回り", "LEFT"], ["↻ 右回り", "RIGHT"], ["左に傾ける", "BENDLEFT"], ["右に傾ける", "BENDRIGHT"], ["左足をゆらゆら", "SHAKELEFT"], ["右足をゆらゆら", "SHAKERIGHT"], ["上", "jump"]];
-Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ 前", "FORWARD"], ["↓ 後ろ", "BACKWARD"], ["↺ 左回り", "LEFT"], ["↻ 右回り", "RIGHT"]]; 
+Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ 前", "FORWARD"], ["↓ 後ろ", "BACKWARD"], ["↺ 左回り", "LEFT"], ["↻ 右回り", "RIGHT"]];
 Blockly.Msg.OTTO9_MOVE_SPEED_TEXT = "スピード";
 Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE = [["ノーマル", "1000"],["スロー", "2000"],["ベリースロー", "3000"] , ["速い", "750"], ["高速", "500"], ["超高速", "250"]];
 Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE = [["ノーマル", "45"],["スロー", "20"],["ベリースロー", "10"] , ["速い", "60"], ["高速", "90"]];
@@ -672,7 +684,7 @@ Blockly.Msg.MRTX_BUTTON="MRTNode start button pressed?";
 Blockly.Msg.TOUCH="Touch";
 
 //CCS811
-Blockly.Msg.CCS811="CO₂ Pins"; 
+Blockly.Msg.CCS811="CO₂ Pins";
 Blockly.Msg.CCS811_name="CO₂";
 Blockly.Msg.CCS811_2="I²C & WAK to GND";
 Blockly.Msg.CCS811_available="sensor available?";
@@ -738,7 +750,7 @@ Blockly.Msg.MP3OS_inject="Inject track number";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -1278,7 +1290,7 @@ Blockly.Msg.TEXT_TRIM = "スペースをトリム ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "文字列の始まりと終わりのスペースを取り除いた文字列を作成して返す";
 
 //Conversions
-Blockly.Msg.CONV_tochar="char 型にキャスト "; 
+Blockly.Msg.CONV_tochar="char 型にキャスト ";
 Blockly.Msg.CONV_toString="String 型にキャスト ";
 Blockly.Msg.CONV_decimal="小数点以下の桁数";
 Blockly.Msg.CONV_tobyte="バイト型にキャスト ";

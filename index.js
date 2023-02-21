@@ -24,7 +24,7 @@ window.addEventListener('load', function load(event) {
 		}, 3000);
 	}
 	$('#btn_forum').on('click', function(){
-		shell.openExternal('http://builders.ottodiy.com/')
+		shell.openExternal('https://discord.gg/CZZytnw')
 	})
 	$('#btn_site').on('click', function(){
 		shell.openExternal('https://www.ottodiy.com/')
@@ -68,7 +68,7 @@ window.addEventListener('load', function load(event) {
 			return
 		}
 		localStorage.setItem("verif",false)
-		ipcRenderer.send('save-bin') 
+		ipcRenderer.send('save-bin')
 	})
 	$.ajax({
 	    cache: false,
@@ -133,7 +133,7 @@ window.addEventListener('load', function load(event) {
 		if (localStorage.getItem("prog") == "python") { ipcRenderer.send("repl", "") } else { ipcRenderer.send("prompt", "") }
 	})
 	$('#btn_factory').on('click', function(){
-		ipcRenderer.send("factory", "")	
+		ipcRenderer.send("factory", "")
 	})
 	$('#btn_verify').on('click', function(){
 		if (localStorage.getItem('content') == "off") {
@@ -146,7 +146,7 @@ window.addEventListener('load', function load(event) {
 		var com = portserie.value
 		messageDiv.style.color = '#000000'
 		messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-		
+
 		if (prog == "python") {
 			fs.writeFile('./compilation/python/py/sketch.py', data, function(err){
 				if (err) return console.log(err)
@@ -169,14 +169,14 @@ window.addEventListener('load', function load(event) {
 		} else {
 			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
 
-		fs.writeFile(`${arduino_basepath}/sketch/sketch.ino`, data, function(err){	
-				
+		fs.writeFile(`${arduino_basepath}/sketch/sketch.ino`, data, function(err){
+
 			if (err) return console.log(err)
 		})
-		
+
 		var upload_arg = window.profile[carte].upload_arg
 		var cmd = `${arduino_ide_cmd} compile --fqbn ` + upload_arg +' sketch/sketch.ino'
-		
+
 		/*
 		   exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
 			//exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
@@ -191,19 +191,19 @@ window.addEventListener('load', function load(event) {
 					}
 					return
 				}
-								
+
 				messageDiv.style.color = '#009000'
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv
 			}) */
-			
+
 			exec(cmd , {cwd: arduino_basepath} , (error, stdout, stderr) => {
 			if (error) {
-					
+
 						messageDiv.style.color = '#ff0000'
 						messageDiv.innerHTML = error.toString() + quitDiv
 						return
 						}
-						
+
 			    messageDiv.style.color = '#009000'
 				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ Code is ready to upload' + quitDiv
 				$('#message').modal('show');
@@ -212,21 +212,21 @@ window.addEventListener('load', function load(event) {
 				}, 3000);
 
 		    })
-		
-			
+
+
 		}
 		localStorage.setItem("verif",true)
 	})
 	$('#btn_flash').on('click', function(){
-		
+
 		var data = $('#pre_previewArduino').text()
 		var carte = localStorage.getItem('card')
 		var prog = profile[carte].prog
 		var speed = profile[carte].speed
 		var cpu = profile[carte].cpu
-		var com = portserie.value 
+		var com = portserie.value
 		var upload_arg = window.profile[carte].upload_arg
-			
+
 		if ( com == "com" ){
 			messageDiv.style.color = '#ff0000'
 			messageDiv.innerHTML = Blockly.Msg.com2 + quitDiv
@@ -237,25 +237,25 @@ window.addEventListener('load', function load(event) {
 			messageDiv.innerHTML = Blockly.Msg.check + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
 			//fs.writeFile('./compilation/arduino/ino/sketch.ino', data, function(err){
 			fs.writeFile(`${arduino_basepath}/sketch/sketch.ino`, data, function(err){
-				
+
 				if (err) return console.log(err)
 			})
-		
-		  
+
+
 			var cmd = `${arduino_ide_cmd} compile --fqbn ` + upload_arg +' sketch/sketch.ino'
-			
-			
+
+
 			exec(cmd , {cwd: `${arduino_basepath}`} , (error, stdout, stderr) => {
 			if (error) {
-					
+
 						messageDiv.style.color = '#ff0000'
 						messageDiv.innerHTML = error.toString() + quitDiv
 						return
 						}
-						
+
 			    messageDiv.style.color = '#009000'
 				messageDiv.innerHTML = Blockly.Msg.check + ': ✅ OK' + quitDiv
-		    			
+
 			/*
 		    exec( cmd, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
 			//exec('verify.bat ' + carte, {cwd:'./compilation/arduino'}, function(err, stdout, stderr){
@@ -272,12 +272,12 @@ window.addEventListener('load', function load(event) {
 				}
 				messageDiv.style.color = '#009000'
 				messageDiv.innerHTML = Blockly.Msg.check + ': OK' + quitDiv */
-				
+
 			messageDiv.style.color = '#000000'
 			messageDiv.innerHTML = Blockly.Msg.upload + '<i class="fa fa-spinner fa-pulse fa-1_5x fa-fw"></i>'
-			
+
 			cmd = `${arduino_ide_cmd} upload --port `+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
-		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){	
+		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){
 			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
@@ -329,8 +329,8 @@ window.addEventListener('load', function load(event) {
 					messageDiv.innerHTML = 'Connect micro:bit!' + quitDiv
 				}
 			} else {
-				
-				
+
+
 				exec( 'python -m ampy -p ' + com + ' -b 115200 -d 1 run --no-output ./py/sketch.py', {cwd: "./compilation/python"} , function(err, stdout, stderr){
 					if (err) {
 						messageDiv.style.color = '#ff0000'
@@ -341,10 +341,10 @@ window.addEventListener('load', function load(event) {
 				})
 			}
 		} else {
-			
-		
+
+
 			cmd = `${arduino_ide_cmd} upload --port `+portserie.value +' --fqbn ' + upload_arg +' sketch/sketch.ino'
-		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){	
+		    exec( cmd, {cwd:`${arduino_basepath}`}, function(err, stdout, stderr){
 			//exec('flash.bat ' + cpu + ' ' + prog + ' '+ com + ' ' + speed, {cwd: './compilation/arduino'} , function(err, stdout, stderr){
 				if (err) {
 					messageDiv.style.color = '#ff0000'
@@ -361,7 +361,7 @@ window.addEventListener('load', function load(event) {
 	})
 	$('#btn_saveXML').on('click', function(){
 		if (localStorage.getItem("content") == "on") {
-			ipcRenderer.send('save-bloc') 
+			ipcRenderer.send('save-bloc')
 		} else {
 			if (localStorage.getItem("prog") == "python") { ipcRenderer.send('save-py') } else { ipcRenderer.send('save-ino') }
 		}

@@ -7,13 +7,13 @@ goog.require('Blockly.Types');
 
 Blockly.Blocks["pixel_init"]={init:function(){
     var card=window.localStorage.card;
-	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1);
+	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.pixel1);
     this.appendDummyInput()	.appendField(Blockly.Msg.pin).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
-    this.setInputsInline(true); 
+    this.setInputsInline(true);
 	this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel1_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -35,7 +35,6 @@ Blockly.Python["pixel_init"]=function(block){
     return ""
 };
 
-
 //////////////
 Blockly.Blocks["pixel_setcolor"]={init:function(){
 	this.appendValueInput("pin", "Number").appendField(Blockly.Msg.pixel6);
@@ -43,7 +42,7 @@ Blockly.Blocks["pixel_setcolor"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel3_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -72,10 +71,10 @@ Blockly.Blocks["pixel_rgb"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel3_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
-    
+
 };
 Blockly.Arduino["pixel_rgb"]=function(block){
     var pin =Blockly.Arduino.valueToCode(block, 'pin', Blockly.Arduino.ORDER_ASSIGNMENT);
@@ -83,7 +82,7 @@ Blockly.Arduino["pixel_rgb"]=function(block){
     var G = Blockly.Arduino.valueToCode(block, 'G', Blockly.Arduino.ORDER_ATOMIC);
     var B = Blockly.Arduino.valueToCode(block, 'B', Blockly.Arduino.ORDER_ATOMIC);
     var code = 'pixel.setPixelColor('+pin+','+R+','+G+','+B+');\n';
-    return code 
+    return code
 };
 
 Blockly.Blocks["pixel_fill"]={init:function(){
@@ -91,7 +90,7 @@ Blockly.Blocks["pixel_fill"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel3_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -110,24 +109,24 @@ Blockly.Blocks["pixel_fill2"]={init:function(){
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel3_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
-    
+
 };
 Blockly.Arduino["pixel_fill2"]=function(block){
     var R = Blockly.Arduino.valueToCode(block, 'R', Blockly.Arduino.ORDER_ATOMIC);
     var G = Blockly.Arduino.valueToCode(block, 'G', Blockly.Arduino.ORDER_ATOMIC);
     var B = Blockly.Arduino.valueToCode(block, 'B', Blockly.Arduino.ORDER_ATOMIC);
     var code = "pixel.fill(pixel.Color("  + R + ", " + G + ", " + B + "));\n";
-    return code 
+    return code
 };
 //////////////
 Blockly.Blocks["pixel_show"]={init:function(){
 	this.appendDummyInput().appendField(Blockly.Msg.pixel2);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel2_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -141,7 +140,7 @@ Blockly.Blocks["pixel_clear"]={init:function(){
     this.appendDummyInput()  .appendField("🌈 clear🧹");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel2_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -153,10 +152,10 @@ Blockly.Arduino["pixel_clear"]=function(block){
 //////////////
 Blockly.Blocks["pixel_setbrightness"]={init:function(){
     this.appendValueInput("brightness") .setCheck("Number").appendField(Blockly.Msg.pixel5);
-    this.setInputsInline(true); 
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.pixel5_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
 };
@@ -166,52 +165,30 @@ Blockly.Arduino["pixel_setbrightness"]=function(block){
 };
 Blockly.Python["pixel_setbrightness"]=function(){return""};
 
-
-Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
-      this.appendDummyInput()  
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
-      this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
-      this.setInputsInline(true);
-      this.setColour("#4b009f");
-      this.setTooltip('');
-      this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
-    }
-  };
-  Blockly.Arduino.MatrixLED_WS2812B_init = function() {
-    var pin_ledrgb = Blockly.Arduino.valueToCode(this, 'Pin_Matrix_init', Blockly.Arduino.ORDER_ATOMIC);
-    var numpixels = 64;
-    Blockly.Arduino.includes_['includes_Matrix_ledRGB_WS2812B'] = '#include <Adafruit_NeoPixel.h>';
-    Blockly.Arduino.definitions_['define_Matrix_ledRGB_WS2812B NeoMatrix'] = 'Adafruit_NeoPixel NeoMatrix = Adafruit_NeoPixel(' + numpixels + ', '+ pin_ledrgb +', NEO_GRB + NEO_KHZ800);';
-    
-    Blockly.Arduino.setups_['setup_Matrix_ledRGB_WS2812B NeoMatrix '] = 'pinMode('+pin_ledrgb+', OUTPUT);\n'
-    + 'NeoMatrix.begin();';
-    return '';
-  };
-  
   Blockly.Blocks["MatrixLED_WS2812B_init_2"] = {  init: function() {
-      this.appendDummyInput()  
-      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
-      this.appendValueInput("Pin_Matrix_init") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pin);
+    var card=window.localStorage.card;
+      this.appendDummyInput()
+      .appendField(new Blockly.FieldImage('media/neopixelmatrix.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.pixel1+" "+Blockly.Msg.matrice+" 8x8") .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
       this.setInputsInline(true);
 	  this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#4b009f");
-      this.setTooltip('');
+      this.setColour("#B655F5");
+      this.setTooltip(Blockly.Msg.pixel1_tooltip);
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     }
   };
   Blockly.Arduino.MatrixLED_WS2812B_init_2 = function() {
-    var pin_ledrgb = Blockly.Arduino.valueToCode(this, 'Pin_Matrix_init', Blockly.Arduino.ORDER_ATOMIC);
+    var pin_ledrgb = this.getFieldValue('pin');
     var numpixels = 64;
     Blockly.Arduino.includes_['includes_Matrix_ledRGB_WS2812B'] = '#include <Adafruit_NeoPixel.h>';
     Blockly.Arduino.definitions_['define_Matrix_ledRGB_WS2812B NeoMatrix'] = 'Adafruit_NeoPixel NeoMatrix = Adafruit_NeoPixel(' + numpixels + ', '+ pin_ledrgb +', NEO_GRB + NEO_KHZ800);';
-    
+
     Blockly.Arduino.setups_['setup_Matrix_ledRGB_WS2812B NeoMatrix '] = 'pinMode('+pin_ledrgb+', OUTPUT);\n'
     + 'NeoMatrix.begin();';
     return '';
   };
- 
-  
+
   Blockly.Blocks["MatrixLED_WS2812B_setPixelColor"] = { init: function() {
       this.appendDummyInput() .appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice)
       this.appendValueInput("Pixel_number") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel6 );
@@ -222,7 +199,7 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip('');
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     },
@@ -234,20 +211,20 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
     var green = Blockly.Arduino.valueToCode(this, 'Green', Blockly.Arduino.ORDER_ATOMIC);
     var blue = Blockly.Arduino.valueToCode(this, 'Blue', Blockly.Arduino.ORDER_ATOMIC);
     var lumin = Blockly.Arduino.valueToCode(this, 'brightness', Blockly.Arduino.ORDER_ATOMIC);
-  
+
     var code = 'NeoMatrix.setPixelColor('+pixel_number+',NeoMatrix.Color('+red+','+green+','+blue+','+lumin+'));\n'
               + 'NeoMatrix.show();\n';
     return code;
   };
-  
+
   Blockly.Blocks["MatrixLED_WS2812B_setBrightness"] = {
     init: function() {
       this.appendDummyInput().appendField(Blockly.Msg.pixel1+" "+Blockly.Msg.matrice)
-      this.appendValueInput("brightness") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.pixel5);		
+      this.appendValueInput("brightness") .setCheck('Number') .setAlign(Blockly.ALIGN_RIGHT) .appendField(Blockly.Msg.pixel5);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip('');
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     },
@@ -257,14 +234,14 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
     var code = 'NeoMatrix.setBrightness('+lumin+');\n';
     return code;
   };
-  
+
   Blockly.Blocks["MatrixLED_WS2812B_CLEAN"] = {
     init: function() {
       this.appendDummyInput().appendField("clear " + Blockly.Msg.pixel1+" "+Blockly.Msg.matrice)
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip('');
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     },
@@ -274,7 +251,7 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
     +'NeoMatrix.show();\n';
     return code;
 };
-  
+
   Blockly.Blocks["MatrixLED_WS2812B_draw"] = {  init: function() {
        this.appendDummyInput().appendField('  ').appendField(' 0').appendField('    1').appendField('   2').appendField('    3').appendField('   4').appendField('    5').appendField('   6').appendField('    7');
       this.appendDummyInput().appendField('0 ')
@@ -352,7 +329,7 @@ Blockly.Blocks["MatrixLED_WS2812B_init"] = {  init: function() {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#4b009f");
+      this.setColour("#B655F5");
       this.setTooltip('');
       this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
     },

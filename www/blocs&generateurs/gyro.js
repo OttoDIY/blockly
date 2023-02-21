@@ -7,17 +7,17 @@ goog.require('Blockly.FieldInstance');
 goog.provide('Blockly.Arduino.gyro');
 goog.require('Blockly.Arduino');
 
-												   
-Blockly.Blocks['otto9_gyro'] = {init: function() {
+
+Blockly.Blocks['gyro_init'] = {init: function() {
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.setTooltip("gyro read");
     this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
   }
 };
-Blockly.Arduino['otto9_gyro'] = function(block) {
+Blockly.Arduino['gyro_init'] = function(block) {
   Blockly.Arduino.variables_['gyro'] = 'int16_t ax, ay, az; \n'
   +'int16_t gx, gy, gz;\n';
   Blockly.Arduino.includes_['gyro'] = '#include "Wire.h"\n'
@@ -35,17 +35,17 @@ Blockly.Arduino['otto9_gyro'] = function(block) {
   return code;
 };
 
-Blockly.Blocks['otto9_getg'] = {init: function() {
+Blockly.Blocks['gyro_getg'] = {init: function() {
   this.appendDummyInput().appendField(new Blockly.FieldImage('media/sensor_gyro.png', 15, 15, "*")).appendField(Blockly.Msg.OTTO9_GETG_TEXT2)
   .appendField(new Blockly.FieldDropdown([["ax", "ax"], ["ay", "ay"], ["az", "az"], ["gx", "gx"], ["gy", "gy"], ["gz", "gz"]]), "getg");
   this.setInputsInline(true);
   this.setOutput(true, "Number");
-  this.setColour("#2a93e8");
+  this.setColour("#54BCF7");
   this.setTooltip("gyro get actual value");
   this.setHelpUrl("http://www.mschoeffler.de/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/");
 }
 };
-Blockly.Arduino['otto9_getg'] = function(block) {
+Blockly.Arduino['gyro_getg'] = function(block) {
 var dropdown_getg = block.getFieldValue('getg');
 var code = dropdown_getg;
 return [code, Blockly.Arduino.ORDER_ATOMIC];

@@ -482,13 +482,25 @@ Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/academy";// do not translat
 Blockly.Msg.OTTO9_CALIBRATION='Calibra ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='Gamba ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='Piede ';
+Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
+Blockly.Msg.OTTO_HEAD_TEXT = "head ";
+Blockly.Msg.OTTO_FRONT_TEXT = "front ";
+Blockly.Msg.OTTO_BACK_TEXT = "back ";
+Blockly.Msg.OTTO_HIP_TEXT = "hip ";
+Blockly.Msg.OTTO_HELLO_TEXT = "hello";
+Blockly.Msg.OTTO_JUMP_TEXT = "jump";
+Blockly.Msg.OTTO_SCARED_TEXT = "scared";
+Blockly.Msg.OTTO_WALK_TEXT = "walk";
+Blockly.Msg.OTTO_ROLL_TEXT = "roll";
+Blockly.Msg.OTTO_MODE_TEXT = " mode";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='Usa piccoli valori positivi e negativi in modo iterativo, cambia gradualmente fino a quando non va ben dritto (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'Salva Trims su EEPROM';
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP= 'Usare solo una volta dopo che va ben dritto (90º), cancellare questo BLOCCO in seguito per continuare la programmazione';
 Blockly.Msg.OTTO9_MOVE_TEXT = "Sposta";
 Blockly.Msg.OTTO9_MOVE_TOOLTIP = "Movimenti base di Otto";
 Blockly.Msg.OTTO9_MOVE_CHOICE = [["↑ avanti", "FORWARD"], ["↓ indietro", "BACKWARD"], ["↺ gira a sinistra", "LEFT"], ["↻ gira a destra", "RIGHT"], ["piega a sinistra", "BENDLEFT"], ["piega a destra", "BENDRIGHT"], ["agita la gamba sinistra", "SHAKELEFT"], ["agita la gamba destra", "SHAKERIGHT"], ["su", "jump"]];
-Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ avanti", "FORWARD"], ["↓ indietro", "BACKWARD"], ["↺ gira a sinistra", "LEFT"], ["↻ gira a destra", "RIGHT"]]; 
+Blockly.Msg.OTTO9_MOVEW_CHOICE = [["↑ avanti", "FORWARD"], ["↓ indietro", "BACKWARD"], ["↺ gira a sinistra", "LEFT"], ["↻ gira a destra", "RIGHT"]];
 Blockly.Msg.OTTO9_MOVE_SPEED_TEXT = "Velocità";
 Blockly.Msg.OTTO9_MOVE_SPEED_CHOICE = [["normale", "1000"],["lento", "2000"],["molto lento", "3000"] , ["veloce", "750"], ["molto veloce", "500"], ["velocissimo", "250"]];
 Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE = [["normale", "45"],["lento", "20"],["molto lento", "10"] , ["veloce", "60"], ["molto veloce", "90"]];
@@ -713,7 +725,7 @@ Blockly.Msg.MP3OS_inject="- Inserisci il numero di traccia";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "Initializza il sensore di visione e scegli la porta.";     
+Blockly.LKL_VS2_HELP_INIT = "Initializza il sensore di visione e scegli la porta.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Imposta il livello di riconoscimento: se il livello aumenta, il tasso di falsi allarmi diminuisce, ma diminuirà il tasso di riconoscimento.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Imposta il livello di zoom dell\'immagine: se il livello viene aumentato, maggiore è la distanza di riconoscimento, ma l\'angolo di riconoscimento sarà minore.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -961,7 +973,7 @@ Blockly.Msg.MouseMoveX="Posizione X";
 Blockly.Msg.MouseMoveY="Posizione Y";
 Blockly.Msg.MouseMoveW="Rotellina";
 
-// SOFTWARE SERIAL 
+// SOFTWARE SERIAL
 Blockly.Msg.SSERIAL_Init="Init SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";

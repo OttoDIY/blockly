@@ -2,25 +2,24 @@
 
 var Code = {};
 Code.LANGUAGE_NAME = {
-  'en': '🇬🇧 English',
-  'es': '🇪🇸 Español',
-  'pt': '🇵🇹 Português',
-  'it': '🇮🇹 Italiano',
-  'fr': '🇫🇷 Français',
-  'de': '🇩🇪 Deutsch',
-  'cz': '🇨🇿 Čeština',
-  'pl': '🇵🇱 Polski',
-  'hu': '🇭🇺 Magyar',
-  'tr': '🇹🇷 Türk',
-  'ru': '🇷🇺 Pусский',
-  'heb': '🇮🇱 עִברִית',
-  'zh': '🇹🇼 漢語',
-  'cn': '🇨🇳 汉语',
-  'ja': '🇯🇵 日本語',
-  'bg': 'BG Български',
-  'ar': 'Arabic',
-  'nl': '🇳🇱 Nederlands'
-
+  'en': 'English 🇬🇧',
+  'es': 'Español 🇪🇸',
+  'pt': 'Português 🇵🇹',
+  'it': 'Italiano 🇮🇹',
+  'fr': 'Français 🇫🇷',
+  'de': 'Deutsch 🇩🇪',
+  'nl': 'Nederlands 🇳🇱',
+  'cz': 'Čeština 🇨🇿',
+  'pl': 'Polski 🇵🇱',
+  'hu': 'Magyar 🇭🇺',
+  'zh': '繁體中文 🇹🇼',
+  'cn': '简体中文 🇨🇳',
+  'ja': '日本語 🇯🇵',
+  'tr': 'Türk 🇹🇷',
+  'ru': 'Pусский 🇷🇺',
+  'heb':'עִברִית 🇮🇱',
+  'bg': 'Български 🇧🇬',
+  'ar': 'عربي 🇦🇪'
 };
 Code.LANGUAGE_RTL = ['ar', 'fa', 'he'];
 Code.getLang = function() {
@@ -66,12 +65,12 @@ Code.initLanguage = function() {
   $('#aboutusbLabel').text(MSG['aboutusbLabel']);
   $('#usbLabel').text(MSG['usbLabel']);
   $('#configModalLabel').text(MSG['configModalLabel']);
-  $('#versionModalLabel').text(MSG['versionModalLabel']); 
-  $('#exampleModalLabel').text(MSG['exampleModalLabel']); 
-  $('#levelLabel').text(MSG['levelLabel']); 
+  $('#versionModalLabel').text(MSG['versionModalLabel']);
+  $('#exampleModalLabel').text(MSG['exampleModalLabel']);
+  $('#levelLabel').text(MSG['levelLabel']);
   $('#variableModalLabel').text(MSG['variableModalLabel']);
   $('#variablebody').text(MSG['variablebody']);
-  $('#labelToolboxDefinition').text(MSG['labelToolboxDefinition']); 
+  $('#labelToolboxDefinition').text(MSG['labelToolboxDefinition']);
   $('#survol').text(MSG['survol']);
   $('#span_about').text(MSG['span_about']);
   $('#span_example').text(MSG['span_example']);
@@ -92,10 +91,10 @@ Code.initLanguage = function() {
   var prog = window.localStorage.prog;
   if (prog != "python") {
 	$('#btn_preview').attr('title', MSG['btn_preview_ino']);
-	$('#btn_saveino').attr('title', MSG['btn_save_ino']) 
+	$('#btn_saveino').attr('title', MSG['btn_save_ino'])
   } else {
 	$('#btn_preview').attr('title', MSG['btn_preview_py']);
-	$('#btn_saveino').attr('title', MSG['btn_save_py']);   
+	$('#btn_saveino').attr('title', MSG['btn_save_py']);
   }
   $('#btn_copy').attr('title', MSG['btn_copy']);
   $('#btn_print').attr('title', MSG['btn_print']);

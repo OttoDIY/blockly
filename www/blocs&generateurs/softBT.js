@@ -1,34 +1,9 @@
-/**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
- * @fileoverview Colour blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
- */
- 
  /***************************************************************
  *
  *  This module was created by Oscar Ferruz. oferruz@logix5.com
  *
  ****************************************************************/
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.softBT');
@@ -39,8 +14,8 @@ goog.require('Blockly.Blocks');
 /**
  * Common HSV hue for all blocks in this category.
  */
- 
-  
+
+
 
 Blockly.Blocks['soft_bt_init'] = {
   helpUrl: 'http://arduino.cc/en/Reference/AnalogWrite',
@@ -49,7 +24,7 @@ Blockly.Blocks['soft_bt_init'] = {
     this.setColour("#0060aa");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
-  .appendField(Blockly.Msg.SSERIAL_BT_Init);
+  .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.SSERIAL_BT_Init);
   this.appendDummyInput()
   .appendField(Blockly.Msg.SSERIAL_BT_TX)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
@@ -67,11 +42,11 @@ Blockly.Blocks['soft_bt_init'] = {
 };
 
 Blockly.Arduino['soft_bt_init'] = function(block) {
-  
+
   var pin_rx = this.getFieldValue('PIN_RX');
   var pin_tx = this.getFieldValue('PIN_TX');
   var dropdown_pinbaudios = this.getFieldValue('PINBAUDIOS');
-  
+
   Blockly.Arduino.includes_['define_ssBT'] = '#include <SoftwareSerial.h>\nSoftwareSerial mySerialBT('+pin_rx+','+pin_tx+');\n';
   Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+dropdown_pinbaudios+');\n';
   var code = '';
@@ -100,11 +75,11 @@ Blockly.Blocks['esp32_bt_init'] = {
 
 
 Blockly.Arduino['esp32_bt_init'] = function(block) {
-  
+
   //var btName = this.getFieldValue("BT_NAME") || "OTTO_ESP32";
-  
+
    var btName = Blockly.Arduino.valueToCode(block, 'BT_NAME', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   Blockly.Arduino.includes_['define_ssBT'] = '#include "BluetoothSerial.h"\nBluetoothSerial mySerialBT;\n';
   Blockly.Arduino.setups_['setup_sserialBT'] = 'mySerialBT.begin('+btName+');\n';
   var code = '';
@@ -134,7 +109,7 @@ Blockly.Arduino['soft_bt_printfor'] = function(block) {
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_NONE);
   //content = content.replace('(','').replace(')','');
   var type = this.getTitleValue('TYPE');
-      
+
   var code = 'mySerialBT.print('+content+ ','+type+');\n';//ORGINAL \nSerial.print(\'\\t\');
   return code;
 };
@@ -205,12 +180,12 @@ Blockly.Blocks['soft_bt_read_string'] = {
 Blockly.Arduino['soft_bt_read_string'] = function(block) {
   // TODO: Assemble Python into code variable.
    var logic = this.getFieldValue('LOGIC');
-   
+
    if(logic=='TRUE')
     var code = 'mySerialBT.readStringUntil(\'\\n\')';
   else
     var code = 'mySerialBT.readString()';
-   
+
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -236,12 +211,12 @@ Blockly.Blocks['soft_bt_read_number'] = {
 Blockly.Arduino['soft_bt_read_number'] = function(block) {
   // TODO: Assemble Python into code variable.
    var logic = this.getFieldValue('LOGIC');
-   
+
    if(logic=='TRUE')
     var code = 'atof((mySerialBT.readStringUntil(\'\\n\')).c_str())';
   else
     var code = 'mySerialBT.parseFloat()';
-   
+
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -259,7 +234,7 @@ Blockly.Blocks['soft_bt_println'] = {
 	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
     this.appendValueInput("CONTENT", "String")
         .appendField(Blockly.Msg.SSERIAL_BT_Println);
-	this.setInputsInline(true);	
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -281,7 +256,7 @@ Blockly.Blocks['soft_bt_print'] = {
 	.appendField(new Blockly.FieldImage("media/bt.png", 20,25 ))
     this.appendValueInput("CONTENT", "String")
         .appendField(Blockly.Msg.SSERIAL_BT_Print);
-	this.setInputsInline(true);	
+	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip('');
@@ -315,10 +290,7 @@ Blockly.Blocks['soft_bt_write'] = {
 Blockly.Arduino['soft_bt_write'] = function(block) {
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '0';
   //content = content.replace('(','').replace(')','');
-   
-  var code = 'mySerialBT.write('+content+');\n';  
+
+  var code = 'mySerialBT.write('+content+');\n';
   return code;
 };
-
-
-

@@ -22,13 +22,13 @@
  * @fileoverview Colour blocks for Blockly.
  * @author fraser@google.com (Neil Fraser)
  */
- 
+
  /***************************************************************
  *
  *  This module was created by Oscar Ferruz. oferruz@logix5.com
  *
  ****************************************************************/
- 
+
 'use strict';
 
 goog.provide('Blockly.Blocks.advanced');
@@ -37,7 +37,7 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks['keyboard_function'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/keyboard.png",46,38))
         .appendField(Blockly.Msg.KeyboardFunction)
@@ -53,21 +53,21 @@ Blockly.Blocks['keyboard_function'] = {
 
 
 Blockly.Arduino['keyboard_function'] = function(block) {
-	
+
   var key_function = block.getFieldValue('KEY_FUN');
   var SelectedKey = Blockly.Arduino.valueToCode(this, 'SelectedKey', Blockly.Arduino.ORDER_ATOMIC);
   var code;
-  
+
   Blockly.Arduino.includes_['include_keyboard'] = '#include <Keyboard.h>\n';
   Blockly.Arduino.setups_['keyboard_begin'] = 'Keyboard.begin();\n';
-  
+
   if (key_function==1)
 	  code = 'Keyboard.write('+SelectedKey+');\n';
   else if (key_function==2)
 	  code = 'Keyboard.release('+SelectedKey+');\n';
     else
        code = 'Keyboard.press('+SelectedKey+');\n';
-  
+
   return code;
 };
 
@@ -75,7 +75,7 @@ Blockly.Arduino['keyboard_function'] = function(block) {
 
 Blockly.Blocks['key_pressed'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		//.appendField(new Blockly.FieldImage("media/key.png",76,38))
 	    .appendField(Blockly.Msg.KeyPressed)
@@ -90,14 +90,14 @@ Blockly.Blocks['key_pressed'] = {
 
 Blockly.Arduino['key_pressed'] = function(block) {
   var code = this.getFieldValue('KEY_PRESSED');
-  
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 
 Blockly.Blocks['keyboard_text'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/keyboard.png",53,38))
         .appendField(Blockly.Msg.KeyboardFunction)
@@ -116,26 +116,26 @@ Blockly.Blocks['keyboard_text'] = {
 };
 
 Blockly.Arduino['keyboard_text'] = function(block) {
-  
+
   var value_texttoprint = Blockly.Arduino.valueToCode(block, 'texttoprint', Blockly.Arduino.ORDER_ATOMIC);
   var logic = this.getFieldValue('LOGIC');
-   
-   
+
+
   Blockly.Arduino.includes_['include_keyboard'] = '#include <Keyboard.h>\n';
   Blockly.Arduino.setups_['keyboard_begin'] = 'Keyboard.begin();\n';
-  
+
  if(logic=='TRUE')
     var code = 'Keyboard.println(String('+value_texttoprint+'));\n';
   else
    var code = 'Keyboard.print(String('+value_texttoprint+'));\n';
- 
+
   return code;
 };
 
 
 Blockly.Blocks['mouse_function'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mouse.png",46,38))
         .appendField(Blockly.Msg.MouseFunction)
@@ -151,27 +151,27 @@ Blockly.Blocks['mouse_function'] = {
 
 
 Blockly.Arduino['mouse_function'] = function(block) {
-	
+
   var mouse_button = block.getFieldValue('MOUSE_BUTTON');
   var mouse_button2 = block.getFieldValue('MOUSE_BUTTON2');
-  
+
   var code;
-  
+
   Blockly.Arduino.includes_['include_mouse'] = '#include <Mouse.h>\n';
   Blockly.Arduino.setups_['mouse_begin'] = 'Mouse.begin();\n';
-    
+
   if (mouse_button==1)
 	  {
-		if (mouse_button2==1)  
+		if (mouse_button2==1)
 			code = 'Mouse.click(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.click(MOUSE_RIGHT);\n';
 				else
 		            code = 'Mouse.click(MOUSE_MIDDLE);\n';
-	  } 
+	  }
   else if (mouse_button==2)
 	{
-	  if (mouse_button2==1)  
+	  if (mouse_button2==1)
 			code = 'Mouse.press(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.press(MOUSE_RIGHT);\n';
@@ -180,13 +180,13 @@ Blockly.Arduino['mouse_function'] = function(block) {
 	}
     else
 	{
-       if (mouse_button2==1)  
+       if (mouse_button2==1)
 			code = 'Mouse.release(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.release(MOUSE_RIGHT);\n';
 				else
 		            code = 'Mouse.release(MOUSE_MIDDLE);\n';
-	   
+
 	}
   return code;
 };
@@ -196,7 +196,7 @@ Blockly.Arduino['mouse_function'] = function(block) {
 
 Blockly.Blocks['mouse_move'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendValueInput("axis_x","Number")
 		.appendField(new Blockly.FieldImage("media/mouse.png",46,38))
         .appendField(Blockly.Msg.MouseMoveX)
@@ -216,14 +216,14 @@ Blockly.Blocks['mouse_move'] = {
 
 
 Blockly.Arduino['mouse_move'] = function(block) {
-	
+
   var mouse_move_x = Blockly.Arduino.valueToCode(block, 'axis_x', Blockly.Arduino.ORDER_ATOMIC);
   var mouse_move_y = Blockly.Arduino.valueToCode(block, 'axis_y', Blockly.Arduino.ORDER_ATOMIC);
   var mouse_move_w = Blockly.Arduino.valueToCode(block, 'wheel', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   Blockly.Arduino.includes_['include_mouse'] = '#include <Mouse.h>\n';
   Blockly.Arduino.setups_['mouse_begin'] = 'Mouse.begin();\n';
-    
+
   var code = 'Mouse.move('+mouse_move_x+','+mouse_move_y+','+mouse_move_w+');\n';
 
   return code;
@@ -233,7 +233,7 @@ Blockly.Arduino['mouse_move'] = function(block) {
 
 Blockly.Blocks['keyboard_function_esp32'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/keyboard.png",46,38))
         .appendField(Blockly.Msg.KeyboardFunction)
@@ -249,23 +249,23 @@ Blockly.Blocks['keyboard_function_esp32'] = {
 
 
 Blockly.Arduino['keyboard_function_esp32'] = function(block) {
-	
+
   var key_function = block.getFieldValue('KEY_FUN');
   var SelectedKey = Blockly.Arduino.valueToCode(this, 'SelectedKey', Blockly.Arduino.ORDER_ATOMIC);
   var code;
-  
+
   Blockly.Arduino.includes_['include_keyboard'] = '#include <BleKeyboard.h>\n';
-  
+
   Blockly.Arduino.definitions_['define_keyboard'] = 'BleKeyboard Keyboard;\n';
   Blockly.Arduino.setups_['keyboard_begin'] = 'Keyboard.begin();\n';
-  
+
   if (key_function==1)
 	  code = 'Keyboard.write('+SelectedKey+');\n';
   else if (key_function==2)
 	  code = 'Keyboard.release('+SelectedKey+');\n';
     else
        code = 'Keyboard.press('+SelectedKey+');\n';
-  
+
   return code;
 };
 
@@ -273,7 +273,7 @@ Blockly.Arduino['keyboard_function_esp32'] = function(block) {
 
 Blockly.Blocks['key_pressed_esp32'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		//.appendField(new Blockly.FieldImage("media/key.png",76,38))
 	    .appendField(Blockly.Msg.KeyPressed)
@@ -288,14 +288,14 @@ Blockly.Blocks['key_pressed_esp32'] = {
 
 Blockly.Arduino['key_pressed'] = function(block) {
   var code = this.getFieldValue('KEY_PRESSED');
-  
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 
 Blockly.Blocks['keyboard_text_esp32'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/keyboard.png",53,38))
         .appendField(Blockly.Msg.KeyboardFunction)
@@ -314,28 +314,28 @@ Blockly.Blocks['keyboard_text_esp32'] = {
 };
 
 Blockly.Arduino['keyboard_text_esp32'] = function(block) {
-  
+
   var value_texttoprint = Blockly.Arduino.valueToCode(block, 'texttoprint', Blockly.Arduino.ORDER_ATOMIC);
   var logic = this.getFieldValue('LOGIC');
-   
-   
+
+
   Blockly.Arduino.includes_['include_keyboard'] = '#include <BleKeyboard.h>\n';
-  
+
   Blockly.Arduino.definitions_['define_keyboard'] = 'BleKeyboard Keyboard;\n';
   Blockly.Arduino.setups_['keyboard_begin'] = 'Keyboard.begin();\n';
-  
+
  if(logic=='TRUE')
     var code = 'Keyboard.println(String('+value_texttoprint+'));\n';
   else
    var code = 'Keyboard.print(String('+value_texttoprint+'));\n';
- 
+
   return code;
 };
 
 
 Blockly.Blocks['mouse_function_esp32'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/mouse.png",46,38))
         .appendField(Blockly.Msg.MouseFunction)
@@ -351,28 +351,28 @@ Blockly.Blocks['mouse_function_esp32'] = {
 
 
 Blockly.Arduino['mouse_function_esp32'] = function(block) {
-	
+
   var mouse_button = block.getFieldValue('MOUSE_BUTTON');
   var mouse_button2 = block.getFieldValue('MOUSE_BUTTON2');
-  
+
   var code;
-  
+
   Blockly.Arduino.includes_['include_mouse'] = '#include <BleMouse.h>\n';
   Blockly.Arduino.definitions_['define_mouse'] = 'BleMouse Mouse;;\n';
   Blockly.Arduino.setups_['mouse_begin'] = 'Mouse.begin();\n';
-    
+
   if (mouse_button==1)
 	  {
-		if (mouse_button2==1)  
+		if (mouse_button2==1)
 			code = 'Mouse.click(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.click(MOUSE_RIGHT);\n';
 				else
 		            code = 'Mouse.click(MOUSE_MIDDLE);\n';
-	  } 
+	  }
   else if (mouse_button==2)
 	{
-	  if (mouse_button2==1)  
+	  if (mouse_button2==1)
 			code = 'Mouse.press(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.press(MOUSE_RIGHT);\n';
@@ -381,13 +381,13 @@ Blockly.Arduino['mouse_function_esp32'] = function(block) {
 	}
     else
 	{
-       if (mouse_button2==1)  
+       if (mouse_button2==1)
 			code = 'Mouse.release(MOUSE_LEFT);\n';
 			else if (mouse_button2==2)
 			    code = 'Mouse.release(MOUSE_RIGHT);\n';
 				else
 		            code = 'Mouse.release(MOUSE_MIDDLE);\n';
-	   
+
 	}
   return code;
 };
@@ -397,7 +397,7 @@ Blockly.Arduino['mouse_function_esp32'] = function(block) {
 
 Blockly.Blocks['mouse_move_esp32'] = {
   init: function() {
-    this.setColour("#2a93e8");
+    this.setColour("#54BCF7");
     this.appendValueInput("axis_x","Number")
 		.appendField(new Blockly.FieldImage("media/mouse.png",46,38))
         .appendField(Blockly.Msg.MouseMoveX)
@@ -417,15 +417,15 @@ Blockly.Blocks['mouse_move_esp32'] = {
 
 
 Blockly.Arduino['mouse_move_esp32'] = function(block) {
-	
+
   var mouse_move_x = Blockly.Arduino.valueToCode(block, 'axis_x', Blockly.Arduino.ORDER_ATOMIC);
   var mouse_move_y = Blockly.Arduino.valueToCode(block, 'axis_y', Blockly.Arduino.ORDER_ATOMIC);
   var mouse_move_w = Blockly.Arduino.valueToCode(block, 'wheel', Blockly.Arduino.ORDER_ATOMIC);
-  
+
   Blockly.Arduino.includes_['include_mouse'] = '#include <BleMouse.h>\n';
   Blockly.Arduino.definitions_['define_mouse'] = 'BleMouse Mouse;;\n';
   Blockly.Arduino.setups_['mouse_begin'] = 'Mouse.begin();\n';
-    
+
   var code = 'Mouse.move('+mouse_move_x+','+mouse_move_y+','+mouse_move_w+');\n';
 
   return code;
