@@ -1,8 +1,8 @@
 Blockly.Blocks["led_digital_init"]={init:function(){
   var card=window.localStorage.card;
   this.appendDummyInput()
-  .appendField("💡 "+Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5']]), "LED_NUMBER")
-    .appendField(+Blockly.Msg.del+Blockly.Msg.CAT_numerique)
+  .appendField("💡 "+Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'],['9','9'],['10','10']]), "LED_NUMBER")
+    .appendField(Blockly.Msg.del+Blockly.Msg.CAT_numerique)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
   this.setInputsInline(true);
   this.setPreviousStatement(true, null);
@@ -14,13 +14,15 @@ Blockly.Blocks["led_digital_init"]={init:function(){
 Blockly.Arduino["led_digital_init"]=function(block){
   var dropdown_pin=block.getFieldValue("PIN");
   	var led_number = this.getFieldValue('LED_NUMBER');
-    Blockly.Arduino.definitions_['ledPin' + dropdown_pin] = "const int "+led_number+"ledPin =  " + dropdown_pin + "";
+    Blockly.Arduino.definitions_['ledPin' + dropdown_pin] = "const int led"+led_number+" =  " + dropdown_pin + ";";
   Blockly.Arduino.setups_["ledPin" + dropdown_pin]="pinMode(" + dropdown_pin + ", OUTPUT);";
+  var code = '';
+  return code;
 };
 
 Blockly.Blocks["led_digital"]={init:function(){
   this.appendDummyInput()
-.appendField("💡 "+ "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5']]), "LED_NUMBER")
+.appendField("💡 "+ "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'],['9','9'],['10','10']]), "LED_NUMBER")
   .appendField(Blockly.Msg.del+Blockly.Msg.CAT_numerique);
   this.appendDummyInput().appendField(new Blockly.FieldDropdown(Blockly.Msg.on_off), "STAT");
   this.setInputsInline(true);
@@ -33,8 +35,9 @@ Blockly.Blocks["led_digital"]={init:function(){
 Blockly.Arduino["led_digital"]=function(block){
   var dropdown_stat=block.getFieldValue("STAT");
   var led_number = this.getFieldValue('LED_NUMBER');
-  code = "digitalWrite( "+led_number+"ledPin , " + dropdown_stat + ");\n";
-return [code, Blockly.Arduino.ORDER_ATOMIC];
+  var code;
+  code = "digitalWrite( led"+led_number+" , " + dropdown_stat + ");\n";
+  return code;
 };
 
 Blockly.Blocks['led_pwm']={init:function() {

@@ -82,7 +82,7 @@ body {
   border-radius: 5px;
 	color: #2d2d64;
 	font-weight: bold;
-  width: auto;
+  width: 155px;
 	height: 42px;
 }
 #title-bar-btns {
@@ -266,7 +266,7 @@ vertical-align: middle;
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url(../media/ajax-loading.gif) center no-repeat #2d2d64
+    background: url(../media/ajax-loading.gif) center no-repeat #ffffff
 }
 .vignette {
     max-width: 80px;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_servo,,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_ultrason</parametre>
-    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_servo,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_SENSORS,CAT_com</parametre>
-    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_Displays,CAT_AUDIO,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_SENSORS,CAT_com,CAT_MUVISION,CAT_STOCKAGE,CAT_KEYBOARD</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO,CAT_ARDUINO_matrice8x8,CAT_ARDUINO_matrice16x8,CAT_OLED_U8G,CAT_BUZZER,CAT_ultrason,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH</parametre>
+    <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_servo,CAT_Displays,CAT_AUDIO,CAT_SENSORS,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_com</parametre>
+    <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_Displays,CAT_AUDIO,CAT_SENSORS,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_com,CAT_MUVISION,CAT_STOCKAGE,CAT_KEYBOARD</parametre>
 
 	<category name="CAT_ARDUINO" colour="#2d2d64">
 		<block type="base_setup_loop"></block>
@@ -355,36 +355,38 @@
 		<block type="list_size"></block>
     </category>
 
-	<category name="CAT_ultrason" colour="#54BCF7">
-		<block type="ultrasonic_sensor"></block>
-		<block type="ultrasonic_distance"></block>
-		<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
-		<block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
-		<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>
-		<block type="dht_sensor2"><field name="PinDHT">10</field></block>
-		<block type="dht_measure"></block>
-	</category>
+
 
 	<category name="CAT_SENSORS" colour="#54BCF7">
-		 <block type="button_sensor2"></block>
-		 <block type="button_touch_sensor2"></block>
-		 <block type="potentiometer_ranger_sensor2"></block>
-		 <block type="Joystick_axis_sensor2"></block>
-		 <block type="joystick_button_sensor2"></block>
-		  <block type="Init_RotaryEncoderInterrupt">
-			 <field name="PINDT">0</field>
-			 <field name="PINCLK">1</field>
+
+		<category name="CAT_ultrason" colour="#54BCF7">
+			<block type="ultrasonic_sensor">
+				<field name="PIN_TRIG">8</field>
+				<field name="PIN_ECHO">9</field>
+			</block>
+			<block type="ultrasonic_distance"></block>
+			<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
+			<block type="button_touch_sensor2"><field name="PIN_BUTTON">A0</field></block>
+			<block type="Sound_sensor2"><field name="PIN_SOUND">A6</field></block>
+			<block type="dht_sensor2"><field name="PinDHT">10</field></block>
+			<block type="dht_measure"></block>
+			<block type="potentiometer_ranger_sensor2"></block>
+			<block type="Joystick_axis_sensor2"></block>
+			<block type="joystick_button_sensor2"></block>
+			 <block type="Init_RotaryEncoderInterrupt">
+				<field name="PINDT">0</field>
+				<field name="PINCLK">1</field>
+			</block>
+		 <block type="RotaryEncoder_Write">
+			 <value name="Writecounter"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
 		 </block>
-		<block type="RotaryEncoder_Write">
-			<value name="Writecounter"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
-		</block>
-		<block type="RotaryEncoder_Read"></block>
-		<block type="rotaryencoder_button_sensor"> <field name="PIN_RE_BUTTON">13</field></block>
-
-
+		 <block type="RotaryEncoder_Read"></block>
+		 <block type="rotaryencoder_button_sensor"> <field name="PIN_RE_BUTTON">13</field></block>
+		</category>
 		<category name="CAT_VL53L0X" colour="#54BCF7">
 			<block type="ultrasonic_sensor">
-				<field name="PIN_ECHO">11</field>
+				<field name="PIN_TRIG">8</field>
+				<field name="PIN_ECHO">9</field>
 			</block>
 			<block type="ultrasonic_distance"></block>
 			<block type="VL53L0X"></block>

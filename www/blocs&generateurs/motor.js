@@ -8,7 +8,7 @@ goog.require("Blockly.Blocks");
 
 Blockly.Blocks["moteur_dc_init"]={init:function(){
     var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 33, 33, "*")).appendField(Blockly.Msg.motor);
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/motorDC.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT +Blockly.Msg.motor);
     this.appendDummyInput()	.appendField("ENA").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "ENA");
     this.appendDummyInput()	.appendField("ENB").appendField(new Blockly.FieldDropdown(profile[card].dropdownPWM), "ENB");
     this.appendDummyInput()	.appendField("IN1").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "IN1");
@@ -446,7 +446,7 @@ Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
     var card=window.localStorage.card;
     this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"));
     this.appendDummyInput()
-	.appendField(Blockly.OTTO_HOME_TEXT+" "+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO_WHEELS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINL");
     this.appendDummyInput()
 	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
@@ -706,8 +706,9 @@ Blockly.Arduino['motor_stop'] = function(block) {
 Blockly.Blocks['stepper_configuration'] = { init: function() {
 	var card=window.localStorage.card;
     this.setColour("#4759F5");
-	this.appendDummyInput().appendField(new Blockly.FieldImage("media/motorstep.png",33,33)).appendField(Blockly.Msg.STEEPER_name).appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
-	this.appendValueInput("STEP_RPM", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_steprev)
+	this.appendDummyInput().appendField(new Blockly.FieldImage("media/motorstep.png",33,33)).appendField(Blockly.Msg.OTTO_HOME_TEXT +"#"+Blockly.Msg.STEEPER_name).appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+.appendField(Blockly.Msg.STEEPER_name)
+  this.appendValueInput("STEP_RPM", 'Number').setCheck('Number').appendField(Blockly.Msg.STEEPER_steprev)
 	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER1");
 	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin2).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER2");
 	this.appendDummyInput().appendField(Blockly.Msg.STEEPER_pin3).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_STEEPER3");
@@ -742,8 +743,9 @@ Blockly.Blocks['stepper_speed'] = {
     this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/motorstep.png",22,22))
-	.appendField(Blockly.Msg.STEEPER2_name)
+.appendField("#")
 	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+  	.appendField(Blockly.Msg.STEEPER2_name)
 	this.appendValueInput("STEPPER_SPEED", 'Number')
         .setCheck('Number')
 		.appendField(Blockly.Msg.STEEPER_speed)
@@ -770,8 +772,10 @@ Blockly.Blocks['stepper_steps'] = {
     this.setColour("#4759F5");
 	this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("media/motorstep.png",22,22))
-	.appendField(Blockly.Msg.STEEPER2_name)
+  .appendField("#")
+
 	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "STEEPER_NUMBER")
+  	.appendField(Blockly.Msg.STEEPER2_name)
 	this.appendValueInput("STEPPER_STEP", 'Number')
         .setCheck('Number')
 		.appendField(Blockly.Msg.STEEPER_step)
