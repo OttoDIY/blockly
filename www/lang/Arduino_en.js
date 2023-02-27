@@ -2,8 +2,8 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "⚠️ select USB port";
-Blockly.Msg.com2 = "⚠️ select USB please" ;
+Blockly.Msg.com1 = "⚠️ select USB";
+Blockly.Msg.com2 = "⚠️ select USB port please" ;
 Blockly.Msg.check = "checking...";
 Blockly.Msg.upload = "uploading...";
 Blockly.Msg.error = "🛑 ERROR blocks NOT connected";
@@ -54,7 +54,7 @@ Blockly.Msg.CAT_ESCORNABOT="🐞 Escornabot";
 Blockly.Msg.CAT_servo = "🦾 Servo";
 Blockly.Msg.CAT_actionneur = "⚙️ Motor";
 Blockly.Msg.CAT_ARDUINO_moteur="⚙️ Stepper";
-Blockly.Msg.CAT_ultrason = "👂 Sensors";
+Blockly.Msg.CAT_ultrason = "🎛️ Detect";
 Blockly.Msg.CAT_SENSORS = "👂 Sensing";
 Blockly.Msg.CAT_GYRO = "⚖️ Gyroscope";
 Blockly.Msg.CAT_VIBRATE = "🖐️ Vibration";
@@ -972,7 +972,7 @@ Blockly.Msg.MOTOR_speed="speed(0-255)";
 Blockly.Msg.MOTOR_Stop="stop";
 
 //STEPPERS
-Blockly.Msg.STEEPER_name="Stepper #";
+Blockly.Msg.STEEPER_name="Stepper";
 Blockly.Msg.STEEPER_name2="stepper 28BYJ ID";
 Blockly.Msg.STEEPER2_name="stepper #";
 Blockly.Msg.STEEPER2_name2="Stepper 28BYJ ID";
