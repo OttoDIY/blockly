@@ -1085,44 +1085,44 @@ Blockly.Msg.GENERAL_IR = "IR-Fernbedienung";
 Blockly.Msg.GENERAL_PRESSED = "Lese Schlüssel";
 Blockly.Msg.PIN = "PIN";
 
-//REMOTE CONTROL MRT
-Blockly.Msg.MRT_IR = "Init Remote Control MRT";
-Blockly.Msg.MRT_CHANNEL = "Channel";
-Blockly.Msg.MRT_KEY = "Key MRT";
-Blockly.Msg.MRT_PRESSED = "Pressed?";
-Blockly.Msg.PIN2 = "Interrupt PIN";
-Blockly.Msg.ATTEND_MRT_IR = "Attend Remote Control MRT";
+//!REMOTE CONTROL MRT
+Blockly.Msg.MRT_IR = "Initialisiere MRT-Fernbedienung";
+Blockly.Msg.MRT_CHANNEL = "Kanal";
+Blockly.Msg.MRT_KEY = "Schlüssel MRT";
+Blockly.Msg.MRT_PRESSED = "gedrückt?";
+Blockly.Msg.PIN2 = "Unterbreche PIN";
+Blockly.Msg.ATTEND_MRT_IR = "Auf MRT-Fernbedienung hören";
 
-//OPEN SMART MP3
+//!OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
-Blockly.Msg.MP3OS_init = "Init Mp3 Opensmart using software serial";
+Blockly.Msg.MP3OS_init = "Initialisiere Mp3 Opensmart über Softwareschnittstelle";
 Blockly.Msg.MP3OS_TX = "Port TX#";
 Blockly.Msg.MP3OS_RX = "Port RX#";
-Blockly.Msg.MP3OS_equalizer = "Set equalizer";
-Blockly.Msg.MP3OS_volumen = "Set volumen(0-30)";
+Blockly.Msg.MP3OS_equalizer = "Setze Equalizer";
+Blockly.Msg.MP3OS_volumen = "Setze Lautstärke(0-30)";
 Blockly.Msg.MP3OS_operation = "Operation:";
-Blockly.Msg.MP3OS_check = "Check mp3.Need to be executed in main loop";
-Blockly.Msg.MP3OS_playsong = "Play track number";
-Blockly.Msg.MP3OS_playsongdirectory = "in folder number";
-Blockly.Msg.MP3OS_inject = "Inject track number";
+Blockly.Msg.MP3OS_check = "Check mp3. Need to be executed in main loop";
+Blockly.Msg.MP3OS_playsong = "Spiele Titelnummer";
+Blockly.Msg.MP3OS_playsongdirectory = "in Ordnernummer";
+Blockly.Msg.MP3OS_inject = "Gebe Titelnummer ein";
 
-//Mu Vision
+//!Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
+Blockly.LKL_VS2_HELP_INIT = "initialisiere MU Vision Sensor und wähle den Port.";
 Blockly.LKL_VS2_HELP_VISION_LEVEL =
-  "Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly."; //'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
+  "Setze die Erkennungsstufe, die Stufe steigt, die Fehlalarmrate sinkt und die Erkennungsrate sinkt entsprechend."; //'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM =
-  "Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is."; //'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
+  "Setze die Bildzoomstufe, die Stufe wird erhöht, je weiter der Erkennungsabstand ist, desto kleiner ist der Erkennungswinkel."; //'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
 /*Warning**/
 Blockly.LKL_VS2_WARNING_SETUP_ONLY =
-  "Dieser Block kann nur im setup Block platziert werden!";
+  "Dieser Block kann nur im Setup-Block platziert werden!";
 Blockly.LKL_VS2_WARNING_MU_INIT =
-  "Please DON'T forget initialize the uart1, Serial1. Configure the bauds too"; //'请勿同时使用Serial连接MU与电脑打印字符，此操作会导致电脑端打印字符错乱或通信异常';
+  "Bitte NICHT vergessen: initialisiere den Uart1, Serial1. Konfiguriere auch die Baudraten"; //'请勿同时使用Serial连接MU与电脑打印字符，此操作会导致电脑端打印字符错乱或通信异常';
 
-//LED color type
-Blockly.LKL_VS2_LED_CLOSE = "Close"; //'关闭';
+//!LED color type
+Blockly.LKL_VS2_LED_CLOSE = "Schließen"; //'关闭';
 Blockly.LKL_VS2_LED_RED = "Rot"; //'红色';
 Blockly.LKL_VS2_LED_GREEN = "Grün"; //'绿色';
 Blockly.LKL_VS2_LED_YELLOW = "Gelb"; //'黄色';
@@ -1130,95 +1130,95 @@ Blockly.LKL_VS2_LED_BLUE = "Blau"; //'蓝色';
 Blockly.LKL_VS2_LED_PURPLE = "Lila"; //'紫色';
 Blockly.LKL_VS2_LED_CYAN = "Türkis"; //'青色';
 Blockly.LKL_VS2_LED_WHITE = "Weiß"; //'白色';
-//Vision Zoom
-Blockly.LKL_VS2_AUTO = "auto"; //'自动';
+//!Vision Zoom
+Blockly.LKL_VS2_AUTO = "Auto"; //'自动';
 Blockly.LKL_VS2_VISION_ZOOM = "Zoom"; //'缩放';
-//Vision Level
-Blockly.LKL_VS2_LEVEL = "level"; //'等级';
-Blockly.LKL_VS2_HIGH_SPEED = "highSpeed"; //'速度优先';
+//!Vision Level
+Blockly.LKL_VS2_LEVEL = "Stufe"; //'等级';
+Blockly.LKL_VS2_HIGH_SPEED = "hohe Geschwindigkeit"; //'速度优先';
 Blockly.LKL_VS2_NORMAL = "normal"; //'性能均衡';
-Blockly.LKL_VS2_HIGH_ACCURACY = "highAccuracy"; //'准确度优先';
-//UART status
-Blockly.LKL_VS2_UART_OPEN = "Open"; //'打开';
-Blockly.LKL_VS2_UART_CLOSE = "Close"; //'关闭';
-//Vision type
-Blockly.LKL_VS2_COLOR_BLOCK = "ColorBlock"; //'色块';
-Blockly.LKL_VS2_VISION_COLOR_DETECT = "ColorBlock"; //'色块检测';
-Blockly.LKL_VS2_VISION_COLOR_RECOGNITION = "ColorRecognition"; //'颜色识别';
+Blockly.LKL_VS2_HIGH_ACCURACY = "hohe Genauigkeit"; //'准确度优先';
+//!UART status
+Blockly.LKL_VS2_UART_OPEN = "Öffnen"; //'打开';
+Blockly.LKL_VS2_UART_CLOSE = "Schließen"; //'关闭';
+//Vision type //TODO
+Blockly.LKL_VS2_COLOR_BLOCK = "Farbblock"; //'色块';
+Blockly.LKL_VS2_VISION_COLOR_DETECT = "Farbblock"; //'色块检测';
+Blockly.LKL_VS2_VISION_COLOR_RECOGNITION = "Farberkennung"; //'颜色识别';
 Blockly.LKL_VS2_VISION_BALL = "Ball"; //'球';
-Blockly.LKL_VS2_VISION_LINE = "Line"; //'线条';
-Blockly.LKL_VS2_VISION_BODY = "Body"; //'人体';
-Blockly.LKL_VS2_VISION_FACE = "Face"; //'人脸';
+Blockly.LKL_VS2_VISION_LINE = "Linie"; //'线条';
+Blockly.LKL_VS2_VISION_BODY = "Körper"; //'人体';
+Blockly.LKL_VS2_VISION_FACE = "Gesicht"; //'人脸';
 Blockly.LKL_VS2_VISION_TRAFFIC_CARD = "TrafficCard"; //'交通卡片';
 Blockly.LKL_VS2_VISION_SHAPE_CARD = "ShapeCard"; //'形状卡片';
 Blockly.LKL_VS2_VISION_NUM_CARD = "NumberCard"; //'数字卡片';
-//Card type
-Blockly.LKL_VS2_CARD_CIRCLE = "Circle"; //'圆形';
-Blockly.LKL_VS2_CARD_TRIANGLE = "Triangle"; //'三角形';
-Blockly.LKL_VS2_CARD_SQUARE = "Square"; //'方形';
-Blockly.LKL_VS2_CARD_TICK = "Tick"; //'钩';
-Blockly.LKL_VS2_CARD_CROSS = "Cross"; //'叉';
-Blockly.LKL_VS2_CARD_STRAIGHT = "Straight"; //'向前';
-Blockly.LKL_VS2_CARD_TURN_LEFT = "TurnLeft"; //'向左';
-Blockly.LKL_VS2_CARD_TURN_RIGHT = "TurnRight"; //'向右';
-Blockly.LKL_VS2_CARD_TURN_AROUND = "TurnAround"; //'掉头';
-Blockly.LKL_VS2_CARD_WHISTLE = "Whistle"; //'鸣笛';
+//!Card type
+Blockly.LKL_VS2_CARD_CIRCLE = "Kreis"; //'圆形';
+Blockly.LKL_VS2_CARD_TRIANGLE = "Dreieck"; //'三角形';
+Blockly.LKL_VS2_CARD_SQUARE = "Quadrat"; //'方形';
+Blockly.LKL_VS2_CARD_TICK = "Augenblick"; //'钩';
+Blockly.LKL_VS2_CARD_CROSS = "Kreuz"; //'叉';
+Blockly.LKL_VS2_CARD_STRAIGHT = "Geradeaus"; //'向前';
+Blockly.LKL_VS2_CARD_TURN_LEFT = "Linksdrehung"; //'向左';
+Blockly.LKL_VS2_CARD_TURN_RIGHT = "Rechtsdrehung"; //'向右';
+Blockly.LKL_VS2_CARD_TURN_AROUND = "Umdrehen"; //'掉头';
+Blockly.LKL_VS2_CARD_WHISTLE = "Pfeife"; //'鸣笛';
 Blockly.LKL_VS2_CARD_STOP = "Stop"; //'停止';
-//Vision state
+//!Vision state
 Blockly.LKL_VS2_STATE_VALUE_X = "Horizontal"; //'横向坐标';
-Blockly.LKL_VS2_STATE_VALUE_Y = "Vertical"; //'纵向坐标';
-Blockly.LKL_VS2_STATE_VALUE_WIDTH = "Width"; //'宽度';
-Blockly.LKL_VS2_STATE_VALUE_HEIGHT = "Height"; //'高度';
-Blockly.LKL_VS2_STATE_VALUE_R_CHANNEL = "ChannelR"; //'红色通道';
-Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = "ChannelG"; //'绿色通道';
-Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = "ChannelB"; //'蓝色通道';
-Blockly.LKL_VS2_STATE_VALUE_LABEL = "Label"; //'标签';
-//WAHR False
-Blockly.LKL_VS2_WAHR = "WAHR"; //'是';
-Blockly.LKL_VS2_FALSE = "False"; //'否';
-//Enable Disable
-Blockly.LKL_VS2_ENABLE = "enable"; //'开启';
-Blockly.LKL_VS2_DISABLE = "disable"; //'关闭';
-//Camera AWB
-Blockly.LKL_VS2_LOCK_AWB = "LockAWB"; //'锁定白平衡';
-Blockly.LKL_VS2_WHITE_LIGHT = "WhiteLight"; //'白光模式';
-Blockly.LKL_VS2_YELLOW_LIGHT = "YellowLight"; //'黄光模式';
-Blockly.LKL_VS2_ALL = "All"; //'所有';
+Blockly.LKL_VS2_STATE_VALUE_Y = "Vertikal"; //'纵向坐标';
+Blockly.LKL_VS2_STATE_VALUE_WIDTH = "Breite"; //'宽度';
+Blockly.LKL_VS2_STATE_VALUE_HEIGHT = "Höhe"; //'高度';
+Blockly.LKL_VS2_STATE_VALUE_R_CHANNEL = "Kanal R"; //'红色通道';
+Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = "Kanal G"; //'绿色通道';
+Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = "Kanal B"; //'蓝色通道';
+Blockly.LKL_VS2_STATE_VALUE_LABEL = "Beschriftung"; //'标签';
+//!True False
+Blockly.LKL_VS2_WAHR = "Wahr"; //'是';
+Blockly.LKL_VS2_FALSE = "Falsch"; //'否';
+//!Enable Disable
+Blockly.LKL_VS2_ENABLE = "aktivieren"; //'开启';
+Blockly.LKL_VS2_DISABLE = "deaktivieren"; //'关闭';
+//!Camera AWB
+Blockly.LKL_VS2_LOCK_AWB = "Sperre Weißabgleich"; //'锁定白平衡';
+Blockly.LKL_VS2_WHITE_LIGHT = "Weißes Licht"; //'白光模式';
+Blockly.LKL_VS2_YELLOW_LIGHT = "Gelbes Licht"; //'黄光模式';
+Blockly.LKL_VS2_ALL = "Alle"; //'所有';
 
-//Other
-Blockly.LKL_VS2_COLOR = "color"; //'颜色';
-Blockly.LKL_VS2_DEFAULT = "default"; //'默认';
-Blockly.LKL_VS2_LOW = "low"; //'低';
-Blockly.LKL_VS2_MID = "middle"; //'中';
-Blockly.LKL_VS2_HIGH = "high"; //'高';
+//!Other
+Blockly.LKL_VS2_COLOR = "Farbe"; //'颜色';
+Blockly.LKL_VS2_DEFAULT = "Standard"; //'默认';
+Blockly.LKL_VS2_LOW = "niedrig"; //'低';
+Blockly.LKL_VS2_MID = "mittel"; //'中';
+Blockly.LKL_VS2_HIGH = "hoch"; //'高';
 
 /*模块文本*/
-Blockly.LKL_VS2_MU = "initialize"; //'初始化';
-Blockly.LKL_VS2_MODE = "mode"; //'模式';
-Blockly.LKL_VS2_SetupVS = "setup"; //'设置';
-Blockly.LKL_VS2_SET_RECOGNITION_REGION = "set recognition region"; //'设置识别区域';
-Blockly.LKL_VS2_SET_MIN_RECOGNITION_SIZE = "set min recognition size"; //'设置最小识别尺寸';
-Blockly.LKL_VS2_SERIAL = "port"; //'端口';
-Blockly.LKL_VS2_ADDRESS = "address"; //'地址';
-Blockly.LKL_VS2_RESET = "reset to default"; //'恢复默认设置';
-Blockly.LKL_VS2_LED_DETECT_COLOR = "when erkannt then"; //'识别到物体亮';
-Blockly.LKL_VS2_LED_UNDETECT_COLOR = "else"; //'没识别到物体亮';
-Blockly.LKL_VS2_BRIGHTNESS = "brightness"; //'亮度';
-Blockly.LKL_VS2_VISION_TYPE = "algorithm"; //'算法';
-Blockly.LKL_VS2_SET_VISION_LEVEL = "level"; //'设置识别等级';
-Blockly.LKL_VS2_SET_FRAME_ROTATE = "rotate Frame"; //'图像翻转';
-Blockly.LKL_VS2_SET_CAMERA_HFR = "high FPS mode"; //'高帧率模式';
-Blockly.LKL_VS2_SET_CAMERA_AWB = "camera white balance"; //'摄像头白平衡';
-Blockly.LKL_VS2_SET_VISION_ZOOM = "zoom"; //'图像缩放等级';
-Blockly.LKL_VS2_SET_UART_BAUD = "UART baudrate"; //'串口波特率';
+Blockly.LKL_VS2_MU = "initialisiere"; //'初始化';
+Blockly.LKL_VS2_MODE = "Modus"; //'模式';
+Blockly.LKL_VS2_SetupVS = "Setup"; //'设置';
+Blockly.LKL_VS2_SET_RECOGNITION_REGION = "setze Erkennungsbereich"; //'设置识别区域';
+Blockly.LKL_VS2_SET_MIN_RECOGNITION_SIZE = "setze Mindesterkennungsgröße"; //'设置最小识别尺寸';
+Blockly.LKL_VS2_SERIAL = "Port"; //'端口';
+Blockly.LKL_VS2_ADDRESS = "Adresse"; //'地址';
+Blockly.LKL_VS2_RESET = "setze auf Standard zurück"; //'恢复默认设置';
+Blockly.LKL_VS2_LED_DETECT_COLOR = "wenn erkannt dann"; //'识别到物体亮';
+Blockly.LKL_VS2_LED_UNDETECT_COLOR = "sonst"; //'没识别到物体亮';
+Blockly.LKL_VS2_BRIGHTNESS = "Helligkeit"; //'亮度';
+Blockly.LKL_VS2_VISION_TYPE = "Algorithmus"; //'算法';
+Blockly.LKL_VS2_SET_VISION_LEVEL = "Stufe"; //'设置识别等级';
+Blockly.LKL_VS2_SET_FRAME_ROTATE = "rotiere Bild"; //'图像翻转';
+Blockly.LKL_VS2_SET_CAMERA_HFR = "hohe FPS Modus"; //'高帧率模式';
+Blockly.LKL_VS2_SET_CAMERA_AWB = "Weißabgleich der Kamera"; //'摄像头白平衡';
+Blockly.LKL_VS2_SET_VISION_ZOOM = "Zoom"; //'图像缩放等级';
+Blockly.LKL_VS2_SET_UART_BAUD = "UART Baudrate"; //'串口波特率';
 Blockly.LKL_VS2_DETECTED = "erkannt"; //'检测到';
-Blockly.LKL_VS2_RECOGNIZED = "recognized"; //'识别到';
-Blockly.LKL_VS2_GET_DETECTED_MESSAGE = "get"; //'获取';
+Blockly.LKL_VS2_RECOGNIZED = "erkannt"; //'识别到';
+Blockly.LKL_VS2_GET_DETECTED_MESSAGE = "erhalte"; //'获取';
 Blockly.LKL_VS2_VALUE = "Wert"; //'值';
-Blockly.LKL_VS2_GET_PIX_COLOR = "get Position"; //'捕获坐标';
-Blockly.LKL_VS2_CARD_TYPE = "type"; //'卡片类型';
-Blockly.LKL_VS2_SET_DETECT_COLOR = "setDetectColor"; //'设置识别颜色';
-Blockly.LKL_VS2_COORDINATE = "coordinate"; //'坐标';
+Blockly.LKL_VS2_GET_PIX_COLOR = "erhalte Position"; //'捕获坐标';
+Blockly.LKL_VS2_CARD_TYPE = "Typ"; //'卡片类型';
+Blockly.LKL_VS2_SET_DETECT_COLOR = "setze Farberkennung"; //'设置识别颜色';
+Blockly.LKL_VS2_COORDINATE = "Koordinate"; //'坐标';
 
 // Light sensor
 Blockly.LKL_VS2_LIGHT_SENSOR = "light sensor"; //'光线传感器';
