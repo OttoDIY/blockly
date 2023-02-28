@@ -686,7 +686,7 @@ Blockly.Msg.SSERIAL_Write_tooltip = "sendet Daten an die Softwareschnittstelle";
 Blockly.Msg.SSERIAL_Available = "Datenmenge an der Softwareschnittstelle";
 Blockly.Msg.SSERIAL_Available_tooltip =
   "gibt die Anzahl der verfügbaren Bytes in der Warteschlange der Softwareschnittstelle zurück, oder 0, wenn nichts verfügbar ist";
-////////////////////////////OTTO DIY Robot/////////////////////
+///OTTO DIY Robot///
 Blockly.Msg.OTTO9_HOME_TEXT = "Start";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto geht in die Startposition";
 Blockly.Msg.OTTO9H_HOME_TOOLTIP =
@@ -696,18 +696,18 @@ Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid"; //
 Blockly.Msg.OTTO9_CALIBRATION = "kalibrieren ";
 Blockly.Msg.OTTO9_CALIBRATION_LEG = "Bein ";
 Blockly.Msg.OTTO9_CALIBRATION_FOOT = "Fuß ";
-Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
-Blockly.Msg.OTTO_HEAD_TEXT = "head ";
-Blockly.Msg.OTTO_FRONT_TEXT = "front ";
-Blockly.Msg.OTTO_BACK_TEXT = "back ";
-Blockly.Msg.OTTO_HIP_TEXT = "hip ";
-Blockly.Msg.OTTO_HELLO_TEXT = "hello";
-Blockly.Msg.OTTO_JUMP_TEXT = "jump";
-Blockly.Msg.OTTO_SCARED_TEXT = "scared";
-Blockly.Msg.OTTO_WALK_TEXT = "walk";
-Blockly.Msg.OTTO_ROLL_TEXT = "roll";
-Blockly.Msg.OTTO_MODE_TEXT = " mode";
-Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
+Blockly.Msg.OTTO_WHEELS_TEXT = "Räder ";
+Blockly.Msg.OTTO_HEAD_TEXT = "Kopf ";
+Blockly.Msg.OTTO_FRONT_TEXT = "Vorderseite ";
+Blockly.Msg.OTTO_BACK_TEXT = "Rückseite ";
+Blockly.Msg.OTTO_HIP_TEXT = "Hüfte ";
+Blockly.Msg.OTTO_HELLO_TEXT = "Hallo";
+Blockly.Msg.OTTO_JUMP_TEXT = "Sprung";
+Blockly.Msg.OTTO_SCARED_TEXT = "ängstlich";
+Blockly.Msg.OTTO_WALK_TEXT = "laufen";
+Blockly.Msg.OTTO_ROLL_TEXT = "rollen";
+Blockly.Msg.OTTO_MODE_TEXT = " Modus";
+Blockly.Msg.OTTO9_ARMS_TEXT = "Arme ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM = "Arm ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP =
   "mache wiederholt kleine positive oder negative Änderungen, bis alles gerade (90°) eingestellt ist";
@@ -751,13 +751,13 @@ Blockly.Msg.OTTO9_MOVEW_SPEED_CHOICE = [
 ];
 Blockly.Msg.OTTO9_DANCE_TEXT = "Tanz";
 Blockly.Msg.OTTO9_DANCE_TOOLTIP = "Otto tanzt!";
-Blockly.Msg.OTTO9_DANCE_CHOICE = [ //TODO
+Blockly.Msg.OTTO9_DANCE_CHOICE = [
   ["Moonwalk ⟵", "moonwalkerLEFT"],
   ["Moonwalk ⟶", "moonwalkerRIGHT"],
-  ["crossing ⟵", "crusaitoLEFT"],
-  ["crossing ⟶", "crusaitoRIGHT"],
-  ["flapping ↑", "flappingFRONT"],
-  ["flapping ↓", "flappingBACK"],
+  ["Kreuzen ⟵", "crusaitoLEFT"],
+  ["Kreuzen ⟶", "crusaitoRIGHT"],
+  ["Flattern ↑", "flappingFRONT"],
+  ["Flattern ↓", "flappingBACK"],
 ];
 Blockly.Msg.OTTO9_DANCE_SIZE_TEXT = "Größe";
 Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE = [
@@ -768,8 +768,8 @@ Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE = [
 Blockly.Msg.OTTO9_DO_TEXT = "mache";
 Blockly.Msg.OTTO9_DO_TOOLTIP = "Otto macht komplexere Bewegungen";
 Blockly.Msg.OTTO9_DO_CHOICE = [ //TODO
-  ["swing", "swing"],
-  ["updown", "updown"],
+  ["Schwanken", "swing"],
+  ["Hoch/Runter", "updown"],
   ["ZehenspitzenSwing", "tiptoeSwing"],
   ["Zittern", "jitter"],
   ["ascendingTurn", "ascendingTurn"],
@@ -785,8 +785,8 @@ Blockly.Msg.OTTO9_GESTURE_CHOICE = [
   ["😰 nervös", "OttoFretful"],
   ["😍 liebe", "OttoLove"],
   ["😡 wütend", "OttoAngry"],
-  ["🤩 magisch", "OttoMagic"],
-  ["😐 wave", "OttoWave"],
+  ["🤩 überwältigt", "OttoMagic"],
+  ["😐 ausdruckslos", "OttoWave"],
   [" 😎 cool", "OttoVictory"],
   ["😞 enttäuscht", "OttoFail"],
   ["💩 pupsen", "OttoFart"],
@@ -843,7 +843,7 @@ Blockly.Msg.OTTO9_MOUTH_CHOICE = [
   ["😕 verwirrt", "confused"],
   ["😛 Zunge", "tongueOut"],
   ["🙃 albern", "culito"],
-  ["😑 ernst", "lineMouth"],
+  ["😑 ausdruckslos", "lineMouth"],
   ["🙄 verärgert", "21"],
   ["💖 Herz", "heart"],
   ["🦇 v1", "vamp1"],
@@ -867,8 +867,8 @@ Blockly.Msg.OTTO9_EYES_CHOICE = [ //TODO
   ["😕 verwirrt", "confused_bmp"],
   ["😴 schlafen", "sleep_bmp"],
   ["😍 liebe", "love_bmp"],
-  ["😑 wave", "wave_bmp"],
-  ["🤩 magic", "magic_bmp"],
+  ["😑 ausdruckslos", "wave_bmp"],
+  ["🤩 überwältigt", "magic_bmp"],
   ["😞 enttäuscht", "fail_bmp"],
   ["🤖 logo", "logo_bmp"],
   ["❌❌ nein", "XX_bmp"],
@@ -890,7 +890,7 @@ Blockly.Msg.OTTO9_ARMS_CHOICE = [
   ["Handbewegung rechts", "HANDWAVE2"],
 ];
 
-/// ESP8266
+///!ESP8266
 Blockly.Msg.OTTO9_YL = "linkes Bein";
 Blockly.Msg.OTTO9_YR = "rechtes Bein";
 Blockly.Msg.OTTO9_RL = "linker Fuß";
@@ -899,7 +899,7 @@ Blockly.Msg.OTTO9_BUZZER = "Summer";
 Blockly.Msg.OTTO_HOME_TOOLTIP = "Otto geht sofort in Ausgangsposition.";
 Blockly.Msg.OTTO_HOME_TEXT = "Konfiguration";
 
-////////////ESCORNABOT Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
+///ESCORNABOT Robot /// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
 Blockly.Msg.ESCORNABOT_MODE_TEXT = "Initialisiere Escornabot";
 Blockly.Msg.ESCORNABOT_MODE_CHOICE = [
   ["Schwach", ""],
@@ -979,110 +979,110 @@ Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TOOLTIP =
 Blockly.Msg.ESCORNABOT_IRLEFT_TEXT = "Links";
 Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT = "Rechts";
 
-//SIMPLE SENSORS
+//!SIMPLE SENSORS
 Blockly.Msg.BUTTON_NAME = "Knopf";
-Blockly.Msg.INTERNAL_BUTTON_NAME = "Start button MRTduino board";
-Blockly.Msg.BUTTON_LOGIC = "Logic inverse";
+Blockly.Msg.INTERNAL_BUTTON_NAME = "Starte Knopf MRTduino-Board";
+Blockly.Msg.BUTTON_LOGIC = "logisch umgekehrt";
 Blockly.Msg.BUTTON_PRESSED = "gedrückt?";
-Blockly.Msg.BUTTON_TOUCH_NAME = "Capacity Touch";
-Blockly.Msg.KNOCK_NAME = "Knock";
+Blockly.Msg.BUTTON_TOUCH_NAME = "Kapazitive Berührung";
+Blockly.Msg.KNOCK_NAME = "Klopfen";
 Blockly.Msg.KNOCK_DETECTED = "erkannt?";
-Blockly.Msg.TILT_NAME = "Digital Tilt";
+Blockly.Msg.TILT_NAME = "Digitale Neigung";
 Blockly.Msg.TILT_DETECTED = "erkannt?";
 Blockly.Msg.POTE_NAME = "Potentiometer";
 Blockly.Msg.PERCENT = "Prozent(0-100)%";
 Blockly.Msg.VALUE = "Wert(0-1023)";
-Blockly.Msg.PHOTO_NAME = "Photo Interrupter";
+Blockly.Msg.PHOTO_NAME = "Lichtschranke";
 Blockly.Msg.PHOTO_DETECTED = "erkannt?";
-Blockly.Msg.VAR_LM35 = "LM35 Temperatur (ºC)";
-Blockly.Msg.LDR_NAME = "Photocell (LDR or CDS) ";
+Blockly.Msg.VAR_LM35 = "LM35 Temperatur (°C)";
+Blockly.Msg.LDR_NAME = "Fotowiderstand (LDR oderr CDS) ";
 Blockly.Msg.LDR_DETECTED = "erkannt?";
-Blockly.Msg.IR_NAME = "Infrared";
-Blockly.Msg.IR_DETECTED = "sensed?";
-Blockly.Msg.FLAME_NAME = "Flame";
+Blockly.Msg.IR_NAME = "Infrarot";
+Blockly.Msg.IR_DETECTED = "erkannt?";
+Blockly.Msg.FLAME_NAME = "Flamme";
 Blockly.Msg.FLAME_DETECTED = "erkannt?";
-Blockly.Msg.SOUND_NAME = "Sound (MIC)";
-Blockly.Msg.SOUND_AMP_NAME = "MIC Amplifier";
-Blockly.Msg.SOUND_WINDOWS = "Sample Window";
+Blockly.Msg.SOUND_NAME = "Geräusch (MIC)";
+Blockly.Msg.SOUND_AMP_NAME = "MIC Verstärker";
+Blockly.Msg.SOUND_WINDOWS = "Frequenzbereich";
 Blockly.Msg.SOUND_DETECTED = "erkannt?";
 Blockly.Msg.DHT_NAME = "DHT";
-Blockly.Msg.DHT_Type = "Type";
+Blockly.Msg.DHT_Type = "Typ";
 Blockly.Msg.DHT_Type11 = "DHT11";
 Blockly.Msg.DHT_Type21 = "DHT21";
 Blockly.Msg.DHT_Type22 = "DHT22";
-Blockly.Msg.DHT_Temp = "Temperatur ºC";
-Blockly.Msg.DHT_Humi = "Humidity";
-Blockly.Msg.DHT_Head = "Heat Index ºC";
+Blockly.Msg.DHT_Temp = "Temperatur °C";
+Blockly.Msg.DHT_Humi = "Feuchtigkeit";
+Blockly.Msg.DHT_Head = "Hitzeindex °C";
 Blockly.Msg.GAS_NAME = "Gas CO (MQ-7)";
 Blockly.Msg.GAS_DETECTED = "erkannt?";
-Blockly.Msg.ALCOHOL_NAME = "Alcohol (MQ-3)";
-Blockly.Msg.AIR_NAME = "Air quality (MQ-135)";
+Blockly.Msg.ALCOHOL_NAME = "Alkohol (MQ-3)";
+Blockly.Msg.AIR_NAME = "Luftqualität (MQ-135)";
 Blockly.Msg.ALCOHOL_DETECTED = "erkannt?";
 Blockly.Msg.VIBRATION_NAME = "Vibration";
 Blockly.Msg.VIBRATION_DETECTED = "erkannt?";
-Blockly.Msg.HALL_NAME = "Hall Magnetic";
+Blockly.Msg.HALL_NAME = "Magnetsensor";
 Blockly.Msg.HALL_DETECTED = "erkannt?";
-Blockly.Msg.PIR_NAME = "PIR Motion";
+Blockly.Msg.PIR_NAME = "Bewegungssensor";
 Blockly.Msg.PIR_DETECTED = "erkannt?";
-Blockly.Msg.VAPOR_NAME = "Vapor (Steam)";
-Blockly.Msg.ALIGHT_NAME = "Ambient Light (TEMT6000)";
-Blockly.Msg.WATER_NAME = "Water level";
-Blockly.Msg.MOISTURE_NAME = "Soil Moisture";
-Blockly.Msg.JOYSTICK_NAME = "Joystick axis";
-Blockly.Msg.JOYSTICK_BUTTON = "Joystick button";
-Blockly.Msg.JOYSTICK_PRESSED = "pressed?";
-Blockly.Msg.ultrasonic_ranger = "HC-SR04 Ultrasonic (cm)";
-Blockly.Msg.unit = "Unit";
+Blockly.Msg.VAPOR_NAME = "Dampf (Rauch)";
+Blockly.Msg.ALIGHT_NAME = "Umgebungslicht (TEMT6000)";
+Blockly.Msg.WATER_NAME = "Wasserstand";
+Blockly.Msg.MOISTURE_NAME = "Bodenfeuchtigkeit";
+Blockly.Msg.JOYSTICK_NAME = "Joystick Achse";
+Blockly.Msg.JOYSTICK_BUTTON = "Joystick Knopf";
+Blockly.Msg.JOYSTICK_PRESSED = "gedrückt?";
+Blockly.Msg.ultrasonic_ranger = "HC-SR04 Ultraschall (cm)";
+Blockly.Msg.unit = "Einheit";
 Blockly.Msg.cm = "cm";
 Blockly.Msg.inch = "inch";
 Blockly.Msg.TRIG = "TRIG Trigger";
 Blockly.Msg.Echo = "Echo";
-Blockly.Msg.VAR_TemSens = "Analog NTC Temperatur (ºC)";
-Blockly.Msg.MRTX_BUTTON = "MRTNode start button pressed?";
-Blockly.Msg.TOUCH = "Touch";
+Blockly.Msg.VAR_TemSens = "Analog NTC Temperatur (°C)";
+Blockly.Msg.MRTX_BUTTON = "MRTNode Startknopf gedrückt?";
+Blockly.Msg.TOUCH = "Berührung";
 
-//CCS811
+//!CCS811
 
-Blockly.Msg.CCS811 = "Init CO2(CCS811) sensor";
-Blockly.Msg.CCS811_name = "CO2(CCS811) sensor";
-Blockly.Msg.CCS811_2 = "- SDA-SCL and connect WAK to GND";
-Blockly.Msg.CCS811_available = "Is the sensor available?";
-Blockly.Msg.CCS811_readed = "Is the measure readed?";
+Blockly.Msg.CCS811 = "Initialisiere CO₂(CCS811) Sensor";
+Blockly.Msg.CCS811_name = "CO₂ (CCS811) Sensor";
+Blockly.Msg.CCS811_2 = "I²C & WAK an GND";
+Blockly.Msg.CCS811_available = "Ist der Sensor verfügbar?";
+Blockly.Msg.CCS811_readed = "Wird gemessen?";
 Blockly.Msg.CCS811_values = "Wert";
 
-//LCD I2C
-Blockly.Msg.LCD_I2C_setup = "Init LCD I2C Address";
-Blockly.Msg.LCDP_Column = "Columns";
-Blockly.Msg.LCDP_Row = "Rows";
-Blockly.Msg.LCDP_Column2 = "column";
-Blockly.Msg.LCDP_Row2 = "row";
-Blockly.Msg.LCDP_Print = "and print";
-Blockly.Msg.LCDP_Clear = "LCD I2C clear";
-Blockly.Msg.LCDP_scrollDisplay = "LCD I2C scroll display ";
-Blockly.Msg.LCDP_setBcklight = "LCD I2C set Backlight ";
-Blockly.Msg.LCDP_showCursor = "LCD I2C show Cursor ";
-Blockly.Msg.LCDP_blinkCursor = "LCD I2C blink Cursor ";
-Blockly.Msg.LCDP_Home = "LCD I2C home";
-Blockly.Msg.LCDP_SetCursor = "LCD I2C set cursor";
-Blockly.Msg.LCDP_Display = "LCD I2C ";
+//!LCD I2C
+Blockly.Msg.LCD_I2C_setup = "Initialisiere LCD I²C Adresse";
+Blockly.Msg.LCDP_Column = "Spalte";
+Blockly.Msg.LCDP_Row = "Zeile";
+Blockly.Msg.LCDP_Column2 = "Spalte";
+Blockly.Msg.LCDP_Row2 = "Zeile";
+Blockly.Msg.LCDP_Print = "und schreibe";
+Blockly.Msg.LCDP_Clear = "LCD I²C löschen";
+Blockly.Msg.LCDP_scrollDisplay = "LCD I²C scrolle Anzeige ";
+Blockly.Msg.LCDP_setBcklight = "LCD I²C setze Hintergrundlicht ";
+Blockly.Msg.LCDP_showCursor = "LCD I²C zeige Zeiger ";
+Blockly.Msg.LCDP_blinkCursor = "LCD I²C lasse Zeiger blinken ";
+Blockly.Msg.LCDP_Home = "LCD I²C Ausgangsposition";
+Blockly.Msg.LCDP_SetCursor = "LCD I²C setze Zeiger";
+Blockly.Msg.LCDP_Display = "LCD I²C ";
 
-//GESTURE SENSOR APDS9960
-Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesture";
-Blockly.Msg.APDS9960_name_color = "APDS9960 Color";
-Blockly.Msg.APDS9960_detection = "detection";
-Blockly.Msg.APDS9960_init = "Init APDS9960 gesture and color sensor.";
+//!GESTURE SENSOR APDS9960
+Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesten";
+Blockly.Msg.APDS9960_name_color = "APDS9960 Farbe";
+Blockly.Msg.APDS9960_detection = "Erkennung";
+Blockly.Msg.APDS9960_init = "Initialisiere APDS9960 Gesten- und Farbsensor.";
 Blockly.Msg.APDS9960_init2 = "SDA-SCL";
-Blockly.Msg.APDS9960_gesture_gain = "Config gesture gain";
-Blockly.Msg.APDS9960_color_gain = "Config color gain";
+Blockly.Msg.APDS9960_gesture_gain = "Konfiguriere Gesten Verstärkung";
+Blockly.Msg.APDS9960_color_gain = "Konfiguriere Farb Verstärkung";
 Blockly.Msg.APDS9960_gesture_detected = "erkannt?";
-Blockly.Msg.APDS9960_readgesture = ".Read gesture";
-Blockly.Msg.APDS9960_readcolors = "Read color frecuencies";
-Blockly.Msg.APDS9960_colors = "Frequency";
+Blockly.Msg.APDS9960_readgesture = "Lese Geste";
+Blockly.Msg.APDS9960_readcolors = "Erkenne Farbe";
+Blockly.Msg.APDS9960_colors = "Spektrum";
 
-//REMOTE CONTROL IR
-Blockly.Msg.KEY = "Key";
-Blockly.Msg.GENERAL_IR = "Remote Control IR";
-Blockly.Msg.GENERAL_PRESSED = "Read key";
+//!REMOTE CONTROL IR
+Blockly.Msg.KEY = "Schlüssel";
+Blockly.Msg.GENERAL_IR = "IR-Fernbedienung";
+Blockly.Msg.GENERAL_PRESSED = "Lese Schlüssel";
 Blockly.Msg.PIN = "PIN";
 
 //REMOTE CONTROL MRT
