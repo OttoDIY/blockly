@@ -1174,7 +1174,7 @@ Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = "Kanal G"; //'绿色通道';
 Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = "Kanal B"; //'蓝色通道';
 Blockly.LKL_VS2_STATE_VALUE_LABEL = "Beschriftung"; //'标签';
 //!True False
-Blockly.LKL_VS2_WAHR = "Wahr"; //'是';
+Blockly.LKL_VS2_TRUE = "Wahr"; //'是';
 Blockly.LKL_VS2_FALSE = "Falsch"; //'否';
 //!Enable Disable
 Blockly.LKL_VS2_ENABLE = "aktivieren"; //'开启';
@@ -1220,40 +1220,40 @@ Blockly.LKL_VS2_CARD_TYPE = "Typ"; //'卡片类型';
 Blockly.LKL_VS2_SET_DETECT_COLOR = "setze Farberkennung"; //'设置识别颜色';
 Blockly.LKL_VS2_COORDINATE = "Koordinate"; //'坐标';
 
-// Light sensor
-Blockly.LKL_VS2_LIGHT_SENSOR = "light sensor"; //'光线传感器';
-Blockly.LKL_VS2_SET = "set"; //'设置';
-Blockly.LKL_VS2_SENSITIVITY = "sensitivity"; //'灵敏度';
-Blockly.LKL_VS2_WB_CORRECTION = "white balance correction"; //'白平衡校准';
-Blockly.LKL_VS2_READ = "read"; //'读取';
-Blockly.LKL_VS2_PROXIMITY = "proximity detection"; //'接近检测';
-Blockly.LKL_VS2_ALS = "ambient light detection"; //'环境光检测';
-Blockly.LKL_VS2_GESTURE_SENSOR = "gesture detection"; //'手势检测';
-Blockly.LKL_VS2_GESTURE = "gesture"; //'手势';
-Blockly.LKL_VS2_GESTURE_UP = "upward"; //'上划';
-Blockly.LKL_VS2_GESTURE_DOWN = "downward"; //'下划';
-Blockly.LKL_VS2_GESTURE_LEFT = "leftward"; //'左划';
-Blockly.LKL_VS2_GESTURE_RIGHT = "rightward"; //'右划';
-Blockly.LKL_VS2_GESTURE_LIFT_UP = "pull"; //'上抬';
-Blockly.LKL_VS2_GESTURE_PUSH_DOWN = "push"; //'下压';
+//!Light sensor
+Blockly.LKL_VS2_LIGHT_SENSOR = "Lichtsensor"; //'光线传感器';
+Blockly.LKL_VS2_SET = "setze"; //'设置';
+Blockly.LKL_VS2_SENSITIVITY = "Empfindlichkeit"; //'灵敏度';
+Blockly.LKL_VS2_WB_CORRECTION = "Weißabgleich"; //'白平衡校准';
+Blockly.LKL_VS2_READ = "lese"; //'读取';
+Blockly.LKL_VS2_PROXIMITY = "Annäherungserkennung"; //'接近检测';
+Blockly.LKL_VS2_ALS = "Umgebungslichterkennung"; //'环境光检测';
+Blockly.LKL_VS2_GESTURE_SENSOR = "Gestenerkennung"; //'手势检测';
+Blockly.LKL_VS2_GESTURE = "Geste"; //'手势';
+Blockly.LKL_VS2_GESTURE_UP = "nach oben"; //'上划';
+Blockly.LKL_VS2_GESTURE_DOWN = "nach unten"; //'下划';
+Blockly.LKL_VS2_GESTURE_LEFT = "nach links"; //'左划';
+Blockly.LKL_VS2_GESTURE_RIGHT = "nach rechts"; //'右划';
+Blockly.LKL_VS2_GESTURE_LIFT_UP = "ziehen"; //'上抬';
+Blockly.LKL_VS2_GESTURE_PUSH_DOWN = "drücken"; //'下压';
 
-// AT WiFi
-Blockly.LKL_VS2_SSID = "ssid"; //"名称";
-Blockly.LKL_VS2_PASSWORD = "password"; //"密码";
-Blockly.LKL_VS2_WAIT_CONNECT = "connection succeeded"; //"连接成功";
-Blockly.LKL_VS2_DISCONNECT = "disconnect"; //"断开连接";
-Blockly.LKL_VS2_CLIENT = "client"; //"客户端";
+//!AT WiFi
+Blockly.LKL_VS2_SSID = "SSID"; //"名称";
+Blockly.LKL_VS2_PASSWORD = "Passwort"; //"密码";
+Blockly.LKL_VS2_WAIT_CONNECT = "Verbindung erfolgreich"; //"连接成功";
+Blockly.LKL_VS2_DISCONNECT = "trennen"; //"断开连接";
+Blockly.LKL_VS2_CLIENT = "Client"; //"客户端";
 Blockly.LKL_VS2_HOT_SPOT = "hot-spot"; //"热点";
-Blockly.LKL_VS2_TARGET_IP = "target IP"; //"目标IP";
-Blockly.LKL_VS2_LOCAL_IP = "local IP"; //"本地IP";
-Blockly.LKL_VS2_WRITE = "write"; //"写入";
+Blockly.LKL_VS2_TARGET_IP = "Ziel IP"; //"目标IP";
+Blockly.LKL_VS2_LOCAL_IP = "lokale IP"; //"本地IP";
+Blockly.LKL_VS2_WRITE = "schreibe"; //"写入";
 
-// SOFTWARE SERIAL FOR BT
-Blockly.Msg.SSERIAL_BT_Init = "Init Bluetooth - SoftwareSerial";
-Blockly.Msg.ESP32Bluetooth = "Init Bluetooth - ESP32 Bluetooth Serial";
+//SOFTWARE SERIAL FOR BT //TODO
+Blockly.Msg.SSERIAL_BT_Init = "Initialisiere Bluetooth - SoftwareSerial";
+Blockly.Msg.ESP32Bluetooth = "Initialisiere Bluetooth - ESP32 Bluetooth Serial";
 Blockly.Msg.SSERIAL_BT_TX = "Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX = "Pin RX#";
-Blockly.Msg.SSERIAL_BT_BAUD = "Bauds";
+Blockly.Msg.SSERIAL_BT_BAUD = "Baudraten";
 Blockly.Msg.SSERIAL_BT_Read = "Serial BT Read byte";
 Blockly.Msg.SSERIAL_BT_Println = "Serial BT Print on new line";
 Blockly.Msg.SSERIAL_BT_Print = "Serial BT Print on same line";
@@ -1264,7 +1264,7 @@ Blockly.Msg.SSERIAL_BT_ReadNum = "Serial BT Read as number";
 Blockly.Msg.SSERIAL_BT_ReadString = "Serial BT Read String";
 Blockly.Msg.SSERIAL_BT_Readlf = "until line feed";
 
-// SOFTWARE SERIAL
+// SOFTWARE SERIAL //TODO
 Blockly.Msg.SSERIAL_Init = "Init SoftwareSerial";
 Blockly.Msg.SSERIAL_TX = "Pin TX#";
 Blockly.Msg.SSERIAL_RX = "Pin RX#";
@@ -1279,7 +1279,7 @@ Blockly.Msg.SSERIAL_ReadNum = "SoftwareSerial Read as number";
 Blockly.Msg.SSERIAL_ReadString = "SoftwareSerial Read String";
 Blockly.Msg.SSERIAL_Readlf = "until line feed";
 
-// SERIAL
+// SERIAL //TODO
 Blockly.Msg.SERIAL_Init = "Init Serial ";
 Blockly.Msg.SERIAL_TX = "Pin TX#";
 Blockly.Msg.SERIAL_RX = "Pin RX#";
@@ -1294,150 +1294,150 @@ Blockly.Msg.SERIAL_ReadNum = "Serial Read as number";
 Blockly.Msg.SERIAL_ReadString = "Serial Read String";
 Blockly.Msg.SERIAL_Readlf = "until line feed";
 
-//DISPLAY TFT ST7735
+//!DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
-Blockly.Msg.ST7735_init = 'Init TFT ST7735 1.8" or 0.96".';
+Blockly.Msg.ST7735_init = 'Initialisiere TFT ST7735 1.8" oder 0.96".';
 Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
 Blockly.Msg.ST7735_PIN_CS = "CS Pin";
-Blockly.Msg.ST7735_PIN_RST = "RST or RES Pin";
-Blockly.Msg.ST7735_PIN_DC = "A0 or DC Pin";
-Blockly.Msg.ST7735_WRAP = "Tab color";
-Blockly.Msg.ST7735_FILLBACKGROUND = "Fill backgroundColor";
-Blockly.Msg.ST7735_Rotate = "Rotate display";
-Blockly.Msg.ST7735_Invert = "Invert display";
-Blockly.Msg.ST7735_SetCursor = "Set cursor";
+Blockly.Msg.ST7735_PIN_RST = "RST oder RES Pin";
+Blockly.Msg.ST7735_PIN_DC = "A0 oder DC Pin";
+Blockly.Msg.ST7735_WRAP = "Tabfarbe";
+Blockly.Msg.ST7735_FILLBACKGROUND = "Fülle Hintergrundfarbe";
+Blockly.Msg.ST7735_Rotate = "Drehe Bild";
+Blockly.Msg.ST7735_Invert = "Invertiere Bild";
+Blockly.Msg.ST7735_SetCursor = "Setze Zeiger";
 Blockly.Msg.ST7735_X0 = "x0";
 Blockly.Msg.ST7735_Y0 = "y0";
 Blockly.Msg.ST7735_X1 = "x1";
 Blockly.Msg.ST7735_Y1 = "y1";
 Blockly.Msg.ST7735_X2 = "x2";
 Blockly.Msg.ST7735_Y2 = "y2";
-Blockly.Msg.ST7735_TEXTCOLOR = "Set text color";
-Blockly.Msg.ST7735_TEXTCOLOR2 = "Set color";
-Blockly.Msg.ST7735_TEXTsize = "Set text size";
-Blockly.Msg.ST7735_TEXTwrap = "Set text wrap";
-Blockly.Msg.ST7735_PrintTextLN = "Print the text/Wert";
-Blockly.Msg.ST7735_PrintTextLN2 = "line feed";
-Blockly.Msg.ST7735_DrawPixel = "Draw pixel";
-Blockly.Msg.ST7735_Drawlinefrom = "Draw line from";
-Blockly.Msg.ST7735_Drawlineto = "to";
-Blockly.Msg.ST7735_Drawrectangle = "Draw rectangle";
-Blockly.Msg.ST7735_Drawtriangle = "Draw triangle.Corner points";
-Blockly.Msg.ST7735_Drawroundrectangle = "Draw round rectangle";
-Blockly.Msg.ST7735_Drawroundrectangleradius = "rounding radius";
-Blockly.Msg.ST7735_Drawrectanglewidth = "width";
-Blockly.Msg.ST7735_Drawrectangleheight = "height";
-Blockly.Msg.ST7735_Drawcircle = "Draw circle.Center in";
-Blockly.Msg.ST7735_Drawcircleradius = "radius";
-Blockly.Msg.ST7735_Drawfill = "Fill";
-Blockly.Msg.ST7735_properties = "Return property:";
-Blockly.Msg.ST7735_IconName = "Icon name(bmp):";
-Blockly.Msg.ST7735_ValueList = "Values(hex array)";
-Blockly.Msg.ST7735_DrawiconName = "Draw Icon(bmp) name";
+Blockly.Msg.ST7735_TEXTCOLOR = "Setze Textfarbe";
+Blockly.Msg.ST7735_TEXTCOLOR2 = "Setze Farbe";
+Blockly.Msg.ST7735_TEXTsize = "Setze Textgröße";
+Blockly.Msg.ST7735_TEXTwrap = "Setze Textumbruch";
+Blockly.Msg.ST7735_PrintTextLN = "Schreibe den Text/Wert";
+Blockly.Msg.ST7735_PrintTextLN2 = "Zeilenvorschub";
+Blockly.Msg.ST7735_DrawPixel = "Zeichne Pixel";
+Blockly.Msg.ST7735_Drawlinefrom = "Zeichne Linie von";
+Blockly.Msg.ST7735_Drawlineto = "bis";
+Blockly.Msg.ST7735_Drawrectangle = "Zeichne Rechteck";
+Blockly.Msg.ST7735_Drawtriangle = "Zeichne Dreieck. Eckpunkte";
+Blockly.Msg.ST7735_Drawroundrectangle = "Zeichne abgerundetes Rechteck";
+Blockly.Msg.ST7735_Drawroundrectangleradius = "Rundungsradius";
+Blockly.Msg.ST7735_Drawrectanglewidth = "Breite";
+Blockly.Msg.ST7735_Drawrectangleheight = "Höhe";
+Blockly.Msg.ST7735_Drawcircle = "Zeichne Kreis. Mittelpunkt an";
+Blockly.Msg.ST7735_Drawcircleradius = "Radius";
+Blockly.Msg.ST7735_Drawfill = "Fülle";
+Blockly.Msg.ST7735_properties = "Gebe Eigenschaften zurück:";
+Blockly.Msg.ST7735_IconName = "Icon Name(bmp):";
+Blockly.Msg.ST7735_ValueList = "Werte (hex array)";
+Blockly.Msg.ST7735_DrawiconName = "Zeichne Icon(bmp) Name";
 
 Blockly.Msg.OLED_IconName = "Icon name(bmp):";
-Blockly.Msg.OLED_ValueList = "Values(hex array)";
-Blockly.Msg.OLED_DrawiconName = "Draw Icon(bmp) name";
+Blockly.Msg.OLED_ValueList = "Werte (hex array)";
+Blockly.Msg.OLED_DrawiconName = "Zeichne Icon(bmp) Name";
 Blockly.Msg.OLED_name = "OLED";
 Blockly.Msg.OLED_X0 = "x0";
 Blockly.Msg.OLED_Y0 = "y0";
-Blockly.Msg.OLED_width = "width";
-Blockly.Msg.OLED_height = "height";
-Blockly.Msg.OLED_COLOR = "Set color";
+Blockly.Msg.OLED_width = "Breite";
+Blockly.Msg.OLED_height = "Höhe";
+Blockly.Msg.OLED_COLOR = "Setze Farbe";
 
-//TCS34725 color sensor
-Blockly.Msg.TCS34725_name_init = "Init TCS34725 color sensor";
+//!TCS34725 color sensor
+Blockly.Msg.TCS34725_name_init = "Initialisiere TCS34725 Farbsensor";
 Blockly.Msg.TCS34725_name_init2 = "SDA - SCL Gain";
-Blockly.Msg.TCS34725_name = "TCS34725 color sensor.";
-Blockly.Msg.TCS34725_read = "Read all values";
-Blockly.Msg.TCS34725_values = "Value";
-Blockly.Msg.TCS34725_color = "Is";
-Blockly.Msg.TCS34725_color2 = "color(No gain configured)?";
+Blockly.Msg.TCS34725_name = "TCS34725 Farbsensor.";
+Blockly.Msg.TCS34725_read = "Lese alle Werte";
+Blockly.Msg.TCS34725_values = "Wert";
+Blockly.Msg.TCS34725_color = "ist";
+Blockly.Msg.TCS34725_color2 = "Farbe (Keine Verstärkung konfiguriert)?";
 
-//HMC5883 compass sensor
-Blockly.Msg.HMC5883 = "Init HMC5883 compass sensor";
+//!HMC5883 compass sensor
+Blockly.Msg.HMC5883 = "Initialisiere HMC5883 Kompasssensor";
 Blockly.Msg.HMC5883_2 = "- SDA - SCL";
-Blockly.Msg.HMC5883_read = "HMC5883 compass sensor.Read values";
+Blockly.Msg.HMC5883_read = "HMC5883 Kompasssensor. Lese Werte";
 Blockly.Msg.HMC5883_values = "Wert";
 
-//RADIO TEA5767
+//!RADIO TEA5767
 Blockly.Msg.TEA5767_name = "Radio TEA5767.";
-Blockly.Msg.TEA5767_init = "Init Radio TEA5767.SDA - SCL";
-Blockly.Msg.TEA5767_turnOFF_ON = "Turn";
-Blockly.Msg.TEA5767_muteOFF_ON = "Mute";
-Blockly.Msg.TEA5767_Level = "Level of the signal";
-Blockly.Msg.TEA5767_Stereo = "Is the signal stereo?";
+Blockly.Msg.TEA5767_init = "Initialisiere Radio TEA5767.SDA - SCL";
+Blockly.Msg.TEA5767_turnOFF_ON = "Schalte";
+Blockly.Msg.TEA5767_muteOFF_ON = "Stummschalten";
+Blockly.Msg.TEA5767_Level = "Signalstärke";
+Blockly.Msg.TEA5767_Stereo = "Ist das Signal stereo?";
 Blockly.Msg.TEA5767_RadioStation = "Radio Station.";
-Blockly.Msg.TEA5767_SetFrequency = "Frequency(Mhz)";
+Blockly.Msg.TEA5767_SetFrequency = "Frequenz (Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
 
-//RFID MFRC522
+//!RFID MFRC522
 Blockly.Msg.RFID_name = "RFID MFRC522.";
-Blockly.Msg.RFID_init = "Init RFID MFRC522.";
-Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI and MISO.";
+Blockly.Msg.RFID_init = "Initialisiere RFID MFRC522.";
+Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI und MISO.";
 Blockly.Msg.RFID_PIN_SDA = "SDA Pin";
 Blockly.Msg.RFID_PIN_RST = "RST Pin";
-Blockly.Msg.RFID_VALID_VAR = "Define Validation card name:";
-Blockly.Msg.RFID_STOP = "Stop the current reading";
-Blockly.Msg.RFID_C1 = "Value1";
-Blockly.Msg.RFID_C2 = "Value2";
-Blockly.Msg.RFID_C3 = "Value3";
-Blockly.Msg.RFID_C4 = "Value4";
-Blockly.Msg.RFID_DETECTED = "Is RFID card erkannt?";
-Blockly.Msg.RFID_READED = "Is RFID card readed?";
-Blockly.Msg.RFID_CARD_READED = "Value of the read card";
-Blockly.Msg.RFID_CHECK_CARD = "Is RFID card read equal to the validation card";
+Blockly.Msg.RFID_VALID_VAR = "Defininiere Name der Validierungskarte:";
+Blockly.Msg.RFID_STOP = "Stoppen des aktuellen Lesens";
+Blockly.Msg.RFID_C1 = "Wert 1";
+Blockly.Msg.RFID_C2 = "Wert 2";
+Blockly.Msg.RFID_C3 = "Wert 3";
+Blockly.Msg.RFID_C4 = "Wert 4";
+Blockly.Msg.RFID_DETECTED = "Ist RFID-Karte erkannt?";
+Blockly.Msg.RFID_READED = "Ist RFID-Karte eingelesen?";
+Blockly.Msg.RFID_CARD_READED = "Wert der eingelesenen Karte";
+Blockly.Msg.RFID_CHECK_CARD = "Ist die gelesene RFID-Karte gleich der Validierungskarte";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
-//NFC PN532
+//!NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";
-Blockly.Msg.NFC_init = "NFC I2C ";
-Blockly.Msg.NFC_VALID_VAR = "Validation card(4bytes):";
-Blockly.Msg.NFC_VALID_VAR2 = "Validation card(7bytes):";
-Blockly.Msg.NFC_C1 = "Value1";
-Blockly.Msg.NFC_C2 = "Value2";
-Blockly.Msg.NFC_C3 = "Value3";
-Blockly.Msg.NFC_C4 = "Value4";
-Blockly.Msg.NFC_C5 = "Value5";
-Blockly.Msg.NFC_C6 = "Value6";
-Blockly.Msg.NFC_C7 = "Value7";
-Blockly.Msg.NFC_DETECTED = "card erkannt?";
-Blockly.Msg.NFC_CARD_READED = "Read Value";
-Blockly.Msg.NFC_CHECK_CARD = "Is card Read = Validation card";
+Blockly.Msg.NFC_init = "NFC I²C ";
+Blockly.Msg.NFC_VALID_VAR = "Validierungskarte (4 Bytes):";
+Blockly.Msg.NFC_VALID_VAR2 = "Validierungskarte (7 Bytes):";
+Blockly.Msg.NFC_C1 = "Wert 1";
+Blockly.Msg.NFC_C2 = "Wert 2";
+Blockly.Msg.NFC_C3 = "Wert 3";
+Blockly.Msg.NFC_C4 = "Wert 4";
+Blockly.Msg.NFC_C5 = "Wert 5";
+Blockly.Msg.NFC_C6 = "Wert 6";
+Blockly.Msg.NFC_C7 = "Wert 7";
+Blockly.Msg.NFC_DETECTED = "Karte erkannt?";
+Blockly.Msg.NFC_CARD_READED = "Lese Wert";
+Blockly.Msg.NFC_CHECK_CARD = "Ist Karteneinlesung = Validierungskarte";
 Blockly.Msg.NFC_CHECK_CARD2 = "?";
 
-//KEYBOARD AND MOUSE
+//!KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Tastatur";
 Blockly.Msg.KeyPressed = "Taste";
 Blockly.Msg.WriteText = "Schreibe Text";
-Blockly.Msg.LineFeed = "Line Feed";
+Blockly.Msg.LineFeed = "Zeilenvorschub";
 Blockly.Msg.MouseFunction = "Maus";
 Blockly.Msg.MouseMoveX = "X Pos";
-Blockly.Msg.MouseMoveY = "Y pos";
+Blockly.Msg.MouseMoveY = "Y Pos";
 Blockly.Msg.MouseMoveW = "Mausrad";
 
-//GPS
+//!GPS
 Blockly.Msg.GPS_name = "GPS NEO-6";
-Blockly.Msg.GPS_init = "Init GPS using software serial";
+Blockly.Msg.GPS_init = "Initialisiere GPS über Softwareschnittstelle";
 Blockly.Msg.GPS_TX = "TX#";
 Blockly.Msg.GPS_RX = "RX#";
-Blockly.Msg.GPS_readvalues = "Read and save values using software serial";
-Blockly.Msg.GPS_paramter = "Location Parameters:";
-Blockly.Msg.GPS_paramter3 = "DateTime:";
+Blockly.Msg.GPS_readvalues = "Lese und speichere Werte über Softwareschnittstelle";
+Blockly.Msg.GPS_paramter = "Standortparameter:";
+Blockly.Msg.GPS_paramter3 = "Datum und Zeit:";
 
-//TM1640
-Blockly.Msg.TM1640_init = "Init TM1640 Led matrix";
+//!TM1640
+Blockly.Msg.TM1640_init = "Initialisiere TM1640 Led-Matrix";
 Blockly.Msg.TM1640_SCL = "SCL Pin";
 Blockly.Msg.TM1640_SDA = "SDA Pin";
 
-//MOTOR MRT
+//!MOTOR MRT
 Blockly.Msg.MOTOR_Connector = "Motor";
 Blockly.Msg.MOTOR_MRTX_Connector = "MRTX-Uno Motor";
-Blockly.Msg.MOTOR_Direction = "Direction";
-Blockly.Msg.MOTOR_speed = "Speed(0-255)";
-Blockly.Msg.MOTOR_Stop = "Stop";
+Blockly.Msg.MOTOR_Direction = "Richtung";
+Blockly.Msg.MOTOR_speed = "Geschwindigkeit (0-255)";
+Blockly.Msg.MOTOR_Stop = "Stoppe";
 
-//STEPPERS
+//STEPPERS //TODO
 Blockly.Msg.STEEPER_name = "Init Stepper ID";
 Blockly.Msg.STEEPER_name2 = "Init Stepper28BYJ ID";
 Blockly.Msg.STEEPER2_name = "Stepper ID";
@@ -1455,7 +1455,7 @@ Blockly.Msg.STEEPER_Degree = "degrees";
 Blockly.Msg.STEEPER_Steps = "steps";
 Blockly.Msg.STEEPER_DegreeTo = "Move to degree";
 
-//WiFi basic functions
+//WiFi basic functions //TODO
 Blockly.Msg.WIFI_sta_init = "WIFI.Connect as Station";
 Blockly.Msg.WIFI_ap_init = "WIFI.Create an Access Point";
 Blockly.Msg.WIFI_sta_ap_init = "WIFI. Station and create an Access Point";
@@ -1465,285 +1465,285 @@ Blockly.Msg.WIFI_password_ap = "and this password:";
 Blockly.Msg.WIFI_ssid_ap = "Wifi ssid name:";
 Blockly.Msg.WIFI_logs = "Enable logs";
 
-//IFTTT
-Blockly.Msg.IFTTT_init = "Configuration.Api key";
-Blockly.Msg.IFTTT_send = "Send information";
-Blockly.Msg.IFTTT_event = "Event as String";
-Blockly.Msg.IFTTT_value1 = "Value 1 as String";
-Blockly.Msg.IFTTT_value2 = "Value 2 as String";
-Blockly.Msg.IFTTT_value3 = "Value 3 as String";
+//!IFTTT
+Blockly.Msg.IFTTT_init = "Konfigurierung. API-Schlüssel";
+Blockly.Msg.IFTTT_send = "Sende Informationen";
+Blockly.Msg.IFTTT_event = "Ereignis als Text";
+Blockly.Msg.IFTTT_value1 = "Wert 1 als Text";
+Blockly.Msg.IFTTT_value2 = "Wert 2 als Text";
+Blockly.Msg.IFTTT_value3 = "Wert 3 als Text";
 
-//MQTT
-Blockly.Msg.MQTT_name_init = "Configuration MQTT protocol";
-Blockly.Msg.MQTT_password = "password:";
-Blockly.Msg.MQTT_ssid = "Wifi ssid:";
+//!MQTT
+Blockly.Msg.MQTT_name_init = "Konfigurierung MQTT Protokoll";
+Blockly.Msg.MQTT_password = "Passwort:";
+Blockly.Msg.MQTT_ssid = "Wifi SSID:";
 Blockly.Msg.MQTT_server = "Server (broker):";
-Blockly.Msg.MQTT_port = "port:";
-Blockly.Msg.MQTT_user = "User:";
-Blockly.Msg.MQTT_APIkey = "API Key:";
-Blockly.Msg.MQTT_client = "ID client:";
-Blockly.Msg.MQTT_topicattend = "Loop MQTT";
-Blockly.Msg.MQTT_topicsubscribe = "Subscribe to the topic";
-Blockly.Msg.MQTT_topicsubscribe2 = "and save num Wert in the variable";
-Blockly.Msg.MQTT_topicsubscribe3 = "and save text Wert in the variable";
-Blockly.Msg.MQTT_topicpublish = "Publish in the topic";
-Blockly.Msg.MQTT_topicvalue = "Value";
-Blockly.Msg.MQTT_logs = "Enable logs";
+Blockly.Msg.MQTT_port = "Port:";
+Blockly.Msg.MQTT_user = "Benutzer:";
+Blockly.Msg.MQTT_APIkey = "API-Schlüssel:";
+Blockly.Msg.MQTT_client = "ID-Client:";
+Blockly.Msg.MQTT_topicattend = "Schleife für MQTT";
+Blockly.Msg.MQTT_topicsubscribe = "Abonniere das Thema";
+Blockly.Msg.MQTT_topicsubscribe2 = "und speichere Nummern-Wert in der Variable";
+Blockly.Msg.MQTT_topicsubscribe3 = "und Speichere Text-Wert in der Variable";
+Blockly.Msg.MQTT_topicpublish = "Veröffentliche im Thema";
+Blockly.Msg.MQTT_topicvalue = "Wert";
+Blockly.Msg.MQTT_logs = "Aktiviere Logs";
 
 //NTP
-//RTC DS3231
-Blockly.Msg.NTP_NAME = "Init NTP Server.";
+//!RTC DS3231
+Blockly.Msg.NTP_NAME = "Initialisiere NTP Server.";
 Blockly.Msg.NTP_NAME2 = "NTP Server.";
-Blockly.Msg.NTP_READ_RTC = "NTP Server.Read the date and time";
+Blockly.Msg.NTP_READ_RTC = "NTP Server. Lese das Datum und die Zeit";
 Blockly.Msg.NTP_GMT = "GMT";
 Blockly.Msg.NTP_VALUES = "Wert";
-Blockly.Msg.NTP_EPOCH = "Epoch";
-Blockly.Msg.NTP_DAY = "Day";
-Blockly.Msg.NTP_MONTH = "Month";
-Blockly.Msg.NTP_YEAR = "Year";
-Blockly.Msg.NTP_HOUR = "Hour";
+Blockly.Msg.NTP_EPOCH = "Epoche";
+Blockly.Msg.NTP_DAY = "Tag";
+Blockly.Msg.NTP_MONTH = "Monat";
+Blockly.Msg.NTP_YEAR = "Jahr";
+Blockly.Msg.NTP_HOUR = "Stunde";
 Blockly.Msg.NTP_MINUTE = "Minute";
-Blockly.Msg.NTP_SECOND = "Second";
-Blockly.Msg.NTP_DOFWEEK = "Day of week";
-Blockly.Msg.NTP_TEXT_DOFWEEK = "Day of week in string";
-Blockly.Msg.NTP_TEXT_MONTH = "Month in string ";
-Blockly.Msg.NTP_TEXT_TIME = "Time in string ";
+Blockly.Msg.NTP_SECOND = "Sekunde";
+Blockly.Msg.NTP_DOFWEEK = "Tag der Woche";
+Blockly.Msg.NTP_TEXT_DOFWEEK = "Tag der Woche als Text";
+Blockly.Msg.NTP_TEXT_MONTH = "Monat als Text ";
+Blockly.Msg.NTP_TEXT_TIME = "Zeit als Text ";
 
-//MAX7219-Led Matrix panel
-Blockly.Msg.MAX7219_LM_NAME = "Init MAX7219 Led Matrix.";
+//!MAX7219-Led Matrix panel
+Blockly.Msg.MAX7219_LM_NAME = "Initialisiere MAX7219 Led-Matrix.";
 Blockly.Msg.MAX7219_LM_CS = "CS Pin";
 Blockly.Msg.MAX7219_LM_CLK = "CLK Pin";
 Blockly.Msg.MAX7219_LM_DAT = "DAT Pin";
-Blockly.Msg.MAX7219_LM_Number = "Number of matrix";
-Blockly.Msg.MAX7219_LM_NAME2 = "MAX7219 Led matrix#";
-Blockly.Msg.MAX7219_LM_Brightness = "brightness (0-15)";
-Blockly.Msg.MAX7219_LM_SHUTDOWN = "Activate";
-Blockly.Msg.MAX7219_LM_CLEAR = "Clear";
-Blockly.Msg.MAX7219_LM_PAINT = "Draw this image";
-Blockly.Msg.MAX7219_LM_Row = "Row(0-7)";
-Blockly.Msg.MAX7219_LM_value = "Value (bin or hex or dec)";
-Blockly.Msg.MAX7219_LM_Column = "Column(0-7)";
-Blockly.Msg.MAX7219_LM_Led = "Set Led";
+Blockly.Msg.MAX7219_LM_Number = "Nummer der Matrix";
+Blockly.Msg.MAX7219_LM_NAME2 = "MAX7219 Led-Matrix";
+Blockly.Msg.MAX7219_LM_Brightness = "Helligkeit (0-15)";
+Blockly.Msg.MAX7219_LM_SHUTDOWN = "Aktiviere";
+Blockly.Msg.MAX7219_LM_CLEAR = "Lösche";
+Blockly.Msg.MAX7219_LM_PAINT = "Zeichne diese Bild";
+Blockly.Msg.MAX7219_LM_Row = "Zeile (0-7)";
+Blockly.Msg.MAX7219_LM_value = "Wert (bin oder hex oder dec)";
+Blockly.Msg.MAX7219_LM_Column = "Spalte (0-7)";
+Blockly.Msg.MAX7219_LM_Led = "Setze Led";
 
-//Thingspeak
-Blockly.Msg.Thingspeak_name_init = "Configuration Thingspeak.";
+//!Thingspeak
+Blockly.Msg.Thingspeak_name_init = "Konfiguration von Thingspeak.";
 Blockly.Msg.Thingspeak_name = "Thingspeak.";
-Blockly.Msg.Thingspeak_channel = "Channel";
-Blockly.Msg.Thingspeak_apiread = "Api read key";
-Blockly.Msg.Thingspeak_apiwrite = "Api write key";
-Blockly.Msg.Thingspeak_Write = "Write Wert";
-Blockly.Msg.Thingspeak_field = "in field";
-Blockly.Msg.Thingspeak_ReadLong = "Read as long the field";
-Blockly.Msg.Thingspeak_ReadFloat = "Read as float the field";
+Blockly.Msg.Thingspeak_channel = "Kanal";
+Blockly.Msg.Thingspeak_apiread = "API lese Schlüssel";
+Blockly.Msg.Thingspeak_apiwrite = "API schreibe Schlüssel";
+Blockly.Msg.Thingspeak_Write = "Schreibe Wert";
+Blockly.Msg.Thingspeak_field = "in Feld";
+Blockly.Msg.Thingspeak_ReadLong = "Lese das Feld als long";
+Blockly.Msg.Thingspeak_ReadFloat = "Lese das Feld als float";
 
-//Firebase
-Blockly.Msg.Firebase_name_init = "Configuration Firebase.";
+//!Firebase
+Blockly.Msg.Firebase_name_init = "Konfiguration von Firebase.";
 Blockly.Msg.firebase_name = "Firebase.";
 Blockly.Msg.Firebase_url = "URL";
-Blockly.Msg.Firebase_api = "Api key";
-Blockly.Msg.Firebase_start = " Initialization in Setup";
-Blockly.Msg.Firebase_type = " Store ";
-Blockly.Msg.Firebase_read = " Read ";
-Blockly.Msg.Firebase_Node = "in node";
+Blockly.Msg.Firebase_api = "API-Schlüssel";
+Blockly.Msg.Firebase_start = " Initialisierung in Setup";
+Blockly.Msg.Firebase_type = " Speichere ";
+Blockly.Msg.Firebase_read = " Lese ";
+Blockly.Msg.Firebase_Node = "in Knoten";
 Blockly.Msg.Firebase_Value = "Wert";
-Blockly.Msg.Firebase_String_Node = "Store a text in node";
-Blockly.Msg.Firebase_Read_String_Node = "Read the text in node";
-Blockly.Msg.firebase_delete = "Delete node";
+Blockly.Msg.Firebase_String_Node = "Speichere einen Text in Knoten";
+Blockly.Msg.Firebase_Read_String_Node = "Lese den Text in Knoten";
+Blockly.Msg.firebase_delete = "Lösche Knoten";
 
-//Telegram
-Blockly.Msg.Telegram_name_init = "Configuration Telegram chat.";
+//!Telegram
+Blockly.Msg.Telegram_name_init = "Konfiguration von Telegramchat.";
 Blockly.Msg.Telegram_name = "Telegram.";
-Blockly.Msg.Telegram_BotToken = "BOT token";
-Blockly.Msg.Telegram_ChatID = "Chat ID";
-Blockly.Msg.Telegram_Loop = "Telegram Loop.Update messages";
-Blockly.Msg.Telegram_receive = "Telegram.When message is recived";
-Blockly.Msg.TelegramSend = "Send message:";
-Blockly.Msg.Telegram_message = "Telegram.Received message";
-Blockly.Msg.Telegram_fromName = "Name of person sent the message";
+Blockly.Msg.Telegram_BotToken = "BOT-Schlüssel";
+Blockly.Msg.Telegram_ChatID = "Chat-ID";
+Blockly.Msg.Telegram_Loop = "Telegram Schleife. Aktualisiere Nachrichten";
+Blockly.Msg.Telegram_receive = "Telegram. Wenn eine Nachricht erhalten wird";
+Blockly.Msg.TelegramSend = "Sende Nachrciht:";
+Blockly.Msg.Telegram_message = "Telegram. Erhaltene Nachrichten";
+Blockly.Msg.Telegram_fromName = "Name des Senders";
 
-//OpenWeather
-Blockly.Msg.Openweather_init = "Configuration OpenWeather.";
-Blockly.Msg.Api_key = "Api Key";
-Blockly.Msg.ReadWeather = "OpenWeather.Read Weather.";
-Blockly.Msg.City = "City";
-Blockly.Msg.CountryCode = "Country Code";
-Blockly.Msg.OW_Value = "OpenWeather. Value:";
-Blockly.Msg.LocationOW = "Location";
-Blockly.Msg.Country = "Country";
+//!OpenWeather
+Blockly.Msg.Openweather_init = "Konfigurierung von OpenWeather.";
+Blockly.Msg.Api_key = "API-Schlüssel";
+Blockly.Msg.ReadWeather = "OpenWeather. Lese Wetter.";
+Blockly.Msg.City = "Stadt";
+Blockly.Msg.CountryCode = "Landesschlüssel";
+Blockly.Msg.OW_Value = "OpenWeather. Wert:";
+Blockly.Msg.LocationOW = "Standort";
+Blockly.Msg.Country = "Land";
 Blockly.Msg.Icon = "Icon";
-Blockly.Msg.Weather = "Weather";
-Blockly.Msg.Description = "Description";
-Blockly.Msg.OW_Temperatur = "Temperatur ºC";
-Blockly.Msg.Temp_max = "Temperatur Max ºC";
-Blockly.Msg.Temp_min = "Temperatur Min ºC";
-Blockly.Msg.Humidity = "Humedad";
-Blockly.Msg.Preassure = "Preassure";
-Blockly.Msg.Feels_like = "Feels like Temperatur ºC";
-Blockly.Msg.Cloud = "Cloud %";
-Blockly.Msg.Visibility = "Visibility %";
-Blockly.Msg.wind_speed = "Wind Speed";
-Blockly.Msg.wind_angle = "Wind Angle";
-Blockly.Msg.icon_id = "Icon Weather Id";
-Blockly.Msg.sunrise = "Sunrise EPOC";
-Blockly.Msg.sunset = "Sunset EPOC";
+Blockly.Msg.Weather = "Wetter";
+Blockly.Msg.Description = "Beschreibung";
+Blockly.Msg.OW_Temperatur = "Temperatur °C";
+Blockly.Msg.Temp_max = "Temperatur Max °C";
+Blockly.Msg.Temp_min = "Temperatur Min °C";
+Blockly.Msg.Humidity = "Luftfeuchtigkeit";
+Blockly.Msg.Preassure = "Luftdruck";
+Blockly.Msg.Feels_like = "gefülte Temperatur °C";
+Blockly.Msg.Cloud = "Bewölkung %";
+Blockly.Msg.Visibility = "Klarheit %";
+Blockly.Msg.wind_speed = "Windgeschwindigkeit";
+Blockly.Msg.wind_angle = "Windrichtung";
+Blockly.Msg.icon_id = "Icon Wetter-ID";
+Blockly.Msg.sunrise = "Sonnenaufgang EPOC";
+Blockly.Msg.sunset = "Sonnenuntergang EPOC";
 
-//ESP8266
-Blockly.Msg.ESP_yield = " Yield function";
-Blockly.Msg.ESP_deepsleep = "DeepSleep ";
-Blockly.Msg.ESP_timesleep = "Seconds";
-Blockly.Msg.ESP_restart = "Restart ESP8266/ESP32";
+//!ESP8266
+Blockly.Msg.ESP_yield = "Yield-Funktion";
+Blockly.Msg.ESP_deepsleep = "Tiefschlaf ";
+Blockly.Msg.ESP_timesleep = "Sekunden";
+Blockly.Msg.ESP_restart = "Starte ESP8266/ESP32 neu";
 
-//Wifi Server
-Blockly.Msg.WifiServer_wait = "Wait connections of clients";
-Blockly.Msg.WifiServer_port = "Wifi server begin in port";
+//Wifi Server //TODO
+Blockly.Msg.WifiServer_wait = "Warte auf Verbindungen von Clients";
+Blockly.Msg.WifiServer_port = "Wifi Server beginne mit Port";
 Blockly.Msg.WifiServer_ESP8266webserver_port =
-  "Wifi AsynWebServer begin in port";
-Blockly.Msg.WifiServer_answer = "Wifi server answer:";
-Blockly.Msg.WifiServer_stop = "Stop the connected client to the our server";
+  "Wifi AsyncWebServer beginne mit Port";
+Blockly.Msg.WifiServer_answer = "Wifi Server Antwort:";
+Blockly.Msg.WifiServer_stop = "Stoppe the connected client to the our server";
 Blockly.Msg.WifiServer_flush = "Flush the connected client to the our server";
-Blockly.Msg.WifiServer_ip = "IP of the connected customer";
+Blockly.Msg.WifiServer_ip = "IP des verbundenen Gasts";
 Blockly.Msg.WifiServer_request = "Request of the connected customer";
 Blockly.Msg.WifiServer_ESP8266webserver_parameter =
-  "AsynWebServer Read the parameter: ";
+  "AsynWebServer Lese den Parameter: ";
 Blockly.Msg.WifiServer_ESP8266webserver_parameter2 =
   "AsynWebServer Parameter: ";
 Blockly.Msg.WifiServer_esp8266_send_html_URL =
-  "When a client with this URL (empty for root):";
+  "Wenn ein Client mit dieser URL (leer für Root):";
 Blockly.Msg.WifiServer_esp8266_send_html_HTML_page =
-  "is connected then show this HTML page: ";
-Blockly.Msg.WifiServer_esp8266_send_html_execute = "(optional) and do: ";
-Blockly.Msg.WifiServer_esp8266_manage_requets = "Manage client request";
-Blockly.Msg.WifiServer_esp8266_send_text = "is connected then show this text: ";
-Blockly.Msg.WifiServer_ESP8266webserver_OTA = "OTA is enabled";
+  "ist verbunden dann zeige diese HTML-Seite: ";
+Blockly.Msg.WifiServer_esp8266_send_html_execute = "(optional) und tue: ";
+Blockly.Msg.WifiServer_esp8266_manage_requets = "Verwalte Clientanfragen";
+Blockly.Msg.WifiServer_esp8266_send_text = "ist verbunden dann zeige diesen Text: ";
+Blockly.Msg.WifiServer_ESP8266webserver_OTA = "OTA ist aktiviert";
 
-Blockly.Msg.Wifi_ap_fixip = "Access point mode.Static IP";
-Blockly.Msg.Wifi_sta_fixip = "Station mode.Static IP";
+Blockly.Msg.Wifi_ap_fixip = "Access-Point-Modus. Statische IP";
+Blockly.Msg.Wifi_sta_fixip = "Stationsmodus. Statische IP";
 Blockly.Msg.Wifi_ip = "IP";
-Blockly.Msg.Wifi_Mask = "Mask";
+Blockly.Msg.Wifi_Mask = "Maske";
 Blockly.Msg.Wifi_Gateway = "Gateway";
 
-//Text with more functions
+//!Text with more functions
 
-Blockly.Msg.TEXT_APPEND_APPENDTEXT = "append text";
+Blockly.Msg.TEXT_APPEND_APPENDTEXT = "Text anhängen";
 Blockly.Msg.TEXT_APPEND_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#text-modification";
+  "https://github.com/google/blockly/wiki/Text#text-modification"; // do not translate
 Blockly.Msg.TEXT_APPEND_TO = "to";
-Blockly.Msg.TEXT_APPEND_TOOLTIP = "Append some text to variable '%1'.";
+Blockly.Msg.TEXT_APPEND_TOOLTIP = "Füge Text zur Variablen '%1' hinzu.";
 Blockly.Msg.TEXT_CHANGECASE_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#adjusting-text-case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "to lower case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "to Title Case";
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "to UPPER CASE";
+  "https://github.com/google/blockly/wiki/Text#adjusting-text-case"; // do not translate
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = "zu kleinbuchstaben";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = "zu Titel";
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = "zu GROßBUCHSTABEN";
 Blockly.Msg.TEXT_CHANGECASE_TOOLTIP =
-  "Return a copy of the text in a different case.";
-Blockly.Msg.TEXT_CHARAT_FIRST = "get first letter";
-Blockly.Msg.TEXT_CHARAT_FROM_END = "get letter # from end";
-Blockly.Msg.TEXT_CHARAT_FROM_START = "get letter #";
+  "Gebe eine Kopie des Textes in einem anderen Format.";
+Blockly.Msg.TEXT_CHARAT_FIRST = "erhalte ersten Buchstaben";
+Blockly.Msg.TEXT_CHARAT_FROM_END = "erhalte Buchstaben # vom Ende";
+Blockly.Msg.TEXT_CHARAT_FROM_START = "erhalte Buchstaben #";
 Blockly.Msg.TEXT_CHARAT_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#extracting-text";
-Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "in text";
-Blockly.Msg.TEXT_CHARAT_LAST = "get last letter";
-Blockly.Msg.TEXT_CHARAT_RANDOM = "get random letter";
+  "https://github.com/google/blockly/wiki/Text#extracting-text"; // do not translate
+Blockly.Msg.TEXT_CHARAT_INPUT_INTEXT = "in Text";
+Blockly.Msg.TEXT_CHARAT_LAST = "erhalte letzten Buchstaben";
+Blockly.Msg.TEXT_CHARAT_RANDOM = "erhalte zufälligen Buchstaben";
 Blockly.Msg.TEXT_CHARAT_TAIL = "";
 Blockly.Msg.TEXT_CHARAT_TOOLTIP =
-  "Returns the letter at the specified position.";
-Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "Add an item to the text.";
-Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "join";
+  "Gibt den Buchstaben von der angegebenen Stelle zurück.";
+Blockly.Msg.TEXT_CREATE_JOIN_ITEM_TOOLTIP = "Füge ein Item zu dem Text hinzu.";
+Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = "verbinde";
 Blockly.Msg.TEXT_CREATE_JOIN_TOOLTIP =
-  "Add, remove, or reorder sections to reconfigure this text block.";
-Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_END = "to letter # from end";
-Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_START = "to letter #";
-Blockly.Msg.TEXT_GET_SUBSTRING_END_LAST = "to last letter";
+  "Hinzufügen, löschen, oder neuordnen der Abschnitte, um den Textblock neu zu konfigurieren.";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_END = "an Buchstaben # vom Ende";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_FROM_START = "an Buchstaben #";
+Blockly.Msg.TEXT_GET_SUBSTRING_END_LAST = "an letzten Buchstaben";
 Blockly.Msg.TEXT_GET_SUBSTRING_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#extracting-a-region-of-text";
-Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT = "in text";
+  "https://github.com/google/blockly/wiki/Text#extracting-a-region-of-text"; // do not translate
+Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT = "in Text";
 Blockly.Msg.TEXT_GET_SUBSTRING_START_FIRST =
-  "get substring from the first letter";
+  "erhalte Teiltext ab dem ersten Buchstaben";
 Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_END =
-  "get substring from letter # from end";
-Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = "get substring from letter #";
+  "erhalte Teiltext ab Buchstaben # von Ende aus";
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = "erhalte Teiltext ab Buchstaben #";
 Blockly.Msg.TEXT_GET_SUBSTRING_TAIL = "";
 Blockly.Msg.TEXT_GET_SUBSTRING_TOOLTIP =
-  "Returns a specified portion of the text.";
+  "Gibt einen angegebenen Teil des Textes zurück.";
 Blockly.Msg.TEXT_INDEXOF_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#finding-text";
-Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = "in text";
-Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = "find first occurrence of text";
-Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = "find last occurrence of text";
+  "https://github.com/google/blockly/wiki/Text#finding-text"; // do not translate
+Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = "in Text";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = "finde erstes Vorkommnis von Text";
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = "finde letztes Vorkommnis von Text";
 Blockly.Msg.TEXT_INDEXOF_TAIL = "";
 Blockly.Msg.TEXT_INDEXOF_TOOLTIP =
-  "Returns the index of the first/last occurrence of the first text in the second text. Returns %1 if text is not found.";
+  "Gibt den Index des ersten/letzten Vorkommnis des ersten Texts im zweiten Text zurück. Gibt %1 zurück, falls der Text nicht gefunden wurde.";
 Blockly.Msg.TEXT_ISEMPTY_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";
-Blockly.Msg.TEXT_ISEMPTY_TITLE = "%1 is empty";
+  "https://github.com/google/blockly/wiki/Text#checking-for-empty-text"; // do not translate
+Blockly.Msg.TEXT_ISEMPTY_TITLE = "%1 ist leer";
 Blockly.Msg.TEXT_ISEMPTY_TOOLTIP =
-  "Returns WAHR if the provided text is empty.";
+  "Gibt WAHR zurück, falls der angegebene Text leer ist.";
 Blockly.Msg.TEXT_JOIN_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#text-creation";
-Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = "create text with";
+  "https://github.com/google/blockly/wiki/Text#text-creation"; // do not translate
+Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = "erstelle Text mit";
 Blockly.Msg.TEXT_JOIN_TOOLTIP =
-  "Create a piece of text by joining together any number of items.";
+  "Erstelle ein Textstück durch Zusammenfügen von unterschiedlich vielen Items.";
 Blockly.Msg.TEXT_LENGTH_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#text-modification";
-Blockly.Msg.TEXT_LENGTH_TITLE = "length of %1";
+  "https://github.com/google/blockly/wiki/Text#text-modification"; // do not translate
+Blockly.Msg.TEXT_LENGTH_TITLE = "Länge von %1";
 Blockly.Msg.TEXT_LENGTH_TOOLTIP =
-  "Returns the number of letters (including spaces) in the provided text.";
+  "Gibt die Anzahl der Buchstaben (inklusive Leerzeichen) im angegebenen Text zurück.";
 Blockly.Msg.TEXT_PRINT_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#printing-text";
-Blockly.Msg.TEXT_PRINT_TITLE = "print %1";
+  "https://github.com/google/blockly/wiki/Text#printing-text"; // do not translate
+Blockly.Msg.TEXT_PRINT_TITLE = "schreibe %1";
 Blockly.Msg.TEXT_PRINT_TOOLTIP =
-  "Print the specified text, number or other Wert.";
+  "Schreibe den angegebenen Text, die Nummer oder einen anderen Wert.";
 Blockly.Msg.TEXT_PROMPT_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user";
-Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = "Prompt for user for a number.";
-Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = "Prompt for user for some text.";
-Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "prompt for number with message";
-Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "prompt for text with message";
+  "https://github.com/google/blockly/wiki/Text#getting-input-from-the-user"; // do not translate
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = "Eingabeaufforderung für eine Zahl.";
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = "Eingabeaufforderung für einen Text.";
+Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = "Eingabeaufforderung für eine Zahl mit der Nachricht";
+Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = "Eingabeaufforderung für einen Text mit der Nachricht";
 Blockly.Msg.TEXT_TEXT_HELPURL =
-  "https://en.wikipedia.org/wiki/String_(computer_science)";
-Blockly.Msg.TEXT_TEXT_TOOLTIP = "A letter, word, or line of text.";
+  "https://en.wikipedia.org/wiki/String_(computer_science)"; // do not translate
+Blockly.Msg.TEXT_TEXT_TOOLTIP = "Ein Buchstaben, Wort, oder eine Zeile des Textes.";
 Blockly.Msg.TEXT_TRIM_HELPURL =
-  "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";
-Blockly.Msg.TEXT_TRIM = "trim spaces from ";
+  "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces"; // do not translate
+Blockly.Msg.TEXT_TRIM = "entferne Leerzeichen von ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP =
-  "Return a copy of the text with spaces removed from one or both ends.";
+  "Gibt eine Kopie des Textes zurück, bei dem an einem oder beiden Enden die Leerzeichen entfernt wurden.";
 
-//Conversions
-Blockly.Msg.CONV_tochar = "Casting to char ";
-Blockly.Msg.CONV_toString = "Convert to String ";
-Blockly.Msg.CONV_decimal = "Number of decimals";
-Blockly.Msg.CONV_tobyte = "Casting to Byte ";
-Blockly.Msg.CONV_toint = "Casting to Int ";
-Blockly.Msg.CONV_tounsigendint = "Casting to unsigned Int ";
-Blockly.Msg.CONV_tofloat = "Casting to Float ";
+//!Conversions
+Blockly.Msg.CONV_tochar = "Ändere zu Zeichen ";
+Blockly.Msg.CONV_toString = "Ändere zu Text ";
+Blockly.Msg.CONV_decimal = "Anzahl der Dezimalstellen";
+Blockly.Msg.CONV_tobyte = "Ändere zu Byte ";
+Blockly.Msg.CONV_toint = "Ändere zu Ganzzahl ";
+Blockly.Msg.CONV_tounsigendint = "Ändere zu vorzeichenlos Ganzzahl ";
+Blockly.Msg.CONV_tofloat = "Ändere zu Fließkommazahl ";
 
-//Encoder
-Blockly.Msg.RotaryEncoderInit = "Init Rotary Encoder";
-Blockly.Msg.RotaryEncoderNumber = "Rotary Encoder";
-Blockly.Msg.RE_withoutInterrupt = "without interrupts";
+//!Encoder
+Blockly.Msg.RotaryEncoderInit = "Initialisiere Potentiometer";
+Blockly.Msg.RotaryEncoderNumber = "Potentiometer";
+Blockly.Msg.RE_withoutInterrupt = "ohne Unterbrechungen";
 Blockly.Msg.RE_PINDT = "Pin DT";
 Blockly.Msg.RE_PINCLK = "Pin CLK";
-Blockly.Msg.RE_READ = "Read Value";
-Blockly.Msg.RE_WRITE = "Write Value";
-Blockly.Msg.RE_Button = "Button";
-Blockly.Msg.RE_Pressed = "pressed?";
+Blockly.Msg.RE_READ = "Lese Wert";
+Blockly.Msg.RE_WRITE = "Schreibe Wert";
+Blockly.Msg.RE_Button = "Knopf";
+Blockly.Msg.RE_Pressed = "gedrückt?";
 
-//ESP-NOW
-Blockly.Msg.ESPNOW_init = "Init the protocol. Node";
-Blockly.Msg.ESPNOW_msg_received = "When a message is received";
-Blockly.Msg.ESPNOW_send_all = "Send the message to all nodes.";
-Blockly.Msg.ESPNOW_send_mac = "Send the message to the mac: ";
-Blockly.Msg.ESPNOW_fill_int = "Fill the Int param of the struct to:";
-Blockly.Msg.ESPNOW_fill_float = "Fill the Float param of the struct to:";
-Blockly.Msg.ESPNOW_fill_text = "Fill the Text param of the struct to:";
-Blockly.Msg.ESPNOW_read_node = "Id node received";
-Blockly.Msg.ESPNOW_read_param_int = "Param Int received";
-Blockly.Msg.ESPNOW_read_param_float = "Param Float received";
-Blockly.Msg.ESPNOW_read_param_text = "Param Text received";
+//!ESP-NOW
+Blockly.Msg.ESPNOW_init = "Initialisiere das Protokoll. Knoten";
+Blockly.Msg.ESPNOW_msg_received = "Wenn eine Nachricht erhalten wurde";
+Blockly.Msg.ESPNOW_send_all = "Sende die Nachricht an alle Knoten.";
+Blockly.Msg.ESPNOW_send_mac = "Sende die Nachricht an die MAC: ";
+Blockly.Msg.ESPNOW_fill_int = "Fülle den Ganzzahlparameter der Struktur auf:";
+Blockly.Msg.ESPNOW_fill_float = "Fülle den Fließkommazahlparameter der Struktur auf:";
+Blockly.Msg.ESPNOW_fill_text = "Fülle den Textparameter der Struktur auf:";
+Blockly.Msg.ESPNOW_read_node = "ID-Knoten erhalten";
+Blockly.Msg.ESPNOW_read_param_int = "Parameter Ganzzahl erhalten";
+Blockly.Msg.ESPNOW_read_param_float = "Parameter Fließkommazahl erhalten";
+Blockly.Msg.ESPNOW_read_param_text = "Parameter Text erhalten";
 
-//ALEXA
-Blockly.Msg.Alexa_init = "Alexa.Device number:";
+//!ALEXA
+Blockly.Msg.Alexa_init = "Alexa. Gerätenummer:";
 Blockly.Msg.Alexa_init2 = "Name:";
-Blockly.Msg.Alexa_cb = "When a Alexa message is received from device:";
-Blockly.Msg.Alexa_Loop = "Manage the Alexa connection.Loop";
-Blockly.Msg.Alexa_Param = "Get parameter";
+Blockly.Msg.Alexa_cb = "Wenn eine Alexanachricht erhalten. Gerät:";
+Blockly.Msg.Alexa_Loop = "Manage the Alexa connection. Schleife";
+Blockly.Msg.Alexa_Param = "Erhalte Parameter";
