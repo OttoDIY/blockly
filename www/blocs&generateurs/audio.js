@@ -518,7 +518,7 @@ Blockly.Arduino['led_pwm_esp32'] = function(block) {
   return code;
 };
 
-
+/*
 //////////////RGB for ESP32
 Blockly.Blocks['rgb_init_esp32']={init:function() {
 	var card=window.localStorage.card;
@@ -561,3 +561,4 @@ Blockly.Arduino["rgb_setcolor_anode"]=function(block){
     var code = 'setColor('+red+','+green+','+blue+');\n';
     return code;
 };
+*/
