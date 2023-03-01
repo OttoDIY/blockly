@@ -127,6 +127,7 @@ Blockly.Msg.M1637_fill = "Vorangestellte Nullen";
 Blockly.Msg.M1637_digitsegment = "Setze Segment Array Stelle (0-3)";
 Blockly.Msg.M1637_value = "Wert";
 Blockly.Msg.M1637_arraysegment = "Display Segment Array.";
+Blockly.Msg.M1637_points = "Points";
 
 //!RTC DS3231
 Blockly.Msg.RTCDS3231_NAME = "Initialisiere RTC DS3231.I2C Pins";

@@ -129,6 +129,9 @@ Blockly.Blocks['DisplayTM1637_set_numberall'] = {
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.M1637_fill)
 		.appendField(new Blockly.FieldDropdown([['ON','true'],['OFF','false']]), "TM1637_LEADING")
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.M1637_points)
+		.appendField(new Blockly.FieldDropdown([['ON','true'],['OFF','false']]), "TM1637_DOTS")
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -143,7 +146,11 @@ Blockly.Arduino['DisplayTM1637_set_numberall'] = function(block) {
  var pos = Blockly.Arduino.valueToCode(this, 'Digit', Blockly.Arduino.ORDER_ATOMIC);
  var length = Blockly.Arduino.valueToCode(this, 'Length', Blockly.Arduino.ORDER_ATOMIC);
  var leading = this.getFieldValue('TM1637_LEADING');
-
+ var points = this.getFieldValue('TM1637_DOTS');
+ 
+ if (points== "true")
+	 var code = 'tm1637_'+numberdisplay+'.showNumberDecEx('+value+',64,'+leading+','+length+','+pos+');\n';
+ else
   var code = 'tm1637_'+numberdisplay+'.showNumberDec('+value+','+leading+','+length+','+pos+');\n';
 
  return code;

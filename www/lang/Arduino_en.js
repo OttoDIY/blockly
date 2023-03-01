@@ -2,8 +2,8 @@
 goog.provide ( 'Blockly.Msg.fr');
 goog.require ( 'Blockly.Msg');
 // Electron window
-Blockly.Msg.com1 = "⚠️ select USB";
-Blockly.Msg.com2 = "⚠️ select USB port please" ;
+Blockly.Msg.com1 = "⚠️ select USB port";
+Blockly.Msg.com2 = "⚠️ select USB please" ;
 Blockly.Msg.check = "checking...";
 Blockly.Msg.upload = "uploading...";
 Blockly.Msg.error = "🛑 ERROR blocks NOT connected";
@@ -30,8 +30,6 @@ Blockly.Msg.direction = "direction";
 Blockly.Msg.vitesse = "speed";
 Blockly.Msg.values = "↺0-90 | ↻90-180";
 Blockly.Msg.Name = "name";
-Blockly.Msg.CAT_numerique = " digital";
-Blockly.Msg.CAT_analogique = " analog";
 // categories (menu)
 Blockly.Msg.CAT_TAB = "🔠 Arrays";
 Blockly.Msg.CAT_list = "🔤 List";
@@ -54,8 +52,10 @@ Blockly.Msg.CAT_ESCORNABOT="🐞 Escornabot";
 Blockly.Msg.CAT_servo = "🦾 Servo";
 Blockly.Msg.CAT_actionneur = "⚙️ Motor";
 Blockly.Msg.CAT_ARDUINO_moteur="⚙️ Stepper";
-Blockly.Msg.CAT_ultrason = "🎛️ Detect";
+Blockly.Msg.CAT_ultrason = "👂 Sensors";
 Blockly.Msg.CAT_SENSORS = "👂 Sensing";
+Blockly.Msg.CAT_numerique = "0️⃣ Digital";
+Blockly.Msg.CAT_analogique = "🔢 Analog";
 Blockly.Msg.CAT_GYRO = "⚖️ Gyroscope";
 Blockly.Msg.CAT_VIBRATE = "🖐️ Vibration";
 Blockly.Msg.CAT_MAGNET= "🧲 Magnetic";
@@ -356,26 +356,14 @@ Blockly.Msg.LKL_TOOLTIP_INOUT_DETACHINTERRUPT = "Disable the previously specifie
 Blockly.Msg.LKL_MODE = 'detected on PIN';
 
 ////////////OTTO DIY Robot////////// ONLY TRANSLATE THE LEFT PART INSIDE ["THIS YES" ,NOT]
-Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/";// do not translate
 Blockly.Msg.OTTO9_HOME_TEXT = "home";
-Blockly.Msg.OTTO_HOME_TEXT = "⚙️";
 Blockly.Msg.OTTO9_HOME_TOOLTIP = "Otto goes to home position straight";
-Blockly.Msg.OTTO9_BUZZER="🎼 buzz";
+Blockly.Msg.OTTO9_BUZZER="🎼 buzzer";
+Blockly.Msg.OTTO_HOME_TEXT = "⚙️";
+Blockly.Msg.OTTO9_DIY_URL = "https://www.ottodiy.com/";// do not translate
 Blockly.Msg.OTTO9_CALIBRATION='calibrate ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='leg ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='foot ';
-Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
-Blockly.Msg.OTTO_HEAD_TEXT = "head ";
-Blockly.Msg.OTTO_FRONT_TEXT = "front ";
-Blockly.Msg.OTTO_BACK_TEXT = "back ";
-Blockly.Msg.OTTO_HIP_TEXT = "hip ";
-Blockly.Msg.OTTO_HELLO_TEXT = "hello";
-Blockly.Msg.OTTO_JUMP_TEXT = "jump";
-Blockly.Msg.OTTO_SCARED_TEXT = "scared";
-Blockly.Msg.OTTO_WALK_TEXT = "walk";
-Blockly.Msg.OTTO_ROLL_TEXT = "roll";
-Blockly.Msg.OTTO_MODE_TEXT = " mode";
-Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP='Use small positive and negative values iteratively,change gradually until is completely straight (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT= 'save trims on EEPROM';
 Blockly.Msg.OTTO9_EEPROM_TOOLTIP= 'Use only after completely straight(90º) one time, delete this BLOCK after for further programming';
@@ -419,7 +407,8 @@ Blockly.Msg.OTTO9_EYES_CHOICE = [["😃 happy1", "happy_bmp"],["🙂 happy2", "e
 Blockly.Msg.OTTO9_EYESTEXT_TEXT = "👀 eyes text";
 Blockly.Msg.OTTO9_EYES_CLEAR_TEXT = "👀 clear🧹";
 Blockly.Msg.OTTO9_CLEAR_TEXT = "👄 clear🧹";
-Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the matrix";
+Blockly.Msg.OTTO9_CLEAR_TOOLTIP = "Turn off all LEDs of the mouth matrix 8x8";
+Blockly.Msg.OTTO9_ARMS_TEXT = "arm ";
 Blockly.Msg.OTTO9_ARMS_TOOLTIP = "Move the arms!";
 Blockly.Msg.OTTO9_ARMS_CHOICE = [["hands up", "HANDSUP"],["hands down", "HANDSDOWN"], ["handwave left", "HANDWAVE1"], ["handwave right", "HANDWAVE2"]];
 // LED
@@ -427,7 +416,7 @@ Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "💡 LED board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Turn off or turn on the LED on the Arduino board";
 Blockly.Msg.blink = "💡 LED board blink";
 Blockly.Msg.blink_tooltip = "The board LED flashes 1 or 10 times per second";
-Blockly.Msg.del = "LED";
+Blockly.Msg.del = "💡 LED PIN";
 Blockly.Msg.del_tooltip = "turns on (off) the LED connected to the indicated Pin";
 Blockly.Msg.bargraphe = "bargraph";
 Blockly.Msg.bargraphe_allume="turn on LEDs to";
@@ -963,6 +952,7 @@ Blockly.Msg.M1637_fill = "leading zeros";
 Blockly.Msg.M1637_digitsegment="set segment array digit(0-3)";
 Blockly.Msg.M1637_value="value";
 Blockly.Msg.M1637_arraysegment="display segment array.";
+Blockly.Msg.M1637_points = "Points";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="motor";
@@ -972,7 +962,7 @@ Blockly.Msg.MOTOR_speed="speed(0-255)";
 Blockly.Msg.MOTOR_Stop="stop";
 
 //STEPPERS
-Blockly.Msg.STEEPER_name="Stepper";
+Blockly.Msg.STEEPER_name="Stepper #";
 Blockly.Msg.STEEPER_name2="stepper 28BYJ ID";
 Blockly.Msg.STEEPER2_name="stepper #";
 Blockly.Msg.STEEPER2_name2="Stepper 28BYJ ID";
