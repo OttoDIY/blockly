@@ -2,115 +2,115 @@
 goog.provide("Blockly.Msg.fr");
 goog.require("Blockly.Msg");
 
-Blockly.Msg.INOUT_HIGH_LEVEL = "1(high state)";
-Blockly.Msg.INOUT_LOW_LEVEL = "0(low state)";
+Blockly.Msg.INOUT_HIGH_LEVEL = "1 (HIGH Zustand)";
+Blockly.Msg.INOUT_LOW_LEVEL = "0 (LOW Zustand)";
 Blockly.Msg.ARD_TYPE_CHAR = "Zeichen";
 Blockly.Msg.ARD_TYPE_TEXT = "Text";
-Blockly.Msg.ARD_TYPE_BOOL = "boolean";
-Blockly.Msg.ARD_TYPE_SHORT = "byte";
-Blockly.Msg.ARD_TYPE_NUMBER = "integer";
-Blockly.Msg.ARD_TYPE_UNUMBER = "unsigned integer";
-Blockly.Msg.ARD_TYPE_LONG = "long integer";
-Blockly.Msg.ARD_TYPE_DECIMAL = "floating point number";
-Blockly.Msg.ARD_TYPE_ARRAY = "array";
-Blockly.Msg.ARD_TYPE_NULL = "empty";
+Blockly.Msg.ARD_TYPE_BOOL = "Boolean";
+Blockly.Msg.ARD_TYPE_SHORT = "Byte";
+Blockly.Msg.ARD_TYPE_NUMBER = "Ganzzahl";
+Blockly.Msg.ARD_TYPE_UNUMBER = "vorzeichenlose Ganzzahl";
+Blockly.Msg.ARD_TYPE_LONG = "lange Ganzzahl";
+Blockly.Msg.ARD_TYPE_DECIMAL = "Fließkommazahl";
+Blockly.Msg.ARD_TYPE_ARRAY = "Feld";
+Blockly.Msg.ARD_TYPE_NULL = "leer";
 Blockly.Msg.ARD_TYPE_UNDEF = "nicht definiert";
-Blockly.Msg.ARD_TYPE_VOLATILE = "volatile integer";
-Blockly.Msg.ARD_TYPE_CHILDBLOCKMISSING = "typing missing on a block";
+Blockly.Msg.ARD_TYPE_VOLATILE = "flüchtige Ganzzahl";
+Blockly.Msg.ARD_TYPE_CHILDBLOCKMISSING = "Eingabe fehlt in einem Block";
 Blockly.Msg.ARDUINO_BETWEEN = "zufällige Nummer zwischen";
 Blockly.Msg.ARDUINO_BETWEEN_AND = "und";
-Blockly.Msg.ARDUINO_VAR_DECLARE = "states";
+Blockly.Msg.ARDUINO_VAR_DECLARE = "Zustände";
 Blockly.Msg.ARDUINO_VAR_AS = "als";
 Blockly.Msg.ARDUINO_VAR_VAL = "von Wert";
 Blockly.Msg.base_def_const = "setze";
-Blockly.Msg.base_define_const = "which is equivalent to";
+Blockly.Msg.base_define_const = "welches gleich ist mit";
 Blockly.Msg.base_define_const_tooltip =
-  "allows the programmer to give a name to any value";
-Blockly.Msg.type = "set a value as the selected type";
+  "erlaubt dem Programmiere jedem Wert einen Namen zu geben";
+Blockly.Msg.type = "setze einen Wert als den ausgewählten Typ";
 Blockly.Msg.ADD_COMMENT = "Füge einen Kommentar hinzu";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Ändere Wert:";
-Blockly.Msg.CLEAN_UP = "Clean Blocks";
-Blockly.Msg.COLLAPSE_ALL = "Reduce Blocks";
-Blockly.Msg.COLLAPSE_BLOCK = "Reduce Block";
+Blockly.Msg.CLEAN_UP = "Lösche Blöcke";
+Blockly.Msg.COLLAPSE_ALL = "Reduziere Blöcke";
+Blockly.Msg.COLLAPSE_BLOCK = "Reduziere Blöcke";
 Blockly.Msg.CONTROLS_SWITCH_VAR_TITLE = "Während";
 Blockly.Msg.CONTROLS_SWITCH_MSG_DEFAULT = "standard";
 Blockly.Msg.CONTROLS_SWITCH_MSG_CASEBREAK = "ist";
-Blockly.Msg.CONTROLS_SWITCH_MSG_SWITCHVAR = "if the variable is valid";
+Blockly.Msg.CONTROLS_SWITCH_MSG_SWITCHVAR = "falls die Variable gültig ist";
 Blockly.Msg.CONTROLS_SWITCH_MSG_DO = "mache";
 Blockly.Msg.CONTROLS_SWITCH_TOOLTIP_1 =
-  "If a value is true then execute the following commands";
+  "Falls ein Wert wahr ist, dann führe die folgenden Befehle aus";
 Blockly.Msg.CONTROLS_SWITCH_TOOLTIP_2 =
-  "If a value is true then execute the first block of commands, otherwise execute the next block of commands";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, ansonsten führe den nächsten Block mit Befehlen aus";
 Blockly.Msg.CONTROLS_SWITCH_TOOLTIP_3 =
-  "If a value is true then execute the first block of commands, otherwise execute the next block of commands if the condition is true";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, ansonsten führe den nächsten Block mit Befehlen aus, falls dieser Zustand wahr ist";
 Blockly.Msg.CONTROLS_SWITCH_TOOLTIP_4 =
-  "If a value is true then execute the first block of commands, else execute the next block of commands if the condition is true.If no condition is satisfied, then make the default command block.";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, ansonsten führe den nächsten Block mit Befehlen aus, falls dieser Zustand wahr ist. Falls keine Bedingung erfüllt ist, dann führe den Standardkommandoblock aus.";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "verlasse die Schleife";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE =
-  "move to the next iteration";
+  "wechsle zur nächsten Iteration";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK = "Verlasse diese Schleife";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE =
-  "Skip the rest of this loop, and continue with the next iteration";
+  "Überspringe den Rest dieser Schleife und fahre mit der nächsten Iteration fort";
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING =
-  "Warning: This block must be used in a loop";
+  "Warnung: Dieser Block muss in einer Schleife benutzt werden";
 Blockly.Msg.CONTROLS_FOREACH_TITLE = "für jedes Element %1 in der Liste %2";
 Blockly.Msg.CONTROLS_FOREACH_TOOLTIP =
-  "For each item in a list, assign the value of the item to variable %1, and then execute statements";
-Blockly.Msg.CONTROLS_FOR_TITLE = "for %1 ranging from %2 to %3 in steps of %4";
+  "Weisen Sie für jedes Element in einer Liste den Wert des Elements der Variablen %1 zu und führe dann die Anweisungen aus";
+Blockly.Msg.CONTROLS_FOR_TITLE = "für %1 im Bereich von %2 bis %3 in %4 er-Schritten";
 Blockly.Msg.CONTROLS_FOR_TITLE2 =
-  "for %1 ranging from %2 to %3 (>=)in steps of %4";
+  "für %1 im Bereich von %2 to %3 (>=) in %4 er-Schritten";
 Blockly.Msg.CONTROLS_FOR_TOOLTIP =
-  "Set variable %1 to values ​​from start number to end number, incrementing by specified step, and execute the specified statements";
-Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Add Condition";
-Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "Add a final condition";
-Blockly.Msg.CONTROLS_IF_IF_TOOLTIP = "Add, delete or reorder";
+  "Setze Variable %1 auf Werte von der Startnummer bis zur Endnummer, mit angegebener Schrittgröße, und führe die vorgegebenen Anweisungen aus";
+Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP = "Bedingung hinzufügen";
+Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = "eine letzte Bedingung hinzufügen";
+Blockly.Msg.CONTROLS_IF_IF_TOOLTIP = "Hinzufügen, löschen oder neuordnen";
 Blockly.Msg.CONTROLS_IF_MSG_ELSE = "sonst";
 Blockly.Msg.CONTROLS_IF_MSG_ELSEIF = "falls nicht";
 Blockly.Msg.CONTROLS_IF_MSG_IF = "falls";
 Blockly.Msg.CONTROLS_IF_TOOLTIP_1 =
-  "If a value is true, then execute some orders";
+  "Falls ein Wert wahr ist, dann führe die Befehle aus";
 Blockly.Msg.CONTROLS_IF_TOOLTIP_2 =
-  "If a value is true, then execute the first block of orders, otherwise execute the second block of orders";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, andererseits führe den zweiten Block mit Befehlen aus";
 Blockly.Msg.CONTROLS_IF_TOOLTIP_3 =
-  "If the first value is true, then execute the first block of orders, otherwise, if the second value is true, execute the second block of orders";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, andererseits, falls der zweite Wert wahr ist, führe den zweiten Block mit Befehlen aus";
 Blockly.Msg.CONTROLS_IF_TOOLTIP_4 =
-  "If the first value is true, then execute the first block of orders, otherwise, if the second value is true, execute the second block of orders.If none of the values ​​are true, execute the last block of orders ";
+  "Falls ein Wert wahr ist, dann führe den ersten Block mit Befehlen aus, andererseits, falls der zweite Wert wahr ist, führe den zweiten Block mit Befehlen aus. Falls keiner der Werte wahr ist, führe den letzten Block mit Befehlen aus";
 Blockly.Msg.CONTROLS_REPEAT_INPUT_DO = "mache";
 Blockly.Msg.CONTROLS_REPEAT_TITLE = "🔁 wiederhole %1 mal";
-Blockly.Msg.CONTROLS_REPEAT_TOOLTIP = "Run statements multiple times";
-Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "repeat up";
+Blockly.Msg.CONTROLS_REPEAT_TOOLTIP = "Führe Befehle mehrfach aus";
+Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL = "wiederhole";
 Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE = "wiederhole so lange wie";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL =
-  "As long as a value is false, then execute instructions";
+  "So lange wie ein Wert falsch ist, führe die Anweisungen aus";
 Blockly.Msg.CONTROLS_WHILEUNTIL_TOOLTIP_WHILE =
-  "As long as a value is true, then execute instructions";
-Blockly.Msg.DELETE_ALL_BLOCKS = "Delete these %1 blocks?";
+  "So lange wie ein Wert wahr ist, führe die Anweisungen aus";
+Blockly.Msg.DELETE_ALL_BLOCKS = "Lösche diese %1 Blöcke?";
 Blockly.Msg.DELETE_BLOCK = "Lösche den Block";
 Blockly.Msg.DELETE_VARIABLE = "Lösche die Variable %1";
-Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = "Remove %1 uses of variable%2?";
-Blockly.Msg.DELETE_X_BLOCKS = "Delete%1 blocks";
+Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = "Lösche %1 Aufrufe von Variable %2?";
+Blockly.Msg.DELETE_X_BLOCKS = "Lösche %1 Blöcke";
 Blockly.Msg.DISABLE_BLOCK = "Deaktiviere Block";
 Blockly.Msg.DUPLICATE_BLOCK = "Dupliiziere";
 Blockly.Msg.ENABLE_BLOCK = "Aktiviere Block";
 Blockly.Msg.EXPAND_ALL = "Erweitere Blöcke";
 Blockly.Msg.EXPAND_BLOCK = "Erweitere Block";
-Blockly.Msg.EXTERNAL_INPUTS = "External Inputs";
+Blockly.Msg.EXTERNAL_INPUTS = "Externe Eingaben";
 Blockly.Msg.HELP = "Hilfe";
-Blockly.Msg.INLINE_INPUTS = "Online Entries";
+Blockly.Msg.INLINE_INPUTS = "Onlineeinträge";
 Blockly.Msg.LISTS_CREATE1 = "erstelle eine Liste";
 Blockly.Msg.LISTS_CREATE2 = "mit";
 Blockly.Msg.LISTS_CREATE_TOOLTIP =
-  "Create a list with the desired number of items";
-Blockly.Msg.LISTS_append = "add %1 at the end of %2";
-Blockly.Msg.LISTS_append_TOOLTIP = "add an item at the end of the list";
-Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD = "list";
-Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP = "Add, Delete, or Reorder";
+  "Erstelle eine Liste mit der gewünschten Anzahl von Elementen";
+Blockly.Msg.LISTS_append = "füge %1 am Ende von %2 hinzu";
+Blockly.Msg.LISTS_append_TOOLTIP = "füge ein Element am Ende der Liste hinzu";
+Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD = "Liste";
+Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP = "Hinzufügen, löschen, oder neuordnen";
 Blockly.Msg.LISTS_CREATE_WITH_INPUT_WITH = "erstelle eine Liste mit";
 Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP = "Füge ein Element hinzu";
 Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP =
-  "returns an array or list with any number of elements";
+  "gibt ein Feld oder eine Liste mit jeder Anzahl von Elementen zurück";
 Blockly.Msg.LISTS_GET = "das Element";
-Blockly.Msg.LISTS_GET_INDEX_FROM_END = "# since the end";
+Blockly.Msg.LISTS_GET_INDEX_FROM_END = "# seit dem Ende";
 Blockly.Msg.LISTS_GET_INDEX_FROM_START = "#"; // untranslated
 Blockly.Msg.LISTS_GET_INDEX_GET = "Erhalte";
 Blockly.Msg.LISTS_GET_INDEX_GET_REMOVE = "erhalte und lösche";
@@ -129,82 +129,83 @@ Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_RANDOM =
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FIRST =
   "Löscht ung gibt erstes Element der Liste zurück";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FROM =
-  "Deletes and returns the item at the specified position in a list";
+  "Löscht ung gibt Element an der ausgewählten Stelle der Liste zurück";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_LAST =
-  "Deletes and returns the last item in a list";
+  "Löscht ung gibt letztes Element der Liste zurück";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_RANDOM =
-  "Deletes and returns a random item in a list";
+  "Löscht ung gibt zufälliges Element der Liste zurück";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_REMOVE_FIRST =
-  "Deletes the first item in a list";
+  "Löscht erstes Element der Liste";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_REMOVE_FROM =
-  "Deletes the item at the specified position in a list";
+  "Löscht Element an der angegebenen Stelle aus der Liste";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_REMOVE_LAST =
-  "Deletes the last item in a list";
+  "Löscht letztes Element der Liste";
 Blockly.Msg.LISTS_GET_INDEX_TOOLTIP_REMOVE_RANDOM =
-  "Deletes a random item from a list";
-Blockly.Msg.LISTS_GET_SUBLIST_END_FROM_END = "until # since the end";
-Blockly.Msg.LISTS_GET_SUBLIST_END_FROM_START = "up to #";
+  "Löscht zufälliges Element der Liste";
+Blockly.Msg.LISTS_GET_SUBLIST_END_FROM_END = "bis # seit dem Ende";
+Blockly.Msg.LISTS_GET_SUBLIST_END_FROM_START = "bis zu #";
 Blockly.Msg.LISTS_GET_SUBLIST_END_LAST = "bis zum Ende";
 Blockly.Msg.LISTS_GET_SUBLIST_START_FIRST =
-  "get the sublist from the beginning";
+  "erhalte die Teilliste ab Beginn";
 Blockly.Msg.LISTS_GET_SUBLIST_START_FROM_END =
-  "get the sublist from # since the end";
-Blockly.Msg.LISTS_GET_SUBLIST_START_FROM_START = "get the sublist from #";
+  "erhalte die Teilliste ab # seit dem Ende";
+Blockly.Msg.LISTS_GET_SUBLIST_START_FROM_START = "erhalte die Teilliste ab #";
 Blockly.Msg.LISTS_GET_SUBLIST_TAIL = ""; // untranslated
 Blockly.Msg.LISTS_GET_SUBLIST_TOOLTIP =
-  "Creates a copy of the specified part of a list";
-Blockly.Msg.LISTS_INDEX_FROM_END_TOOLTIP = "%1 is the last element";
-Blockly.Msg.LISTS_INDEX_FROM_START_TOOLTIP = "%1 is the first item";
-Blockly.Msg.LISTS_INDEX_OF_FIRST = "find the first instance of the item";
-Blockly.Msg.LISTS_INDEX_OF_LAST = "find the last instance of the item";
+  "Erstellt eine Kopie des ausgewählten Teils einer Liste";
+Blockly.Msg.LISTS_INDEX_FROM_END_TOOLTIP = "%1 ist das letzte Element";
+Blockly.Msg.LISTS_INDEX_FROM_START_TOOLTIP = "%1 ist das erste Element";
+Blockly.Msg.LISTS_INDEX_OF_FIRST = "finde die erste Erscheinung des Elements";
+Blockly.Msg.LISTS_INDEX_OF_LAST = "finde die letzte Erscheinung des Elements";
 Blockly.Msg.LISTS_INDEX_OF_TOOLTIP =
-  "returns the index of the first / last occurrence of the item in the list, returns%1 if the item is not found";
+  "gibt den Index der ersten/letzten Erscheinung eines Elemets in der Liste zurück,  gibt %1 zurück, falls das Element nicht gefunden wurde";
 Blockly.Msg.LISTS_INLIST = "in der Liste";
 Blockly.Msg.LISTS_ISEMPTY_TITLE = "%1 ist leer";
 Blockly.Msg.LISTS_ISEMPTY_TOOLTIP = "gibt wahr zurück, wenn Liste leer ist";
 Blockly.Msg.LISTS_LENGTH_TITLE = "Länge von%1";
-Blockly.Msg.LISTS_LENGTH_TOOLTIP = "returns the length of a list";
+Blockly.Msg.LISTS_LENGTH_TOOLTIP = "gibt die Länge einer Liste zurück";
 Blockly.Msg.LISTS_REPEAT_TITLE =
-  "create a list with the item%1 repeated%2 times";
+  "erstelle eine Liste mit dem Element %1, welches %2 mal vorkommen soll";
 Blockly.Msg.LISTS_REPEAT_TOOLTIP =
-  "Create a list consisting of the supplied value repeated the specified number of times";
+  "erstelle eine Liste bestehend aus dem gelieferten Wert, der die angegebene Anzahl von Malen wiederholt wird";
 Blockly.Msg.LISTS_SET_INDEX_INPUT_TO = "wie";
 Blockly.Msg.LISTS_of = "von";
-Blockly.Msg.LISTS_SET_INDEX_SET = "put the element";
+Blockly.Msg.LISTS_SET_INDEX_SET = "setze das Element";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_INSERT_FIRST =
-  "Inserts the item at the beginning of a list";
+  "fügt das Element am Anfang einer Liste ein";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_INSERT_FROM =
-  "Inserts the item at the position specified in a list";
+  "fügt das Element an der angegebenen Stelle einer Liste ein";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_INSERT_LAST =
-  "Add item at the end of a list";
+  "fügt das Element am Ende einer Liste ein";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_INSERT_RANDOM =
-  "Inserts the item at random into a list";
-Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_FIRST = "Fix the first item in a list";
+  "fügt das Element an einer zufälligen Stelle einer Liste ein";
+Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_FIRST = "repariere das erste Element in einer Liste";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_FROM =
-  "Update the item to the specified position in a list";
-Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_LAST = "Fix the last item in a list";
+  "aktualisiere das Element an der angegebenen Position in einer Liste";
+Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_LAST = "repariere das letzte Element in einer Liste";
 Blockly.Msg.LISTS_SET_INDEX_TOOLTIP_SET_RANDOM =
-  "Fix a random element in a list";
-Blockly.Msg.LOGIC_BOOLEAN_FALSE = "false";
-Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP = "returns a 0 or 1 logical state";
-Blockly.Msg.LOGIC_BOOLEAN_TRUE = "true";
-Blockly.Msg.compare = "returns true if a value is in an interval";
-Blockly.Msg.LOGIC_COMPARE_TOOLTIP_EQ = "returns true if both entries are equal";
+  "repariere ein zufälliges Element in einer Liste";
+Blockly.Msg.LOGIC_BOOLEAN_FALSE = "falsch";
+Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP = "gibt einen logischen 0 oder 1 Zustand zurück";
+Blockly.Msg.LOGIC_BOOLEAN_TRUE = "wahr";
+Blockly.Msg.compare = "gibt wahr zurück, falls ein Wert in einem Intervall vorkommt";
+Blockly.Msg.LOGIC_COMPARE_TOOLTIP_EQ = "gibt wahr zurück, falls beide Werte gleich sind";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_GT =
-  "returns true if the first entry is greater than the second";
+  "gibt wahr zurück, falls der erste Wert größer als der zweite Wert ist";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_GTE =
-  "returns true if the first entry is greater than or equal to the second";
+  "gibt wahr zurück, falls der erste Wert größer oder gleich als der zweite Wert ist";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_LT =
-  "returns true if the first entry is smaller than the second";
+  "gibt wahr zurück, falls der erste Wert kleiner als der zweite Wert ist";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_LTE =
-  "returns true if the first entry is smaller or equal to the second";
+  "gibt wahr zurück, falls der erste Wert kleiner oder gleich als der zweite Wert ist";
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_NEQ =
-  "returns true if the two entries are different";
-Blockly.Msg.LOGIC_NEGATE_TITLE = "not %1";
+  "gibt wahr zurück, falls die beiden Werte ungleich sind";
+Blockly.Msg.LOGIC_NEGATE_TITLE = "nicht %1";
 Blockly.Msg.LOGIC_NEGATE_TOOLTIP =
-  "returns true if the entry is false, returns false if the entry is true";
+  "gibt wahr zurück, falls der Wert falsch ist, gibt falsch zurück, falls der Wert wahr ist";
 Blockly.Msg.LOGIC_NULL = "null";
-Blockly.Msg.LOGIC_NULL_TOOLTIP = "returns null";
+Blockly.Msg.LOGIC_NULL_TOOLTIP = "gibt null zurück";
+//TODO
 Blockly.Msg.LOGIC_OPERATOR = [
   ["and", "and"],
   ["or", "or"],
