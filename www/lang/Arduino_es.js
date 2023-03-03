@@ -41,9 +41,8 @@ Blockly.Msg.CAT_FUNCTIONS = "🔣 Función";
 Blockly.Msg.CAT_ARDUINO = "🔄 Estructura";
 Blockly.Msg.CAT_ARDUINO_IN = "🔛 Entrada/Salida";
 Blockly.Msg.CAT_ARDUINO_OUT = "↪️ Salida";
-Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ Tiempo";
-Blockly.Msg.CAT_OTTO = "🤖 Robot";
-Blockly.Msg.CAT_OTTO_LEGS = "🦿 Piernas";
+Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ Tiempo"; 
+Blockly.Msg.CAT_OTTO = "🤖 Otto";
 Blockly.Msg.CAT_OTTO_ARMS = "🦾 Brazos";
 Blockly.Msg.CAT_OTTO_WHEELS = "💿 Ruedas";
 Blockly.Msg.CAT_OTTO_NINJA = "🐱‍👤 Ninja";
@@ -134,6 +133,7 @@ Blockly.Msg.M1637_fill = "Leading zeros";
 Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
 Blockly.Msg.M1637_value="Valor";
 Blockly.Msg.M1637_arraysegment="Display segment array.";
+Blockly.Msg.M1637_points = "Puntos";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="Inicializar RTC DS3231.Pines I2C";
@@ -271,7 +271,7 @@ Blockly.Msg.SSERIAL_BT_ReadNum="Serial BT Leer como número";
 Blockly.Msg.SSERIAL_BT_ReadString="Serial BT Leer como String";
 Blockly.Msg.SSERIAL_BT_Readlf="hasta el salto de línea";
 
-// SOFTWARE SERIAL
+// SOFTWARE SERIAL 
 Blockly.Msg.SSERIAL_Init="Ini SoftwareSerial";
 Blockly.Msg.SSERIAL_TX="Pin TX#";
 Blockly.Msg.SSERIAL_RX="Pin RX#";
@@ -286,7 +286,7 @@ Blockly.Msg.SSERIAL_ReadNum="SoftwareSerial Leer como número";
 Blockly.Msg.SSERIAL_ReadString="SoftwareSerial Leer como String";
 Blockly.Msg.SSERIAL_Readlf="hasta el salto de línea";
 
-// SERIAL
+// SERIAL 
 Blockly.Msg.SERIAL_Init="Ini Serial ";
 Blockly.Msg.SERIAL_TX="Pin TX#";
 Blockly.Msg.SERIAL_RX="Pin RX#";
@@ -539,18 +539,6 @@ Blockly.Msg.OTTO9_HUMANOID_URL = "https://wikifactory.com/+OttoDIY/humanoid";
 Blockly.Msg.OTTO9_CALIBRATION='Calibrar ';
 Blockly.Msg.OTTO9_CALIBRATION_LEG='Pierna ';
 Blockly.Msg.OTTO9_CALIBRATION_FOOT='Pie ';
-Blockly.Msg.OTTO_WHEELS_TEXT = "wheels ";
-Blockly.Msg.OTTO_HEAD_TEXT = "head ";
-Blockly.Msg.OTTO_FRONT_TEXT = "front ";
-Blockly.Msg.OTTO_BACK_TEXT = "back ";
-Blockly.Msg.OTTO_HIP_TEXT = "hip ";
-Blockly.Msg.OTTO_HELLO_TEXT = "hello";
-Blockly.Msg.OTTO_JUMP_TEXT = "jump";
-Blockly.Msg.OTTO_SCARED_TEXT = "scared";
-Blockly.Msg.OTTO_WALK_TEXT = "walk";
-Blockly.Msg.OTTO_ROLL_TEXT = "roll";
-Blockly.Msg.OTTO_MODE_TEXT = " mode";
-Blockly.Msg.OTTO9_ARMS_TEXT = "arms ";
 Blockly.Msg.OTTO9_CALIBRATION_ARM='Brazo ';
 Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP = 'Usa pequeños valores positivos y negativos de forma iterativa, cambia gradualmente hasta que esté completamente recto (90º)';
 Blockly.Msg.OTTO9_EEPROM_TEXT = 'Guardar Trims en EEPROM';
@@ -796,7 +784,7 @@ Blockly.Msg.MP3OS_inject="Inject track number";
 //Mu Vision
 
 /*Help*/
-Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
+Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";     
 Blockly.LKL_VS2_HELP_VISION_LEVEL = 'Set the recognition level, the level increases, the false alarm rate decreases, and the recognition rate will decrease accordingly.';//'设置识别等级，等级升高，误报率降低，识别率也会相应降低';
 Blockly.LKL_VS2_HELP_VISION_ZOOM = 'Set the image zoom level, the level is raised, the farther the recognition distance is, the smaller the recognition angle is.';//'设置图像缩放等级，等级升高，识别距离越远，识别角度越小';
 
@@ -1321,7 +1309,7 @@ Blockly.Msg.TEXT_TRIM = "trim espacios desde";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "Devuelve una copia de texto con los espacios suprimidos de un lado o de los dos.";
 
 //Conversions
-Blockly.Msg.CONV_tochar="Casting a char ";
+Blockly.Msg.CONV_tochar="Casting a char "; 
 Blockly.Msg.CONV_toString="Convertir a String ";
 Blockly.Msg.CONV_decimal="Numero de decimales";
 Blockly.Msg.CONV_tobyte="Casting a Byte ";
@@ -1359,3 +1347,5 @@ Blockly.Msg.Alexa_init2 = "Nombre:";
 Blockly.Msg.Alexa_cb = "Cuando un mensaje de Alexa es recibido:";
 Blockly.Msg.Alexa_Loop = "Gestión de la conexión del Alexa.Loop";
 Blockly.Msg.Alexa_Param = "Obtener el valor de:";
+
+

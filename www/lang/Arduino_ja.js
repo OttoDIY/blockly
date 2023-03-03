@@ -131,6 +131,7 @@ Blockly.Msg.M1637_fill = "Leading zeros";
 Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
 Blockly.Msg.M1637_value="Value";
 Blockly.Msg.M1637_arraysegment="Display segment array.";
+Blockly.Msg.M1637_points = "Points";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="RTC ピン I²C";

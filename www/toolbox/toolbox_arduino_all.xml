@@ -596,7 +596,7 @@
 			<block type="MAX7219_ledmatrix_draw"></block>
 			<block type="MAX7219_animation"></block>
 					</category>
-					<category name="CAT_ARDUINO_matrice16x8" colour="#B655F5">
+			<category name="CAT_ARDUINO_matrice16x8" colour="#B655F5">
 						<block type="eyes_init"></block>
 						<block type="eyes_face"></block>
 						<block type="eyes_clear"></block>
