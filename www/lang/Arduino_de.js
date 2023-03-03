@@ -1,7 +1,7 @@
 "use strict";
 goog.provide("Blockly.Msg.de");
 goog.require("Blockly.Msg");
-//!Electron window
+//Electron window
 Blockly.Msg.com1 = "⚠️ Wähle USB-Port aus";
 Blockly.Msg.com2 = "⚠️ Wähle bitte USB ";
 Blockly.Msg.check = "Überprüfe...";
@@ -17,7 +17,7 @@ Blockly.Msg.no = "nein";
 Blockly.Msg.uptodate = "✅ Version ist aktuell!";
 Blockly.Msg.download =
   "Download fertig, die Anwendung wird installiert und neu gestartet ...";
-//!common to all blocks
+//common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
 Blockly.Msg.pin = "an Pin";
 Blockly.Msg._AT = "an";
@@ -32,7 +32,7 @@ Blockly.Msg.direction = "Richtung";
 Blockly.Msg.vitesse = "Geschwindigkeit ";
 Blockly.Msg.values = "[0-90]";
 Blockly.Msg.Name = "Name";
-//!categories (menu)
+//categories (menu)
 Blockly.Msg.CAT_STOCKAGE = "💾 Speicher";
 Blockly.Msg.CAT_numerique = "🔛 Digital";
 Blockly.Msg.CAT_analogique = "〰️ Analog";
@@ -53,7 +53,7 @@ Blockly.Msg.CAT_ARDUINO_TIME = "⏱ Zeit";
 Blockly.Msg.CAT_actionneur = "⚙️ Motor";
 Blockly.Msg.CAT_com = "📞 Kommunikation";
 Blockly.Msg.CAT_ARDUINO_COMM_SERIAL = "ℹ️ Seriell";
-Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "ℹ️ Software Serial";
+Blockly.Msg.CAT_ARDUINO_COMM_SOFTSERIAL = "ℹ️ Software Seriell";
 Blockly.Msg.CAT_ARDUINO_moteur = "⚙️ Motor DC";
 Blockly.Msg.CAT_ultrason = "🎛 Sensor";
 Blockly.Msg.CAT_bluetooth = "📡 Bluetooth";
@@ -112,7 +112,7 @@ Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
 
-//!DISPLAY 7 SEGMENT TM1637
+//DISPLAY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 Segment.";
 Blockly.Msg.TM1637_init = "Initialisiere TM1637 Display 7 Segment";
 Blockly.Msg.TM1637_PinCLK = "Pin CLK";
@@ -124,11 +124,11 @@ Blockly.Msg.M1637_number = "Setze Nummer";
 Blockly.Msg.M1637_Digit = "Position (0-3)";
 Blockly.Msg.M1637_Length = "Nummer der zu setzenden Ziffern";
 Blockly.Msg.M1637_fill = "Vorangestellte Nullen";
-Blockly.Msg.M1637_digitsegment = "Setze Segment Array Stelle (0-3)";
+Blockly.Msg.M1637_digitsegment = "Setze Segment Feld Stelle (0-3)";
 Blockly.Msg.M1637_value = "Wert";
-Blockly.Msg.M1637_arraysegment = "Display Segment Array.";
+Blockly.Msg.M1637_arraysegment = "Display Segment Feld.";
 
-//!RTC DS3231
+//RTC DS3231
 Blockly.Msg.RTCDS3231_NAME = "Initialisiere RTC DS3231.I2C Pins";
 Blockly.Msg.RTCDS3231_RTC = "Setze DateTime DS3231";
 Blockly.Msg.RTCDS3231_DAY = "Tag";
@@ -154,16 +154,16 @@ Blockly.Msg.esp8266_4 = "IP";
 Blockly.Msg.esp8266_5 = "Gateway";
 Blockly.Msg.esp8266_6 = "Maske";
 Blockly.Msg.esp8266_7 = [
-  ["client", "client"],
-  ["server", "server"],
+  ["Client", "client"],
+  ["Server", "server"],
 ];
-Blockly.Msg.esp8266_8 = "port";
+Blockly.Msg.esp8266_8 = "Port";
 Blockly.Msg.esp8266_9 = [
-  ["dynamic", "dynamic"],
-  ["static", "static"],
+  ["dynamisch", "dynamic"],
+  ["statisch", "static"],
 ];
 Blockly.Msg.esp8266_10 = "Adresse";
-Blockly.Msg.esp8266_recept_tooltip = "reception";
+Blockly.Msg.esp8266_recept_tooltip = "Empfang";
 Blockly.Msg.esp8266_url = "https://github.com/OttoDIY/esp";
 Blockly.Msg.esp8266_html_tooltip = "";
 Blockly.Msg.esp8266_send_html_tooltip = "";
@@ -171,10 +171,10 @@ Blockly.Msg.esp8266_send_html = "sende HTML-Seite";
 Blockly.Msg.esp8266_start_tooltip = "";
 Blockly.Msg.esp8266_start = "Starte Server";
 Blockly.Msg.esp8266_request_tooltip = "";
-Blockly.Msg.esp8266_request = "if in the query we find";
-Blockly.Msg.esp8266_request_container = "we find";
+Blockly.Msg.esp8266_request = "falls in der Warteschlange gefunden wird";
+Blockly.Msg.esp8266_request_container = "gefunden";
 Blockly.Msg.esp8266_html_webpage = "Name der HTML Seite:";
-//!INTERRUPTION
+//INTERRUPTION
 Blockly.Msg.LKL_ATTACHINTERRUPT_PIN = "Unterbrechung: wenn";
 Blockly.Msg.LKL_DETACHINTERRUPT_PIN = "deaktiviere Unterbrechung an Pin";
 Blockly.Msg.LKL_TOOLTIP_INOUT_ATTACHINTERRUPT =
@@ -206,25 +206,25 @@ Blockly.Msg.tempo = [
   ["𝅝", "2000"],
 ];
 Blockly.Msg.on_off = [
-  ["on", "LOW"],
-  ["off", "HIGH"],
+  ["an", "LOW"],
+  ["aus", "HIGH"],
 ];
 Blockly.Msg.menublink = [
-  ["slowly", "1000"],
-  ["fast", "100"],
+  ["langsam", "1000"],
+  ["schnell", "100"],
 ];
 Blockly.Msg.AV_AR = [
   [Blockly.Msg.AV, "FORWARD"],
   [Blockly.Msg.AR, "BACKWARD"],
 ]; // do not translate
 Blockly.Msg.times = [
-  ["seconds", "s"],
-  ["milliseconds", "m"],
-  ["microseconds", "u"],
+  ["Sekunden", "s"],
+  ["Millisekunden", "m"],
+  ["Mikrosekunden", "u"],
 ];
 Blockly.Msg.time = [
-  ["seconds", "s"],
-  ["milliseconds", "m"],
+  ["Sekunden", "s"],
+  ["Millisekunden", "m"],
 ];
 Blockly.Msg.char_lcd = [
   ["# 1", "1"],
@@ -233,7 +233,7 @@ Blockly.Msg.char_lcd = [
   ["# 4", "4"],
   ["# 5", "5"],
   ["# 6", "6"],
-  ["No. 7", "7"],
+  ["Nr. 7", "7"],
   ["# 8", "8 "],
 ];
 Blockly.Msg.rxtx = [
@@ -251,12 +251,12 @@ Blockly.Msg.rxtx = [
   [" 13 ", " 13 "],
 ];
 Blockly.Msg.FIELDDROPDOWN = [
-  ["1(high state)", Blockly.Msg.high],
-  ["0(low state)", Blockly.Msg.low],
+  ["1(HIGH Zustand)", Blockly.Msg.high],
+  ["0(LOW Zustand)", Blockly.Msg.low],
 ];
 Blockly.Msg.FIELDDROPDOWN_0_1 = [
-  ["UP", Blockly.Msg.high],
-  ["DOWN", Blockly.Msg.low],
+  ["HOCH", Blockly.Msg.high],
+  ["RUNTER", Blockly.Msg.low],
 ];
 Blockly.Msg.ligne = [
   ["1", "0"],
@@ -281,8 +281,8 @@ Blockly.Msg.colonne = [
   [" 16 ", " 15 "],
 ];
 Blockly.Msg.FIELDDROPDOWN_ONOFF = [
-  ["turn on", Blockly.Msg.high],
-  ["turn off", Blockly.Msg.low],
+  ["schalte an", Blockly.Msg.high],
+  ["schalte aus", Blockly.Msg.low],
 ];
 Blockly.Msg.FIELDDROPDOWN_ONOFF_matrice = [
   ["1", "WAHR"],
@@ -293,31 +293,31 @@ Blockly.Msg.FIELDDROPDOWN_av_ar = [
   [Blockly.Msg.AR, Blockly.Msg.low],
 ];
 Blockly.Msg.LKL_DROPDOWN = [
-  ["rising edge", "RISING"],
-  ["falling edge", "FALLING"],
-  ["changing state", "CHANGE"],
-  ["low state", Blockly.Msg.low],
+  ["steigende Flanke", "RISING"],
+  ["fallende Flanke", "FALLING"],
+  ["wechselnder Zustand", "CHANGE"],
+  ["LOW Zustand", Blockly.Msg.low],
 ];
 Blockly.Msg.irq = [
-  ["rising edge", "Pin.IRQ_RISING"],
-  ["falling edge", "Pin.IRQ_FALLING"],
-  ["high state", "Pin.IRQ_HIGH_LEVEL"],
-  ["low state ", " Pin.IRQ_LOW_LEVEL "],
+  ["steigende Flanke", "Pin.IRQ_RISING"],
+  ["fallende Flanke", "Pin.IRQ_FALLING"],
+  ["HIGH Zustand", "Pin.IRQ_HIGH_LEVEL"],
+  ["LOW Zustand", " Pin.IRQ_LOW_LEVEL "],
 ];
 Blockly.Msg.menudht = [
-  ["humidity", "h"],
+  ["Feuchtigkeit", "h"],
   ["Temperatur", "t"],
 ];
 Blockly.Msg.couleur = [
-  ["blue", "blue"],
-  ["yellow", "yellow"],
-  ["red", "red"],
-  ["green", "green"],
+  ["blau", "blue"],
+  ["gelb", "yellow"],
+  ["rot", "red"],
+  ["grün", "green"],
 ];
 Blockly.Msg.sens = [
-  ["forward", "a"],
-  ["turn right", "d"],
-  ["turn left", "g"],
+  ["vorwärts", "a"],
+  ["drehe rechts", "d"],
+  ["drehe links", "g"],
 ];
 //sensor
 Blockly.Msg.VL53L0X = "Laser Distanz Sensor";
@@ -384,10 +384,10 @@ Blockly.Msg.pir_tooltip =
 Blockly.Msg.feu_tooltip =
   "CAP168: \nGibt wahr (falsch) zurück, falls eine Flamme (nicht) erkannt";
 Blockly.Msg.presence_tooltip =
-  "CAP711: \nGibt wahr (falsch) zurück, falls a contact has (did not) take place"; //TODO
+  "CAP711: \nGibt wahr (falsch) zurück, falls ein Kontakt (nicht) stattgefunden hat";
 Blockly.Msg.appui_tooltip =
-  "CAP831: \nGibt wahr (falsch) zurück, falls a support is (is not) erkannt"; //TODO
-//!bluetooth
+  "CAP831: \nGibt wahr (falsch) zurück, falls Unterstützung (nicht) erkannt wurde";
+//bluetooth
 Blockly.Msg.bluetooth1 = "Falls die Daten über Bluetooth empfangen wurden";
 Blockly.Msg.bluetooth1_tooltip =
   "Bluetooth Datenempfang \nverbinde Modul HC-06 mit Pin 0 und 1 \net kreuze Rx und Tx Pins";
@@ -397,7 +397,7 @@ Blockly.Msg.bluetooth2_tooltip =
 Blockly.Msg.bluetooth_init_tooltip = "";
 Blockly.Msg.bluetooth_helpurl =
   "https://wikifactory.com/+OttoDIY/otto-diy-plus"; // do not translate
-//!LCD screen
+//LCD screen
 Blockly.Msg.lcd_fond = "Boden";
 Blockly.Msg.LCD = "LCD Display";
 Blockly.Msg.LCDi2c_tooltip =
@@ -422,7 +422,7 @@ Blockly.Msg.lcd_aff_symbole_tooltip =
 Blockly.Msg.lcd_symbole = "definiere das Symbol";
 Blockly.Msg.lcd_symbole_tooltip =
   "Definition eines Zeichens für das LCD: \n 0 verdunkelt ein Pixel \n 1 erhellt ein Pixel";
-//!structure
+//structure
 Blockly.Msg.loop = "∞ Schleife";
 Blockly.Msg.init = "⚙️ Setup";
 Blockly.Msg.base_setup_loop =
@@ -440,7 +440,7 @@ Blockly.Msg.END_tooltip =
   "Stoppt das Programm, danach platzierte Blöcke werden ignoriert";
 Blockly.Msg.code_tooltip =
   "Schreibe eine Anweisung, die nicht als Block verfügbar ist";
-//!matrix
+//matrix
 Blockly.Msg.matriceLC = "setze LED, Zeile";
 Blockly.Msg.matrice_create_aff = "Erstelle den Block 'zeige Symbol %1'";
 Blockly.Msg.matrice_create_symbole = "Erstelle den Block 'setze das Symbol %1'";
@@ -475,7 +475,7 @@ Blockly.Msg.matrice16x8_aff_tooltip =
   "Zeige das Symbol, das vorher definiert wurde";
 Blockly.Msg.matrice16x8_efface_tooltip = "Schalte alle LEDs in der Matrix aus";
 Blockly.Msg.matrice16x8_helpurl = "";
-//!time
+//time
 Blockly.Msg.millis = "verstrichene Zeit";
 Blockly.Msg.millis_start = "starte eine Zeitmessung in ";
 Blockly.Msg.millis_tooltip = "";
@@ -494,7 +494,7 @@ Blockly.Msg.tempo_helpurl = "https://www.arduino.cc/en/tutorial/blink"; // do no
 Blockly.Msg.tempo_tooltip =
   "Dieser Block überprüft, ob die angegebene Zeit erreicht wurde. Falls das der Fall ist, dann werden die Blöcke darin ausgeführt. Anders als der Block 'warte' blockiert dieser nicht.";
 Blockly.Msg.tempo1 = "alle";
-//!OLED
+//OLED
 Blockly.Msg.lp2i_u8g_draw_string = "OLED I2C Display";
 Blockly.Msg.lp2i_u8g_draw_string_Text = "gezeigter Text:";
 Blockly.Msg.lp2i_u8g_draw_string_X = "Spalte x (127 max) =";
@@ -520,7 +520,7 @@ Blockly.Msg.lp2i_u8g_4draw_print_N3 = "Nummer 3 (am Ende) =";
 Blockly.Msg.lp2i_u8g_4draw_print_Text_line4 = "Zeile 4 =";
 Blockly.Msg.lp2i_u8g_4draw_print_N4 = "Nummer 4 (am Ende) =";
 
-//!LED
+//LED
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "die LED auf dem Board";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP =
   "Schaltet die LED auf dem Arduino board an oder aus";
@@ -556,7 +556,7 @@ Blockly.Msg.pixel2_tooltip = "zeige die Änderungen";
 Blockly.Msg.pixel5_tooltip = "stellt die Pixelhelligkeit (von 0 bis 255) ein";
 Blockly.Msg.pixel3_tooltip =
   "wähle den anzuschaltenden Pixel und seine Farbe \nVorsicht: die Nummerierung beginnt bei 0";
-//!output
+//output
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "lege den DIGITAL-Pin fest";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP =
   "schreibe 0 oder 1 als logischen Zustand an einen ausgewählten Ausgang";
@@ -566,7 +566,7 @@ Blockly.Msg.toggle_tooltip =
 Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "lege den PWM-Pin fest";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP =
   "sende einen Wert zwischen 0 und 255 an einen ausgewählten Ausgang";
-//!input
+//input
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "DIGITAL-Pin Zustand";
 Blockly.Msg.in_pullup = "Pull-Up";
 Blockly.Msg.in_pullup_tooltip =
@@ -576,7 +576,7 @@ Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP =
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "ANALOG-Pin Wert";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP =
   "gibt einen Wert zwischen 0 und 1023 zurück";
-//!audio
+//audio
 Blockly.Msg.play = "spiele";
 Blockly.Msg.play_tooltip = "spiele die Note";
 Blockly.Msg.play_helpurl = "";
@@ -610,7 +610,7 @@ Blockly.Msg.lp2i_mp3_vol_tooltip =
   "setze die Lautstärke auf den ausgewählten Wert [0-48]";
 Blockly.Msg.lp2i_mp3_next = "lese die nächste mp3 Datei";
 Blockly.Msg.lp2i_mp3_next_tooltip = "spielt das nächste Lied";
-//!servomotor
+//servomotor
 Blockly.Msg.ARDUINO_SERVO_MOVE_INPUT1 = "rotiere";
 Blockly.Msg.ARDUINO_SERVO_MOVE_DEGREE = "Grad [0°-180°]";
 Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP =
@@ -618,7 +618,7 @@ Blockly.Msg.ARDUINO_SERVO_MOVE_TOOLTIP =
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TEXT = "Drehung";
 Blockly.Msg.ARDUINO_SERVO_ROT_CONTINUE_TOOLTIP =
   "Drehe den Servo am ausgewählten Pin, mit der angegebenen Geschwindigkeit und in die ausgewählte Richtung";
-//!engine
+//engine
 Blockly.Msg.mot_tooltip =
   "Shield Motorsteuerung L293D: \n aktiviert beide Motoren (M1 und M2) auf Vorlauf oder Drehung, die Geschwindigkeit kann zwischen 0 und 90 eingestellt werden";
 Blockly.Msg.mot_stop = "stoppe";
@@ -657,7 +657,7 @@ Blockly.Msg.m_pap_tooltip =
   "Initialisierung eines Schrittmotors. \nGebe die Anzahl der Schritte, die Geschwindigkeit in 1/min und die Anschlusspins an";
 Blockly.Msg.m_pap_step_tooltip =
   "aktiviert den Schrittmotor mit der angegebenen Anzahl der Schritte, die folgende Anweisung wird erst mit abgeschlossener Drehung des Motors ausgeführt";
-//!serial
+//serial
 Blockly.Msg.Serial_Init = "serielle Schnittstelle an";
 Blockly.Msg.Serial_Init_tooltip =
   "Setze die Kommunikationsrate in Zeichen pro Sekunde für die serielle Kommunikation";
@@ -674,7 +674,7 @@ Blockly.Msg.Serial_saut_tooltip = "gibt einen Zeilenumbruch auf dem seriellen Mo
 Blockly.Msg.Serial_space = "ein Trennzeichen";
 Blockly.Msg.Serial_space_tooltip = "gibt ein Leerzeichen auf dem seriellen Monitor aus";
 Blockly.Msg.repl_read = "vom Benutzer eingegebener Befehl";
-//!software serial
+//software serial
 //Blockly.Msg.SSERIAL_Init = "software port on Rx";
 Blockly.Msg.SSERIAL_tooltip =
   "Erstellen eines neuen Kommunikationsports mit den angegebenen Pins und der angegebenen Geschwindigkeit";
@@ -767,12 +767,12 @@ Blockly.Msg.OTTO9_DANCE_SIZE_CHOICE = [
 ];
 Blockly.Msg.OTTO9_DO_TEXT = "mache";
 Blockly.Msg.OTTO9_DO_TOOLTIP = "Otto macht komplexere Bewegungen";
-Blockly.Msg.OTTO9_DO_CHOICE = [ //TODO
+Blockly.Msg.OTTO9_DO_CHOICE = [
   ["Schwanken", "swing"],
   ["Hoch/Runter", "updown"],
   ["ZehenspitzenSwing", "tiptoeSwing"],
   ["Zittern", "jitter"],
-  ["ascendingTurn", "ascendingTurn"],
+  ["ansteigende Kurve", "ascendingTurn"],
 ];
 Blockly.Msg.OTTO9_GESTURE_TEXT = "Gesten    ";
 Blockly.Msg.OTTO9_GESTURE_TOOLTIP = "Emotionale Geräusche kombiniert mit Bewegungen";
@@ -857,7 +857,7 @@ Blockly.Msg.OTTO9_EYES_TEXT = "Augen";
 Blockly.Msg.OTTO9_EYES_TEXT2 = "Pins: I2C";
 Blockly.Msg.OTTO9_MOUTH_TEXT2 = "Pins: DIN A3, CS A2, CLK A1";
 Blockly.Msg.OTTO9_EYES_TOOLTIP = "Augenemotionen für die 16x8 I2C LED Matrix ";
-Blockly.Msg.OTTO9_EYES_CHOICE = [ //TODO
+Blockly.Msg.OTTO9_EYES_CHOICE = [
   ["😃 fröhlich1", "happy_bmp"],
   ["🙂 fröhlich2", "eyes_bmp"],
   ["😦 traurig", "sad_bmp"],
@@ -890,7 +890,7 @@ Blockly.Msg.OTTO9_ARMS_CHOICE = [
   ["Handbewegung rechts", "HANDWAVE2"],
 ];
 
-///!ESP8266
+//ESP8266
 Blockly.Msg.OTTO9_YL = "linkes Bein";
 Blockly.Msg.OTTO9_YR = "rechtes Bein";
 Blockly.Msg.OTTO9_RL = "linker Fuß";
@@ -923,7 +923,7 @@ Blockly.Msg.ESCORNABOT_DISTANCE = "Laufweg: ";
 Blockly.Msg.ESCORNABOT_DISTANCE_TEXT = "cm: ";
 Blockly.Msg.ESCORNABOT_DISTANCE_TOOLTIP =
   "Abstand in cm (negative Werte bedeuten Umkehrmodus) und die Geschwindigkeit angeben";
-Blockly.Msg.ESCORNABOT_TURNSPIN_TEXT = "Turn by X spins: "; //TODO
+Blockly.Msg.ESCORNABOT_TURNSPIN_TEXT = "Drehe mit Drehzahl X: ";
 Blockly.Msg.ESCORNABOT_TURNSPIN_TOOLTIP =
   "Im Uhrzeigersinn/gegen den Uhrzeigersinn drehen (je nachdem, ob positive oder negative Werte für die Drehzahl eingegeben wurden)";
 Blockly.Msg.ESCORNABOT_TURNANGLE_TEXT = "Winkeldrehung: ";
@@ -979,7 +979,7 @@ Blockly.Msg.ESCORNABOT_GETWHITERIGHT_TOOLTIP =
 Blockly.Msg.ESCORNABOT_IRLEFT_TEXT = "Links";
 Blockly.Msg.ESCORNABOT_IRRIGHT_TEXT = "Rechts";
 
-//!SIMPLE SENSORS
+//SIMPLE SENSORS
 Blockly.Msg.BUTTON_NAME = "Knopf";
 Blockly.Msg.INTERNAL_BUTTON_NAME = "Starte Knopf MRTduino-Board";
 Blockly.Msg.BUTTON_LOGIC = "logisch umgekehrt";
@@ -1041,8 +1041,7 @@ Blockly.Msg.VAR_TemSens = "Analog NTC Temperatur (°C)";
 Blockly.Msg.MRTX_BUTTON = "MRTNode Startknopf gedrückt?";
 Blockly.Msg.TOUCH = "Berührung";
 
-//!CCS811
-
+//CCS811
 Blockly.Msg.CCS811 = "Initialisiere CO₂(CCS811) Sensor";
 Blockly.Msg.CCS811_name = "CO₂ (CCS811) Sensor";
 Blockly.Msg.CCS811_2 = "I²C & WAK an GND";
@@ -1050,7 +1049,7 @@ Blockly.Msg.CCS811_available = "Ist der Sensor verfügbar?";
 Blockly.Msg.CCS811_readed = "Wird gemessen?";
 Blockly.Msg.CCS811_values = "Wert";
 
-//!LCD I2C
+//LCD I2C
 Blockly.Msg.LCD_I2C_setup = "Initialisiere LCD I²C Adresse";
 Blockly.Msg.LCDP_Column = "Spalte";
 Blockly.Msg.LCDP_Row = "Zeile";
@@ -1066,7 +1065,7 @@ Blockly.Msg.LCDP_Home = "LCD I²C Ausgangsposition";
 Blockly.Msg.LCDP_SetCursor = "LCD I²C setze Zeiger";
 Blockly.Msg.LCDP_Display = "LCD I²C ";
 
-//!GESTURE SENSOR APDS9960
+//GESTURE SENSOR APDS9960
 Blockly.Msg.APDS9960_name_gesture = "APDS9960 Gesten";
 Blockly.Msg.APDS9960_name_color = "APDS9960 Farbe";
 Blockly.Msg.APDS9960_detection = "Erkennung";
@@ -1079,13 +1078,13 @@ Blockly.Msg.APDS9960_readgesture = "Lese Geste";
 Blockly.Msg.APDS9960_readcolors = "Erkenne Farbe";
 Blockly.Msg.APDS9960_colors = "Spektrum";
 
-//!REMOTE CONTROL IR
+//REMOTE CONTROL IR
 Blockly.Msg.KEY = "Schlüssel";
 Blockly.Msg.GENERAL_IR = "IR-Fernbedienung";
 Blockly.Msg.GENERAL_PRESSED = "Lese Schlüssel";
 Blockly.Msg.PIN = "PIN";
 
-//!REMOTE CONTROL MRT
+//REMOTE CONTROL MRT
 Blockly.Msg.MRT_IR = "Initialisiere MRT-Fernbedienung";
 Blockly.Msg.MRT_CHANNEL = "Kanal";
 Blockly.Msg.MRT_KEY = "Schlüssel MRT";
@@ -1093,7 +1092,7 @@ Blockly.Msg.MRT_PRESSED = "gedrückt?";
 Blockly.Msg.PIN2 = "Unterbreche PIN";
 Blockly.Msg.ATTEND_MRT_IR = "Auf MRT-Fernbedienung hören";
 
-//!OPEN SMART MP3
+//OPEN SMART MP3
 Blockly.Msg.MP3OS_name = "Mp3 OpenSmart";
 Blockly.Msg.MP3OS_init = "Initialisiere Mp3 Opensmart über Softwareschnittstelle";
 Blockly.Msg.MP3OS_TX = "Port TX#";
@@ -1106,7 +1105,7 @@ Blockly.Msg.MP3OS_playsong = "Spiele Titelnummer";
 Blockly.Msg.MP3OS_playsongdirectory = "in Ordnernummer";
 Blockly.Msg.MP3OS_inject = "Gebe Titelnummer ein";
 
-//!Mu Vision
+//Mu Vision
 
 /*Help*/
 Blockly.LKL_VS2_HELP_INIT = "initialisiere MU Vision Sensor und wähle den Port.";
@@ -1121,7 +1120,7 @@ Blockly.LKL_VS2_WARNING_SETUP_ONLY =
 Blockly.LKL_VS2_WARNING_MU_INIT =
   "Bitte NICHT vergessen: initialisiere den Uart1, Serial1. Konfiguriere auch die Baudraten"; //'请勿同时使用Serial连接MU与电脑打印字符，此操作会导致电脑端打印字符错乱或通信异常';
 
-//!LED color type
+//LED color type
 Blockly.LKL_VS2_LED_CLOSE = "Schließen"; //'关闭';
 Blockly.LKL_VS2_LED_RED = "Rot"; //'红色';
 Blockly.LKL_VS2_LED_GREEN = "Grün"; //'绿色';
@@ -1130,18 +1129,18 @@ Blockly.LKL_VS2_LED_BLUE = "Blau"; //'蓝色';
 Blockly.LKL_VS2_LED_PURPLE = "Lila"; //'紫色';
 Blockly.LKL_VS2_LED_CYAN = "Türkis"; //'青色';
 Blockly.LKL_VS2_LED_WHITE = "Weiß"; //'白色';
-//!Vision Zoom
+//Vision Zoom
 Blockly.LKL_VS2_AUTO = "Auto"; //'自动';
 Blockly.LKL_VS2_VISION_ZOOM = "Zoom"; //'缩放';
-//!Vision Level
+//Vision Level
 Blockly.LKL_VS2_LEVEL = "Stufe"; //'等级';
 Blockly.LKL_VS2_HIGH_SPEED = "hohe Geschwindigkeit"; //'速度优先';
 Blockly.LKL_VS2_NORMAL = "normal"; //'性能均衡';
 Blockly.LKL_VS2_HIGH_ACCURACY = "hohe Genauigkeit"; //'准确度优先';
-//!UART status
+//UART status
 Blockly.LKL_VS2_UART_OPEN = "Öffnen"; //'打开';
 Blockly.LKL_VS2_UART_CLOSE = "Schließen"; //'关闭';
-//Vision type //TODO
+//Vision type
 Blockly.LKL_VS2_COLOR_BLOCK = "Farbblock"; //'色块';
 Blockly.LKL_VS2_VISION_COLOR_DETECT = "Farbblock"; //'色块检测';
 Blockly.LKL_VS2_VISION_COLOR_RECOGNITION = "Farberkennung"; //'颜色识别';
@@ -1149,10 +1148,10 @@ Blockly.LKL_VS2_VISION_BALL = "Ball"; //'球';
 Blockly.LKL_VS2_VISION_LINE = "Linie"; //'线条';
 Blockly.LKL_VS2_VISION_BODY = "Körper"; //'人体';
 Blockly.LKL_VS2_VISION_FACE = "Gesicht"; //'人脸';
-Blockly.LKL_VS2_VISION_TRAFFIC_CARD = "TrafficCard"; //'交通卡片';
-Blockly.LKL_VS2_VISION_SHAPE_CARD = "ShapeCard"; //'形状卡片';
-Blockly.LKL_VS2_VISION_NUM_CARD = "NumberCard"; //'数字卡片';
-//!Card type
+Blockly.LKL_VS2_VISION_TRAFFIC_CARD = "Verkehrskarte"; //'交通卡片';
+Blockly.LKL_VS2_VISION_SHAPE_CARD = "Formkarte"; //'形状卡片';
+Blockly.LKL_VS2_VISION_NUM_CARD = "Nummernkarte"; //'数字卡片';
+//Card type
 Blockly.LKL_VS2_CARD_CIRCLE = "Kreis"; //'圆形';
 Blockly.LKL_VS2_CARD_TRIANGLE = "Dreieck"; //'三角形';
 Blockly.LKL_VS2_CARD_SQUARE = "Quadrat"; //'方形';
@@ -1164,7 +1163,7 @@ Blockly.LKL_VS2_CARD_TURN_RIGHT = "Rechtsdrehung"; //'向右';
 Blockly.LKL_VS2_CARD_TURN_AROUND = "Umdrehen"; //'掉头';
 Blockly.LKL_VS2_CARD_WHISTLE = "Pfeife"; //'鸣笛';
 Blockly.LKL_VS2_CARD_STOP = "Stop"; //'停止';
-//!Vision state
+//Vision state
 Blockly.LKL_VS2_STATE_VALUE_X = "Horizontal"; //'横向坐标';
 Blockly.LKL_VS2_STATE_VALUE_Y = "Vertikal"; //'纵向坐标';
 Blockly.LKL_VS2_STATE_VALUE_WIDTH = "Breite"; //'宽度';
@@ -1173,19 +1172,19 @@ Blockly.LKL_VS2_STATE_VALUE_R_CHANNEL = "Kanal R"; //'红色通道';
 Blockly.LKL_VS2_STATE_VALUE_G_CHANNEL = "Kanal G"; //'绿色通道';
 Blockly.LKL_VS2_STATE_VALUE_B_CHANNEL = "Kanal B"; //'蓝色通道';
 Blockly.LKL_VS2_STATE_VALUE_LABEL = "Beschriftung"; //'标签';
-//!True False
+//True False
 Blockly.LKL_VS2_TRUE = "Wahr"; //'是';
 Blockly.LKL_VS2_FALSE = "Falsch"; //'否';
-//!Enable Disable
+//Enable Disable
 Blockly.LKL_VS2_ENABLE = "aktivieren"; //'开启';
 Blockly.LKL_VS2_DISABLE = "deaktivieren"; //'关闭';
-//!Camera AWB
+//Camera AWB
 Blockly.LKL_VS2_LOCK_AWB = "Sperre Weißabgleich"; //'锁定白平衡';
 Blockly.LKL_VS2_WHITE_LIGHT = "Weißes Licht"; //'白光模式';
 Blockly.LKL_VS2_YELLOW_LIGHT = "Gelbes Licht"; //'黄光模式';
 Blockly.LKL_VS2_ALL = "Alle"; //'所有';
 
-//!Other
+//Other
 Blockly.LKL_VS2_COLOR = "Farbe"; //'颜色';
 Blockly.LKL_VS2_DEFAULT = "Standard"; //'默认';
 Blockly.LKL_VS2_LOW = "niedrig"; //'低';
@@ -1220,7 +1219,7 @@ Blockly.LKL_VS2_CARD_TYPE = "Typ"; //'卡片类型';
 Blockly.LKL_VS2_SET_DETECT_COLOR = "setze Farberkennung"; //'设置识别颜色';
 Blockly.LKL_VS2_COORDINATE = "Koordinate"; //'坐标';
 
-//!Light sensor
+//Light sensor
 Blockly.LKL_VS2_LIGHT_SENSOR = "Lichtsensor"; //'光线传感器';
 Blockly.LKL_VS2_SET = "setze"; //'设置';
 Blockly.LKL_VS2_SENSITIVITY = "Empfindlichkeit"; //'灵敏度';
@@ -1237,7 +1236,7 @@ Blockly.LKL_VS2_GESTURE_RIGHT = "nach rechts"; //'右划';
 Blockly.LKL_VS2_GESTURE_LIFT_UP = "ziehen"; //'上抬';
 Blockly.LKL_VS2_GESTURE_PUSH_DOWN = "drücken"; //'下压';
 
-//!AT WiFi
+//AT WiFi
 Blockly.LKL_VS2_SSID = "SSID"; //"名称";
 Blockly.LKL_VS2_PASSWORD = "Passwort"; //"密码";
 Blockly.LKL_VS2_WAIT_CONNECT = "Verbindung erfolgreich"; //"连接成功";
@@ -1248,53 +1247,53 @@ Blockly.LKL_VS2_TARGET_IP = "Ziel IP"; //"目标IP";
 Blockly.LKL_VS2_LOCAL_IP = "lokale IP"; //"本地IP";
 Blockly.LKL_VS2_WRITE = "schreibe"; //"写入";
 
-//SOFTWARE SERIAL FOR BT //TODO
+//SOFTWARE SERIAL FOR BT
 Blockly.Msg.SSERIAL_BT_Init = "Initialisiere Bluetooth - SoftwareSerial";
-Blockly.Msg.ESP32Bluetooth = "Initialisiere Bluetooth - ESP32 Bluetooth Serial";
+Blockly.Msg.ESP32Bluetooth = "Initialisiere Bluetooth - ESP32 Bluetooth seriell";
 Blockly.Msg.SSERIAL_BT_TX = "Pin TX#";
 Blockly.Msg.SSERIAL_BT_RX = "Pin RX#";
 Blockly.Msg.SSERIAL_BT_BAUD = "Baudraten";
-Blockly.Msg.SSERIAL_BT_Read = "Serial BT Read byte";
-Blockly.Msg.SSERIAL_BT_Println = "Serial BT Print on new line";
-Blockly.Msg.SSERIAL_BT_Print = "Serial BT Print on same line";
-Blockly.Msg.SSERIAL_BT_Write = "Serial BT write";
-Blockly.Msg.SSERIAL_BT_Avai = "Serial BT Available?";
-Blockly.Msg.SSerial_BT_Print_Format = "Serial BT Print  Format";
-Blockly.Msg.SSERIAL_BT_ReadNum = "Serial BT Read as number";
-Blockly.Msg.SSERIAL_BT_ReadString = "Serial BT Read String";
-Blockly.Msg.SSERIAL_BT_Readlf = "until line feed";
+Blockly.Msg.SSERIAL_BT_Read = "serielles BT lese Byte";
+Blockly.Msg.SSERIAL_BT_Println = "serielles BT schreibe auf neue Zeile";
+Blockly.Msg.SSERIAL_BT_Print = "serielles BT schreibe auf selbe Zeile";
+Blockly.Msg.SSERIAL_BT_Write = "serielles BT schreibe";
+Blockly.Msg.SSERIAL_BT_Avai = "serielles BT verfügbar?";
+Blockly.Msg.SSerial_BT_Print_Format = "serielles BT Druckformat";
+Blockly.Msg.SSERIAL_BT_ReadNum = "serielles BT lese als Zahl";
+Blockly.Msg.SSERIAL_BT_ReadString = "serielles BT lese Text";
+Blockly.Msg.SSERIAL_BT_Readlf = "bis Zeilenvorschub";
 
-// SOFTWARE SERIAL //TODO
-Blockly.Msg.SSERIAL_Init = "Init SoftwareSerial";
+//SOFTWARE SERIAL
+Blockly.Msg.SSERIAL_Init = "Initialisiere SoftwareSeriell";
 Blockly.Msg.SSERIAL_TX = "Pin TX#";
 Blockly.Msg.SSERIAL_RX = "Pin RX#";
-Blockly.Msg.SSERIAL_BAUD = "Baudios";
-Blockly.Msg.SSERIAL_Read = "SoftwareSerial Read byte";
-Blockly.Msg.SSERIAL_Println = "SoftwareSerial Print on new line";
-Blockly.Msg.SSERIAL_Print = "SoftwareSerial Print on same line";
-Blockly.Msg.SSERIAL_Write = "SoftwareSerial write";
-Blockly.Msg.SSERIAL_Avai = "SoftwareSerial Available?";
-Blockly.Msg.SSerial_Print_Format = "SoftwareSerial Print  Format";
-Blockly.Msg.SSERIAL_ReadNum = "SoftwareSerial Read as number";
-Blockly.Msg.SSERIAL_ReadString = "SoftwareSerial Read String";
-Blockly.Msg.SSERIAL_Readlf = "until line feed";
+Blockly.Msg.SSERIAL_BAUD = "Baudraten";
+Blockly.Msg.SSERIAL_Read = "SoftwareSeriell lese Byte";
+Blockly.Msg.SSERIAL_Println = "SoftwareSeriell schreibe auf neue Zeile";
+Blockly.Msg.SSERIAL_Print = "SoftwareSeriell schreibe auf selbe Zeile";
+Blockly.Msg.SSERIAL_Write = "SoftwareSeriell schreibe";
+Blockly.Msg.SSERIAL_Avai = "SoftwareSeriell verfügbar?";
+Blockly.Msg.SSerial_Print_Format = "SoftwareSeriell Druckformat";
+Blockly.Msg.SSERIAL_ReadNum = "SoftwareSeriell lese als Zahl";
+Blockly.Msg.SSERIAL_ReadString = "SoftwareSeriell lese Text";
+Blockly.Msg.SSERIAL_Readlf = "bis Zeilenvorschub";
 
-// SERIAL //TODO
-Blockly.Msg.SERIAL_Init = "Init Serial ";
+//SERIAL
+Blockly.Msg.SERIAL_Init = "Initialisiere Seriell";
 Blockly.Msg.SERIAL_TX = "Pin TX#";
 Blockly.Msg.SERIAL_RX = "Pin RX#";
-Blockly.Msg.SERIAL_BAUD = "Baudios";
-Blockly.Msg.SERIAL_Read = "Serial  Read byte";
-Blockly.Msg.SERIAL_Println = "Serial Print on new line";
-Blockly.Msg.SERIAL_Print = "Serial Print on same line";
-Blockly.Msg.SERIAL_Write = "Serial write";
-Blockly.Msg.SERIAL_Avai = "Serial Available?";
-Blockly.Msg.Serial_Print_Format = "Serial Print  Format";
-Blockly.Msg.SERIAL_ReadNum = "Serial Read as number";
-Blockly.Msg.SERIAL_ReadString = "Serial Read String";
-Blockly.Msg.SERIAL_Readlf = "until line feed";
+Blockly.Msg.SERIAL_BAUD = "Baudrate";
+Blockly.Msg.SERIAL_Read = "Seriell lese Byte";
+Blockly.Msg.SERIAL_Println = "Seriell schreibe auf neue Zeile";
+Blockly.Msg.SERIAL_Print = "Seriell schreibe auf selbe Zeile";
+Blockly.Msg.SERIAL_Write = "Seriell schreibe";
+Blockly.Msg.SERIAL_Avai = "Seriell verfügbar?";
+Blockly.Msg.Serial_Print_Format = "Seriell Druckformat";
+Blockly.Msg.SERIAL_ReadNum = "Seriell lese als Zahl";
+Blockly.Msg.SERIAL_ReadString = "Seriell lese Text";
+Blockly.Msg.SERIAL_Readlf = "bis Zeilenvorschub";
 
-//!DISPLAY TFT ST7735
+//DISPLAY TFT ST7735
 Blockly.Msg.ST7735_name = "TFT";
 Blockly.Msg.ST7735_init = 'Initialisiere TFT ST7735 1.8" oder 0.96".';
 Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
@@ -1345,7 +1344,7 @@ Blockly.Msg.OLED_width = "Breite";
 Blockly.Msg.OLED_height = "Höhe";
 Blockly.Msg.OLED_COLOR = "Setze Farbe";
 
-//!TCS34725 color sensor
+//TCS34725 color sensor
 Blockly.Msg.TCS34725_name_init = "Initialisiere TCS34725 Farbsensor";
 Blockly.Msg.TCS34725_name_init2 = "SDA - SCL Gain";
 Blockly.Msg.TCS34725_name = "TCS34725 Farbsensor.";
@@ -1354,13 +1353,13 @@ Blockly.Msg.TCS34725_values = "Wert";
 Blockly.Msg.TCS34725_color = "ist";
 Blockly.Msg.TCS34725_color2 = "Farbe (Keine Verstärkung konfiguriert)?";
 
-//!HMC5883 compass sensor
+//HMC5883 compass sensor
 Blockly.Msg.HMC5883 = "Initialisiere HMC5883 Kompasssensor";
 Blockly.Msg.HMC5883_2 = "- SDA - SCL";
 Blockly.Msg.HMC5883_read = "HMC5883 Kompasssensor. Lese Werte";
 Blockly.Msg.HMC5883_values = "Wert";
 
-//!RADIO TEA5767
+//RADIO TEA5767
 Blockly.Msg.TEA5767_name = "Radio TEA5767.";
 Blockly.Msg.TEA5767_init = "Initialisiere Radio TEA5767.SDA - SCL";
 Blockly.Msg.TEA5767_turnOFF_ON = "Schalte";
@@ -1371,7 +1370,7 @@ Blockly.Msg.TEA5767_RadioStation = "Radio Station.";
 Blockly.Msg.TEA5767_SetFrequency = "Frequenz (Mhz)";
 Blockly.Msg.TEA5767_MadridFrequency = "Madrid Radio Station:";
 
-//!RFID MFRC522
+//RFID MFRC522
 Blockly.Msg.RFID_name = "RFID MFRC522.";
 Blockly.Msg.RFID_init = "Initialisiere RFID MFRC522.";
 Blockly.Msg.RFID_init2 = "Pins:SCK, MOSI und MISO.";
@@ -1389,7 +1388,7 @@ Blockly.Msg.RFID_CARD_READED = "Wert der eingelesenen Karte";
 Blockly.Msg.RFID_CHECK_CARD = "Ist die gelesene RFID-Karte gleich der Validierungskarte";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
 
-//!NFC PN532
+//NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";
 Blockly.Msg.NFC_init = "NFC I²C ";
 Blockly.Msg.NFC_VALID_VAR = "Validierungskarte (4 Bytes):";
@@ -1406,7 +1405,7 @@ Blockly.Msg.NFC_CARD_READED = "Lese Wert";
 Blockly.Msg.NFC_CHECK_CARD = "Ist Karteneinlesung = Validierungskarte";
 Blockly.Msg.NFC_CHECK_CARD2 = "?";
 
-//!KEYBOARD AND MOUSE
+//KEYBOARD AND MOUSE
 Blockly.Msg.KeyboardFunction = "Tastatur";
 Blockly.Msg.KeyPressed = "Taste";
 Blockly.Msg.WriteText = "Schreibe Text";
@@ -1416,7 +1415,7 @@ Blockly.Msg.MouseMoveX = "X Pos";
 Blockly.Msg.MouseMoveY = "Y Pos";
 Blockly.Msg.MouseMoveW = "Mausrad";
 
-//!GPS
+//GPS
 Blockly.Msg.GPS_name = "GPS NEO-6";
 Blockly.Msg.GPS_init = "Initialisiere GPS über Softwareschnittstelle";
 Blockly.Msg.GPS_TX = "TX#";
@@ -1425,47 +1424,47 @@ Blockly.Msg.GPS_readvalues = "Lese und speichere Werte über Softwareschnittstel
 Blockly.Msg.GPS_paramter = "Standortparameter:";
 Blockly.Msg.GPS_paramter3 = "Datum und Zeit:";
 
-//!TM1640
+//TM1640
 Blockly.Msg.TM1640_init = "Initialisiere TM1640 Led-Matrix";
 Blockly.Msg.TM1640_SCL = "SCL Pin";
 Blockly.Msg.TM1640_SDA = "SDA Pin";
 
-//!MOTOR MRT
+//MOTOR MRT
 Blockly.Msg.MOTOR_Connector = "Motor";
 Blockly.Msg.MOTOR_MRTX_Connector = "MRTX-Uno Motor";
 Blockly.Msg.MOTOR_Direction = "Richtung";
 Blockly.Msg.MOTOR_speed = "Geschwindigkeit (0-255)";
 Blockly.Msg.MOTOR_Stop = "Stoppe";
 
-//STEPPERS //TODO
-Blockly.Msg.STEEPER_name = "Init Stepper ID";
-Blockly.Msg.STEEPER_name2 = "Init Stepper28BYJ ID";
-Blockly.Msg.STEEPER2_name = "Stepper ID";
-Blockly.Msg.STEEPER2_name2 = "Stepper28BYJ ID";
-Blockly.Msg.STEEPER_steprev = "Steps/Rev.";
-Blockly.Msg.STEEPER_step = "Steps";
-Blockly.Msg.STEEPER_speed = "Speed (rpm)";
+//STEPPERS
+Blockly.Msg.STEEPER_name = "Initialisiere Stepper-ID";
+Blockly.Msg.STEEPER_name2 = "Initialisiere Stepper28BYJ-ID";
+Blockly.Msg.STEEPER2_name = "Stepper-ID";
+Blockly.Msg.STEEPER2_name2 = "Stepper28BYJ-ID";
+Blockly.Msg.STEEPER_steprev = "Schritte (rückwärts)";
+Blockly.Msg.STEEPER_step = "Schritte";
+Blockly.Msg.STEEPER_speed = "Geschwindigkeit (Umdrehung/min)";
 Blockly.Msg.STEEPER_pin1 = "PIN-A";
 Blockly.Msg.STEEPER_pin2 = "PIN-B";
 Blockly.Msg.STEEPER_pin3 = "PIN-C";
 Blockly.Msg.STEEPER_pin4 = "PIN-D";
-Blockly.Msg.STEEPER_Move = "Move";
-Blockly.Msg.STEEPER_MoveTo = "Move to step(0-4096)";
-Blockly.Msg.STEEPER_Degree = "degrees";
-Blockly.Msg.STEEPER_Steps = "steps";
-Blockly.Msg.STEEPER_DegreeTo = "Move to degree";
+Blockly.Msg.STEEPER_Move = "Bewege";
+Blockly.Msg.STEEPER_MoveTo = "Bewege zu Schritt (0-4096)";
+Blockly.Msg.STEEPER_Degree = "Grad";
+Blockly.Msg.STEEPER_Steps = "Schritte";
+Blockly.Msg.STEEPER_DegreeTo = "Bewege zu Grad";
 
-//WiFi basic functions //TODO
-Blockly.Msg.WIFI_sta_init = "WIFI.Connect as Station";
-Blockly.Msg.WIFI_ap_init = "WIFI.Create an Access Point";
-Blockly.Msg.WIFI_sta_ap_init = "WIFI. Station and create an Access Point";
-Blockly.Msg.WIFI_password = "password:";
-Blockly.Msg.WIFI_ssid = "Wifi ssid:";
-Blockly.Msg.WIFI_password_ap = "and this password:";
-Blockly.Msg.WIFI_ssid_ap = "Wifi ssid name:";
-Blockly.Msg.WIFI_logs = "Enable logs";
+//WiFi basic functions
+Blockly.Msg.WIFI_sta_init = "WIFI. Verbinde als Station";
+Blockly.Msg.WIFI_ap_init = "WIFI. Erstelle einen Access Point";
+Blockly.Msg.WIFI_sta_ap_init = "WIFI. Station und erstelle einen Access Point";
+Blockly.Msg.WIFI_password = "Passwort:";
+Blockly.Msg.WIFI_ssid = "Wifi SSID:";
+Blockly.Msg.WIFI_password_ap = "und dieses Passwort:";
+Blockly.Msg.WIFI_ssid_ap = "Wifi SSID Name:";
+Blockly.Msg.WIFI_logs = "Aktiviere Logs";
 
-//!IFTTT
+//IFTTT
 Blockly.Msg.IFTTT_init = "Konfigurierung. API-Schlüssel";
 Blockly.Msg.IFTTT_send = "Sende Informationen";
 Blockly.Msg.IFTTT_event = "Ereignis als Text";
@@ -1473,7 +1472,7 @@ Blockly.Msg.IFTTT_value1 = "Wert 1 als Text";
 Blockly.Msg.IFTTT_value2 = "Wert 2 als Text";
 Blockly.Msg.IFTTT_value3 = "Wert 3 als Text";
 
-//!MQTT
+//MQTT
 Blockly.Msg.MQTT_name_init = "Konfigurierung MQTT Protokoll";
 Blockly.Msg.MQTT_password = "Passwort:";
 Blockly.Msg.MQTT_ssid = "Wifi SSID:";
@@ -1491,7 +1490,7 @@ Blockly.Msg.MQTT_topicvalue = "Wert";
 Blockly.Msg.MQTT_logs = "Aktiviere Logs";
 
 //NTP
-//!RTC DS3231
+//RTC DS3231
 Blockly.Msg.NTP_NAME = "Initialisiere NTP Server.";
 Blockly.Msg.NTP_NAME2 = "NTP Server.";
 Blockly.Msg.NTP_READ_RTC = "NTP Server. Lese das Datum und die Zeit";
@@ -1509,7 +1508,7 @@ Blockly.Msg.NTP_TEXT_DOFWEEK = "Tag der Woche als Text";
 Blockly.Msg.NTP_TEXT_MONTH = "Monat als Text ";
 Blockly.Msg.NTP_TEXT_TIME = "Zeit als Text ";
 
-//!MAX7219-Led Matrix panel
+//MAX7219-Led Matrix panel
 Blockly.Msg.MAX7219_LM_NAME = "Initialisiere MAX7219 Led-Matrix.";
 Blockly.Msg.MAX7219_LM_CS = "CS Pin";
 Blockly.Msg.MAX7219_LM_CLK = "CLK Pin";
@@ -1525,7 +1524,7 @@ Blockly.Msg.MAX7219_LM_value = "Wert (bin oder hex oder dec)";
 Blockly.Msg.MAX7219_LM_Column = "Spalte (0-7)";
 Blockly.Msg.MAX7219_LM_Led = "Setze Led";
 
-//!Thingspeak
+//Thingspeak
 Blockly.Msg.Thingspeak_name_init = "Konfiguration von Thingspeak.";
 Blockly.Msg.Thingspeak_name = "Thingspeak.";
 Blockly.Msg.Thingspeak_channel = "Kanal";
@@ -1536,7 +1535,7 @@ Blockly.Msg.Thingspeak_field = "in Feld";
 Blockly.Msg.Thingspeak_ReadLong = "Lese das Feld als long";
 Blockly.Msg.Thingspeak_ReadFloat = "Lese das Feld als float";
 
-//!Firebase
+//Firebase
 Blockly.Msg.Firebase_name_init = "Konfiguration von Firebase.";
 Blockly.Msg.firebase_name = "Firebase.";
 Blockly.Msg.Firebase_url = "URL";
@@ -1550,7 +1549,7 @@ Blockly.Msg.Firebase_String_Node = "Speichere einen Text in Knoten";
 Blockly.Msg.Firebase_Read_String_Node = "Lese den Text in Knoten";
 Blockly.Msg.firebase_delete = "Lösche Knoten";
 
-//!Telegram
+//Telegram
 Blockly.Msg.Telegram_name_init = "Konfiguration von Telegramchat.";
 Blockly.Msg.Telegram_name = "Telegram.";
 Blockly.Msg.Telegram_BotToken = "BOT-Schlüssel";
@@ -1561,7 +1560,7 @@ Blockly.Msg.TelegramSend = "Sende Nachrciht:";
 Blockly.Msg.Telegram_message = "Telegram. Erhaltene Nachrichten";
 Blockly.Msg.Telegram_fromName = "Name des Senders";
 
-//!OpenWeather
+//OpenWeather
 Blockly.Msg.Openweather_init = "Konfigurierung von OpenWeather.";
 Blockly.Msg.Api_key = "API-Schlüssel";
 Blockly.Msg.ReadWeather = "OpenWeather. Lese Wetter.";
@@ -1587,22 +1586,22 @@ Blockly.Msg.icon_id = "Icon Wetter-ID";
 Blockly.Msg.sunrise = "Sonnenaufgang EPOC";
 Blockly.Msg.sunset = "Sonnenuntergang EPOC";
 
-//!ESP8266
+//ESP8266
 Blockly.Msg.ESP_yield = "Yield-Funktion";
 Blockly.Msg.ESP_deepsleep = "Tiefschlaf ";
 Blockly.Msg.ESP_timesleep = "Sekunden";
 Blockly.Msg.ESP_restart = "Starte ESP8266/ESP32 neu";
 
-//Wifi Server //TODO
+//Wifi Server
 Blockly.Msg.WifiServer_wait = "Warte auf Verbindungen von Clients";
 Blockly.Msg.WifiServer_port = "Wifi Server beginne mit Port";
 Blockly.Msg.WifiServer_ESP8266webserver_port =
   "Wifi AsyncWebServer beginne mit Port";
 Blockly.Msg.WifiServer_answer = "Wifi Server Antwort:";
-Blockly.Msg.WifiServer_stop = "Stoppe the connected client to the our server";
-Blockly.Msg.WifiServer_flush = "Flush the connected client to the our server";
+Blockly.Msg.WifiServer_stop = "Stoppe den verbundenen Client, der mit dem Server verbunden ist";
+Blockly.Msg.WifiServer_flush = "Flushe den verbundenen Client, der mit dem Server verbunden ist";
 Blockly.Msg.WifiServer_ip = "IP des verbundenen Gasts";
-Blockly.Msg.WifiServer_request = "Request of the connected customer";
+Blockly.Msg.WifiServer_request = "Anfrage des verbundenen Teilnehmers";
 Blockly.Msg.WifiServer_ESP8266webserver_parameter =
   "AsynWebServer Lese den Parameter: ";
 Blockly.Msg.WifiServer_ESP8266webserver_parameter2 =
@@ -1622,8 +1621,7 @@ Blockly.Msg.Wifi_ip = "IP";
 Blockly.Msg.Wifi_Mask = "Maske";
 Blockly.Msg.Wifi_Gateway = "Gateway";
 
-//!Text with more functions
-
+//Text with more functions
 Blockly.Msg.TEXT_APPEND_APPENDTEXT = "Text anhängen";
 Blockly.Msg.TEXT_APPEND_HELPURL =
   "https://github.com/google/blockly/wiki/Text#text-modification"; // do not translate
@@ -1708,7 +1706,7 @@ Blockly.Msg.TEXT_TRIM = "entferne Leerzeichen von ";
 Blockly.Msg.TEXT_TRIM_TOOLTIP =
   "Gibt eine Kopie des Textes zurück, bei dem an einem oder beiden Enden die Leerzeichen entfernt wurden.";
 
-//!Conversions
+//Conversions
 Blockly.Msg.CONV_tochar = "Ändere zu Zeichen ";
 Blockly.Msg.CONV_toString = "Ändere zu Text ";
 Blockly.Msg.CONV_decimal = "Anzahl der Dezimalstellen";
@@ -1717,7 +1715,7 @@ Blockly.Msg.CONV_toint = "Ändere zu Ganzzahl ";
 Blockly.Msg.CONV_tounsigendint = "Ändere zu vorzeichenlos Ganzzahl ";
 Blockly.Msg.CONV_tofloat = "Ändere zu Fließkommazahl ";
 
-//!Encoder
+//Encoder
 Blockly.Msg.RotaryEncoderInit = "Initialisiere Potentiometer";
 Blockly.Msg.RotaryEncoderNumber = "Potentiometer";
 Blockly.Msg.RE_withoutInterrupt = "ohne Unterbrechungen";
@@ -1728,7 +1726,7 @@ Blockly.Msg.RE_WRITE = "Schreibe Wert";
 Blockly.Msg.RE_Button = "Knopf";
 Blockly.Msg.RE_Pressed = "gedrückt?";
 
-//!ESP-NOW
+//ESP-NOW
 Blockly.Msg.ESPNOW_init = "Initialisiere das Protokoll. Knoten";
 Blockly.Msg.ESPNOW_msg_received = "Wenn eine Nachricht erhalten wurde";
 Blockly.Msg.ESPNOW_send_all = "Sende die Nachricht an alle Knoten.";
@@ -1741,7 +1739,7 @@ Blockly.Msg.ESPNOW_read_param_int = "Parameter Ganzzahl erhalten";
 Blockly.Msg.ESPNOW_read_param_float = "Parameter Fließkommazahl erhalten";
 Blockly.Msg.ESPNOW_read_param_text = "Parameter Text erhalten";
 
-//!ALEXA
+//ALEXA
 Blockly.Msg.Alexa_init = "Alexa. Gerätenummer:";
 Blockly.Msg.Alexa_init2 = "Name:";
 Blockly.Msg.Alexa_cb = "Wenn eine Alexanachricht erhalten. Gerät:";
