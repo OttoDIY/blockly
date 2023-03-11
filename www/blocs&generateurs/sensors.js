@@ -1150,7 +1150,7 @@ Blockly.Arduino['Vapor_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinVapor+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinVapor+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinVapor+')';
 
@@ -1229,7 +1229,7 @@ Blockly.Arduino['Water_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinWater+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinWater+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinWater+')';
 
@@ -1270,7 +1270,7 @@ Blockly.Arduino['Moisture_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinMoisture+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinMoisture+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinMoisture+')';
 
