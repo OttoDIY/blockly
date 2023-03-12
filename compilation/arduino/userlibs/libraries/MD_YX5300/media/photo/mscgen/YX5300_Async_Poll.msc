@@ -1,0 +1,24 @@
+msc
+{
+  Host,Library,YX5300;
+  
+  Host=>Library [label="method call"];
+  Library->YX5300 [label=request];
+  Host<<Library [label="method return"];
+  ...;
+  Library<-YX5300 [label=ack];
+  ...;
+  Host=>Library [label="check()"];
+  Host<<Library [label="return true"];
+  Host=>Library [label="getStatus()"];
+  Host<<Library [label="return cbData"];
+  --- [label="data message if required"];
+  ...;
+  Library<-YX5300 [label="data message"];
+  Library->YX5300 [label=ack];
+  ...;
+  Host=>Library [label="check()"];
+  Host<<Library [label="return true"];
+  Host=>Library [label="getStatus()"];
+  Host<<Library [label="return cbData"];
+}

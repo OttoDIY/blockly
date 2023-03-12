@@ -1,0 +1,11 @@
+msc
+{
+  Host,Library,YX5300;
+  
+  Host=>Library [label="method call"];
+  Library->YX5300 [label=request];
+  Host<<Library [label="method return"];
+  ...;
+  Library<-YX5300 [label=ack];
+  Host<<=Library [label="status (callback or polled)"];
+}

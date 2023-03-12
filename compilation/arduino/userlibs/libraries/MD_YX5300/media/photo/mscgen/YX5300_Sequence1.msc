@@ -1,0 +1,6 @@
+msc 
+{
+   Host,YX5300;
+   Host->YX5300 [label=request];
+   Host<-YX5300 [label=ack];
+}

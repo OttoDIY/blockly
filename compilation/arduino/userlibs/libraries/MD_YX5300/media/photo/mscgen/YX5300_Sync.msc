@@ -1,0 +1,9 @@
+msc
+{
+  Host,Library,YX5300;
+  
+  Host=>Library [label="method call"];
+  Library->YX5300 [label=request];
+  Library<-YX5300 [label=ack];
+  Host<<Library [label="method return"];
+}

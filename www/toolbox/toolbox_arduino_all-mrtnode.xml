@@ -438,17 +438,19 @@
 			<block type="nfc_detected"></block>
 			<block type="nfc_card_readed"></block>
 			<block type="nfc_check_card"></block>
-	<!--	<block type="rfid_init">
-		    <field name="PIN_SDA">D5</field>
-			<field name="PIN_RST">D4</field>
+		<block type="rfid_init_custom">
+			<field name="PIN_MISO">33</field>
+			<field name="PIN_MOSI">23</field>
+			<field name="PIN_SCK">25</field>
+		    <field name="PIN_SDA">26</field>
+			<field name="PIN_RST">27</field>
 			</block>
-			<block type="rfid_validationcard"></block>
+		<block type="rfid_validationcard"></block>
 			<block type="RFID_detected"></block>
 			<block type="RFID_readed"></block>
 			<block type="RFID_card_readed"></block>
 			<block type="RFID_check_card"></block>
 			<block type="rfid_stopread"></block>
-	 -->
 		</category>
 	<category name="CAT_HMC5883" colour="#54BCF7">
 		<block type="Init_Compass_HMC5883"></block>
@@ -832,10 +834,12 @@
 -->
 
 	<category name="CAT_TFT_ST7735" colour="#B655F5">
-			 <block type="st7735_init">
-			   	<field name="PIN_CS">23</field>
-				<field name="PIN_DC">25</field>
-				<field name="PIN_RST">26</field>
+			 <block type="st7735_init_esp32">
+				<field name="PIN_SCL">23</field>
+				<field name="PIN_SDA">25</field>
+			   	<field name="PIN_CS">26</field>
+				<field name="PIN_DC">27</field>
+				<field name="PIN_RST">32</field>
 			 </block>
 			 <block type="st7735_icon"></block>
 			<block type="st7735_backgroundcolor"></block>
@@ -942,7 +946,7 @@
 			<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value></block>-->
 		</category>
 
-		<category name="CAT_DFPLAYER" colour="#FF63BB">
+	<!--	<category name="CAT_DFPLAYER" colour="#FF63BB">
 			<block type="lp2i_mp3_init">
 				<field name="PIN_TX">4</field>
 				<field name="PIN_RX">5</field>
@@ -979,8 +983,38 @@
 			<block type="OpenSmartMp3_injectindex">
 			 <value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
 			</block>
+		</category> -->
+		
+		<category name="CAT_YX5300" colour="#FF63BB">
+			<block type="YX5300Mp3_init_esp32">
+			  <field name="PIN1">5</field>
+			  <field name="PIN2">4</field>
+			</block>
+			<block type="YX5300Mp3_set_equalizator"></block>
+			<block type="YX5300Mp3_set_volumen">
+				<value name="Volumen"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
+			</block>
+			<block type="YX5300Mp3_running"></block>
+			<block type="YX5300Mp3_operation"></block>
+			<block type="YX5300Mp3_playsong">
+				<value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="YX5300Mp3_playsongdirectiry">
+				<value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+				<value name="Directory"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="YX5300Mp3_playTrackRepeat">
+				<value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="YX5300Mp3_playfolderrepeat">
+				<value name="Folder"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
+			</block>
+			<block type="YX5300Mp3_playFolderShuffle">
+				<value name="Folder"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+			</block>
 		</category>
-
+		
+		
 		<category name="CAT_RADIO_TEA5767" colour="#FF63BB">
 			<block type="RadioTEA5767_init"></block>
 		 	<block type="RadioTEA5767_activate"></block>
@@ -1024,14 +1058,14 @@
 			</block>
 		</category>
 
-		<category name="CAT_ARDUINO_COMM_SOFTSERIAL" colour="#0060aa">
+	<!--	<category name="CAT_ARDUINO_COMM_SOFTSERIAL" colour="#0060aa"> -->
 		<!--<block type="soft_init2"></block>
 			<block type="soft_write"><value name="CONTENT">	<shadow type="text"><field name="TEXT">Hi Otto</field>	</shadow></value></block>
 			<block type="soft_available"></block>
 			<block type="soft_read"></block>
 			<block type="serial_line"></block>
 			<block type="serial_tab"></block> -->
-			<block type="soft_init">
+		<!--	<block type="soft_init">
 				<field name="PIN_TX">4</field>
 				<field name="PIN_RX">5</field>
 			</block>
@@ -1048,7 +1082,7 @@
 			</block>
 			<block type="soft_write" x="38" y="38"><value name="CONTENT"><shadow type="text"><field name="TEXT">A</field></shadow></value>
 			</block>
-		</category>
+		</category> -->
 
 	    <category name="CAT_bluetooth" colour="#0060aa">
 			<!--<block type="soft_bt_init"><field name="PIN_TX">D2</field>

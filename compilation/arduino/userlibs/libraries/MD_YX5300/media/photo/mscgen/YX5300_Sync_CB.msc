@@ -1,0 +1,17 @@
+msc
+{
+  Host,Library,YX5300;
+  
+  Host=>Library [label="method call"];
+  Library->YX5300 [label=request];
+  Library<-YX5300 [label=ack];
+  Host<<Library [label="method return"];
+  --- [label="data message if required"];
+  ...;
+  Library<-YX5300 [label="data message"];
+  Library->YX5300 [label=ack];
+  ...;
+  Host=>Library [label="check()"];
+  Host<<Library [label="callback cbData"];
+  Host<<Library [label="check() return true"];
+}

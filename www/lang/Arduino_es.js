@@ -93,6 +93,7 @@ Blockly.Msg.CAT_DFRobot_SHIELD_LCDKEYPAD = "📟 LCD Grove";
 Blockly.Msg.CAT_AUDIO = "🔉 Audio";
 Blockly.Msg.CAT_DFPLAYER = "🔊 MP3 DFMini";
 Blockly.Msg.CAT_OPENSMART = "🔊 MP3 OpenSmart";
+Blockly.Msg.CAT_YX5300 = "🔊 MP3 YX5300";
 Blockly.Msg.CAT_RADIO_TEA5767="📻 Radio";
 Blockly.Msg.CAT_CAMERAS = "📷 Cámaras";
 Blockly.Msg.CAT_MUVISION = "👁️ MuVision";
@@ -779,6 +780,21 @@ Blockly.Msg.MP3OS_check = "Check mp3.Need to be executed in main loop";
 Blockly.Msg.MP3OS_playsong = "Play track number";
 Blockly.Msg.MP3OS_playsongdirectory = "in folder number";
 Blockly.Msg.MP3OS_inject="Inject track number";
+
+//YK5300 MP3
+Blockly.Msg.MP3YK_name = "Mp3 YX5300";
+Blockly.Msg.MP3YK_init = "Inicializar Mp3 YX5300.";
+Blockly.Msg.MP3YK_TX="Pin TX#";
+Blockly.Msg.MP3YK_RX="Pin RX#";
+Blockly.Msg.MP3YK_equalizer = "Equalizador";
+Blockly.Msg.MP3YK_volumen = "Volumen(0-30)";
+Blockly.Msg.MP3YK_operation = "Operacion:";
+Blockly.Msg.MP3YK_check = "Loop.";
+Blockly.Msg.MP3YK_playsong = "Ejecutar pista numero";
+Blockly.Msg.MP3YK_playsongdirectory = "en numero de carpeta";
+Blockly.Msg.MP3YK_folderrepeat = "Ejecutar repetidamente carpeta";
+Blockly.Msg.MP3YK_songrepeat = "Ejecutar repetidamente pista";
+Blockly.Msg.MP3YK_foldershuffle = "Ejecutar todo(1-aleatorio 0-nada)";
 
 
 //Mu Vision
