@@ -464,7 +464,7 @@
 		</category>
 
 	<category name="CAT_GPS" colour="#54BCF7">
-		 <block type="GPS_init_ss">
+		 <block type="GPS_init_esp32">
 			<field name="PIN_TX">4</field>
 			<field name="PIN_RX">5</field>
 		 </block>
@@ -994,7 +994,7 @@
 			<block type="YX5300Mp3_set_volumen">
 				<value name="Volumen"><shadow type="math_number"><field name="NUM">20</field></shadow></value>
 			</block>
-			<block type="YX5300Mp3_running"></block>
+			<!--<block type="YX5300Mp3_running"></block>-->
 			<block type="YX5300Mp3_operation"></block>
 			<block type="YX5300Mp3_playsong">
 				<value name="Song"><shadow type="math_number"><field name="NUM">1</field></shadow></value>
