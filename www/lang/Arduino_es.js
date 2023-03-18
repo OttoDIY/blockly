@@ -1030,6 +1030,9 @@ Blockly.Msg.RFID_READED = "¿Tarjeta RFIS leida?";
 Blockly.Msg.RFID_CARD_READED = "Valor de la tarjeta leida";
 Blockly.Msg.RFID_CHECK_CARD = "¿Es la tarjeta leida igual a la de validación";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+Blockly.Msg.RFID_PIN_SCK = "SCK";
+Blockly.Msg.RFID_PIN_MISO = "MISO";
+Blockly.Msg.RFID_PIN_MOSI = "MOSI";
 
 //NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";

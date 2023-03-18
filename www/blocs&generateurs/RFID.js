@@ -239,15 +239,14 @@ Blockly.Blocks['rfid_init_custom'] = {
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/RFIDreader.png",33,33))
         .appendField(Blockly.Msg.RFID_init)
-		.appendField(Blockly.Msg.RFID_init2);
 	this.appendDummyInput()
-		.appendField(Blockly.Msg.RFID_PIN_RST)
+		.appendField(Blockly.Msg.RFID_PIN_MISO)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_MISO");
 	this.appendDummyInput()
-		.appendField(Blockly.Msg.RFID_PIN_RST)
+		.appendField(Blockly.Msg.RFID_PIN_MOSI)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_MOSI");
 	this.appendDummyInput()
-		.appendField(Blockly.Msg.RFID_PIN_RST)
+		.appendField(Blockly.Msg.RFID_PIN_SCK)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SCK");
 	this.appendDummyInput()
 		.appendField(Blockly.Msg.RFID_PIN_SDA)

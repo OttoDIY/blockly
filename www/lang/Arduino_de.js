@@ -1403,6 +1403,9 @@ Blockly.Msg.RFID_READED = "Ist RFID-Karte eingelesen?";
 Blockly.Msg.RFID_CARD_READED = "Wert der eingelesenen Karte";
 Blockly.Msg.RFID_CHECK_CARD = "Ist die gelesene RFID-Karte gleich der Validierungskarte";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+Blockly.Msg.RFID_PIN_SCK = "SCK";
+Blockly.Msg.RFID_PIN_MISO = "MISO";
+Blockly.Msg.RFID_PIN_MOSI = "MOSI";
 
 //NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";
