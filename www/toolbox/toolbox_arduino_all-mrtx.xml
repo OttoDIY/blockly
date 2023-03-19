@@ -337,7 +337,7 @@
 		 <block type="MRTX_button"></block>
 		 <block type="potentiometer_ranger_sensor2"></block>
 		 <block type="Joystick_axis_sensor2"></block>
-		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK">A0</field></block>
+		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK2">A0</field></block>
 
 
 

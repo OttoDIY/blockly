@@ -310,7 +310,7 @@
 		 <block type="touch_internal_esp32"><field name="PIN_TOUCH">T9</field></block>
 		 <block type="potentiometer_ranger_sensor2"><field name="PIN_POTENTIOMETER">33</field></block>
 		 <block type="Joystick_axis_sensor2"><field name="PIN_JOYSTICK">33</field></block>
-		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK">33</field></block>
+		 <block type="joystick_button_sensor2"><field name="PIN_JOYSTICK2">35</field></block>
 		 <block type="Init_RotaryEncoderInterrupt">
 			 <field name="PINDT">33</field>
 			 <field name="PINCLK">34</field>
