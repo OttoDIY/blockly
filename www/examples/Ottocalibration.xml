@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="Q)pa6%kQX/l;F0=Y5$B6" x="-271" y="140">
     <statement name="DO">
-      <block type="otto9_configuration" id="@42-xV+AdobI.37wV^bH">
+      <block type="otto_configuration" id="@42-xV+AdobI.37wV^bH">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">3</field>
         <field name="PIN_RL">4</field>

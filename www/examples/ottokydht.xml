@@ -20,7 +20,7 @@
                   </shadow>
                 </value>
                 <next>
-                  <block type="otto9_configuration" id="oBrte=@YC`#Iv$V32.g(">
+                  <block type="otto_configuration" id="oBrte=@YC`#Iv$V32.g(">
                     <field name="PIN_YL">23</field>
                     <field name="PIN_YR">26</field>
                     <field name="PIN_RL">25</field>

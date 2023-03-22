@@ -34,7 +34,7 @@
   </block>
   <block type="base_define" id=")Fe?)j(=5c+I3F1^)/-m" x="-227" y="-1041">
     <statement name="DO">
-      <block type="otto9_configuration" id="n/#0};jB(-RZ`K6S4j4n">
+      <block type="otto_configuration" id="n/#0};jB(-RZ`K6S4j4n">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">2</field>
         <field name="PIN_RL">2</field>

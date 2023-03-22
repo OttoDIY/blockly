@@ -2,13 +2,13 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="IHiBj]IRq5c5_#FSz)(g" x="-344" y="-136">
     <statement name="DO">
-      <block type="otto9_matrix_init" id="nNa`*Ls`{;XI]a7Zit+K">
+      <block type="mouth_init" id="nNa`*Ls`{;XI]a7Zit+K">
         <field name="PIN_CLK">A1</field>
         <field name="PIN_CS">A2</field>
         <field name="PIN_DIN">A3</field>
         <field name="Orientation">0</field>
         <next>
-          <block type="otto9_matrix_text" id="X+`W-ymC1:fdM2i#?3g)">
+          <block type="mouth_text" id="X+`W-ymC1:fdM2i#?3g)">
             <field name="input">WASH HANDS</field>
             <next>
               <block type="variables_set_init" id="|jX,tmVK/r5(5Phm9d,Q">
@@ -37,7 +37,7 @@
       </block>
     </statement>
     <statement name="LOOP">
-      <block type="otto9_matrix8x8" id="ap`)-!s?Woi7=iO@l!-@">
+      <block type="mouth_matrix8x8" id="ap`)-!s?Woi7=iO@l!-@">
         <field name="Pixel0">TRUE</field>
         <field name="Pixel8">TRUE</field>
         <field name="Pixel16">TRUE</field>
@@ -129,7 +129,7 @@
               </block>
             </value>
             <statement name="DO0">
-              <block type="otto9_matrix8x8" id="~K:S]9ox{XX-Do#^#7}p">
+              <block type="mouth_matrix8x8" id="~K:S]9ox{XX-Do#^#7}p">
                 <field name="Pixel0">TRUE</field>
                 <field name="Pixel8">TRUE</field>
                 <field name="Pixel16">TRUE</field>
@@ -231,7 +231,7 @@
                           </block>
                         </value>
                         <statement name="DO">
-                          <block type="otto9_matrixp" id="QpJ-#wP]JN{g)2C.90~h">
+                          <block type="mouthp" id="QpJ-#wP]JN{g)2C.90~h">
                             <field name="draw">FALSE</field>
                             <value name="X">
                               <shadow type="math_number" id="@^2[lA3/Oy*Y4B.;5^`q">
@@ -264,8 +264,8 @@
                       </block>
                     </statement>
                     <next>
-                      <block type="otto9_mouth" id=":8,Mb4s.PY2~9Mnn;}`.">
-                        <field name="otto9_mouth_choice">heart</field>
+                      <block type="mouth_face" id=":8,Mb4s.PY2~9Mnn;}`.">
+                        <field name="mouth_face_choice">heart</field>
                         <next>
                           <block type="base_delay" id="C-0E6:?H]_N/dX:GxT6g">
                             <field name="unite">m</field>
@@ -284,8 +284,8 @@
                                   </shadow>
                                 </value>
                                 <next>
-                                  <block type="otto9_mouth" id="#Y1)mLb_]]1r?{dV4F*g">
-                                    <field name="otto9_mouth_choice">happyOpen</field>
+                                  <block type="mouth_face" id="#Y1)mLb_]]1r?{dV4F*g">
+                                    <field name="mouth_face_choice">happyOpen</field>
                                     <next>
                                       <block type="base_delay" id="]hys8Xd?AfGfv-;h3Js2">
                                         <field name="unite">m</field>

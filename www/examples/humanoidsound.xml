@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id=";`].C/FY|tnZ7qx![U}S" x="39" y="54">
     <statement name="DO">
-      <block type="otto9_configuration" id="SDnLG!2nYkV1e*=?V~0P">
+      <block type="otto_configuration" id="SDnLG!2nYkV1e*=?V~0P">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">3</field>
         <field name="PIN_RL">4</field>
@@ -13,7 +13,7 @@
             <field name="PIN_AL">6</field>
             <field name="PIN_AR">7</field>
             <next>
-              <block type="otto9_matrix_init" id=".p7Q:*OReSVF.Y%wwKKv">
+              <block type="mouth_init" id=".p7Q:*OReSVF.Y%wwKKv">
                 <field name="PIN_CLK">A1</field>
                 <field name="PIN_CS">A2</field>
                 <field name="PIN_DIN">A3</field>
@@ -67,8 +67,8 @@
               <block type="otto_arms" id="hI4bS**pfaV]GFu@YDrH">
                 <field name="otto_arms_choice">HANDSDOWN</field>
                 <next>
-                  <block type="otto9_mouth" id="(kcN3Y)9~+rrM!1NaFEW">
-                    <field name="otto9_mouth_choice">lineMouth</field>
+                  <block type="mouth_face" id="(kcN3Y)9~+rrM!1NaFEW">
+                    <field name="mouth_face_choice">lineMouth</field>
                   </block>
                 </next>
               </block>

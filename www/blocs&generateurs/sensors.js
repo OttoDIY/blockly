@@ -195,7 +195,7 @@ Blockly.Arduino['ultrasonic_sensor'] = function(block) {
 
 if ((PIN_TRIG=="4") && (PIN_ECHO=="5"))
 	{
-	   Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
+	   Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_simple() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(100);\n'+
@@ -209,7 +209,7 @@ if ((PIN_TRIG=="4") && (PIN_ECHO=="5"))
 	}
 	else
 	{
-		Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_'+us_number+'() {\n'+
+		Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_simple() {\n'+
         '   long duration, distance;\n'+
         '   digitalWrite('+PIN_TRIG+',LOW);\n'+
         '   delayMicroseconds(2);\n'+
@@ -241,10 +241,85 @@ Blockly.Arduino["ultrasonic_distance"]=function(block){
   var code;
   var us_number = this.getFieldValue('US_NUMBER');
 
-  code = 'ultrasound_distance_'+us_number+'()';
+  code = 'ultrasound_distance_simple()';
 return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+
+
+
+
+Blockly.Blocks['ultrasonic_sensor2'] = {  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#54BCF7");
+    this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
+		.appendField(Blockly.Msg.ultrasonic_ranger)
+        .appendField(Blockly.Msg.TRIG)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
+	this.appendDummyInput()	.appendField(Blockly.Msg.Echo)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
+	this.setInputsInline(true);
+	this.setPreviousStatement(true, null);
+	this.setNextStatement(true, null);
+    this.setHelpUrl(Blockly.Msg.HELPURL);
+    this.setTooltip(Blockly.Msg.ultrason_tooltip);
+  }
+};
+Blockly.Arduino['ultrasonic_sensor2'] = function(block) {
+	var PIN_TRIG = block.getFieldValue('PIN_TRIG');
+	var PIN_ECHO = block.getFieldValue('PIN_ECHO');
+
+    Blockly.Arduino.setups_['setup_output_'+PIN_TRIG] = 'pinMode('+PIN_TRIG+', OUTPUT);';
+    Blockly.Arduino.setups_['setup_input_'+PIN_ECHO] = 'pinMode('+PIN_ECHO+', INPUT);';
+
+
+if ((PIN_TRIG=="4") && (PIN_ECHO=="5"))
+	{
+	   Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_simple() {\n'+
+        '   long duration, distance;\n'+
+        '   digitalWrite('+PIN_TRIG+',LOW);\n'+
+        '   delayMicroseconds(100);\n'+
+        '   digitalWrite('+PIN_TRIG+', HIGH);\n'+
+        '   delayMicroseconds(100);\n'+
+        '   digitalWrite('+PIN_TRIG+', LOW);\n'+
+        '   duration = pulseIn('+ PIN_ECHO +', HIGH);\n'+
+        '   distance = duration/55;\n'+
+        '   return distance;\n'+
+        '}\n';
+	}
+	else
+	{
+		Blockly.Arduino.definitions_['var_ultrasonic'+PIN_TRIG] = 'long ultrasound_distance_simple() {\n'+
+        '   long duration, distance;\n'+
+        '   digitalWrite('+PIN_TRIG+',LOW);\n'+
+        '   delayMicroseconds(2);\n'+
+        '   digitalWrite('+PIN_TRIG+', HIGH);\n'+
+        '   delayMicroseconds(10);\n'+
+        '   digitalWrite('+PIN_TRIG+', LOW);\n'+
+        '   duration = pulseIn('+ PIN_ECHO +', HIGH);\n'+
+        '   distance = duration/58;\n'+
+        '   return distance;\n'+
+        '}\n';
+	}
+
+	 var code = '';
+	 return code;
+};
+
+Blockly.Blocks["ultrasonic_distance2"]={init:function(){
+  this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",25,15))
+	.appendField(Blockly.Msg.ultrason_distance1);
+  this.setColour("#54BCF7");
+  this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
+  this.setInputsInline(false);
+  this.setOutput(true, "Number");
+  this.setTooltip(Blockly.Msg.ultrason_distance2)}
+};
+Blockly.Arduino["ultrasonic_distance2"]=function(block){
+  var code;
+  code = 'ultrasound_distance_simple()';
+return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
 Blockly.Blocks['Analog_temperature_sensor2'] = {
   helpUrl: '',

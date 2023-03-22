@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="]P0s9b#A!aPI-Z_[_HpV" x="-4" y="48">
     <statement name="DO">
-      <block type="otto9_configuration" id="S}Y!064zrdNm#nCResQh">
+      <block type="otto_configuration" id="S}Y!064zrdNm#nCResQh">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">3</field>
         <field name="PIN_RL">4</field>
@@ -13,13 +13,13 @@
             <field name="PIN_AL">6</field>
             <field name="PIN_AR">7</field>
             <next>
-              <block type="otto9_matrix_init" id="0QkUvf9zU331`fE`|+G6">
+              <block type="mouth_init" id="0QkUvf9zU331`fE`|+G6">
                 <field name="PIN_CLK">A1</field>
                 <field name="PIN_CS">A2</field>
                 <field name="PIN_DIN">A3</field>
                 <field name="Orientation">0</field>
                 <next>
-                  <block type="otto9_matrix_text" id="2hR]EE;cCT$n~$%3@dRn">
+                  <block type="mouth_text" id="2hR]EE;cCT$n~$%3@dRn">
                     <field name="input">I AM OTTO</field>
                     <next>
                       <block type="otto_gesture" id=";18Tm2u.$YZJSW8`{Qa#">
@@ -57,8 +57,8 @@
                       <block type="otto_arms" id="LFuH?;[^.BJ!.MVR|Mxs">
                         <field name="otto_arms_choice">HANDSDOWN</field>
                         <next>
-                          <block type="otto9_mouth" id="8g]H@2WM4PY|zr/?-nR~">
-                            <field name="otto9_mouth_choice">tongueOut</field>
+                          <block type="mouth_face" id="8g]H@2WM4PY|zr/?-nR~">
+                            <field name="mouth_face_choice">tongueOut</field>
                             <next>
                               <block type="otto_dance" id="?lYh9!tYgx@-4XnWKV/6">
                                 <field name="otto_dance_movement">crusaitoLEFT</field>
@@ -68,8 +68,8 @@
                                   <block type="otto_arms" id="^n,_vG!ap6GdYB.TUVEM">
                                     <field name="otto_arms_choice">HANDWAVE1</field>
                                     <next>
-                                      <block type="otto9_mouth" id="!c,_~Tr8ak)8*8ZFO3P8">
-                                        <field name="otto9_mouth_choice">bigSurprise</field>
+                                      <block type="mouth_face" id="!c,_~Tr8ak)8*8ZFO3P8">
+                                        <field name="mouth_face_choice">bigSurprise</field>
                                         <next>
                                           <block type="otto_dance" id="_@-`z-$xz;s*_C3f%uPo">
                                             <field name="otto_dance_movement">crusaitoRIGHT</field>
@@ -79,8 +79,8 @@
                                               <block type="otto_arms" id="mkhdvG6zh`Z/i@v-`(7O">
                                                 <field name="otto_arms_choice">HANDWAVE2</field>
                                                 <next>
-                                                  <block type="otto9_mouth" id="PN%glF@r]aX[D~).d49m">
-                                                    <field name="otto9_mouth_choice">smallSurprise</field>
+                                                  <block type="mouth_face" id="PN%glF@r]aX[D~).d49m">
+                                                    <field name="mouth_face_choice">smallSurprise</field>
                                                   </block>
                                                 </next>
                                               </block>

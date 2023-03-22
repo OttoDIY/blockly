@@ -7,28 +7,28 @@ Blockly.Msg.com2 = "⚠️ select USB port please" ;
 Blockly.Msg.check = "checking...";
 Blockly.Msg.upload = "uploading...";
 Blockly.Msg.error = "🛑 ERROR blocks NOT connected";
-Blockly.Msg.verif = "⛔ check the code first "
+Blockly.Msg.verif = "⛔ check code first "
 Blockly.Msg.save = "save as format";
 Blockly.Msg.update = "update";
 Blockly.Msg.new_update = "new version available, do you want to download and update now?";
 Blockly.Msg.yes = "yes";
 Blockly.Msg.no = "no";
-Blockly.Msg.uptodate = "✅ version is up to date!" ;
+Blockly.Msg.uptodate = "✅ your version is up to date!" ;
 Blockly.Msg.download = "download completed, the application will install and restart ..."
 // common to all blocks
 Blockly.Msg.HELPURL = "https://ottodiy.com"; // do not translate
+Blockly.Msg.high = "HIGH"; // do not translate
+Blockly.Msg.low = "LOW"; // do not translate
+Blockly.Msg.values = "↺0-90 | ↻90-180"; // do not translate
 Blockly.Msg.pin = "PIN";
 Blockly.Msg._AT = "to";
 Blockly.Msg.AV = "forward";
 Blockly.Msg.AR = "backward";
-Blockly.Msg.high = "HIGH"; // do not translate
-Blockly.Msg.low = "LOW"; // do not translate
 Blockly.Msg.right = "right";
 Blockly.Msg.left = "left";
 Blockly.Msg.LetR = "right & left";
 Blockly.Msg.direction = "direction";
 Blockly.Msg.vitesse = "speed";
-Blockly.Msg.values = "↺0-90 | ↻90-180";
 Blockly.Msg.Name = "name";
 Blockly.Msg.CAT_numerique = " digital";
 Blockly.Msg.CAT_analogique = " analog";
@@ -41,8 +41,8 @@ Blockly.Msg.CAT_TEXT = "🔤 Text";
 Blockly.Msg.CAT_VARIABLES = "🔀 Variables";
 Blockly.Msg.CAT_FUNCTIONS = "🔣 Functions";
 Blockly.Msg.CAT_ARDUINO = "🔄 Structure";
-Blockly.Msg.CAT_ARDUINO_IN = "🔛 Input / Output";
-Blockly.Msg.CAT_ARDUINO_OUT = "↪️ Exit";
+Blockly.Msg.CAT_ARDUINO_IN = "♾️ Arduino";
+Blockly.Msg.CAT_ARDUINO_OUT = "🔛 In / Out";
 Blockly.Msg.CAT_ARDUINO_TIME = "⏱️ Timing";
 Blockly.Msg.CAT_OTTO = "🤖 Robot";
 Blockly.Msg.CAT_OTTO_LEGS = "🦿 Legs";
@@ -231,7 +231,7 @@ Blockly.Msg.JOYSTICK_NAME="joystick axis";
 Blockly.Msg.JOYSTICK_BUTTON="joystick button";
 Blockly.Msg.JOYSTICK_PRESSED="pressed";
 Blockly.Msg.ultrasonic_ranger="ultrasonic";
-Blockly.Msg.ultrason_distance1 = "distance (cm)";
+Blockly.Msg.ultrason_distance1 = "distance";
 Blockly.Msg.ultrason_tooltip = "HC-SR04: \nUltrasonic sensor ranger to make distance measurements (between 3cm and 400cm)\nindicate the pins of the Arduino to which will be connected TRIG and ECHO";
 Blockly.Msg.ultrason_distance2 = "HC-SR04: \nreturns the distance measured in cm by the ultrasonic detector";
 Blockly.Msg.unit="unit";
@@ -676,6 +676,21 @@ Blockly.Msg.MP3OS_playsong = "play track #";
 Blockly.Msg.MP3OS_playsongdirectory = "folder #";
 Blockly.Msg.MP3OS_inject="inject track number";
 
+//YK5300 MP3
+Blockly.Msg.MP3YK_name = "Mp3 YX5300";
+Blockly.Msg.MP3YK_init = "Init Mp3 YX5300.";
+Blockly.Msg.MP3YK_TX="Pin TX#";
+Blockly.Msg.MP3YK_RX="Pin RX#";
+Blockly.Msg.MP3YK_equalizer = "Set equalizer";
+Blockly.Msg.MP3YK_volumen = "Set volumen(0-30)";
+Blockly.Msg.MP3YK_operation = "Operation:";
+Blockly.Msg.MP3YK_check = "Check mp3.Need to be executed in main loop";
+Blockly.Msg.MP3YK_playsong = "Play track number";
+Blockly.Msg.MP3YK_playsongdirectory = "in folder number";
+Blockly.Msg.MP3YK_folderrepeat = "Play Folder repeat number";
+Blockly.Msg.MP3YK_songrepeat = "Play Track repeat number";
+Blockly.Msg.MP3YK_foldershuffle = "Play all files (1-random 0-none)";
+
 //Mu Vision
 /*Help*/
 Blockly.LKL_VS2_HELP_INIT = "initialize MU vision sensor, and choose the port.";
@@ -906,6 +921,9 @@ Blockly.Msg.RFID_READED = "card read?";
 Blockly.Msg.RFID_CARD_READED = "read value";
 Blockly.Msg.RFID_CHECK_CARD = "is card read = validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+Blockly.Msg.RFID_PIN_SCK = "SCK";
+Blockly.Msg.RFID_PIN_MISO = "MISO";
+Blockly.Msg.RFID_PIN_MOSI = "MOSI";
 
 //NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";
@@ -963,6 +981,7 @@ Blockly.Msg.M1637_fill = "leading zeros";
 Blockly.Msg.M1637_digitsegment="set segment array digit(0-3)";
 Blockly.Msg.M1637_value="value";
 Blockly.Msg.M1637_arraysegment="display segment array.";
+Blockly.Msg.M1637_points = "Points";
 
 //MOTOR MRT
 Blockly.Msg.MOTOR_Connector="motor";
