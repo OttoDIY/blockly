@@ -217,3 +217,48 @@ Blockly.Arduino['GPS_datetime'] = function(block) {
    return [code, Blockly.Arduino.ORDER_ATOMIC];
 
 };
+
+
+Blockly.Blocks['GPS_init_esp32'] = {
+  helpUrl: '',
+  init: function() {
+	 var card=window.localStorage.card;
+	this.setColour("#54BCF7");
+	this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/GPS.png",33,33))
+        .appendField(Blockly.Msg.GPS_init)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.GPS_TX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_TX");
+    this.appendDummyInput()
+		.appendField(Blockly.Msg.GPS_RX)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_RX");
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init the GPS module');
+  }
+};
+
+Blockly.Arduino['GPS_init_esp32'] = function(block) {
+
+ var pin_rx = this.getFieldValue('PIN_RX');
+ var pin_tx = this.getFieldValue('PIN_TX');
+
+ 
+ Blockly.Arduino.includes_['define_gps_library'] = '#include <TinyGPSPlus.h>';
+ 
+ Blockly.Arduino.definitions_['define_GPS_variable'] = 'TinyGPSPlus gps;\n';
+ Blockly.Arduino.definitions_['GPS_serial2'] = 'HardwareSerial &mySoftwareSerialgps=Serial2;\n';
+ Blockly.Arduino.definitions_['gps_variables'] ='float flat,flon,falt,fc,fk,fmph,fmps,fkmph;\n'+
+'int year;\n'+
+'byte month, day, hour, minutes, second, hundredths,nsat;\n'+
+'unsigned long fix_age; \n';
+
+ Blockly.Arduino.setups_['setup_sserial_gps_baudios'] = 'mySoftwareSerialgps.begin(9600, SERIAL_8N1,'+pin_tx+','+pin_rx+');\n';
+
+
+  var code='';
+  return code;
+
+};

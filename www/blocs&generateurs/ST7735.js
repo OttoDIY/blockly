@@ -674,3 +674,61 @@ Blockly.Arduino['st7735_drawicon'] = function(block) {
 
   return code;
 };
+
+
+Blockly.Blocks['st7735_init_esp32'] = {
+   init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#B655F5");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/tft7735.png",53,38))
+        .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.ST7735_init)
+		.appendField(Blockly.Msg.ST7735_init2);
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_PIN_SCL)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SCL");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_PIN_SDA)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SDA");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_PIN_CS)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_CS");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_PIN_DC)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_DC");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_PIN_RST)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RST");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg.ST7735_WRAP)
+		.appendField(new Blockly.FieldDropdown([["1.8\" Black Tab", "INITR_BLACKTAB"], ["1.8\" Green Tab ", "INITR_GREENTAB"],["1.8\"  Red Tab", "INITR_REDTAB"],["0.96\" Mini TFT","INITR_MINI160x80"]]), "WRAP")
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Init the TFT ST7735.Important note:  the Led pin must be connected to 3.3V!!');
+    this.setHelpUrl('');
+  }
+};
+
+
+Blockly.Arduino['st7735_init_esp32'] = function(block) {
+
+   var pin_SCL = this.getFieldValue('PIN_SCL');
+   var pin_SDA = this.getFieldValue('PIN_SDA');
+   var pin_RST = this.getFieldValue('PIN_RST');
+   var pin_CS = this.getFieldValue('PIN_CS');
+   var pin_DC = this.getFieldValue('PIN_DC');
+
+   var wrap = block.getFieldValue('WRAP');
+
+   Blockly.Arduino.includes_['define_spi'] = '#include <SPI.h>\n';
+   Blockly.Arduino.includes_['define_Adafruit_GFX'] = '#include <Adafruit_GFX.h>\n';
+   Blockly.Arduino.includes_['define_Adafruit_ST7735'] = '#include <Adafruit_ST7735.h>\n';
+
+   Blockly.Arduino.definitions_['define_st7735'] = 'Adafruit_ST7735 tft1=Adafruit_ST7735('+pin_CS+','+pin_DC+','+pin_SDA+','+pin_SCL+','+pin_RST+');\n';
+
+   Blockly.Arduino.setups_['setup_st7735']='tft1.initR('+wrap+');\n'
+
+  var code = '';
+  return code;
+};

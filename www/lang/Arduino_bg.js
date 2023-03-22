@@ -89,6 +89,7 @@ Blockly.Msg.CAT_BUZZER="🎼 Buzzer";
 Blockly.Msg.CAT_AUDIO = "🔉 Аудио Звук";
 Blockly.Msg.CAT_DFPLAYER = "🔊 MP3 DFMini";
 Blockly.Msg.CAT_OPENSMART = "🔊 MP3 OpenSmart";
+Blockly.Msg.CAT_YX5300 = "🔊 MP3 YX5300";
 Blockly.Msg.CAT_RADIO_TEA5767="📻 Радио";
 Blockly.Msg.CAT_CAMERAS = "📷 Камери";
 Blockly.Msg.CAT_MUVISION = "👁️ MuVision";
@@ -129,6 +130,7 @@ Blockly.Msg.M1637_fill = "Leading zeros";
 Blockly.Msg.M1637_digitsegment="Set segment array digit(0-3)";
 Blockly.Msg.M1637_value="Value";
 Blockly.Msg.M1637_arraysegment="Display segment array.";
+Blockly.Msg.M1637_points = "Points";
 
 //RTC DS3231
 Blockly.Msg.RTCDS3231_NAME="RTC Pins I²C";
@@ -745,6 +747,21 @@ Blockly.Msg.MP3OS_playsong = "Play track #";
 Blockly.Msg.MP3OS_playsongdirectory = "folder #";
 Blockly.Msg.MP3OS_inject="Inject track number";
 
+//YK5300 MP3
+Blockly.Msg.MP3YK_name = "Mp3 YX5300";
+Blockly.Msg.MP3YK_init = "Init Mp3 YX5300.";
+Blockly.Msg.MP3YK_TX="Pin TX#";
+Blockly.Msg.MP3YK_RX="Pin RX#";
+Blockly.Msg.MP3YK_equalizer = "Set equalizer";
+Blockly.Msg.MP3YK_volumen = "Set volumen(0-30)";
+Blockly.Msg.MP3YK_operation = "Operation:";
+Blockly.Msg.MP3YK_check = "Check mp3.Need to be executed in main loop";
+Blockly.Msg.MP3YK_playsong = "Play track number";
+Blockly.Msg.MP3YK_playsongdirectory = "in folder number";
+Blockly.Msg.MP3YK_folderrepeat = "Play Folder repeat number";
+Blockly.Msg.MP3YK_songrepeat = "Play Track repeat number";
+Blockly.Msg.MP3YK_foldershuffle = "Play all files (1-random 0-none)";
+
 //Mu Vision
 
 /*Help*/
@@ -978,6 +995,10 @@ Blockly.Msg.RFID_READED = "card read?";
 Blockly.Msg.RFID_CARD_READED = "Read Value";
 Blockly.Msg.RFID_CHECK_CARD = "Is card Read = Validation card";
 Blockly.Msg.RFID_CHECK_CARD2 = "?";
+Blockly.Msg.RFID_PIN_SCK = "SCK";
+Blockly.Msg.RFID_PIN_MISO = "MISO";
+Blockly.Msg.RFID_PIN_MOSI = "MOSI";
+
 
 //NFC PN532
 Blockly.Msg.NFC_name = "💳 NFC ";

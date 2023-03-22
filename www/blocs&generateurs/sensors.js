@@ -1225,7 +1225,7 @@ Blockly.Arduino['Vapor_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinVapor+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinVapor+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinVapor+')';
 
@@ -1304,7 +1304,7 @@ Blockly.Arduino['Water_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinWater+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinWater+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinWater+')';
 
@@ -1345,7 +1345,7 @@ Blockly.Arduino['Moisture_sensor2'] = function(block) {
 
     //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
     if(Status=='0')
-      var code = 'map(analogRead('+PinMoisture+'),0,1023,0,100)';
+      var code = 'map(analogRead('+PinMoisture+'),0,1023,100,0)';
     else
       var code = 'analogRead('+PinMoisture+')';
 
@@ -1403,7 +1403,7 @@ Blockly.Blocks['joystick_button_sensor2'] = {
 		.appendField(new Blockly.FieldImage("media/joystick.png",33,33))
 	    .appendField(Blockly.Msg.JOYSTICK_BUTTON)
 	    .appendField(Blockly.Msg.PIN)
-		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_JOYSTICK")
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_JOYSTICK2")
 	this.setOutput(true, 'Boolean');
 	this.setInputsInline(true);
     this.setTooltip('');
@@ -1413,7 +1413,7 @@ Blockly.Blocks['joystick_button_sensor2'] = {
 
 
 Blockly.Arduino['joystick_button_sensor2'] = function(block) {
-  var dropdown_pin = Blockly.Arduino.valueToCode(this, "PIN_JOYSTICK", Blockly.Arduino.ORDER_NONE);
+  var dropdown_pin = block.getFieldValue('PIN_JOYSTICK2');
 
   Blockly.Arduino.setups_['setup_btntouch_'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT_PULLUP);';
 

@@ -230,6 +230,63 @@ var code = 'mfrc522.PICC_HaltA();\n';
 };
 
 
+// INIT FOR ESP32 CUSTOM PINS
+
+Blockly.Blocks['rfid_init_custom'] = {
+   init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#54BCF7");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/RFIDreader.png",33,33))
+        .appendField(Blockly.Msg.RFID_init)
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_MISO)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_MISO");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_MOSI)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_MOSI");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_SCK)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SCK");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_SDA)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_SDA");
+	this.appendDummyInput()
+		.appendField(Blockly.Msg.RFID_PIN_RST)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RST");
+	this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('MFRC522 Important The VCC must be connected to 3.3V!!');
+    this.setHelpUrl('');
+  }
+};
+
+Blockly.Arduino['rfid_init_custom'] = function(block) {
+
+   var pin_MISO = this.getFieldValue('PIN_MISO');
+   var pin_MOSI = this.getFieldValue('PIN_MOSI');
+   var pin_SCK = this.getFieldValue('PIN_SCK');
+   var pin_RST = this.getFieldValue('PIN_RST');
+   var pin_SDA = this.getFieldValue('PIN_SDA');
+
+
+   Blockly.Arduino.includes_['define_spi'] = '#include <SPI.h>';
+   Blockly.Arduino.includes_['define_MRFC522'] = '#include <MFRC522.h>';
+
+   Blockly.Arduino.definitions_['define_mrfc522'] = 'MFRC522 mfrc522('+pin_SDA+','+pin_RST+');\n';
+
+   Blockly.Arduino.setups_['setup_spi']='SPI.begin('+pin_SCK+','+pin_MISO+','+pin_MOSI+','+pin_SDA+');\n'
+   Blockly.Arduino.setups_['setup_mrfc522']='mfrc522.PCD_Init();\n'
+ 
+  var code = '';
+  return code;
+};
+
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////
 // NFC PN532
 //////////////////////////////////////////////////////////////////////////////
@@ -456,3 +513,4 @@ Blockly.Arduino['nfc_check_card'] = function(block) {
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+

@@ -518,7 +518,7 @@ Blockly.Arduino['led_pwm_esp32'] = function(block) {
   return code;
 };
 
-
+/*
 //////////////RGB for ESP32
 Blockly.Blocks['rgb_init_esp32']={init:function() {
 	var card=window.localStorage.card;
@@ -529,7 +529,7 @@ Blockly.Blocks['rgb_init_esp32']={init:function() {
     this.setInputsInline(true);
 	this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.rvb_init_tooltip);
     this.setHelpUrl('http://www.mon-club-elec.fr/pmwiki_reference_arduino/pmwiki.php?n=Main.ReferenceMaxi')}
 };
@@ -550,7 +550,7 @@ Blockly.Arduino['rgb_init_esp32'] = function(block) {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("#4b009f");
+    this.setColour("#B655F5");
     this.setTooltip(Blockly.Msg.rvb_set_tooltip);
     this.setHelpUrl("https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/")}
 };
@@ -561,3 +561,4 @@ Blockly.Arduino["rgb_setcolor_anode"]=function(block){
     var code = 'setColor('+red+','+green+','+blue+');\n';
     return code;
 };
+*/

@@ -383,10 +383,13 @@ Blockly.Arduino["math_random_int"]=function(block){
     var argument0 = Blockly.Arduino.valueToCode(block, "FROM", Blockly.Arduino.ORDER_COMMA);
     var arg = Blockly.Arduino.valueToCode(block, "TO", Blockly.Arduino.ORDER_COMMA);
     var functionName = Blockly.Arduino.provideFunction_("random_int", ["double " + Blockly.Arduino.FUNCTION_NAME_PLACEHOLDER_ + "(int a,int b) {", "  if (a > b) {",  "    int c = a;", "    a = b;", "    b = c;", "  }", "  return (double) random(a,b+1);", "}"]);
-    Blockly.Arduino.setups_["randomseed"] = "randomSeed(analogRead(0));";
+   // Blockly.Arduino.setups_["randomseed"] = "randomSeed(analogRead(0));";
 	var code = functionName + "(" + argument0 + ", " + arg + ")";
     return [code, Blockly.Arduino.ORDER_FUNCTION_CALL]
 };
+
+
+
 // texte
 Blockly.Arduino['text_char']=function(block){
     var code = '\'' + block.getFieldValue('TEXT') + '\'';
