@@ -2,16 +2,16 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="IHiBj]IRq5c5_#FSz)(g" x="450" y="-278">
     <statement name="DO">
-      <block type="otto9_matrix_init" id="x3521+{3)2B/H-Qou}E~">
+      <block type="mouth_init" id="x3521+{3)2B/H-Qou}E~">
         <field name="PIN_CLK">A1</field>
         <field name="PIN_CS">A2</field>
         <field name="PIN_DIN">A3</field>
         <field name="Orientation">0</field>
         <next>
-          <block type="otto9_clear" id="/-^PNxrP*.d|3T=PRf7F">
+          <block type="mouth_clear" id="/-^PNxrP*.d|3T=PRf7F">
             <next>
-              <block type="otto9_mouth" id="@p)}OZm4*Xve^/Bk3RBG">
-                <field name="otto9_mouth_choice">27</field>
+              <block type="mouth_face" id="@p)}OZm4*Xve^/Bk3RBG">
+                <field name="mouth_face_choice">27</field>
                 <next>
                   <block type="variables_set_init" id="ZLJo}G^3k8~]ZHU3i+w0">
                     <field name="VAR">i</field>
@@ -77,7 +77,7 @@
               </block>
             </value>
             <statement name="DO">
-              <block type="otto9_matrixp" id="QpJ-#wP]JN{g)2C.90~h">
+              <block type="mouthp" id="QpJ-#wP]JN{g)2C.90~h">
                 <field name="draw">TRUE</field>
                 <value name="X">
                   <shadow type="math_number" id="@^2[lA3/Oy*Y4B.;5^`q">
@@ -110,8 +110,8 @@
           </block>
         </statement>
         <next>
-          <block type="otto9_mouth" id="T(|+Bq73si0U3zBW::Qi">
-            <field name="otto9_mouth_choice">okMouth</field>
+          <block type="mouth_face" id="T(|+Bq73si0U3zBW::Qi">
+            <field name="mouth_face_choice">okMouth</field>
             <next>
               <block type="base_delay" id="@tg_L0=kq1oE-=^mKGQ:">
                 <field name="unite">s</field>
@@ -121,7 +121,7 @@
                   </shadow>
                 </value>
                 <next>
-                  <block type="otto9_clear" id="1(,y[,Xs/JaA~QyjWS@}"></block>
+                  <block type="mouth_clear" id="1(,y[,Xs/JaA~QyjWS@}"></block>
                 </next>
               </block>
             </next>

@@ -14,7 +14,7 @@
   </block>
   <block type="base_setup_loop" id="pz(ZWPdl%sLWUFOfU7r*" x="-227" y="-528">
     <statement name="DO">
-      <block type="otto9_configuration" id="pS=n(/m!/U4Xu7FcXMon">
+      <block type="otto_configuration" id="pS=n(/m!/U4Xu7FcXMon">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">3</field>
         <field name="PIN_RL">4</field>

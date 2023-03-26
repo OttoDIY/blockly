@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="Yep!f$#$,9z]C}@!H8xa" x="-53" y="85">
     <statement name="DO">
-      <block type="otto9_eyes_init" id="IdU0tf=x@v3![OjIKKnr">
+      <block type="eyes_init" id="IdU0tf=x@v3![OjIKKnr">
         <next>
           <block type="variables_set_init" id="g@,22N{4d~X_25%dG(m2">
             <field name="VAR">high</field>
@@ -22,8 +22,8 @@
                   </block>
                 </value>
                 <next>
-                  <block type="otto9_eyes_face" id="1x=0KG!R{JMha(?2=1pd">
-                    <field name="otto9_eyes_choice">logo_bmp</field>
+                  <block type="eyes_face" id="1x=0KG!R{JMha(?2=1pd">
+                    <field name="eyes_choice">logo_bmp</field>
                   </block>
                 </next>
               </block>
@@ -33,7 +33,7 @@
       </block>
     </statement>
     <statement name="LOOP">
-      <block type="otto9_eyes#" id=";QwSIqfl^];fnOU.fIqw">
+      <block type="eyes#" id=";QwSIqfl^];fnOU.fIqw">
         <value name="eyes">
           <shadow type="math_number" id="J2Yy1A{o$Y#w(Q;L1=X|">
             <field name="NUM">3</field>
@@ -43,7 +43,7 @@
           </block>
         </value>
         <next>
-          <block type="otto9_eyesp" id="|(8x{bN60Y1kA*5pnTLT">
+          <block type="eyesp" id="|(8x{bN60Y1kA*5pnTLT">
             <field name="draw">TRUE</field>
             <value name="X">
               <shadow type="math_number" id="h]~LLB6;.W^MbJo@H(M!">
@@ -83,7 +83,7 @@
                           </shadow>
                         </value>
                         <next>
-                          <block type="otto9_eyes_clear" id="D%MD9Z9ws8m=80Q9G3i)">
+                          <block type="eyes_clear" id="D%MD9Z9ws8m=80Q9G3i)">
                             <next>
                               <block type="controls_if" id="QX8AQlBy:w9^0~EY!QCW">
                                 <value name="IF0">
@@ -102,7 +102,7 @@
                                   </block>
                                 </value>
                                 <statement name="DO0">
-                                  <block type="otto9_eyes_clear" id="9_Va{t3RfPkR~EN5vGa-">
+                                  <block type="eyes_clear" id="9_Va{t3RfPkR~EN5vGa-">
                                     <next>
                                       <block type="variables_set" id="qLJlEf?}m~h:qRcp_Xt;">
                                         <field name="VAR">high</field>

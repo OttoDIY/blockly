@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="6m)}P#^08@;u~e2|;+f9" x="-8" y="-39">
     <statement name="DO">
-      <block type="otto9_eyes_init" id=")~yNWF626!ba1{+d$ua+">
+      <block type="eyes_init" id=")~yNWF626!ba1{+d$ua+">
         <next>
           <block type="variables_set_init" id="-$lc9?s`e/$no{V%zb)#">
             <field name="VAR">X</field>
@@ -65,7 +65,7 @@
           </block>
         </statement>
         <next>
-          <block type="otto9_eyesp" id="%27VK+@F~o#vGONuRRyE">
+          <block type="eyesp" id="%27VK+@F~o#vGONuRRyE">
             <field name="draw">TRUE</field>
             <value name="X">
               <shadow type="math_number" id="HWhSyLr.U)+?)`SZqJ]7">
@@ -84,7 +84,7 @@
               </block>
             </value>
             <next>
-              <block type="otto9_eyes_display" id="F]UpVU.q7QO%=,Thxg~n">
+              <block type="eyes_display" id="F]UpVU.q7QO%=,Thxg~n">
                 <next>
                   <block type="math_change" id="w:.J=b{`~T~#xtKVXT5W">
                     <field name="VAR">X</field>
@@ -135,7 +135,7 @@
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="otto9_eyes_clear" id="91px#f#23l8(lp5/v69s"></block>
+                                      <block type="eyes_clear" id="91px#f#23l8(lp5/v69s"></block>
                                     </next>
                                   </block>
                                 </next>

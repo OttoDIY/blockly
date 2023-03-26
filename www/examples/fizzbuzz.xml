@@ -2,7 +2,7 @@
   <toolbox>toolbox_arduino_all</toolbox>
   <block type="base_setup_loop" id="apsNy$l`RWBysIuNW1{F" x="428" y="150">
     <statement name="DO">
-      <block type="otto9_configuration" id="jAuH301_Q4@a8^(JRnd!">
+      <block type="otto_configuration" id="jAuH301_Q4@a8^(JRnd!">
         <field name="PIN_YL">2</field>
         <field name="PIN_YR">3</field>
         <field name="PIN_RL">4</field>
@@ -18,7 +18,7 @@
               </block>
             </value>
             <next>
-              <block type="otto9_eyes_init" id="ws)sMIpG{B#f%6oe``Vh">
+              <block type="eyes_init" id="ws)sMIpG{B#f%6oe``Vh">
                 <next>
                   <block type="controls_repeat_ext" id="h,+/H;E61MDmtAubzODH">
                     <value name="TIMES">
@@ -74,7 +74,7 @@
                               </shadow>
                             </value>
                             <next>
-                              <block type="otto9_eyes_text" id="%Er)]_Bc-q+qX5Gv^V-y">
+                              <block type="eyes_text" id="%Er)]_Bc-q+qX5Gv^V-y">
                                 <field name="input">FizzBuzz</field>
                               </block>
                             </next>
@@ -97,7 +97,7 @@
                           </block>
                         </value>
                         <statement name="DO1">
-                          <block type="otto9_eyesm" id="wp}?Xl^c:]H+k_7,|d.]">
+                          <block type="eyesm" id="wp}?Xl^c:]H+k_7,|d.]">
                             <field name="eyes_pixel7">TRUE</field>
                             <field name="eyes_pixel15">TRUE</field>
                             <field name="eyes_pixel23">TRUE</field>
@@ -251,7 +251,7 @@
                           </block>
                         </value>
                         <statement name="DO2">
-                          <block type="otto9_eyesm" id="pD[CR_k?a_rV*ahmZB,j">
+                          <block type="eyesm" id="pD[CR_k?a_rV*ahmZB,j">
                             <field name="eyes_pixel7">TRUE</field>
                             <field name="eyes_pixel15">FALSE</field>
                             <field name="eyes_pixel23">FALSE</field>
@@ -389,7 +389,7 @@
                           </block>
                         </statement>
                         <statement name="ELSE">
-                          <block type="otto9_eyes#" id="1*e)UeBvRhVRfj4srmpA">
+                          <block type="eyes#" id="1*e)UeBvRhVRfj4srmpA">
                             <value name="eyes">
                               <shadow type="math_number" id="rg$q`hcuPbXoi;y.+E,l">
                                 <field name="NUM">3</field>
@@ -411,7 +411,7 @@
                           </block>
                         </statement>
                         <next>
-                          <block type="otto9_eyes_clear" id="d;Q%+61dG}o::R1N(QR8">
+                          <block type="eyes_clear" id="d;Q%+61dG}o::R1N(QR8">
                             <next>
                               <block type="math_change" id="Down5MhuE|J;$s^BtOqS">
                                 <field name="VAR">counter</field>
@@ -427,8 +427,8 @@
                       </block>
                     </statement>
                     <next>
-                      <block type="otto9_eyes_face" id="6iS)t]XNlxfaJ%`://xl">
-                        <field name="otto9_eyes_choice">happy_bmp</field>
+                      <block type="eyes_face" id="6iS)t]XNlxfaJ%`://xl">
+                        <field name="eyes_choice">happy_bmp</field>
                       </block>
                     </next>
                   </block>

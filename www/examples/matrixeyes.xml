@@ -2,16 +2,16 @@
   <toolbox>toolbox_arduino_all-esp8266</toolbox>
   <block type="base_setup_loop" id="bbu,Ycm|oN%wsL77H?Kr" x="64" y="65">
     <statement name="DO">
-      <block type="otto9_eyes_init" id="rZgXpZO@%3]vgE|FK(,h">
+      <block type="eyes_init" id="rZgXpZO@%3]vgE|FK(,h">
         <next>
-          <block type="otto9_eyes_brightness" id="=F-NpSk?:+^]xbo;p2:*">
+          <block type="eyes_brightness" id="=F-NpSk?:+^]xbo;p2:*">
             <value name="brightness">
               <shadow type="math_number" id="|KC,s;CNWx?e1O+bxKNw">
                 <field name="NUM">15</field>
               </shadow>
             </value>
             <next>
-              <block type="otto9_eyes_text" id="Xr2}Vw[wJzw!!y0c5DAN">
+              <block type="eyes_text" id="Xr2}Vw[wJzw!!y0c5DAN">
                 <field name="input">I am Otto</field>
               </block>
             </next>
@@ -20,8 +20,8 @@
       </block>
     </statement>
     <statement name="LOOP">
-      <block type="otto9_eyes_face" id="8}r|@o1Z6A9h/,IfM8q/">
-        <field name="otto9_eyes_choice">happy_bmp</field>
+      <block type="eyes_face" id="8}r|@o1Z6A9h/,IfM8q/">
+        <field name="eyes_choice">happy_bmp</field>
         <next>
           <block type="base_delay" id="|1H2#0fdgX+_]t3,P=%K">
             <field name="unite">s</field>
@@ -31,7 +31,7 @@
               </shadow>
             </value>
             <next>
-              <block type="otto9_eyesm" id="m}Sdd7RT#P/Pp)k9pR[k">
+              <block type="eyesm" id="m}Sdd7RT#P/Pp)k9pR[k">
                 <field name="eyes_pixel7">FALSE</field>
                 <field name="eyes_pixel15">FALSE</field>
                 <field name="eyes_pixel23">FALSE</field>
@@ -169,8 +169,8 @@
                       </shadow>
                     </value>
                     <next>
-                      <block type="otto9_eyes_face" id="~|TAR+saU{(Dd.=3q{WX">
-                        <field name="otto9_eyes_choice">eyes_bmp</field>
+                      <block type="eyes_face" id="~|TAR+saU{(Dd.=3q{WX">
+                        <field name="eyes_choice">eyes_bmp</field>
                         <next>
                           <block type="base_delay" id="U*5zzU+V|MSc#w6.|TYa">
                             <field name="unite">s</field>
@@ -180,8 +180,8 @@
                               </shadow>
                             </value>
                             <next>
-                              <block type="otto9_eyes_face" id="Yl-%XF`h6yHzbxryxaUy">
-                                <field name="otto9_eyes_choice">sad_bmp</field>
+                              <block type="eyes_face" id="Yl-%XF`h6yHzbxryxaUy">
+                                <field name="eyes_choice">sad_bmp</field>
                                 <next>
                                   <block type="base_delay" id="%;`?]CfSX|LdsGE{p:zY">
                                     <field name="unite">s</field>
@@ -191,8 +191,8 @@
                                       </shadow>
                                     </value>
                                     <next>
-                                      <block type="otto9_eyes_face" id="om~kL-vW|2b2b*8UL3QS">
-                                        <field name="otto9_eyes_choice">angry_bmp</field>
+                                      <block type="eyes_face" id="om~kL-vW|2b2b*8UL3QS">
+                                        <field name="eyes_choice">angry_bmp</field>
                                         <next>
                                           <block type="base_delay" id="c/~,#~||g:AwP8ziCvB9">
                                             <field name="unite">s</field>
@@ -202,8 +202,8 @@
                                               </shadow>
                                             </value>
                                             <next>
-                                              <block type="otto9_eyes_face" id="3=!C=L!H/jebvJaF*ds=">
-                                                <field name="otto9_eyes_choice">angry2_bmp</field>
+                                              <block type="eyes_face" id="3=!C=L!H/jebvJaF*ds=">
+                                                <field name="eyes_choice">angry2_bmp</field>
                                                 <next>
                                                   <block type="base_delay" id="Q1H?55C3;pTt6oM+yz0~">
                                                     <field name="unite">s</field>
@@ -213,8 +213,8 @@
                                                       </shadow>
                                                     </value>
                                                     <next>
-                                                      <block type="otto9_eyes_face" id="h9CBsqukkY/_0j;/v9_d">
-                                                        <field name="otto9_eyes_choice">freetful_bmp</field>
+                                                      <block type="eyes_face" id="h9CBsqukkY/_0j;/v9_d">
+                                                        <field name="eyes_choice">freetful_bmp</field>
                                                         <next>
                                                           <block type="base_delay" id="CYK::Y%:_XOVXv%;wE6,">
                                                             <field name="unite">s</field>
@@ -224,8 +224,8 @@
                                                               </shadow>
                                                             </value>
                                                             <next>
-                                                              <block type="otto9_eyes_face" id="$(E|0XZd$02%P^KEpin[">
-                                                                <field name="otto9_eyes_choice">confused_bmp</field>
+                                                              <block type="eyes_face" id="$(E|0XZd$02%P^KEpin[">
+                                                                <field name="eyes_choice">confused_bmp</field>
                                                                 <next>
                                                                   <block type="base_delay" id="-Qg;^(ZH!){k-mf+esSJ">
                                                                     <field name="unite">s</field>
@@ -235,8 +235,8 @@
                                                                       </shadow>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="otto9_eyes_face" id="puzlTJ.i_Am,2#+Lw-I#">
-                                                                        <field name="otto9_eyes_choice">sleep_bmp</field>
+                                                                      <block type="eyes_face" id="puzlTJ.i_Am,2#+Lw-I#">
+                                                                        <field name="eyes_choice">sleep_bmp</field>
                                                                         <next>
                                                                           <block type="base_delay" id="^OFP=-LAKK+9hVb!4qIE">
                                                                             <field name="unite">s</field>
@@ -246,8 +246,8 @@
                                                                               </shadow>
                                                                             </value>
                                                                             <next>
-                                                                              <block type="otto9_eyes_face" id="X6!9@[_S~e:q!}tkF#4)">
-                                                                                <field name="otto9_eyes_choice">love_bmp</field>
+                                                                              <block type="eyes_face" id="X6!9@[_S~e:q!}tkF#4)">
+                                                                                <field name="eyes_choice">love_bmp</field>
                                                                                 <next>
                                                                                   <block type="base_delay" id="gI*SP-0bP=kv@rq8.FvG">
                                                                                     <field name="unite">s</field>
@@ -257,8 +257,8 @@
                                                                                       </shadow>
                                                                                     </value>
                                                                                     <next>
-                                                                                      <block type="otto9_eyes_face" id="[]3izbU)M$?!t)MDk|/E">
-                                                                                        <field name="otto9_eyes_choice">wave_bmp</field>
+                                                                                      <block type="eyes_face" id="[]3izbU)M$?!t)MDk|/E">
+                                                                                        <field name="eyes_choice">wave_bmp</field>
                                                                                         <next>
                                                                                           <block type="base_delay" id="h,TVtTE(U,)cjJ]?_Q*v">
                                                                                             <field name="unite">s</field>
@@ -268,8 +268,8 @@
                                                                                               </shadow>
                                                                                             </value>
                                                                                             <next>
-                                                                                              <block type="otto9_eyes_face" id="}T?vVARCJlQ9z{?i*{gc">
-                                                                                                <field name="otto9_eyes_choice">magic_bmp</field>
+                                                                                              <block type="eyes_face" id="}T?vVARCJlQ9z{?i*{gc">
+                                                                                                <field name="eyes_choice">magic_bmp</field>
                                                                                                 <next>
                                                                                                   <block type="base_delay" id=";8xC|zid-r7Pn,iu1h,s">
                                                                                                     <field name="unite">s</field>
@@ -279,8 +279,8 @@
                                                                                                       </shadow>
                                                                                                     </value>
                                                                                                     <next>
-                                                                                                      <block type="otto9_eyes_face" id="q$ENum]wa!cjpw0x)T$?">
-                                                                                                        <field name="otto9_eyes_choice">fail_bmp</field>
+                                                                                                      <block type="eyes_face" id="q$ENum]wa!cjpw0x)T$?">
+                                                                                                        <field name="eyes_choice">fail_bmp</field>
                                                                                                         <next>
                                                                                                           <block type="base_delay" id="JbB/7$h=[T,P3v/=R,J2">
                                                                                                             <field name="unite">s</field>
@@ -290,8 +290,8 @@
                                                                                                               </shadow>
                                                                                                             </value>
                                                                                                             <next>
-                                                                                                              <block type="otto9_eyes_face" id="vAD0T/c3!UEPy$_Myegy">
-                                                                                                                <field name="otto9_eyes_choice">logo_bmp</field>
+                                                                                                              <block type="eyes_face" id="vAD0T/c3!UEPy$_Myegy">
+                                                                                                                <field name="eyes_choice">logo_bmp</field>
                                                                                                                 <next>
                                                                                                                   <block type="base_delay" id="sGvkc5PA*Vo57E^#?:YZ">
                                                                                                                     <field name="unite">s</field>
@@ -301,8 +301,8 @@
                                                                                                                       </shadow>
                                                                                                                     </value>
                                                                                                                     <next>
-                                                                                                                      <block type="otto9_eyes_face" id="Iz+@S%$_N3E|:+DhpRM.">
-                                                                                                                        <field name="otto9_eyes_choice">XX_bmp</field>
+                                                                                                                      <block type="eyes_face" id="Iz+@S%$_N3E|:+DhpRM.">
+                                                                                                                        <field name="eyes_choice">XX_bmp</field>
                                                                                                                         <next>
                                                                                                                           <block type="base_delay" id="}g1l#Q?Gt1vM5h^}f}+#">
                                                                                                                             <field name="unite">s</field>
