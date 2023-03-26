@@ -383,6 +383,7 @@
 
 		<category name="CAT_MAGNET" colour="#54BCF7">
 			<block type="hall_sensor2"><field name="PIN_HALL">33</field></block>
+			<block type="hall_sensor2_analog"><field name="PIN_MAG">33</field></block>
 			<block type="hall_sensor_esp32"></block>
 		</category>
 

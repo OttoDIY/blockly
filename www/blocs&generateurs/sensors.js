@@ -1088,6 +1088,57 @@ Blockly.Arduino['hall_sensor2'] = function(block) {
 };
 
 
+Blockly.Blocks['hall_sensor2_analog'] = {
+  helpUrl: '',
+  init: function() {
+	var card=window.localStorage.card;
+    this.setColour("#54BCF7");
+    this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("media/hall.png",33,33))
+	    .appendField(Blockly.Msg.HALL_NAME)
+        .appendField(Blockly.Msg.PIN)
+		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAnalog), "PIN_MAG")
+	this.appendDummyInput()
+  .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VALUE, "1"], [Blockly.Msg.PERCENT, "0"]]), "OUTPUT_VALUE");
+    this.setOutput(true, 'Number');
+	this.setInputsInline(true);
+    this.setTooltip('Magnetic sensor 49E');
+  }
+};
+
+
+Blockly.Arduino['hall_sensor2_analog'] = function(block) {
+
+	var PinMag = block.getFieldValue('PIN_MAG');
+    var Status = this.getFieldValue('OUTPUT_VALUE');
+	var code;
+	var card=window.localStorage.card;
+
+	 if (card =="MRTnode")
+		Blockly.Arduino.setups_['setup_analogResolutionESP32'] = 'analogReadResolution(10);\n';
+
+
+    //Blockly.Arduino.setups_['setup_input_'+PinPotentiometer] = 'pinMode('+PinPotentiometer+', INPUT);';
+    if(Status=='0')
+      var code = 'map(analogRead('+PinMag+'),0,1023,0,100)';
+    else
+      var code = 'analogRead('+PinMag+')';
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 Blockly.Blocks['pir_sensor2'] = {
   helpUrl: '',
   init: function() {
