@@ -124,6 +124,21 @@ Blockly.Msg.RTCDS3231_Name2="RTC DS3231";
 Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Giorno della settimana (in lettere)";
 Blockly.Msg.RTCDS3231_TEXT_MONTH="Mese (in lettere)";
 
+//INTERNAL RTC ESP32
+Blockly.Msg.INTERNALRTC_NAME="Internal RTC";
+Blockly.Msg.INTERNALRTC_RTC="⏲️ Set Date & Time ";
+Blockly.Msg.INTERNALRTC_DAY="Day";
+Blockly.Msg.INTERNALRTC_MONTH="Month";
+Blockly.Msg.INTERNALRTC_YEAR="Year";
+Blockly.Msg.INTERNALRTC_HOUR="Hour";
+Blockly.Msg.INTERNALRTC_MINUTE="Minute";
+Blockly.Msg.INTERNALRTC_SECOND="Second";
+Blockly.Msg.INTERNALRTC_DOFWEEK="Day of week";
+Blockly.Msg.INTERNALRTC_VALUES="value";
+Blockly.Msg.INTERNALRTC_Name2="⏲️ RTC.";
+Blockly.Msg.INTERNALRTC_GETTIME="Get Time";
+Blockly.Msg.INTERNALRTC_GETDATE="Get Date";
+
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "Inizializzazione del modulo WiFi e connessione con i parametri indicati";

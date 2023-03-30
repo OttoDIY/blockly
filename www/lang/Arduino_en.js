@@ -117,6 +117,7 @@ Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
 Blockly.Msg.CAT_STOCKAGE = "📦 Storage";
+Blockly.Msg.CAT_RTC_INTERNAL = "⏲️ Internal Clock";
 
 // FIELDDROPDOWN
 Blockly.Msg.note = [[ "C₄ | Do₄", "261"], [ "D₄ | Re₄", "293"], [ "E₄ | Mi₄", "329"], [ "F₄ | Fa₄", "349"], [ "G₄ | Sol₄", "392"], [ "A₄ | La₄", "440"], [ "B₄ | Si₄", "493"], [ "C₅ | Do₅", "523 "], ["D₅ | Re₅"," 587 "], ["E₅ | Mi₅"," 659 "], ["F₅ | Fa₅"," 698 "], ["G₅ | Sol₅"," 784 "], [ "A₅ | La₅", "880"]];
@@ -1048,6 +1049,21 @@ Blockly.Msg.RTCDS3231_VALUES="value";
 Blockly.Msg.RTCDS3231_Name2="⏲️ RTC";
 Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
 Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
+
+//INTERNAL RTC ESP32
+Blockly.Msg.INTERNALRTC_NAME="Internal RTC";
+Blockly.Msg.INTERNALRTC_RTC="⏲️ Set Date & Time ";
+Blockly.Msg.INTERNALRTC_DAY="Day";
+Blockly.Msg.INTERNALRTC_MONTH="Month";
+Blockly.Msg.INTERNALRTC_YEAR="Year";
+Blockly.Msg.INTERNALRTC_HOUR="Hour";
+Blockly.Msg.INTERNALRTC_MINUTE="Minute";
+Blockly.Msg.INTERNALRTC_SECOND="Second";
+Blockly.Msg.INTERNALRTC_DOFWEEK="Day of week";
+Blockly.Msg.INTERNALRTC_VALUES="value";
+Blockly.Msg.INTERNALRTC_Name2="⏲️ RTC.";
+Blockly.Msg.INTERNALRTC_GETTIME="Get Time";
+Blockly.Msg.INTERNALRTC_GETDATE="Get Date";
 
 //NTP
 //RTC DS3231

@@ -108,6 +108,7 @@ Blockly.Msg.CAT_TM1637="💡 DIGITS";
 Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
+Blockly.Msg.CAT_RTC_INTERNAL = "⏲️ Internal Clock";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segment.";
@@ -142,6 +143,23 @@ Blockly.Msg.RTCDS3231_VALUES="value";
 Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
 Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Day of week in string";
 Blockly.Msg.RTCDS3231_TEXT_MONTH="Month in string ";
+
+//INTERNAL RTC ESP32
+Blockly.Msg.INTERNALRTC_NAME="Internal RTC";
+Blockly.Msg.INTERNALRTC_RTC="⏲️ Set Date & Time ";
+Blockly.Msg.INTERNALRTC_DAY="Day";
+Blockly.Msg.INTERNALRTC_MONTH="Month";
+Blockly.Msg.INTERNALRTC_YEAR="Year";
+Blockly.Msg.INTERNALRTC_HOUR="Hour";
+Blockly.Msg.INTERNALRTC_MINUTE="Minute";
+Blockly.Msg.INTERNALRTC_SECOND="Second";
+Blockly.Msg.INTERNALRTC_DOFWEEK="Day of week";
+Blockly.Msg.INTERNALRTC_VALUES="value";
+Blockly.Msg.INTERNALRTC_Name2="⏲️ RTC.";
+Blockly.Msg.INTERNALRTC_GETTIME="Get Time";
+Blockly.Msg.INTERNALRTC_GETDATE="Get Date";
+
+
 
 
 //wifi

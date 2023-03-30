@@ -118,6 +118,7 @@ Blockly.Msg.CAT_TM1637="💡 DIGITS";
 Blockly.Msg.CAT_FIREBASE = "🌐 Firebase";
 Blockly.Msg.CAT_ESPNOW = "🌐 EspNow";
 Blockly.Msg.CAT_ALEXA = "🌐 Alexa";
+Blockly.Msg.CAT_RTC_INTERNAL = "⏲️ RTC interno";
 
 //DISPALY 7 SEGMENT TM1637
 Blockly.Msg.TM1637_name = "TM1637 Display 7 segmentos";
@@ -151,6 +152,21 @@ Blockly.Msg.RTCDS3231_VALUES="Valor";
 Blockly.Msg.RTCDS3231_Name2="RTC DS3231.";
 Blockly.Msg.RTCDS3231_TEXT_DOFWEEK="Día de la semana como string";
 Blockly.Msg.RTCDS3231_TEXT_MONTH="Mes como string ";
+
+//INTERNAL RTC ESP32
+Blockly.Msg.INTERNALRTC_NAME="Internal RTC";
+Blockly.Msg.INTERNALRTC_RTC="Fijar fecha y hora";
+Blockly.Msg.INTERNALRTC_DAY="Día";
+Blockly.Msg.INTERNALRTC_MONTH="Mes";
+Blockly.Msg.INTERNALRTC_YEAR="Año";
+Blockly.Msg.INTERNALRTC_HOUR="Hora";
+Blockly.Msg.INTERNALRTC_MINUTE="Minutos";
+Blockly.Msg.INTERNALRTC_SECOND="Segundos";
+Blockly.Msg.INTERNALRTC_DOFWEEK="Día de la semana";
+Blockly.Msg.INTERNALRTC_VALUES="Valor";
+Blockly.Msg.INTERNALRTC_Name2="⏲️ RTC.";
+Blockly.Msg.INTERNALRTC_GETTIME="Obtener la hora";
+Blockly.Msg.INTERNALRTC_GETDATE="Obtener la fecha";
 
 //Wireless
 Blockly.Msg.esp8266_init_tooltip = "inicialización del módulo wifi y conexión con los parámetros indicados";
