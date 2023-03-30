@@ -116,7 +116,7 @@ Blockly.Blocks['values_text_internal_RTC'] = {
     this.setColour("#2a93e8");
     this.appendDummyInput()
 		.appendField(Blockly.Msg.INTERNALRTC_NAME)
-		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.INTERNALRTC_GETTIME, "0"], [Blockly.Msg.INTERNALRTC_GETDATE, "1"]]), "OUTPUT_VALUE")
+		.appendField(new Blockly.FieldDropdown([[Blockly.Msg.INTERNALRTC_GETDATE, "0"], [Blockly.Msg.INTERNALRTC_GETTIME, "1"]]), "OUTPUT_VALUE")
 	    //.appendField(Blockly.Msg.RTCDS3231_VALUES)
     this.setOutput(true, 'String');
 	this.setInputsInline(true);
