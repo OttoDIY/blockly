@@ -324,6 +324,16 @@ Blockly.Arduino["inout_attachInterrupt_esp8266"]=function(block){
 	return "";
 };
 
+Blockly.Arduino["inout_attachInterrupt_esp32"]=function(block){
+	var dropdown_pin=block.getFieldValue('PIN');
+	var dropdown_mode=block.getFieldValue('mode');
+	var funcName='interrupt_'+dropdown_pin;
+	Blockly.Arduino.setups_['setup_Interrupt_'+dropdown_pin]='pinMode('+dropdown_pin+', INPUT_PULLUP);\n  attachInterrupt(digitalPinToInterrupt('+dropdown_pin+'),'+funcName+','+dropdown_mode+');';
+	var branch=Blockly.Arduino.statementToCode(block, 'DO' );
+	Blockly.Arduino.codeFunctions_[funcName] ='void IRAM_ATTR ' + funcName + '() {\n' + branch + '}';
+	return "";
+};
+
 
 
 

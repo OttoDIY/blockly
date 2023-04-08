@@ -195,7 +195,7 @@
 	<!--	<block type="toggle2">
 			<value name="PIN"><shadow type="analog_pin">	<field name="NUM">10</field>	</shadow></value>
 		</block> -->
-		<block type="inout_attachInterrupt_esp8266"><field name="PIN">33</field></block>
+		<block type="inout_attachInterrupt_esp32"><field name="PIN">33</field></block>
 		<block type="inout_detachInterrupt"><field name="PIN">33</field></block>
 		<block type="ESP_Restart"></block>
 		<block type="ESP32_DeepSleep">
