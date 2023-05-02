@@ -111,8 +111,12 @@ Blockly.Arduino['st7735_icon'] = function(block) {
 
    var IconName = block.getFieldValue('NAME');
    var Var_Codes = block.getFieldValue('CODES');
-
+   var card=window.localStorage.card;
+   
+   if (card !="MRTnode")
    Blockly.Arduino.includes_['define_pgmspace'] = '#include <avr/pgmspace.h>\n';
+   
+   
    Blockly.Arduino.definitions_['define_iconvalus_'+IconName+''] = 'const unsigned char '+IconName+'[] PROGMEM= {'+Var_Codes+'};\n';
 
   var code = '';
