@@ -1329,6 +1329,8 @@ Blockly.Msg.SERIAL_Readlf = "bis Zeilenvorschub";
 Blockly.Msg.ST7735_name = "TFT";
 Blockly.Msg.ST7735_init = 'Initialisiere TFT ST7735 1.8" oder 0.96".';
 Blockly.Msg.ST7735_init2 = "Pins: SCL=SCK SDA=MOSI.";
+Blockly.Msg.ST7735_PIN_SCL = "SCL=SCK";
+Blockly.Msg.ST7735_PIN_SDA = "SDA=MOSI";
 Blockly.Msg.ST7735_PIN_CS = "CS Pin";
 Blockly.Msg.ST7735_PIN_RST = "RST oder RES Pin";
 Blockly.Msg.ST7735_PIN_DC = "A0 oder DC Pin";

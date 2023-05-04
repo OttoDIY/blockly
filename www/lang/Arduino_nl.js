@@ -923,6 +923,8 @@ Blockly.LKL_VS2_WRITE = "write";                                    //"写入";
 Blockly.Msg.ST7735_name = "TFT";
 Blockly.Msg.ST7735_init = "TFT ST7735";
 Blockly.Msg.ST7735_init2 = "SCL=SCK SDA=MOSI.";
+Blockly.Msg.ST7735_PIN_SCL = "SCL=SCK";
+Blockly.Msg.ST7735_PIN_SDA = "SDA=MOSI";
 Blockly.Msg.ST7735_PIN_CS = "CS";
 Blockly.Msg.ST7735_PIN_RST = "RST/RES";
 Blockly.Msg.ST7735_PIN_DC = "A0/DC";
