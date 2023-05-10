@@ -56,7 +56,7 @@ Blockly.Python["play"]=function(block){
 Blockly.Blocks["tone"]={init:function(){
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).;
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
         this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
         this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
         this.setInputsInline(true);
