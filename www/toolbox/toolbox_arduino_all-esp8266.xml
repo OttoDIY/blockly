@@ -391,12 +391,13 @@
 	 </category>
 <category name="CAT_ARDUINO_matrice16x8" colour="#B655F5">
 		<block type="eyes_init"></block>
-		<block type="eyes_face"></block>
+
 		<block type="eyes_clear"></block>
 		<block type="eyes_rotate"></block>
 		<block type="eyes_brightness">
 		<value name="brightness"><shadow type="math_number"><field name="NUM">15</field></shadow></value>
 		</block>
+		<block type="eyes_face"></block>
 		<block type="eyes_blink"></block>
 		<block type="eyes_text"></block>
 		<block type="eyes#">

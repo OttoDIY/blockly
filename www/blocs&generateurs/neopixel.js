@@ -125,22 +125,51 @@ Blockly.Arduino["pixel_fill2"]=function(block){
 Blockly.Blocks["pixel_draw"] = {  init: function() {
      this.appendDummyInput().appendField('  ').appendField(' 0').appendField('    1').appendField('   2').appendField('    3').appendField('   4').appendField('    5').appendField('   6');
     this.appendDummyInput().appendField('0 ')
-        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel0');
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel0')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ');
     this.appendDummyInput().appendField('1 ')
+    .appendField('  ')
+    .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel1')
+        .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel2');
     this.appendDummyInput().appendField('2 ')
+    .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel3')
-        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel4');
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel4')
+        .appendField('  ');
     this.appendDummyInput().appendField('3 ')
-        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel5');
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel5')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel6');
     this.appendDummyInput().appendField('4 ')
+    .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel7')
+        .appendField('  ')
+        .appendField('  ')
+        .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel8');
     this.appendDummyInput().appendField('5 ')
+    .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel9')
+        .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel10');
     this.appendDummyInput().appendField('6 ')
+    .appendField('  ')
+    .appendField('  ')
+    .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel11');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
@@ -152,7 +181,7 @@ Blockly.Blocks["pixel_draw"] = {  init: function() {
 };
 Blockly.Arduino.pixel_draw = function() {
   var code = '';
-  for (var i=0; i<64; i++) {
+  for (var i=0; i<16; i++) {
     if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
         var rgbHexa = this.getFieldValue('Pixel' + i).replace('#', '');
         code += 'pixel.setPixelColor('+ i +', 0x' + rgbHexa + ');\n'

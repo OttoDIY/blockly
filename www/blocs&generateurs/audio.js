@@ -28,7 +28,7 @@ Blockly.Arduino["buzzer_init"]=function(block){
 Blockly.Blocks["play"]={init:function(){
   this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
     this.appendDummyInput().appendField(Blockly.Msg.play).appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
-		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
+		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -129,78 +129,6 @@ Blockly.Arduino['cute_play'] = function(block) {
   Blockly.Arduino.includes_['cute_sound'] = '#include <CuteBuzzerSounds.h>\n';
   Blockly.Arduino.setups_['cute_sound']='  cute.init(buzzer);\n';
   var code = 'cute.play(' + dropdown_sound + ');\n';
-  return code;
-};
-
-Blockly.Blocks['otto_tone'] = {init: function() {
-    this.appendDummyInput().appendField("🎼")
-        .appendField(new Blockly.FieldDropdown([["C₄ | Do₄", "262"], ["D₄ | Re₄", "294"], ["E₄ | Mi₄", "330"], ["F₄ | Fa₄", "349"], ["G₄ | Sol₄", "392"], ["A₄ | La₄", "440"], ["B₄ | Si₄", "494"], ["C₅ | Do₅", "523"], ["D₅ | Re₅", "587"] ,["E₅ | Mi₅", "659"], ["F₅ | Fa₅", "698"], ["G₅ | Sol₅", "784"], ["A₅ | La₅", "880"], ["B₅ | Si₅", "988"], ["C₆ | Do₆", "1047"], ["D₆ | Re₆", "1175"], ["E₆ | Mi₆", "1319"], ["F₆ | Fa₆", "1397"], ["G₆ | Sol₆", "1568"], ["A₆ | La₆", "1760"], ["B₆ | Si₆", "1976"]]), "otto_note");
-    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(" ")
-        .appendField(new Blockly.FieldDropdown([["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]), "otto_note_duration");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour("#FF63BB");
-    this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto_tone'] = function(block) {
-  var dropdown_otto_note = block.getFieldValue('otto_note');
-  var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
-
-  var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
-return code;
-};
-
-Blockly.Blocks['otto_tonehz'] = {init: function() {
-  this.appendDummyInput() .appendField("🎼 Hz")
-  this.appendValueInput("Hz1")
-  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
-  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#FF63BB");
-  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto_tonehz'] = function(block) {
-  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
-  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
-  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
-
-var code = "Otto._tone( " + Hz1 + "," + duration + "," + silent + "); //(float noteFrequency, long noteDuration, int silentDuration)\n";
-return code;
-};
-
-Blockly.Blocks['otto_bendtone'] = {init: function() {
-  this.appendDummyInput() .appendField("🎼 Hz1")
-  this.appendValueInput("Hz1")
-  this.appendValueInput("Hz2") .appendField("Hz2");
-  this.appendValueInput("prop") .setCheck("Number").appendField("P");
-  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
-  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
-  this.setInputsInline(true);
-  this.setPreviousStatement(true);
-  this.setNextStatement(true);
-  this.setColour("#FF63BB");
-  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
-  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-}
-};
-
-Blockly.Arduino['otto_bendtone'] = function(block) {
-  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
-  var Hz2 = Blockly.Arduino.valueToCode(block, 'Hz2', Blockly.Arduino.ORDER_ATOMIC);
-  var prop = Blockly.Arduino.valueToCode(block, 'prop', Blockly.Arduino.ORDER_ATOMIC);
-  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
-  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
-
-  var code = "Otto.bendTones( " + Hz1 + "," + Hz2 + "," + prop + "," + duration + "," + silent + "); // (float initFrequency, float finalFrequency, float prop, long noteDuration, int silentDuration) \n";
   return code;
 };
 
