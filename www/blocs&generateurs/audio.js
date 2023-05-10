@@ -8,7 +8,7 @@ goog.require("Blockly.Blocks");
 Blockly.Blocks["buzzer_init"]={init:function(){
   var card=window.localStorage.card;
   this.appendDummyInput()
-  .appendField("🎼" + Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.Msg.OTTO9_BUZZER)
+  .appendField("🎼" + Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.OTTO9_BUZZER)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
   this.setInputsInline(true);
   this.setPreviousStatement(true, null);
@@ -19,14 +19,13 @@ Blockly.Blocks["buzzer_init"]={init:function(){
 };
 Blockly.Arduino["buzzer_init"]=function(block){
   var value_pin=block.getFieldValue("PIN");
-    Blockly.Arduino.definitions_['buzzer'] = "const int buzzer"+" =  " + value_pin + ";";
-  Blockly.Arduino.setups_["buzzer" ]="pinMode(" + value_pin + ", OUTPUT);";
+    Blockly.Arduino.definitions_["setup_buzzer"] = "const int buzzer"+" =  " + value_pin + ";";
+  Blockly.Arduino.setups_["setup_buzzer" ]="pinMode(" + value_pin + ", OUTPUT);";
   var code = '';
   return code;
 };
 
 Blockly.Blocks["play"]={init:function(){
-  var card=window.localStorage.card;
   this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
     this.appendDummyInput().appendField(Blockly.Msg.play).appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
 		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
@@ -37,11 +36,13 @@ Blockly.Blocks["play"]={init:function(){
     this.setTooltip(Blockly.Msg.play_tooltip);
     this.setHelpUrl(Blockly.Msg.play_helpurl)}
 };
+
 Blockly.Arduino["play"]=function(block){
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
     return "tone( buzzer," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
 };
+
 Blockly.Python["play"]=function(block){
     var value_pin=block.getFieldValue("PIN");
     var value_note=block.getFieldValue("note");
@@ -53,10 +54,9 @@ Blockly.Python["play"]=function(block){
 };
 //////////////
 Blockly.Blocks["tone"]={init:function(){
-  var card=window.localStorage.card;
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).;
         this.appendValueInput("NUM").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT2).setCheck("Number");
         this.appendValueInput("TPS").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.ARDUINO_TONE_INPUT3).setCheck("Number");
         this.setInputsInline(true);
@@ -65,11 +65,9 @@ Blockly.Blocks["tone"]={init:function(){
         this.setTooltip(Blockly.Msg.ARDUINO_TONE_TOOLTIP)}
 };
 Blockly.Arduino["tone"]=function(block){
-    var value_pin=block.getFieldValue("PIN");
     var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
     var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "tone(" + value_pin + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
+    return "tone( buzzer," + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
 };
 Blockly.Python["tone"]=function(block){
     var value_pin=block.getFieldValue("PIN");
@@ -101,24 +99,109 @@ Blockly.Python["beep"]=function(block){
 };
 //////////////
 Blockly.Blocks["notone"]={init:function(){
-  var card=window.localStorage.card;
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
-        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+        this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_NOTONE_INPUT);
         this.setPreviousStatement(true, null);
         this.setInputsInline(true);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
 };
 Blockly.Arduino["notone"]=function(block){
-    var value_pin=block.getFieldValue("PIN");
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
-    return "noTone(" + value_pin + ");\n"
+    return "noTone( buzzer," + ");\n"
 };
 Blockly.Python["notone"]=function(block){
     var value_pin=block.getFieldValue("PIN");
     Blockly.Python.setups_["setup_output" + value_pin]="pinMode(" + value_pin + ", OUTPUT);";
     return "noTone(" + value_pin + ");\n"
+};
+
+Blockly.Blocks['cute_play'] = {init: function() {
+    this.appendDummyInput() .appendField("🎼") .appendField(Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "sound");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#FF63BB"); }
+};
+
+Blockly.Arduino['cute_play'] = function(block) {
+  var dropdown_sound = block.getFieldValue('sound');
+  Blockly.Arduino.includes_['cute_sound'] = '#include <CuteBuzzerSounds.h>\n';
+  Blockly.Arduino.setups_['cute_sound']='  cute.init(buzzer);\n';
+  var code = 'cute.play(' + dropdown_sound + ');\n';
+  return code;
+};
+
+Blockly.Blocks['otto_tone'] = {init: function() {
+    this.appendDummyInput().appendField("🎼")
+        .appendField(new Blockly.FieldDropdown([["C₄ | Do₄", "262"], ["D₄ | Re₄", "294"], ["E₄ | Mi₄", "330"], ["F₄ | Fa₄", "349"], ["G₄ | Sol₄", "392"], ["A₄ | La₄", "440"], ["B₄ | Si₄", "494"], ["C₅ | Do₅", "523"], ["D₅ | Re₅", "587"] ,["E₅ | Mi₅", "659"], ["F₅ | Fa₅", "698"], ["G₅ | Sol₅", "784"], ["A₅ | La₅", "880"], ["B₅ | Si₅", "988"], ["C₆ | Do₆", "1047"], ["D₆ | Re₆", "1175"], ["E₆ | Mi₆", "1319"], ["F₆ | Fa₆", "1397"], ["G₆ | Sol₆", "1568"], ["A₆ | La₆", "1760"], ["B₆ | Si₆", "1976"]]), "otto_note");
+    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(" ")
+        .appendField(new Blockly.FieldDropdown([["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]]), "otto_note_duration");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour("#FF63BB");
+    this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+
+Blockly.Arduino['otto_tone'] = function(block) {
+  var dropdown_otto_note = block.getFieldValue('otto_note');
+  var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
+
+  var code = "Otto._tone( " + dropdown_otto_note + "," + dropdown_otto_note_duration + ",1);\n";
+return code;
+};
+
+Blockly.Blocks['otto_tonehz'] = {init: function() {
+  this.appendDummyInput() .appendField("🎼 Hz")
+  this.appendValueInput("Hz1")
+  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
+  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#FF63BB");
+  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+
+Blockly.Arduino['otto_tonehz'] = function(block) {
+  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
+  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
+  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
+
+var code = "Otto._tone( " + Hz1 + "," + duration + "," + silent + "); //(float noteFrequency, long noteDuration, int silentDuration)\n";
+return code;
+};
+
+Blockly.Blocks['otto_bendtone'] = {init: function() {
+  this.appendDummyInput() .appendField("🎼 Hz1")
+  this.appendValueInput("Hz1")
+  this.appendValueInput("Hz2") .appendField("Hz2");
+  this.appendValueInput("prop") .setCheck("Number").appendField("P");
+  this.appendValueInput("duration") .setCheck("Number").appendField("⏰");
+  this.appendValueInput("silent") .setCheck("Number").appendField("🔇");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true);
+  this.setNextStatement(true);
+  this.setColour("#FF63BB");
+  this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
+  this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+}
+};
+
+Blockly.Arduino['otto_bendtone'] = function(block) {
+  var Hz1 = Blockly.Arduino.valueToCode(block, 'Hz1', Blockly.Arduino.ORDER_ATOMIC);
+  var Hz2 = Blockly.Arduino.valueToCode(block, 'Hz2', Blockly.Arduino.ORDER_ATOMIC);
+  var prop = Blockly.Arduino.valueToCode(block, 'prop', Blockly.Arduino.ORDER_ATOMIC);
+  var duration = Blockly.Arduino.valueToCode(block, 'duration', Blockly.Arduino.ORDER_ATOMIC);
+  var silent = Blockly.Arduino.valueToCode(block, 'silent', Blockly.Arduino.ORDER_ATOMIC);
+
+  var code = "Otto.bendTones( " + Hz1 + "," + Hz2 + "," + prop + "," + duration + "," + silent + "); // (float initFrequency, float finalFrequency, float prop, long noteDuration, int silentDuration) \n";
+  return code;
 };
 
 //////////////

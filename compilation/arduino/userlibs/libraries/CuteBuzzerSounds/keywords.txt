@@ -1,0 +1,49 @@
+#######################################
+# Syntax Coloring Map For SimpleExpressions
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+cute	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init KEYWORD2
+initBuzzer KEYWORD2
+bendTones	KEYWORD2
+play	KEYWORD2
+_tone	KEYWORD2
+bendTones	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+S_CONNECTION	LITERAL1
+S_DISCONNECTION	LITERAL1
+S_BUTTON_PUSHED	LITERAL1
+S_MODE1	LITERAL1
+S_MODE2	LITERAL1
+S_MODE3	LITERAL1
+S_SURPRISE	LITERAL1
+S_OHOOH	LITERAL1
+S_OHOOH2	LITERAL1
+S_CUDDLY	LITERAL1
+S_SLEEPING	LITERAL1
+S_HAPPY	LITERAL1
+S_SUPER_HAPPY	LITERAL1
+S_HAPPY_SHORT	LITERAL1
+S_SAD	LITERAL1
+S_CONFUSED	LITERAL1
+S_FART1	LITERAL1
+S_FART2	LITERAL1
+S_FART3	LITERAL1
+S_JUMP  LITERAL1
+PIRATES	LITERAL1
