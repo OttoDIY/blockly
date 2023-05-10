@@ -5,9 +5,29 @@ goog.require("Blockly.Blocks");
  /*  audio  */
 /////////////
 
+Blockly.Blocks["buzzer_init"]={init:function(){
+  var card=window.localStorage.card;
+  this.appendDummyInput()
+  .appendField("🎼" + Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.Msg.OTTO9_BUZZER)
+  .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+  this.setInputsInline(true);
+  this.setPreviousStatement(true, null);
+  this.setNextStatement(true, null);
+  this.setColour("#B655F5");
+  this.setHelpUrl(Blockly.Msg.HELPURL);
+  this.setTooltip(Blockly.Msg.del_tooltip)}
+};
+Blockly.Arduino["buzzer_init"]=function(block){
+  var value_pin=block.getFieldValue("PIN");
+    Blockly.Arduino.definitions_['buzzer'] = "const int buzzer"+" =  " + value_pin + ";";
+  Blockly.Arduino.setups_["buzzer" ]="pinMode(" + value_pin + ", OUTPUT);";
+  var code = '';
+  return code;
+};
+
 Blockly.Blocks["play"]={init:function(){
   var card=window.localStorage.card;
-  this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
+  this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
     this.appendDummyInput().appendField(Blockly.Msg.play).appendField(new Blockly.FieldDropdown(Blockly.Msg.note), "note")
 		.appendField(new Blockly.FieldDropdown(Blockly.Msg.tempo), "tempo")
     this.setInputsInline(true);
@@ -18,11 +38,9 @@ Blockly.Blocks["play"]={init:function(){
     this.setHelpUrl(Blockly.Msg.play_helpurl)}
 };
 Blockly.Arduino["play"]=function(block){
-    var value_pin=block.getFieldValue("PIN");
     var value_note=block.getFieldValue("note");
     var value_tempo=block.getFieldValue("tempo");
-    Blockly.Arduino.setups_["setup_output" + value_pin]="pinMode( "+value_pin+" , OUTPUT);";
-    return "tone(  "+value_pin+"," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
+    return "tone( buzzer," + value_note + "," + value_tempo + ");\n delay(" + value_tempo + ");\n"
 };
 Blockly.Python["play"]=function(block){
     var value_pin=block.getFieldValue("PIN");
@@ -333,7 +351,6 @@ Blockly.Arduino["beep_x"]=function(block){
     return "tone(11,440,1000);\ndelay(1000);\n"
 };
 
-
 Blockly.Blocks["notone_x"]={init:function(){
         this.setColour("#FF63BB");
         this.setHelpUrl(Blockly.Msg.HELPURL);
@@ -349,13 +366,8 @@ Blockly.Arduino["notone_x"]=function(block){
     return "noTone(11);\n"
 };
 
-
 //////////////
-
-
 //Pins usung the mcp23008 adapter
-
-
 Blockly.Blocks["digital_mcp_write"]={init:function(){
     var card=window.localStorage.card;
 	this.setColour("#00929f");
@@ -380,8 +392,6 @@ Blockly.Arduino.setups_['mcp_begin'] = 'mcp.begin_I2C();\n';
     return "mcp.digitalWrite(" + dropdown_pin + ", " + dropdown_stat + ");\n";
 };
 
-
-
 Blockly.Blocks["digital_mcp_read"]={init:function(){
     var card=window.localStorage.card;
         this.setColour("#00929f");
@@ -392,7 +402,6 @@ Blockly.Blocks["digital_mcp_read"]={init:function(){
         this.setOutput(true, "Boolean");
         this.setTooltip(Blockly.Msg.in_pullup_tooltip)}
 };
-
 
 Blockly.Arduino["digital_mcp_read"]=function(block){
     var pull_up=block.getFieldValue('pullup') == 'TRUE';

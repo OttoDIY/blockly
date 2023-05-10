@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <toolbox>
-	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO_WHEELS,CAT_NEOPIXEL,CAT_BUZZER,CAT_ultrason,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_VARIABLES</parametre>
+	<parametre id="defaultCategories1">CAT_ARDUINO,CAT_OTTO_WHEELS,CAT_NEOPIXEL,CAT_BUZZER,CAT_ultrason,CAT_LINE,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_VARIABLES</parametre>
     <parametre id="defaultCategories2">CAT_ARDUINO,CAT_OTTO,CAT_Displays,CAT_AUDIO,CAT_SENSORS,CAT_com,CAT_ARDUINO_TIME,CAT_LOGIC,CAT_MATH,CAT_FUNCTIONS,CAT_VARIABLES,CAT_iot</parametre>
     <parametre id="defaultCategories3">CAT_ARDUINO,CAT_OTTO,CAT_servo,CAT_actionneur,CAT_ARDUINO_moteur,CAT_Displays,CAT_AUDIO,CAT_SENSORS,CAT_ARDUINO_TIME,CAT_ARDUINO_IN,CAT_LOGIC,CAT_MATH,CAT_TEXT,CAT_FUNCTIONS,CAT_VARIABLES,CAT_TAB,CAT_com,CAT_iot,CAT_MUVISION,CAT_STOCKAGE</parametre>
 
@@ -300,14 +300,19 @@
 		<block type="list_append"></block>
 		<block type="list_size"></block>
   </category>
-<category name="CAT_ultrason" colour="#54BCF7">
-			<block type="ultrasonic_sensor2">
-				<field name="PIN_TRIG">D1</field>
-				<field name="PIN_ECHO">D2</field>
-			</block>
-			<block type="ultrasonic_distance2"></block>
-	</category>
+
 <category name="CAT_SENSORS" colour="#54BCF7">
+	<category name="CAT_ultrason" colour="#54BCF7">
+				<block type="ultrasonic_sensor2">
+					<field name="PIN_TRIG">D1</field>
+					<field name="PIN_ECHO">D2</field>
+				</block>
+				<block type="ultrasonic_distance2"></block>
+		</category>
+		<category name="CAT_LINE" colour="#54BCF7">
+		<block type="IR_sensor2"></block>
+		<block type="IR_status_sensor2"></block>
+			</category>
 	<category name="CAT_BUTTONS" colour="#54BCF7">
 					<block type="button_sensor2"><field name="PIN_BUTTON">A0</field></block>
 	</category>
@@ -333,8 +338,6 @@
 			<block type="LDR_sensor2"></block>
 		 	<block type="LDR_status_sensor2"></block>
 			<block type="AmbientLight_sensor2"></block>
-		 	<block type="IR_sensor2"></block>
-		 	<block type="IR_status_sensor2"></block>
 		 	<block type="pir_sensor2"></block>
 		 	<block type="photointerrupter_sensor2"></block>
 		</category>
@@ -378,14 +381,21 @@
 <category name="CAT_Displays"  colour="#B655F5">
  <category name="CAT_NEOPIXEL" colour="#B655F5">
 			<block type="pixel_init">
-					<field name="pin">10</field>
-					<value name="num"><shadow type="analog_pin"><field name="NUM">8</field></shadow></value>
+					<field name="pin">RX</field>
+					<value name="num"><shadow type="analog_pin"><field name="NUM">12</field></shadow></value>
 				</block>
 				<block type="pixel_show"></block>
 				<block type="pixel_clear"></block>
 				<block type="pixel_setbrightness">
 					<value name="brightness"><shadow type="analog_pin"><field name="NUM">99</field></shadow></value>
 				</block>
+				<block type="pixel_draw"></block>
+				<block type="pixel_fill"></block>
+			<block type="pixel_fill2">
+					<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+					<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+					<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
+					</block>
 				<block type="pixel_setcolor">
 					<value name="pin"><shadow type="analog_pin"><field name="NUM">0</field></shadow></value>
 				</block>
@@ -395,12 +405,7 @@
 					<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 					<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
 				</block>
-				<block type="pixel_fill"></block>
-			<block type="pixel_fill2">
-					<value name="R"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-					<value name="G"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-					<value name="B"><shadow type="math_number"><field name="NUM">255</field></shadow></value>
-					</block>
+
 </category>
 <category name="CAT_LED" colour="#B655F5">
 			<block type="blink"></block>
@@ -526,24 +531,18 @@
 </category>
 <category name="CAT_AUDIO" colour="#FF63BB">
 	<category name="CAT_BUZZER" colour="#FF63BB">
-			<block type="RTTTL_music">  <field name="PIN_BUZZER">13</field></block>
+		<block type="buzzer_init"></block>
+				<block type="play"></block>
+				<block type="tone">
+					<value name="NUM"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
+					<value name="TPS"><shadow type="math_number"><field name="NUM">100</field></shadow></value>
+				</block>
+				<block type="notone"></block>
+			<block type="RTTTL_music">  <field name="PIN_BUZZER">D5</field></block>
 			<block type="RTTTL_music_custom">
-			<field name="PIN_BUZZER">13</field>
+					<field name="PIN_BUZZER">D5</field>
 			<value name="rtttl_melody"><shadow type="text"><field name="TEXT">text</field></shadow></value>
 			</block>
-						<block type="play">
-			   <value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
-		    </block>
-			<block type="tone">
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
-				<value name="NUM"><shadow type="math_number"><field name="NUM">880</field></shadow></value>
-				<value name="TPS"><shadow type="math_number"><field name="NUM">100</field></shadow></value>
-			</block>
-			<block type="notone">
-				<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value>
-			</block>
-			<block type="beep">
-			<value name="PIN"><shadow type="analog_pin"><field name="NUM">13</field></shadow></value></block>
 		</category>
 	<category name="CAT_DFPLAYER" colour="#FF63BB">
 			<block type="lp2i_mp3_init">

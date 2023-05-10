@@ -121,6 +121,46 @@ Blockly.Arduino["pixel_fill2"]=function(block){
     var code = "pixel.fill(pixel.Color("  + R + ", " + G + ", " + B + "));\n";
     return code
 };
+
+Blockly.Blocks["pixel_draw"] = {  init: function() {
+     this.appendDummyInput().appendField('  ').appendField(' 0').appendField('    1').appendField('   2').appendField('    3').appendField('   4').appendField('    5').appendField('   6');
+    this.appendDummyInput().appendField('0 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel0');
+    this.appendDummyInput().appendField('1 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel1')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel2');
+    this.appendDummyInput().appendField('2 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel3')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel4');
+    this.appendDummyInput().appendField('3 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel5');
+    this.appendDummyInput().appendField('4 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel7')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel8');
+    this.appendDummyInput().appendField('5 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel9')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel10');
+    this.appendDummyInput().appendField('6 ')
+        .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel11');
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#B655F5");
+    this.setTooltip('');
+    this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
+  },
+};
+Blockly.Arduino.pixel_draw = function() {
+  var code = '';
+  for (var i=0; i<64; i++) {
+    if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
+        var rgbHexa = this.getFieldValue('Pixel' + i).replace('#', '');
+        code += 'pixel.setPixelColor('+ i +', 0x' + rgbHexa + ');\n'
+    }
+  };
+  code += 'pixel.show();\n';
+  return code;
+};
 //////////////
 Blockly.Blocks["pixel_show"]={init:function(){
 	this.appendDummyInput().appendField(Blockly.Msg.pixel2);
