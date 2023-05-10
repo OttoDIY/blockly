@@ -35,9 +35,9 @@ For Linux operating systems go to [this repo](https://github.com/OttoDIY/blockly
 
 Drag, drop, connect, mix, play and create your own codes. [Join the Otto Builder community, see all the cool stuff we are making with Otto Blockly and post your ideas!](http://builders.ottodiy.com/) 
 
-## Help us add new Languages
+## Help us add your Language
 
-Leave your mark in the world by translating Blockly, you are welcome to contribute with any languages you know, it will 
+Leave your mark by translating Blockly, you are welcome to contribute with any languages you know, by fixing mistakes you see, it will 
 benefit you and everyone in your community.
 
 The more people helping to translate the better, it is important to translate while understanding the context and what 
