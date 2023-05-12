@@ -7,8 +7,7 @@ goog.require("Blockly.Blocks");
 
 Blockly.Blocks["buzzer_init"]={init:function(){
   var card=window.localStorage.card;
-  this.appendDummyInput().appendField(new Blockly.FieldImage('media/buzzer.png', 33, 33, "*"))
-  .appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.OTTO9_BUZZER)
+  this.appendDummyInput().appendField(new Blockly.FieldImage('media/buzzer.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.OTTO9_BUZZER)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
   this.setInputsInline(true);
   this.setPreviousStatement(true, null);
@@ -43,14 +42,14 @@ Blockly.Arduino['buzzer_music'] = function(block) {
   var melody = this.getFieldValue('MELODY');
   var code;
   Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
-	code= 'playRtttlBlockingPGM(buzzer+',(char*)'+melody+');\n';
+	code= 'playRtttlBlockingPGM(buzzer'+',(char*)'+melody+');\n';
  return code;
 };
 
 Blockly.Blocks['buzzer_music_custom'] = {  init: function() {
   this.setColour("#FF63BB");
   this.appendDummyInput().appendField(Blockly.Msg.ARDUINO_TONE_INPUT1);
-	this.appendValueInput("rtttl_melody").setCheck("String").appendField(Blockly.Msg.ARDUINO_RTTTL_BLOCK)
+	this.appendValueInput("rtttl_melody").setCheck("String").appendField(Blockly.Msg.ARDUINO_RTTTL_BLOCK);
 	this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -65,7 +64,7 @@ Blockly.Arduino['buzzer_music_custom'] = function(block) {
   var code;
   Blockly.Arduino.includes_['include_PlayRTTTL'] = '#include <PlayRtttl.hpp>\n';
  Blockly.Arduino.definitions_['Melody_'+name_melody] = 'static const char melody_'+ name_melody+'[] PROGMEM = '+rtttl_melody+';\n';
-	 code= 'playRtttlBlockingPGM(buzzer',(char*) melody_'+name_melody+');\n';
+	 code= 'playRtttlBlockingPGM(buzzer'+',(char*) melody_'+name_melody+');\n';
  return code;
 };
 
