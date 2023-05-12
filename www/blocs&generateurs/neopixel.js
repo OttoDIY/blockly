@@ -8,7 +8,7 @@ goog.require('Blockly.Types');
 Blockly.Blocks["pixel_init"]={init:function(){
     var card=window.localStorage.card;
 	this.appendDummyInput()	.appendField(new Blockly.FieldImage('media/neopixel.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.pixel1);
-    this.appendDummyInput()	.appendField(Blockly.Msg.pin).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
+    this.appendDummyInput()	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "pin");
     this.appendValueInput("num", "Number").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.pixel4);
     this.setInputsInline(true);
 	this.setPreviousStatement(true, null);
@@ -123,8 +123,7 @@ Blockly.Arduino["pixel_fill2"]=function(block){
 };
 
 Blockly.Blocks["pixel_draw"] = {  init: function() {
-     this.appendDummyInput().appendField('  ').appendField(' 0').appendField('    1').appendField('   2').appendField('    3').appendField('   4').appendField('    5').appendField('   6');
-    this.appendDummyInput().appendField('0 ')
+    this.appendDummyInput()
         .appendField('  ')
         .appendField('  ')
         .appendField('  ')
@@ -132,13 +131,13 @@ Blockly.Blocks["pixel_draw"] = {  init: function() {
         .appendField('  ')
         .appendField('  ')
         .appendField('  ');
-    this.appendDummyInput().appendField('1 ')
+    this.appendDummyInput()
     .appendField('  ')
     .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel1')
         .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel2');
-    this.appendDummyInput().appendField('2 ')
+    this.appendDummyInput()
     .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel3')
         .appendField('  ')
@@ -146,7 +145,7 @@ Blockly.Blocks["pixel_draw"] = {  init: function() {
         .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel4')
         .appendField('  ');
-    this.appendDummyInput().appendField('3 ')
+    this.appendDummyInput()
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel5')
         .appendField('  ')
         .appendField('  ')
@@ -154,19 +153,20 @@ Blockly.Blocks["pixel_draw"] = {  init: function() {
         .appendField('  ')
         .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel6');
-    this.appendDummyInput().appendField('4 ')
+    this.appendDummyInput()
     .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel7')
         .appendField('  ')
         .appendField('  ')
         .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel8');
-    this.appendDummyInput().appendField('5 ')
+    this.appendDummyInput()
     .appendField('  ')
+      .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel9')
         .appendField('  ')
         .appendField(new Blockly.FieldColour('rgb(255, 255, 255)'), 'Pixel10');
-    this.appendDummyInput().appendField('6 ')
+    this.appendDummyInput()
     .appendField('  ')
     .appendField('  ')
     .appendField('  ')
@@ -179,9 +179,9 @@ Blockly.Blocks["pixel_draw"] = {  init: function() {
     this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use");
   },
 };
-Blockly.Arduino.pixel_draw = function() {
+Blockly.Arduino["pixel_draw"]=function(block){
   var code = '';
-  for (var i=0; i<16; i++) {
+  for (var i=0; i<12; i++) {
     if (this.getFieldValue('Pixel' + i) != 'rgb(255, 255, 255)') {
         var rgbHexa = this.getFieldValue('Pixel' + i).replace('#', '');
         code += 'pixel.setPixelColor('+ i +', 0x' + rgbHexa + ');\n'
@@ -190,6 +190,7 @@ Blockly.Arduino.pixel_draw = function() {
   code += 'pixel.show();\n';
   return code;
 };
+
 //////////////
 Blockly.Blocks["pixel_show"]={init:function(){
 	this.appendDummyInput().appendField(Blockly.Msg.pixel2);

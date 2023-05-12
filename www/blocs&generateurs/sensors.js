@@ -253,7 +253,7 @@ Blockly.Blocks['ultrasonic_sensor2'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#54BCF7");
     this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
-		.appendField(Blockly.Msg.ultrasonic_ranger)
+		.appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.ultrasonic_ranger)
         .appendField(Blockly.Msg.TRIG)
 		.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
 	this.appendDummyInput()	.appendField(Blockly.Msg.Echo)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")

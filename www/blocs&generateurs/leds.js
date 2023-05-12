@@ -1,7 +1,7 @@
 Blockly.Blocks["led_digital_init"]={init:function(){
   var card=window.localStorage.card;
-  this.appendDummyInput()
-  .appendField("💡 "+Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'],['9','9'],['10','10']]), "LED_NUMBER")
+  this.appendDummyInput().appendField(new Blockly.FieldImage('media/led.png', 33, 33, "*"))
+  .appendField(Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6'],['7','7'],['8','8'],['9','9'],['10','10']]), "LED_NUMBER")
     .appendField(Blockly.Msg.del+Blockly.Msg.CAT_numerique)
   .appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN");
   this.setInputsInline(true);
