@@ -29,15 +29,76 @@
         <next>
           <block type="pixel_show" id="2+Q)$T;Tm0D7+0}i9o@u">
             <next>
-              <block type="pixel_fill" id="D5_`8Bf+U5:#uCfQjYE}">
-                <field name="color">#33ff33</field>
+              <block type="base_delay" id="FgHj|-05puPr!]_=A%lJ">
+                <field name="unite">s</field>
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="[Bz25gq)dF%OtvRKg{Nq">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
                 <next>
-                  <block type="pixel_show" id="`$iryxP1$^w?AF-|`j1J">
+                  <block type="pixel_fill" id="D5_`8Bf+U5:#uCfQjYE}">
+                    <field name="color">#33ff33</field>
                     <next>
-                      <block type="pixel_fill" id="~4_8UHB_sXbRa=dc.=6K">
-                        <field name="color">#3333ff</field>
+                      <block type="pixel_show" id="`$iryxP1$^w?AF-|`j1J">
                         <next>
-                          <block type="pixel_show" id="kIP*DFc5cS,^_gF.Rm70"></block>
+                          <block type="base_delay" id="8:F];hw)eHAAvPK%M}JG">
+                            <field name="unite">s</field>
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="WY7QYEc5:=.DB#(%ew3N">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="pixel_fill" id="~4_8UHB_sXbRa=dc.=6K">
+                                <field name="color">#3333ff</field>
+                                <next>
+                                  <block type="pixel_show" id="kIP*DFc5cS,^_gF.Rm70">
+                                    <next>
+                                      <block type="base_delay" id="yXy_ehdOTdj}o_Bp,6$o">
+                                        <field name="unite">s</field>
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="u%15uUM`#JXEH)uY=k5D">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="pixel_draw" id="[0af/WlfPdU8vEZNE%@9">
+                                            <field name="Pixel0">#ff0000</field>
+                                            <field name="Pixel1">#666666</field>
+                                            <field name="Pixel2">#ff9900</field>
+                                            <field name="Pixel3">#ffffff</field>
+                                            <field name="Pixel4">#ffff00</field>
+                                            <field name="Pixel5">#993399</field>
+                                            <field name="Pixel6">#33ff33</field>
+                                            <field name="Pixel7">#cc66cc</field>
+                                            <field name="Pixel8">#66cccc</field>
+                                            <field name="Pixel9">#6666cc</field>
+                                            <field name="Pixel10">#33ccff</field>
+                                            <field name="Pixel11">#000099</field>
+                                            <next>
+                                              <block type="pixel_show" id="rXKQD(1t7?QkclvhYFcE">
+                                                <next>
+                                                  <block type="base_delay" id="pY`t@n=F7}=Bghy8GGz0">
+                                                    <field name="unite">s</field>
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="T3N)Q}Eb|*k7%kFs1|li">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
                         </next>
                       </block>
                     </next>

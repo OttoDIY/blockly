@@ -109,26 +109,25 @@
 #define  NOTE_D8  4698.64  //D8
 #define  NOTE_Eb8 4978.03  //D#8/Eb8
 
-
-#define S_CONNECTION 	0
-#define S_DISCONNECTION 1
-#define S_BUTTON_PUSHED 	2
-#define S_MODE1 		3
-#define S_MODE2 		4
-#define S_MODE3 		5
-#define S_SURPRISE 		6
-#define S_OHOOH 		7
-#define S_OHOOH2 		8
-#define S_CUDDLY 		9
-#define S_SLEEPING 		10
-#define S_HAPPY 		11
-#define S_SUPER_HAPPY 	12
-#define S_HAPPY_SHORT 	13
-#define S_SAD 			14
-#define S_CONFUSED 		15
-#define S_FART1			16
-#define S_FART2			17
-#define S_FART3			18
+#define S_connection 	0
+#define S_disconnection 1
+#define S_buttonPushed 	2
+#define S_mode1 		3
+#define S_mode2 		4
+#define S_mode3 		5
+#define S_surprise 		6
+#define S_OhOoh 		7
+#define S_OhOoh2 		8
+#define S_cuddly 		9
+#define S_sleeping 		10
+#define S_happy 		11
+#define S_superHappy 	12
+#define S_happy_short 	13
+#define S_sad 			14
+#define S_confused 		15
+#define S_fart1			16
+#define S_fart2			17
+#define S_fart3			18
 #define PIRATES 19
 #define S_JUMP 20
 

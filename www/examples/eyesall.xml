@@ -9,16 +9,16 @@
         <field name="PIN_RR">5</field>
         <field name="PIN_Buzzer">13</field>
         <next>
-          <block type="otto9_eyes_init" id="rZgXpZO@%3]vgE|FK(,h">
+          <block type="eyes_init" id="rZgXpZO@%3]vgE|FK(,h">
             <next>
-              <block type="otto9_eyes_brightness" id="=F-NpSk?:+^]xbo;p2:*">
+              <block type="eyes_brightness" id="=F-NpSk?:+^]xbo;p2:*">
                 <value name="brightness">
                   <shadow type="math_number" id="|KC,s;CNWx?e1O+bxKNw">
                     <field name="NUM">15</field>
                   </shadow>
                 </value>
                 <next>
-                  <block type="otto9_eyes_text" id="Xr2}Vw[wJzw!!y0c5DAN">
+                  <block type="eyes_text" id="Xr2}Vw[wJzw!!y0c5DAN">
                     <field name="input">I am Otto</field>
                   </block>
                 </next>
@@ -29,7 +29,7 @@
       </block>
     </statement>
     <statement name="LOOP">
-      <block type="otto9_eyes_face" id="8}r|@o1Z6A9h/,IfM8q/">
+      <block type="eyes_face" id="8}r|@o1Z6A9h/,IfM8q/">
         <field name="otto9_eyes_choice">happy_bmp</field>
         <next>
           <block type="otto_gesture" id="/5G^!!H0?|tSWf=hQYDH">
@@ -43,7 +43,7 @@
                   </shadow>
                 </value>
                 <next>
-                  <block type="otto9_eyesm" id="m}Sdd7RT#P/Pp)k9pR[k">
+                  <block type="eyesm" id="m}Sdd7RT#P/Pp)k9pR[k">
                     <field name="eyes_pixel7">FALSE</field>
                     <field name="eyes_pixel15">FALSE</field>
                     <field name="eyes_pixel23">FALSE</field>
@@ -181,7 +181,7 @@
                           </shadow>
                         </value>
                         <next>
-                          <block type="otto9_eyes_face" id="~|TAR+saU{(Dd.=3q{WX">
+                          <block type="eyes_face" id="~|TAR+saU{(Dd.=3q{WX">
                             <field name="otto9_eyes_choice">eyes_bmp</field>
                             <next>
                               <block type="otto_gesture" id="~Mx5wT,4PWeS4_OV+uvi">
@@ -195,7 +195,7 @@
                                       </shadow>
                                     </value>
                                     <next>
-                                      <block type="otto9_eyes_face" id="Yl-%XF`h6yHzbxryxaUy">
+                                      <block type="eyes_face" id="Yl-%XF`h6yHzbxryxaUy">
                                         <field name="otto9_eyes_choice">sad_bmp</field>
                                         <next>
                                           <block type="otto_gesture" id="@/,eL[q3H;3orrhBAp|m">
@@ -209,7 +209,7 @@
                                                   </shadow>
                                                 </value>
                                                 <next>
-                                                  <block type="otto9_eyes_face" id="om~kL-vW|2b2b*8UL3QS">
+                                                  <block type="eyes_face" id="om~kL-vW|2b2b*8UL3QS">
                                                     <field name="otto9_eyes_choice">angry_bmp</field>
                                                     <next>
                                                       <block type="base_delay" id="c/~,#~||g:AwP8ziCvB9">
@@ -220,7 +220,7 @@
                                                           </shadow>
                                                         </value>
                                                         <next>
-                                                          <block type="otto9_eyes_face" id="3=!C=L!H/jebvJaF*ds=">
+                                                          <block type="eyes_face" id="3=!C=L!H/jebvJaF*ds=">
                                                             <field name="otto9_eyes_choice">angry2_bmp</field>
                                                             <next>
                                                               <block type="otto_gesture" id="}jl~K85)Yh;)!J]2;WC#">
@@ -234,7 +234,7 @@
                                                                       </shadow>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="otto9_eyes_face" id="h9CBsqukkY/_0j;/v9_d">
+                                                                      <block type="eyes_face" id="h9CBsqukkY/_0j;/v9_d">
                                                                         <field name="otto9_eyes_choice">freetful_bmp</field>
                                                                         <next>
                                                                           <block type="otto_gesture" id="6lm86MFR}V2!K3wVH^|b">
@@ -248,7 +248,7 @@
                                                                                   </shadow>
                                                                                 </value>
                                                                                 <next>
-                                                                                  <block type="otto9_eyes_face" id="$(E|0XZd$02%P^KEpin[">
+                                                                                  <block type="eyes_face" id="$(E|0XZd$02%P^KEpin[">
                                                                                     <field name="otto9_eyes_choice">confused_bmp</field>
                                                                                     <next>
                                                                                       <block type="otto_gesture" id="fX|zld4xeOo/Y)UIfLY_">
@@ -262,7 +262,7 @@
                                                                                               </shadow>
                                                                                             </value>
                                                                                             <next>
-                                                                                              <block type="otto9_eyes_face" id="puzlTJ.i_Am,2#+Lw-I#">
+                                                                                              <block type="eyes_face" id="puzlTJ.i_Am,2#+Lw-I#">
                                                                                                 <field name="otto9_eyes_choice">sleep_bmp</field>
                                                                                                 <next>
                                                                                                   <block type="otto_gesture" id="v}$Wptx-~(~Zsbw4qy`f">
@@ -276,7 +276,7 @@
                                                                                                           </shadow>
                                                                                                         </value>
                                                                                                         <next>
-                                                                                                          <block type="otto9_eyes_face" id="X6!9@[_S~e:q!}tkF#4)">
+                                                                                                          <block type="eyes_face" id="X6!9@[_S~e:q!}tkF#4)">
                                                                                                             <field name="otto9_eyes_choice">love_bmp</field>
                                                                                                             <next>
                                                                                                               <block type="otto_gesture" id="@s)rB1vK-;.AOzjs@1rl">
@@ -290,7 +290,7 @@
                                                                                                                       </shadow>
                                                                                                                     </value>
                                                                                                                     <next>
-                                                                                                                      <block type="otto9_eyes_face" id="[]3izbU)M$?!t)MDk|/E">
+                                                                                                                      <block type="eyes_face" id="[]3izbU)M$?!t)MDk|/E">
                                                                                                                         <field name="otto9_eyes_choice">wave_bmp</field>
                                                                                                                         <next>
                                                                                                                           <block type="otto_gesture" id="M%}yA1`%;{+@U;3kki7o">
@@ -304,7 +304,7 @@
                                                                                                                                   </shadow>
                                                                                                                                 </value>
                                                                                                                                 <next>
-                                                                                                                                  <block type="otto9_eyes_face" id="}T?vVARCJlQ9z{?i*{gc">
+                                                                                                                                  <block type="eyes_face" id="}T?vVARCJlQ9z{?i*{gc">
                                                                                                                                     <field name="otto9_eyes_choice">magic_bmp</field>
                                                                                                                                     <next>
                                                                                                                                       <block type="otto_gesture" id="cBwiVLA~PJGrGU{v45pM">
@@ -318,7 +318,7 @@
                                                                                                                                               </shadow>
                                                                                                                                             </value>
                                                                                                                                             <next>
-                                                                                                                                              <block type="otto9_eyes_face" id="q$ENum]wa!cjpw0x)T$?">
+                                                                                                                                              <block type="eyes_face" id="q$ENum]wa!cjpw0x)T$?">
                                                                                                                                                 <field name="otto9_eyes_choice">fail_bmp</field>
                                                                                                                                                 <next>
                                                                                                                                                   <block type="otto_gesture" id="81XW[E4e}?}_krWvAOXS">
@@ -332,7 +332,7 @@
                                                                                                                                                           </shadow>
                                                                                                                                                         </value>
                                                                                                                                                         <next>
-                                                                                                                                                          <block type="otto9_eyes_face" id="vAD0T/c3!UEPy$_Myegy">
+                                                                                                                                                          <block type="eyes_face" id="vAD0T/c3!UEPy$_Myegy">
                                                                                                                                                             <field name="otto9_eyes_choice">logo_bmp</field>
                                                                                                                                                             <next>
                                                                                                                                                               <block type="otto_gesture" id="M_iZSA=osWQLZsg@|1Ue">
@@ -346,7 +346,7 @@
                                                                                                                                                                       </shadow>
                                                                                                                                                                     </value>
                                                                                                                                                                     <next>
-                                                                                                                                                                      <block type="otto9_eyes_face" id="Iz+@S%$_N3E|:+DhpRM.">
+                                                                                                                                                                      <block type="eyes_face" id="Iz+@S%$_N3E|:+DhpRM.">
                                                                                                                                                                         <field name="otto9_eyes_choice">XX_bmp</field>
                                                                                                                                                                         <next>
                                                                                                                                                                           <block type="otto_gesture" id="Y7TiPJXg}z[j7QbSCEG|">
