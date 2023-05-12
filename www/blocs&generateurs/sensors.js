@@ -167,7 +167,7 @@ Blockly.Blocks['ultrasonic_sensor'] = {  init: function() {
     this.setColour("#54BCF7");
     this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
     .appendField(Blockly.Msg.OTTO_HOME_TEXT + "#")	.appendField(new Blockly.FieldDropdown([['1','1'],['2','2'],['3','3'],['4','4']]), "US_NUMBER")
-		.appendField(Blockly.Msg.ultrasonic_ranger).appendField(Blockly.Msg.TRIG).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
+		.appendField(Blockly.Msg.ultrasonic_ranger).appendField(Blockly.Msg.TRIG).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG");
 	this.appendDummyInput()	.appendField(Blockly.Msg.Echo)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
 	this.setInputsInline(true);
 	this.setPreviousStatement(true, null);
@@ -228,7 +228,7 @@ Blockly.Blocks["ultrasonic_distance"]={init:function(){
   this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
   this.setInputsInline(false);
   this.setOutput(true, "Number");
-  this.setTooltip(Blockly.Msg.ultrason_distance2)}
+  this.setTooltip(Blockly.Msg.ultrason_distance2);}
 };
 Blockly.Arduino["ultrasonic_distance"]=function(block){
   var code;
@@ -242,8 +242,8 @@ Blockly.Blocks['ultrasonic_sensor2'] = {  init: function() {
 	var card=window.localStorage.card;
     this.setColour("#54BCF7");
     this.appendDummyInput()  .appendField(new Blockly.FieldImage("media/sensor_ultrasound.png",33,33))
-		.appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.ultrasonic_ranger).appendField("RGB").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG")
-	this.appendDummyInput()	.appendField("IO")	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO")
+		.appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.ultrasonic_ranger).appendField("RGB").appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_TRIG");
+	this.appendDummyInput()	.appendField("IO")	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_ECHO");
 	this.setInputsInline(true);
 	this.setPreviousStatement(true, null);
 	this.setNextStatement(true, null);
@@ -255,10 +255,10 @@ Blockly.Arduino['ultrasonic_sensor2'] = function(block) {
   var PIN_RGB = block.getFieldValue('PIN_TRIG');
   var PIN_IO = block.getFieldValue('PIN_ECHO');
 
-  Blockly.Arduino.variables_["usrgb"]='const int RgbPin = '+PIN_RGB+';'\n'+
-  'const int SingPin = '+PIN_IO+';'\n'+
-  'float distance;'\n'+
-  'unsigned long Time_Echo_us = 0;'\n';
+  Blockly.Arduino.variables_["usrgb"]='const int RgbPin = '+PIN_RGB+';\n'+
+  'const int SingPin = '+PIN_IO+';\n'+
+  'float distance;\n'+
+  'unsigned long Time_Echo_us = 0;\n';
       Blockly.Arduino.setups_['setup_IO'] = 'pinMode('+PIN_IO+', OUTPUT);\n'+
       'Serial.begin(9600);\n'+
      'Serial.println("Ultrasonic sensor:"); '\n';
@@ -288,7 +288,7 @@ Blockly.Blocks["ultrasonic_distance2"]={init:function(){
   this.setHelpUrl(Blockly.Msg.ultrason_helpurl);
   this.setInputsInline(false);
   this.setOutput(true, "Number");
-  this.setTooltip(Blockly.Msg.ultrason_distance2)}
+  this.setTooltip(Blockly.Msg.ultrason_distance2);}
 };
 
 Blockly.Arduino["ultrasonic_distance2"]=function(block){
