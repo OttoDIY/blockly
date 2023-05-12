@@ -12,11 +12,11 @@
         </value>
         <next>
           <block type="pixel_init" id="Ns%k6x{[|?WO+C$;pUPy">
-            <field name="pin">11</field>
+            <field name="pin">RX</field>
             <comment pinned="false" h="80" w="160">Choose the pin where your NeoPixel Ring is connected</comment>
             <value name="num">
               <shadow type="analog_pin" id="v[[N]BsEv?9MR{!l2kjy">
-                <field name="NUM">16</field>
+                <field name="NUM">12</field>
               </shadow>
             </value>
           </block>

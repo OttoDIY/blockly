@@ -1,14 +1,13 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_arduino_all</toolbox>
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
   <block type="base_setup_loop" id="5z;VHZm0^aG5L!uH9jd#" x="-61" y="107">
     <statement name="DO">
       <block type="serial_init" id="=n;5RsGh~kc6O`Sob1a6">
         <field name="PINBAUDIOS">9600</field>
         <next>
-          <block type="ultrasonic_sensor" id="^2_qL+d*q}:P[G$CpN2`">
-            <field name="US_NUMBER">1</field>
-            <field name="PIN_TRIG">8</field>
-            <field name="PIN_ECHO">9</field>
+          <block type="ultrasonic_sensor2" id="w#:2hr@gYN~r|y|b|]Tq">
+            <field name="PIN_TRIG">D1</field>
+            <field name="PIN_ECHO">D2</field>
           </block>
         </next>
       </block>
@@ -26,9 +25,7 @@
               <shadow type="text" id="8E7%8t(oH=%==yi-Rd6=">
                 <field name="TEXT">text</field>
               </shadow>
-              <block type="ultrasonic_distance" id="g[PTweiJhrG2lI0*kCmU">
-                <field name="US_NUMBER">1</field>
-              </block>
+              <block type="ultrasonic_distance2" id="M@WG-zAoGxicEUP!RCQH"></block>
             </value>
             <next>
               <block type="serial_print" id="89Pc{W]aad]!mFZQVuJR">

@@ -8,7 +8,7 @@
         <comment pinned="true" h="80" w="160">Change the number to the quantity of pixel in your NeoPixel Ring</comment>
         <value name="VALUE">
           <block type="math_number" id="5|NivL0P!#]tICz,gN1z">
-            <field name="NUM">16</field>
+            <field name="NUM">12</field>
           </block>
         </value>
         <next>
@@ -31,7 +31,7 @@
                 </value>
                 <next>
                   <block type="pixel_init" id="Ns%k6x{[|?WO+C$;pUPy">
-                    <field name="pin">11</field>
+                    <field name="pin">RX</field>
                     <comment pinned="true" h="80" w="160">Choose the pin where your NeoPixel Ring is connected</comment>
                     <value name="num">
                       <shadow type="analog_pin" id="v[[N]BsEv?9MR{!l2kjy">

@@ -1,0 +1,80 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
+  <block type="base_setup_loop" id="sYpp.M_hPV=wn]G[Y!?e" x="-172" y="110">
+    <statement name="DO">
+      <block type="buzzer_init" id="2o`of~C|Iq_h}BC[7/TZ">
+        <field name="PIN">D5</field>
+        <next>
+          <block type="cute_play" id="#Pg~a:0!)%]m4mc%^b2-">
+            <field name="sound">S_connection</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="cute_play" id="gM!GW_RgwGL/c3b_ycrV">
+        <field name="sound">S_superHappy</field>
+        <next>
+          <block type="cute_play" id="VwOTPqOlnm[[At~6NS]D">
+            <field name="sound">S_happy</field>
+            <next>
+              <block type="cute_play" id="JYFHKd2(NamkX$P@rGXN">
+                <field name="sound">S_happy_short</field>
+                <next>
+                  <block type="cute_play" id="qv7X:Z;QViCPFm!()TaM">
+                    <field name="sound">S_sad</field>
+                    <next>
+                      <block type="cute_play" id="9hH?5qD9Glov)Fq8;E)_">
+                        <field name="sound">S_confused</field>
+                        <next>
+                          <block type="cute_play" id="m=B$`U,KXs@vEZB[Z}Qm">
+                            <field name="sound">S_cuddly</field>
+                            <next>
+                              <block type="cute_play" id="1J~`3%/,qNEj-NDpL@r2">
+                                <field name="sound">S_OhOoh</field>
+                                <next>
+                                  <block type="cute_play" id="gH[Aem1BOo1P!zDmH=UW">
+                                    <field name="sound">S_OhOoh2</field>
+                                    <next>
+                                      <block type="cute_play" id=";{J4`!KH-7[d-j5npVN`">
+                                        <field name="sound">S_surprise</field>
+                                        <next>
+                                          <block type="cute_play" id="}U$1tfq6Oa_8LxG}0i_e">
+                                            <field name="sound">S_buttonPushed</field>
+                                            <next>
+                                              <block type="cute_play" id="7f,CaR`o$!(mHBuOJvy$">
+                                                <field name="sound">S_fart1</field>
+                                                <next>
+                                                  <block type="cute_play" id="h28SZe?q{e#TyWpqjRWE">
+                                                    <field name="sound">S_sleeping</field>
+                                                    <next>
+                                                      <block type="cute_play" id="{XbpzLd;Q5A?,Cd^0Q5k">
+                                                        <field name="sound">S_disconnection</field>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,30 +1,26 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <toolbox>toolbox_arduino_all</toolbox>
+  <toolbox>toolbox_arduino_all-esp8266</toolbox>
   <block type="base_setup_loop" id="bbu,Ycm|oN%wsL77H?Kr" x="64" y="65">
-    <statement name="LOOP">
-      <block type="RTTTL_music_custom" id="Ia.OAYlso!jhbKarb#dw">
-        <field name="PIN_BUZZER">13</field>
-        <value name="rtttl_melody">
-          <block type="text" id="AF;6?7^~f1{*C^6S,u`/">
-            <field name="TEXT">Popcorn:d=4,o=5,b=160:8c6,8a#,8c6,8g,8d#,8g,c,8c6,8a#,8c6,8g,8d#,8g,c,8c6,8d6,8d#6,16c6,8d#6,16c6,8d#6,8d6,16a#,8d6,16a#,8d6,8c6,8a#,8g,8a#,c6</field>
-          </block>
-        </value>
+    <statement name="DO">
+      <block type="buzzer_init" id="y`([hmAAywp[-nk2t/=v">
+        <field name="PIN">D5</field>
         <next>
-          <block type="RTTTL_music_custom" id="~gQi(d!1f*MXLr{7wh+_">
-            <field name="PIN_BUZZER">13</field>
+          <block type="buzzer_music_custom" id="xe_VxUGPhkLJpftUVb^^">
             <value name="rtttl_melody">
-              <block type="text" id="Z_Eh`-]Z,KQf,)~Aj?e-">
-                <field name="TEXT">countdown:d=4,o=5,b=125:p,8p,16b,16a,b,e,p,8p,16c6,16b,8c6,8b,a,p,8p,16c6,16b,c6,e,p,8p,16a,16g,8a,8g,8f#,8a,g.,16f#,16g,a.,16g,16a,8b,8a,8g,8f#,e,c6,2b.,16b,16c6,16b,16a,1b</field>
-              </block>
+              <shadow type="text" id="@40OGDPJv%/KY;rZTti2">
+                <field name="TEXT">Popcorn:d=4,o=5,b=160:8c6,8a#,8c6,8g,8d#,8g,c,8c6,8a#,8c6,8g,8d#,8g,c,8c6,8d6,8d#6,16c6,8d#6,16c6,8d#6,8d6,16a#,8d6,16a#,8d6,8c6,8a#,8g,8a#,c6</field>
+              </shadow>
             </value>
             <next>
-              <block type="RTTTL_music" id="^/`@QdbvX1^9}x0?H[T]">
-                <field name="PIN_BUZZER">13</field>
-                <field name="MELODY">A_Team</field>
+              <block type="buzzer_music_custom" id="PAx=Xy|VoH^RbIOLg6t!">
+                <value name="rtttl_melody">
+                  <shadow type="text" id="Pz8[zxtYTX]/~%L):5?A">
+                    <field name="TEXT">countdown:d=4,o=5,b=125:p,8p,16b,16a,b,e,p,8p,16c6,16b,8c6,8b,a,p,8p,16c6,16b,c6,e,p,8p,16a,16g,8a,8g,8f#,8a,g.,16f#,16g,a.,16g,16a,8b,8a,8g,8f#,e,c6,2b.,16b,16c6,16b,16a,1b</field>
+                  </shadow>
+                </value>
                 <next>
-                  <block type="RTTTL_music" id="UW_jTQ#`+unPT7U[Pekc">
-                    <field name="PIN_BUZZER">13</field>
-                    <field name="MELODY">Indiana</field>
+                  <block type="buzzer_music" id="ejO#qN;+*_xxLf]O~Txi">
+                    <field name="MELODY">Gadget</field>
                   </block>
                 </next>
               </block>

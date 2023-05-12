@@ -444,20 +444,15 @@ return "servo_" + value_pin + ".write(90);\n"
 
 Blockly.Blocks['servo_2wheels_init'] = {  init: function() {
     var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*"));
-    this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO_WHEELS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINL");
-    this.appendDummyInput()
-	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINR");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_wheels.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO_WHEELS_TEXT);
+    this.appendDummyInput()	.appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINL");
+    this.appendDummyInput()	.appendField(Blockly.Msg.right).setAlign(Blockly.ALIGN_RIGHT)	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PINR");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour("#4759F5");
     this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-  }
+    this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);  }
   };
 
   Blockly.Arduino['servo_2wheels_init'] = function(block) {

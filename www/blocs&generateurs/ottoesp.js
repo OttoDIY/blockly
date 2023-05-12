@@ -9,7 +9,7 @@ goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto_configuration'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_emoji.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO_BIPED_TEXT);
 	this.appendDummyInput()
 	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_YL");

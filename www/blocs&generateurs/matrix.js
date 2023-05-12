@@ -38,7 +38,7 @@ Blockly.Arduino['matrix16x8_init'] = function(block) {
 };
 
 Blockly.Blocks['eyes_init'] = { init: function() {
-  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.OTTO9_EYES_TEXT+" "+Blockly.Msg.APDS9960_init2);
+  this.appendDummyInput() .appendField(new Blockly.FieldImage('media/eyes.png', 58, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT + Blockly.Msg.MAX7219_LM_NAME+" "+Blockly.Msg.APDS9960_init2);
   this.setInputsInline(true);
   this.setPreviousStatement(true);
   this.setNextStatement(true);

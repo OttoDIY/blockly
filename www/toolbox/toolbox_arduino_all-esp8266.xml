@@ -19,13 +19,6 @@
 				<field name="PINR">D4</field>
 				</block>
 							<block type="servo_2wheels"></block>
-					<block type="servo_rot_continue_param">
-						<value name="SPEED"><shadow type="math_number"><field name="NUM">45</field></shadow>	</value>
-						<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-					</block>
-							<block type="servo_rot_stop">
-						<value name="PIN"><shadow type="analog_pin"><field name="NUM">2</field></shadow></value>
-					</block>
 		</category>
 	<category name="CAT_OTTO_NINJA" colour="#4759F5">
 				<block type="otto_ninja_init">
@@ -285,8 +278,8 @@
 				<block type="ultrasonic_distance2"></block>
 		</category>
 		<category name="CAT_LINE" colour="#54BCF7">
+			<block type="IR_status_sensor2"><field name="PIN_IR">D6</field></block>
 		<block type="IR_sensor2"></block>
-		<block type="IR_status_sensor2"></block>
 			</category>
 	<category name="CAT_BUTTONS" colour="#54BCF7">
 					<block type="button_sensor2"><field name="PIN_BUTTON">D6</field></block>

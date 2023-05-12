@@ -10,14 +10,9 @@ goog.require('Blockly.Arduino');
 
 Blockly.Blocks['otto_i2cConfig'] = {init: function() {
   var card=window.localStorage.card;
-    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*"))
-    .appendField(Blockly.Msg.OTTO_HOME_TEXT).appendField("I²C");
-    this.appendDummyInput()
-    .appendField("SDA")
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SDA");
-    this.appendDummyInput()
-    .appendField("SCL")
-    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SCL");
+    this.appendDummyInput().appendField(new Blockly.FieldImage('media/otto_bend.png', 33, 33, "*")).appendField(Blockly.Msg.OTTO_HOME_TEXT).appendField("I²C");
+    this.appendDummyInput().appendField("SDA")    .appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SDA");
+    this.appendDummyInput().appendField("SCL").appendField(new Blockly.FieldDropdown(profile[card].dropdownDigital), "PIN_SCL");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -42,13 +37,9 @@ Blockly.Arduino['otto_i2cConfig'] = function(block) {
 
 Blockly.Blocks['otto_arms_init'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT);
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.OTTO9_ARMS_TEXT+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
-	this.appendDummyInput()
-	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
-	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/humanoid_arms.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO9_ARMS_TEXT);
+	this.appendDummyInput().appendField(Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AL");
+	this.appendDummyInput().appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT).appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_AR");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -307,8 +298,8 @@ return code;
 
 Blockly.Blocks['otto_ninja_init'] = {init: function() {
 	var card=window.localStorage.card;
-    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT)
-	.appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
+    this.appendDummyInput("") .appendField(new Blockly.FieldImage('media/otto_ninja.png', 33, 33, "*")) .appendField(Blockly.Msg.OTTO_HOME_TEXT+Blockly.Msg.OTTO_NINJA_TEXT);
+	this.appendDummyInput().appendField(Blockly.Msg.OTTO9_CALIBRATION_LEG+Blockly.Msg.left).setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_LL")
 	.appendField(Blockly.Msg.right) .setAlign(Blockly.ALIGN_RIGHT)
 	.appendField(new Blockly.FieldDropdown(profile[card].dropdownAllPins), "PIN_RL")

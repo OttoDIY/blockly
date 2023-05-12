@@ -110,7 +110,7 @@ Blockly.Blocks["tone"]={init:function(){
 Blockly.Arduino["tone"]=function(block){
     var value_num=Blockly.Arduino.valueToCode(block, "NUM", Blockly.Arduino.ORDER_ATOMIC);
     var value_tps=Blockly.Arduino.valueToCode(block, "TPS", Blockly.Arduino.ORDER_ATOMIC);
-    return "tone( buzzer," + "," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
+    return "tone( buzzer," + value_num + "," + value_tps + ");\ndelay(" + value_tps + ");\n"
 };
 Blockly.Python["tone"]=function(block){
     var value_pin=block.getFieldValue("PIN");
@@ -151,7 +151,7 @@ Blockly.Blocks["notone"]={init:function(){
         this.setTooltip(Blockly.Msg.ARDUINO_NOTONE_TOOLTIP)}
 };
 Blockly.Arduino["notone"]=function(block){
-    return "noTone( buzzer," + ");\n"
+    return "noTone( buzzer" + ");\n"
 };
 Blockly.Python["notone"]=function(block){
     var value_pin=block.getFieldValue("PIN");
@@ -160,7 +160,7 @@ Blockly.Python["notone"]=function(block){
 };
 
 Blockly.Blocks['cute_play'] = {init: function() {
-    this.appendDummyInput() .appendField("🎼") .appendField(Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "sound");
+    this.appendDummyInput() .appendField("🎼"+Blockly.Msg.OTTO9_SOUND_TEXT) .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_SOUND_CHOICE), "sound");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
