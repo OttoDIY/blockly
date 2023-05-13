@@ -276,6 +276,7 @@
 					<field name="PIN_ECHO">D2</field>
 				</block>
 				<block type="ultrasonic_distance2"></block>
+				<block type="usgrgb_fill"></block>
 		</category>
 		<category name="CAT_LINE" colour="#54BCF7">
 			<block type="IR_status_sensor2"><field name="PIN_IR">D6</field></block>

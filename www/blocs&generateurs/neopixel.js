@@ -98,7 +98,9 @@ Blockly.Arduino["pixel_fill"]=function(block){
 	var color=block.getFieldValue("color");
     var colorR=color[1] + color[2], colorG=color[3] + color[4], colorB=color[5] + color[6];
     var red=parseInt(colorR,16), green=parseInt(colorG,16), blue=parseInt(colorB,16);
-    var code = "pixel.fill( pixel.Color("  + red + ", " + green + ", " + blue + "));\n";
+    var code = "pixel.clear();\n"+
+    "pixel.fill( pixel.Color("  + red + ", " + green + ", " + blue + "));\n"+
+    "pixel.show();\n";
     return code
 };
 Blockly.Blocks["pixel_fill2"]={init:function(){

@@ -259,13 +259,14 @@ Blockly.Arduino['ultrasonic_sensor2'] = function(block) {
   'const int SingPin = '+PIN_IO+';\n'+
   'float distance;\n'+
   'unsigned long Time_Echo_us = 0;\n';
-      Blockly.Arduino.setups_['setup_IO'] = 'pinMode('+PIN_IO+', OUTPUT);\n'+
-      'Serial.begin(9600);\n'+
-     'Serial.println("Ultrasonic sensor:"); '\n';
+  Blockly.Arduino.includes_["usrgb"]="#include <Adafruit_NeoPixel.h>";
+  Blockly.Arduino.setups_['setup_IO'] = 'pinMode('+PIN_IO+', OUTPUT);\n';
       Blockly.Arduino.setups_['setup_RGB'] = 'usrgb.begin();\n'+
-        'usrgb.clear();'\n';
-
-        Blockly.Arduino.definitions_['usrgb'] = 'long distance() {\n'+
+      'usrgb.clear();\n'+
+      'usrgb.fill( usrgb.Color(0, 255, 255));\n'+
+        'usrgb.show();\n';
+        Blockly.Arduino.definitions_["usrgb"]="Adafruit_NeoPixel usrgb = Adafruit_NeoPixel(6," + PIN_RGB + ", NEO_GRB + NEO_KHZ800);";
+        Blockly.Arduino.definitions_['usrgbdistance'] = 'long ultrasound_distance() {\n'+
             '   long Time_Echo_us, distance;\n'+
             '   pinMode('+PIN_IO+', OUTPUT);\n'+
             '   digitalWrite('+PIN_IO+', LOW);\n'+
@@ -275,11 +276,35 @@ Blockly.Arduino['ultrasonic_sensor2'] = function(block) {
             '   digitalWrite('+PIN_IO+', LOW);\n'+
             '    pinMode('+PIN_IO+', INPUT);\n'+
             '   Time_Echo_us = pulseIn('+PIN_IO+', HIGH);\n'+
-            '   return distance;\n'+
+            
+            'if ((Time_Echo_us < 60000) && (Time_Echo_us > 1)) {\n'+
+              ' distance = Time_Echo_us / 58.00;\n'+
+              '}\n'+
+              ' delay(200);\n'+
+              '   return distance;\n'+
             '}\n';
 
 	 var code = '';
 	 return code;
+};
+
+Blockly.Blocks["usgrgb_fill"]={init:function(){
+	this.appendDummyInput().appendField("🌈 fill "+Blockly.Msg.ultrasonic_ranger).appendField(Blockly.Msg.pixel3).appendField(new Blockly.FieldColour("#ff0000"),"color");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#B655F5");
+    this.setTooltip(Blockly.Msg.pixel3_tooltip);
+    this.setHelpUrl("https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use")}
+};
+Blockly.Arduino["usgrgb_fill"]=function(block){
+	var color=block.getFieldValue("color");
+    var colorR=color[1] + color[2], colorG=color[3] + color[4], colorB=color[5] + color[6];
+    var red=parseInt(colorR,16), green=parseInt(colorG,16), blue=parseInt(colorB,16);
+    var code = "usrgb.clear();\n"+
+    "usrgb.fill( usrgb.Color("  + red + ", " + green + ", " + blue + "));\n"+
+    "usrgb.show();\n";
+    return code
 };
 
 Blockly.Blocks["ultrasonic_distance2"]={init:function(){
@@ -293,7 +318,7 @@ Blockly.Blocks["ultrasonic_distance2"]={init:function(){
 
 Blockly.Arduino["ultrasonic_distance2"]=function(block){
   var code;
-  code = 'distance()';
+  code = 'ultrasound_distance()';
 return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
