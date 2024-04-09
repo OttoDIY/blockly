@@ -66,7 +66,7 @@ Blockly.Arduino["moteur_dc"]=function(block){
 		var code= "digitalWrite(l298n_in1,LOW);\ndigitalWrite(l298n_in2,HIGH);\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,LOW);\ndigitalWrite(l298n_in4,HIGH);\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
 	}
         else if (dropdown_etat=="0"){
-            var code= "digitalWrite(l298n_in1,HIGH);\ndigitalWrite(l298n_in2,LOW);\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,HIGH);\ndigitalWrite(l298n_in4,HIGH);\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
+            var code= "digitalWrite(l298n_in1,HIGH);\ndigitalWrite(l298n_in2,LOW);\nanalogWrite(l298n_ena,("+value_vitesse+"));\ndigitalWrite(l298n_in3,HIGH);\ndigitalWrite(l298n_in4,LOW);\nanalogWrite(l298n_enb,("+value_vitesse+"));\n"
         }
     }
 	if (dropdown_moteur=="6") {
