@@ -67,9 +67,9 @@ Blockly.Arduino['button_touch_sensor2'] = function(block) {
   Blockly.Arduino.setups_['setup_btntouch_'+dropdown_pin] = 'pinMode('+dropdown_pin+',INPUT);';
 
   if(logic=='TRUE')
-    var code = '(!digitalRead('+dropdown_pin+'))';
+    var code = 'digitalRead('+dropdown_pin+')';
   else
-   var code = 'digitalRead('+dropdown_pin+')';
+   var code = '(!digitalRead('+dropdown_pin+'))';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
