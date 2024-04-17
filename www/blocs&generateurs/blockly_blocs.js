@@ -162,7 +162,7 @@ Blockly.Blocks["controls_switch"] = {
         this.appendStatementInput("DO0").setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setInputsInline(true);
+        this.setInputsInline(false);
         this.setMutator(new Blockly.Mutator(["controls_case_break", "controls_case_default"]));
         var thisBlock = this;
         this.setTooltip(function() {
