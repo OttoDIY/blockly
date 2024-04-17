@@ -200,7 +200,7 @@ Blockly.Msg.LKL_MODE = 'se detecta en el pin';
 // FIELDDROPDOWN
 Blockly.Msg.note = [["DO \u2083", "261"], ["RE \u2083", "293"], ["MI \u2083", "329"], ["FA \u2083", "349"], ["SOL \u2083", "392"], ["LA \u2083", "440"], ["SI \u2083", "493"], ["DO \u2084", "523 "], [" RE \u2084 "," 587 "], [" MI \u2084 "," 659 "], [" FA \u2084 "," 698 "], [" SOL \u2084 "," 784 "] , ["LA \u2084", "880"]];
 Blockly.Msg.tempo = [["\u266B", "125"], ["\u266A", "250"], ["\u2669", "500"], ["𝅗𝅥", "1000"], ["𝅝", "2000"]];
-Blockly.Msg.on_off = [["on", "LOW"], ["off", "HIGH"]];
+Blockly.Msg.on_off = [["ON", "HIGH"], ["OFF", "LOW"]];
 Blockly.Msg.menublink = [[" lentamente "," 1000 "], [" rápido "," 100 "]];
 Blockly.Msg.AV_AR = [[Blockly.Msg.AV, "FORWARD"], [Blockly.Msg.AR, "BACKWARD"]]; // do not translate
 Blockly.Msg.times = [["segundos", "s"], ["milisegundos", "m"], ["microsegundos", "u"]];
