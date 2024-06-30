@@ -2,38 +2,27 @@
 
 This is a free and open source visual programming language based on Blockly from Google & MIT, to generate C/C++ code, 
 compile and upload to multiple options of microcontrollers. Compatible with any 
-[Otto DIY robot, Arduino or ESP8266 and ESP32 related boards](https://www.ottodiy.com/software). It is the perfect
-software to get you started into coding and STEM robotics.
+[Otto DIY robots, Arduino or ESP8266 and ESP32 related boards](https://www.ottodiy.com/software). 
 
 ## [Click here to watch the video to see all the main features](https://youtu.be/chcWxh4Co_c)
 
-## Installer
-This software can work offline (standalone) by installing it on your computer. Depending on your operating system the 
-installation files are already available or you have to create them yourself.
-
-### Windows and MacOS
+## Windows ONLY
 
 Download the installer from the [releases page](https://github.com/OttoDIY/blockly/releases). After the software is 
 installed in your PC, it is ready to use immediately, you do not need to import Arduino libraries or any additional 
-setup for the boards because it comes with a copy of the Arduino CLI, it is all in one software!, you will be ready 
-to upload codes directly to your robot or any other Arduino project via USB.
+setup for the boards, you will be ready to upload codes directly to your robot or any other Arduino project via USB cable.
 
-If your computer do not recognize the USB device or Otto, you have to install the CH340 or CH341 or FTDI driver that 
-is in the ["driversUSB" folder](https://github.com/OttoDIY/blockly/tree/master/driversUSB) or download from 
-[this link](https://sparks.gogo.co.nz/ch340.html)
-
-### Linux
-
-For Linux operating systems go to [this repo](https://github.com/OttoDIY/blocklyLinux). 
+### A better solution that works in all other OS, is the [new HP Robots Otto web coding ecosystem](https://hprobots.com/otto-robot/code/) 
 
 ## How to Use
 
 1. Open any example.
-2. Connect your Otto robot.
-3. Select your board and the USB port where Otto is connected.
-4. Upload and yes is that easy you can even just click upload and the code will be automatically compiled!
+2. Connect your microcontroller.
+3. Select your board and the USB port where is connected.
+4. Click upload and the code will be automatically compiled, but it will take some time.
 
-Drag, drop, connect, mix, play and create your own codes. [Join the Otto Builder community, see all the cool stuff we are making with Otto Blockly and post your ideas!](http://builders.ottodiy.com/) 
+Drag, drop, connect, mix, play and create your own codes. 
+[Join the Otto Builder community, see all the cool stuff and post your ideas!](https://www.ottodiy.com/community) 
 
 ## Help us add your Language
 
@@ -106,7 +95,7 @@ make sure they have been tested.
 
 Just make sure to keep consistency in the naming and make a record of the change or improvement made.
 
-Welcome to the Otto DIY development team!
+Welcome to the Otto DIY team!
 Thanks for your contribution.
 
 ## Attribution
