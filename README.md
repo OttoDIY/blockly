@@ -45,42 +45,61 @@ only the English part after = in between the quotes "" in visual studio is the t
 You will need to have installed the node.js tools in your computer. The version must be the 12.0
 
 1. Clone or download the source code.
-> git clone https://github.com/OttoDIY/blockly.git
+	```bash
+	git clone https://github.com/OttoDIY/blockly.git
+	```
 2. OPEN GIT BASH as Administrator and cd in folder
-> cd blockly
+	```bash
+	cd blockly
+	```
 3. Install required tools.
-> npm install -g build-tools
->npm install -g windows-build-tool 
-	(this command is not working ok. If the log is held then you must install python 2.7 before because the problem is with the python installation.)
-> npm install -g node-gyp
+	```bash
+	npm install -g build-tools
+	npm install -g windows-build-tool #(this command is not working ok. If the log is held then you 	must install python 2.7 before because the problem is with the python installation.)
+	npm install -g node-gyp
+	```
 4. Install required node modules. Execute following on the source code directory
-> npm install
+	```bash
+	npm install
+	```
 5. Install Arduino CLI
-get arduino-cli.exe from https://github.com/arduino/arduino-cli/releases 
-and place it under compilation/arduino
->cd compilation/arduino
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-mv bin/arduino-cli ./
-rm -rf bin
+
+	for windows
+	>get arduino-cli.exe from https://github.com/arduino/arduino-cli/releases 
+	and place it under compilation/arduino
+
+	for mac
+	```bash
+	cd compilation/arduino
+	curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+	mv bin/arduino-cli ./
+	rm -rf bin
+	```
 6. Execute following to install required tools
->cd compilation\arduino
->arduino-cli core update-index
->arduino-cli core install arduino:avr@1.8.3
->arduino-cli core install arduino:samd@1.8.9
->arduino-cli core install arduino:megaavr@1.8.6
->arduino-cli core install esp8266:esp8266@2.7.4
->arduino-cli core install esp32:esp32@1.0.4
->arduino-cli core update-index
+	```bash
+	cd compilation\arduino
+	arduino-cli core update-index
+	arduino-cli core install arduino:avr@1.8.3
+	arduino-cli core install arduino:samd@1.8.9
+	arduino-cli core install arduino:megaavr@1.8.6
+	arduino-cli core install esp8266:esp8266@2.7.4
+	arduino-cli core install esp32:esp32@1.0.4
+	arduino-cli core update-index
+	```
 7. Build (creates .exe and .zip)
-You can use electron-builder to pack your electron app in zip, nsis (Installer), portable (App without installation) formats.
->cd ../../     #  ( go back to the repository’s top directory)
-> npm run compiler
-or
-> build --win --ia32
->export PATH=$PATH:node_modules/.bin
-npm install electron-builder@22.13.1
->build --mac --x64
->electron-builder --mac --x64
+	You can use electron-builder to pack your electron app in zip, nsis (Installer), portable (App 	without installation) formats.
+	```bash
+	cd ../../     #  ( go back to the repository’s top directory)
+	npm run compiler
+	```
+	or
+	```bash
+	build --win --ia32
+	export PATH=$PATH:node_modules/.bin
+	npm install electron-builder@22.13.1
+	build --mac --x64
+	electron-builder --mac --x64
+	```
 
 ## How to Contribute
 
