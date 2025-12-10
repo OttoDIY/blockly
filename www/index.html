@@ -4,7 +4,6 @@
 	<link rel="icon" type="image/ico" href="media/app.ico" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Otto Blockly </title>
-	<!-- JavaScript -->
 	<script type="text/javascript" src="js/blockly.min.js"></script>
 	<script type="text/javascript" src="js/type.js"></script>
 	<script type="text/javascript" src="js/types.js"></script>
@@ -78,19 +77,23 @@
 	<script type="text/javascript" src="js/intel-hex.browser.js"></script>
 	<script type="text/javascript" src="js/ace.js"></script>
 	<script type="text/javascript" src="js/ext-language_tools.js"></script>
-	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.3.3.6.css"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.toggle.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/blocklino.css"/>
 	<link rel="stylesheet" type="text/css" href="css/prettify.min.css"/>
+	
+	<style>
+		/* This class hides elements by default. JS will show them if Electron is detected. */
+		.electron-only { display: none; }
+	</style>
+
 </head>
 <body onload="BlocklyDuino.init()">
 	<div class="loading"></div>
 	<div id="toptitle">
 		<div id="title">
 						<div class="img"><a href=https://www.ottodiy.com/><img src="media/icon.png" class="img-fluid" alt="Logo"></a></div>
-						<!--	<span id="span_blocklino"></span>-->
-					</span>
+						</span>
 		</div>
         <div id="title-bar-btns">
 			<button id="btn_min" type="button" class="btn btn-minmax"><span class="fa fa-minimize fa-lg"></span></button>
@@ -114,13 +117,9 @@
 				</button>
 				</div>
 			 <select id="languageMenu" onchange="BlocklyDuino.changelanguage();"   style="height: 42px; border-radius: 5px; font-weight: bold" ></select>
-			<!--	<button id="btn_config" class="btn btn-arduino" data-toggle="modal" data-target="#configModal">
-					<span class="fa fa-cog fa-lg fa-fw"></span>
-		</button> -->
-				<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
+			<button id="btn_example" class="btn btn-arduino-rect" data-toggle="modal" data-target="#exampleModal">
 					<span class="fa fa-graduation"></span>
 				</button>
-			<!--	<span id="exampleModalLabel" style="color:white;font-size:4" > </span> -->
 			<input id="title-project-name" type="text" placeholder="Project name" value=""/>
 		<button id="btn_saveXML" class="btn btn-arduino-rect" >
 					<span class="fa fa-floppy-o fa-lg fa-fw"></span>
@@ -132,17 +131,14 @@
 					<span class="fa fa-folder-open"></span>
 				</button>
 				<input type="file" id="load" accept=".bloc,.xml,.py,.ino" style="display: none;" />
-<!--	<button id="btn_print" class="btn btn-arduino-rect">		<span class="fa fa-camera"> </span></button>-->
-				<button id="btn_undo" class="btn btn-arduino-rect">
+<button id="btn_undo" class="btn btn-arduino-rect">
 					<span class="fa fa-undo"> </span>
 				</button>
 				<button id="btn_redo" class="btn btn-arduino-rect">
 					<span class="fa fa-repeat"> </span>
 				</button>
 
-			<!--	<button id="btn_card" class="btn btn-arduino-rect" data-toggle="modal" data-target="#card" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-microchip" > </span>				</button>-->
-				<select style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
+			<select style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="boards" onchange="BlocklyDuino.change_card();">
 					<option value="OttoESP" >ESP8266</option>
 					<option value="nanooptiboot">♾ Nano</option>
 					<option value="nano" >♾ Nano Old </option>
@@ -156,26 +152,20 @@
 					<option value="micro" >♾ Micro</option>
 					<option value="mega" >♾ Mega</option>
 					<option value="mkrwifi1010" >♾ MKR WiFi</option>
-						<!--<option value="mini" >Arduino Mini</option>
-							<option value="wemosD1miniPro" >WeMos D1 mini</option>
-						<option value="pro8" >Arduino Pro / Pro Mini 3.3V</option>
-						<option value="yun" >Arduino Yun</option> -->
-				</select>
-			<!--	<button id="btn_usb" class="btn btn-arduino-rect" data-toggle="modal" data-target="#usb" style="margin-top: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
-					<span class="fa fa-usb"></span>		</button> -->
-				<select style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
-				<button id="btn_verify" class="btn btn-arduino" data-toggle="modal" data-target="#message">
+						</select>
+			<select class="electron-only" style="height: 0px; height: 42px; border-radius: 5px;font-weight: bold" id="portserie" onchange="BlocklyDuino.save_com();"></select>
+				
+				<button id="btn_verify" class="btn btn-arduino electron-only" data-toggle="modal" data-target="#message">
 					<span class="fa fa-check fa-1_5x"> </span>
 				</button>
-				<button id="btn_flash" class="btn btn-arduino" data-toggle="modal" data-target="#message">
+				
+				<button id="btn_flash" class="btn btn-arduino electron-only" data-toggle="modal" data-target="#message">
 					<span class="fa fa-arrow-right fa-1_5x"> </span>
 				</button>
+				
 				<span id="survol" style="color:#fff"></span>
 		</div>
 		<div id="btn_group" class="btn-group" role="group">
-			<!--	<button id="btn_about" class="btn btn-arduino-rect" data-toggle="modal" data-target="#aboutModal"><span class="fa fa-question"></span> </button> -->
-						<!-- <button id="btn_bin" class='btn btn-default'>	<span class="fa fa-download"> </span> </button> -->
-						<!-- <button id="btn_factory" class="btn btn-default"><span class="fa fa-industry fa-fw"> </span> </button>  -->
 			<button id="btn_term" class="btn btn-arduino-rect"><span class="fa fa-search"></span></button>
 			<button id="btn_preview" class="btn btn-arduino-rect"><span class="fa fa-code "> </span>	</button>
 			<button id="btn_search" class='btn btn-arduino-rect'><span class="fa fa-binoculars"> </span></button>
@@ -199,7 +189,6 @@
 		</div>
 		<div role="tabpanel" id="content_code" class="tab-pane fade">#enter your code here</div>
 	</div>
-	<!-- message modal -->
 	<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static" >
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -209,7 +198,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- about modal -->
 	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 		<div class="modal-content">
@@ -244,36 +232,6 @@
 		</div>
 	  </div>
 	</div>
-	<!-- toolbox config modal
-	<div class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
-				<span class="fa fa-cog fa-2x" class="modal-title"  id="configModalLabel"></span>
-			</div>
-			<div class="modal-body">
-				<label id="span_languageMenu"></label>
-				<select id="languageMenu"></select><br><br>
-				<div id="divToolbox">
-					<label id="labelToolboxDefinition"></label>
-					<select id="toolboxes">
-						<option value="toolbox_6"selected="selected">Beginner 👶</option>
-						<option value="toolbox_arduino_all" >Advanced 👨‍💻</option>
-						<option value="toolbox_master">Master 👨‍🚀</option>
-					</select>
-				</div>
-			</div>
-		  <input type="checkbox" name="select_all" id="select_all"/> <span id="span_select_all"> </span>
-		  <div class="modal-body" id="modal-body-config"></div>
-		  <div class="modal-footer">
-			<button id="btn_valid_config" type="button" class="btn btn-primary"></button>
-		  </div>
-		</div>
-	  </div>
-	</div>
--->
-	<!-- example modal -->
 	<div class="modal fade" id="exampleModal" >
 	  <div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -291,7 +249,6 @@
 		</div>
 	  </div>
 	</div>
-	<!-- CARD modal -->
 	<div class="modal fade" id="card" >
 	  <div class="modal-dialog modal-md">
 		<div class="modal-content">
@@ -322,13 +279,11 @@
 			</select>
 			<br><br>
 			<div id="infoboard"></div>
-			<!-- <div class="alert alert-warning" role="alert" id="warning"> -->
 			</div>
 		  </div>
 		</div>
 	  </div>
 	</div>
-	<!-- USB modal -->
 	<div class="modal fade" id="usb" >
 	  <div class="modal-dialog modal-sm">
 		<div class="modal-content">
@@ -338,7 +293,6 @@
 		</div>
 	  </div>
 	</div>
-	<!-- modal_blink -->
 	<div id="modal_blink" class="modal modal-child" data-modal-parent="#exampleModal">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -386,15 +340,29 @@
 	</div>
 </body>
 <script type="text/javascript">
-	$(window).load(function(){$(".loading").fadeOut("slow")});
+	$(window).load(function(){
+		$(".loading").fadeOut("slow");
+		
+		// DETECT ELECTRON
+		// If the user agent string contains 'electron', we show the hidden elements
+		if (navigator.userAgent.toLowerCase().indexOf(' electron/') > -1) {
+			$(".electron-only").show();
+		}
+	});
+
 	ace.require("ace/ext/language_tools");
 	var editor = ace.edit("content_code");
     editor.setTheme("ace/theme/sqlserver");
 	editor.session.setTabSize(2);
 	editor.setShowPrintMargin(false);
-	require('../resources/app/index.js');
-	require('../resources/app/factory.js');
+	
+	// TRY-CATCH ADDED to prevent browser crash (Browsers don't support 'require')
+	try {
+		require('../resources/app/index.js');
+		require('../resources/app/factory.js');
+	} catch (e) {
+		console.log("Running in Browser Mode (require not available)");
+	}
 </script>
 </html>
-
 
